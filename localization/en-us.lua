@@ -140,17 +140,16 @@ return {
             j_kino_joe_dirt = {
                 name = "Joe Dirt",
                 text = {
-                    "When you discard a Spade card,",
-                    "this gains {C:chips}+10{}.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "When you discard a {C:attention}Spade{} card,",
+                    "this gains {C:chips}+#2#{} chips.",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Mult)"
                 }
             },
             j_kino_karate_kid_1 = {
                 name = "The Karate Kid",
                 text = {
                     "If the played hand contains an {C:attention}Ace{}",
-                    "or a {C:attention}2{}, upgrade a random hand.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "or a {C:attention}2{}, upgrade a random hand."
                 }
             },
             j_kino_megalopolis = {
@@ -163,17 +162,15 @@ return {
             j_kino_muppets_2 = {
                 name = "The Great Muppet Caper",
                 text = {
-                    "Diamonds give between -5 and +35",
-                    "when scored.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "{C:attention}Diamonds{} give between {C:mult}#1#{} and {C:mult}+#2#{} mult",
+                    "when scored."
                 }
             },
             j_kino_party_people = {
                 name = "24 Hour Party People",
                 text = {
-                    "Each Clubs give $1 for each $5 you have",
-                    "when scored.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "Each {C:attention}Clubs{} give $1 for each $5 you have",
+                    "when scored."
                 }
             },
             j_kino_pink_panther_1 = {
@@ -203,8 +200,7 @@ return {
                 name = "Rocky",
                 text = {
                     "If this is your final hand this round",
-                    "upgrade the played hand.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "upgrade the played hand."
                 }
             },
             j_kino_secretary = {
