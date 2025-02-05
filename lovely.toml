@@ -1,0 +1,51 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+## Code from (Code adapted from AutumnMood (https://github.com/AutumnMood924/AutumnMoodMechanics/blob/main/amm.lua))
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "elseif _c.set == 'Enhanced' then"
+position = "before"
+payload = '''if specific_vars.bonus_mult then
+	localize{type = 'other', key = 'card_extra_mult', nodes = desc_nodes, vars = {specific_vars.bonus_mult}}
+end
+if specific_vars.bonus_xmult then
+	localize{type = 'other', key = 'card_extra_xmult', nodes = desc_nodes, vars = {specific_vars.bonus_xmult}}
+end
+if specific_vars.bonus_hmult then
+	localize{type = 'other', key = 'card_extra_hmult', nodes = desc_nodes, vars = {specific_vars.bonus_hmult}}
+end
+if specific_vars.bonus_hxmult then
+	localize{type = 'other', key = 'card_extra_hxmult', nodes = desc_nodes, vars = {specific_vars.bonus_hxmult}}
+end'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "nominal_chips = self.base.nominal > 0 and self.base.nominal or nil,"
+position = "after"
+payload = '''bonus_mult = (self.ability.perma_mult or 0) > 0 and (self.ability.perma_mult or 0) or nil,
+bonus_xmult = (self.ability.perma_xmult or 0) > 1 and (self.ability.perma_xmult or 0) or nil,
+bonus_hmult = (self.ability.perma_hmult or 0) > 0 and (self.ability.perma_hmult or 0) or nil,
+bonus_hxmult = (self.ability.perma_hxmult or 0) > 1 and (self.ability.perma_hxmult or 0) or nil,'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "perma_bonus = self.ability and self.ability.perma_bonus or 0,"
+position = "after"
+payload = '''perma_mult = self.ability and self.ability.perma_mult or 0,
+perma_xmult = self.ability and self.ability.perma_xmult or 1,
+perma_hmult = self.ability and self.ability.perma_hmult or 0,
+perma_hxmult = self.ability and self.ability.perma_hxmult or 1,'''
+match_indent = true
+overwrite = false
+
+###
