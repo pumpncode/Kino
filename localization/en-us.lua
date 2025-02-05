@@ -140,9 +140,8 @@ return {
             j_kino_joe_dirt = {
                 name = "Joe Dirt",
                 text = {
-                    "When you discard a Spade card,",
-                    "this gains {C:chips}+10{}.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "When you discard a {C:attention}Spade{} card,",
+                    "this gains {C:chips}+#2#{} chips."
                 }
             },
             j_kino_karate_kid_1 = {
@@ -163,9 +162,8 @@ return {
             j_kino_muppets_2 = {
                 name = "The Great Muppet Caper",
                 text = {
-                    "Diamonds give between -5 and +35",
-                    "when scored.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "{C:attention}Diamonds{} give between {C:mult}#1#{} and {C:mult}+#2#{} mult",
+                    "when scored."
                 }
             },
             j_kino_party_people = {

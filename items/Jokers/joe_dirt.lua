@@ -3,7 +3,8 @@ SMODS.Joker {
     order = 28,
     config = {
         extra = {
-
+            chips = 0,
+            chips_mod = 10
         }
     },
     rarity = 1,
@@ -16,11 +17,27 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.chips,
+                card.ability.extra.chips_mod
             }
         }
     end,
     calculate = function(self, card, context)
-        -- This gains +10 chips for every Spade discarded.
+        if context.discard and not context.other_card.debuff and context.other_card:is_suit("Spades") then
+            card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chips_mod
+
+            return {
+                message = localize('k_upgrade_ex'),
+                card = self,
+                colour = G.C.CHIPS
+            }
+        end
+
+        if context.joker_main then
+            return {
+                chips = card.ability.extra.chips,
+                message = localize({ type = 'variable', key = 'a_chips', vars = { card.abilit.extra.chips}})
+            }
+        end
     end
 }
