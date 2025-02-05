@@ -14,6 +14,19 @@
 
 -- Director tooltip
 
+-- Get Random hand type (Based on the neutronstarrandomhand function from Cryptid. (Planets.lua - line 830 - 853))
+function get_random_hand()
+    local rand_hand
+    while true do
+        rand_hand = pseudorandom_element(G.handlist, pseudoseed("random"))
+        if G.GAME.hands[rand_hand].visible then
+            break
+        end
+    end
+
+    return rand_hand
+end
+
 ----------------------
 -- COLOURS --
 local genrecolors = loc_colour
