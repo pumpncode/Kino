@@ -22,7 +22,7 @@ return {
                 name = "Elf",
                 text = {
                     "Retrigger all scored",
-                    "2 & 3's."
+                    "{C:attention}2{}'s & {C:attention}3{}'s."
                 }
             },
             j_kino_skyscraper = {
@@ -124,16 +124,16 @@ return {
             j_kino_dickie_roberts = {
                 name = "Dickie Roberts: Child Star",
                 text = {
-                    "Scored {C:attention}Spades{} give +1",
+                    "Scored {C:attention}Spades{} give {C:mult}+1{} mult",
                     "For each {C:attention}Spades{} card in your deck above 13.",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },        
             j_kino_gentlemen_prefer_blondes = {
                 name = "Gentlemen Prefer Blondes",
                 text = {
-                    "Scored {C:attention}Diamonds{} give +1",
-                    "For each {C:attention}Diamonds{} card in your deck above #1#.",
+                    "Scored {C:attention}Diamonds{} {C:mult}+1{} mult",
+                    "For each {C:attention}Diamonds{} card in your deck above 13.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
@@ -217,18 +217,17 @@ return {
             j_kino_the_breakfast_club = {
                 name = "The Breakfast Club",
                 text = {
-                    "Scored Clubs give +1",
-                    "For each Clubs card in your deck above 13.",
-                    -- "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "Scored {C:attention}Clubs{} give {C:mult}+1{} mult",
+                    "For each {C:attention}Clubs{} card in your deck above 13.",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
             },
             j_kino_titanic = {
                 name = "Titanic",
                 text = {
-                    "Scored Hearts give +1",
-                    "For each Hearts card in your deck above 13.",
-                    -- "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+                    "Scored {C:attention}Hearts{} give {C:mult}+1{} mult",
+                    "For each {C:attention}Hearts{} card in your deck above 13.",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                     "NOT YET IMPLEMENTED (NYI)"
                 }
             },
