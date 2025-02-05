@@ -34,15 +34,5 @@ SMODS.Joker {
                 return true
             end
         end
-
-        -- if context.individual and context.cardarea == G.play then
-        --     context.other_card.ability.perma_mult = context.other_card.ability.perma_mult or 0
-        --     context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.extra.perma_mult
-        --     return {
-        --         extra = {message = localize('k_upgrade_ex'), colour = G.C.CHIPS},
-        --         colour = G.C.CHIPS,
-        --         card = self
-        --     }
-        -- end
     end
 }
