@@ -22,5 +22,6 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- High Card gives +8 mult.
+        -- TEST
     end
 }

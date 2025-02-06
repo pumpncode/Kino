@@ -31,5 +31,6 @@ SMODS.Joker {
         --         not context.other_card.debuff and context.other_card.rank == 12 then
         --             if G.deck and G.deck.cards[1].base.id == 11 or G.deck.cards[1].base.id ==  
         --     end
+        -- TEST
     end
 }
