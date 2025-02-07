@@ -235,6 +235,29 @@ return {
                     "When you play a hand, 1/20 chance to",
                     "divide the sell value by 10."
                 }
+            },
+            j_kino_et = {
+                name = "E.T. The Extra-Terrestrial",
+                text = {
+                    "When you play a High Card,",
+                    "create a negative {C:attention}Pluto{}"
+                }
+            },
+            j_kino_home_alone_1 = {
+                name = "Home Alone",
+                text = {
+                    "When you play a {C:attention}High Card{},",
+                    "gain chips equal to its rank.",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
+            j_kino_turner_and_hooch = {
+                name = "Turner & Hooch",
+                text = {
+                    "If your hand is a Pair and",
+                    "contains exactly one face card",
+                    "and one non-face card, {C:mult}+30{} Mult."
+                }
             }
         },
         Other =  {

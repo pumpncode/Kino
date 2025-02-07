@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 15,
     config = {
         extra = {
-
+            mult = 8
         }
     },
     rarity = 1,
@@ -16,12 +16,17 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.mult
             }
         }
     end,
     calculate = function(self, card, context)
-        -- High Card gives +8 mult.
-        -- TEST
+        if context.joker_main then
+            if context.scoring_name == "High Card" then
+                return {
+                    mult_mod = card.ability.extra.mult
+                }
+            end
+        end
     end
 }

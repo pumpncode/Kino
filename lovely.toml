@@ -49,3 +49,26 @@ match_indent = true
 overwrite = false
 
 ###
+
+# Additional Splash functionality
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "if next(find_joker('Splash')) then"
+position = "after"
+payload = '''
+for j=1, #scoring_hand do
+	if scoring_hand[j] == G.play.cards[i] then
+		splash_bonus = false
+	end
+end
+if splash_bonus then
+	print(G.play.cards[i]:get_id() .. "Has Splash Bonus")
+	G.play.cards[i].splash_bonus = true
+	scoring_hand[#scoring_hand + 1] = G.play.cards[i]
+	print(G.play.cards[i].base.name .. " will be set at position " .. #scoring_hand + 1)
+end
+
+print("#############")'''
+match_indent = true
+overwrite = false
