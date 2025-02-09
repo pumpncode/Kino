@@ -25,7 +25,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- When you play a Pair, and it contains 1 face and one non-face, +30 mult.
+        -- When you play a pair of face cards, add the highest rank of numbered card in your hand to this joker's chips.
+        
 
     end
 }

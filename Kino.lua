@@ -9,6 +9,12 @@ SMODS.Atlas {
     py = 95,
     path =  'kino_jokers_1.png'
 }
+SMODS.Atlas {
+    key = "kino_atlas_2",
+    px = 71,
+    py = 95,
+    path =  'kino_jokers_2.png'
+}
 
 SMODS.Atlas {
     key = 'modicon',

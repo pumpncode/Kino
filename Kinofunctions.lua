@@ -27,6 +27,35 @@ function get_random_hand()
     return rand_hand
 end
 
+-- Add a function to trigger jokers when money is spend in the shop (Based on cryptid, exotic.lua, l. 1407-1413)
+local base_ease_dollars = ease_dollars
+function ease_dollars(mod, x)
+    base_ease_dollars(mod, x)
+
+    for i = 1, #G.jokers.cards do 
+        local effects = G.jokers.cards[i]:calculate_joker({kino_ease_dollars = mod})
+    end
+    
+end
+
+-- Add a function to randomize suits for jokers that need that (added to the ancient card functionality)
+local rac = reset_ancient_card
+function reset_ancient_card()
+    rac()
+    if not G.GAME.current_round.kino_thing_card then
+        G.GAME.current_round.kino_thing_card = { suit = "Spades" }
+    end
+
+    local thing_suits = {}
+    for k, v in ipairs({'Spades','Hearts','Clubs','Diamonds'}) do
+        if v ~= G.GAME.current_round.kino_thing_card.suit then thing_suits[#thing_suits + 1] = v end
+    end
+    local thing_card = pseudorandom_element(thing_suits, pseudoseed('thing'..G.GAME.round_resets.ante))
+    G.GAME.current_round.kino_thing_card.suit = thing_card
+
+    print("This is the thing card = " .. G.GAME.current_round.kino_thing_card.suit)
+end
+
 ----------------------
 -- COLOURS --
 local genrecolors = loc_colour

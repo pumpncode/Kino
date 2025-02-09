@@ -258,6 +258,40 @@ return {
                     "contains exactly one face card",
                     "and one non-face card, {C:mult}+30{} Mult."
                 }
+            },
+            j_kino_shopaholic = {
+                name = "Confessions of a Shopaholic",
+                text = {
+                    "Gains {X:mult, C:white}X#1#{} whenever you",
+                    "spend {C:money}$#5#{}. Goes up by {C:money}$#3#{}",
+                    "every time. {C:inactive} (Spend {C:money}#4#{}){}",
+                    "{C:inactive}(Currently {X:mult, C:white}X#2#{})"
+                }
+            },
+            j_kino_big_short = {
+                name = "The Big Short",
+                text = {
+                    "Gain {C:money}$#1#{} for every {C:money}$#2#{}",
+                    "you have. {C:green}#7# in #3#{} chance to double",
+                    "your money instead. {C:green}#5# in #4# chance to",
+                    "set money to {C:money}$0{} instead. (This chance",
+                    "increases by {C:green}#6#{} at the end of every round."
+                }
+            },
+            j_kino_the_thing = {
+                name = "The Thing (1982)",
+                text = {
+                    "Every {V:1}#1#{} counts as every suit,",
+                    "suit changes every round."
+                }
+            },
+            j_kino_beetlejuice_1988 = {
+                name = "Beetlejuice",
+                text = {
+                    "{X:mult, C:white}X#1#{} if the number of times",
+                    "you've played this hand is a multiple",
+                    "of three."
+                }
             }
         },
         Other =  {
