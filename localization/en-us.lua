@@ -292,7 +292,27 @@ return {
                     "you've played this hand is a multiple",
                     "of three."
                 }
+            },
+            j_kino_ed_wood = {
+                name = "Ed Wood",
+                text = {
+                    "If your hand scores less than {C:attention}#1#%{} of",
+                    "the total blind, earn {C:money}$#2#{}"
+                }
             }
+        },
+        Enhanced = {
+            m_kino_sci_fi = {
+                name = "Sci-Fi Card",
+                text = {
+                    "Gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} chips",
+                    "whenever this card gets scored.",
+                    "{C:inactive}(Currently {C:mult}+#3#{} mult and {C:chips}+#4#{} chips)"
+                }
+            }
+        },
+        Consumable = {
+
         },
         Other =  {
             Action = {

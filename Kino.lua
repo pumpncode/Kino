@@ -3,6 +3,7 @@ mod_dir = ''..SMODS.current_mod.path
 -- Kino_config = SMODS.current_mod.config
 -- Kino.enabled = copy_table(Kino_config)
 
+-- Read in all the sprites
 SMODS.Atlas {
     key = "kino_atlas_1",
     px = 71,
@@ -21,6 +22,13 @@ SMODS.Atlas {
     px = 32,
     py = 32,
     path = 'modicon.png'
+}
+
+SMODS.Atlas {
+    key = 'kino_enhancements',
+    px = 71,
+    py = 95,
+    path = 'kino_enhancements.png'
 }
 
 -- Load additional files
@@ -56,6 +64,34 @@ for _, file in ipairs(files) do
         return NFS.load(mod_dir .. "/Items/Jokers/" .. file)()
     end)
     sendDebugMessage("Loaded Joker: " .. file, "--KINO")
+
+    if not status then
+        error(file .. ": " .. err)
+    end
+end
+
+-- Register the Enhancements
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Enhancements")
+for _, file in ipairs(files) do
+    print("Loading file: " .. file)
+    local status, err = pcall(function()
+        return NFS.load(mod_dir .. "/Items/Enhancements/" .. file)()
+    end)
+    sendDebugMessage("Loaded Enhancement: " .. file, "--KINO")
+
+    if not status then
+        error(file .. ": " .. err)
+    end
+end
+
+-- Register the Consumables
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumable")
+for _, file in ipairs(files) do
+    print("Loading file: " .. file)
+    local status, err = pcall(function()
+        return NFS.load(mod_dir .. "Items/Consumable/" .. file)()
+    end)
+    sendDebugMessage("Loaded Consumable: " .. file, "--KINO")
 
     if not status then
         error(file .. ": " .. err)
