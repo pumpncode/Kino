@@ -42,7 +42,6 @@ SMODS.Joker {
                     end
                 end
 
-                print(#enhanced)
                 if #enhanced > 0 then
                     card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod * #enhanced
                     return {

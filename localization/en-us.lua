@@ -299,6 +299,22 @@ return {
                     "If your hand scores less than {C:attention}#1#%{} of",
                     "the total blind, earn {C:money}$#2#{}"
                 }
+            },
+            j_kino_ex_machina = {
+                name = "Ex Machina",
+                text = {
+                    "Gains {X:mult, C:white}X#2#{} when you destroy a {C:attention}Sci-Fi Card{}",
+                    "{C:inactive}(Currently {X:mult, C:white}X#1#{})"
+
+                }
+            },
+            j_kino_iron_man_1 = {
+                name = "Iron Man",
+                text = {
+                    "When your first hand contains only",
+                    "cards of the same suit, upgrade every",
+                    "sci-fi card in your hand."
+                }
             }
         },
         Enhanced = {
@@ -311,7 +327,22 @@ return {
                 }
             }
         },
-        Consumable = {
+        Tarot = {
+            c_kino_droid = {
+                name = "Droid",
+                text = {
+                    "Upgrade #2# cards into sci-fi cards."
+                }
+            },
+
+            c_kino_slasher = {
+                name = "Slasher",
+                text = {
+                    "Upgrade #2# cards into horror cards.",
+                    "HORROR CARDS NOT YET IMPLEMENTED"
+                }
+            }
+
 
         },
         Other =  {

@@ -1,8 +1,8 @@
 SMODS.Consumable {
-    key = "slasher",
+    key = "droid",
     set = "Tarot",
-    order = 1,
-    pos = {x = 0, y = 0},
+    order = 2,
+    pos = {x = 1, y = 0},
     atlas = "kino_tarot",
     config = {
         mod_conv = 'm_kino_sci_fi', 

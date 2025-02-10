@@ -3,31 +3,39 @@ SMODS.Enhancement {
     atlas = "kino_enhancements",
     pos = { x = 0, y = 0},
     config = {
-        extra = {
-            a_mult = 1,
-            a_chips = 5,
-            mult = 0,
-            bonus = 0
-            --
-            --
-            --
-        }
+        a_mult = 1,
+        a_chips = 5,
+        mult = 0,
+        bonus = 0,
+        times_upgraded = 0
     },
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card and card.ability.extra.a_mult or self.config.extra.a_mult,
-                card and card.ability.extra.a_chips or self.config.extra.a_chips,
-                card and card.ability.extra.mult or self.config.extra.mult,
-                card and card.ability.extra.bonus or self.config.extra.bonus
+                card and card.ability.a_mult or self.config.a_mult,
+                card and card.ability.a_chips or self.config.a_chips,
+                card and card.ability.mult or self.config.mult,
+                card and card.ability.bonus or self.config.bonus,
+                card and card.ability.times_upgraded or self.config.times_upgraded
             }
         }
     end,
     calculate = function(self, card, context, effect)
-        if context.cardarea == G.play then
+        print("TESTING - ")
+        if (context.cardarea == G.play and not context.repetition) or context.sci_fi_upgrade then
+
             -- Sets values, as upgrade should happen after scoring
-            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult
-            card.ability.extra.bonus = card.ability.extra.bonus + card.ability.extra.a_chips
+            card.ability.times_upgraded = card.ability.times_upgraded + 1
+            card.ability.mult = card.ability.mult + card.ability.a_mult
+            card.ability.bonus = card.ability.bonus + card.ability.a_chips
+
+            card_eval_status_text(card, 'extra', nil, nil, nil,
+              { message = localize('k_upgrade_ex'), colour = G.C.CHIPS })
         end
     end
+
+    
+    -- upgrade = function()
+    --     print("THIS WORKED. ")
+    -- end
 }
