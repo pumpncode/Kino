@@ -21,8 +21,8 @@ SMODS.Enhancement {
         }
     end,
     calculate = function(self, card, context, effect)
-        if (context.cardarea == G.play and not context.repetition) or context.sci_fi_upgrade then
-            print("was triggered from outside")
+        if (context.main_scoring and context.cardarea == G.play and not context.repetition) or context.sci_fi_upgrade then
+
             local times_to_upgrade = 1
             local wall_e = false
             -- Sets values, as upgrade should happen after scoring
