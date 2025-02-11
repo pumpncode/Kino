@@ -56,6 +56,25 @@ function reset_ancient_card()
     print("This is the thing card = " .. G.GAME.current_round.kino_thing_card.suit)
 end
 
+---- Add Scrap functionality
+function update_scrap(num, is_set)
+    -- num is the number to increment or set the scrap by
+    -- is_set == true will set instead of increment
+    print("UPDATING SCRAP || " .. num)
+    if not G.GAME.current_round.scrap_total then
+        G.GAME.current_round.scrap_total = 0
+        print("No scrap_total found, setting it to 0")
+    end
+
+    if is_set then
+        G.GAME.current_round.scrap_total = num
+        print("is set was true. Setting to " .. num)
+    else
+        G.GAME.current_round.scrap_total = G.GAME.current_round.scrap_total + num
+        print("added " .. num .. ". Total is now " .. G.GAME.current_round.scrap_total)
+    end
+end
+
 ----------------------
 -- COLOURS --
 local genrecolors = loc_colour

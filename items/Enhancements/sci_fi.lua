@@ -21,20 +21,35 @@ SMODS.Enhancement {
         }
     end,
     calculate = function(self, card, context, effect)
-        print("TESTING - ")
         if (context.cardarea == G.play and not context.repetition) or context.sci_fi_upgrade then
-
+            print("was triggered from outside")
+            local times_to_upgrade = 1
+            local wall_e = false
             -- Sets values, as upgrade should happen after scoring
-            card.ability.times_upgraded = card.ability.times_upgraded + 1
-            card.ability.mult = card.ability.mult + card.ability.a_mult
-            card.ability.bonus = card.ability.bonus + card.ability.a_chips
+            if G.GAME.current_round.scrap_total and G.GAME.current_round.scrap_total > 0 and next(find_joker('j_kino_wall_e')) then
+                times_to_upgrade = 1 + G.GAME.current_round.scrap_total
+                wall_e = true
+            end
 
-            card_eval_status_text(card, 'extra', nil, nil, nil,
-              { message = localize('k_upgrade_ex'), colour = G.C.CHIPS })
+            for i = 1, times_to_upgrade do
+                print(i .. " == times to upgrade")
+                card.ability.times_upgraded = card.ability.times_upgraded + 1
+                card.ability.mult = card.ability.mult + card.ability.a_mult
+                card.ability.bonus = card.ability.bonus + card.ability.a_chips
+                G.GAME.current_round.sci_fi_upgrades = G.GAME.current_round.sci_fi_upgrades + 1
+
+                card_eval_status_text(card, 'extra', nil, nil, nil,
+                { message = localize('k_upgrade_ex'), colour = G.C.CHIPS })
+                -- SMODS.calculate_context({upgrading_sci_fi_card = true})
+            end
+
+            if wall_e then
+                update_scrap(0, true)
+            end
         end
     end
 
-    
+
     -- upgrade = function()
     --     print("THIS WORKED. ")
     -- end

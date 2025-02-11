@@ -315,6 +315,22 @@ return {
                     "cards of the same suit, upgrade every",
                     "sci-fi card in your hand."
                 }
+            },
+            j_kino_wall_e = {
+                name = "Wall-E",
+                text = {
+                    "When you discard a steel card, gain 1 scrap.",
+                    "Whenever a Sci-Fi card upgrades, use your scrap to",
+                    "upgrade it again.",
+                    "{C:inactive}{Currently {C:attention}#1#{} scrap{}"
+                }
+            },
+            j_kino_iron_giant = {
+                name = "The Iron Giant",
+                text = {
+                    "Each {C:attention} Sci-Fi Card{} gives {X:mult,C:white} X#1# {},",
+                    "increased by {X:mult,C:white} X#2# {} for each time it's been upgraded."
+                }
             }
         },
         Enhanced = {
@@ -323,7 +339,7 @@ return {
                 text = {
                     "Gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} chips",
                     "whenever this card gets scored.",
-                    "{C:inactive}(Currently {C:mult}+#3#{} mult and {C:chips}+#4#{} chips)"
+                    "{C:inactive}(Upgraded {C:attention}#5#{} times.){}"
                 }
             }
         },
@@ -331,14 +347,14 @@ return {
             c_kino_droid = {
                 name = "Droid",
                 text = {
-                    "Upgrade #2# cards into sci-fi cards."
+                    "Upgrade #1# cards into sci-fi cards."
                 }
             },
 
             c_kino_slasher = {
                 name = "Slasher",
                 text = {
-                    "Upgrade #2# cards into horror cards.",
+                    "Upgrade #1# cards into horror cards.",
                     "HORROR CARDS NOT YET IMPLEMENTED"
                 }
             }

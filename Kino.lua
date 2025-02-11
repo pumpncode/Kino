@@ -69,6 +69,18 @@ function SMODS.current_mod.process_loc_text()
 end
 -- End of adapted code
 
+-- Add Kino mod specific game long globals
+-- Scrap total
+-- Matches Made
+local igo = Game.init_game_object
+Game.init_game_object = function(self)
+    local ret = igo(self)
+    ret.current_round.scrap_total = 0
+    ret.current_round.matches_made = 0
+    ret.current_round.sci_fi_upgrades = 0
+    return ret
+end
+
 -- Register the Jokers
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
 for _, file in ipairs(files) do

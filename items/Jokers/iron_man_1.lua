@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = "iron_man_1",
-    order = 73,
+    order = 81,
     config = {
         extra = {
         }

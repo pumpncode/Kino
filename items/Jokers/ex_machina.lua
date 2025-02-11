@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = "ex_machina",
-    order = 76,
+    order = 84,
     config = {
         extra = {
             xmult = 1,
