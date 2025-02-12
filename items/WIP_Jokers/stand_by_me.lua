@@ -1,6 +1,6 @@
 SMODS.Joker {
-    key = "2001_odyssey",
-    order = 46,
+    key = "stand_by_me",
+    order = 65,
     config = {
         extra = {
             cur_suit = "Hearts"
@@ -8,7 +8,7 @@ SMODS.Joker {
     },
     rarity = 1,
     atlas = "kino_atlas_2",
-    pos = { x = 3, y = 1},
+    pos = { x = 4, y = 4},
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
@@ -21,9 +21,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- Each round, one random suit counts as every suit.
-        -- Needs to be done through lovely inject, both to accept suit type, and current thing.
-        
+        -- when you play your least played hand, +0.1x
 
     end
 }

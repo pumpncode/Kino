@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = "ed_wood",
-    order = 49,
+    order = 54,
     config = {
         extra = {
             blind_piece = 25,

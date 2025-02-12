@@ -1,6 +1,6 @@
 SMODS.Joker {
-    key = "2001_odyssey",
-    order = 46,
+    key = "stripes",
+    order = 69,
     config = {
         extra = {
             cur_suit = "Hearts"
@@ -8,7 +8,7 @@ SMODS.Joker {
     },
     rarity = 1,
     atlas = "kino_atlas_2",
-    pos = { x = 3, y = 1},
+    pos = { x = 2, y = 5},
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
@@ -21,9 +21,9 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- Each round, one random suit counts as every suit.
-        -- Needs to be done through lovely inject, both to accept suit type, and current thing.
-        
+        -- when you buy this, creates a list of requirements.
+        -- when the requirements are met, functions as mr. bones
+        -- except, create new requirements instead of disappearing.
 
     end
 }
