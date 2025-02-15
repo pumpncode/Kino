@@ -3,6 +3,18 @@ version = "1.0.0"
 dump_lua = true
 priority = 0
 
+## Add globals
+[[patches]]
+[patches.pattern]
+target = "main.lua"
+pattern = '''function love.load()'''
+position = "before"
+payload = '''
+Kino = {}
+Kino.jokers = {}
+'''
+match_indent = true
+
 ## Code from (Code adapted from AutumnMood (https://github.com/AutumnMood924/AutumnMoodMechanics/blob/main/amm.lua))
 [[patches]]
 [patches.pattern]

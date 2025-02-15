@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = "mars_attacks",
-    order = 50,
+    order = 55,
     config = {
         extra = {
             cur_suit = "Hearts"

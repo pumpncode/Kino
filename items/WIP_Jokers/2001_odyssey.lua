@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = "2001_odyssey",
-    order = 40,
+    order = 46,
     config = {
         extra = {
             cur_suit = "Hearts"
