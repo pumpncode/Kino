@@ -7,6 +7,90 @@ let jokers = [
   //   image_url: "img/j_joker.png",
   //   rarity: "Common"
   // }
+  {
+    name: "A.I.: Artificial Intelligence",
+    text: [
+      "{C:mult}+1{} mult for every time a",
+      "{C:attention} Sci-fi Card{} has been upgraded."
+    ],
+    image_url: "img/j_kino_ai_artificial.png",
+    rarity: "Common"
+  },
+  {
+  name: "Alien",
+  text: [
+    "{C:green}1 in 100{} chance to destroy all other jokers",
+    "when you play a hand. Scored cards give {X:xmult,C:white}x1.25{}",
+    "and increase those odds by {C:green}1{}.",
+    "Odds reset when you sell a joker."
+    
+  ],
+  image_url: "img/j_kino_alien.png",
+  rarity: "Common"
+  },
+  {
+  name: "Angel Heart",
+  text: [
+    "The next {C:hearts}Hearts{} scored gives {C:mult}+1{} mult,",
+    "then doubles the mult this joker gives.",
+    "Resets at the end of the round."
+    
+  ],
+  image_url: "img/j_kino_angel_heart.png",
+  rarity: "Rare"
+  },
+  {
+  name: "Batman (1989)",
+  text: [
+    "This joker gains {C:mult}+3{} mult for each",
+    "open Joker slot or other Batman joker at the",
+    "end of round."
+    
+  ],
+  image_url: "img/j_kino_batman_1989.png",
+  rarity: "Common"
+  },
+  {
+  name: "Batman & Robin",
+  text: [
+    "When you play a {C:attention}Pair{}, upgrade scored cards with",
+    "{C:mult}+3{} mult for each open Joker slot or other Batman joker."
+    
+  ],
+  image_url: "img/j_kino_batman_and_robin.png",
+  rarity: "Common"
+  },
+  {
+  name: "Beetlejuice",
+  text: [
+    "{X:xmult,C:white}x3 mult{} if you've played this hand",
+    "a multiple of 3 times."
+    
+  ],
+  image_url: "img/j_kino_beetlejuice.png",
+  rarity: "Common"
+  },
+  {
+    name: "Nosferatu (1927)",
+    text: [
+      "This Joker gains {C:mult}+2{} Mult",
+      "per scoring {C:attention}Enhanced card{} played,",
+      "removes card {C:attention}Enhancement{}.",
+      "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+    ],
+    image_url: "img/j_kino_nosferatu_1.png",
+    rarity: "Common"
+  },
+  {
+    name: "Casablanca",
+    text: [
+      "Each played {C:attention}Spade{} or {C:attention}Club{}",
+      "gives {C:chips}+10{} Chips and",
+      "{C:mult}+2{} Mult when scored"
+    ],
+    image_url: "img/j_kino_casablanca.png",
+    rarity: "Common"
+  }
 ]
 
 // works the same. 

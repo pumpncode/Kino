@@ -44,6 +44,15 @@ SMODS.Atlas {
     path = 'kino_enhancements.png'
 }
 
+-- DO NOT DISTRIBUTE WITH THIS IN HERE
+local helper, load_error = SMODS.load_file("/docs/createjokerfiles_ds.lua")
+if load_error then
+  sendDebugMessage ("The error is: "..load_error)
+else
+  helper()
+end
+
+
 -- Load additional files
 local helper, load_error = SMODS.load_file("Kinofunctions.lua")
 if load_error then
