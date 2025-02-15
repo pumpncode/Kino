@@ -3,7 +3,8 @@ SMODS.Joker {
     order = 87,
     config = {
         extra = {
-            chips = 10
+            chips = 10,
+            total = 0
         }
     },
     rarity = 1,
@@ -19,7 +20,8 @@ SMODS.Joker {
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.chips
+                card.ability.extra.chips,
+                card.ability.extra.total
             }
         }
     end,
@@ -33,11 +35,12 @@ SMODS.Joker {
                     sci_count = sci_count + 1
                 end
             end
+            card.ability.extra.total = sci_count
         end
 
         if context.joker_main then
             return {
-                chips = 10
+                chips = card.ability.extra.total * card.ability.extra.chips
             }
         end
     end
