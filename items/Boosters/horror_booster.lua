@@ -10,7 +10,7 @@ SMODS.Booster {
     },
     cost = 4,
     order = 1,
-    weight = 1000,
+    weight = 1,
     unlocked = true,
     discovered = true,
     create_card = function(self, card)

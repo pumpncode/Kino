@@ -12,5 +12,7 @@ SMODS.Booster {
     weight = 1,
     unlocked = true,
     discovered = true,
-    in_pool = "Action"
+    create_card = function(self, card)
+        return create_card("Action", G.pack_cards, nil, nil, true, true, nil, nil)
+    end
 }
