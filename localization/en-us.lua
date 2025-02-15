@@ -50,6 +50,13 @@ return {
                     "of three."
                 }
             },
+            j_kino_benjamin_button = {
+                name = "The Curious Case of Benjamin Button",
+                text = {
+                    "After a hand is played, decrease",
+                    "the rank of every scored card."
+                }
+            },
             j_kino_big_short = {
                 name = "The Big Short",
                 text = {
@@ -107,6 +114,15 @@ return {
                     "Scored {C:attention}Spades{} give {C:mult}+1{} mult",
                     "For each {C:attention}Spades{} card in your deck above 13.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+                }
+            },
+            j_kino_dr_strangelove = {
+                name = "Dr. Strangelove",
+                text = {
+                    "{C:inactive}or How I Learned to Stop Worrying and Love the Bomb{}",
+                    "When you play {C:attention}#1#{}, blow up your hand",
+                    "and your score (by {X:mult,C:white}X#2#{}.)",
+                    "{C:inactive}(Hand type changes every round.){}"
                 }
             },
             j_kino_ed_wood = {
@@ -287,6 +303,21 @@ return {
                 name = "Piranha 2: The Spawning",
                 text = {
                     "{C:mult}+#1#{} mult when you play a {C:attention}High Card{}."
+                }
+            },
+            j_kino_predator = {
+                name = "Predator",
+                text = {
+                    "A card in your opening hand {C:attention}secretly{}",
+                    "becomes a {C:attention}Predator{} for this round.",
+                    "The {C:attention}Predator{} gives {X:mult,C:white}X#2#{} when scored."
+                }
+            },
+            j_kino_princess_bride = {
+                name = "The Princess Bride",
+                text = {
+                    "If your hand contains a scoring {C:hearts}Hearts{}",
+                    "draw {C:attention}#1# cards{}."
                 }
             },
             j_kino_psycho = {

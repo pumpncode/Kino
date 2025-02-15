@@ -3,7 +3,9 @@ SMODS.Joker {
     order = 97,
     config = {
         extra = {
-
+            current_best_hand = 0,
+            mult = 0,
+            a_mult = 1
         }
     },
     rarity = 1,
