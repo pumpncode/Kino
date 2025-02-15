@@ -16,10 +16,13 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
+                G.GAME.current_round.kino_cmifc_rank
             }
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- Upon start, generate a random rank.
+        -- All cards of rank N count as any rank.
+        -- NEEDS LOVELY INJECT
     end
 }

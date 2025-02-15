@@ -3,7 +3,6 @@ SMODS.Joker {
     order = 68,
     config = {
         extra = {
-            cur_suit = "Hearts"
         }
     },
     rarity = 1,
@@ -16,14 +15,12 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.cur_suit
             }
         }
     end,
     calculate = function(self, card, context)
-        -- when you buy this, creates a list of requirements.
-        -- when the requirements are met, functions as mr. bones
-        -- except, create new requirements instead of disappearing.
+        -- +1 when you remove a card from your deck. 
+        -- +5 if it was enhanced.
 
     end
 }

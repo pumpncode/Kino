@@ -20,6 +20,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- Cards that started in your deck give +3 mult.
     end
 }

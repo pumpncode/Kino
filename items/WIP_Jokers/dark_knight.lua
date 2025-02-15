@@ -20,6 +20,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- When you select a blind, destroy all JOKERS
+        -- Gain x0.5 per joker destroyed.
+        -- Can't destroy batman jokers.
     end
 }

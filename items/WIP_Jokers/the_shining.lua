@@ -19,7 +19,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- +10 mult for each jack you've drawn this round
 
     end
 }

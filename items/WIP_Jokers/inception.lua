@@ -20,6 +20,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- blueprint-esque
     end
 }

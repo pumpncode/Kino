@@ -3,7 +3,6 @@ SMODS.Joker {
     order = 57,
     config = {
         extra = {
-            cur_suit = "Hearts"
         }
     },
     rarity = 1,
@@ -16,12 +15,11 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.cur_suit
             }
         }
     end,
     calculate = function(self, card, context)
-        -- When you select a blind, destroy every planet you have, then upgrade 4 of a kind for each planet destroyed.
+        -- Create Chocolate confections. (Chocolate increases their values by +1)
 
     end
 }

@@ -19,7 +19,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- Each round, choose a random hand type.
+        -- If you play this hand type: BLOW IT UP (x5 and destroy all cards played and in hand.)
 
     end
 }

@@ -56,6 +56,16 @@ function reset_ancient_card()
     print("This is the thing card = " .. G.GAME.current_round.kino_thing_card.suit)
 end
 
+-- Catch me if you can, select random rank
+function generate_cmifc_rank()
+    if not G.GAME.current_round.kino_cmifc_rank then
+        G.GAME.current_round.kino_cmifc_rank = 2
+    end
+
+    local ranks = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+    G.GAME.current_round.kino_cmifc_rank = pseudorandom_element(ranks, "cmifc")
+end
+
 ---- Add Scrap functionality
 function update_scrap(num, is_set)
     -- num is the number to increment or set the scrap by
@@ -82,25 +92,27 @@ function loc_colour(_c, _default)
     if not G.ARGS.LOC_COLOURS then
         genrecolors()
     end
-    G.ARGS.LOC_COLOURS["action"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["animation"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["christmas"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["crime"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["drama"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["fantasy"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["gangster"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["heist"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["historical"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["horror"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["musical"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["romance"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["scifi"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["silent"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["sports"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["superhero"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["thriller"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["war"] = HEX("0086a5")
-    G.ARGS.LOC_COLOURS["western"] = HEX("0086a5")
+    G.ARGS.LOC_COLOURS["Action"] = HEX("0a4a59")
+    G.ARGS.LOC_COLOURS["Animation"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Comedy"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Christmas"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Crime"] = HEX("6a4c47") 
+    G.ARGS.LOC_COLOURS["Drama"] = HEX("694c77")
+    G.ARGS.LOC_COLOURS["Family"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Fantasy"] = HEX("087ad9")
+    G.ARGS.LOC_COLOURS["Gangster"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Heist"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Historical"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Horror"] = HEX("372a2d")
+    G.ARGS.LOC_COLOURS["Musical"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Romance"] = HEX("c8117d") 
+    G.ARGS.LOC_COLOURS["Sci-fi"] = HEX("1eddd4")
+    G.ARGS.LOC_COLOURS["Silent"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Sports"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Superhero"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Thriller"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["War"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Western"] = HEX("0086a5") -- No color picked yet
 
     return genrecolors(_c, _default)
 end

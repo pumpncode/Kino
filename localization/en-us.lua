@@ -322,7 +322,7 @@ return {
                     "When you discard a steel card, gain 1 scrap.",
                     "Whenever a Sci-Fi card upgrades, use your scrap to",
                     "upgrade it again.",
-                    "{C:inactive}{Currently {C:attention}#1#{} scrap{}"
+                    "{C:inactive}(Currently {C:attention}#1#{} scrap){}"
                 }
             },
             j_kino_iron_giant = {
@@ -330,6 +330,41 @@ return {
                 text = {
                     "Each {C:attention} Sci-Fi Card{} gives {X:mult,C:white} X#1# {},",
                     "increased by {X:mult,C:white} X#2# {} for each time it's been upgraded."
+                }
+            },
+            j_kino_terror_train = {
+                name = "Terror Train",
+                text = {
+                    "Each scored card has a {C:green}#2# in #1#{} chance",
+                    "to {C:attention}Jump Scare{}. Whenever you play a",
+                    "{C:attention}High Card{}, this chance increases by #3#."
+                }
+            },
+            j_kino_scream_1 = {
+                name = "Scream",
+                text = {
+                    "Gains {C:mult}+#2#{} Mult for every {C:Horror}Horror{}",
+                    "joker you have at the end of round.",
+                    "Loses value equal to the mult gained.",
+                    "{C:inactive}(Currently {C:mult}+#1#{} Mult){}"
+                }
+            },
+            j_kino_krazy_house = {
+                name = "Krazy House",
+                text = {
+                    "Gives {X:mult, C:white} x#1#{}.",
+                    "When you play a {C:attention}Full House{}, randomize",
+                    "the {X:mult,C:white} x mult{} between {X:mult, C:white} x #4#{} & {X:mult, C:white} x #5#{}",
+                    "and increases the range by {X:mult,C:white}#5#{}"
+                }
+            },
+            j_kino_alien_1 = {
+                name = "Alien",
+                text = {
+                    "After a hand is scored, {C:green}#1# in #3#{} chance",
+                    "to destroy all other jokers. When a card is",
+                    "scored, it gives {X:mult,C:white}x#4#{} and increases",
+                    "the destroy chance by {C:green}#2#{}."
                 }
             }
         },
@@ -362,18 +397,57 @@ return {
 
         },
         Other =  {
-            Action = {
+            -- Booster packs
+            p_kino_horror_booster = {
+                name = "Horror Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Horror Jokers{}",
+                },
+            },
+            p_kino_action_booster = {
+                name = "Horror Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Action Jokers{}",
+                },
+            },
+            p_kino_sci_fi_booster = {
+                name = "Sci-fi Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Sci-fi Jokers{}",
+                },
+            },
+            -- Genres
+            genre_1 = {
                 name = "Genre",
                 text = {
-                    "{X:action,C:white}Action{}"
+                    "{X:#1#,C:white}#1#{}"
                 }
             },
-            Animation = {
-                name = "Genre",
+            genre_2 = {
+                name = "Genres",
                 text = {
-                    "{X:animation,C:white}Animation{}"
+                    "{X:#1#,C:white}#1#", 
+                    "{X:#2#,C:white}#2#"
+                }
+            },
+            genre_3 = {
+                name = "Genres",
+                text = {
+                    "{X:#1#,C:white}#1#", 
+                    "{X:#2#,C:white}#2#",
+                    "{X:#3#,C:white}#3#"
                 }
             }
         }
     },
+    misc = {
+        dictionary = {
+            horror_booster = "Horror Joker",
+            action_booster = "Action Joker",
+            sci_fi_booster = "Sci-fi Joker"
+        }
+    }
 }

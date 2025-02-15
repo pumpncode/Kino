@@ -20,6 +20,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- +1 mult for every time you've played a hand that set a new high score this run.
     end
 }

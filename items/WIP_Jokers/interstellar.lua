@@ -20,6 +20,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- When you use a planet, it doesn't trigger.
+        -- Instead, add a counter to this Joker
+        -- Then, when you sell this joker, upgrade your most played hand that many times.
     end
 }

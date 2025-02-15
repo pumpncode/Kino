@@ -19,7 +19,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- DNA, but gives random enhancement.
+        -- ???
 
     end
 }

@@ -19,7 +19,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- "A little off the top"
+        -- When you play a card, lower its chips by 3 and gain +3 chips.
 
     end
 }

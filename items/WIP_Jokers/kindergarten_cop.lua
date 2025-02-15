@@ -21,9 +21,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- when you buy this, creates a list of requirements.
-        -- when the requirements are met, functions as mr. bones
-        -- except, create new requirements instead of disappearing.
+        -- +1 chips whenever a card below 5 gets scored.
 
     end
 }
