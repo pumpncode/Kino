@@ -14,11 +14,6 @@ SMODS.Joker {
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Sci-fi"},
-    -- pools = function(self)
-    --     local _pools = {}
-    --     for i, genre in ipairs(self.k_genre) do
-    --         _pools[i].
-    --     end
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
