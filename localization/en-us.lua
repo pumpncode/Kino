@@ -608,7 +608,8 @@ return {
             k_sacrifice = "Sacrifices Will Be Made",
             k_summoned_ex = "Summoned",
             k_longlegs_ex = "Captured",
-            k_ghost_rider_1 = "Vengeance!"
+            k_ghost_rider_1 = "Vengeance!",
+            k_jump_scare = "Boo!"
         }
     }
 }
