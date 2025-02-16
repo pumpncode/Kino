@@ -19,7 +19,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- DNA, but gives random enhancement.
+        -- When you play 2 Pair, add a copy of a random scored card to your hand.
+        
 
     end
 }

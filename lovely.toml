@@ -111,3 +111,32 @@ end
 '''
 match_indent = true
 overwrite = false
+
+
+# Demonic Card patches
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "local cards_destroyed = {}"
+position = "after"
+payload = '''
+local has_demonic_card = false
+
+for i = 1, #scoring_hand do
+	if SMODS.has_enhancement(scoring_hand[i], 'm_kino_demonic') and not scoring_hand[i].debuff then
+		has_demonic_card = true
+	end
+end
+
+for i = 1, #scoring_hand do
+	if has_demonic_card and not SMODS.has_enhancement(scoring_hand[i], 'm_kino_demonic') then
+		cards_destroyed[#cards_destroyed + 1] = scoring_hand[i]
+		G.GAME.current_round.sacrifices_made = G.GAME.current_round.sacrifices_made + 1
+		scoring_hand[i].destroyed = true
+	end
+end
+
+
+'''
+match_indent = true
+overwrite = false

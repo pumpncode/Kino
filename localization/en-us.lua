@@ -167,6 +167,23 @@ return {
                     "For each {C:attention}Diamonds{} card in your deck above 13.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
+            },
+            j_kino_ghost_rider_1 = {
+                name = "Ghost Rider",
+                text = {
+                    "Destroy a random {C:attention}Demonic card{}",
+                    "in your hand, and gain {X:mult,C:white}X#2#{} mult.",
+                    "{C:inactive}(Currently {X:mult,C:white}X#1#{} mult.){}"
+                }
+            },
+            j_kino_ghoulies = {
+                name = "Ghoulies",
+                text = {
+                    "When you perform the dark ritual of",
+                    "playing a {C:attention}#1#{}, summon a",
+                    "random {C:attention}Demonic 2{} to your hand.",
+                    "{C:inactive}(Ritual changes when performed.){}"
+                }
             },            
             j_kino_home_alone_1 = {
                 name = "Home Alone",
@@ -231,6 +248,14 @@ return {
                     "a Boss Blind",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
             },
+            j_kino_longlegs = {
+                name = "longlegs",
+                text = {
+                    "{X:mult,C:white}X3{} Mult.",
+                    "Set your current chips to 0 and ",
+                    "debuff this joker if Longleg's Secret Partner is scored."
+                }
+            },
             j_kino_matrix = {
                 name = "The Matrix",
                 text = {
@@ -285,6 +310,14 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 },
             },
+            j_kino_omen = {
+                name = "The Omen",
+                text = {
+                    "{C:chips}+#1#{} chips if you've made",
+                    "at least {C:attention}#2#{} sacrifices.",
+                    "{C:inactive}(Currently: {C:attention}#3#{} sacrifices made.){}"
+                }
+            },
             j_kino_party_people = {
                 name = "24 Hour Party People",
                 text = {
@@ -303,6 +336,13 @@ return {
                 name = "Piranha 2: The Spawning",
                 text = {
                     "{C:mult}+#1#{} mult when you play a {C:attention}High Card{}."
+                }
+            },
+            j_kino_poltergeist = {
+                name = "Poltergeist",
+                text = {
+                    "Each {C:attention}Demonic{} card held ",
+                    "in hand gives {X:mult,C:white}X1.5{} Mult."
                 }
             },
             j_kino_predator = {
@@ -383,6 +423,14 @@ return {
                 text = {
                     "If you play a {C:attention}Straight{},",
                     "create a Hangman."
+                }
+            },
+            j_kino_stripes = {
+                name = "Stripes",
+                text = {
+                    "{C:mult}+#2#{} mult when you draw a card.",
+                    "{C:mult}-#2#{} mult when you discard a card.",
+                    "{C:inactive}(Currently: {C:mult}+#1#{} mult.){}"
                 }
             },
             j_kino_terror_train = {
@@ -471,21 +519,35 @@ return {
                     "whenever this card gets scored.",
                     "{C:inactive}(Upgraded {C:attention}#5#{} times.){}"
                 }
+            },
+            m_kino_demonic = {
+                name = "Demonic Card",
+                text = {
+                    "{X:mult,C:white}X3{} when scored. Sacrifices",
+                    "all scored non-Demon cards."
+                }
             }
         },
         Tarot = {
             c_kino_droid = {
                 name = "Droid",
                 text = {
-                    "Upgrade #1# cards into sci-fi cards."
+                    "Upgrade #1# cards into {C:attention}Sci-fi Cards{}."
                 }
             },
 
             c_kino_slasher = {
                 name = "Slasher",
                 text = {
-                    "Upgrade #1# cards into horror cards.",
-                    "HORROR CARDS NOT YET IMPLEMENTED"
+                    "Upgrade #1# cards into {C:attention}Horror cards{}.",
+                    "NYI"
+                }
+            },
+
+            c_kino_demon = {
+                name = "Demon",
+                text = {
+                    "Upgrade #1# cards into a {C:attention}Demonic Card{}."
                 }
             }
 
@@ -542,7 +604,11 @@ return {
         dictionary = {
             horror_booster = "Horror Joker",
             action_booster = "Action Joker",
-            sci_fi_booster = "Sci-fi Joker"
+            sci_fi_booster = "Sci-fi Joker",
+            k_sacrifice = "Sacrifices Will Be Made",
+            k_summoned_ex = "Summoned",
+            k_longlegs_ex = "Captured",
+            k_ghost_rider_1 = "Vengeance!"
         }
     }
 }

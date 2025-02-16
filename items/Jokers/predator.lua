@@ -29,12 +29,7 @@ SMODS.Joker {
         -- Turn one of the cards in your opening hand into a hidden predator card.
         -- Gives x3 when triggered.
         if context.first_hand_drawn and card.ability.extra.predator_card == nil and not context.blueprint then
-           -- iterate over hand, pick predator
-           print("Setting predator card:")
-           print(#context.hand_drawn)
            card.ability.extra.predator_card = pseudorandom_element(context.hand_drawn)
-           print(card.ability.extra.predator_card.rank)
-           print(card.ability.extra.predator_card.suit) 
         end
 
         if context.individual and context.other_card == card.ability.extra.predator_card and

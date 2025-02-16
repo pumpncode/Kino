@@ -37,11 +37,16 @@ for i, genre in ipairs(kino_genres) do
         inject = function(self)
             SMODS.ObjectType.inject(self)
             for i, v in ipairs(Kino.jokers) do
-                for j, genre_in_list in ipairs(SMODS.Centers[v].k_genre) do
-                    if genre_in_list == genre then
-                        self.cards[v] = true
+                print(v)
+                if SMODS.Centers[v].k_genre then
+                    for j, genre_in_list in ipairs(SMODS.Centers[v].k_genre) do
+                        if genre_in_list == genre then
+                            self.cards[v] = true
+                        end
                     end
-                end
+                else
+                    print(v)
+                end    
             end
             print(#self.cards .. " is size of cards for " .. self.key)
         end
