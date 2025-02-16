@@ -256,7 +256,7 @@ return {
                     "debuff this joker if Longleg's Secret Partner is scored."
                 }
             },
-            j_kino_matrix = {
+            j_kino_matrix_1 = {
                 name = "The Matrix",
                 text = {
                     "{C:chips}+#1#{} chips for every {C:attention}Sci-fi card{}",
@@ -369,7 +369,7 @@ return {
                     "NYI"
                 }
             },
-            j_kino_robocop_1 = {
+            j_kino_robocop = {
                 name = "Robocop",
                 text = {
                     "When a {C:attention}High Card{} is played",
