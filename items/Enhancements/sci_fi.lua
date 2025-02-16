@@ -48,9 +48,4 @@ SMODS.Enhancement {
             end
         end
     end
-
-
-    -- upgrade = function()
-    --     print("THIS WORKED. ")
-    -- end
 }

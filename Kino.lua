@@ -106,6 +106,7 @@ Game.init_game_object = function(self)
     ret.current_round.scrap_total = 0
     ret.current_round.matches_made = 0
     ret.current_round.sci_fi_upgrades = 0
+    ret.current_round.sacrifices_made = 0
     -- generate_cmifc_rank()
     return ret
 end
@@ -176,9 +177,5 @@ if load_error then
     else
     helper()
 end
-
-print(G.P_CENTERS.j_mr_bones)
-print(G.P_CENTERS.j_kino_casablanca)
-print(SMODS.Centers.j_kino_casablanca)
 
 kino_genre_init()
