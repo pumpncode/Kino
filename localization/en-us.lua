@@ -576,6 +576,13 @@ return {
                     "up to {C:attention}#2# Sci-fi Jokers{}",
                 },
             },
+            p_kino_comedy_booster = {
+                name = "Comedy Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Comedy Jokers{}",
+                }
+            },
             -- Genres
             genre_1 = {
                 name = "Genre",
@@ -597,14 +604,29 @@ return {
                     "{X:#2#,C:white}#2#",
                     "{X:#3#,C:white}#3#"
                 }
-            }
+            },
+
+            -- Consumable Types
+            undiscovered_confection = {
+                name = 'Not Discovered',
+                text = {
+                    'Purchase or use',
+                    'this card in an',
+                    'unseeded run to',
+                    'learn what it does'
+                }
+            },
         }
     },
     misc = {
         dictionary = {
+            k_confection = "Confection",
+            b_confection_cards = "Confection Cards",
+
             horror_booster = "Horror Joker",
             action_booster = "Action Joker",
             sci_fi_booster = "Sci-fi Joker",
+            comedy_booster = "Comedy Joker",
             k_sacrifice = "Sacrifices Will Be Made",
             k_summoned_ex = "Summoned",
             k_longlegs_ex = "Captured",

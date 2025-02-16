@@ -57,6 +57,15 @@ SMODS.Atlas {
     path = 'kino_boosters.png'
 }
 
+SMODS.Atlas {
+    key = 'kino_confections',
+    px = 71,
+    py = 95,
+    path = 'kino_confections.png'
+}
+
+
+
 -- Load additional files
 local helper, load_error = SMODS.load_file("Kinofunctions.lua")
 if load_error then
@@ -142,12 +151,27 @@ for _, file in ipairs(files) do
     end
 end
 
--- Register the Consumables
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumable")
+-- Register the Consumable Types
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumable_types")
 for _, file in ipairs(files) do
     print("Loading file: " .. file)
     local status, err = pcall(function()
-        return NFS.load(mod_dir .. "Items/Consumable/" .. file)()
+        return NFS.load(mod_dir .. "Items/Consumable_types/" .. file)()
+    end)
+    sendDebugMessage("Loaded Consumable: " .. file, "--KINO")
+
+    if not status then
+        error(file .. ": " .. err)
+    end
+end
+
+
+-- Register the Consumables
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumables")
+for _, file in ipairs(files) do
+    print("Loading file: " .. file)
+    local status, err = pcall(function()
+        return NFS.load(mod_dir .. "Items/Consumables/" .. file)()
     end)
     sendDebugMessage("Loaded Consumable: " .. file, "--KINO")
 
@@ -179,3 +203,4 @@ if load_error then
 end
 
 kino_genre_init()
+
