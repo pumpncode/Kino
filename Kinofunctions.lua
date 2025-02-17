@@ -85,6 +85,23 @@ function update_scrap(num, is_set)
     end
 end
 
+---- Add Matchmaking functionality
+function update_matches(num, is_set)
+    -- num is the number to increment or set the scrap by
+    -- is_set == true will set instead of increment
+    if not G.GAME.current_round.matchmade_total then
+        G.GAME.current_round.matchmade_total = 0
+
+    end
+
+    if is_set then
+        G.GAME.current_round.matchmade_total = num
+    else
+        G.GAME.current_round.matchmade_total = G.GAME.current_round.matchmade_total + num
+    end
+end
+
+
 -- Booster:Set_cost hook for oceans_11	
 local b_sc = Card.set_cost
 function Card:set_cost()

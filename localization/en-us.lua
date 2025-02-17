@@ -1,6 +1,15 @@
 return {
     descriptions = {
         Joker = {
+            j_kino_10_things_i_hate_about_you = {
+                name = "10 Things I Hate About You",
+                text = {
+                    "When your hand contains only",
+                    "one scoring {C:attention}Romance Card{}",
+                    "turn another random",
+                    "scoring card into a {C:attention}Romance Card{}"
+                }
+            },
             j_kino_ai_artificial = {
                 name = "A.I.: Artificial Intelligence",
                 text = {
@@ -24,6 +33,13 @@ return {
                     "Each scored {C:attention}Heart{} gives {C:mult}#2#{}, then",
                     "doubles the mult given.",
                     "Resets at the end of Round."
+                }
+            },
+            j_kino_anora = {
+                name = "Anora",
+                text = {
+                    "When you {C:attention}make a match{}",
+                    "earn {C:money}$#1#{}"
                 }
             },
             j_kino_batman_1989 = {
@@ -65,6 +81,17 @@ return {
                     "your money instead. {C:green}#5# in #4# chance to",
                     "set money to {C:money}$0{} instead. (This chance",
                     "increases by {C:green}#6#{} at the end of every round."
+                }
+            },
+            j_kino_blade_1 = {
+                name = "Blade",
+                text = {
+                    "When {C:attention}Blind{} is selected",
+                    "destroy the Joker to the right if",
+                    "it's {C:attention}Vampiric{}.",
+                    "Gain all it's upgrades",
+                    "{C:inactive}(Currently: {C:chips}+#3#{} chips, {C:mult}+#4#{} mult{}",
+                    "{C:inactive}(Currently: {X:chipsC:white}X#2#{} chips, {X:mult,C:white}X#1#{} mult{}"
                 }
             },
             j_kino_braveheart = {
@@ -340,6 +367,16 @@ return {
                     "{C:inactive}(Currently: {C:attention}#3#{} sacrifices made.){}"
                 }
             },
+            j_kino_only_lovers_left_alive = {
+                name = "Only Lovers Left Alive",
+                text = {
+                    "If you play a {C:attention}Pair{}",
+                    "and both are {C:attention}Romance Cards{}",
+                    "destroy them and gain {X:mult,C:white}X#2#{}",
+                    "per card destroyed.",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{}){}"
+                }
+            },
             j_kino_oceans_11 = {
                 name = "Ocean's 11 (2001)",
                 text = {
@@ -542,6 +579,17 @@ return {
                     "{C:inactive}(Evidence: {C:attention}#2#{}){}"
                 }
             },
+            j_kino_twilight_1 = {
+                name = "Twilight",
+                text = {
+                    "Drain the {C:attention}Enhancement{} from",
+                    "any non-romance cards played.",
+                    "{C:attention}Romance Cards{} have an",
+                    "additional {X:legendary,C:white}X#2#{} when they trigger",
+                    "for each card drained",
+                    "{C:inactive}(Currently: {X:legendary,C:white}X#1#{}){}"
+                }
+            },
             j_kino_wall_e = {
                 name = "Wall-E",
                 text = {
@@ -575,7 +623,8 @@ return {
                     "Destroys itself if", 
                     "you {C:attention}discard{}"
                 }
-            }
+            },
+
         },
         Enhanced = {
             m_kino_sci_fi = {
@@ -591,6 +640,15 @@ return {
                 text = {
                     "{X:mult,C:white}X3{} when scored. Sacrifices",
                     "all scored non-Demon cards."
+                }
+            },
+            m_kino_romance = {
+                name = "Romance Card",
+                text = {
+                    "If a played hand contains",
+                    "2 scoring {C:attention}Romance Cards{}",
+                    "The first will give {X:chips,C:white}X#1#{} chips",
+                    "and the second {X:mult,C:white}X#2#{} mult"
                 }
             }
         },
@@ -613,7 +671,15 @@ return {
             c_kino_demon = {
                 name = "Demon",
                 text = {
-                    "Upgrade #1# cards into a {C:attention}Demonic Card{}."
+                    "Upgrade #1# cards into",
+                    "a {C:attention}Demonic Card{}."
+                }
+            },
+            c_kino_meetcute = {
+                name = "Meetcute",
+                text = {
+                    "Upgrade #1# cards into",
+                    "{C:attention}Romance Cards{}"
                 }
             }
 
@@ -694,9 +760,13 @@ return {
             sci_fi_booster = "Sci-fi Joker",
             comedy_booster = "Comedy Joker",
             k_sacrifice = "Sacrifices Will Be Made",
+            k_romance_match_ex = "Hey there ;)",
             k_summoned_ex = "Summoned",
             k_longlegs_ex = "Captured",
-            k_ghost_rider_1 = "Vengeance!"
+            k_ghost_rider_1 = "Vengeance!",
+            k_blade_ex = "Vampire Killed",
+            k_narrated_ex = "And then they played the #1#",
+            k_10_things_ex = "Flirted With"
         }
     }
 }
