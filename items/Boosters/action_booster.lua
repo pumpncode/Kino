@@ -2,6 +2,7 @@ SMODS.Booster {
     key = "action_booster",
     kind = "Joker",
     atlas = "kino_boosters",
+    group_key = "action_booster",
     pos = {x = 0, y = 1},
     config = {
         extra = 3,

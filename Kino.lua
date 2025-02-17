@@ -57,6 +57,15 @@ SMODS.Atlas {
     path = 'kino_boosters.png'
 }
 
+SMODS.Atlas {
+    key = 'kino_confections',
+    px = 71,
+    py = 95,
+    path = 'kino_confections.png'
+}
+
+
+
 -- Load additional files
 local helper, load_error = SMODS.load_file("Kinofunctions.lua")
 if load_error then
@@ -112,62 +121,57 @@ Game.init_game_object = function(self)
 end
 
 -- Register the Jokers
+-- local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
+-- for _, file in ipairs(files) do
+--     print("Loading file: " .. file)
+--     local status, err = pcall(function()
+--         return NFS.load(mod_dir .. "/Items/Jokers/" .. file)()
+--     end)
+--     sendDebugMessage("Loaded Joker: " .. file, "--KINO")
+
+--     local string = string.sub(file, 1, #file-4)
+--     Kino.jokers[#Kino.jokers + 1] = "j_kino_" .. string
+
+--     if not status then
+--         error(file .. ": " .. err)
+--     end
+-- end
+
+
+
+-- Register the Jokers
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
 for _, file in ipairs(files) do
-    print("Loading file: " .. file)
-    local status, err = pcall(function()
-        return NFS.load(mod_dir .. "/Items/Jokers/" .. file)()
-    end)
-    sendDebugMessage("Loaded Joker: " .. file, "--KINO")
+    assert(SMODS.load_file("Items/Jokers/" .. file))()
 
     local string = string.sub(file, 1, #file-4)
     Kino.jokers[#Kino.jokers + 1] = "j_kino_" .. string
 
-    if not status then
-        error(file .. ": " .. err)
-    end
 end
 
 -- Register the Enhancements
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Enhancements")
 for _, file in ipairs(files) do
-    print("Loading file: " .. file)
-    local status, err = pcall(function()
-        return NFS.load(mod_dir .. "/Items/Enhancements/" .. file)()
-    end)
-    sendDebugMessage("Loaded Enhancement: " .. file, "--KINO")
-
-    if not status then
-        error(file .. ": " .. err)
-    end
+    assert(SMODS.load_file("Items/Enhancements/" .. file))()
 end
 
--- Register the Consumables
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumable")
+-- Register the Consumable Types
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumable_types")
 for _, file in ipairs(files) do
-    print("Loading file: " .. file)
-    local status, err = pcall(function()
-        return NFS.load(mod_dir .. "Items/Consumable/" .. file)()
-    end)
-    sendDebugMessage("Loaded Consumable: " .. file, "--KINO")
+    assert(SMODS.load_file("Items/Consumable_types/" .. file))()
+end
 
-    if not status then
-        error(file .. ": " .. err)
-    end
+
+-- Register the Consumables
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumables")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Consumables/" .. file))()
 end
 
 -- Register the Boosters
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Boosters")
 for _, file in ipairs(files) do
-    print("Loading file: " .. file)
-    local status, err = pcall(function()
-        return NFS.load(mod_dir .. "Items/Boosters/" .. file)()
-    end)
-    sendDebugMessage("Loaded Booster: " .. file, "--KINO")
-
-    if not status then
-        error(file .. ": " .. err)
-    end
+    assert(SMODS.load_file("Items/Boosters/" .. file))()
 end
 
 -- Register the genres
@@ -179,3 +183,4 @@ if load_error then
 end
 
 kino_genre_init()
+

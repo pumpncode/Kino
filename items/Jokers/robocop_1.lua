@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "robocop",
+    key = "robocop_1",
     order = 13,
     config = {
         extra = {
@@ -7,10 +7,10 @@ SMODS.Joker {
             rank_retrieved = {11, 13}
         }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "kino_atlas_1",
     pos = { x = 1, y = 2},
-    cost = 4,
+    cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Sci-fi"},

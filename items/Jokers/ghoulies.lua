@@ -6,10 +6,10 @@ SMODS.Joker {
             hand_name = "High Card"
         }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "kino_atlas_4",
     pos = { x = 1, y = 0},
-    cost = 4,
+    cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Horror"},

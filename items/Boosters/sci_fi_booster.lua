@@ -2,6 +2,7 @@ SMODS.Booster {
     key = "sci_fi_booster",
     kind = "Joker",
     atlas = "kino_boosters",
+    group_key = "sci_fi_booster",
     pos = {x = 0, y = 2},
     config = {
         extra = 3,

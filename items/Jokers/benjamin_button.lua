@@ -22,23 +22,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- when a card is scored, lower rank by 1.
-        -- if context.individual and context.cardarea == G.play then
-        --     G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
-        --         local _card = context.other_card
-        --         local suit_prefix = string.sub(context.other_card.base.suit, 1, 1)..'_'
-        --         local rank_suffix = _card.base.id == 14 and 2 or math.min(_card.base.id-1, 14)
-        --         if rank_suffix < 10 then rank_suffix = tostring(rank_suffix)
-        --             elseif rank_suffix == 10 then rank_suffix = 'T'
-        --             elseif rank_suffix == 11 then rank_suffix = 'J'
-        --             elseif rank_suffix == 12 then rank_suffix = 'Q'
-        --             elseif rank_suffix == 13 then rank_suffix = 'K'
-        --             elseif rank_suffix == 14 then rank_suffix = 'A'
-        --         end
-        --         _card:set_base(G.P_CARDS[suit_prefix..rank_suffix])
-        --     return true end }))
-        -- end
-
         if context.after and context.cardarea == G.jokers then
             -- iterate through scoring hand
             for i = 1, #context.scoring_hand do

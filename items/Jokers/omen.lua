@@ -7,10 +7,10 @@ SMODS.Joker {
             req = 13
         }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "kino_atlas_4",
     pos = { x = 0, y = 1},
-    cost = 4,
+    cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Horror"},

@@ -140,3 +140,20 @@ end
 '''
 match_indent = true
 overwrite = false
+
+## Consumable Type code (Taken from Bunco)
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = '''local shared_sprite = (self.ability.set == 'Edition' or self.ability.set == 'Joker') and G.shared_undiscovered_joker or G.shared_undiscovered_tarot'''
+position = 'after'
+match_indent = true
+payload = '''
+
+if not G.shared_undiscovered_confection then G.shared_undiscovered_confection = Sprite(0, 0, G.CARD_W, G.CARD_H, G.ASSET_ATLAS['kino_confections'], {x = 1, y = 3}) end
+
+if self.ability.set == 'confection' then
+    shared_sprite = G.shared_undiscovered_confection
+end
+
+'''

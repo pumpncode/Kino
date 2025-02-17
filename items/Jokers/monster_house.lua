@@ -4,13 +4,14 @@ SMODS.Joker {
     config = {
         extra = {
             mult = 0,
-            mult_mod = 3
+            mult_mod = 3,
+            a_mult = 3
         }
     },
     rarity = 1,
     atlas = "kino_atlas_1",
     pos = { x = 1, y = 1 },
-    cost = 4,
+    cost = 3,
     blueprint_compat = true,
     perishable_compat = false,
     pools, k_genre = {"Horror", "Animated"},
@@ -21,7 +22,8 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.mult_mod,
-                card.ability.extra.mult
+                card.ability.extra.mult,
+                card.ability.extra.a_mult
             }
         }
     end,
@@ -39,7 +41,7 @@ SMODS.Joker {
         end
 
         if context.end_of_round and not context.individual and not context.repetition and G.GAME.blind.boss and not context.blueprint_card and not context.retrigger_joker then
-            card.ability.extra.mult_mod = card.ability.extra.mult_mod * 2
+            card.ability.extra.mult_mod = card.ability.extra.mult_mod + card.ability.extra.a_mult
             return {
                 focus = card,
                 message = localize({type='variable', key='k_upgrade_ex', vars = {card.ability.extra.mult_mod}}),

@@ -7,10 +7,10 @@ SMODS.Joker {
             total = 0
         }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "kino_atlas_1",
     pos = { x = 3, y = 5},
-    cost = 4,
+    cost = 5,
     blueprint_compat = true,
     perishable_compat = true,
     j_is_batman = true,
@@ -31,7 +31,7 @@ SMODS.Joker {
         if G.STAGE == G.STAGES.RUN then
             card.ability.extra.total = (G.jokers.config.card_limit - #G.jokers.cards) * card.ability.extra.mult
             for i = 1, #G.jokers.cards do
-                if G.jokers.cards[i].j_is_batman then card.ability.extra.total = card.ability.extra.total * card.ability.extra.mult end
+                if G.jokers.cards[i].config.center.j_is_batman then card.ability.extra.total = card.ability.extra.total * card.ability.extra.mult end
             end
         end
         
