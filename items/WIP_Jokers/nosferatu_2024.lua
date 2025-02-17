@@ -12,7 +12,7 @@ SMODS.Joker {
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
-    j_is_vampire = true,
+    is_vampire = true,
     pools, k_genre = {"Drama"},
 
     loc_vars = function(self, info_queue, card)

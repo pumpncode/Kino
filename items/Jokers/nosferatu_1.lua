@@ -13,6 +13,7 @@ SMODS.Joker {
     cost = 2,
     blueprint_compat = true,
     perishable_compat = false,
+    is_vampire = true,
     pools, k_genre = {"Horror", "Silent"},
 
     loc_vars = function(self, info_queue, card)
