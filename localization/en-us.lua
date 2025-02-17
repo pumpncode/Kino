@@ -457,7 +457,14 @@ return {
             j_kino_stranger_than_fiction = {
                 name = "Stranger Than Fiction.",
                 text = {
-                    "#2#_#3#"
+                    "Narrates your very next move.", 
+                    "Increases by {C:chips}+#2#{} chips if you do.",
+                    "Resets if you do not.",
+                    "{C:inactive}(Currently: {C:chips}+#1#{} chips){}", 
+                    "",
+                    '{C:inactive,E:1}"... and then they played', 
+                    '{C:inactive,E:1}the {C:attention}#4#{}"',
+
                 }
             },
             j_kino_stripes = {
@@ -690,7 +697,7 @@ return {
             k_summoned_ex = "Summoned",
             k_longlegs_ex = "Captured",
             k_ghost_rider_1 = "Vengeance!",
-            k_narrated_ex = "And then they played the "
+            k_narrated_ex = "And then they played the #1#"
         }
     }
 }
