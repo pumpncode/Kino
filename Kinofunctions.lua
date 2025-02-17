@@ -85,6 +85,15 @@ function update_scrap(num, is_set)
     end
 end
 
+-- Booster:Set_cost hook for oceans_11	
+local b_sc = Card.set_cost
+function Card:set_cost()
+    b_sc(self)
+    if self.ability.set == "Booster" and next(find_joker('j_kino_oceans_11')) then
+        self.cost = 0
+    end
+end
+
 ----------------------
 -- COLOURS --
 local genrecolors = loc_colour

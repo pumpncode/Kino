@@ -11,10 +11,10 @@ SMODS.Joker {
 
         }
     },
-    rarity = 1,
+    rarity = 3,
     atlas = "kino_atlas_2",
     pos = { x = 0, y = 0},
-    cost = 4,
+    cost = 10,
     blueprint_compat = true,
     perishable_compat = false,
     pools, k_genre = {"Comedy"},
@@ -33,16 +33,12 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- Each round, one random suit counts as every suit.
-        -- Needs to be done through lovely inject, both to accept suit type, and current thing.
-        
         if context.kino_ease_dollars and context.kino_ease_dollars < 0 and not context.blueprint then
             local pos_spend = -1 * context.kino_ease_dollars
             card.ability.extra.cur_spend = card.ability.extra.cur_spend + pos_spend
             
             local upgraded = false
             -- Checks if enough money was spend
-            print("Cur_spend =  " .. card.ability.extra.cur_spend .. ". Threshold = " .. card.ability.extra.money_threshold)
             while card.ability.extra.cur_spend >= card.ability.extra.money_threshold do
                 upgraded = true
                 

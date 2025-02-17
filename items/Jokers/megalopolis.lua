@@ -28,7 +28,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- Clubs give +10 chips for each other scoring Diamond.
+        -- Clubs give +10 chips for each other scoring Club.
         if context.before and not context.blueprint then
             local num_suit = 0
             for k, v in ipairs(context.scoring_hand) do

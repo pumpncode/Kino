@@ -7,10 +7,10 @@ SMODS.Joker {
             hidden_card = nil
         }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "kino_atlas_4",
     pos = { x = 3, y = 0},
-    cost = 4,
+    cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Horror", "Crime"},
@@ -29,7 +29,6 @@ SMODS.Joker {
         -- 3x. When you destroy or play the hidden card, debuff and set score to 0.
         if not card.ability.extra.hidden_card and not context.blueprint then
             card.ability.extra.hidden_card = pseudorandom_element(G.deck.cards)
-            print(card.ability.extra.hidden_card.base.name)
         end
 
         if context.joker_main and not card.ability.extra.hidden_card == nil then
@@ -52,7 +51,7 @@ SMODS.Joker {
                         func = (function(t) return math.floor(t) end)
                       }))
                       _turned_on = false
-                      card:set_debuff(true)
+                      SMODS.debuff_card(card, true, "longlegs")
                     break
                 end
             end
@@ -67,7 +66,7 @@ SMODS.Joker {
         if context.destroy_card == card.ability.extra.hidden_card then
             card_eval_status_text(card, 'extra', nil, nil, nil,
             { message = localize('k_longlegs_ex'), colour = G.C.RED })
-            card:set_debuff(true)
+            SMODS.debuff_card(card, true, "longlegs")
         end
     end
 }

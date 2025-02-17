@@ -9,7 +9,7 @@ SMODS.Joker {
     rarity = 1,
     atlas = "kino_atlas_1",
     pos = { x = 4, y = 1 },
-    cost = 4,
+    cost = 3,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Sports"},
@@ -26,7 +26,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- upgrade hand if it's the final hand.
         if context.before and G.GAME.current_round.hands_left == 0 then
-            print("FINAL HAND, SHOULD WORK BRUV")
             return {
                 card = self,
                 level_up = true,

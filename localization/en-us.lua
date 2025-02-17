@@ -39,7 +39,7 @@ return {
                 text = {
                     "When you play a {C:attention}Pair{}, upgrade scored",
                     "cards with {C:mult}+#1# mult{} for every empty Joker slot.",
-                    "{C:inactive}(Gaining {C:mult}+#2# mult{}. (Batman jokers count as empty.)){}"
+                    "{C:inactive}(Gaining {C:mult}+#2# mult{}. (Batman jokers count as empty.){}"
                 }
             },
             j_kino_beetlejuice_1988 = {
@@ -108,6 +108,16 @@ return {
                     "in your deck with {C:mult}+1{} mult.",
                 }
             },
+            j_kino_dark_knight = {
+                name = "The Dark Knight",
+                text = {
+                    "When you select a blind",
+                    "destroy all {C:attention}Jokers{}.",
+                    "{X:mult,C:white}X#2#{} mult per ",
+                    "Joker destroyed.",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{} mult){}"
+                }
+            },
             j_kino_dickie_roberts = {
                 name = "Dickie Roberts: Child Star",
                 text = {
@@ -123,6 +133,18 @@ return {
                     "When you play {C:attention}#1#{}, blow up your hand",
                     "and your score (by {X:mult,C:white}X#2#{}.)",
                     "{C:inactive}(Hand type changes every round.){}"
+                }
+            },
+            j_kino_dracula_1931 = {
+                name = "Dracula (1931)",
+                text = {
+                    "This Joker gains {X:mult,C:white} X#3# {} Mult",
+                    "per scoring {C:attention}Enhanced card{} played,",
+                    "removes card {C:attention}Enhancement.",
+                    "It gains {X:mult,C:white}X#2#{} Mult per",
+                    "scoring {C:attention}Unenhanced card{} played,",
+                    "debuffs card.",
+                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
                 }
             },
             j_kino_ed_wood = {
@@ -244,8 +266,8 @@ return {
                 text = {
                     "Gain {C:mult}+#1#{} Mult",
                     "when your hand is a Pair.",
-                    "Double it after defeating",
-                    "a Boss Blind",
+                    "Increases by {C:mult}+#3#{} mult", 
+                    "after defeating a boss blind.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
             },
             j_kino_longlegs = {
@@ -256,7 +278,7 @@ return {
                     "debuff this joker if Longleg's Secret Partner is scored."
                 }
             },
-            j_kino_matrix = {
+            j_kino_matrix_1 = {
                 name = "The Matrix",
                 text = {
                     "{C:chips}+#1#{} chips for every {C:attention}Sci-fi card{}",
@@ -283,8 +305,8 @@ return {
                 text = {
                     "Gain {C:mult}+#1#{} Mult",
                     "when your hand is a Full House",
-                    "Double it after defeating",
-                    "a Boss Blind",
+                    "Increases by {C:mult}+#3#{} mult", 
+                    "after defeating a boss blind.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
             },
             j_kino_mr_and_mrs_smith = {
@@ -316,6 +338,13 @@ return {
                     "{C:chips}+#1#{} chips if you've made",
                     "at least {C:attention}#2#{} sacrifices.",
                     "{C:inactive}(Currently: {C:attention}#3#{} sacrifices made.){}"
+                }
+            },
+            j_kino_oceans_11 = {
+                name = "Ocean's 11 (2001)",
+                text = {
+                    "{C:attention}Booster Packs{} in the shop", 
+                    " are free."
                 }
             },
             j_kino_party_people = {
@@ -413,8 +442,8 @@ return {
                 text = {
                     "Gain {C:mult}+#1#{} Mult",
                     "when your hand is a High Card.",
-                    "Double it after defeating",
-                    "a Boss Blind",
+                    "Increases by {C:mult}+#3#{} mult", 
+                    "after defeating a boss blind.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
@@ -423,6 +452,12 @@ return {
                 text = {
                     "If you play a {C:attention}Straight{},",
                     "create a Hangman."
+                }
+            },
+            j_kino_stranger_than_fiction = {
+                name = "Stranger Than Fiction.",
+                text = {
+                    "#2#_#3#"
                 }
             },
             j_kino_stripes = {
@@ -454,8 +489,8 @@ return {
                 text = {
                     "Gain {C:mult}+#1#{} Mult",
                     "when your hand is a Two Pair.",
-                    "Double it after defeating",
-                    "a Boss Blind",
+                    "Increases by {C:mult}+#3#{} mult", 
+                    "after defeating a boss blind.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
             },
             j_kino_the_thing = {
@@ -465,13 +500,21 @@ return {
                     "suit changes every round."
                 }
             },
+            j_kino_the_man_who_laughs = {
+                name= "The Man Who Laughs",
+                text = {
+                    "{X:mult,C:white}X#2#{} mult for each",
+                    " other joker card you have",
+                    "{C:attention}({X:mult,C:white}X#3#{} Mult){}"
+                }
+            },
             j_kino_three_musketeers_1 = {
                 name = "The Three Musketeers (2011)",
                 text = {
                     "Gain {C:mult}+#1#{} Mult",
                     "when your hand is a Three of a Kind.",
-                    "Double it after defeating",
-                    "a Boss Blind",
+                    "Increases by {C:mult}+#3#{} mult", 
+                    "after defeating a boss blind.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"}
             },            
             j_kino_titanic = {
@@ -508,6 +551,22 @@ return {
                     "sell value of this joker by $1.",
                     "When you play a hand, 1/20 chance to",
                     "divide the sell value by 10."
+                }
+            },
+            j_kino_wizard_of_oz = {
+                name = "The Wizard of Oz",
+                text = { 
+                    "Scored {C:attention}Wild Cards{}",
+                    "give {X:mult,C:white}X#1#{} mult"
+                }
+            },
+            j_kino_yes_man = {
+                name = "Yes Man",
+                text = {
+                    "Gains {X:mult}{C:white}X#2#{} mult",
+                    "when you play a hand.",
+                    "Destroys itself if", 
+                    "you {C:attention}discard{}"
                 }
             }
         },
@@ -630,7 +689,8 @@ return {
             k_sacrifice = "Sacrifices Will Be Made",
             k_summoned_ex = "Summoned",
             k_longlegs_ex = "Captured",
-            k_ghost_rider_1 = "Vengeance!"
+            k_ghost_rider_1 = "Vengeance!",
+            k_narrated_ex = "And then they played the "
         }
     }
 }

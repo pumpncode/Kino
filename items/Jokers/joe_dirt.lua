@@ -7,10 +7,10 @@ SMODS.Joker {
             chips_mod = 10
         }
     },
-    rarity = 1,
+    rarity = 3,
     atlas = "kino_atlas_1",
     pos = { x = 4, y = 4},
-    cost = 4,
+    cost = 9,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Comedy", "Romance"},
@@ -26,6 +26,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
+        -- Gains 10 chips when you discard a spade
         if context.discard and not context.other_card.debuff and context.other_card:is_suit("Spades") then
             card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chips_mod
 

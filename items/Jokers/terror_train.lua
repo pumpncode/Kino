@@ -10,10 +10,10 @@ SMODS.Joker {
             destroy_cards = {}
         }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "kino_atlas_4",
     pos = { x = 0, y = 0},
-    cost = 4,
+    cost = 5,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Horror"},

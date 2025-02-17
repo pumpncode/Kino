@@ -10,7 +10,7 @@ SMODS.Joker {
     rarity = 1,
     atlas = "kino_atlas_1",
     pos = { x = 5, y = 2},
-    cost = 4,
+    cost = 3,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Musical", "Romance", "Comedy"},
