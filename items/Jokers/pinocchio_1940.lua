@@ -30,7 +30,7 @@ SMODS.Joker {
                 return {
                     message = localize('k_debuffed'),
                     colour = G.C.BLUE,
-                    card = self,
+                    card = card,
                 }
             end
 

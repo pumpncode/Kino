@@ -27,7 +27,7 @@ SMODS.Joker {
         -- upgrade hand if it's the final hand.
         if context.before and G.GAME.current_round.hands_left == 0 then
             return {
-                card = self,
+                card = card,
                 level_up = true,
                 message = localize('k_level_up_ex')
             }

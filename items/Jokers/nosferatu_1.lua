@@ -52,7 +52,7 @@ SMODS.Joker {
                         extra = { focus = card,
                         message = localize({type='variable', key='a_mult', vars = {card.ability.extra.mult}}),
                         colour = G.C.MULT,
-                        card = self
+                        card = card
                         }
                     }
                 end

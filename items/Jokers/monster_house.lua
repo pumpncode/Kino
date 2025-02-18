@@ -29,13 +29,13 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
 
-        if context.before and next(context.poker_hands["Full House"]) and not context.blueprint then
+        if context.before and context.scoring_name == "Full House" and not context.blueprint then
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
             return {
                 focus = card,
                 message = localize({type='variable', key='a_mult', vars = {card.ability.extra.mult}}),
                 colour = G.C.MULT,
-                card = self
+                card = card
             }
 
         end
@@ -46,7 +46,7 @@ SMODS.Joker {
                 focus = card,
                 message = localize({type='variable', key='k_upgrade_ex', vars = {card.ability.extra.mult_mod}}),
                 colour = G.C.MULT,
-                card = self
+                card = card
             }
         end
 

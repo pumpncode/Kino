@@ -30,7 +30,7 @@ SMODS.Joker {
             card.ability.extra.chips = card.ability.extra.chips + context.other_card:get_id()
             return {
                 message = localize('k_upgrade_ex'),
-                card = self,
+                card = card,
                 colour = G.C.CHIPS
             }
         end
@@ -38,7 +38,7 @@ SMODS.Joker {
         if context.joker_main then
             return {
                 chips = card.ability.extra.chips,
-                card = self
+                card = card
             }
 
         end

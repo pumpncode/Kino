@@ -55,7 +55,7 @@ SMODS.Joker {
             if upgraded then
                 return {
                     message = localize('k_upgrade_ex'),
-                    card = self
+                    card = card
                 }
             end
         end

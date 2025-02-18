@@ -60,7 +60,7 @@ SMODS.Joker {
             return {
                 message = localize('k_summoned_ex'),
                 colour = G.C.BLACK,
-                card = self,
+                card = card,
                 playing_cards_created = {true}
             }
         end

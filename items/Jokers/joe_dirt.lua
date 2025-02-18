@@ -32,7 +32,7 @@ SMODS.Joker {
 
             return {
                 message = localize('k_upgrade_ex'),
-                card = self,
+                card = card,
                 colour = G.C.CHIPS
             }
         end
