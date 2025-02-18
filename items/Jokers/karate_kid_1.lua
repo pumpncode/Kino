@@ -33,11 +33,9 @@ SMODS.Joker {
                     correct_ranks = correct_ranks + 1
                 end
             end
-            print(correct_ranks)
 
             if correct_ranks >= 1 then
                 local handtype = get_random_hand()
-                print(handtype)
                 level_up_hand(context.blueprint_card or self, handtype, nil, 1)
             end
         end

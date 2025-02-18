@@ -31,7 +31,7 @@ SMODS.Joker {
 
         if context.joker_main and G.GAME.current_round.sacrifices_made >= card.ability.extra.req then
             return {
-                chips = 300
+                chips = card.ability.extra.chips
             }
         end
         

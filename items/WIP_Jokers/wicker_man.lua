@@ -1,35 +1,32 @@
 SMODS.Joker {
-    key = "piranha_2",
-    order = 15,
+    key = "wicker_man",
+    order = 110,
     config = {
         extra = {
-            mult = 8
+
         }
     },
     rarity = 1,
-    atlas = "kino_atlas_1",
-    pos = { x = 2, y = 2},
-    cost = 1,
+    atlas = "kino_atlas_4",
+    pos = { x = 2, y = 0},
+    cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
-    pools, k_genre = {"Horror"},
+    pools, k_genre = {"Drama"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.mult
+
             }
         }
     end,
     calculate = function(self, card, context)
-        if context.joker_main then
-            if context.scoring_name == "High Card" then
-                return {
-                    mult = card.ability.extra.mult
-                }
-            end
-        end
+        -- when your first discard is only 1 card,
+        -- destroy it and gain mult equal its sell value
+        -- resets after you defeat a boss blind
+        
     end
 }

@@ -28,7 +28,8 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- sci_fi cards give x1.00 + x0.1 for each time they've upgraded, when held in hand.
         if context.individual and context.cardarea == G.hand and 
-        context.other_card.config.center == G.P_CENTERS.m_kino_sci_fi then
+        context.other_card.config.center == G.P_CENTERS.m_kino_sci_fi
+        and not context.end_of_round then
             if context.other_card.debuff then
                 return {
                     message = localize('k_debuffed'),

@@ -29,7 +29,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
 
-        if context.before and next(context.poker_hands["High Card"]) and not context.blueprint then
+        if context.before and context.scoring_name == 'High Card' and not context.blueprint then
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
             return {
                 focus = card,
@@ -52,7 +52,7 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                mult_mod = card.ability.extra.mult,
+                mult = card.ability.extra.mult,
                 message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult }},
             }
         end

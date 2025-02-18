@@ -6,7 +6,7 @@ SMODS.Joker {
             chance_cur = 1,
             a_chance = 1,
             chance = 100,
-            xmult = 1.25
+            x_mult = 1.25
         }
     },
     rarity = 2,
@@ -25,7 +25,7 @@ SMODS.Joker {
                 card.ability.extra.chance_cur,
                 card.ability.extra.a_chance,
                 card.ability.extra.chance,
-                card.ability.extra.xmult
+                card.ability.extra.x_mult
             }
         }
     end,
@@ -36,7 +36,7 @@ SMODS.Joker {
         if context.individual and context.cardarea == G.play then
             card.ability.extra.chance_cur = card.ability.extra.chance_cur + card.ability.extra.a_chance
             return {
-                x_mult = card.ability.extra.xmult,
+                x_mult = card.ability.extra.x_mult,
                 card = context.other_card
             }
         end

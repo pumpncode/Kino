@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 84,
     config = {
         extra = {
-            xmult = 1,
+            x_mult = 1,
             a_xmult = 0.1
         }
     },
@@ -20,7 +20,7 @@ SMODS.Joker {
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.xmult,
+                card.ability.extra.x_mult,
                 card.ability.extra.a_xmult
             }
         }
@@ -36,7 +36,7 @@ SMODS.Joker {
                 end
             end
             if sci_fi_upgrades > 0 then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.a_xmult * (sci_fi_upgrades)
+                card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.a_xmult * (sci_fi_upgrades)
             end
         end
         
@@ -49,7 +49,7 @@ SMODS.Joker {
                 end
             end
             if sci_fi_upgrades > 0 then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.a_xmult * (sci_fi_upgrades)
+                card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.a_xmult * (sci_fi_upgrades)
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_upgrade_ex'), colour = G.C.MULT })
             end
@@ -57,7 +57,7 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xmult
+                x_mult = card.ability.extra.x_mult
             }
         end
     end
