@@ -5,6 +5,8 @@ By Ice/IcyEthics
 Requirements:
 
 - Talisman
+- Steamodded
+- Lovely
 
 Balatro Goes Kino is a mod made to turn a game for poker nerds into a game for poker and movie nerds. It's main content is a large set of jokers inspired by movies, as well as new Enhancements and Tarot cards, with plans for boss blinds, challenges and decks.
 
