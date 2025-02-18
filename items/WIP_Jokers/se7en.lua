@@ -19,7 +19,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- Whenever a 7 is scored, destroy a random card from your deck. 
+        -- Whenever a 7 is scored, destroy a random card from your hand. 
         -- Upgrade that 7 by giving it mult equal to the card's rank.
     end
 }

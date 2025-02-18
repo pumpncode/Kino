@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 28,
     config = {
         extra = {
-            chip_mod = 0
+            chips = 0
         }
     },
     rarity = 1,
@@ -19,7 +19,7 @@ SMODS.Joker {
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.chip_mod
+                card.ability.extra.chips
             }
         }
     end,
@@ -27,7 +27,7 @@ SMODS.Joker {
         -- When you play a high card, add its chips to this joker
         if context.individual and context.cardarea == G.play and
         context.scoring_name == "High Card" and not context.blueprint then
-            card.ability.extra.chip_mod = card.ability.extra.chip_mod + context.other_card:get_id()
+            card.ability.extra.chips = card.ability.extra.chips + context.other_card:get_id()
             return {
                 message = localize('k_upgrade_ex'),
                 card = self,
@@ -37,7 +37,7 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                chip_mod = card.ability.extra.chip_mod,
+                chips = card.ability.extra.chips,
                 card = self
             }
 

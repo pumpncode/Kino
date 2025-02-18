@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 116,
     config = {
         extra = {
-            xmult = 1,
+            x_mult = 1,
             xrange = 0.05,
             xrange_int = 1,
             a_xrange = 2,
@@ -24,7 +24,7 @@ SMODS.Joker {
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.xmult,
+                card.ability.extra.x_mult,
                 card.ability.extra.xrange,
                 card.ability.extra.xrange_int,
                 1 - card.ability.extra.xrange_int * card.ability.extra.xrange_int,
@@ -48,11 +48,11 @@ SMODS.Joker {
                 print(_min .. " is min. " .. _max .. " is max.")
                 local _rand = pseudorandom("krazy", _min, _max)
                 print(_rand .. " is rand.")
-                card.ability.extra.xmult = 1 + (_rand * card.ability.extra.xrange)
+                card.ability.extra.x_mult = 1 + (_rand * card.ability.extra.xrange)
             end
 
             return {
-                xmult = card.ability.extra.xmult
+                x_mult = card.ability.extra.x_mult
             }
         end
 

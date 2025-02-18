@@ -91,7 +91,7 @@ return {
                     "it's {C:attention}Vampiric{}.",
                     "Gain all it's upgrades",
                     "{C:inactive}(Currently: {C:chips}+#3#{} chips, {C:mult}+#4#{} mult{}",
-                    "{C:inactive}(Currently: {X:chipsC:white}X#2#{} chips, {X:mult,C:white}X#1#{} mult{}"
+                    "{C:inactive}(Currently: {X:chips,C:white}X#2#{} chips, {X:mult,C:white}X#1#{} mult{}"
                 }
             },
             j_kino_braveheart = {
@@ -396,6 +396,14 @@ return {
                 text = {
                     "Each scored {C:attention}Diamonds{} gives {C:chips}+10{}",
                     "for each other scoring {C:attention}Diamonds{}."
+                }
+            },
+            j_kino_pinocchio_1940 = {
+                name = "Pinocchio (1940)",
+                text = {
+                    "Each {C:attention}unmodified{} card",
+                    "held in hand gives",
+                    "{C:chips}+#1#{} chips."
                 }
             },
             j_kino_piranha_2 = {
@@ -715,6 +723,13 @@ return {
                     "up to {C:attention}#2# Comedy Jokers{}",
                 }
             },
+            p_kino_romance_booster = {
+                name = "Romance Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Romance Jokers{}",  
+                }
+            },
             -- Genres
             genre_1 = {
                 name = "Genre",
@@ -759,6 +774,7 @@ return {
             action_booster = "Action Joker",
             sci_fi_booster = "Sci-fi Joker",
             comedy_booster = "Comedy Joker",
+            romance_booster = "Romance Joker",
             k_sacrifice = "Sacrifices Will Be Made",
             k_romance_match_ex = "Hey there ;)",
             k_summoned_ex = "Summoned",
@@ -766,7 +782,8 @@ return {
             k_ghost_rider_1 = "Vengeance!",
             k_blade_ex = "Vampire Killed",
             k_narrated_ex = "And then they played the #1#",
-            k_10_things_ex = "Flirted With"
+            k_10_things_ex = "Flirted With",
+            k_jump_scare = "Boo!"
         }
     }
 }

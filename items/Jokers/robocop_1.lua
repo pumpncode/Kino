@@ -3,8 +3,6 @@ SMODS.Joker {
     order = 13,
     config = {
         extra = {
-            rank_discard = 12,
-            rank_retrieved = {11, 13}
         }
     },
     rarity = 2,
@@ -20,8 +18,6 @@ SMODS.Joker {
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.mult,
-                card.ability.extra.chips
             }
         }
     end,

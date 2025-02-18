@@ -21,7 +21,7 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.starting_amount,
-                card.ability.extra.mod
+                card.ability.extra.mult
             }
         }
     end,
@@ -34,13 +34,13 @@ SMODS.Joker {
                     suit_count = suit_count + 1
                 end
             end
-            card.ability.extra.mod = suit_count - card.ability.extra.starting_amount
+            card.ability.extra.mult = suit_count - card.ability.extra.starting_amount
         end
 
         if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit("Diamonds") then
                 return {
-                    mult = card.ability.extra.mod,
+                    mult = card.ability.extra.mult,
                     card = context.other_card
                 }
             end

@@ -45,35 +45,24 @@ SMODS.Joker {
             G.jokers.cards[_my_pos + 1].getting_sliced and not
             G.jokers.cards[_my_pos + 1].ability.eternal then
                 if G.jokers.cards[_my_pos + 1].config.center.is_vampire or G.jokers.cards.config.center.key == "j_vampire" then
-                    local _xmult = {"xmult", "x_mult", "Xmult", "X_mult"}
-                    local _xchips =  {"xchips", "x_chips", "Xchips", "X_chips"}
-                    local _mult = {"mult", "mod_mult", "modmult"}
-                    local _chips = {"chips", "mod_chips", "modchips"}
+
                     
-                    for i = 1, #_xmult do
-                        if G.jokers.cards[_my_pos + 1].ability.extra[i] then
-                            card.ability.extra.x_mult = card.ability.extra.x_mult + G.jokers.cards[_my_pos + 1].ability.extra[i]
-                        end
+                    -- steals x_mult
+                    if G.jokers.cards[_my_pos + 1].ability.extra.x_mult then
+                        card.ability.extra.x_mult = card.ability.extra.x_mult + G.jokers.cards[_my_pos + 1].ability.extra.x_mult
                     end
 
-                    for i = 1, #_xchips do
-                        if G.jokers.cards[_my_pos + 1].ability.extra[i] then
-                            card.ability.extra.x_chips = card.ability.extra.x_chips + G.jokers.cards[_my_pos + 1].ability.extra[i]
-                        end
+                    --
+                    if G.jokers.cards[_my_pos + 1].ability.extra.x_chips then
+                        card.ability.extra.x_chips = card.ability.extra.x_chips + G.jokers.cards[_my_pos + 1].ability.extra.x_chips
                     end
 
-                    for i = 1, #_mult do
-                        print(G.jokers.cards[_my_pos + 1].ability.extra[i])
-                        if G.jokers.cards[_my_pos + 1].ability.extra[i] then
-                            
-                            card.ability.extra.mult = card.ability.extra.mult + G.jokers.cards[_my_pos + 1].ability.extra[i]
-                        end
+                    if G.jokers.cards[_my_pos + 1].ability.extra.mult then
+                        card.ability.extra.mult = card.ability.extra.mult + G.jokers.cards[_my_pos + 1].ability.extra.mult
                     end
 
-                    for i = 1, #_chips do
-                        if G.jokers.cards[_my_pos + 1].ability.extra[i] then
-                            card.ability.extra.chips = card.ability.extra.chips + G.jokers.cards[_my_pos + 1].ability.extra[i]
-                        end
+                    if G.jokers.cards[_my_pos + 1].ability.extra.chips then
+                        card.ability.extra.chips = card.ability.extra.chips + G.jokers.cards[_my_pos + 1].ability.extra.chips
                     end
 
                     if G.jokers.cards[_my_pos + 1].ability.extra.romance_bonus then

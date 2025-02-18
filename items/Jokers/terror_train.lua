@@ -43,7 +43,7 @@ SMODS.Joker {
             if pseudorandom('terror_train') < (G.GAME.probabilities.normal * card.ability.extra.total_chance) / card.ability.extra.chance then
                 card.ability.extra.destroy_cards[#card.ability.extra.destroy_cards + 1] = context.other_card
                 return {
-                    Xmult_mod = card.ability.extra.xmult, 
+                    x_mult = card.ability.extra.xmult, 
                     message = localize({type='variable', key='k_jump_scare'}),
                     colour = HEX("372a2d"),
                     card = context.other_card

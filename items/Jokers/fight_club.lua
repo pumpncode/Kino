@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 35,
     config = {
         extra = {
-            xmult = 3
+            x_mult = 3
         }
     },
     rarity = 3,
@@ -19,7 +19,7 @@ SMODS.Joker {
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.xmult
+                card.ability.extra.x_mult
             }
         }
     end,
@@ -32,7 +32,7 @@ SMODS.Joker {
             SMODS.calculate_context({destroy_card = destroyed_card})
 
             return {
-                xmult = card.ability.extra.xmult
+                x_mult = card.ability.extra.x_mult
             }
         end
     end
