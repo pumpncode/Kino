@@ -261,17 +261,6 @@ return {
                     "{C:inactive}(Currently: {C:attention}#1#{}){}"
                 }
             },
-            j_kino_interstellar = {
-                name = "Interstellar",
-                text = {
-                    "When you use a {C:attention}Planet{}",
-                    "store it in this joker instead.",
-                    "When you sell this joker",
-                    "level up your most played",
-                    "hand for each stored stack.",
-                    "{C:inactive}(Currently: {C:attention}#1#{}){}"
-                }
-            },
             j_kino_iron_giant = {
                 name = "The Iron Giant",
                 text = {
