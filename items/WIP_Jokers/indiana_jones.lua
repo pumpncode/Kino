@@ -20,6 +20,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- Ancient Joker-esque
+        -- Ancient Joker-esque, but each individual trigger increases the scaling
+        -- LEGENDARY SPIELBERG JOKER
     end
 }

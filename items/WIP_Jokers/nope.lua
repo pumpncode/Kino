@@ -21,6 +21,8 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- Scored cards have a 1/5 chance to get abducted. 
         -- When a card gets abducted, create a random planet card
+        -- abducted cards still count towards the hand, but do not score
+        -- that hand.
 
     end
 }

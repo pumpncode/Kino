@@ -32,16 +32,17 @@ SMODS.Joker {
         -- Turner: Turner, gather evidence. 1 evidence for each card played.
         -- Hooch: Each card gives mult equal to evidence.
 
-        if context.individual then
+        if context.individual and context.cardarea == G.play then
             -- Turner
             if card.ability.extra.is_turner and not context.blueprint then
                 card.ability.extra.evidence = card.ability.extra.evidence + 1
+            -- Hooch
             else
                 return {
                     mult = card.ability.extra.evidence
                 }
             end
-            -- Hooch
+            
         end
 
         if context.after then

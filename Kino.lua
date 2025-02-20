@@ -64,6 +64,13 @@ SMODS.Atlas {
     path = 'kino_confections.png'
 }
 
+SMODS.Atlas {
+    key = "kino_tags",
+    px = 34,
+    py = 34,
+    path = 'kino_tags.png'
+}
+
 
 
 -- Load additional files
@@ -115,7 +122,9 @@ Game.init_game_object = function(self)
     ret.current_round.scrap_total = 0
     ret.current_round.matches_made = 0
     ret.current_round.sci_fi_upgrades = 0
+    ret.current_round.sci_fi_upgrades_last_round = 0
     ret.current_round.sacrifices_made = 0
+    ret.current_round.kryptons_used = 0
     -- generate_cmifc_rank()
     return ret
 end
