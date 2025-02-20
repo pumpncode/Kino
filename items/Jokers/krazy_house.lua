@@ -27,7 +27,7 @@ SMODS.Joker {
                 card.ability.extra.x_mult,
                 card.ability.extra.xrange,
                 card.ability.extra.xrange_int,
-                1 - card.ability.extra.xrange_int * card.ability.extra.xrange_int,
+                1 - card.ability.extra.xrange * card.ability.extra.xrange_int,
                 1 + card.ability.extra.xrange * card.ability.extra.xrange_int,
                 card.ability.extra.xrange * card.ability.extra.a_xrange,
                 card.ability.extra.a_xrange,
