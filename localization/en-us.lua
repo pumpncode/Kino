@@ -408,7 +408,7 @@ return {
                 }
             },
             j_kino_pinocchio_2022 = {
-                name = "Pinocchio (1940)",
+                name = "Pinocchio (2022)",
                 text = {
                     "Each {C:attention}unmodified{} card",
                     "gives {C:chips}+#1#{} Chips when scored."
