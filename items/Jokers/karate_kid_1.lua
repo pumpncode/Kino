@@ -36,7 +36,7 @@ SMODS.Joker {
 
             if correct_ranks >= 1 then
                 local handtype = get_random_hand()
-                level_up_hand(context.blueprint_card or self, handtype, nil, 1)
+                level_up_hand(context.blueprint_card or card, handtype, nil, 1)
             end
         end
     end
