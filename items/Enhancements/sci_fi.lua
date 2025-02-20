@@ -36,8 +36,10 @@ SMODS.Enhancement {
                 card.ability.times_upgraded = card.ability.times_upgraded + 1
                 card.ability.mult = card.ability.mult + card.ability.a_mult
                 card.ability.bonus = card.ability.bonus + card.ability.a_chips
+                
                 G.GAME.current_round.sci_fi_upgrades = G.GAME.current_round.sci_fi_upgrades + 1
-
+                G.GAME.current_round.sci_fi_upgrades_last_round = G.GAME.current_round.sci_fi_upgrades_last_round + 1
+                
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_upgrade_ex'), colour = G.C.CHIPS })
                 -- SMODS.calculate_context({upgrading_sci_fi_card = true})

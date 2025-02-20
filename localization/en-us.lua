@@ -98,7 +98,7 @@ return {
             j_kino_braveheart = {
                 name = "Braveheart",
                 text = {
-                    "Each scored {C:attention}Heart{} gives {C:chips}+#2#{}",
+                    "Each scored {C:attention}Heart{} gives {C:chips}+#2#{}.",
                     "for each other scoring {C:attention}Heart{}."
                 }
             },
@@ -248,6 +248,28 @@ return {
                 text = {
                     "If a sci-fi card upgrades, gain {X:mult,C:white} X#2# {} Mult.",
                     "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)"
+                }
+            },
+            j_kino_interstellar = {
+                name = "Interstellar",
+                text = {
+                    "When you use a {C:attention}Planet{}",
+                    "store it in this joker instead.",
+                    "When you sell this joker",
+                    "level up your most played",
+                    "hand for each stored stack.",
+                    "{C:inactive}(Currently: {C:attention}#1#{}){}"
+                }
+            },
+            j_kino_interstellar = {
+                name = "Interstellar",
+                text = {
+                    "When you use a {C:attention}Planet{}",
+                    "store it in this joker instead.",
+                    "When you sell this joker",
+                    "level up your most played",
+                    "hand for each stored stack.",
+                    "{C:inactive}(Currently: {C:attention}#1#{}){}"
                 }
             },
             j_kino_iron_giant = {
@@ -582,8 +604,7 @@ return {
                 text = {
                     "Scored {C:attention}Hearts{} give {C:mult}+1{} Mult",
                     "For each {C:attention}Hearts{} card in your deck above 13.",
-                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
-                    "NOT YET IMPLEMENTED (NYI)"
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
             j_kino_turner_and_hooch = {
@@ -702,6 +723,225 @@ return {
 
 
         },
+        Planet = {
+            c_kino_ego = {
+                name = "Ego, the Living Planet",
+                text = {
+                    "Upgrade a random hand",
+                    "with {C:chips}+#1#{} chips",
+                    "and {C:mult}+#2#{} mult"
+                }
+            },
+            c_kino_pandora = {
+                name = "Pandora",
+                text = {
+                    "Upgrade your most",
+                    "played hand with",
+                    "{C:chips}+5{} chips and",
+                    "{C:mult}+1{} mult for each",
+                    "level it already has."
+                }
+            },
+            c_kino_arrakis = {
+                name = "Arrakis",
+                text = {
+                    "Upgrade your least played",
+                    "hand with {X:white,C:chips}X2{} and {X:white,C:mult}X2{}."
+                }
+            },
+            c_kino_krypton = {
+                name = "Krypton",
+                text = {
+                    "Double the level of",
+                    "your most played hand.",
+                    "{C:green}#1# in #2#{} chance to",
+                    "set it to 1 instead.",
+                    "Chances doubles for every", 
+                    "Krypton you've played.",
+                    "{C:inactive}(Currently: #3# Kryptons played.){}"
+                }
+            },
+            c_kino_cybertron = {
+                name = "Cybertron",
+                text = {
+                    "Upgrade a random hand",
+                    "with {X:white,C:mult}X#1#{} for",
+                    "each time a Sci-fi card was upgraded",
+                    "last round.",
+                    "{C:inactive}(Currently: {X:white,C:mult}X#2#{}.){}"
+                }
+            },
+            c_kino_lv426 = {
+                name = "LV-426",
+                text = {
+                    "Level up your most",
+                    "played hand and debuff",
+                    "two random cards in deck."
+                }
+            }
+        },
+        confection = {
+            c_kino_popcorn = {
+                name = "Popcorn Snack",
+                text = {
+                    "Upgrade the next",
+                    "hand you play with",
+                    "{C:mult}+#1#{} mult"
+                }
+            },
+            c_kino_icecream = {
+                name = "Ice Cream Snack",
+                text = {
+                    "Upgrade the next",
+                    "hand you play with",
+                    "{C:chips}+#1#{} chips"
+                }
+            },
+            c_kino_candy = {
+                name = "Candy Snack",
+                text = {
+                    "Gain {C:attention}+#1#{} hand size",
+                    "next round",
+                }
+            },
+            c_kino_peanuts = {
+                name = "Peanut Snack",
+                text = {
+                    "Gain double interest",
+                    "next round."
+                }
+            },
+            c_kino_pizza = {
+                name = "Pizza Slice",
+                text = {
+                    "{C:inactive}Quatro Formaggi{}",
+                    "The first card of",
+                    "each suit retriggers",
+                    "next round."
+                }
+            },
+            c_kino_soda = {
+                name = "Soda Drink",
+                text = {
+                    "Retrigger the first",
+                    "card scored twice",
+                    "next round."
+                }
+            },
+            c_kino_chocolate_bar = {
+                name = "Chocolate Bar",
+                text = {
+                    "Draw {C:attetnion}#1#{} cards"
+                }
+            },
+            c_kino_fries = {
+                name = "Fries",
+                text = {
+                    "Upgrade the next card",
+                    "scored with {C:chips}+#1#{} chips"
+                }
+            },
+            c_kino_hotdog = {
+                name = "Hotdog",
+                text = {
+                    "Level up the next",
+                    "hand played."
+                }
+            },
+            c_kino_cookie = {
+                name = "Cookie",
+                text = {
+                    "Gain {C:chips}+1{}",
+                    "hand this round"
+                }
+            },
+            c_kino_gum = {
+                name = "Chewing Gum",
+                text = {
+                    "Gain {C:mult}+1{}",
+                    "discard this round"
+                }
+            }
+        },
+        Tag = {
+            tag_kino_popcorn = {
+                name = "Popcorn Tag",
+                text = {
+                    "Upgrade the next",
+                    "hand you play with",
+                    "{C:mult}+#1#{} mult"
+                }
+            },
+            tag_kino_icecream = {
+                name = "Ice Cream Tag",
+                text = {
+                    "Upgrade the next",
+                    "hand you play with",
+                    "{C:chips}+#1#{} chips"
+                }
+            },
+            tag_kino_candy = {
+                name = "Candy Tag",
+                text = {
+                    "Gain {C:attention}+#1#{} hand size"
+                }
+            },
+            tag_kino_peanut = {
+                name = "Peanut Tag",
+                text = {
+                    "Earn an extra",
+                    "{C:money}$#1#{} interest"
+                }
+            },
+            tag_kino_pizza = {
+                name = "Pizza Tag",
+                text = {
+                    "{C:inactive}Quatro Formaggi{}",
+                    "The first card of",
+                    "each suit retriggers",
+                    "next round."
+                }
+            },
+            tag_kino_soda = {
+                name = "Soda Tag",
+                text = {
+                    "Retrigger the first",
+                    "card scored."
+                }
+            },
+            tag_kino_chocolate = {
+                name = "Chocolate Tag",
+                text = {
+                    "Draw {C:attetnion}#1#{} cards"
+                }
+            },
+            tag_kino_fries = {
+                name = "Fries Tag",
+                text = {
+                    "Upgrade the next card",
+                    "scored with {C:chips}+#1#{} chips"
+                }
+            },
+            tag_kino_hotdog = {
+                name = "Hotdog Tag",
+                text = {
+                    "Level up the next",
+                    "hand played."
+                }
+            },
+            tag_kino_cookie = {
+                name = "Cookie Tag",
+                text = {
+                    "Gain {C:chips}+1{}"
+                }
+            },
+            tag_kino_gum = {
+                name = "Gum Tag",
+                text = {
+                    "Gain {C:mult}+1{}"
+                }
+            }
+        },
         Other =  {
             -- Booster packs
             p_kino_horror_booster = {
@@ -737,6 +977,27 @@ return {
                 text = {
                     "Choose {C:attention}#1#{} of",
                     "up to {C:attention}#2# Romance Jokers{}",  
+                }
+            },
+            p_kino_snack_booster_normal = {
+                name = "Snack Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Confections{}",
+                }
+            },
+            p_kino_snack_booster_jumbo = {
+                name = "Jumbo Snack Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Confections{}",
+                }
+            },
+            p_kino_snack_booster_mega = {
+                name = "Mega Snack Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Confections{}",
                 }
             },
             -- Genres
@@ -779,6 +1040,7 @@ return {
             k_confection = "Confection",
             b_confection_cards = "Confection Cards",
 
+            snack_booster = "Confections",
             horror_booster = "Horror Joker",
             action_booster = "Action Joker",
             sci_fi_booster = "Sci-fi Joker",

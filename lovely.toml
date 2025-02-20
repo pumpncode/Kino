@@ -157,3 +157,75 @@ if self.ability.set == 'confection' then
 end
 
 '''
+
+## Hand upgrade system
+
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = '''G.GAME.hands[hand].chips = math.max(G.GAME.hands[hand].s_chips + G.GAME.hands[hand].l_chips*(G.GAME.hands[hand].level - 1), 0)'''
+position = 'after'
+match_indent = true
+payload = '''
+G.GAME.hands[hand].mult = G.GAME.hands[hand].mult + (G.GAME.hands[hand].mult_bonus or 0)
+G.GAME.hands[hand].chips = G.GAME.hands[hand].chips + (G.GAME.hands[hand].chips_bonus or 0)
+'''
+
+## Add start round functionality
+# 
+[[patches]]
+[patches.pattern]
+target = 'functions/buttons_callback.lua'
+pattern = '''
+    if G.shop then 
+      for i = 1, #G.jokers.cards do
+        G.jokers.cards[i]:calculate_joker({ending_shop = true})
+      end'''
+position = 'after'
+match_indent = true
+payload = '''
+	end_shopping()
+'''
+
+## From Bunco (line 2519 - 2549)
+# tag functionality (hand_played before scoring)
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = 'SMODS.calculate_context({full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, poker_hands = poker_hands, before = true})'
+position = 'after'
+match_indent = true
+payload = '''
+
+for i = 1, #G.GAME.tags do
+    print(text .. " test") 
+    G.GAME.tags[i]:apply_to_run({type = 'hand_played', before = true, scoring_name = text})
+end
+'''
+
+# Edition tags 2/5
+# tag functionality (hand_played after scoring)
+[[patches]]
+[patches.regex]
+target = 'functions/state_events.lua'
+pattern = "(?<indent>[\t ]*)else\\s*\\n[\\t ]*mult\\s*=\\s*mod_mult\\(\\s*0\\s*\\)\\s*\\n[\\t ]*hand_chips\\s*=\\s*mod_chips\\(\\s*0\\s*\\)\\s*"
+position = 'before'
+line_prepend = '$indent'
+payload = '''
+
+for i = 1, #G.GAME.tags do
+    G.GAME.tags[i]:apply_to_run({type = 'hand_played', after = true})
+end
+
+'''
+
+## End Bunco code
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = "local ret = G.GAME.tags[i]:apply_to_run({type = 'eval'})"
+position = 'after'
+match_indent = true
+payload = '''
+local revenue = G.GAME.tags[i]:apply_to_run({type = 'eval_interest'})
+'''
