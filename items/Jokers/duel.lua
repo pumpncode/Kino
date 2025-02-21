@@ -1,0 +1,40 @@
+SMODS.Joker {
+    key = "duel",
+    order = 89,
+    config = {
+        extra = {
+            chips = 150,
+            chance = 4
+        }
+    },
+    rarity = 1,
+    atlas = "kino_atlas_3",
+    pos = { x = 4, y = 2},
+    cost = 3,
+    blueprint_compat = true,
+    perishable_compat = true,
+    pools, k_genre = {"Horror", "Thriller"},
+
+    loc_vars = function(self, info_queue, card)
+        local _keystring = "genre_" .. #self.k_genre
+        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
+        return {
+            vars = {
+                card.ability.extra.chips,
+                G.GAME.probabilities.normal,
+                card.ability.extra.chance
+            }
+        }
+    end,
+    calculate = function(self, card, context)
+        -- when you play a straight, 3/4 chance to give 150 chips.
+        if context.joker_main and next(context.poker_hands['Straight']) then
+            if pseudorandom("duel") > G.GAME.probabilities.normal / card.ability.extra.chance then
+                return {
+                    chips = card.ability.extra.chips,
+                    card = card
+                }
+            end
+        end
+    end
+}

@@ -253,3 +253,6 @@ function loc_colour(_c, _default)
 
     return genrecolors(_c, _default)
 end
+
+--- Global Variables ---
+Kino.jump_scare_mult = 3

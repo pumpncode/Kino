@@ -8,7 +8,7 @@ SMODS.Joker {
     rarity = 1,
     atlas = "kino_atlas_3",
     pos = { x = 5, y = 0},
-    cost = 4,
+    cost = 2,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Drama", "Fantasy", "Romance"},
@@ -36,9 +36,17 @@ SMODS.Joker {
                 elseif rank_suffix == 13 then rank_suffix = 'K'
                 elseif rank_suffix == 14 then rank_suffix = 'A'
                 end
-                i_card:set_base(G.P_CARDS[suit_prefix..rank_suffix])
-                card_eval_status_text(card, 'extra', nil, nil, nil,
-                { message = localize('k_upgrade_ex'), colour = G.C.CHIPS })
+
+                
+
+                G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, func = function()
+                    i_card:juice_up(0.8, 0.5)
+                    card_eval_status_text(i_card, 'extra', nil, nil, nil,
+                    { message = localize('k_benjamin_button'), colour = G.C.CHIPS })
+                    i_card:set_base(G.P_CARDS[suit_prefix..rank_suffix])
+                return true end }))
+                
+                
             end
         end
     end

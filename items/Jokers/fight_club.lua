@@ -30,6 +30,7 @@ SMODS.Joker {
             
             local destroyed_card = pseudorandom_element(context.scoring_hand)
             SMODS.calculate_context({destroy_card = destroyed_card})
+            destroyed_card:start_dissolve()
 
             return {
                 x_mult = card.ability.extra.x_mult
