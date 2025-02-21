@@ -21,7 +21,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- DNA but always makes a 2 or a 3.
+        -- The first time each round a King or Jack gets scored,
+        -- copy it but make the copy a 2.
 
     end
 }
