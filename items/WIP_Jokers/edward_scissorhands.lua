@@ -11,16 +11,20 @@ SMODS.Joker {
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
+    pools, k_genre = {"Fantasy", "Romance"},
 
     loc_vars = function(self, info_queue, card)
+        local _keystring = "genre_" .. #self.k_genre
+        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
+
             }
         }
     end,
     calculate = function(self, card, context)
-        -- "A little off the top"
-        -- When you play a card, lower its chips by 3 and gain +3 chips.
-
+        -- Before scoring, lower the chips given by every other Joker
+        -- and Increase chips by that number
+        
     end
 }

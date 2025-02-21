@@ -229,3 +229,18 @@ match_indent = true
 payload = '''
 local revenue = G.GAME.tags[i]:apply_to_run({type = 'eval_interest'})
 '''
+
+## High Score Counter
+# if G.GAME.round_scores[score] and math.floor(amt) > G.GAME.round_scores[score].amt then
+[[patches]]
+[patches.pattern]
+target = 'functions/misc_functions.lua'
+pattern = "if G.GAME.round_scores[score] and math.floor(amt) > G.GAME.round_scores[score].amt then"
+position = 'after'
+match_indent = true
+payload = '''
+if amt > 1 then
+	print(amt)
+	G.GAME.current_round.beaten_run_high = G.GAME.current_round.beaten_run_high + 1
+end
+'''

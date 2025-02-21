@@ -27,7 +27,15 @@ SMODS.Joker {
         -- when you select a blind, create a random confection
         if context.setting_blind then
             if #G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables then
-                create_card("confection", G.pack_cards, nil, nil, true, true, nil, "kino_chef")                
+                G.E_MANAGER:add_event(Event({
+                    func = function() 
+                        local card = create_card("confection", G.pack_cards, nil, nil, true, true, nil, "kino_chef")
+                        card:add_to_deck()
+                        G.consumeables:emplace(card) 
+                        return true
+                    end}))
+                    card_eval_status_text(context.blueprint_card or card, 
+                    'extra', nil, nil, nil, {message = localize('k_chef'), colour = G.C.CHIPS})                
             end
         end
     end

@@ -19,6 +19,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- when a card is scored, lower rank by 1.
+        -- +5 chips for each face card in your deck
     end
 }

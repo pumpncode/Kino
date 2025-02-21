@@ -3,6 +3,23 @@ mod_dir = ''..SMODS.current_mod.path
 -- Kino_config = SMODS.current_mod.config
 -- Kino.enabled = copy_table(Kino_config)
 
+Kino = SMODS.current_mod
+Kino.jokers = {}
+
+Kino.optional_features = function()
+    return {
+        retrigger_joker = true,
+        cardareas = {unscored = true}
+    }
+end
+
+optional_features = function()
+    return {
+        retrigger_joker = true,
+        cardareas = {unscored = true}
+    }
+end
+
 -- Read in all the sprites
 SMODS.Atlas {
     key = "kino_atlas_1",
@@ -125,6 +142,7 @@ Game.init_game_object = function(self)
     ret.current_round.sci_fi_upgrades_last_round = 0
     ret.current_round.sacrifices_made = 0
     ret.current_round.kryptons_used = 0
+    ret.current_round.beaten_run_high = 0
     -- generate_cmifc_rank()
     return ret
 end
@@ -192,4 +210,3 @@ if load_error then
 end
 
 kino_genre_init()
-

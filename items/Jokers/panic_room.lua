@@ -1,19 +1,19 @@
 SMODS.Joker {
-    key = "twins",
-    order = 70,
+    key = "panic_room",
+    order = 76,
     config = {
         extra = {
-            chips = 30,
-            mult = 30
+            chips = 20,
+            mult = 20
         }
     },
     rarity = 1,
-    atlas = "kino_atlas_2",
-    pos = { x = 3, y = 5},
+    atlas = "kino_atlas_3",
+    pos = { x = 3, y = 0},
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
-    pools, k_genre = {"Comedy", "Family"},
+    pools, k_genre = {"Thriller"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
@@ -26,12 +26,11 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- if your hand contains no more than 2 cards, gain 30 chips and 30 mult
-        if context.joker_main and #context.full_hand == 2 then
+        -- Give +20 mult and +20 chips on your final hand.
+        if context.joker_main and G.GAME.current_round.hands_left == 0 then
             return {
                 chips = card.ability.extra.chips,
-                mult = card.ability.extra.mult,
-                card = card
+                mult = card.ability.extra.mult
             }
         end
     end

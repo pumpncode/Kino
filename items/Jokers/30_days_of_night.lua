@@ -6,6 +6,7 @@ SMODS.Joker {
             is_active = true,
             x_mult = 1,
             a_xmult = 0.2,
+            string = "Feeding"
         }
     },
     rarity = 2,
@@ -24,7 +25,8 @@ SMODS.Joker {
             vars = {
                 card.ability.extra.is_active,
                 card.ability.extra.x_mult,
-                card.ability.extra.a_xmult
+                card.ability.extra.a_xmult,
+                card.ability.extra.string
             }
         }
     end,
@@ -65,6 +67,7 @@ SMODS.Joker {
         -- Swap once relevant
         if context.end_of_round and G.GAME.blind.boss then
             card.ability.extra.is_active = false
+            card.ability.extra.string = "Fed"
         end
 
         -- once the ante is over, do this.

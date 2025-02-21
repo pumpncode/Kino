@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 72,
     config = {
         extra = {
-            cur_suit = "Hearts"
+            triggered = false
         }
     },
     rarity = 1,
@@ -12,8 +12,11 @@ SMODS.Joker {
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
+    pools, k_genre = {"Comedy", "Romance"},
 
     loc_vars = function(self, info_queue, card)
+        local _keystring = "genre_" .. #self.k_genre
+        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
                 card.ability.cur_suit
@@ -21,8 +24,9 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- The first time each round a King or Jack gets scored,
-        -- copy it but make the copy a 2.
-
+        -- The first king or jack that scores, duplicate it but make it a 2.
+        if context.after then
+            
+        end
     end
 }
