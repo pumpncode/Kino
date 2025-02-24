@@ -1,11 +1,3 @@
-Jokers not triggering as intended:
-Batman (1989)
-
-Things that crash the game:
-- Can't select blind buttons after using snack pack (Breaks with Gum, Cookie & Candy)
-- Using cybertron at 0 cards used.
-
-
 Bug Fixes/Patches:
 
 - Jokers that destroy playing cards no longer leave ghost cards in deck
@@ -17,6 +9,7 @@ Bug Fixes/Patches:
 - Mr. And Mrs. Smith now properly retriggers played cards
 - LV426 no longer crashes the game when bought in a pack
 - Cybertron no longer crashes the game when bought in a pack while no sci-fi cards have been used.
+- Turner & Hooch now only works for played cards.
 
 
 Balance Changes:
