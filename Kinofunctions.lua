@@ -220,7 +220,26 @@ SMODS.score_card = function(card, context)
     end
 end
 
+-- Changes the can_discard function to account for monster cards
+local can_discard = G.FUNCS.can_discard
+G.FUNCS.can_discard = function(e)
+    -- checks if _monster_cards exist
+    local _monster = false
+    for k, v in pairs(G.hand.highlighted) do
+        if SMODS.has_enhancement(v, "m_kino_monster") then
+            _monster = true
+            break
+        end
+    end
 
+    if G.GAME.current_round.discards_left <= 0 or #G.hand.highlighted <= 0 or _monster then 
+        e.config.colour = G.C.UI.BACKGROUND_INACTIVE
+        e.config.button = nil
+    else
+        e.config.colour = G.C.RED
+        e.config.button = 'discard_cards_from_highlighted'
+    end
+end
 
 ----------------------
 -- COLOURS --

@@ -13,6 +13,6 @@ SMODS.Enhancement {
         }
     end,
     calculate = function(self, card, context, effect)
-        -- checks the two left most cards, and casts a random effect based on their suits.
+        -- checks the three left most cards, and casts a random effect based on their suits.
     end
 }

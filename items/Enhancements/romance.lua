@@ -41,7 +41,7 @@ SMODS.Enhancement {
 
                 -- Add Twilight bonuses
                 for i = 1, #G.jokers.cards do
-                    if G.jokers.cards[i].ability.extra and G.jokers.cards[i].ability.extra.romance_bonus then
+                    if type(G.jokers.cards[i].ability.extra) == 'table' and G.jokers.cards[i].ability.extra.romance_bonus then
                         _bonus = _bonus + G.jokers.cards[i].ability.extra.romance_bonus
                     end
                 

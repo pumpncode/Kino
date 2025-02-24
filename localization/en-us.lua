@@ -803,6 +803,25 @@ return {
                     "The first will give {X:chips,C:white}X#1#{} chips",
                     "and the second {X:mult,C:white}X#2#{} mult"
                 }
+            },
+            m_kino_horror = {
+                name = "Horror Card",
+                text = {
+                    "{X:chips,C:white} X#1# {} Chips",
+                    "while this card",
+                    "stays in hand.",
+                    "{C:green}#2# in #3#{} chance to",
+                    "wake up instead."
+                }
+            },
+            m_kino_monster = {
+                name = "Monster Card",
+                text = {
+                    "{C:chips}#1#{} Chips.",
+                    "{C:attention}Cannot be Discarded{}",
+                    "Returns to slumber",
+                    "after scoring."
+                }
             }
         },
         Tarot = {
@@ -816,8 +835,7 @@ return {
             c_kino_slasher = {
                 name = "Slasher",
                 text = {
-                    "Upgrade #1# cards into {C:attention}Horror cards{}.",
-                    "NYI"
+                    "Upgrade #1# cards into {C:attention}Horror cards{}."
                 }
             },
 
@@ -1182,6 +1200,9 @@ return {
             k_mars_attacks = "Invaded",
             k_mars_attacks_2 = "DESTROYED!!!!",
             k_chef = "There Ya Go",
+
+            -- Enhancement Barks
+            k_monter_turn = "ROAR!",
 
             -- Spartacus Barks
             k_spartacus_1 = "I am Spartacus!",
