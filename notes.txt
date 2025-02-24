@@ -4,6 +4,9 @@ New Enhancement:
 - Horror Card
 - Monster Card
 
+New Tarot:
+- Slasher
+
 New Jokers:
 - 50 First Dates
 - Aliens
