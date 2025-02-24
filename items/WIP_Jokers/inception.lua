@@ -6,10 +6,10 @@ SMODS.Joker {
 
         }
     },
-    rarity = 2,
+    rarity = 3,
     atlas = "kino_atlas_3",
     pos = { x = 2, y = 5},
-    cost = 5,
+    cost = 3,
     blueprint_compat = true,
     perishable_compat = true,
 
@@ -23,5 +23,6 @@ SMODS.Joker {
         -- blueprint-esque
         -- after sitting next to a joker for one played hand,
         -- copy its effects.
+
     end
 }

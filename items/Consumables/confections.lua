@@ -411,7 +411,7 @@ SMODS.Consumable {
 	end,
     config = {
         extra = {
-            hand_size = 1
+            hand_size = 2
         }
     },
     loc_vars = function(self, info_queue, card)
@@ -451,13 +451,13 @@ SMODS.Tag{
     atlas = "kino_tags",
     pos = {x = 0, y = 1},
 
-    config = {type = 'immediate', cards_drawn = 2},
+    config = {type = 'round_start_bonus', cards_drawn = 2},
     loc_vars = function(self, info_queue)
         return {vars = {self.config.cards_drawn}}
     end,
     apply = function(self, tag, context)
-        if context.type == tag.config.type and G.GAME.blind.in_blind then
-            G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
+        if context.type == tag.config.type then
+            G.FUNCS.draw_from_deck_to_hand(tag.config.cards_drawn)
             tag:yep('+', G.C.GOLD,function() 
                 return true
             end)
@@ -615,7 +615,7 @@ SMODS.Consumable {
         if G.GAME.blind.in_blind then
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    ease_hands_played(self.ability.extra.hands)
+                    ease_hands_played(card.ability.extra.hands)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -639,12 +639,12 @@ SMODS.Tag{
     atlas = "kino_tags",
     pos = {x = 3, y = 1},
 
-    config = {type = 'immediate', hands = 1},
+    config = {type = 'round_start_bonus', hands = 1},
     loc_vars = function(self, info_queue)
         return {vars = {self.config.hands}}
     end,
     apply = function(self, tag, context)
-        if context.type == tag.config.type and G.GAME.blind.in_blind then
+        if context.type == tag.config.type then
             ease_hands_played(tag.config.hands)
             tag:yep('+', G.C.GOLD,function() 
                 return true
@@ -708,12 +708,12 @@ SMODS.Tag{
     atlas = "kino_tags",
     pos = {x = 4, y = 1},
 
-    config = {type = 'immediate', discards = 1},
+    config = {type = 'round_start_bonus', discards = 1},
     loc_vars = function(self, info_queue)
         return {vars = {self.config.discards}}
     end,
     apply = function(self, tag, context)
-        if context.type == tag.config.type and G.GAME.blind.in_blind then
+        if context.type == tag.config.type then
             ease_discard(tag.config.discards)
             tag:yep('+', G.C.GOLD,function() 
                 return true

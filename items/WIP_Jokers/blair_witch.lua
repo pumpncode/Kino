@@ -1,9 +1,10 @@
 SMODS.Joker {
-    key = "file_name",
-    order = 0,
+    key = "blair_witch",
+    order = 150,
     config = {
         extra = {
-
+            cur_chance = 0,
+            chance = 100
         }
     },
     rarity = 1,
@@ -12,7 +13,7 @@ SMODS.Joker {
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
-    pools, k_genre = {"Drama"},
+    pools, k_genre = {"Horror"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
@@ -24,6 +25,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        
+        -- Rerolls are free. Every time you reroll, increase the chance by 5 to destroy all current jokers.
     end
 }

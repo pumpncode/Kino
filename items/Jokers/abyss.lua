@@ -13,7 +13,7 @@ SMODS.Joker {
     cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
-    pools, k_genre = {"Drama"},
+    pools, k_genre = {"Thriller", "Sci-fi"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre

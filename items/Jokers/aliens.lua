@@ -1,0 +1,47 @@
+SMODS.Joker {
+    key = "aliens",
+    order = 59,
+    config = {
+        extra = {
+            cards_debuffing = 2,
+            x_mult = 2
+        }
+    },
+    rarity = 1,
+    atlas = "kino_atlas_2",
+    pos = { x = 4, y = 3},
+    cost = 4,
+    blueprint_compat = true,
+    perishable_compat = true,
+    pools, k_genre = {"Sci-fi", "Action"},
+
+    loc_vars = function(self, info_queue, card)
+        local _keystring = "genre_" .. #self.k_genre
+        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
+        return {
+            vars = {
+                card.ability.extra.cards_debuffing,
+                card.ability.extra.x_mult
+            }
+        }
+    end,
+    calculate = function(self, card, context)
+        -- X2 mult, but debuffs two random cards when triggered.
+        if context.joker_main then
+            local _cards_debuffed = 0
+
+            while _cards_debuffed < card.ability.extra.cards_debuffing do
+                local _rand_card = pseudorandom_element(G.deck.cards,  pseudoseed('aliens'))
+                if _rand_card.debuff == false then
+                    SMODS.debuff_card(_rand_card, true, card.config.center.key)
+                    _cards_debuffed = _cards_debuffed + 1
+                end
+            end
+
+            return {
+                x_mult = card.ability.extra.x_mult,
+                message = localize{type='variable', key = 'a_xmult', vars = {card.ability.extra.x_mult}}
+            }
+        end
+    end
+}
