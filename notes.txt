@@ -1,0 +1,24 @@
+Jokers not triggering as intended:
+Batman (1989)
+
+Things that crash the game:
+- Can't select blind buttons after using snack pack (Breaks with Gum, Cookie & Candy)
+- Using cybertron at 0 cards used.
+
+
+Bug Fixes/Patches:
+
+- Jokers that destroy playing cards no longer leave ghost cards in deck
+- Batman (1989) now properly increments
+- Benjamin Button no longer changes the visuals of the card pre-scoring
+- Gum, Cookie and Candy confection disabled because of run-ending bug
+- Stand by me no longer crashes the game
+- E.T. no longer crashes the game
+- Mr. And Mrs. Smith now properly retriggers played cards
+- LV426 no longer crashes the game when bought in a pack
+- Cybertron no longer crashes the game when bought in a pack while no sci-fi cards have been used.
+
+
+Balance Changes:
+- Batman (1989) changed from +3 to +1
+- Scaling hand-type jokers no longer double after defeating a boss blind, but just increment gains.

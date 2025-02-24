@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 53,
     config = {
         extra = {
-            a_mult = 3,
+            a_mult = 1,
             total = 0,
             mult = 0
         }
@@ -31,13 +31,14 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- At the end of the round, gain +3 for each open joker slot.\
         if G.STAGE == G.STAGES.RUN then
-            card.ability.extra.total = (G.jokers.config.card_limit - #G.jokers.cards) * card.ability.extra.mult
+            card.ability.extra.total = (G.jokers.config.card_limit - #G.jokers.cards) * card.ability.extra.a_mult
             for i = 1, #G.jokers.cards do
-                if G.jokers.cards[i].config.center.j_is_batman then card.ability.extra.total = card.ability.extra.total * card.ability.extra.mult end
+                if G.jokers.cards[i].config.center.j_is_batman then card.ability.extra.total = card.ability.extra.total + (1 * card.ability.extra.a_mult) end
             end
         end
 
-        if context.end_of_round and not context.blueprint then
+        if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
+            print("Triggered")
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.total
         end
 

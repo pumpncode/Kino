@@ -24,17 +24,16 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- x3, and destroy a random scored card.
+        -- x3, and destroy a random scored card. (Code by Eremel)
         if context.joker_main then
             -- Select a random card
-            
-            local destroyed_card = pseudorandom_element(context.scoring_hand)
-            SMODS.calculate_context({destroy_card = destroyed_card})
-            destroyed_card:start_dissolve()
-
+            pseudorandom_element(context.scoring_hand).marked_to_destroy_by_fight_club = true
             return {
                 x_mult = card.ability.extra.x_mult
             }
+        end
+        if context.destroying_card and context.destroying_card.marked_to_destroy_by_fight_club then
+            return { remove = true }
         end
     end
 }

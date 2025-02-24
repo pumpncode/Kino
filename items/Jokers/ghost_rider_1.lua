@@ -28,7 +28,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- Destroy a random Demonic card in hand to gain x.25
         if context.joker_main and not context.blueprint then
-            print("Entered")
             local _demons = {}
             for i = 1, #G.hand.cards do
                 if SMODS.has_enhancement(G.hand.cards[i], 'm_kino_demonic') then
@@ -41,17 +40,18 @@ SMODS.Joker {
                 { message = localize('k_ghost_rider_1'), colour = G.C.BLACK })
                 local _destroyed_card = pseudorandom_element(_demons)
                 _destroyed_card.destroyed = true
+                _destroyed_card.marked_to_destroy_by_ghost_rider = true
 
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        if SMODS.has_enhancement(_destroyed_card, 'm_glass') then
-                            _destroyed_card:shatter()
-                        else
-                            _destroyed_card:start_dissolve()
-                        end
-                      return true
-                    end
-                  }))
+                -- G.E_MANAGER:add_event(Event({
+                --     func = function()
+                --         if SMODS.has_enhancement(_destroyed_card, 'm_glass') then
+                --             _destroyed_card:shatter()
+                --         else
+                --             _destroyed_card:start_dissolve()
+                --         end
+                --       return true
+                --     end
+                --   }))
 
                 card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.a_xmult
             end
@@ -61,6 +61,14 @@ SMODS.Joker {
                     x_mult = card.ability.extra.x_mult
                 }
             end
+        end
+
+        if context.destroy_card and context.cardarea == G.hand then
+
+            if context.destroy_card.marked_to_destroy_by_ghost_rider then
+                return { remove = true }
+            end
+            
         end
     end
 }
