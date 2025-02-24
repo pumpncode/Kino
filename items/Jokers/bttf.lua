@@ -5,7 +5,9 @@ SMODS.Joker {
         extra = {
             card_1 = "???",
             card_2 = "???",
-            card_3 = "???"
+            card_3 = "???",
+            colours = {"nil","nil","nil"},
+            amount = 3
         }
     },
     rarity = 1,
@@ -23,11 +25,14 @@ SMODS.Joker {
             vars = {
                 card.ability.extra.card_1,
                 card.ability.extra.card_2,
-                card.ability.extra.card_3
+                card.ability.extra.card_3,
+                card.ability.extra.amount
             }
         }
     end,
     calculate = function(self, card, context)
+        -- Shows you the top three cards
+
         card.ability.extra.card_1 = "" .. (G.deck and G.deck.cards[1] and G.deck.cards[#G.deck.cards].base.id or "?")..(G.deck and G.deck.cards[1] and G.deck.cards[#G.deck.cards].base.suit:sub(1,1) or '??')
         card.ability.extra.card_2 = "" .. (G.deck and G.deck.cards[2] and G.deck.cards[#G.deck.cards -1].base.id or "???")..(G.deck and G.deck.cards[1] and G.deck.cards[#G.deck.cards-1].base.suit:sub(1,1) or '??')
         card.ability.extra.card_3 = "" .. (G.deck and G.deck.cards[3] and G.deck.cards[#G.deck.cards -2].base.id or "???")..(G.deck and G.deck.cards[1] and G.deck.cards[#G.deck.cards-2].base.suit:sub(1,1) or '??')

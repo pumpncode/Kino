@@ -159,6 +159,16 @@ return {
                     "{C:attention}#3#{}"
                 }
             },
+            -- j_kino_bttf = {
+            --     name = "Back to the Future",
+            --     text = {
+            --         "Shows you the top #4# cards",
+            --         "in your deck.",
+            --         "{V:1}#1#{}",
+            --         "{V:2}#2#{}",
+            --         "{V:3}#3#{}"
+            --     }
+            -- },
             j_kino_casablanca = {
                 name = "Casablanca",
                 text = {
@@ -196,7 +206,7 @@ return {
                 name = "Dickie Roberts: Child Star",
                 text = {
                     "Scored {C:attention}Spades{} give {C:mult}+1{} mult",
-                    "For each {C:attention}Spades{} card in your deck above 13.",
+                    "for each {C:attention}Spades{} card in your deck above 13.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
@@ -270,7 +280,7 @@ return {
                 name = "Gentlemen Prefer Blondes",
                 text = {
                     "Scored {C:attention}Diamonds{} {C:mult}+1{} mult",
-                    "For each {C:attention}Diamonds{} card in your deck above 13.",
+                    "for each {C:attention}Diamonds{} card in your deck above 13.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
@@ -645,7 +655,7 @@ return {
                 name = "The Breakfast Club",
                 text = {
                     "Scored {C:attention}Clubs{} give {C:mult}+1{} mult",
-                    "For each {C:attention}Clubs{} card in your deck above 13.",
+                    "for each {C:attention}Clubs{} card in your deck above 13.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
             },
@@ -695,7 +705,7 @@ return {
                 name = "Titanic",
                 text = {
                     "Scored {C:attention}Hearts{} give {C:mult}+1{} mult",
-                    "or each {C:attention}Hearts{}",
+                    "for each {C:attention}Hearts{}",
                     "in your deck above 13.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }

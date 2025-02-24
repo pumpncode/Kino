@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 42,
     config = {
         extra = {
-            repetitions = 2
+            repetitions = 1
         }
     },
     rarity = 1,
@@ -24,7 +24,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.scoring_name == "Pair" and 
+        if context.scoring_name == "Pair" and 
         context.cardarea == G.play and context.repetition and not context.repetition_only then
             return {
                 message = 'Again!',

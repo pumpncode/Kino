@@ -243,9 +243,10 @@ SMODS.Consumable {
 		end
 
         for i = 1, card.ability.extra.debuff_num do
+            local _card = nil
             local _found_target = false
             while not _found_target do
-                local _card = pseudorandom_element(G.deck.cards)
+                _card = pseudorandom_element(G.deck.cards)
                 if not _card.debuff then
                     _found_target = true
                 end

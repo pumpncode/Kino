@@ -30,14 +30,20 @@ SMODS.Joker {
                 _rank = _card.base.id
             end 
             
-            SMODS.calculate_context({destroy_card = _card})
-            _card:start_dissolve()
+            _card.marked_to_destroy_by_point_break = true
 
             for i, v in ipairs(context.scoring_hand) do
                 v.ability.perma_mult = v.ability.perma_mult or 0
                 v.ability.perma_mult = v.ability.perma_mult + _rank
                 card_eval_status_text(v, 'extra', nil, nil, nil,
                 { message = localize("k_upgrade_ex"), colour = G.C.MULT })
+            end
+        end
+
+        if context.destroy_card and context.cardarea == G.hand then
+            
+            if context.destroy_card.marked_to_destroy_by_point_break then
+                return {remove = true}
             end
         end
     end
