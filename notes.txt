@@ -1,3 +1,28 @@
+V 0.4:
+
+New Enhancement:
+- Horror Card
+- Monster Card
+
+New Jokers:
+- 50 First Dates
+- Aliens
+- Baby Geniuses
+- Ghostbusters
+- Halloween
+- The Incredible Hulk
+- Jaws
+- Nightmare on Elm Street
+- The Number 23
+- Pride & Prejudice
+- The Social Network
+- The Wicker Man
+
+Bug Fixes:
+- The Cookie, Gum and Candy confection no longer make the UI uninteractable
+
+
+---------
 Bug Fixes/Patches:
 
 - Jokers that destroy playing cards no longer leave ghost cards in deck
