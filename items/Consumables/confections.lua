@@ -121,63 +121,63 @@ SMODS.Tag{
 }
 
 -- Gain +1 hand size until the end of this round
--- SMODS.Consumable {
---     key = "candy",
---     set = "confection",
---     order = 3,
---     pos = {x = 2, y = 0},
---     atlas = "kino_confections",
---     can_use = function(self, card)
--- 		return true
--- 	end,
---     config = {
---         extra = {
---             hand_size = 1
---         }
---     },
---     loc_vars = function(self, info_queue, card)
---         return {
---             vars = {
---                 card.ability.extra.hand_size
---             }
---         } 
---     end,
---     use = function(self, card, area, copier)
---         G.E_MANAGER:add_event(Event({
---             func = (function()
---                 add_tag(Tag('tag_kino_candy'))
---                 play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
---                 play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
---                 return true
---             end)
---         }))
---     end
--- }
+SMODS.Consumable {
+    key = "candy",
+    set = "confection",
+    order = 3,
+    pos = {x = 2, y = 0},
+    atlas = "kino_confections",
+    can_use = function(self, card)
+		return true
+	end,
+    config = {
+        extra = {
+            hand_size = 1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.hand_size
+            }
+        } 
+    end,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            func = (function()
+                add_tag(Tag('tag_kino_candy'))
+                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                return true
+            end)
+        }))
+    end
+}
 
--- SMODS.Tag{
---     key = "candy",
---     atlas = "kino_tags",
---     pos = {x = 2, y = 0},
+SMODS.Tag{
+    key = "candy",
+    atlas = "kino_tags",
+    pos = {x = 2, y = 0},
 
---     config = {type = 'round_start_bonus', h_size = 1},
---     loc_vars = function(self, info_queue)
---         return {vars = {self.config.h_size}}
---     end,
---     apply = function(self, tag, context)
---         if context.type == tag.config.type then
---             tag:yep('+', G.C.BLUE,function() 
---                 return true
---             end)
---             G.hand:change_size(tag.config.h_size)
---             G.GAME.round_resets.temp_handsize = (G.GAME.round_resets.temp_handsize or 0) + tag.config.h_size
---             tag.triggered = true
---             return true
---         end
---     end,
---     in_pool = function()
--- 		return false
--- 	end
--- }
+    config = {type = 'round_start_bonus', h_size = 1},
+    loc_vars = function(self, info_queue)
+        return {vars = {self.config.h_size}}
+    end,
+    apply = function(self, tag, context)
+        if context.type == tag.config.type then
+            tag:yep('+', G.C.BLUE,function() 
+                return true
+            end)
+            G.hand:change_size(tag.config.h_size)
+            G.GAME.round_resets.temp_handsize = (G.GAME.round_resets.temp_handsize or 0) + tag.config.h_size
+            tag.triggered = true
+            return true
+        end
+    end,
+    in_pool = function()
+		return false
+	end
+}
 
 -- Double the interest this round
 SMODS.Consumable {
@@ -411,7 +411,7 @@ SMODS.Consumable {
 	end,
     config = {
         extra = {
-            hand_size = 1
+            hand_size = 2
         }
     },
     loc_vars = function(self, info_queue, card)
@@ -451,13 +451,13 @@ SMODS.Tag{
     atlas = "kino_tags",
     pos = {x = 0, y = 1},
 
-    config = {type = 'immediate', cards_drawn = 2},
+    config = {type = 'round_start_bonus', cards_drawn = 2},
     loc_vars = function(self, info_queue)
         return {vars = {self.config.cards_drawn}}
     end,
     apply = function(self, tag, context)
-        if context.type == tag.config.type and G.GAME.blind.in_blind then
-            G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
+        if context.type == tag.config.type then
+            G.FUNCS.draw_from_deck_to_hand(tag.config.cards_drawn)
             tag:yep('+', G.C.GOLD,function() 
                 return true
             end)
@@ -590,139 +590,139 @@ SMODS.Tag{
 }
 
 -- Gain +1 hand this round.
--- SMODS.Consumable {
---     key = "cookie",
---     set = "confection",
---     order = 10,
---     pos = {x = 3, y = 1},
---     atlas = "kino_confections",
---     can_use = function(self, card)
--- 		return true
--- 	end,
---     config = {
---         extra = {
---             hands = 1
---         }
---     },
---     loc_vars = function(self, info_queue, card)
---         return {
---             vars = {
---                 card.ability.extra.hands
---             }
---         } 
---     end,
---     use = function(self, card, area, copier)
---         if G.GAME.blind.in_blind then
---             G.E_MANAGER:add_event(Event({
---                 func = (function()
---                     ease_hands_played(self.ability.extra.hands)
---                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
---                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
---                     return true
---                 end)
---             }))
---         else
---             G.E_MANAGER:add_event(Event({
---                 func = (function()
---                     add_tag(Tag('tag_kino_cookie'))
---                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
---                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
---                     return true
---                 end)
---             }))
---         end
---     end
--- }
+SMODS.Consumable {
+    key = "cookie",
+    set = "confection",
+    order = 10,
+    pos = {x = 3, y = 1},
+    atlas = "kino_confections",
+    can_use = function(self, card)
+		return true
+	end,
+    config = {
+        extra = {
+            hands = 1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.hands
+            }
+        } 
+    end,
+    use = function(self, card, area, copier)
+        if G.GAME.blind.in_blind then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    ease_hands_played(card.ability.extra.hands)
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        else
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_cookie'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
+    end
+}
 
--- SMODS.Tag{
---     key = "cookie",
---     atlas = "kino_tags",
---     pos = {x = 3, y = 1},
+SMODS.Tag{
+    key = "cookie",
+    atlas = "kino_tags",
+    pos = {x = 3, y = 1},
 
---     config = {type = 'immediate', hands = 1},
---     loc_vars = function(self, info_queue)
---         return {vars = {self.config.hands}}
---     end,
---     apply = function(self, tag, context)
---         if context.type == tag.config.type and G.GAME.blind.in_blind then
---             ease_hands_played(tag.config.hands)
---             tag:yep('+', G.C.GOLD,function() 
---                 return true
---             end)
---             tag.triggered = true
---             return true
---         end
---     end,
---     in_pool = function()
--- 		return false
--- 	end,
--- }
+    config = {type = 'round_start_bonus', hands = 1},
+    loc_vars = function(self, info_queue)
+        return {vars = {self.config.hands}}
+    end,
+    apply = function(self, tag, context)
+        if context.type == tag.config.type then
+            ease_hands_played(tag.config.hands)
+            tag:yep('+', G.C.GOLD,function() 
+                return true
+            end)
+            tag.triggered = true
+            return true
+        end
+    end,
+    in_pool = function()
+		return false
+	end,
+}
 
--- -- Gain +1 discard this round.
--- SMODS.Consumable {
---     key = "gum",
---     set = "confection",
---     order = 11,
---     pos = {x = 4, y = 1},
---     atlas = "kino_confections",
---     can_use = function(self, card)
--- 		return true
--- 	end,
---     config = {
---         extra = {
---             discards = 1
---         }
---     },
---     loc_vars = function(self, info_queue, card)
---         return {
---             vars = {
---                 card.ability.extra.discards
---             }
---         } 
---     end,
---     use = function(self, card, area, copier)
---         if G.GAME.blind.in_blind then
---             G.E_MANAGER:add_event(Event({
---                 func = (function()
---                     ease_discard(card.ability.extra.discards)
---                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
---                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
---                     return true
---                 end)
---             }))
---         else
---             G.E_MANAGER:add_event(Event({
---                 func = (function()
---                     add_tag(Tag('tag_kino_gum'))
---                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
---                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
---                     return true
---                 end)
---             }))
---         end
---     end
--- }
+-- Gain +1 discard this round.
+SMODS.Consumable {
+    key = "gum",
+    set = "confection",
+    order = 11,
+    pos = {x = 4, y = 1},
+    atlas = "kino_confections",
+    can_use = function(self, card)
+		return true
+	end,
+    config = {
+        extra = {
+            discards = 1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.discards
+            }
+        } 
+    end,
+    use = function(self, card, area, copier)
+        if G.GAME.blind.in_blind then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    ease_discard(card.ability.extra.discards)
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        else
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_gum'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
+    end
+}
 
--- SMODS.Tag{
---     key = "gum",
---     atlas = "kino_tags",
---     pos = {x = 4, y = 1},
+SMODS.Tag{
+    key = "gum",
+    atlas = "kino_tags",
+    pos = {x = 4, y = 1},
 
---     config = {type = 'immediate', discards = 1},
---     loc_vars = function(self, info_queue)
---         return {vars = {self.config.discards}}
---     end,
---     apply = function(self, tag, context)
---         if context.type == tag.config.type and G.GAME.blind.in_blind then
---             ease_discard(tag.config.discards)
---             tag:yep('+', G.C.GOLD,function() 
---                 return true
---             end)
---             tag.triggered = true
---             return true
---         end
---     end,
---     in_pool = function()
--- 		return false
--- 	end,
--- }
+    config = {type = 'round_start_bonus', discards = 1},
+    loc_vars = function(self, info_queue)
+        return {vars = {self.config.discards}}
+    end,
+    apply = function(self, tag, context)
+        if context.type == tag.config.type then
+            ease_discard(tag.config.discards)
+            tag:yep('+', G.C.GOLD,function() 
+                return true
+            end)
+            tag.triggered = true
+            return true
+        end
+    end,
+    in_pool = function()
+		return false
+	end,
+}

@@ -244,3 +244,15 @@ if amt > 1 then
 	G.GAME.current_round.beaten_run_high = G.GAME.current_round.beaten_run_high + 1
 end
 '''
+
+# ## Changes when cards can be discarded
+# [[patches]]
+# [patches.pattern]
+# target = 'functions/misc_functions.lua'
+# pattern = "if G.GAME.current_round.discards_left <= 0 or #G.hand.highlighted <= 0 then "
+# position = 'at'
+# match_indent = true
+# payload = '''
+
+# if G.GAME.current_round.discards_left <= 0 or #G.hand.highlighted <= 0 and next(SMODS.has_enhancement(v)) then
+# '''
