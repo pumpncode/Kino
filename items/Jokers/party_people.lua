@@ -3,7 +3,8 @@ SMODS.Joker {
     order = 27,
     config = {
         extra = {
-            income = 1
+            income = 1,
+            threshold = 5
         }
     },
     rarity = 3,
@@ -19,7 +20,8 @@ SMODS.Joker {
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.income
+                card.ability.extra.income,
+                card.ability.extra.threshold
             }
         }
     end,
@@ -27,7 +29,7 @@ SMODS.Joker {
         -- Gives money equal to interest when scoring a club card.
         if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit("Clubs") then
-                local money = math.floor((G.GAME.dollars + (G.GAME.dollar_buffer or 0)) / 5)
+                local money = math.floor((G.GAME.dollars + (G.GAME.dollar_buffer or 0)) / card.ability.extra.threshold)
                 return {
                     dollars = money,
                     card = context.other_card

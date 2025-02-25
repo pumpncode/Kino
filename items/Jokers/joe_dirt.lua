@@ -32,7 +32,7 @@ SMODS.Joker {
 
             return {
                 message = localize('k_upgrade_ex'),
-                card = self,
+                card = card,
                 colour = G.C.CHIPS
             }
         end
@@ -42,6 +42,10 @@ SMODS.Joker {
                 chips = card.ability.extra.chips,
                 message = localize({ type = 'variable', key = 'a_chips', vars = { card.ability.extra.chips}})
             }
+        end
+
+        if context.end_of_round and not context.individual and not context.repetition and not context.blueprint then
+            card.ability.extra.chips = 0
         end
     end
 }

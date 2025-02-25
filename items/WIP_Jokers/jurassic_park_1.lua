@@ -3,6 +3,7 @@ SMODS.Joker {
     order = 95,
     config = {
         extra = {
+            factor = 5
 
         }
     },
@@ -21,5 +22,10 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- scored cards give 5 times as many chips
+        if context.individual then
+            return {
+                
+            }
+        end
     end
 }

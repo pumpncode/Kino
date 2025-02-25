@@ -28,11 +28,11 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- 7s give +7 mult
 
-        if context.individual and context.other_card:get_id() == 7 then
-            card.ability.extra.sevens_trigs = card.ability.extra.sevens_trigs + 1
+        if context.individual and context.other_card:get_id() == 7 and context.cardarea == G.play then
+            card.ability.extra.sevens_trig = card.ability.extra.sevens_trig + 1
 
-            if card.ability.extra.sevens_trigs == card.ability.extra.sevens_trigs_cap then
-                card.ability.extra.sevens_trigs = 0
+            if card.ability.extra.sevens_trig == card.ability.extra.sevens_trig_cap then
+                card.ability.extra.sevens_trig = 0
                 return {
                     x_mult = card.ability.extra.mult
                 }

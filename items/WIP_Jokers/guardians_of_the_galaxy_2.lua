@@ -1,18 +1,18 @@
 SMODS.Joker {
-    key = "rocky_1",
-    order = 11,
+    key = "file_name",
+    order = 153,
     config = {
         extra = {
 
         }
     },
-    rarity = 1,
-    atlas = "kino_atlas_1",
-    pos = { x = 4, y = 1 },
-    cost = 3,
+    rarity = 2,
+    atlas = "kino_atlas_5",
+    pos = { x = 2, y = 1},
+    cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
-    pools, k_genre = {"Sports"},
+    pools, k_genre = {"Drama"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
@@ -24,13 +24,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- upgrade hand if it's the final hand.
-        if context.before and G.GAME.current_round.hands_left == 0 then
-            return {
-                card = card,
-                level_up = true,
-                message = localize('k_level_up_ex')
-            }
-        end
+       -- transform every planet into ego when you select a blind
+
     end
 }

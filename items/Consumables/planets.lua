@@ -207,7 +207,7 @@ SMODS.Consumable {
 
         local _hand = get_random_hand()
         local _x_mult = G.GAME.current_round.sci_fi_upgrades_last_round * card.ability.extra.x_mult
-        upgrade_hand(card, _hand, 0, 0, 1, _x_mult)
+        upgrade_hand(card, _hand, 0, 0, 0, _x_mult)
 
         update_hand_text(
 			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
