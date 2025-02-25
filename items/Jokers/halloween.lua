@@ -20,7 +20,7 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.chips,
-                G.GAME.current_round.horror_transform * card.ability.extra.chips
+                (G.GAME.current_round.horror_transform * card.ability.extra.chips) or 0
             }
         }
     end,
