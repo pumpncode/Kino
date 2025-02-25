@@ -35,7 +35,7 @@ SMODS.Joker {
                     end
                 end
 
-                card.ability.extra.chips = card.ability.extra.chips + G.GAME.hands[v].level
+                card.ability.extra.chips = card.ability.extra.chips + G.GAME.hands[_hand].level
             end
         end
 
