@@ -115,9 +115,7 @@ function Card:get_chip_mult()
 end
 
 function is_genre(joker, genre)
-    print("going to test this function now")
     if joker.config.center.k_genre then
-        print("?:!")
         for i = 1, #joker.config.center.k_genre do
             if genre == joker.config.center.k_genre[i] then
                 return true
@@ -153,25 +151,6 @@ Game.init_game_object = function(self)
     -- generate_cmifc_rank()
     return ret
 end
-
--- Register the Jokers
--- local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
--- for _, file in ipairs(files) do
---     print("Loading file: " .. file)
---     local status, err = pcall(function()
---         return NFS.load(mod_dir .. "/Items/Jokers/" .. file)()
---     end)
---     sendDebugMessage("Loaded Joker: " .. file, "--KINO")
-
---     local string = string.sub(file, 1, #file-4)
---     Kino.jokers[#Kino.jokers + 1] = "j_kino_" .. string
-
---     if not status then
---         error(file .. ": " .. err)
---     end
--- end
-
-
 
 -- Register the Jokers
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")

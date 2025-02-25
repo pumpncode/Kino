@@ -74,18 +74,14 @@ end
 function update_scrap(num, is_set)
     -- num is the number to increment or set the scrap by
     -- is_set == true will set instead of increment
-    print("UPDATING SCRAP || " .. num)
     if not G.GAME.current_round.scrap_total then
         G.GAME.current_round.scrap_total = 0
-        print("No scrap_total found, setting it to 0")
     end
 
     if is_set then
         G.GAME.current_round.scrap_total = num
-        print("is set was true. Setting to " .. num)
     else
         G.GAME.current_round.scrap_total = G.GAME.current_round.scrap_total + num
-        print("added " .. num .. ". Total is now " .. G.GAME.current_round.scrap_total)
     end
 end
 
@@ -134,21 +130,18 @@ function upgrade_hand(card, hand, chips, mult, x_chips, x_mult)
     -- xchips = multiply the chips
     -- xmult = multiply the mult
     -- boolean islevelup = whether the level increases
-    print(chips)
+
     chips = chips or 0
     mult = mult or 0
     x_chips = x_chips or 0
     x_mult = x_mult or 0
-    print(chips)
 
-    
     -- upgrades should be put into an array with whether they were a level up.
     -- the level_up_hand function should be modified to upgrade the hand
     -- after the normal level calc is done.
     local _chips = chips + (G.GAME.hands[hand].chips * x_chips)
-    print(chips .. " & " .. _chips .. " Chips.")
     local _mult = mult + (G.GAME.hands[hand].mult * x_mult)
-    print(mult .. " & " .. _mult .. " Mult.")
+
 
     -- Set mult
     G.GAME.hands[hand].mult_bonus = (G.GAME.hands[hand].mult_bonus or 0) + _mult
@@ -159,7 +152,6 @@ function upgrade_hand(card, hand, chips, mult, x_chips, x_mult)
     -- Set both
     G.GAME.hands[hand].mult = math.max(G.GAME.hands[hand].s_mult + G.GAME.hands[hand].l_mult*(G.GAME.hands[hand].level - 1) +  G.GAME.hands[hand].mult_bonus, 1)
     G.GAME.hands[hand].chips = math.max(G.GAME.hands[hand].s_chips + G.GAME.hands[hand].l_chips*(G.GAME.hands[hand].level - 1) +  G.GAME.hands[hand].chips_bonus, 1)
-    print(G.GAME.hands[hand].mult)
     -- play animation
 
     G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function()

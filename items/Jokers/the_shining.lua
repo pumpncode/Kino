@@ -30,7 +30,6 @@ SMODS.Joker {
             for i = 1, #context.hand_drawn do
                 if context.hand_drawn[i].base.id == 11 and 
                 context.hand_drawn[i].config.center ~= G.P_CENTERS.m_stone then
-                    print("TEST")
                     card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult
 
                     if pseudorandom("shining") < (1/10) then

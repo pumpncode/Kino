@@ -30,7 +30,6 @@ SMODS.Joker {
         -- Unscored cards have a 1/4 chance to jump scare
         if context.individual and context.cardarea == "unscored" then
             if pseudorandom("abyss") < G.GAME.probabilities.normal / card.ability.extra.chance then
-                print(G.GAME.probabilities.normal / card.ability.extra.chance)
                 card.ability.extra.destroy_cards[#card.ability.extra.destroy_cards + 1] = context.other_card
                 return {
                     x_mult = Kino.jump_scare_mult, 

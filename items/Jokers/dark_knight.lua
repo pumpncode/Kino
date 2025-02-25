@@ -34,7 +34,6 @@ SMODS.Joker {
         if context.setting_blind and not card.getting_sliced and not context.blueprint then
             local _jokers_destroyed = 0
             for i = 1, #G.jokers.cards do
-                print(card.j_is_batman)
                 if not G.jokers.cards[i].config.center.j_is_batman and not G.jokers.cards[i].ability.eternal then
                     _jokers_destroyed = _jokers_destroyed + 1
                     G.jokers.cards[i].getting_sliced = true

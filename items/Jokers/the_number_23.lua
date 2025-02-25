@@ -31,8 +31,6 @@ SMODS.Joker {
                 _tally = _tally + context.full_hand[i].base.nominal
             end
 
-            print(_tally)
-
             if _tally == 23 then
                 return {
                     mult = card.ability.extra.mult

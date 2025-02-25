@@ -231,7 +231,6 @@ SMODS.Tag{
         end
         if context.type == tag.config.type then
             G.GAME.interest_amount = G.GAME.interest_amount - tag.config.dollars
-            print(G.GAME.interest_amount)
                 tag:yep('+', G.C.GOLD,function() 
                     return true
                 end)
@@ -295,11 +294,8 @@ SMODS.Tag{
     end,
     apply = function(self, tag, context)
 
-        print("TESTING WTH  " .. context.type .. " & " .. tag.config.type)
         -- Check for right context.
         if context.type == tag.config.type then
-            print("entered")
-            print(#tag.ability.suits .. " suits when entered")
             -- Check for suits already encountered
             local _is_viable = true
             for i = 1, #tag.ability.suits do
@@ -312,7 +308,6 @@ SMODS.Tag{
             if _is_viable and 
             context.card.config.center ~= G.P_CENTERS.m_stone then
                 tag.ability.suits[#tag.ability.suits + 1] = context.card.config.card.suit
-                print(#tag.ability.suits .. " suits before return")
                 return {
                     card = context.card,
                     effect = nil,
@@ -381,7 +376,6 @@ SMODS.Tag{
     end,
     apply = function(self, tag, context)
         if context.type == tag.config.type then
-            print("Soda print")
             tag:yep('+', G.C.GREEN,function() 
                 return true
             end)
