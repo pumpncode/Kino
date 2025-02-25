@@ -24,10 +24,11 @@ SMODS.Enhancement {
         if context.main_scoring and context.cardarea == G.hand then
             if pseudorandom("m_horror") < G.GAME.probabilities.normal / card.ability.chance then
                 -- Change into monster card
-                G.GAME.current_round.horror_transform = G.GAME.current_round.horror_Transform + 1
+                G.GAME.current_round.horror_transform = G.GAME.current_round.horror_transform + 1
                 card:set_ability(G.P_CENTERS.m_kino_monster, nil, true)
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_monster_turn'), colour = G.C.BLACK })
+                SMODS.calculate_context({monster_awaken = true})
             else 
                 return {
                     x_chips = card.ability.x_chips

@@ -20,6 +20,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- when you play a hand with only a lucky card,
+        -- destroy it and create a copy
+        -- with all odds increased by 1
     end
 }

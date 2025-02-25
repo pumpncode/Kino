@@ -14,6 +14,7 @@ SMODS.Joker {
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Sci-fi"},
+    enhancement_gate = 'm_kino_sci_fi',
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
@@ -28,7 +29,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- When you destroy a sci-fi card, gain x0.1 for each time it was upgraded.
         if context.remove_playing_cards and not context.blueprint then
-            print("Enter")
             local sci_fi_upgrades = 0
             for i, k in ipairs(context.removed) do
                 if k.config.center == G.P_CENTERS.m_kino_sci_fi then

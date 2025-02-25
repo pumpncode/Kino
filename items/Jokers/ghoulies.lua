@@ -13,6 +13,7 @@ SMODS.Joker {
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Horror"},
+    enhancement_gate = 'm_kino_demonic',
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
@@ -26,7 +27,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- When you play the given hand type, add a Demonic 2 to your hand.
         if context.joker_main and context.scoring_name == card.ability.extra.hand_name then
-            print("ENTERING")
             G.E_MANAGER:add_event(Event({
                 func = function() 
                     local _pool = {G.P_CARDS.H_2, G.P_CARDS.C_2, G.P_CARDS.D_2, G.P_CARDS.S_2}
@@ -38,7 +38,6 @@ SMODS.Joker {
                     return true
                 end}))
 
-            print("NEW RITUAL")
             -- After performing the ritual, change the ritual
             local _poker_hands = {}
             local cur_hand = card.ability.extra.hand_name

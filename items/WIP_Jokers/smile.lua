@@ -1,16 +1,15 @@
 SMODS.Joker {
-    key = "blair_witch",
-    order = 150,
+    key = "smile",
+    order = 118,
     config = {
         extra = {
-            cur_chance = 0,
-            chance = 100
+
         }
     },
-    rarity = 1,
-    atlas = "kino_atlas_1",
-    pos = { x = 0, y = 0},
-    cost = 4,
+    rarity = 2,
+    atlas = "kino_atlas_4",
+    pos = { x = 3, y = 1},
+    cost = 3,
     blueprint_compat = true,
     perishable_compat = true,
     pools, k_genre = {"Horror"},
@@ -25,6 +24,11 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- Rerolls are free. Every time you reroll, increase the chance by 5 to destroy all current jokers.
+        -- Face cards count as Demonic cards
+        if context.check_enhancement then 
+            if SMODS.Ranks[context.other_card.base.value].face then
+                return {m_kino_demonic = true}
+            end
+        end
     end
 }

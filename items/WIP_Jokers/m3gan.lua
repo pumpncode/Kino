@@ -20,6 +20,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- On your final hand, lower the blind with 5% for each sci-fi card in hand.
     end
 }

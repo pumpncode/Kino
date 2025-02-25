@@ -1,11 +1,18 @@
+Features to add:
+- Snack Bag (card area to keep confections in)
+- Quests (For Oppenheimer, Zodiac, Bucket List)
+- 
+
 Jokers not triggering as intended:
-Batman (1989)
+I, Robot
+
 
 Things that crash the game:
 - Can't select blind buttons after using snack pack (Breaks with Gum, Cookie & Candy)
 - Using cybertron at 0 cards used.
 - Paperback Compat with Romance cards (.extra not iterable on Blue Bonnets)
-
+- Blade crashes if there's no vampire joker next to it
+- Repetitions hook does not return values
 
 Bug Fixes/Patches:
 

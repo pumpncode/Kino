@@ -21,7 +21,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- When you select a blind, destroy every planet you have, then upgrade 4 of a kind for each planet destroyed.
+        -- Monster and Horror cards count as any suit when making a Flush
 
     end
 }

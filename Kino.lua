@@ -8,6 +8,7 @@ Kino.jokers = {}
 
 Kino.optional_features = function()
     return {
+        quantum_enhancements = true,
         retrigger_joker = true,
         cardareas = {unscored = true}
     }

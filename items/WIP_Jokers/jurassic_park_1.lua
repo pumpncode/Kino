@@ -6,10 +6,10 @@ SMODS.Joker {
 
         }
     },
-    rarity = 1,
+    rarity = 3,
     atlas = "kino_atlas_3",
     pos = { x = 4, y = 3},
-    cost = 4,
+    cost = 15,
     blueprint_compat = true,
     perishable_compat = true,
 
@@ -20,6 +20,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- scored cards give 5 times as many chips
     end
 }

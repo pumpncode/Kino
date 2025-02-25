@@ -53,6 +53,14 @@ return {
                     "the destroy chance by {C:green}#2#{}."
                 }
             },
+            j_kino_alien_3 = {
+                name = "Alien 3",
+                text = {
+                    "If you play a hand consisting",
+                    "of only debuffed cards",
+                    "create a {C:attention}LV426"
+                }
+            },
             j_kino_aliens = {
                 name = "Aliens",
                 text = {
@@ -162,6 +170,16 @@ return {
                     "Gain all it's upgrades",
                     "{C:inactive}(Currently: {C:chips}+#3#{} Chips, {C:mult}+#4#{C:inactive} Mult)",
                     "{C:inactive}(Currently: {X:chips,C:white}X#2#{} Chips, {X:mult,C:white}X#1#{C:inactive} Mult)"
+                }
+            },
+            j_kino_blair_witch = {
+                name = "The Blair Witch Project",
+                text = {
+                    "{C:green}Rerolls{} are free.",
+                    "When you {C:green}Reroll{} there",
+                    "is a {C:green}#1# in #2#{} chance",
+                    "to {C:attention}Destroy all other jokers.{}",
+                    "This chance increases by {C:green}#3#{} each {C:green}Reroll"
                 }
             },
             j_kino_braveheart = {
@@ -306,6 +324,15 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
             },
+            j_kino_get_out = {
+                name = "Get Out",
+                text = {
+                    "When you play a single card,",
+                    "turn 3 random cards in hand",
+                    "into exact copies of it.",
+                    "Then destroy this joker."
+                }
+            },
             j_kino_ghost_rider_1 = {
                 name = "Ghost Rider",
                 text = {
@@ -333,6 +360,14 @@ return {
                     "{C:inactive}(Ritual changes when performed.){}"
                 }
             },
+            j_kino_gone_girl = {
+                name = "Gone Girl",
+                text = {
+                    "Scoring {C:attention}Queens{} give {X:mult,C:white}X#1#{},",
+                    "{C:attention}Jacks{} and {C:attention}Kings{} are {C:black}Debuffed",
+                    "when scored and increase the mult by {X:mult,C:white}X#2#"
+                }
+            },
             j_kino_halloween = {
                 name = "Halloween (1978)",
                 text = {
@@ -350,11 +385,19 @@ return {
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)"
                 }
             },
+            j_kino_hook = {
+                name = "Hook",
+                text = {
+                    "When you play a {C:attention}Face card",
+                    "transform it into a random",
+                    "non-face card"
+                }
+            },
             j_kino_i_robot = {
                 name = "I, Robot",
                 text = {
                     "If a sci-fi card upgrades, gain {X:mult,C:white} X#2# {}.",
-                    "{C:attention}(Currently: {X:mult,C:white} X#1# {C:inactive})"
+                    "{C:inactive}(Currently: {X:mult,C:white} X#1# {C:inactive})"
                 }
             },
             j_kino_incredible_hulk = {
@@ -624,10 +667,9 @@ return {
             j_kino_psycho = {
                 name = "Psycho",
                 text = {
-                    "Whenever you discard a {C:attention}Queen{}",
-                    "Draw a {C:attention}Jack{} or {C:attention}King{}",
-                    "from your deck.",
-                    "NYI"
+                    "Scoring {C:attention}Queens{} have a",
+                    "{C:green}#1# in #2#{} Chance to",
+                    "{C:attention}Jump Scare"
                 }
             },
             j_kino_robocop_1 = {
@@ -677,6 +719,13 @@ return {
                     "Increases by {C:mult}+#3#{} mult", 
                     "after defeating a boss blind.",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+                }
+            },
+            j_kino_smile = {
+                name = "Smile",
+                text = {
+                    "{C:attention}Face Cards{} are",
+                    "{C:attention}Demonic"
                 }
             },
             j_kino_social_network = {
@@ -828,6 +877,14 @@ return {
                     "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
                     "if played hand contains",
                     "exactly 2 Cards"
+                }
+            },
+            j_kino_us = {
+                name = "Us",
+                text = {
+                    "Gains {X:mult,C:white}X#2#{} when",
+                    "a {C:attention}Horror Card Awakens",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive})"
                 }
             },
             j_kino_wall_e = {
@@ -1301,6 +1358,9 @@ return {
             k_mars_attacks_2 = "DESTROYED!!!!",
             k_chef = "There Ya Go",
             k_jaws = "CHOMP",
+            k_gone_girl_male = "Gone Girl'd",
+            k_gone_girl_female = "Good For Her",
+            k_hook = "Pan'd",
 
             -- Enhancement Barks
             k_monter_turn = "ROAR!",

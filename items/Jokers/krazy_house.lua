@@ -45,9 +45,7 @@ SMODS.Joker {
 
                 local _min = -1 * card.ability.extra.xrange_int
                 local _max = card.ability.extra.xrange_int
-                print(_min .. " is min. " .. _max .. " is max.")
                 local _rand = pseudorandom("krazy", _min, _max)
-                print(_rand .. " is rand.")
                 card.ability.extra.x_mult = 1 + (_rand * card.ability.extra.xrange)
             end
 
