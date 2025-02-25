@@ -354,7 +354,7 @@ return {
                 name = "I, Robot",
                 text = {
                     "If a sci-fi card upgrades, gain {X:mult,C:white} X#2# {}.",
-                    "{C:attention}(Currently: {X:mult,C:white} X#1# {C:inactive})"
+                    "{C:inactive}(Currently: {X:mult,C:white} X#1# {C:inactive})"
                 }
             },
             j_kino_incredible_hulk = {

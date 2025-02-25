@@ -202,7 +202,9 @@ SMODS.calculate_repetitions = function(card, context, reps)
         end 
     end
 
-    smods_calculate_repetitions(card, context, reps)
+    reps = smods_calculate_repetitions(card, context, reps)
+
+    return reps
 end
 
 -- Hook to add card upgrade tag functionality

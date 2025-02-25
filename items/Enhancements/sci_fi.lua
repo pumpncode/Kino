@@ -32,7 +32,6 @@ SMODS.Enhancement {
             end
 
             for i = 1, times_to_upgrade do
-                print(i .. " == times to upgrade")
                 card.ability.times_upgraded = card.ability.times_upgraded + 1
                 card.ability.mult = card.ability.mult + card.ability.a_mult
                 card.ability.bonus = card.ability.bonus + card.ability.a_chips
@@ -42,7 +41,7 @@ SMODS.Enhancement {
                 
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_upgrade_ex'), colour = G.C.CHIPS })
-                -- SMODS.calculate_context({upgrading_sci_fi_card = true})
+                SMODS.calculate_context({upgrading_sci_fi_card = true})
             end
 
             if wall_e then
