@@ -1,20 +1,19 @@
 SMODS.Joker {
-    key = "i_robot",
-    order = 82,
+    key = "us",
+    order = 43,
     config = {
         extra = {
-            x_mult = 1.00,
-            a_xmult = 0.05
+            x_mult = 1,
+            a_xmult = 0.1
         }
     },
     rarity = 1,
-    atlas = "kino_atlas_3",
-    pos = { x = 3, y = 1},
-    cost = 3,
+    atlas = "kino_atlas_2",
+    pos = { x = 0, y = 1},
+    cost = 4,
     blueprint_compat = true,
-    perishable_compat = false,
-    pools, k_genre = {"Sci-fi"},
-    enhancement_gate = 'm_kino_sci_fi',
+    perishable_compat = true,
+    pools, k_genre = {"Horror"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
@@ -27,8 +26,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- If a sci-fi card upgrades, gain x0.05
-        if context.upgrading_sci_fi_card and not context.blueprint then
+        -- When a Horror card wakes up, gain x0.1
+        if context.monster_awaken and not context.blueprint then
             card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.a_xmult
             card_eval_status_text(card, 'extra', nil, nil, nil,
             { message = localize('k_upgrade_ex'), colour = G.C.MULT })
@@ -36,9 +35,9 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                Xmult_mod = card.ability.extra.x_mult,
-                message = localize{type='variable', key = 'a_xmult', vars = {card.ability.extra.x_mult}},
+                x_mult = card.ability.extra.x_mult
             }
         end
+
     end
 }

@@ -28,6 +28,7 @@ SMODS.Enhancement {
                 card:set_ability(G.P_CENTERS.m_kino_monster, nil, true)
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_monster_turn'), colour = G.C.BLACK })
+                SMODS.calculate_context({monster_awaken = true})
             else 
                 return {
                     x_chips = card.ability.x_chips

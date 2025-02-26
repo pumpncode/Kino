@@ -37,8 +37,12 @@ SMODS.Joker {
                 }
             end
         end
-        if context.end_of_round and not context.repetition and not context.individual then
+        if context.after and not context.repetition and not context.individual then
             card.ability.extra.mult = card.ability.extra.base_mult
         end
+
+        -- if context.end_of_round and not context.repetition and not context.individual then
+        --     card.ability.extra.mult = card.ability.extra.base_mult
+        -- end
     end
 }

@@ -22,7 +22,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
+        info_queue[#info_queue+1] = {set = 'Other', key = "bust_econ"}
         return {
+            
             vars = {
                 card.ability.extra.earned,
                 card.ability.extra.earned_per,

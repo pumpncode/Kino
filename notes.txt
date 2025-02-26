@@ -43,3 +43,8 @@ Bug Fixes/Patches:
 Balance Changes:
 - Batman (1989) changed from +3 to +1
 - Scaling hand-type jokers no longer double after defeating a boss blind, but just increment gains.
+
+Balance Notes:
+Demonic cards are too strong as a gain in the final ante (maybe they give x0.25 for each non-demonic card scored with them)
+Suit chip cards are too strong for Common
+- Wicker Man should be uncommon

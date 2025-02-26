@@ -16,6 +16,7 @@ SMODS.Joker {
     perishable_compat = true,
     is_vampire = true,
     pools, k_genre = {"Romance", "Fantasy"},
+    enhancement_gate = 'm_kino_romance',
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre

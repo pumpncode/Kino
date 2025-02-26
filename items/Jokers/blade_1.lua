@@ -46,37 +46,38 @@ SMODS.Joker {
             G.jokers.cards[_my_pos + 1].ability.eternal then
                 if G.jokers.cards[_my_pos + 1].config.center.is_vampire or G.jokers.cards[_my_pos + 1].config.center.key == "j_vampire" then
 
-                    
-                    -- steals x_mult
-                    if G.jokers.cards[_my_pos + 1].ability.extra.x_mult then
-                        card.ability.extra.x_mult = card.ability.extra.x_mult + G.jokers.cards[_my_pos + 1].ability.extra.x_mult
+                        
+                        -- steals x_mult
+                        if G.jokers.cards[_my_pos + 1].ability.extra.x_mult then
+                            card.ability.extra.x_mult = card.ability.extra.x_mult + G.jokers.cards[_my_pos + 1].ability.extra.x_mult
+                        end
+
+                        --
+                        if G.jokers.cards[_my_pos + 1].ability.extra.x_chips then
+                            card.ability.extra.x_chips = card.ability.extra.x_chips + G.jokers.cards[_my_pos + 1].ability.extra.x_chips
+                        end
+
+                        if G.jokers.cards[_my_pos + 1].ability.extra.mult then
+                            card.ability.extra.mult = card.ability.extra.mult + G.jokers.cards[_my_pos + 1].ability.extra.mult
+                        end
+
+                        if G.jokers.cards[_my_pos + 1].ability.extra.chips then
+                            card.ability.extra.chips = card.ability.extra.chips + G.jokers.cards[_my_pos + 1].ability.extra.chips
+                        end
+
+                        if G.jokers.cards[_my_pos + 1].ability.extra.romance_bonus then
+                            card.ability.extra.x_chips = card.ability.extra.x_chips + G.jokers.cards[_my_pos + 1].ability.extra.romance_bonus
+                        end
+
+                        G.jokers.cards[_my_pos + 1].getting_sliced = true
+                        G.E_MANAGER:add_event(Event({func = function()
+                            (context.blueprint_card or card):juice_up(0.8, 0.8)
+                            G.jokers.cards[_my_pos + 1]:start_dissolve({G.C.RED}, nil, 1.6)
+                            return true end }))
+
+                        card_eval_status_text(card, 'extra', nil, nil, nil,
+                        { message = localize('k_blade_ex'), colour = G.C.BLACK })
                     end
-
-                    --
-                    if G.jokers.cards[_my_pos + 1].ability.extra.x_chips then
-                        card.ability.extra.x_chips = card.ability.extra.x_chips + G.jokers.cards[_my_pos + 1].ability.extra.x_chips
-                    end
-
-                    if G.jokers.cards[_my_pos + 1].ability.extra.mult then
-                        card.ability.extra.mult = card.ability.extra.mult + G.jokers.cards[_my_pos + 1].ability.extra.mult
-                    end
-
-                    if G.jokers.cards[_my_pos + 1].ability.extra.chips then
-                        card.ability.extra.chips = card.ability.extra.chips + G.jokers.cards[_my_pos + 1].ability.extra.chips
-                    end
-
-                    if G.jokers.cards[_my_pos + 1].ability.extra.romance_bonus then
-                        card.ability.extra.x_chips = card.ability.extra.x_chips + G.jokers.cards[_my_pos + 1].ability.extra.romance_bonus
-                    end
-
-                    G.jokers.cards[_my_pos + 1].getting_sliced = true
-                    G.E_MANAGER:add_event(Event({func = function()
-                        (context.blueprint_card or card):juice_up(0.8, 0.8)
-                        G.jokers.cards[_my_pos + 1]:start_dissolve({G.C.RED}, nil, 1.6)
-                        return true end }))
-
-                    card_eval_status_text(card, 'extra', nil, nil, nil,
-                    { message = localize('k_blade_ex'), colour = G.C.BLACK })
                 end
             end
             

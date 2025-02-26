@@ -22,6 +22,7 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.money,
+                G.GAME.probabilities.normal,
                 card.ability.extra.chance,
                 card.ability.extra.division
             }

@@ -217,3 +217,18 @@ if amt > 1 then
 	G.GAME.current_round.beaten_run_high = G.GAME.current_round.beaten_run_high + 1
 end
 '''
+
+## Add reroll cards to the code
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = "G.GAME.round_bonus.next_hands = 0"
+position = 'before'
+match_indent = true
+payload = '''
+
+local blair = find_joker('j_kino_blair_witch')
+G.GAME.current_round.free_rerolls = G.GAME.current_round.free_rerolls + #blair
+calculate_reroll_cost(true)
+'''
+

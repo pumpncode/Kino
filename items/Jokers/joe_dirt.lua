@@ -43,5 +43,9 @@ SMODS.Joker {
                 message = localize({ type = 'variable', key = 'a_chips', vars = { card.ability.extra.chips}})
             }
         end
+
+        if context.end_of_round and not context.individual and not context.repetition and not context.blueprint then
+            card.ability.extra.chips = 0
+        end
     end
 }

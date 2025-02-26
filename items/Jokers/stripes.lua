@@ -26,10 +26,10 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- When you draw a card, +1 mult.
+        -- When a card is scored
         -- When you discard a card, -1 mult.
-        if context.hand_drawn and context.cardarea == G.jokers and not context.blueprint then
-            card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.a_mult * #context.hand_drawn)
+        if context.individual and context.cardarea == G.play then
+            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult
         end
 
         if context.discard and context.cardarea == G.jokers  and not context.blueprint then
