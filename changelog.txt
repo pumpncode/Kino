@@ -1,11 +1,9 @@
-V. 0.4.1
-
-To Do:
-- Ocean's 11 triggering automatically
+V. 0.4.1:
 
 Bugfixes:
-TODO:
-- Chocolate Bar drawing cards before first hand, rather than after
+Blade no longer crashes the game
+Fixed localization issues
+
 
 
 Balance Changes:
@@ -16,15 +14,34 @@ Balance Changes:
      now resets its gathered mult after defeating a boss blind
 - Stripes no longer gains mult from cards drawn on the first hand
 - Batman & Robin now gives +1 Mult per open joker slot
+- Demonic cards now give x1 + x0.25 per non-demonic card scored, instead of a flat X3
+- Wicker Man changed to Uncommon (from Common)
+- Pandora now gives +2 Chips per times played.
 
 
 
-TODO:
+V 0.4:
 
-IMPLEMENTED:
-jokers:
-- Skyscraper Nerf
-- The Double Nerf
-- The Three Musketeers Nerf
-planets:
-- Pandora Nerf
+New Enhancement:
+- Horror Card
+- Monster Card
+
+New Tarot:
+- Slasher
+
+New Jokers:
+- 50 First Dates
+- Aliens
+- Baby Geniuses
+- Ghostbusters
+- Halloween
+- The Incredible Hulk
+- Jaws
+- Nightmare on Elm Street
+- The Number 23
+- Pride & Prejudice
+- The Social Network
+- The Wicker Man
+
+Bug Fixes:
+- The Cookie, Gum and Candy confection no longer make the UI uninteractable
