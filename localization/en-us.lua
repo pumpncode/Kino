@@ -1100,8 +1100,8 @@ return {
                     "Upgrade your most",
                     "played hand with",
                     "{C:chips}+#1#{} Chips ",
-                    "for each level",
-                    "time it's been played"
+                    "for each time",
+                    "it's been played"
                 }
             },
             c_kino_arrakis = {
