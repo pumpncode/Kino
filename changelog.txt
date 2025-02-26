@@ -1,0 +1,30 @@
+V. 0.4.1
+
+To Do:
+- Ocean's 11 triggering automatically
+
+Bugfixes:
+TODO:
+- Chocolate Bar drawing cards before first hand, rather than after
+
+
+Balance Changes:
+- Point Break changed to Rare (from Common)
+- Joe Dirt now resets after each round
+- Angel Hearts now resets after each hand
+- Skyscraper, Lethal Weapon, The Three Musketeers (2011), The Double & Monster House
+     now resets its gathered mult after defeating a boss blind
+- Stripes no longer gains mult from cards drawn on the first hand
+- Batman & Robin now gives +1 Mult per open joker slot
+
+
+
+TODO:
+
+IMPLEMENTED:
+jokers:
+- Skyscraper Nerf
+- The Double Nerf
+- The Three Musketeers Nerf
+planets:
+- Pandora Nerf

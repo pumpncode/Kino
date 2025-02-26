@@ -66,7 +66,7 @@ SMODS.Consumable {
 			end
 		end
 
-        upgrade_hand(card, _hand, card.ability.extra.chips * _tally , _tally)
+        upgrade_hand(card, _hand, card.ability.extra.chips * _tally , 0)
         update_hand_text(
 			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
 			{ mult = 0, chips = 0, handname = "", level = "" }
