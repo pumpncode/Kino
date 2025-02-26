@@ -328,7 +328,7 @@ return {
             j_kino_gentlemen_prefer_blondes = {
                 name = "Gentlemen Prefer Blondes",
                 text = {
-                    "Scored {C:diamonds}Diamonds{} {C:mult}+1{} Mult",
+                    "Scored {C:diamonds}Diamonds{} {C:mult}+#1#{} Mult",
                     "for each {C:diamonds}Diamonds{} card in your deck above 13",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
