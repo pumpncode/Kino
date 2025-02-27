@@ -44,6 +44,7 @@ SMODS.Joker {
                     card_eval_status_text(i_card, 'extra', nil, nil, nil,
                     { message = localize('k_benjamin_button'), colour = G.C.CHIPS })
                     i_card:set_base(G.P_CARDS[suit_prefix..rank_suffix])
+                    delay(0.23)
                 return true end }))
                 
                 

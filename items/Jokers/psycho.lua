@@ -3,7 +3,7 @@ SMODS.Joker {
     order = 9,
     config = {
         extra = {
-            chance = 4,
+            chance = 3,
             destroy_cards = {}
         }
     },

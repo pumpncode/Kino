@@ -27,10 +27,10 @@ SMODS.Joker {
         -- wild cards held in hand give +5 mult
 
         if context.individual and context.cardarea == G.hand and not context.end_of_round then
-            if SMODS.get_enhancements(context.other_card) and not context.other_card.debuffed then
+            if SMODS.has_enhancement(context.other_card, "m_wild") and not context.other_card.debuffed then
                 return {
                     mult = card.ability.extra.mult,
-                    card = context.other_card
+                    card = card
                 }
             end
         end

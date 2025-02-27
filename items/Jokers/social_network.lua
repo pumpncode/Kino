@@ -13,12 +13,22 @@ SMODS.Joker {
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
+    pools, k_genre = {"Drama", "Biopic"},
 
     loc_vars = function(self, info_queue, card)
+        local _keystring = "genre_" .. #self.k_genre
+        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
+
+        local face_tally = 0
+        if G.playing_cards then
+            for k, v in pairs(G.playing_cards) do
+                if v:is_face() then face_tally = face_tally+1 end
+            end
+        end
         return {
             vars = {
                 card.ability.extra.a_chips,
-                card.ability.extra.face_tally * card.ability.extra.a_chips
+                face_tally * card.ability.extra.a_chips
             }
         }
     end,

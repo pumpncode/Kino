@@ -30,7 +30,7 @@ SMODS.Joker {
 
         if context.after and not context.blueprint then
             for i = 1, #G.hand.cards do
-                if SMODS.get_enhancements(G.hand.cards[i], "m_steel") and not G.hand.cards[i].debuff then
+                if SMODS.has_enhancement(G.hand.cards[i], "m_steel") and not G.hand.cards[i].debuff then
                     card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.a_chips
                 end
             end

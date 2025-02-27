@@ -1,6 +1,12 @@
 return {
     descriptions = {
         Joker = {
+            j_kino_6_underground = {
+                name = "6 Underground",
+                text = {
+                    "{C:attention}6{}'s give {C:mult}+#1#{} Mult"
+                }
+            },
             j_kino_10_things_i_hate_about_you = {
                 name = "10 Things I Hate About You",
                 text = {
@@ -225,6 +231,14 @@ return {
                     "when you select a blind",
                 }
             },
+            j_kino_clown = {
+                name = "Clown",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "Create another {C:attention}Clown",
+                    "at the end of a blind"
+                }
+            },
             j_kino_commando = {
                 name = "Commando",
                 text = {
@@ -253,9 +267,9 @@ return {
             j_kino_dickie_roberts = {
                 name = "Dickie Roberts: Child Star",
                 text = {
-                    "Scored {C:spades}Spades{} give {C:mult}+1{} Mult",
+                    "Scored {C:spades}Spades{} give {C:mult}+#3#{} Mult",
                     "for each {C:spades}Spades{} card in your deck above 13",
-                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+                    "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
                 }
             },
             j_kino_dr_strangelove = {
@@ -369,6 +383,16 @@ return {
                     "{C:inactive}(Ritual changes when performed.){}"
                 }
             },
+            j_kino_goodfellas = {
+                name = "Goodfellas",
+                text = {
+                    "Gives {X:mult,C:white}X#1#{} and",
+                    "loses {C:money}$#2#{} for each",
+                    "Joker on the {C:attention}Left",
+                    "of this one",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} & {C:money}$#4#{C:inactive})"
+                }
+            },
             j_kino_gone_girl = {
                 name = "Gone Girl",
                 text = {
@@ -380,8 +404,7 @@ return {
             j_kino_guardians_of_the_galaxy_1 = {
                 name = "Guardians of the Galaxy",
                 text = {
-                    "{C:mult}+#1#{} for each",
-                    "Planet you have"
+                    "Planets give {C:mult}+#1#{} Mult"
                 }
             },
             j_kino_halloween = {
@@ -549,6 +572,15 @@ return {
                     "When you make any action, flip all cards in your hand"
                 }
             },
+            j_kino_moneyball = {
+                name = "Moneyball",
+                text = {
+                    "Earn {C:money}Money{}",
+                    "equal to the {C:attention}level",
+                    "of your first hand played",
+                    "each round"
+                }
+            },
             j_kino_monster_house = {
                 name = "Monster House",
                 text = {
@@ -701,8 +733,18 @@ return {
                     "draw {C:attention}#1# cards{}"
                 }
             },
+            j_kino_ringu = {
+                name = "Ring (1998)",
+                text = {
+                    "{X:mult,C:white}X#1#{}",
+                    "Decreases by {X:mult,C:white}X#2#{}",
+                    "each hand",
+                    "{C:attention}Cannot be sold!{}",
+                    "{C:attention}there are consequences"
+                }
+            },
             j_kino_psycho = {
-                name = "Psycho",
+                name = "Psycho (1960)",
                 text = {
                     "Scoring {C:attention}Queens{} have a",
                     "{C:green}#1# in #2#{} Chance to",
@@ -715,6 +757,12 @@ return {
                     "When a {C:attention}High Card{} is played",
                     "turn all scored cards", 
                     "into {C:attention}Sci-fi Cards{}"
+                }
+            },
+            j_kino_rock = {
+                name = "The Rock",
+                text = {
+                    "{C:attention}Stone cards{} give {C:mult}+#1#{} Mult",
                 }
             },
             j_kino_rocky_1 = {
@@ -763,7 +811,7 @@ return {
                     "Gain {C:mult}+#1#{} Mult",
                     "when you play a {C:attention}#4#",
                     "Upon defeating a {C:attention}Boss Blind",
-                    "reset {C:Mult} and increase",
+                    "reset{C:Mult} Mult{} and increase",
                     "scaling by {C:mult}+#3#",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
@@ -799,11 +847,19 @@ return {
                     "create a Hangman"
                 }
             },
+            j_kino_starman = {
+                name = "Starman",
+                text = {
+                    "When you {C:attention}Make a Match",
+                    "upgrade every hand with {C:mult}+#1#{} Mult"
+                }
+            },
             j_kino_steel = {
                 name = "Steel",
                 text = {
                     "Gains {C:chips}+#2#{} Chips for",
-                    "each steel card in hand"
+                    "each steel card in hand",
+                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
                 }
             },
             j_kino_stranger_than_fiction = {
@@ -868,6 +924,13 @@ return {
                     "Every {V:1}#1#{} counts",
                     "as every suit,",
                     "suit changes every round"
+                }
+            },
+            j_kino_thor_1 = {
+                name = "Thor",
+                text = {
+                    "Retrigger a random",
+                    "card {C:attention}2{} times"
                 }
             },
             j_kino_the_number_23 = {
@@ -986,6 +1049,15 @@ return {
                     "{C:inactive}(Currently {C:mult} +#1# {C:inactive} Mult)",
                 }
             },
+            j_kino_war_of_the_worlds = {
+                name = "War of the Worlds",
+                text = {
+                    "When you select a blind",
+                    "destroy every {C:attention}Planet{}",
+                    "you have, and gain {C:chips}+#1#{} Hand(s)",
+                    "or {C:mult}+#2#{} Discard(s) for each"
+                }
+            },
             j_kino_wizard_of_oz = {
                 name = "The Wizard of Oz",
                 text = { 
@@ -1002,7 +1074,6 @@ return {
                     "you {C:attention}discard{}"
                 }
             },
-
         },
         Enhanced = {
             m_kino_sci_fi = {
@@ -1100,8 +1171,8 @@ return {
                     "Upgrade your most",
                     "played hand with",
                     "{C:chips}+#1#{} Chips ",
-                    "for each level",
-                    "time it's been played"
+                    "for each time",
+                    "it's been played"
                 }
             },
             c_kino_arrakis = {
@@ -1409,6 +1480,24 @@ return {
                     'learn what it does'
                 }
             },
+        },
+        Voucher = {
+            v_kino_confection_merchant = {
+                name = "Confection Merchant",
+                text = {
+                    "{C:mult}Confection{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the shop",
+                }
+            },
+            v_kino_confection_tycoon = {
+                name = "Confection Tycoon",
+                text = {
+                    "{C:mult}Confection{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the shop",
+                }
+            },
         }
     },
     misc = {
@@ -1440,6 +1529,10 @@ return {
             k_gone_girl_male = "Gone Girl'd",
             k_gone_girl_female = "Good For Her",
             k_hook = "Pan'd",
+            k_ringu_countdown = "Ring Ring",
+            k_ringu_death = "7 Days Passed",
+            k_goodfellas_pay = "Payment Made",
+            k_goodfellas_leave = "Broke, ay?",
 
             -- Enhancement Barks
             k_monter_turn = "ROAR!",

@@ -31,7 +31,7 @@ SMODS.Joker {
                 return {
                     message = 'Again!',
                     repetitions = card.ability.extra.repetitions,
-                    card = context.other_card
+                    card = card
                 }
             end
         end

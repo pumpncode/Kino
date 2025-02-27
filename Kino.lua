@@ -94,6 +94,12 @@ SMODS.Atlas {
     path = 'kino_tags.png'
 }
 
+SMODS.Atlas {
+    key = "kino_vouchers",
+    px = 71,
+    py = 95,
+    path =  'kino_vouchers.png'
+}
 
 
 -- Load additional files
@@ -206,6 +212,12 @@ end
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Boosters")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Boosters/" .. file))()
+end
+
+-- Register the Boosters
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Vouchers")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Vouchers/" .. file))()
 end
 
 -- Register the genres

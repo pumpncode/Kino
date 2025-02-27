@@ -1,3 +1,36 @@
+V. 0.4.1c
+
+Bug Fixes:
+- Ocean's 11 now works when purchased and sold
+- Added genres to Spartacus, The Social Network and Point Break
+- Iron Man 1 now only upgrades on the first hand played, as the description indicates
+- Casablanca now shakes when cards gain from its effect
+- Cards that retrigger now display the 'again' message themselves, instead of the retriggered card
+- Increased the spawn chances of confections in the shop from .75 to 2
+
+New Jokers:
+- 6 Underground
+- Alien 3
+- The Blair Witch Project
+- Clown
+- Commando
+- get out
+- gone girl
+- goodfellas
+- guardians of the galaxy
+- hook
+- kindergarten cop
+- moneyball
+- psycho
+- ring
+- the rock
+- se7en
+- starman
+- steel
+- thor
+- treasure planet
+- us
+
 V. 0.4.1
 
 To Do:

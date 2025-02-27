@@ -49,7 +49,10 @@ SMODS.Enhancement {
 
                 card.ability.temp_bonusses = {}
 
+                
+
                 if _is_left then
+                    SMODS.calculate_context({match_made = true})
                     return {
                         x_chips = card.ability.chips_mult + _bonus
                     }
