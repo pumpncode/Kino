@@ -9,7 +9,7 @@ Bug Fixes:
 - Increased the spawn chances of confections in the shop from .75 to 2
 - Cards that rely on counts in the deck now already display the correct info while in packs or the collection
 
-21 New Jokers:
+22 New Jokers:
 - 6 Underground
 - Alien 3
 - The Blair Witch Project
@@ -31,6 +31,7 @@ Bug Fixes:
 - Thor
 - Treasure Planet
 - Us
+- War of the Worlds
 
 2 New Vouchers:
 - Confection Merchant
