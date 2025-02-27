@@ -7,29 +7,34 @@ Bug Fixes:
 - Casablanca now shakes when cards gain from its effect
 - Cards that retrigger now display the 'again' message themselves, instead of the retriggered card
 - Increased the spawn chances of confections in the shop from .75 to 2
+- Cards that rely on counts in the deck now already display the correct info while in packs or the collection
 
-New Jokers:
+21 New Jokers:
 - 6 Underground
 - Alien 3
 - The Blair Witch Project
 - Clown
 - Commando
-- get out
-- gone girl
-- goodfellas
-- guardians of the galaxy
-- hook
-- kindergarten cop
-- moneyball
-- psycho
-- ring
-- the rock
-- se7en
-- starman
-- steel
-- thor
-- treasure planet
-- us
+- Get Out
+- Gone Girl
+- Goodfellas
+- Guardians of the Galaxy
+- Hook
+- Kindergarten Cop
+- Moneyball
+- Psycho
+- Ring
+- The Rock
+- Se7en
+- Starman
+- Steel
+- Thor
+- Treasure Planet
+- Us
+
+2 New Vouchers:
+- Confection Merchant
+- Confection Tycoon
 
 V. 0.4.1
 
