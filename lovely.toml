@@ -232,3 +232,14 @@ G.GAME.current_round.free_rerolls = G.GAME.current_round.free_rerolls + #blair
 calculate_reroll_cost(true)
 '''
 
+## Adds an additional check for :can_sell_card so
+## some cards cannot be sold
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = "self.area.config.type == 'joker' and"
+position = 'after'
+match_indent = true
+payload = '''
+self.config.center.can_be_sold ~= false and
+'''

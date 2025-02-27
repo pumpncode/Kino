@@ -7,7 +7,7 @@ SMODS.ConsumableType {
         collection = "Confection Cards"
     },
     collection_row = {6, 6},
-    shop_rate = 0.75,
+    shop_rate = 2,
     default = "c_kino_popcorn"
 }
 

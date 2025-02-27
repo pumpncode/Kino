@@ -24,7 +24,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- If all cards in your first hand played are the same suit, upgrade every sc-fi card in your hand.
-        if context.before  then
+        if context.before and G.GAME.current_round.hands_played == 0 then
             -- and G.GAME.current_round.hands_played == 0
             local is_same = false
             local suits = {

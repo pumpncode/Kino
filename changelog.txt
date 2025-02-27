@@ -1,10 +1,45 @@
-V. 0.4.1b:
-Bugfixes:
-- Fixed level up hand function to account for sources without iterable ability fields
-- Fixed Gentlemen Prefer Blondes crashing the game
-- Fixed Pandora localization
+V. 0.4.1c
 
-V. 0.4.1:
+Bug Fixes:
+- Ocean's 11 now works when purchased and sold
+- Added genres to Spartacus, The Social Network and Point Break
+- Iron Man 1 now only upgrades on the first hand played, as the description indicates
+- Casablanca now shakes when cards gain from its effect
+- Cards that retrigger now display the 'again' message themselves, instead of the retriggered card
+- Increased the spawn chances of confections in the shop from .75 to 2
+- Cards that rely on counts in the deck now already display the correct info while in packs or the collection
+
+21 New Jokers:
+- 6 Underground
+- Alien 3
+- The Blair Witch Project
+- Clown
+- Commando
+- Get Out
+- Gone Girl
+- Goodfellas
+- Guardians of the Galaxy
+- Hook
+- Kindergarten Cop
+- Moneyball
+- Psycho
+- Ring
+- The Rock
+- Se7en
+- Starman
+- Steel
+- Thor
+- Treasure Planet
+- Us
+
+2 New Vouchers:
+- Confection Merchant
+- Confection Tycoon
+
+V. 0.4.1
+
+To Do:
+- Ocean's 11 triggering automatically
 
 Bugfixes:
 Blade no longer crashes the game

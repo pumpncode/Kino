@@ -31,7 +31,7 @@ SMODS.Joker {
                 return {
                     chips = card.ability.extra.chips,
                     mult = card.ability.extra.mult,
-                    card = context.other_card
+                    card = card
                 }
             end
         end
