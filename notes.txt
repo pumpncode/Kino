@@ -32,3 +32,67 @@ Balance Notes:
 Demonic cards are too strong as a gain in the final ante (maybe they give x0.25 for each non-demonic card scored with them)
 Suit chip cards are too strong for Common
 - Wicker Man should be uncommon
+
+
+Movie information:
+Crew List:
+IDs as keys, linked to actor names
+Actors = {
+    ID = {
+        Name = "NAME",
+        gender = 0/1/2,
+        Popularity = 1+ (don't include actors with a popularity of 1 or lower)
+        Directing = {ID, ID, ID, ID},
+        Acting = {ID, ID, ID, ID}
+    }
+},
+
+Movies = {
+    ID = {
+        Name = "NAME",
+        key = "j_kino_KEY",
+        budget = num in thousands
+        box_office = num in thousands
+        release_date = "year-month-day"
+        runtime = minutes (num)
+        country_of_origin = "CODE"
+        original_language = "CODE"
+        critic_score = Rotten_tomatoes_score
+        audience_score = TMDB score
+        directors = {ID, ID, ID}
+        Cast = {ID, ID, ID, ID}
+    }
+}
+
+
+
+Each movie joker should have a movie joker field with the following info:
+kino_joker = {
+    id = [tmdb id],
+    budget = num in thousands
+    box_office = num in thousands
+    release_date = "year-month-day"
+    runtime = minutes (num)
+    country_of_origin = "CODE"
+    original_language = "CODE"
+    critic_score = Rotten_tomatoes_score
+    audience_score = TMDB score
+    directors = {ID, ID, ID}
+    Cast = {ID, ID, ID, ID}
+}
+
+
+TEMPLATE
+    kino_joker = {
+        id = 509967,
+        budget = 0,
+        box_office = 0,
+        release_date = "1900-01-01",
+        runtime = 90,
+        country_of_origin = "US",
+        original_language = "en",
+        critic_score = 100,
+        audience_score = 100,
+        directors = {},
+        cast = {},
+    },
