@@ -110,15 +110,12 @@ end
 local b_sc = Card.set_cost
 function Card:set_cost(oceans)
     b_sc(self)
-    if oceans or (self.ability.set == "Booster" and next(find_joker('j_kino_oceans_11')) )then
+    if oceans or (self.ability and self.ability.set == "Booster" and next(find_joker('j_kino_oceans_11')) )then
         self.cost = 0
     end
 end
 
--- function Card:does_test(card)
---     print(card.config.center.kino_joker.release_date)
--- end
-
+---- Kino Syngery system ----
 function Card:kino_synergy(card)
     -- Iterate through all other jokers and check the following:
     -- If they share a genre
@@ -212,6 +209,8 @@ function level_up_hand(card, hand, instant, amount, interstellar)
         luh(card, hand, instant, amount)
     end
 end
+
+-------------------------------
 
 -- Upgrade Hand functionality for alternative upgrades.
 function upgrade_hand(card, hand, chips, mult, x_chips, x_mult, instant)
