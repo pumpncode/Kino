@@ -77,5 +77,8 @@ SMODS.Joker {
                 message = localize({ type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult }})
             }
         end
-    end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+		print(card.config.center.kino_joker.budget)
+	end
 }

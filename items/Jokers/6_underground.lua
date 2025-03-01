@@ -42,5 +42,8 @@ SMODS.Joker {
                 mult = card.ability.extra.mult
             }
         end
-    end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+		card:does_test(card)
+	end
 }

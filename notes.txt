@@ -3,8 +3,12 @@ Features to add:
 - Quests (For Oppenheimer, Zodiac, Bucket List)
 - 
 
-Jokers not triggering as intended:
-I, Robot
+WRONG CODES:
+Joe Dirt is The Last Mistress
+Pink Panther is The Bow
+Stand By Me
+Wall Street
+
 
 
 Things that crash the game:
@@ -79,7 +83,7 @@ kino_joker = {
     audience_score = TMDB score
     directors = {ID, ID, ID}
     Cast = {ID, ID, ID, ID}
-}
+},
 
 
 TEMPLATE

@@ -115,6 +115,93 @@ function Card:set_cost(oceans)
     end
 end
 
+-- function Card:does_test(card)
+--     print(card.config.center.kino_joker.release_date)
+-- end
+
+function Card:kino_synergy(card)
+    -- Iterate through all other jokers and check the following:
+    -- If they share a genre
+    -- If they share a director
+    -- If they share an actor
+
+    -- If they have the Bacon sticker
+
+    -- If 5 share an actor, x2 all values
+    -- if 3 share an actor, start shaking (and display the actor)
+    print("testing")
+    if not self.config.center.kino_joker then
+        print("no kino joker ")
+        return false
+    end
+
+    local _my_pos = nil
+
+    for i = 1, #G.jokers.cards do
+        if G.jokers.cards[i] == card then
+            _my_pos = i
+        end
+    end
+
+    local _left = _my_pos - 1
+    local _right = _my_pos + 1
+
+    local _actors = self.config.center.kino_joker.cast
+
+    -- Iterate through actor list
+    for _i, actor in pairs(_actors) do
+        -- Iterate through other jokers
+        for i = 1, #G.jokers.cards do 
+            if G.jokers.cards[i] ~= card and G.jokers.cards[i].config.center.kino_joker then
+                local _compared_actors = G.jokers.cards[i].config.center.kino_joker.cast
+
+                -- now iterate through the checked jokers and see if there's a match
+                for _j, comp_actor in pairs(_compared_actors) do
+                    if actor == comp_actor then
+                        print("two jokers share the following actor: " .. actor)
+                    end
+                end
+            end
+        end
+    end
+
+    if not self.ability.kino_bacon then
+
+        local _found_match = false
+
+        
+        for _i, actor in pairs(_actors) do
+            -- test left
+            if G.jokers.cards[_left] and G.jokers.cards[_left].config.center.kino_joker then
+                local _compared_actors = G.jokers.cards[_left].config.center.kino_joker.cast
+                for _j, _compactor in pairs(_compared_actors) do
+                    if actor == _compactor then
+                        _found_match = true
+                        break
+                    end
+                end
+            end
+
+            -- test right
+            if G.jokers.cards[_right] and G.jokers.cards[_right].config.center.kino_joker then
+                _compared_actors = G.jokers.cards[_right].config.center.kino_joker.cast
+                for _j, _compactor in pairs(_compared_actors) do
+                    if actor == _compactor then
+                        _found_match = true
+                        break
+                    end
+                end
+            end
+        end
+
+        if not _found_match then
+            SMODS.debuff_card(card, true, "bacon")
+        else
+            SMODS.debuff_card(card, false, "bacon")
+        end
+    end
+end
+
 -- level_up_hand hook to allow for interstellar functionality
 local luh = level_up_hand
 function level_up_hand(card, hand, instant, amount, interstellar)
