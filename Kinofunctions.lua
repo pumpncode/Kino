@@ -106,7 +106,7 @@ end
 local b_sc = Card.set_cost
 function Card:set_cost(oceans)
     b_sc(self)
-    if oceans or (self.ability.set == "Booster" and next(find_joker('j_kino_oceans_11')) )then
+    if oceans or (self.ability and self.ability.set == "Booster" and next(find_joker('j_kino_oceans_11')) )then
         self.cost = 0
     end
 end
@@ -114,7 +114,7 @@ end
 -- level_up_hand hook to allow for interstellar functionality
 local luh = level_up_hand
 function level_up_hand(card, hand, instant, amount, interstellar)
-    if card and card.ability.set == "Planet" and next(find_joker('j_kino_interstellar'))
+    if card and card.ability and card.ability.set == "Planet" and next(find_joker('j_kino_interstellar'))
     and not interstellar then
         SMODS.calculate_context({interstellar = true, planet = card})
     else
