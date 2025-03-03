@@ -19,9 +19,12 @@ Confection Change:
 - Can now only be used while in a blind
 - Grabbing confections from packs will put them in your consumable slots
 
+Bug Fixes:
+- Dracula (1931) now actually counts as a Vampire joker
 
 
-V. 0.4.1c
+
+V. 0.5
 
 Bug Fixes:
 - Ocean's 11 now works when purchased and sold

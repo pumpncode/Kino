@@ -138,26 +138,26 @@ SMODS.Consumable {
 }
 
 -- Select a random joker and give money equal to its ROI
-SMODS.Consumable {
-    key = "award",
-    set = "Tarot",
-    order = 11,
-    pos = {x = 4, y = 1},
-    atlas = "kino_tarot",
-    config = {
-    },
-    loc_vars = function(self, info_queue, card)
-        return {
-            vars = {
-                self.config.max_highlighted
-            }
-        }
-    end,
-    can_use = function(self, card)
-		return #G.jokers.highlighted == 1
-			and G.jokers.highlighted[1].config.center.kino_joker
-	end,
-}
+-- SMODS.Consumable {
+--     key = "award",
+--     set = "Tarot",
+--     order = 11,
+--     pos = {x = 4, y = 1},
+--     atlas = "kino_tarot",
+--     config = {
+--     },
+--     loc_vars = function(self, info_queue, card)
+--         return {
+--             vars = {
+--                 self.config.max_highlighted
+--             }
+--         }
+--     end,
+--     can_use = function(self, card)
+-- 		return #G.jokers.highlighted == 1
+-- 			and G.jokers.highlighted[1].config.center.kino_joker
+-- 	end,
+-- }
 
 SMODS.Consumable {
     key = "chef",
