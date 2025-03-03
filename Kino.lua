@@ -163,6 +163,7 @@ Game.init_game_object = function(self)
     ret.current_round.kryptons_used = 0
     ret.current_round.beaten_run_high = 0
     ret.current_round.horror_transform = 0
+    ret.genre_synergy_treshold = 5
     -- generate_cmifc_rank()
     return ret
 end
@@ -262,3 +263,14 @@ SMODS.Keybind{
         end
     end,
 }
+
+SMODS.Keybind{
+	key = 'start_genre_check',
+	key_pressed = 's',
+    held_keys = {'rctrl'}, -- other key(s) that need to be held
+
+    action = function(self)
+        check_genre_synergy()
+    end,
+}
+

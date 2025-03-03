@@ -1,3 +1,26 @@
+V. 0.6:
+
+New Tarots:
+- Chef, creates 2 Confections
+- Producer, money generator
+
+Genre Synergy:
+- If you have 5 movie jokers of the same genre, you get an additional joker slot. 
+
+New Jokers:
+- Cars
+- The Founder
+- Morbius
+- Ready Player One
+- Sleepy Hollow
+
+
+Confection Change:
+- Can now only be used while in a blind
+- Grabbing confections from packs will put them in your consumable slots
+
+
+
 V. 0.4.1c
 
 Bug Fixes:

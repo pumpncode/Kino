@@ -95,6 +95,10 @@ payload = '''
 if next(find_joker('j_kino_the_thing')) and (self.base.suit == G.GAME.current_round.kino_thing_card.suit) then
 	return true
 end
+
+if next(find_joker('j_kino_sleepy_hollow')) and (SMODS.has_enhancement(self, 'm_kino_monster') or SMODS.has_enhancement(self, 'm_kino_horror')) then
+	return true
+end
 '''
 match_indent = true
 overwrite = false
@@ -106,6 +110,10 @@ pattern = "if self.debuff and not bypass_debuff then return end"
 position = "after"
 payload = '''
 if next(find_joker('j_kino_the_thing')) and (self.base.suit == G.GAME.current_round.kino_thing_card.suit) then
+	return true
+end
+
+if next(find_joker('j_kino_sleepy_hollow')) and (SMODS.has_enhancement(self, 'm_kino_monster') or SMODS.has_enhancement(self, 'm_kino_horror')) then
 	return true
 end
 '''

@@ -14,6 +14,7 @@ SMODS.Joker {
     cost = 7,
     blueprint_compat = true,
     perishable_compat = true,
+    is_vampire = true,
     kino_joker = {
         id = 138,
         budget = 0,

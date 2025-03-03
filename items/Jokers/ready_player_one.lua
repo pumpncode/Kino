@@ -1,0 +1,50 @@
+SMODS.Joker {
+    key = "ready_player_one",
+    order = 98,
+    config = {
+        extra = {
+
+        }
+    },
+    rarity = 1,
+    atlas = "kino_atlas_3",
+    pos = { x = 1, y = 4},
+    cost = 4,
+    blueprint_compat = true,
+    perishable_compat = true,
+    kino_joker = {
+        id = 333339,
+        budget = 0,
+        box_office = 0,
+        release_date = "1900-01-01",
+        runtime = 90,
+        country_of_origin = "US",
+        original_language = "en",
+        critic_score = 100,
+        audience_score = 100,
+        directors = {},
+        cast = {},
+    },
+    pools, k_genre = {"Sci-fi", "Adventure"},
+
+    loc_vars = function(self, info_queue, card)
+        local _keystring = "genre_" .. #self.k_genre
+        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
+        return {
+            vars = {
+            }
+        }
+    end,
+    calculate = function(self, card, context)
+        -- Jokers from the 70s and 80s give chips equal to their release year
+        if context.other_joker and context.other_joker.config.center.kino_joker then
+            local _joker_date = Card:get_release(context.other_joker)
+
+            if _joker_date[1] >= 1970 and _joker_date[1] <= 1989 then
+                return {
+                    chips = _joker_date[1] - 1900
+                }
+            end
+        end
+    end
+}
