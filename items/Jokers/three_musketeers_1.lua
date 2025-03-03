@@ -15,6 +15,19 @@ SMODS.Joker {
     cost = 3,
     blueprint_compat = true,
     perishable_compat = false,
+    kino_joker = {
+        id = 52451,
+        budget = 0,
+        box_office = 0,
+        release_date = "1900-01-01",
+        runtime = 90,
+        country_of_origin = "US",
+        original_language = "en",
+        critic_score = 100,
+        audience_score = 100,
+        directors = {},
+        cast = {},
+    },
     pools, k_genre = {"Historical", "Action"},
 
     loc_vars = function(self, info_queue, card)

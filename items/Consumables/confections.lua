@@ -8,8 +8,15 @@ SMODS.Consumable {
     pos = {x = 0, y = 0},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             mult = 2
@@ -23,14 +30,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_popcorn'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_popcorn'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -68,8 +77,15 @@ SMODS.Consumable {
     pos = {x = 1, y = 0},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             chips = 10
@@ -83,14 +99,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_icecream'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_icecream'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -128,8 +146,15 @@ SMODS.Consumable {
     pos = {x = 2, y = 0},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             hand_size = 1
@@ -143,14 +168,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_candy'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_candy'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -187,8 +214,15 @@ SMODS.Consumable {
     pos = {x = 3, y = 0},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             extra = 1
@@ -202,17 +236,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_peanut'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
-
-
-
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_peanut'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -251,8 +284,15 @@ SMODS.Consumable {
     pos = {x = 4, y = 0},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             retriggers = 1
@@ -266,14 +306,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_pizza'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_pizza'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -339,8 +381,15 @@ SMODS.Consumable {
     pos = {x = 5, y = 0},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             retriggers = 2
@@ -354,14 +403,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_soda'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_soda'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -401,8 +452,15 @@ SMODS.Consumable {
     pos = {x = 0, y = 1},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             hand_size = 2
@@ -417,20 +475,10 @@ SMODS.Consumable {
     end,
     -- Create a tag while in shop, just do it while in game
     use = function(self, card, area, copier)
-
-        if G.GAME.blind.in_blind then
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
-                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                    return true
-                end)
-            }))
-        else
-            G.E_MANAGER:add_event(Event({
-                func = (function()
-                    add_tag(Tag('tag_kino_chocolate'))
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -474,8 +522,15 @@ SMODS.Consumable {
     pos = {x = 1, y = 1},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             bonus_chips = 10
@@ -489,14 +544,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_fries'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_fries'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -533,8 +590,15 @@ SMODS.Consumable {
     pos = {x = 2, y = 1},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             level = 1
@@ -548,14 +612,16 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        G.E_MANAGER:add_event(Event({
-            func = (function()
-                add_tag(Tag('tag_kino_hotdog'))
-                play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                return true
-            end)
-        }))
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    add_tag(Tag('tag_kino_hotdog'))
+                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
+                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
+                    return true
+                end)
+            }))
+        end
     end
 }
 
@@ -591,8 +657,15 @@ SMODS.Consumable {
     pos = {x = 3, y = 1},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             hands = 1
@@ -606,19 +679,10 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        if G.GAME.blind.in_blind then
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     ease_hands_played(card.ability.extra.hands)
-                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                    return true
-                end)
-            }))
-        else
-            G.E_MANAGER:add_event(Event({
-                func = (function()
-                    add_tag(Tag('tag_kino_cookie'))
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -660,8 +724,15 @@ SMODS.Consumable {
     pos = {x = 4, y = 1},
     atlas = "kino_confections",
     can_use = function(self, card)
-		return true
+        if G.GAME.blind.in_blind or card.area == G.pack_cards then
+		    return true
+        end
 	end,
+    keep_on_use = function(self, card)
+        if card.area == G.pack_cards then
+            return true
+        end
+    end,
     config = {
         extra = {
             discards = 1
@@ -675,7 +746,7 @@ SMODS.Consumable {
         } 
     end,
     use = function(self, card, area, copier)
-        if G.GAME.blind.in_blind then
+        if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     ease_discard(card.ability.extra.discards)
@@ -684,15 +755,7 @@ SMODS.Consumable {
                     return true
                 end)
             }))
-        else
-            G.E_MANAGER:add_event(Event({
-                func = (function()
-                    add_tag(Tag('tag_kino_gum'))
-                    play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
-                    play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
-                    return true
-                end)
-            }))
+
         end
     end
 }

@@ -13,6 +13,19 @@ SMODS.Joker {
     cost = 2,
     blueprint_compat = true,
     perishable_compat = false,
+    kino_joker = {
+        id = 653,
+        budget = 0,
+        box_office = 0,
+        release_date = "1900-01-01",
+        runtime = 90,
+        country_of_origin = "US",
+        original_language = "en",
+        critic_score = 100,
+        audience_score = 100,
+        directors = {},
+        cast = {},
+    },
     is_vampire = true,
     pools, k_genre = {"Horror", "Silent"},
 
@@ -64,5 +77,8 @@ SMODS.Joker {
                 message = localize({ type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult }})
             }
         end
-    end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+		print(card.config.center.kino_joker.budget)
+	end
 }

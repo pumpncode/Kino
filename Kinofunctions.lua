@@ -111,6 +111,198 @@ function Card:set_cost(oceans)
     end
 end
 
+---- Kino Syngery system ----
+function Card:kino_synergy(card)
+    -- Iterate through all other jokers and check the following:
+    -- If they share a genre
+    -- If they share a director
+    -- If they share an actor
+
+    -- If they have the Bacon sticker
+
+    -- If 5 share an actor, x2 all values
+    -- if 3 share an actor, start shaking (and display the actor)
+
+    if not self.config.center.kino_joker then
+
+        return false
+    end
+
+    local _my_pos = nil
+
+    for i = 1, #G.jokers.cards do
+        if G.jokers.cards[i] == card then
+            _my_pos = i
+        end
+    end
+
+    local _left = _my_pos - 1
+    local _right = _my_pos + 1
+
+    local _actors = self.config.center.kino_joker.cast
+
+    -- Iterate through actor list
+    for _i, actor in pairs(_actors) do
+        -- Iterate through other jokers
+        for i = 1, #G.jokers.cards do 
+            if G.jokers.cards[i] ~= card and G.jokers.cards[i].config.center.kino_joker then
+                local _compared_actors = G.jokers.cards[i].config.center.kino_joker.cast
+
+                -- now iterate through the checked jokers and see if there's a match
+                for _j, comp_actor in pairs(_compared_actors) do
+                    if actor == comp_actor then
+                    end
+                end
+            end
+        end
+    end
+
+    if not self.ability.kino_bacon then
+
+        local _found_match = false
+
+        
+        for _i, actor in pairs(_actors) do
+            -- test left
+            if G.jokers.cards[_left] and G.jokers.cards[_left].config.center.kino_joker then
+                local _compared_actors = G.jokers.cards[_left].config.center.kino_joker.cast
+                for _j, _compactor in pairs(_compared_actors) do
+                    if actor == _compactor then
+                        _found_match = true
+                        break
+                    end
+                end
+            end
+
+            -- test right
+            if G.jokers.cards[_right] and G.jokers.cards[_right].config.center.kino_joker then
+                _compared_actors = G.jokers.cards[_right].config.center.kino_joker.cast
+                for _j, _compactor in pairs(_compared_actors) do
+                    if actor == _compactor then
+                        _found_match = true
+                        break
+                    end
+                end
+            end
+        end
+
+        if not _found_match then
+            SMODS.debuff_card(card, true, "bacon")
+        else
+            SMODS.debuff_card(card, false, "bacon")
+        end
+    end
+end
+
+function check_genre_synergy()
+    -- check jokers, then if 5 of them share a genre, add a joker slot
+    if not G.jokers then
+        return false
+    end
+
+    local five_of_genres = {}
+
+    if not G.jokers.config.synergyslots then
+        G.jokers.config.synergyslots = 0
+    end
+
+    G.jokers.config.card_limit = G.jokers.config.card_limit - G.jokers.config.synergyslots
+
+    for i, genre in ipairs(kino_genres) do
+        local count = 0
+        for j, joker in ipairs(G.jokers.cards) do
+            if joker and joker.config.center.kino_joker then
+                for k, comp_genre in ipairs(joker.config.center.k_genre) do
+                    if genre == comp_genre then
+                        count = count + 1
+                        break
+                    end
+                end
+            end
+        end
+        
+        if count == G.GAME.genre_synergy_treshold then
+            five_of_genres[#five_of_genres + 1] = genre
+        end
+    end
+
+    if #five_of_genres > G.jokers.config.synergyslots then
+        -- Genre synergy!
+        for i, genre in ipairs(five_of_genres) do
+            for j, joker in ipairs(G.jokers.cards) do
+                if joker and joker.config.center.kino_joker then
+                    for k, comp_genre in ipairs(joker.config.center.k_genre) do
+                        if genre == comp_genre then
+                            joker:juice_up(0.8, 0.5)
+                            card_eval_status_text(joker, 'extra', nil, nil, nil,
+                            { message = localize('k_genre_synergy'), colour = G.C.LEGENDARY})
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    G.jokers.config.synergyslots = #five_of_genres
+
+    G.jokers.config.card_limit = G.jokers.config.card_limit + G.jokers.config.synergyslots
+end
+
+local base_atd = Card.add_to_deck
+function Card:add_to_deck(from_debuff)
+    base_atd(self, from_debuff)
+
+    check_genre_synergy()
+end
+
+local base_rmd = Card.remove_from_deck
+function Card:remove_from_deck(from_debuff)
+    base_rmd(self, from_debuff)
+    
+    check_genre_synergy()
+end
+
+local base_set_rank = CardArea.set_ranks
+function CardArea:set_ranks()
+    -- Do synergy checks
+    base_set_rank(self)
+
+    if self == G.jokers then
+        check_genre_synergy()
+    end
+end
+
+function Card:get_release(card)
+    if card.config.center.kino_joker then
+        local _joker = card.config.center.kino_joker
+
+        local _year = tonumber(string.sub(_joker.release_date, 1, 4))
+        local _month = tonumber(string.sub(_joker.release_date, 6, 7))
+        local _day = tonumber(string.sub(_joker.release_date, 9, 10))
+
+        return {_year, _month, _day}
+    end
+
+    return false
+end
+
+function Card:change_multiplier(card, multiplier)
+    -- List of variables names that should be targeted
+
+    if not card.config.center.kino_joker then
+        return false
+    end
+
+    if not card.config.center.kino_joker.multiplier then
+        card.config.center.kino_joker.multiplier = 1
+    end
+
+    -- if multiplier > 0 then
+        
+    -- end
+end
+-------------------------------
+
 -- level_up_hand hook to allow for interstellar functionality
 local luh = level_up_hand
 function level_up_hand(card, hand, instant, amount, interstellar)
@@ -121,6 +313,8 @@ function level_up_hand(card, hand, instant, amount, interstellar)
         luh(card, hand, instant, amount)
     end
 end
+
+
 
 -- Upgrade Hand functionality for alternative upgrades.
 function upgrade_hand(card, hand, chips, mult, x_chips, x_mult, instant)
@@ -235,6 +429,7 @@ G.FUNCS.can_discard = function(e)
         e.config.button = 'discard_cards_from_highlighted'
     end
 end
+
 
 ----------------------
 -- COLOURS --

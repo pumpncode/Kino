@@ -96,5 +96,101 @@ SMODS.Consumable {
             }
         }
     end
+}
 
+-- Select a random joker and give money equal to its ROI
+SMODS.Consumable {
+    key = "producer",
+    set = "Tarot",
+    order = 10,
+    pos = {x = 3, y = 1},
+    atlas = "kino_tarot",
+    config = {
+        limit = 25,
+        cost = 5,
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                self.config.limit,
+                self.config.cost
+            }
+        }
+    end,
+    can_use = function(self, card)
+		return #G.jokers.highlighted == 1
+			and G.jokers.highlighted[1].config.center.kino_joker
+            and (G.GAME.dollars >= G.GAME.bankrupt_at + 10)
+	end,
+    use = function(self, card)
+        local _movie_info = G.jokers.highlighted[1].config.center.kino_joker
+        ease_dollars(-1 * self.config.cost)
+
+        -- calc profit
+        if _movie_info.budget == 0 then
+            print(G.jokers.highlighted[i].config.center.key .. " has no registered budget and should be fixed")
+        end
+        local reward = math.floor(self.config.cost * (_movie_info.box_office / _movie_info.budget))
+
+
+        ease_dollars((reward <= self.config.limit) and reward or self.config.limit)
+    end
+}
+
+-- Select a random joker and give money equal to its ROI
+SMODS.Consumable {
+    key = "award",
+    set = "Tarot",
+    order = 11,
+    pos = {x = 4, y = 1},
+    atlas = "kino_tarot",
+    config = {
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                self.config.max_highlighted
+            }
+        }
+    end,
+    can_use = function(self, card)
+		return #G.jokers.highlighted == 1
+			and G.jokers.highlighted[1].config.center.kino_joker
+	end,
+}
+
+SMODS.Consumable {
+    key = "chef",
+    set = "Tarot",
+    order = 12,
+    pos = {x = 5, y = 1},
+    atlas = "kino_tarot",
+    config = {
+        cards_created = 2
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                self.config.cards_created
+            }
+        }
+    end,
+	use = function(self, card, area, copier)
+		local used_consumable = copier or card
+        for i = 1, math.min(self.config.cards_created, G.consumeables.config.card_limit - #G.consumeables.cards) do
+            G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                if G.consumeables.config.card_limit > #G.consumeables.cards then
+                    play_sound('timpani')
+                    local card = create_card('confection', G.consumeables, nil, nil, nil, nil, nil, 'che')
+                    card:add_to_deck()
+                    G.consumeables:emplace(card)
+                    used_consumable:juice_up(0.3, 0.5)
+                end
+                return true end }))
+        end
+        delay(0.6)
+    end,
+    can_use = function(self, card)
+        if #G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables then return true end
+    end
 }

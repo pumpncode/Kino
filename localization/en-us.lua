@@ -216,6 +216,14 @@ return {
                     "{C:attention}#3#{}"
                 }
             },
+            j_kino_cars_1 = {
+                name = "Cars",
+                text = {
+                    "{C:chips}+#1#{} Chips if you're",
+                    "{C:attention}Quick{}",
+                    
+                }
+            },
             j_kino_casablanca = {
                 name = "Casablanca",
                 text = {
@@ -339,6 +347,15 @@ return {
                     "scoring card",
                 }
             },   
+            j_kino_founder = {
+                name = "The Founder",
+                text = {
+                    "Fills your empty",
+                    "consumeable slots",
+                    "with {C:attention}Fries{}",
+                    "at the end of the {C:attention}shop"
+                }
+            },
             j_kino_gentlemen_prefer_blondes = {
                 name = "Gentlemen Prefer Blondes",
                 text = {
@@ -592,6 +609,16 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
             },
+            j_kino_morbius = {
+                name = "Morbius",
+                text = {
+                    "When you play a hand,", 
+                    "{C:attention}Debuff{} every {C:attention}Enhanced Card",
+                    "in your hand and gain {X:mult,C:white}#2#{}",
+                    "the end of round.",
+                    "{C:attention}(Currently: {X:mult,C:white}#1#{C:attention})"
+                }
+            },
             j_kino_mr_and_mrs_smith = {
                 name = "Mr. & Mrs. Smith",
                 text = {
@@ -733,6 +760,22 @@ return {
                     "draw {C:attention}#1# cards{}"
                 }
             },
+            j_kino_psycho = {
+                name = "Psycho (1960)",
+                text = {
+                    "Scoring {C:attention}Queens{} have a",
+                    "{C:green}#1# in #2#{} Chance to",
+                    "{C:attention}Jump Scare"
+                }
+            },
+            j_kino_ready_player_one = {
+                name = "Ready Player One",
+                text = {
+                    "{C:attention}Movie Jokers{} released in",
+                    "the 70s and 80s give {C:chips}chips",
+                    "equal to their release year"
+                }
+            },
             j_kino_ringu = {
                 name = "Ring (1998)",
                 text = {
@@ -741,14 +784,6 @@ return {
                     "each hand",
                     "{C:attention}Cannot be sold!{}",
                     "{C:attention}there are consequences"
-                }
-            },
-            j_kino_psycho = {
-                name = "Psycho (1960)",
-                text = {
-                    "Scoring {C:attention}Queens{} have a",
-                    "{C:green}#1# in #2#{} Chance to",
-                    "{C:attention}Jump Scare"
                 }
             },
             j_kino_robocop_1 = {
@@ -814,6 +849,13 @@ return {
                     "reset{C:Mult} Mult{} and increase",
                     "scaling by {C:mult}+#3#",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+                }
+            },
+            j_kino_sleepy_hollow = {
+                name = "Sleepy Hollow",
+                text = {
+                    "{C:attention}Monster{} and {C:attention}Horror{} cards",
+                    "count as any suit"
                 }
             },
             j_kino_smile = {
@@ -1152,6 +1194,30 @@ return {
                     "Upgrade #1# cards into",
                     "{C:attention}Romance Cards{}"
                 }
+            },
+            c_kino_producer = {
+                name = "Producer",
+                text = {
+                    "Invest {C:money}$#2#{} into",
+                    "a selectd {C:attention}Movie Joker",
+                    "and receive potential {C:money}Profit",
+                    "based on its success",
+                    "{C:inactive}(Max of {C:money}$#1#{C:inactive})"
+                }
+            },
+            c_kino_award = {
+                name = "Award",
+                text = {
+                    "PLACEHOLDER"
+                }
+            },
+            c_kino_chef = {
+                name = "Chef",
+                text = {
+                    "Creates up to {C:attention}#1#",
+                    "random {C:attention}Confection{} cards",
+                    "{C:inactive}(Must have room)",
+                }
             }
 
 
@@ -1455,6 +1521,8 @@ return {
                     "{X:#3#,C:white}#3#"
                 }
             },
+
+            -- Keywords
             jump_scare = {
                 name = "Jump Scare",
                 text = {
@@ -1467,6 +1535,13 @@ return {
                 text = {
                     "Set your {C:money}Money",
                     "to {C:money}$0"
+                }
+            },
+            keyword_drain = {
+                name = "Drain",
+                text = {
+                    "Remove the {C:attention}Enhancement",
+                    "from a playing card"
                 }
             },
 
@@ -1511,6 +1586,8 @@ return {
             sci_fi_booster = "Sci-fi Joker",
             comedy_booster = "Comedy Joker",
             romance_booster = "Romance Joker",
+
+            k_genre_synergy = "Genre Synergy!",
             k_sacrifice = "Sacrifices Will Be Made",
             k_romance_match_ex = "Hey there ;)",
             k_summoned_ex = "Summoned",

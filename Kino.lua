@@ -101,6 +101,13 @@ SMODS.Atlas {
     path =  'kino_vouchers.png'
 }
 
+SMODS.Atlas {
+    key = "kino_stickers",
+    px = 71,
+    py = 95,
+    path = 'kino_stickers.png'
+}
+
 
 -- Load additional files
 local helper, load_error = SMODS.load_file("Kinofunctions.lua")
@@ -154,6 +161,7 @@ Game.init_game_object = function(self)
     ret.current_round.kryptons_used = 0
     ret.current_round.beaten_run_high = 0
     ret.current_round.horror_transform = 0
+    ret.genre_synergy_treshold = 5
     -- generate_cmifc_rank()
     return ret
 end
@@ -199,6 +207,11 @@ for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Vouchers/" .. file))()
 end
 
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Stickers")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Stickers/" .. file))()
+end
+
 -- Register the genres
 local helper, load_error = SMODS.load_file("Kinogenres.lua")
 if load_error then
@@ -207,4 +220,36 @@ if load_error then
     helper()
 end
 
+local helper, load_error = SMODS.load_file("movie_info.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
 kino_genre_init()
+
+
+--
+SMODS.Keybind{
+	key = 'start_synergy_check',
+	key_pressed = 'a',
+    held_keys = {'rctrl'}, -- other key(s) that need to be held
+
+    action = function(self)
+        for i = 1, #G.jokers.cards do
+            G.jokers.cards[i]:kino_synergy(G.jokers.cards[i])
+        end
+    end,
+}
+
+SMODS.Keybind{
+	key = 'start_genre_check',
+	key_pressed = 's',
+    held_keys = {'rctrl'}, -- other key(s) that need to be held
+
+    action = function(self)
+        check_genre_synergy()
+    end,
+}
+
