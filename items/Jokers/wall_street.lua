@@ -15,7 +15,7 @@ SMODS.Joker {
     blueprint_compat = false,
     perishable_compat = false,
     kino_joker = {
-        id = 653,
+        id = 10673,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
