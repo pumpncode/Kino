@@ -431,6 +431,7 @@ G.FUNCS.can_discard = function(e)
 end
 
 
+
 ----------------------
 -- COLOURS --
 local genrecolors = loc_colour
@@ -465,3 +466,6 @@ end
 
 --- Global Variables ---
 Kino.jump_scare_mult = 3
+Kino.goldleaf_chance = 3
+Kino.choco_chance = 2
+Kino.xl_chance = 1

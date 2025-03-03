@@ -16,8 +16,16 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
+        choco_mult = 1,
         extra = {
             mult = 2
         }
@@ -31,9 +39,21 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            print("being used")
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_popcorn'))
+                    local _tag = Tag('tag_kino_popcorn')
+                    if card.ability.kino_choco then
+                        print("Setting ability")
+                        print(self.config.choco_mult)
+                        _tag:set_ability(_tag, 1)
+                    end
+                    
+                    add_tag(_tag)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -66,7 +86,13 @@ SMODS.Tag{
     end,
     in_pool = function()
 		return false
-	end
+	end,
+    set_ability = function(self, chocolate_bonus, additional_check)
+        if chocolate_bonus then
+            -- print(additional_check .. " = additional")
+            self.config.mult = self.config.mult + chocolate_bonus
+        end
+    end
 }
 
 -- Upgrade the next hand you play with +10 chips
@@ -85,6 +111,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -100,6 +133,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_kino_icecream'))
@@ -154,6 +191,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -169,6 +213,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_kino_candy'))
@@ -222,6 +270,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -237,6 +292,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_kino_peanut'))
@@ -293,6 +352,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -308,6 +374,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_kino_pizza'))
@@ -394,6 +464,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -409,6 +486,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_kino_soda'))
@@ -466,6 +547,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -482,6 +570,10 @@ SMODS.Consumable {
     -- Create a tag while in shop, just do it while in game
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
@@ -536,6 +628,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -551,6 +650,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_kino_fries'))
@@ -604,6 +707,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -619,6 +729,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag(Tag('tag_kino_hotdog'))
@@ -671,6 +785,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -686,6 +807,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     ease_hands_played(card.ability.extra.hands)
@@ -738,6 +863,13 @@ SMODS.Consumable {
         if card.area == G.pack_cards then
             return true
         end
+
+        if card.ability.kino_extra_large then
+            if not card.config.used_once then
+                card.config.used_once = true
+                return true
+            end
+        end
     end,
     config = {
         extra = {
@@ -753,6 +885,10 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
+            if card.ability.kino_goldleaf then
+                ease_dollars(1)
+            end
+
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     ease_discard(card.ability.extra.discards)

@@ -1573,6 +1573,13 @@ return {
                     "in the shop",
                 }
             },
+            v_kino_special_treats = {
+                name = "Special Treats",
+                text = {
+                    "{C:mult}Confections{} can appear",
+                    "with additional treats"
+                }
+            }
         }
     },
     misc = {

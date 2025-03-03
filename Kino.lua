@@ -117,16 +117,6 @@ if load_error then
     helper()
 end
 
-
-
--- Add Mult Bonus (Code adapted from AutumnMood (https://github.com/AutumnMood924/AutumnMoodMechanics/blob/main/amm.lua))
-local alias__Card_get_chip_mult = Card.get_chip_mult;
-function Card:get_chip_mult()
-    if self.debuff then return 0 end
-    local ret = alias__Card_get_chip_mult(self) + (self.ability.perma_mult or 0)
-	return ret
-end
-
 function is_genre(joker, genre)
     print("going to test this function now")
     if joker.config.center.k_genre then
@@ -139,15 +129,6 @@ function is_genre(joker, genre)
     end
     return false
 end
-
-function SMODS.current_mod.process_loc_text()
-	G.localization.descriptions.Other["card_extra_mult"] = {
-		text = {
-			"{C:mult}+#1#{} extra Mult"
-		}
-	}
-end
--- End of adapted code
 
 -- Add Kino mod specific game long globals
 -- Scrap total
@@ -167,25 +148,6 @@ Game.init_game_object = function(self)
     -- generate_cmifc_rank()
     return ret
 end
-
--- Register the Jokers
--- local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
--- for _, file in ipairs(files) do
---     print("Loading file: " .. file)
---     local status, err = pcall(function()
---         return NFS.load(mod_dir .. "/Items/Jokers/" .. file)()
---     end)
---     sendDebugMessage("Loaded Joker: " .. file, "--KINO")
-
---     local string = string.sub(file, 1, #file-4)
---     Kino.jokers[#Kino.jokers + 1] = "j_kino_" .. string
-
---     if not status then
---         error(file .. ": " .. err)
---     end
--- end
-
-
 
 -- Register the Jokers
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
