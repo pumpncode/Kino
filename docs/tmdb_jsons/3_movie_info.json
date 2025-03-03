@@ -32,7 +32,7 @@
         "original_language": "en",
         "original_title": "Alien\u00b3",
         "overview": "After escaping with Newt and Hicks from the alien planet, Ripley crash lands on Fiorina 161, a prison planet and host to a correctional facility. Unfortunately, although Newt and Hicks do not survive the crash, a more unwelcome visitor does. The prison does not allow weapons of any kind, and with aid being a long time away, the prisoners must simply survive in any way they can.",
-        "popularity": 15.574,
+        "popularity": 29.274,
         "poster_path": "/xh5wI0UoW7DfS1IyLy3d2CgrCEP.jpg",
         "production_companies": [
             {
@@ -69,7 +69,7 @@
         "title": "Alien\u00b3",
         "video": false,
         "vote_average": 6.371,
-        "vote_count": 5811
+        "vote_count": 5815
     },
     "Se7en2": {
         "adult": false,
@@ -99,7 +99,7 @@
         "original_language": "en",
         "original_title": "Se7en",
         "overview": "Two homicide detectives are on a desperate hunt for a serial killer whose crimes are based on the \"seven deadly sins\" in this dark and haunting film that takes viewers from the tortured remains of one victim to the next. The seasoned Det. Somerset researches each sin in an effort to get inside the killer's mind, while his novice partner, Mills, scoffs at his efforts to unravel the case.",
-        "popularity": 55.567,
+        "popularity": 111.016,
         "poster_path": "/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg",
         "production_companies": [
             {
@@ -115,16 +115,26 @@
                 "origin_country": "US"
             },
             {
-                "id": 65393,
-                "logo_path": "/caz3eGyRd4OW7oR31Aij5ZwjOXD.png",
-                "name": "Cecchi Gori Pictures",
+                "id": 16775,
+                "logo_path": null,
+                "name": "Arnold Kopelson Productions",
                 "origin_country": "US"
+            },
+            {
+                "id": 5891,
+                "logo_path": "/caz3eGyRd4OW7oR31Aij5ZwjOXD.png",
+                "name": "Cecchi Gori Group",
+                "origin_country": "IT"
             }
         ],
         "production_countries": [
             {
                 "iso_3166_1": "US",
                 "name": "United States of America"
+            },
+            {
+                "iso_3166_1": "IT",
+                "name": "Italy"
             }
         ],
         "release_date": "1995-09-22",
@@ -141,8 +151,8 @@
         "tagline": "Seven deadly sins. Seven ways to die.",
         "title": "Se7en",
         "video": false,
-        "vote_average": 8.4,
-        "vote_count": 21429
+        "vote_average": 8.374,
+        "vote_count": 21441
     },
     "The Game3": {
         "adult": false,
@@ -172,7 +182,7 @@
         "original_language": "en",
         "original_title": "The Game",
         "overview": "In honor of his birthday, San Francisco banker Nicholas Van Orton, a financial genius and a cold-hearted loner, receives an unusual present from his younger brother, Conrad: a gift certificate to play a unique kind of game. In nary a nanosecond, Nicholas finds himself consumed by a dangerous set of ever-changing rules, unable to distinguish where the charade ends and reality begins.",
-        "popularity": 16.174,
+        "popularity": 29.158,
         "poster_path": "/4UOa079915QjiTA2u5hT2yKVgUu.jpg",
         "production_companies": [
             {
@@ -219,7 +229,7 @@
         "title": "The Game",
         "video": false,
         "vote_average": 7.566,
-        "vote_count": 6690
+        "vote_count": 6695
     },
     "Panic Room4": {
         "adult": false,
@@ -249,7 +259,7 @@
         "original_language": "en",
         "original_title": "Panic Room",
         "overview": "Trapped in their New York brownstone's panic room, a hidden chamber built as a sanctuary in the event of break-ins, newly divorced Meg Altman and her young daughter Sarah play a deadly game of cat-and-mouse with three intruders - Burnham, Raoul and Junior - during a brutal home invasion. But the room itself is the focal point because what the intruders really want is inside it.",
-        "popularity": 17.293,
+        "popularity": 33.951,
         "poster_path": "/7BabiNfuSycl58M9Cgl3Nf97n1F.jpg",
         "production_companies": [
             {
@@ -291,8 +301,8 @@
         "tagline": "It was supposed to be the safest room in the house.",
         "title": "Panic Room",
         "video": false,
-        "vote_average": 6.782,
-        "vote_count": 5016
+        "vote_average": 6.8,
+        "vote_count": 5021
     },
     "Zodiac5": {
         "adult": false,
@@ -326,7 +336,7 @@
         "original_language": "en",
         "original_title": "Zodiac",
         "overview": "The Zodiac murders cause the lives of Paul Avery, David Toschi and Robert Graysmith to intersect.",
-        "popularity": 32.106,
+        "popularity": 60.63,
         "poster_path": "/6YmeO4pB7XTh8P8F960O1uA14JO.jpg",
         "production_companies": [
             {
@@ -368,8 +378,8 @@
         "tagline": "There's more than one way to lose your life to a killer.",
         "title": "Zodiac",
         "video": false,
-        "vote_average": 7.525,
-        "vote_count": 10691
+        "vote_average": 7.5,
+        "vote_count": 10694
     },
     "The Curious Case of Benjamin Button6": {
         "adult": false,
@@ -399,7 +409,7 @@
         "original_language": "en",
         "original_title": "The Curious Case of Benjamin Button",
         "overview": "Born under unusual circumstances, Benjamin Button springs into being as an elderly man in a New Orleans nursing home and ages in reverse. Twelve years after his birth, he meets Daisy, a child who flits in and out of his life as she grows up to be a dancer. Though he has all sorts of unusual adventures over the course of his life, it is his relationship with Daisy, and the hope that they will come together at the right time, that drives Benjamin forward.",
-        "popularity": 28.274,
+        "popularity": 60.587,
         "poster_path": "/26wEWZYt6yJkwRVkjcbwJEFh9IS.jpg",
         "production_companies": [
             {
@@ -442,7 +452,7 @@
         "title": "The Curious Case of Benjamin Button",
         "video": false,
         "vote_average": 7.59,
-        "vote_count": 12940
+        "vote_count": 12943
     },
     "The Social Network7": {
         "adult": false,
@@ -464,7 +474,7 @@
         "original_language": "en",
         "original_title": "The Social Network",
         "overview": "In 2003, Harvard undergrad and computer programmer Mark Zuckerberg begins work on a new concept that eventually turns into the global social network known as Facebook. Six years later, Mark is one of the youngest billionaires ever, but his unprecedented success leads to both personal and legal complications when he ends up on the receiving end of two lawsuits, one involving his former friend.",
-        "popularity": 43.651,
+        "popularity": 69.048,
         "poster_path": "/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg",
         "production_companies": [
             {
@@ -519,7 +529,7 @@
         "title": "The Social Network",
         "video": false,
         "vote_average": 7.368,
-        "vote_count": 12278
+        "vote_count": 12285
     },
     "Point Break8": {
         "adult": false,
@@ -549,7 +559,7 @@
         "original_language": "en",
         "original_title": "Point Break",
         "overview": "In Los Angeles, a gang of bank robbers who call themselves The Ex-Presidents commit their crimes while wearing masks of Reagan, Carter, Nixon and Johnson. Believing that the members of the gang could be surfers, the F.B.I. sends young agent Johnny Utah to the beach undercover to mix with the surfers and gather information.",
-        "popularity": 15.523,
+        "popularity": 33.222,
         "poster_path": "/tlbERIghrQ4oofqlbF7H0K0EYnx.jpg",
         "production_companies": [
             {
@@ -595,8 +605,8 @@
         "tagline": "100% pure adrenaline.",
         "title": "Point Break",
         "video": false,
-        "vote_average": 7.164,
-        "vote_count": 3625
+        "vote_average": 7.165,
+        "vote_count": 3626
     },
     "Iron Man9": {
         "adult": false,
@@ -631,7 +641,7 @@
         "original_language": "en",
         "original_title": "Iron Man",
         "overview": "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.",
-        "popularity": 63.358,
+        "popularity": 118.037,
         "poster_path": "/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
         "production_companies": [
             {
@@ -688,8 +698,8 @@
         "tagline": "Heroes aren't born. They're built.",
         "title": "Iron Man",
         "video": false,
-        "vote_average": 7.648,
-        "vote_count": 26682
+        "vote_average": 7.647,
+        "vote_count": 26689
     },
     "I, Robot10": {
         "adult": false,
@@ -715,7 +725,7 @@
         "original_language": "en",
         "original_title": "I, Robot",
         "overview": "In 2035, where robots are commonplace and abide by the three laws of robotics, a technophobic cop investigates an apparent suicide. Suspecting that a robot may be responsible for the death, his investigation leads him to believe that humanity may be in danger.",
-        "popularity": 24.273,
+        "popularity": 42.918,
         "poster_path": "/efwv6F2lGaghjPpBRSINHtoEiZB.jpg",
         "production_companies": [
             {
@@ -779,8 +789,8 @@
         "tagline": "One man saw it coming",
         "title": "I, Robot",
         "video": false,
-        "vote_average": 7.0,
-        "vote_count": 11904
+        "vote_average": 6.952,
+        "vote_count": 11909
     },
     "The Iron Giant11": {
         "adult": false,
@@ -814,7 +824,7 @@
         "original_language": "en",
         "original_title": "The Iron Giant",
         "overview": "In the small town of Rockwell, Maine in October 1957, a giant metal machine befriends a nine-year-old boy and ultimately finds its humanity by unselfishly saving people from their own fears and prejudices.",
-        "popularity": 25.714,
+        "popularity": 47.148,
         "poster_path": "/ct04FCFLPImNG5thcPLRnVsZlmS.jpg",
         "production_companies": [
             {
@@ -845,11 +855,11 @@
         "title": "The Iron Giant",
         "video": false,
         "vote_average": 7.9,
-        "vote_count": 5683
+        "vote_count": 5684
     },
     "Ex Machina12": {
         "adult": false,
-        "backdrop_path": "/jFxxqdEQ9TkXQSytO7qM8wlwXL1.jpg",
+        "backdrop_path": "/uqOuJ50EtTj7kkDIXP8LCg7G45D.jpg",
         "belongs_to_collection": null,
         "budget": 15000000,
         "genres": [
@@ -871,7 +881,7 @@
         "original_language": "en",
         "original_title": "Ex Machina",
         "overview": "Caleb, a coder at the world's largest internet company, wins a competition to spend a week at a private mountain retreat belonging to Nathan, the reclusive CEO of the company. But when Caleb arrives at the remote location he finds that he will have to participate in a strange and fascinating experiment in which he must interact with the world's first true artificial intelligence, housed in the body of a beautiful robot girl.",
-        "popularity": 18.269,
+        "popularity": 44.885,
         "poster_path": "/dmJW8IAKHKxFNiUnoDR7JfsK7Rp.jpg",
         "production_companies": [
             {
@@ -909,7 +919,7 @@
                 "name": "United States of America"
             }
         ],
-        "release_date": "2014-12-16",
+        "release_date": "2015-01-21",
         "revenue": 36869414,
         "runtime": 108,
         "spoken_languages": [
@@ -923,8 +933,8 @@
         "tagline": "There is nothing more human than the will to survive",
         "title": "Ex Machina",
         "video": false,
-        "vote_average": 7.571,
-        "vote_count": 13402
+        "vote_average": 7.6,
+        "vote_count": 13407
     },
     "WALL\u00b7E13": {
         "adult": false,
@@ -954,7 +964,7 @@
         "original_language": "en",
         "original_title": "WALL\u00b7E",
         "overview": "What if mankind had to leave Earth and somebody forgot to turn the last robot off? After hundreds of years doing what he was built for, WALL\u2022E discovers a new purpose in life when he meets a sleek search robot named EVE. EVE comes to realize that WALL\u2022E has inadvertently stumbled upon the key to the planet's future, and races back to space to report to the humans. Meanwhile, WALL\u2022E chases EVE across the galaxy and sets into motion one of the most imaginative adventures ever brought to the big screen.",
-        "popularity": 40.74,
+        "popularity": 84.03,
         "poster_path": "/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
         "production_companies": [
             {
@@ -990,8 +1000,8 @@
         "tagline": "After 700 years of doing what he was built for, he'll discover what he was meant for.",
         "title": "WALL\u00b7E",
         "video": false,
-        "vote_average": 8.1,
-        "vote_count": 19021
+        "vote_average": 8.097,
+        "vote_count": 19028
     },
     "M3GAN14": {
         "adult": false,
@@ -1022,7 +1032,7 @@
         "original_language": "en",
         "original_title": "M3GAN",
         "overview": "A brilliant toy company roboticist uses artificial intelligence to develop M3GAN, a life-like doll programmed to emotionally bond with her newly orphaned niece. But when the doll's programming works too well, she becomes overprotective of her new friend with terrifying results.",
-        "popularity": 25.225,
+        "popularity": 48.79,
         "poster_path": "/d9nBoowhjiiYc4FBNtQkPY7c11H.jpg",
         "production_companies": [
             {
@@ -1064,8 +1074,8 @@
         "tagline": "Friendship has evolved.",
         "title": "M3GAN",
         "video": false,
-        "vote_average": 7.1,
-        "vote_count": 4148
+        "vote_average": 7.054,
+        "vote_count": 4155
     },
     "The Matrix15": {
         "adult": false,
@@ -1096,7 +1106,7 @@
         "original_language": "en",
         "original_title": "The Matrix",
         "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
-        "popularity": 71.002,
+        "popularity": 122.406,
         "poster_path": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
         "production_companies": [
             {
@@ -1144,8 +1154,8 @@
         "tagline": "The fight for the future begins.",
         "title": "The Matrix",
         "video": false,
-        "vote_average": 8.2,
-        "vote_count": 26089
+        "vote_average": 8.222,
+        "vote_count": 26101
     },
     "A.I. Artificial Intelligence16": {
         "adult": false,
@@ -1175,7 +1185,7 @@
         "original_language": "en",
         "original_title": "A.I. Artificial Intelligence",
         "overview": "David, a robotic boy\u2014the first of his kind programmed to love\u2014is adopted as a test case by a Cybertronics employee and his wife. Though he gradually becomes their child, a series of unexpected circumstances make this life impossible for David.",
-        "popularity": 15.532,
+        "popularity": 50.961,
         "poster_path": "/8MZSGX5JORoO72EfuAEcejH5yHn.jpg",
         "production_companies": [
             {
@@ -1228,7 +1238,7 @@
         "title": "A.I. Artificial Intelligence",
         "video": false,
         "vote_average": 7.044,
-        "vote_count": 6207
+        "vote_count": 6210
     },
     "Duel17": {
         "adult": false,
@@ -1258,7 +1268,7 @@
         "original_language": "en",
         "original_title": "Duel",
         "overview": "Traveling businessman David Mann angers the driver of a rusty tanker while crossing the California desert. A simple trip turns deadly, as Mann struggles to stay on the road while the tanker plays cat and mouse with his life.",
-        "popularity": 13.196,
+        "popularity": 19.097,
         "poster_path": "/w9Vk1Txx14vWvACELFYFlixrsfr.jpg",
         "production_companies": [
             {
@@ -1288,8 +1298,8 @@
         "tagline": "The most bizarre murder weapon ever used!",
         "title": "Duel",
         "video": false,
-        "vote_average": 7.42,
-        "vote_count": 1893
+        "vote_average": 7.421,
+        "vote_count": 1895
     },
     "The Sugarland Express18": {
         "adult": false,
@@ -1315,7 +1325,7 @@
         "original_language": "en",
         "original_title": "The Sugarland Express",
         "overview": "Married small-time crooks Lou-Jean and Clovis Poplin lose their baby to the state of Texas and resolve to do whatever it takes to get him back. Lou-Jean gets Clovis out of jail, and the two steal their son from his foster home, in addition to taking a highway patrolman hostage. As a massive dragnet starts to pursue them across Texas, the couple become unlikely folk heroes and even start to bond with the captive policeman.",
-        "popularity": 9.067,
+        "popularity": 13.878,
         "poster_path": "/csahjHhtJ9NzFKcxVcw7S4Pyfj.jpg",
         "production_companies": [
             {
@@ -1352,7 +1362,7 @@
         "title": "The Sugarland Express",
         "video": false,
         "vote_average": 6.6,
-        "vote_count": 405
+        "vote_count": 406
     },
     "Close Encounters of the Third Kind19": {
         "adult": false,
@@ -1378,7 +1388,7 @@
         "original_language": "en",
         "original_title": "Close Encounters of the Third Kind",
         "overview": "After an encounter with UFOs, an electricity linesman feels undeniably drawn to an isolated area in the wilderness where something spectacular is about to happen.",
-        "popularity": 13.602,
+        "popularity": 32.447,
         "poster_path": "/yaPx3cK9zGFX3SbcKwxWM1QIbUh.jpg",
         "production_companies": [
             {
@@ -1439,8 +1449,8 @@
         "tagline": "We are not alone.",
         "title": "Close Encounters of the Third Kind",
         "video": false,
-        "vote_average": 7.35,
-        "vote_count": 4273
+        "vote_average": 7.3,
+        "vote_count": 4276
     },
     "Raiders of the Lost Ark20": {
         "adult": false,
@@ -1471,7 +1481,7 @@
         "original_language": "en",
         "original_title": "Raiders of the Lost Ark",
         "overview": "When Dr. Indiana Jones \u2013 the tweed-suited professor who just happens to be a celebrated archaeologist \u2013 is hired by the government to locate the legendary Ark of the Covenant, he finds himself up against the entire Nazi regime.",
-        "popularity": 187.907,
+        "popularity": 202.657,
         "poster_path": "/ceG9VzoRAVGwivFU403Wc3AHRys.jpg",
         "production_companies": [
             {
@@ -1532,8 +1542,8 @@
         "tagline": "If adventure has a name, it must be Indiana Jones!",
         "title": "Raiders of the Lost Ark",
         "video": false,
-        "vote_average": 7.92,
-        "vote_count": 12697
+        "vote_average": 7.921,
+        "vote_count": 12705
     },
     "Always21": {
         "adult": false,
@@ -1563,7 +1573,7 @@
         "original_language": "en",
         "original_title": "Always",
         "overview": "The spirit of a recently deceased expert pilot mentors a newer pilot while watching him fall in love with the girlfriend that he left behind.",
-        "popularity": 9.919,
+        "popularity": 13.449,
         "poster_path": "/wh0WItAFrw3m66mDMlCCuXQwfMW.jpg",
         "production_companies": [
             {
@@ -1640,7 +1650,7 @@
         "original_language": "en",
         "original_title": "Hook",
         "overview": "The boy who wasn't supposed to grow up\u2014Peter Pan\u2014does just that, becoming a soulless corporate lawyer whose workaholism could cost him his wife and kids. During his trip to see Granny Wendy in London, the vengeful Capt. Hook kidnaps Peter's kids and forces Peter to return to Neverland.",
-        "popularity": 17.893,
+        "popularity": 28.041,
         "poster_path": "/a6rB1lGXoGms7gWxRfJneQmAjNV.jpg",
         "production_companies": [
             {
@@ -1677,7 +1687,7 @@
         "title": "Hook",
         "video": false,
         "vote_average": 6.834,
-        "vote_count": 5352
+        "vote_count": 5353
     },
     "Jurassic Park23": {
         "adult": false,
@@ -1708,7 +1718,7 @@
         "original_language": "en",
         "original_title": "Jurassic Park",
         "overview": "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.",
-        "popularity": 31.153,
+        "popularity": 48.259,
         "poster_path": "/fjTU1Bgh3KJu4aatZil3sofR2zC.jpg",
         "production_companies": [
             {
@@ -1750,7 +1760,7 @@
         "title": "Jurassic Park",
         "video": false,
         "vote_average": 7.952,
-        "vote_count": 16550
+        "vote_count": 16562
     },
     "Catch Me If You Can24": {
         "adult": false,
@@ -1776,7 +1786,7 @@
         "original_language": "en",
         "original_title": "Catch Me If You Can",
         "overview": "A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks as a Pan Am pilot, doctor, and legal prosecutor. An FBI agent makes it his mission to put him behind bars. But Frank not only eludes capture, he revels in the pursuit.",
-        "popularity": 37.856,
+        "popularity": 70.262,
         "poster_path": "/sdYgEkKCDPWNU6KnoL4qd8xZ4w7.jpg",
         "production_companies": [
             {
@@ -1824,7 +1834,7 @@
         "title": "Catch Me If You Can",
         "video": false,
         "vote_average": 7.979,
-        "vote_count": 15881
+        "vote_count": 15891
     },
     "The BFG25": {
         "adult": false,
@@ -1854,7 +1864,7 @@
         "original_language": "en",
         "original_title": "The BFG",
         "overview": "An orphan little girl befriends a benevolent giant who takes her to Giant Country, where they attempt to stop the man-eating giants that are invading the human world.",
-        "popularity": 19.933,
+        "popularity": 43.772,
         "poster_path": "/vssXmCrfCiARkQ0512oG0wjh2h9.jpg",
         "production_companies": [
             {
@@ -1923,7 +1933,7 @@
         "title": "The BFG",
         "video": false,
         "vote_average": 6.276,
-        "vote_count": 3394
+        "vote_count": 3398
     },
     "Ready Player One26": {
         "adult": false,
@@ -1958,7 +1968,7 @@
         "original_language": "en",
         "original_title": "Ready Player One",
         "overview": "When the creator of a popular video game system dies, a virtual contest is created to compete for his fortune.",
-        "popularity": 44.239,
+        "popularity": 110.481,
         "poster_path": "/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg",
         "production_companies": [
             {
@@ -2013,7 +2023,7 @@
         "title": "Ready Player One",
         "video": false,
         "vote_average": 7.591,
-        "vote_count": 15823
+        "vote_count": 15835
     },
     "Frankenstein27": {
         "adult": false,
@@ -2048,7 +2058,7 @@
         "original_language": "en",
         "original_title": "Frankenstein",
         "overview": "Tampering with life and death, Henry Frankenstein pieces together salvaged body parts to bring a human monster to life; the mad scientist's dreams are shattered by his creation's violent rage as the monster awakens to a world in which he is unwelcome.",
-        "popularity": 10.658,
+        "popularity": 19.234,
         "poster_path": "/mu6wHwH0IwCCaEYtpqujuPJYat1.jpg",
         "production_companies": [
             {
@@ -2083,8 +2093,8 @@
         "tagline": "THE MAN WHO MADE A MONSTER",
         "title": "Frankenstein",
         "video": false,
-        "vote_average": 7.5,
-        "vote_count": 1615
+        "vote_average": 7.472,
+        "vote_count": 1616
     },
     "Memento28": {
         "adult": false,
@@ -2110,8 +2120,8 @@
         "original_language": "en",
         "original_title": "Memento",
         "overview": "Leonard Shelby is tracking down the man who raped and murdered his wife. The difficulty of locating his wife's killer, however, is compounded by the fact that he suffers from a rare, untreatable form of short-term memory loss. Although he can recall details of life before his accident, Leonard cannot remember what happened fifteen minutes ago, where he's going, or why.",
-        "popularity": 33.557,
-        "poster_path": "/nWtySDlffTfwAa0rSfq61o33ZXV.jpg",
+        "popularity": 54.882,
+        "poster_path": "/nzlv62aC0octS5AklAiWpXLX9Z0.jpg",
         "production_companies": [
             {
                 "id": 28,
@@ -2158,8 +2168,8 @@
         "tagline": "Some memories are best forgotten.",
         "title": "Memento",
         "video": false,
-        "vote_average": 8.178,
-        "vote_count": 15095
+        "vote_average": 8.2,
+        "vote_count": 15102
     },
     "Insomnia29": {
         "adult": false,
@@ -2186,7 +2196,7 @@
         "original_language": "en",
         "original_title": "Insomnia",
         "overview": "Two Los Angeles homicide detectives are dispatched to a northern town where the sun doesn't set to investigate the methodical murder of a local teen.",
-        "popularity": 11.677,
+        "popularity": 23.466,
         "poster_path": "/riVXh3EimGO0y5dgQxEWPRy5Itg.jpg",
         "production_companies": [
             {
@@ -2228,8 +2238,8 @@
         "tagline": "A tough cop. A brilliant killer. An unspeakable crime.",
         "title": "Insomnia",
         "video": false,
-        "vote_average": 6.943,
-        "vote_count": 4804
+        "vote_average": 6.9,
+        "vote_count": 4806
     },
     "Batman Begins30": {
         "adult": false,
@@ -2264,7 +2274,7 @@
         "original_language": "en",
         "original_title": "Batman Begins",
         "overview": "Driven by tragedy, billionaire Bruce Wayne dedicates his life to uncovering and defeating the corruption that plagues his home, Gotham City.  Unable to work within the system, he instead creates a new identity, a symbol of fear for the criminal underworld - The Batman.",
-        "popularity": 28.372,
+        "popularity": 54.385,
         "poster_path": "/4MpN4kIEqUjW8OPtOQJXlTdHiJV.jpg",
         "production_companies": [
             {
@@ -2332,8 +2342,8 @@
         "tagline": "Evil fears the knight.",
         "title": "Batman Begins",
         "video": false,
-        "vote_average": 7.711,
-        "vote_count": 21243
+        "vote_average": 7.712,
+        "vote_count": 21255
     },
     "The Prestige31": {
         "adult": false,
@@ -2364,7 +2374,7 @@
         "original_language": "en",
         "original_title": "The Prestige",
         "overview": "A mysterious story of two magicians whose intense rivalry leads them on a life-long battle for supremacy -- full of obsession, deceit and jealousy with dangerous and deadly consequences.",
-        "popularity": 41.042,
+        "popularity": 67.249,
         "poster_path": "/bdN3gXuIZYaJP7ftKK2sU0nPtEA.jpg",
         "production_companies": [
             {
@@ -2417,7 +2427,7 @@
         "title": "The Prestige",
         "video": false,
         "vote_average": 8.203,
-        "vote_count": 16315
+        "vote_count": 16321
     },
     "The Dark Knight32": {
         "adult": false,
@@ -2456,7 +2466,7 @@
         "original_language": "en",
         "original_title": "The Dark Knight",
         "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
-        "popularity": 93.356,
+        "popularity": 169.946,
         "poster_path": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
         "production_companies": [
             {
@@ -2513,8 +2523,8 @@
         "tagline": "Welcome to a world without rules.",
         "title": "The Dark Knight",
         "video": false,
-        "vote_average": 8.5,
-        "vote_count": 33466
+        "vote_average": 8.519,
+        "vote_count": 33489
     },
     "Inception33": {
         "adult": false,
@@ -2545,7 +2555,7 @@
         "original_language": "en",
         "original_title": "Inception",
         "overview": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
-        "popularity": 64.681,
+        "popularity": 156.242,
         "poster_path": "/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg",
         "production_companies": [
             {
@@ -2607,7 +2617,7 @@
         "title": "Inception",
         "video": false,
         "vote_average": 8.369,
-        "vote_count": 37097
+        "vote_count": 37118
     },
     "Interstellar34": {
         "adult": false,
@@ -2637,7 +2647,7 @@
         "original_language": "en",
         "original_title": "Interstellar",
         "overview": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
-        "popularity": 123.939,
+        "popularity": 288.193,
         "poster_path": "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
         "production_companies": [
             {
@@ -2684,7 +2694,7 @@
         "title": "Interstellar",
         "video": false,
         "vote_average": 8.5,
-        "vote_count": 36586
+        "vote_count": 36623
     },
     "Tenet35": {
         "adult": false,
@@ -2715,7 +2725,7 @@
         "original_language": "en",
         "original_title": "Tenet",
         "overview": "Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
-        "popularity": 27.523,
+        "popularity": 48.373,
         "poster_path": "/aCIFMriQh8rvhxpN1IWGgvH0Tlg.jpg",
         "production_companies": [
             {
@@ -2761,7 +2771,7 @@
         "title": "Tenet",
         "video": false,
         "vote_average": 7.182,
-        "vote_count": 10081
+        "vote_count": 10087
     },
     "Oppenheimer36": {
         "adult": false,
@@ -2787,7 +2797,7 @@
         "original_language": "en",
         "original_title": "Oppenheimer",
         "overview": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
-        "popularity": 72.999,
+        "popularity": 164.819,
         "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
         "production_companies": [
             {
@@ -2850,7 +2860,7 @@
         "tagline": "The world forever changes.",
         "title": "Oppenheimer",
         "video": false,
-        "vote_average": 8.1,
-        "vote_count": 9857
+        "vote_average": 8.071,
+        "vote_count": 9875
     }
 }
