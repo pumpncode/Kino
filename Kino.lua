@@ -117,16 +117,6 @@ if load_error then
     helper()
 end
 
-
-
--- Add Mult Bonus (Code adapted from AutumnMood (https://github.com/AutumnMood924/AutumnMoodMechanics/blob/main/amm.lua))
-local alias__Card_get_chip_mult = Card.get_chip_mult;
-function Card:get_chip_mult()
-    if self.debuff then return 0 end
-    local ret = alias__Card_get_chip_mult(self) + (self.ability.perma_mult or 0)
-	return ret
-end
-
 function is_genre(joker, genre)
     if joker.config.center.k_genre then
         for i = 1, #joker.config.center.k_genre do
@@ -137,15 +127,6 @@ function is_genre(joker, genre)
     end
     return false
 end
-
-function SMODS.current_mod.process_loc_text()
-	G.localization.descriptions.Other["card_extra_mult"] = {
-		text = {
-			"{C:mult}+#1#{} extra Mult"
-		}
-	}
-end
--- End of adapted code
 
 -- Add Kino mod specific game long globals
 -- Scrap total

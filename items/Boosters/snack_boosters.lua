@@ -14,7 +14,22 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("confection", G.pack_cards, nil, nil, true, true, nil, nil)
+        local _card = create_card("confection", G.pack_cards, nil, nil, true, true, nil, nil)
+        if G.GAME.used_vouchers.v_kino_special_treats then
+            -- chance for golden 1/10
+            -- chance for chocolate 1/10
+            -- chance for XL 1/10 
+            if pseudorandom("snack_boost_golden") < Kino.goldleaf_chance/10 then
+                SMODS.Stickers['kino_goldleaf']:apply(_card, true)
+            end
+            if pseudorandom("snack_boost_choco") < Kino.choco_chance/10 then
+                SMODS.Stickers['kino_choco']:apply(_card, true)
+            end
+            if pseudorandom("snack_boost_XL") < Kino.xl_chance/10 then
+                SMODS.Stickers['kino_extra_large']:apply(_card, true)
+            end
+        end
+        return _card
     end
 }
 
@@ -34,7 +49,22 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("confection", G.pack_cards, nil, nil, true, true, nil, nil)
+        local _card = create_card("confection", G.pack_cards, nil, nil, true, true, nil, nil)
+        if G.GAME.used_vouchers.v_kino_special_treats then
+            -- chance for golden 1/10
+            -- chance for chocolate 1/10
+            -- chance for XL 1/10 
+            if pseudorandom("snack_boost_golden") < Kino.goldleaf_chance/10 then
+                SMODS.Stickers['kino_goldleaf']:apply(_card, true)
+            end
+            if pseudorandom("snack_boost_choco") < Kino.choco_chance/10 then
+                SMODS.Stickers['kino_choco']:apply(_card, true)
+            end
+            if pseudorandom("snack_boost_XL") < Kino.xl_chance/10 then
+                SMODS.Stickers['kino_extra_large']:apply(_card, true)
+            end
+        end
+        return _card
     end
 }
 
@@ -54,6 +84,21 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("confection", G.pack_cards, nil, nil, true, true, nil, nil)
+        local _card = create_card("confection", G.pack_cards, nil, nil, true, true, nil, nil)
+        if G.GAME.used_vouchers.v_kino_special_treats then
+            -- chance for golden 1/10
+            -- chance for chocolate 1/10
+            -- chance for XL 1/10 
+            if pseudorandom("snack_boost_golden") < Kino.goldleaf_chance/10 then
+                SMODS.Stickers['kino_goldleaf']:apply(_card, true)
+            end
+            if pseudorandom("snack_boost_choco") < Kino.choco_chance/10 then
+                SMODS.Stickers['kino_choco']:apply(_card, true)
+            end
+            if pseudorandom("snack_boost_XL") < Kino.xl_chance/10 then
+                SMODS.Stickers['kino_extra_large']:apply(_card, true)
+            end
+        end
+        return _card
     end
 }
