@@ -43,18 +43,18 @@ SMODS.Voucher {
     end
 }
 
-SMODS.Voucher {
-    key = "special_treats",
-    atlas = "kino_vouchers",
-    order = 3,
-    set = "Voucher",
-    pos = { x = 1, y = 0 },
-    config = {},
-    discovered = true,
-    unlocked = true,
-    available = true,
-    cost = 10,
-    loc_vars = function(self, info_queue)
-        return { vars = {} }
-    end
-}
+-- SMODS.Voucher {
+--     key = "special_treats",
+--     atlas = "kino_vouchers",
+--     order = 3,
+--     set = "Voucher",
+--     pos = { x = 1, y = 0 },
+--     config = {},
+--     discovered = true,
+--     unlocked = true,
+--     available = true,
+--     cost = 10,
+--     loc_vars = function(self, info_queue)
+--         return { vars = {} }
+--     end
+-- }

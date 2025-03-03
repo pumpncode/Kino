@@ -1,3 +1,7 @@
+V. 0.6b:
+
+Fixed compatibility with SMODS bonuses
+
 V. 0.6a:
 
 Fixed metadata errors for small amount of jokers
