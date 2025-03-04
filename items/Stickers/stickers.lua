@@ -37,6 +37,7 @@ SMODS.Sticker{
         card.ability.kino_choco then return end
         card.ability[self.key] = val
     end,
+    hide_badge = true,
     badge_colour = HEX('ffd081'),
 
     order = 6,
@@ -53,6 +54,7 @@ SMODS.Sticker{
         card.ability.kino_goldleaf then return end
         card.ability[self.key] = val
     end,
+    hide_badge = true,
     badge_colour = HEX('ffd081'),
 
     order = 6,
@@ -69,6 +71,7 @@ SMODS.Sticker{
         card.ability.kino_extra_large then return end
         card.ability[self.key] = val
     end,
+    hide_badge = true,
     badge_colour = HEX('ffd081'),
 
     order = 6,

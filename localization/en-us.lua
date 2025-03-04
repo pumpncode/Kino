@@ -232,6 +232,14 @@ return {
                     "{C:mult}+#1#{} Mult when scored"
                 }
             },
+            j_kino_charlie_and_the_chocolate_factory = {
+                name = "Charlie & the Chocolate Factory",
+                text = {
+                    "{C:attention}Confections{} are always",
+                    "{C:attention}Chocolate{}",
+                    "{C:inactive}(Chocolate increases confection's values)"
+                }
+            },
             j_kino_chef = {
                 name = "Chef",
                 text = {
@@ -1617,6 +1625,7 @@ return {
             k_ringu_death = "7 Days Passed",
             k_goodfellas_pay = "Payment Made",
             k_goodfellas_leave = "Broke, ay?",
+            k_et = "Go Home",
 
             -- Enhancement Barks
             k_monter_turn = "ROAR!",

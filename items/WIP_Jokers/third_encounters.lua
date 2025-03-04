@@ -20,6 +20,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- ???
+        -- Gain X0.5 when you use 'random planet'
     end
 }

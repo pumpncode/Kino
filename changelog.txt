@@ -1,3 +1,11 @@
+V 0.6.1:
+
+Confection Update:
+- Confections can now have upgrades.
+- Goldleaf: Gain $1 when used
+- Chocolate: Your confection is stronger
+- Extra Large: Your confections can be used twice
+
 V. 0.6:
 
 New Tarots:
