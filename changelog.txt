@@ -1,3 +1,7 @@
+V 0.6.1a:
+
+- Fixed a crash caused by the Diamond Spade combination spell
+
 V 0.6.1:
 
 Confection Update:

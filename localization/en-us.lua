@@ -1354,7 +1354,7 @@ return {
             c_kino_chocolate_bar = {
                 name = "Chocolate Bar",
                 text = {
-                    "Draw {C:attetnion}#1#{} cards"
+                    "Draw {C:attention}#1#{} cards"
                 }
             },
             c_kino_fries = {
