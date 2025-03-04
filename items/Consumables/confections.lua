@@ -31,15 +31,20 @@ SMODS.Consumable {
         }
     },
     loc_vars = function(self, info_queue, card)
+        local _return = card.ability.extra.mult
+        if card.ability.kino_chocolate then
+            _return = _return + self.config.choco_mult
+        end
         return {
+            
             vars = {
-                card.ability.extra.mult
+                _return
             }
         } 
     end,
     use = function(self, card, area, copier)
         if G.GAME.blind.in_blind and card.area ~= G.pack_cards then
-            print("being used")
+
             if card.ability.kino_goldleaf then
                 ease_dollars(1)
             end
@@ -48,9 +53,7 @@ SMODS.Consumable {
                 func = (function()
                     local _tag = Tag('tag_kino_popcorn')
                     if card.ability.kino_choco then
-                        print("Setting ability")
-                        print(self.config.choco_mult)
-                        _tag:set_ability(_tag, 1)
+                        _tag:set_chocolate_bonus(self.config.choco_mult)
                     end
                     
                     add_tag(_tag)
@@ -84,13 +87,16 @@ SMODS.Tag{
             end
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
-    set_ability = function(self, chocolate_bonus, additional_check)
+    set_chocolate_bonus = function(self, chocolate_bonus)
+
         if chocolate_bonus then
-            -- print(additional_check .. " = additional")
+
             self.config.mult = self.config.mult + chocolate_bonus
+
         end
     end
 }
@@ -120,6 +126,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 5,
         extra = {
             chips = 10
         }
@@ -139,7 +146,13 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_icecream'))
+                    local _tag = Tag('tag_kino_icecream')
+                    if card.ability.kino_choco then
+                        _tag:set_chocolate_bonus(self.config.choco_bonus)
+                    end
+                    
+                    add_tag(_tag)
+                    
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -170,9 +183,17 @@ SMODS.Tag{
             end
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
-	end
+	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.chips = self.config.chips + chocolate_bonus
+        end
+
+    end
 }
 
 -- Gain +1 hand size until the end of this round
@@ -200,6 +221,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
             hand_size = 1
         }
@@ -219,7 +241,12 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_candy'))
+                    local _tag = Tag('tag_kino_candy')
+                    if card.ability.kino_choco then
+                        _tag:set_chocolate_bonus(self.config.choco_bonus)
+                    end
+                    
+                    add_tag(_tag)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -249,9 +276,17 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
-	end
+	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.h_size = self.config.h_size + chocolate_bonus
+        end
+
+    end
 }
 
 -- Double the interest this round
@@ -279,6 +314,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
             extra = 1
         }
@@ -298,7 +334,13 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_peanut'))
+
+                    local _tag = Tag('tag_kino_peanut')
+                    if card.ability.kino_choco then
+                        _tag:set_chocolate_bonus(self.config.choco_bonus)
+                    end
+                    
+                    add_tag(_tag)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -323,6 +365,7 @@ SMODS.Tag{
         end
         if context.type == tag.config.type then
             G.GAME.interest_amount = G.GAME.interest_amount - tag.config.dollars
+
                 tag:yep('+', G.C.GOLD,function() 
                     return true
                 end)
@@ -330,9 +373,17 @@ SMODS.Tag{
             return false
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
-	end
+	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.dollars = self.config.dollars + chocolate_bonus
+        end
+
+    end
 }
 
 -- Retrigger the first card of each suit a second time this round.
@@ -360,6 +411,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
             retriggers = 1
         }
@@ -379,7 +431,13 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_pizza'))
+                    local _tag = Tag('tag_kino_pizza')
+                    if card.ability.kino_choco then
+                        _tag:set_chocolate_bonus(self.config.choco_bonus)
+                    end
+                    
+                    add_tag(_tag)
+
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -408,6 +466,7 @@ SMODS.Tag{
 
         -- Check for right context.
         if context.type == tag.config.type then
+
             -- Check for suits already encountered
             local _is_viable = true
             for i = 1, #tag.ability.suits do
@@ -420,6 +479,7 @@ SMODS.Tag{
             if _is_viable and 
             context.card.config.center ~= G.P_CENTERS.m_stone then
                 tag.ability.suits[#tag.ability.suits + 1] = context.card.config.card.suit
+
                 return {
                     card = context.card,
                     effect = nil,
@@ -438,9 +498,17 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
-	end
+	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.retriggers = self.config.retriggers + chocolate_bonus
+        end
+
+    end
 }
 
 -- retrigger the first scoring card twice
@@ -468,6 +536,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
             retriggers = 2
         }
@@ -487,7 +556,12 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_soda'))
+                    local _tag = Tag('tag_kino_soda')
+                    if card.ability.kino_choco then
+                        _tag:set_chocolate_bonus(self.config.choco_bonus)
+                    end
+                    
+                    add_tag(_tag)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -508,6 +582,7 @@ SMODS.Tag{
     end,
     apply = function(self, tag, context)
         if context.type == tag.config.type then
+
             tag:yep('+', G.C.GREEN,function() 
                 return true
             end)
@@ -520,9 +595,17 @@ SMODS.Tag{
             }
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.retriggers = self.config.retriggers + chocolate_bonus
+        end
+
+    end
 }
 
 -- Draw 2 cards.
@@ -550,14 +633,15 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
-            hand_size = 2
+            cards_drawn = 2
         }
     },
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.hand_size
+                card.ability.extra.cards_drawn
             }
         } 
     end,
@@ -570,6 +654,12 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
+                    local _cards_drawn = card.ability.extra.cards_drawn
+                    if card.ability.kino_choco then
+                        _cards_drawn = card.ability.extra.cards_drawn + self.config.choco_bonus
+                    end
+
+
                     G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
@@ -599,9 +689,17 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.cards_drawn = self.config.cards_drawn + chocolate_bonus
+        end
+
+    end
 }
 
 
@@ -619,7 +717,7 @@ SMODS.Consumable {
         end
 	end,
     keep_on_use = function(self, card)
-        if card.area == G.pack_cards then
+        if self.area == G.pack_cards then
             return true
         end
 
@@ -631,6 +729,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 5,
         extra = {
             bonus_chips = 10
         }
@@ -650,7 +749,12 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_fries'))
+                    local _tag = Tag('tag_kino_fries')
+                    if card.ability.kino_choco then
+                        _tag:set_chocolate_bonus(self.config.choco_bonus)
+                    end
+                    
+                    add_tag(_tag)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -671,7 +775,7 @@ SMODS.Tag{
     end,
     apply = function(self, tag, context)
         if context.type == tag.config.type then
-            context.card.ability.perma_bonus = context.card.ability.perma_bonus + tag.config.bonus_chips
+            context.card.ability.perma_bonus = context.card.ability.perma_bonus + self.config.bonus_chips
             tag:yep('+', G.C.CHIPS,function() 
                 return true
             end)
@@ -679,9 +783,17 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.bonus_chips = self.config.bonus_chips + chocolate_bonus
+        end
+
+    end
 }
 
 
@@ -710,6 +822,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
             level = 1
         }
@@ -729,7 +842,12 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    add_tag(Tag('tag_kino_hotdog'))
+                    local _tag = Tag('tag_kino_hotdog')
+                    if card.ability.kino_choco then
+                        _tag:set_chocolate_bonus(self.config.choco_bonus)
+                    end
+
+                    add_tag(_tag)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -749,8 +867,8 @@ SMODS.Tag{
         return {vars = {self.config.level}}
     end,
     apply = function(self, tag, context)
-        if context.type == tag.config.type then
-            level_up_hand(tag, context.scoring_name, nil, tag.config.level)
+        if context.type == self.config.type then
+            level_up_hand(tag, context.scoring_name, nil, self.config.level)
             tag:yep('+', G.C.GOLD,function() 
                 return true
             end)
@@ -758,9 +876,17 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.level = self.config.level + chocolate_bonus
+        end
+
+    end
 }
 
 -- Gain +1 hand this round.
@@ -788,6 +914,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
             hands = 1
         }
@@ -807,7 +934,11 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
-                    ease_hands_played(card.ability.extra.hands)
+                    local _extra_hands = card.ability.extra.hands
+                    if card.ability.kino_choco then
+                        _extra_hands = _extra_hands + self.config.choco_bonus
+                    end
+                    ease_hands_played(_extra_hands)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
                     return true
@@ -836,9 +967,17 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.hands = self.config.hands + chocolate_bonus
+        end
+
+    end
 }
 
 -- Gain +1 discard this round.
@@ -866,6 +1005,7 @@ SMODS.Consumable {
         end
     end,
     config = {
+        choco_bonus = 1,
         extra = {
             discards = 1
         }
@@ -885,6 +1025,11 @@ SMODS.Consumable {
 
             G.E_MANAGER:add_event(Event({
                 func = (function()
+                    local _extra_discards = card.ability.extra.discards
+                    if card.ability.kino_choco then
+                        _extra_discards = _extra_discards + self.config.choco_bonus
+                    end
+
                     ease_discard(card.ability.extra.discards)
                     play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                     play_sound('holo1', 1.2 + math.random()*0.1, 0.4)
@@ -915,7 +1060,15 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
+    set_chocolate_bonus = function(self, chocolate_bonus)
+        
+        if chocolate_bonus then
+            self.config.discards = self.config.discards + chocolate_bonus
+        end
+
+    end
 }

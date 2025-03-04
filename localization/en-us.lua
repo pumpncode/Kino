@@ -232,6 +232,14 @@ return {
                     "{C:mult}+#1#{} Mult when scored"
                 }
             },
+            j_kino_charlie_and_the_chocolate_factory = {
+                name = "Charlie & the Chocolate Factory",
+                text = {
+                    "{C:attention}Confections{} are always",
+                    "{C:attention}Chocolate{}",
+                    "{C:inactive}(Chocolate increases confection's values)"
+                }
+            },
             j_kino_chef = {
                 name = "Chef",
                 text = {
@@ -1162,6 +1170,15 @@ return {
                     "Returns to slumber",
                     "after scoring"
                 }
+            },
+            m_kino_fantasy = {
+                name = "Fantasy Card",
+                text = {
+                    "Casts a {C:purple,E:1}Spell{}",
+                    "when scored based on",
+                    "the first three cards",
+                    "held in your hand"
+                }
             }
         },
         Tarot = {
@@ -1184,8 +1201,15 @@ return {
             c_kino_demon = {
                 name = "Demon",
                 text = {
-                    "Upgrade #1# cards into",
+                    "Upgrade #1# card into",
                     "a {C:attention}Demonic Card{}"
+                }
+            },
+            c_kino_witch = {
+                name = "Witch",
+                text = {
+                    "Upgrade #1# card into",
+                    "a {C:attention}Fantasy Card{}"
                 }
             },
             c_kino_meetcute = {
@@ -1580,12 +1604,80 @@ return {
                     "with additional treats"
                 }
             }
+        },
+        Spell = {
+            spell_kino_Hearts_Hearts = {
+                name = "Double Hearts",
+                text = {
+                    "Gives {C:mult}+#1#{} Mult"
+                }
+            },
+            spell_kino_Hearts_Diamonds = {
+                name = "Diamond Heart",
+                text = {
+                    "Gives {X:mult,C:white}X#1#{}"
+                }
+            },
+            spell_kino_Hearts_Clubs = {
+                name = "Hearty Club",
+                text = {
+                    "Gives {C:mult}+#1#{} Mult and",
+                    "{C:chips}+#2#{} Chips"
+                }
+            },
+            spell_kino_Hearts_Spades = {
+                name = "Spade Heart",
+                text = {
+                    "Upgrade a random card",
+                    "in hand with {C:mult}+#1#{} Mult"
+                }
+            },
+            spell_kino_Diamonds_Diamonds = {
+                name = "Double Diamonds",
+                text = {
+                    "Earn {C:money}$#1#"
+                }
+            },
+            spell_kino_Diamonds_Clubs = {
+                name = "Diamond Club",
+                text = {
+                    "Gives {X:chips,C:white}X#1#{}"
+                }
+            },
+            spell_kino_Diamonds_Spades = {
+                name = "Diamond Spade",
+                text = {
+                    "Create a {C:attention}#1#{}",
+                    "{C:inactive}(Must have room)"
+                }
+            },
+            spell_kino_Clubs_Spades = {
+                name = "Club Spade",
+                text = {
+                    "Upgrade a random card",
+                    "in hand with {C:chips}+#1#{} Chips"
+                }
+            },
+            spell_kino_Clubs_Clubs = {
+                name = "Double Clubs",
+                text = {
+                    "Gives {C:chips}+#1#{} Chips"
+                }
+            },
+            spell_kino_Spades_Spades = {
+                name = "Double Spades",
+                text = {
+                    "Lower the {C:attention}Blind",
+                    "by {C:attention}#1#%"
+                }
+            },
         }
     },
     misc = {
         dictionary = {
             k_confection = "Confection",
             b_confection_cards = "Confection Cards",
+            k_spell = "Spell",
 
             snack_booster = "Confections",
             horror_booster = "Horror Joker",
@@ -1596,6 +1688,7 @@ return {
 
             k_genre_synergy = "Genre Synergy!",
             k_sacrifice = "Sacrifices Will Be Made",
+            k_spell_cast = "MAGIC!",
             k_romance_match_ex = "Hey there ;)",
             k_summoned_ex = "Summoned",
             k_longlegs_ex = "Captured",
@@ -1617,6 +1710,7 @@ return {
             k_ringu_death = "7 Days Passed",
             k_goodfellas_pay = "Payment Made",
             k_goodfellas_leave = "Broke, ay?",
+            k_et = "Go Home",
 
             -- Enhancement Barks
             k_monter_turn = "ROAR!",
