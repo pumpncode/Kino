@@ -7,6 +7,8 @@ SMODS.Sticker{ -- bacon sticker
     end,
 
     badge_colour = HEX('9eacbe'),
+    no_collection = true,
+    
 
     order = 5,
 
@@ -22,6 +24,7 @@ SMODS.Sticker{
         -- this should increase by x2
     end,
     badge_colour = HEX('ffd081'),
+    no_collection = true,
 
     order = 6,
 
@@ -39,6 +42,7 @@ SMODS.Sticker{
     end,
     hide_badge = true,
     badge_colour = HEX('ffd081'),
+    no_collection = true,
 
     order = 6,
 
@@ -56,6 +60,7 @@ SMODS.Sticker{
     end,
     hide_badge = true,
     badge_colour = HEX('ffd081'),
+    no_collection = true,
 
     order = 6,
 
@@ -73,6 +78,7 @@ SMODS.Sticker{
     end,
     hide_badge = true,
     badge_colour = HEX('ffd081'),
+    no_collection = true,
 
     order = 6,
 

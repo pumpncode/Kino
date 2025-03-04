@@ -108,6 +108,13 @@ SMODS.Atlas {
     path = 'kino_stickers.png'
 }
 
+SMODS.Atlas {
+    key = "kino_spells",
+    px = 71,
+    py = 95,
+    path = 'kino_spells.png'
+}
+
 
 -- Load additional files
 local helper, load_error = SMODS.load_file("Kinofunctions.lua")
@@ -195,6 +202,11 @@ for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Stickers/" .. file))()
 end
 
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Spells")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Spells/" .. file))()
+end
+
 -- Register the genres
 local helper, load_error = SMODS.load_file("Kinogenres.lua")
 if load_error then
@@ -204,6 +216,13 @@ if load_error then
 end
 
 local helper, load_error = SMODS.load_file("movie_info.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
+local helper, load_error = SMODS.load_file("KinoUI.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
     else

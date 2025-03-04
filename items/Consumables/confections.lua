@@ -87,6 +87,7 @@ SMODS.Tag{
             end
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -182,6 +183,7 @@ SMODS.Tag{
             end
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -274,6 +276,7 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -370,6 +373,7 @@ SMODS.Tag{
             return false
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -494,6 +498,7 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -590,6 +595,7 @@ SMODS.Tag{
             }
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -683,6 +689,7 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -776,6 +783,7 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -868,6 +876,7 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -958,6 +967,7 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,
@@ -1050,6 +1060,7 @@ SMODS.Tag{
             return true
         end
     end,
+    no_collection = true,
     in_pool = function()
 		return false
 	end,

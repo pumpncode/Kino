@@ -432,10 +432,8 @@ end
 
 ------------ TAG functionality ------------
 function Tag:set_chocolate_bonus(chocolate_bonus)
-    print("Testing the concept of this func")
     local obj = SMODS.Tags[self.key]
     if obj and obj.set_chocolate_bonus and type(obj.set_chocolate_bonus) == 'function' then
-        print("testing whether it has chocolate bonus")
         obj:set_chocolate_bonus(chocolate_bonus)
     end
     return true
