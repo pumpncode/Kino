@@ -6,6 +6,20 @@ Confection Update:
 - Chocolate: Your confection is stronger
 - Extra Large: Your confections can be used twice
 
+New Tarot:
+- Witch, turn 1 card into a Fantasy card!
+
+New Card Enhancement:
+- Fantasy Cards. These cards cast a Spell depending on the first three cards in your hand!
+
+New Mechanic: Spells
+- Spells, currently only implemented in the Fantasy cards, are additional effects that can be triggered. 
+There are currently 10 spells in the mod.
+
+New Joker:
+- E.T. The Extra Terrestrial
+- Charlie & The Chocolate Factory
+
 V. 0.6b:
 
 Fixed compatibility with SMODS bonuses
