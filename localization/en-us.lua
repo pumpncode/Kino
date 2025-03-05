@@ -247,6 +247,15 @@ return {
                     "when you select a blind",
                 }
             },
+            j_kino_clerks_1 = {
+                name = "Clerks",
+                text = {
+                    "Whenever you've played",
+                    "cards adding up to {C:attention}#2#",
+                    "gain {C:mult}+#3#{} Mult",
+                    "{C:inactive}(Current rank: {C:attention}#1#{})"
+                }
+            },
             j_kino_clown = {
                 name = "Clown",
                 text = {
@@ -270,6 +279,17 @@ return {
                     "in your deck with {C:mult}+1{} Mult",
                 }
             },
+            j_kino_dark_crystal = {
+                name = "The Dark Crystal",
+                text = {
+                    "When your played hand",
+                    "doesn't defeat the blind",
+                    "gain #2# charge",
+                    "if you have a charge",
+                    "{C:purple, E:1}cast a random spell",
+                    "{C:inactive}(Currently: #1# charge)"
+                }
+            },
             j_kino_dark_knight = {
                 name = "The Dark Knight",
                 text = {
@@ -286,6 +306,14 @@ return {
                     "Scored {C:spades}Spades{} give {C:mult}+#3#{} Mult",
                     "for each {C:spades}Spades{} card in your deck above 13",
                     "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
+                }
+            },
+            j_kino_dinner_with_andre = {
+                name = "My Dinner With André",
+                text = {
+                    "Gains {X:mult,C:white}X#2#{} when",
+                    "a {C:attention}Confection{} is used",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{})"
                 }
             },
             j_kino_dr_strangelove = {
@@ -440,7 +468,19 @@ return {
                     "awoken",
                     "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
                 }
-            },            
+            },      
+            j_kino_harry_potter_1 = {
+                name = "Harry Potter and the Philosopher's Stone",
+                text = {
+                    "Gain a charge whenever ",
+                    "a card is scored",
+                    "On your final hand",
+                    "{C:purple, E:1}Cast a Random Spell",
+                    "with the strength based on",
+                    "the gathered stacks",
+                    "{C:inactive}(Currently: #1# stacks)"
+                }
+            },      
             j_kino_home_alone_1 = {
                 name = "Home Alone",
                 text = {
@@ -664,6 +704,15 @@ return {
                     " are free"
                 }
             },
+            j_kino_oceans_11_2 = {
+                name = "Ocean's 11 (1960)",
+                text = {
+                    "When any {C:money}money{} is",
+                    "lost, instead lower the",
+                    "value of this joker",
+                    "{C:inactive}(Max value of {C:money}$#1#{})"
+                }
+            },
             j_kino_omen = {
                 name = "The Omen",
                 text = {
@@ -750,6 +799,16 @@ return {
                     "A card in your opening hand {C:attention}secretly{}",
                     "becomes a {C:attention}Predator{} for this round",
                     "The {C:attention}Predator{} gives {X:mult,C:white}X#2#{} when scored"
+                }
+            },
+            j_kino_prestige = {
+                name = "The Prestige",
+                text = {
+                    "When you play a hand",
+                    "containing only a {C:attention}Lucky Card",
+                    "destroy it, and create",
+                    "a copy with all its {C:green}odds",
+                    "increased by {C:green}#1#"
                 }
             },
             j_kino_pride_and_prejudice = {
@@ -1113,6 +1172,14 @@ return {
                 text = { 
                     "Scored {C:attention}Wild Cards{}",
                     "give {X:mult,C:white}X#1#{} Mult"
+                }
+            },
+            j_kino_wonka = {
+                name = "Wonka",
+                text = {
+                    "{C:red}+#1#{} Mult per {C:attention}Confection{}",
+                    "card used this run",
+                    "{C:inactive}(Currently {C:red}+#2#{C:inactive})",
                 }
             },
             j_kino_yes_man = {
@@ -1687,6 +1754,7 @@ return {
             romance_booster = "Romance Joker",
 
             k_genre_synergy = "Genre Synergy!",
+            k_charged = "Gain Charge",
             k_sacrifice = "Sacrifices Will Be Made",
             k_spell_cast = "MAGIC!",
             k_romance_match_ex = "Hey there ;)",
@@ -1711,6 +1779,8 @@ return {
             k_goodfellas_pay = "Payment Made",
             k_goodfellas_leave = "Broke, ay?",
             k_et = "Go Home",
+            k_ocean_11_2 = "Heisted",
+            k_harry_potter = "Expelliarmus",
 
             -- Enhancement Barks
             k_monter_turn = "ROAR!",
@@ -1718,7 +1788,10 @@ return {
             -- Spartacus Barks
             k_spartacus_1 = "I am Spartacus!",
             k_spartacus_2 = "No, I am Spartacus!",
-            k_spartacus_3 = "I am!"
+            k_spartacus_3 = "I am!",
+
+            -- Spell barks
+            k_spellcast_1 = "",
         }
     }
 }

@@ -51,6 +51,12 @@ SMODS.Atlas {
     py = 95,
     path =  'kino_jokers_5.png'
 }
+SMODS.Atlas {
+    key = "kino_atlas_6",
+    px = 71,
+    py = 95,
+    path =  'kino_jokers_6.png'
+}
 
 SMODS.Atlas {
     key = 'modicon',
@@ -152,6 +158,9 @@ Game.init_game_object = function(self)
     ret.current_round.beaten_run_high = 0
     ret.current_round.horror_transform = 0
     ret.genre_synergy_treshold = 5
+    
+    ret.spells_cast = 0
+    ret.confections_used = 0
     -- generate_cmifc_rank()
     return ret
 end

@@ -208,3 +208,50 @@ match_indent = true
 payload = '''
 self.config.center.can_be_sold ~= false and
 '''
+
+## Adds an additional check for :can_sell_card so
+## some cards cannot be sold
+[[patches]]
+[patches.pattern]
+target = 'functions/misc_functions.lua'
+pattern = "elseif card.config.center.set == 'Spectral' then  G.GAME.consumeable_usage_total.spectral = G.GAME.consumeable_usage_total.spectral + 1"
+position = 'after'
+match_indent = true
+payload = '''
+elseif card.config.center.set == 'confection' then
+	if not G.GAME.consumeable_usage_total.confection then
+		G.GAME.consumeable_usage_total.confection = 0
+	end
+	G.GAME.consumeable_usage_total.confection = G.GAME.consumeable_usage_total.confection + 1
+'''
+
+## Lucky card changes for the Prestige
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = "if pseudorandom('lucky_money') < G.GAME.probabilities.normal/15 then"
+position = 'at'
+match_indent = true
+payload = '''
+if pseudorandom('lucky_money') < (G.GAME.probabilities.normal * (self.ability.lucky_bonus or 1))/15 then
+'''
+
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = "if pseudorandom('lucky_mult') < G.GAME.probabilities.normal/5 then"
+position = 'at'
+match_indent = true
+payload = '''
+if pseudorandom('lucky_mult') < (G.GAME.probabilities.normal * (self.ability.lucky_bonus or 1))/5 then
+'''
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = "elseif _c.effect == 'Lucky Card' then loc_vars = {G.GAME.probabilities.normal, cfg.mult, 5, cfg.p_dollars, 15}"
+position = 'at'
+match_indent = true
+payload = '''
+elseif _c.effect == 'Lucky Card' then loc_vars = {G.GAME.probabilities.normal * (cfg.lucky_bonus or 1), cfg.mult, 5, cfg.p_dollars, 15}
+'''
+

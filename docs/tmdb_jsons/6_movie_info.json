@@ -1,0 +1,1402 @@
+{
+    "The Dark Crystal1": {
+        "adult": false,
+        "backdrop_path": "/iXgxhI9k8MqbhM1OqrvV3wdTu7S.jpg",
+        "belongs_to_collection": null,
+        "budget": 15000000,
+        "genres": [
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 10751,
+                "name": "Family"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            }
+        ],
+        "homepage": "",
+        "id": 11639,
+        "imdb_id": "tt0083791",
+        "origin_country": [
+            "US",
+            "GB"
+        ],
+        "original_language": "en",
+        "original_title": "The Dark Crystal",
+        "overview": "On another planet in the distant past, a Gelfling embarks on a quest to find the missing shard of a magical crystal and restore order to his world, before the grotesque race of Skeksis find and use the crystal for evil.",
+        "popularity": 17.571,
+        "poster_path": "/6g1Kh73qQRosyhRJpL3euQpMxOE.jpg",
+        "production_companies": [
+            {
+                "id": 1155,
+                "logo_path": "/rKTzFu5woCo8k0u9ML7mWeLY541.png",
+                "name": "ITC Entertainment",
+                "origin_country": "GB"
+            },
+            {
+                "id": 24931,
+                "logo_path": "/8koBEDoVQXyEM8589PnI4Wyq5KA.png",
+                "name": "Henson Associates",
+                "origin_country": "US"
+            },
+            {
+                "id": 2504,
+                "logo_path": "/uuelgMOL4HJAJQcbJRiE4zlYbcU.png",
+                "name": "Jim Henson Productions",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "GB",
+                "name": "United Kingdom"
+            },
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1982-12-17",
+        "revenue": 40600000,
+        "runtime": 93,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Another world, another time...in the age of wonder.",
+        "title": "The Dark Crystal",
+        "video": false,
+        "vote_average": 7.1,
+        "vote_count": 1150
+    },
+    "Fantasia2": {
+        "adult": false,
+        "backdrop_path": "/lyzI5uFJC2E7sIYCCdaU0oZkDw2.jpg",
+        "belongs_to_collection": {
+            "id": 55427,
+            "name": "Fantasia Collection",
+            "poster_path": "/ldzKpOvGVl8NWQPdAYJEZpAvPIo.jpg",
+            "backdrop_path": "/7YanwpylLB3yzhwzf11W1tYpcQF.jpg"
+        },
+        "budget": 2280000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 10751,
+                "name": "Family"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            }
+        ],
+        "homepage": "http://movies.disney.com/fantasia",
+        "id": 756,
+        "imdb_id": "tt0032455",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Fantasia",
+        "overview": "Walt Disney's timeless masterpiece is an extravaganza of sight and sound! See the music come to life, hear the pictures burst into song and experience the excitement that is Fantasia over and over again.",
+        "popularity": 30.73,
+        "poster_path": "/5m9njnidjR0syG2gpVPVgcEMB2X.jpg",
+        "production_companies": [
+            {
+                "id": 3166,
+                "logo_path": "/vyyv4Gy9nPqAZKElPm2izLlEaVS.png",
+                "name": "Walt Disney Productions",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1940-11-13",
+        "revenue": 76411819,
+        "runtime": 124,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "The most sensational sound you'll ever see!",
+        "title": "Fantasia",
+        "video": false,
+        "vote_average": 7.361,
+        "vote_count": 3089
+    },
+    "My Dinner with Andre3": {
+        "adult": false,
+        "backdrop_path": "/8gTc4oU5vuG1WC56SVAD7UA7P4V.jpg",
+        "belongs_to_collection": null,
+        "budget": 475000,
+        "genres": [
+            {
+                "id": 18,
+                "name": "Drama"
+            }
+        ],
+        "homepage": "",
+        "id": 25468,
+        "imdb_id": "tt0082783",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "My Dinner with Andre",
+        "overview": "Wally, a struggling playwright and actor, reluctantly agrees to catch up with his old friend Andre, a theater director who disappeared several years prior in order to travel the world. Meeting at a posh Manhattan restaurant, the two share life stories, anecdotes and philosophical musings over the course of an evening meal.",
+        "popularity": 10.076,
+        "poster_path": "/u2KB70Xlzwg920mYWlGb18YIatd.jpg",
+        "production_companies": [
+            {
+                "id": 55642,
+                "logo_path": null,
+                "name": "The Andre Company",
+                "origin_country": ""
+            },
+            {
+                "id": 55643,
+                "logo_path": null,
+                "name": "Saga Productions Inc.",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1981-10-11",
+        "revenue": 5250000,
+        "runtime": 110,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "One meal, two men.",
+        "title": "My Dinner with Andre",
+        "video": false,
+        "vote_average": 7.5,
+        "vote_count": 402
+    },
+    "Ocean's Eleven4": {
+        "adult": false,
+        "backdrop_path": "/vJLSt7NvYP85nR4XJ8CxnMadf6G.jpg",
+        "belongs_to_collection": null,
+        "budget": 0,
+        "genres": [
+            {
+                "id": 80,
+                "name": "Crime"
+            },
+            {
+                "id": 35,
+                "name": "Comedy"
+            }
+        ],
+        "homepage": "",
+        "id": 299,
+        "imdb_id": "tt0054135",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Ocean's Eleven",
+        "overview": "Danny Ocean and his gang attempt to rob the five biggest casinos in Las Vegas in one night.",
+        "popularity": 22.631,
+        "poster_path": "/A4R6u7SidBPVXMVzGSysCiRGTRz.jpg",
+        "production_companies": [
+            {
+                "id": 174,
+                "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+                "name": "Warner Bros. Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 67993,
+                "logo_path": null,
+                "name": "Dorchester",
+                "origin_country": ""
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1960-08-10",
+        "revenue": 2800000,
+        "runtime": 127,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Just Danny Ocean and his 11 pals.",
+        "title": "Ocean's Eleven",
+        "video": false,
+        "vote_average": 6.4,
+        "vote_count": 361
+    },
+    "Harry Potter and the Philosopher's Stone5": {
+        "adult": false,
+        "backdrop_path": "/bfh9Z3Ghz4FOJAfLOAhmc3ccnHU.jpg",
+        "belongs_to_collection": {
+            "id": 1241,
+            "name": "Harry Potter Collection",
+            "poster_path": "/s4hXqX1VyWMc2ctJRuNBDB7YNJ3.jpg",
+            "backdrop_path": "/kmEsQL2vOTA0jnM28fXS45Ky8kX.jpg"
+        },
+        "budget": 125000000,
+        "genres": [
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            }
+        ],
+        "homepage": "https://www.warnerbros.com/movies/harry-potter-and-sorcerers-stone/",
+        "id": 671,
+        "imdb_id": "tt0241527",
+        "origin_country": [
+            "GB"
+        ],
+        "original_language": "en",
+        "original_title": "Harry Potter and the Philosopher's Stone",
+        "overview": "Harry Potter has lived under the stairs at his aunt and uncle's house his whole life. But on his 11th birthday, he learns he's a powerful wizard\u2014with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry. As he learns to harness his newfound powers with the help of the school's kindly headmaster, Harry uncovers the truth about his parents' deaths\u2014and about the villain who's to blame.",
+        "popularity": 158.009,
+        "poster_path": "/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+        "production_companies": [
+            {
+                "id": 174,
+                "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+                "name": "Warner Bros. Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 437,
+                "logo_path": "/nu20mtwbEIhUNnQ5NXVhHsNknZj.png",
+                "name": "Heyday Films",
+                "origin_country": "GB"
+            },
+            {
+                "id": 436,
+                "logo_path": "/A7WCkG3F0NFvjGCwUnclpGdIu9E.png",
+                "name": "1492 Pictures",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "GB",
+                "name": "United Kingdom"
+            },
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2001-11-16",
+        "revenue": 976475550,
+        "runtime": 152,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Let the magic begin.",
+        "title": "Harry Potter and the Philosopher's Stone",
+        "video": false,
+        "vote_average": 7.903,
+        "vote_count": 27953
+    },
+    "Clerks6": {
+        "adult": false,
+        "backdrop_path": "/mrfFIDJfmMu4HZsRjzKD1G8vwAy.jpg",
+        "belongs_to_collection": {
+            "id": 182813,
+            "name": "Clerks Collection",
+            "poster_path": "/8VDiXZWMFMq9Yt9nmHSrwfE3GIo.jpg",
+            "backdrop_path": "/6Fjkbh2DVAvVZa3c1HamblAN5Bg.jpg"
+        },
+        "budget": 27575,
+        "genres": [
+            {
+                "id": 35,
+                "name": "Comedy"
+            }
+        ],
+        "homepage": "http://www.miramax.com/movie/clerks",
+        "id": 2292,
+        "imdb_id": "tt0109445",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Clerks",
+        "overview": "Convenience and video store clerks Dante and Randal are sharp-witted, potty-mouthed and bored out of their minds. So in between needling customers, the counter jockeys play hockey on the roof, visit a funeral home and deal with their love lives.",
+        "popularity": 14.986,
+        "poster_path": "/9IiSgiq4h4siTIS9H3o4nZ3h5L9.jpg",
+        "production_companies": [
+            {
+                "id": 16934,
+                "logo_path": "/avyTgdxs372vSnOAPt7isdnzIWQ.png",
+                "name": "View Askew Productions",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1994-10-19",
+        "revenue": 3151130,
+        "runtime": 92,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Just because they serve you doesn't mean they like you.",
+        "title": "Clerks",
+        "video": false,
+        "vote_average": 7.4,
+        "vote_count": 2531
+    },
+    "Wonka7": {
+        "adult": false,
+        "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+        "belongs_to_collection": {
+            "id": 1393821,
+            "name": "Wonka Collection",
+            "poster_path": "/sLopxASQflGGB0XFNDdYXcZL73C.jpg",
+            "backdrop_path": "/1YGHfJG7daHrJi9OziN80fYgua3.jpg"
+        },
+        "budget": 125000000,
+        "genres": [
+            {
+                "id": 35,
+                "name": "Comedy"
+            },
+            {
+                "id": 10751,
+                "name": "Family"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            }
+        ],
+        "homepage": "https://www.wonkamovie.com",
+        "id": 787699,
+        "imdb_id": "tt6166392",
+        "origin_country": [
+            "GB"
+        ],
+        "original_language": "en",
+        "original_title": "Wonka",
+        "overview": "Willy Wonka \u2013 chock-full of ideas and determined to change the world one delectable bite at a time \u2013 is proof that the best things in life begin with a dream, and if you\u2019re lucky enough to meet Willy Wonka, anything is possible.",
+        "popularity": 109.474,
+        "poster_path": "/qhb1qOilapbapxWQn9jtRCMwXJF.jpg",
+        "production_companies": [
+            {
+                "id": 174,
+                "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+                "name": "Warner Bros. Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 79,
+                "logo_path": "/at4uYdwAAgNRKhZuuFX8ShKSybw.png",
+                "name": "Village Roadshow Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 214904,
+                "logo_path": "/9S6xSAsUiE1zuKzxayco7fD0p26.png",
+                "name": "The Roald Dahl Story Company",
+                "origin_country": "GB"
+            },
+            {
+                "id": 437,
+                "logo_path": "/nu20mtwbEIhUNnQ5NXVhHsNknZj.png",
+                "name": "Heyday Films",
+                "origin_country": "GB"
+            },
+            {
+                "id": 216687,
+                "logo_path": null,
+                "name": "Domain Entertainment",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "GB",
+                "name": "United Kingdom"
+            },
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2023-12-06",
+        "revenue": 632302312,
+        "runtime": 117,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Every good thing in this world started with a dream.",
+        "title": "Wonka",
+        "video": false,
+        "vote_average": 7.093,
+        "vote_count": 3779
+    },
+    "Children of the Corn8": {
+        "adult": false,
+        "backdrop_path": "/tGUpTuWF8XDGDyMXXhE81tlxq3q.jpg",
+        "belongs_to_collection": {
+            "id": 115225,
+            "name": "Children of the Corn Collection",
+            "poster_path": "/f9SEXxL3NE0UoaOFZcM8hNGvkBU.jpg",
+            "backdrop_path": "/g4aK8Up5zSegesJdMYbxDcndn20.jpg"
+        },
+        "budget": 800000,
+        "genres": [
+            {
+                "id": 27,
+                "name": "Horror"
+            },
+            {
+                "id": 53,
+                "name": "Thriller"
+            }
+        ],
+        "homepage": "",
+        "id": 10823,
+        "imdb_id": "tt0087050",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Children of the Corn",
+        "overview": "A traveling couple end up in an abandoned Nebraska town inhabited by a cult of murderous children who worship a demon that lives in the local cornfields.",
+        "popularity": 13.342,
+        "poster_path": "/jJTrFHu3rjAgP1lryKGEsC9hqyM.jpg",
+        "production_companies": [
+            {
+                "id": 6562,
+                "logo_path": null,
+                "name": "Planet Productions",
+                "origin_country": "US"
+            },
+            {
+                "id": 12591,
+                "logo_path": null,
+                "name": "Angeles Entertainment Group",
+                "origin_country": ""
+            },
+            {
+                "id": 5093,
+                "logo_path": null,
+                "name": "Cinema Group",
+                "origin_country": ""
+            },
+            {
+                "id": 2159,
+                "logo_path": null,
+                "name": "Hal Roach Studios",
+                "origin_country": "US"
+            },
+            {
+                "id": 52197,
+                "logo_path": null,
+                "name": "Gatlin",
+                "origin_country": ""
+            },
+            {
+                "id": 12592,
+                "logo_path": null,
+                "name": "Inverness Productions",
+                "origin_country": ""
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1984-03-09",
+        "revenue": 14568989,
+        "runtime": 92,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "In their world adults are not allowed... to live.",
+        "title": "Children of the Corn",
+        "video": false,
+        "vote_average": 5.7,
+        "vote_count": 1014
+    },
+    "Gremlins9": {
+        "adult": false,
+        "backdrop_path": "/5UX6M0aEphiW6Xmy5rpYX75glbo.jpg",
+        "belongs_to_collection": {
+            "id": 89151,
+            "name": "The Gremlins Collection",
+            "poster_path": "/3QpI09nIUNP8FH6sFI5sGrFF5x2.jpg",
+            "backdrop_path": "/otza3wkQmttOfBLDMc4g1gIfSLT.jpg"
+        },
+        "budget": 11000000,
+        "genres": [
+            {
+                "id": 14,
+                "name": "Fantasy"
+            },
+            {
+                "id": 27,
+                "name": "Horror"
+            },
+            {
+                "id": 35,
+                "name": "Comedy"
+            }
+        ],
+        "homepage": "",
+        "id": 927,
+        "imdb_id": "tt0087363",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Gremlins",
+        "overview": "When Billy Peltzer is given a strange but adorable pet named Gizmo for Christmas, he inadvertently breaks the three important rules of caring for a Mogwai, unleashing a horde of mischievous gremlins on a small town.",
+        "popularity": 30.155,
+        "poster_path": "/6m0F7fsXjQvUbCZrPWcJNrjvIui.jpg",
+        "production_companies": [
+            {
+                "id": 56,
+                "logo_path": "/cEaxANEisCqeEoRvODv2dO1I0iI.png",
+                "name": "Amblin Entertainment",
+                "origin_country": "US"
+            },
+            {
+                "id": 174,
+                "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+                "name": "Warner Bros. Pictures",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1984-06-08",
+        "revenue": 153083102,
+        "runtime": 106,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Cute. Clever. Mischievous. Intelligent. Dangerous.",
+        "title": "Gremlins",
+        "video": false,
+        "vote_average": 7.1,
+        "vote_count": 6463
+    },
+    "The Sorcerer's Apprentice10": {
+        "adult": false,
+        "backdrop_path": "/mtrfLUfUoQunolDhmQy0GfbRclC.jpg",
+        "belongs_to_collection": null,
+        "budget": 150000000,
+        "genres": [
+            {
+                "id": 14,
+                "name": "Fantasy"
+            },
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 28,
+                "name": "Action"
+            }
+        ],
+        "homepage": "http://disney.go.com/disneypictures/sorcerersapprentice/",
+        "id": 27022,
+        "imdb_id": "tt0963966",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "The Sorcerer's Apprentice",
+        "overview": "Balthazar Blake is a master sorcerer in modern-day Manhattan trying to defend the city from his arch-nemesis, Maxim Horvath. Balthazar can't do it alone, so he recruits Dave Stutler, a seemingly average guy who demonstrates hidden potential, as his reluctant prot\u00e9g\u00e9. The sorcerer gives his unwilling accomplice a crash course in the art and science of magic, and together, these unlikely partners work to stop the forces of darkness.",
+        "popularity": 31.408,
+        "poster_path": "/qC4i8fj4IpkOHUFQ1Lg85hiIF5B.jpg",
+        "production_companies": [
+            {
+                "id": 2,
+                "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+                "name": "Walt Disney Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 130,
+                "logo_path": "/c9dVHPOL3cqCr2593Ahk0nEKTEM.png",
+                "name": "Jerry Bruckheimer Films",
+                "origin_country": "US"
+            },
+            {
+                "id": 831,
+                "logo_path": "/vLENXiYTyITnMDrTKabUXhgTKX2.png",
+                "name": "Saturn Films",
+                "origin_country": "US"
+            },
+            {
+                "id": 8000,
+                "logo_path": "/f8NwLg72BByt3eav7lX1lcJfe60.png",
+                "name": "Broken Road Productions",
+                "origin_country": "US"
+            },
+            {
+                "id": 19097,
+                "logo_path": null,
+                "name": "Junction Entertainment",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2010-07-13",
+        "revenue": 215300000,
+        "runtime": 109,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "It's the coolest job ever.",
+        "title": "The Sorcerer's Apprentice",
+        "video": false,
+        "vote_average": 6.117,
+        "vote_count": 4977
+    },
+    "Dungeons & Dragons11": {
+        "adult": false,
+        "backdrop_path": "/wsPLN1iFifrgxbbX76FUEVfR7WG.jpg",
+        "belongs_to_collection": {
+            "id": 106498,
+            "name": "Dungeons & Dragons Collection",
+            "poster_path": "/tb70wYUa474fdfZSPj8CH6Ua6F9.jpg",
+            "backdrop_path": "/kyZAh3lWmoJDguS54XxKrRUpaZF.jpg"
+        },
+        "budget": 35000000,
+        "genres": [
+            {
+                "id": 18,
+                "name": "Drama"
+            },
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            }
+        ],
+        "homepage": "",
+        "id": 11849,
+        "imdb_id": "tt0190374",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Dungeons & Dragons",
+        "overview": "The Empire of Izmer is a divided land: elite magicians called \u201cmages\u201d rule while lowly commoners are powerless. When Empress Savina vows to bring equality and prosperity to her land, the evil mage Profion plots to depose her.",
+        "popularity": 14.389,
+        "poster_path": "/jJCo92G0UMtO6qSjTxkKUiiyTgo.jpg",
+        "production_companies": [
+            {
+                "id": 12,
+                "logo_path": "/2ycs64eqV5rqKYHyQK0GVoKGvfX.png",
+                "name": "New Line Cinema",
+                "origin_country": "US"
+            },
+            {
+                "id": 1885,
+                "logo_path": "/xlvoOZr4s1PygosrwZyolIFe5xs.png",
+                "name": "Silver Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 8933,
+                "logo_path": null,
+                "name": "Sweetpea Entertainment",
+                "origin_country": ""
+            },
+            {
+                "id": 106726,
+                "logo_path": null,
+                "name": "Behaviour Worldwide",
+                "origin_country": ""
+            },
+            {
+                "id": 10828,
+                "logo_path": null,
+                "name": "MDP Worldwide",
+                "origin_country": "US"
+            },
+            {
+                "id": 11345,
+                "logo_path": "/xhnnHfsqEimD4r0QeUz3GSvcv73.png",
+                "name": "Stillking Films",
+                "origin_country": "CZ"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "CZ",
+                "name": "Czech Republic"
+            },
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2000-12-08",
+        "revenue": 15185241,
+        "runtime": 107,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "This is no game",
+        "title": "Dungeons & Dragons",
+        "video": false,
+        "vote_average": 4.352,
+        "vote_count": 630
+    },
+    "Dungeons & Dragons: Honor Among Thieves12": {
+        "adult": false,
+        "backdrop_path": "/oblUNeHlwV3VsjB5ITMlco5ZSOF.jpg",
+        "belongs_to_collection": null,
+        "budget": 151000000,
+        "genres": [
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            },
+            {
+                "id": 35,
+                "name": "Comedy"
+            }
+        ],
+        "homepage": "https://www.paramountmovies.com/movies/dungeons-dragons-honor-among-thieves",
+        "id": 493529,
+        "imdb_id": "tt2906216",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Dungeons & Dragons: Honor Among Thieves",
+        "overview": "A charming thief and a band of unlikely adventurers undertake an epic heist to retrieve a lost relic, but things go dangerously awry when they run afoul of the wrong people.",
+        "popularity": 84.679,
+        "poster_path": "/v7UF7ypAqjsFZFdjksjQ7IUpXdn.jpg",
+        "production_companies": [
+            {
+                "id": 8147,
+                "logo_path": "/q6HOAdSNgCbeOqwoMVRc6REgbXF.png",
+                "name": "Entertainment One",
+                "origin_country": "CA"
+            },
+            {
+                "id": 4,
+                "logo_path": "/gz66EfNoYPqHTYI4q9UEN4CbHRc.png",
+                "name": "Paramount Pictures",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "CA",
+                "name": "Canada"
+            },
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2023-03-23",
+        "revenue": 208200000,
+        "runtime": 134,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "No experience necessary.",
+        "title": "Dungeons & Dragons: Honor Among Thieves",
+        "video": false,
+        "vote_average": 7.343,
+        "vote_count": 3846
+    },
+    "Encanto13": {
+        "adult": false,
+        "backdrop_path": "/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg",
+        "belongs_to_collection": null,
+        "budget": 135000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 35,
+                "name": "Comedy"
+            },
+            {
+                "id": 10751,
+                "name": "Family"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            }
+        ],
+        "homepage": "https://movies.disney.com/encanto",
+        "id": 568124,
+        "imdb_id": "tt2953050",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Encanto",
+        "overview": "The tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a wondrous, charmed place called an Encanto. The magic of the Encanto has blessed every child in the family\u2014every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.",
+        "popularity": 96.959,
+        "poster_path": "/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
+        "production_companies": [
+            {
+                "id": 6125,
+                "logo_path": "/tzsMJBJZINu7GHzrpYzpReWhh66.png",
+                "name": "Walt Disney Animation Studios",
+                "origin_country": "US"
+            },
+            {
+                "id": 2,
+                "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+                "name": "Walt Disney Pictures",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2021-10-13",
+        "revenue": 261289554,
+        "runtime": 102,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
+            }
+        ],
+        "status": "Released",
+        "tagline": "There's a little magic in all of us...almost all of us.",
+        "title": "Encanto",
+        "video": false,
+        "vote_average": 7.595,
+        "vote_count": 9624
+    },
+    "Coco14": {
+        "adult": false,
+        "backdrop_path": "/wSJHuSD7ojzoXifWjOAjxV7UpEL.jpg",
+        "belongs_to_collection": null,
+        "budget": 175000000,
+        "genres": [
+            {
+                "id": 10751,
+                "name": "Family"
+            },
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 10402,
+                "name": "Music"
+            },
+            {
+                "id": 12,
+                "name": "Adventure"
+            }
+        ],
+        "homepage": "https://www.pixar.com/feature-films/coco",
+        "id": 354912,
+        "imdb_id": "tt2380307",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Coco",
+        "overview": "Despite his family\u2019s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+        "popularity": 108.826,
+        "poster_path": "/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg",
+        "production_companies": [
+            {
+                "id": 3,
+                "logo_path": "/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
+                "name": "Pixar",
+                "origin_country": "US"
+            },
+            {
+                "id": 2,
+                "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+                "name": "Walt Disney Pictures",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2017-10-27",
+        "revenue": 807816196,
+        "runtime": 105,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
+            }
+        ],
+        "status": "Released",
+        "tagline": "The celebration of a lifetime.",
+        "title": "Coco",
+        "video": false,
+        "vote_average": 8.206,
+        "vote_count": 19785
+    },
+    "Cocktail15": {
+        "adult": false,
+        "backdrop_path": "/sUkye1gTfJ6LccPi8iZWyvxkoYV.jpg",
+        "belongs_to_collection": null,
+        "budget": 20000000,
+        "genres": [
+            {
+                "id": 10749,
+                "name": "Romance"
+            },
+            {
+                "id": 18,
+                "name": "Drama"
+            },
+            {
+                "id": 35,
+                "name": "Comedy"
+            }
+        ],
+        "homepage": "",
+        "id": 7520,
+        "imdb_id": "tt0094889",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Cocktail",
+        "overview": "After being discharged from the Army, Brian Flanagan moves back to Queens and takes a job in a bar run by Doug Coughlin, who teaches Brian the fine art of bar-tending. Brian quickly becomes a patron favorite with his flashy drink-mixing style, and Brian adopts his mentor's cynical philosophy on life and goes for the money.",
+        "popularity": 16.529,
+        "poster_path": "/jFRhEPhtsln9tDwzMdZN3OlhUob.jpg",
+        "production_companies": [
+            {
+                "id": 10201,
+                "logo_path": "/cgmwywVZ9NvAidd6Pn7p0CBYQkW.png",
+                "name": "Interscope Communications",
+                "origin_country": "US"
+            },
+            {
+                "id": 9195,
+                "logo_path": "/geK5QOBsXIPGHutKwXtYjMUyYSG.png",
+                "name": "Touchstone Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 554,
+                "logo_path": "/mN5HU5xYq9xtEs1X0Hu25A9y8lW.png",
+                "name": "Silver Screen Partners III",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1988-07-29",
+        "revenue": 171504781,
+        "runtime": 104,
+        "spoken_languages": [
+            {
+                "english_name": "Portuguese",
+                "iso_639_1": "pt",
+                "name": "Portugu\u00eas"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
+            },
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "When he pours, he reigns.",
+        "title": "Cocktail",
+        "video": false,
+        "vote_average": 6.1,
+        "vote_count": 1477
+    },
+    "Shang-Chi and the Legend of the Ten Rings16": {
+        "adult": false,
+        "backdrop_path": "/zxWAv1A34kdYslBi4ekMDtgIGUt.jpg",
+        "belongs_to_collection": {
+            "id": 912503,
+            "name": "Shang-Chi Collection",
+            "poster_path": "/x9y9KmPa2RXavK39cwJx4w3AJ2y.jpg",
+            "backdrop_path": "/4PHnWsIk71qFCzFElLCbx706p1m.jpg"
+        },
+        "budget": 150000000,
+        "genres": [
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            }
+        ],
+        "homepage": "https://www.marvel.com/movies/shang-chi-and-the-legend-of-the-ten-rings",
+        "id": 566525,
+        "imdb_id": "tt9376612",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Shang-Chi and the Legend of the Ten Rings",
+        "overview": "Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+        "popularity": 103.591,
+        "poster_path": "/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
+        "production_companies": [
+            {
+                "id": 420,
+                "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+                "name": "Marvel Studios",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2021-09-01",
+        "revenue": 432243292,
+        "runtime": 132,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Mandarin",
+                "iso_639_1": "zh",
+                "name": "\u666e\u901a\u8bdd"
+            }
+        ],
+        "status": "Released",
+        "tagline": "You can't outrun your destiny.",
+        "title": "Shang-Chi and the Legend of the Ten Rings",
+        "video": false,
+        "vote_average": 7.527,
+        "vote_count": 9585
+    },
+    "The Exorcist17": {
+        "adult": false,
+        "backdrop_path": "/xcjJ5khg2yzOa282mza39Lbrm7j.jpg",
+        "belongs_to_collection": {
+            "id": 12263,
+            "name": "The Exorcist Collection",
+            "poster_path": "/1gw7RCYyRqginNo5D9PMPQQw7QB.jpg",
+            "backdrop_path": "/pgxFa9jkfOaopuw5kGZ7KgVkhwW.jpg"
+        },
+        "budget": 12000000,
+        "genres": [
+            {
+                "id": 27,
+                "name": "Horror"
+            }
+        ],
+        "homepage": "http://theexorcist.warnerbros.com/",
+        "id": 9552,
+        "imdb_id": "tt0070047",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "The Exorcist",
+        "overview": "When a charming 12-year-old girl takes on the characteristics and voices of others, doctors say there is nothing they can do. As people begin to die, the girl's mother realizes her daughter has been possessed by the devil - and that her daughter's only possible hope lies with two priests and the ancient rite of demonic exorcism.",
+        "popularity": 55.057,
+        "poster_path": "/5x0CeVHJI8tcDx8tUUwYHQSNILq.jpg",
+        "production_companies": [
+            {
+                "id": 48184,
+                "logo_path": null,
+                "name": "Hoya Productions",
+                "origin_country": ""
+            },
+            {
+                "id": 174,
+                "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+                "name": "Warner Bros. Pictures",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "1973-12-26",
+        "revenue": 441306145,
+        "runtime": 122,
+        "spoken_languages": [
+            {
+                "english_name": "German",
+                "iso_639_1": "de",
+                "name": "Deutsch"
+            },
+            {
+                "english_name": "French",
+                "iso_639_1": "fr",
+                "name": "Fran\u00e7ais"
+            },
+            {
+                "english_name": "Latin",
+                "iso_639_1": "la",
+                "name": "Latin"
+            },
+            {
+                "english_name": "Arabic",
+                "iso_639_1": "ar",
+                "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+            },
+            {
+                "english_name": "Greek",
+                "iso_639_1": "el",
+                "name": "\u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac"
+            },
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Something almost beyond comprehension is happening to a girl on this street, in this house\u2026 and a man has been sent for as a last resort. This man is The Exorcist.",
+        "title": "The Exorcist",
+        "video": false,
+        "vote_average": 7.73,
+        "vote_count": 8075
+    },
+    "The Menu18": {
+        "adult": false,
+        "backdrop_path": "/mSyQoValhBsJdq3JNGXJww2Q5yL.jpg",
+        "belongs_to_collection": null,
+        "budget": 35000000,
+        "genres": [
+            {
+                "id": 35,
+                "name": "Comedy"
+            },
+            {
+                "id": 27,
+                "name": "Horror"
+            },
+            {
+                "id": 53,
+                "name": "Thriller"
+            }
+        ],
+        "homepage": "https://searchlightpictures.com/the-menu",
+        "id": 593643,
+        "imdb_id": "tt9764362",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "The Menu",
+        "overview": "A young couple travels to a remote island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.",
+        "popularity": 67.648,
+        "poster_path": "/fPtUgMcLIboqlTlPrq0bQpKK8eq.jpg",
+        "production_companies": [
+            {
+                "id": 125055,
+                "logo_path": "/8iY66HqRqdQdwOjoS3sNvokcH9r.png",
+                "name": "Hyperobject Industries",
+                "origin_country": "US"
+            },
+            {
+                "id": 127929,
+                "logo_path": "/7DLKyL15ETI9645XSr9JcbMV79c.png",
+                "name": "Searchlight Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 4740,
+                "logo_path": "/20IuOPEwlHRXnn0MTOsEmw0wcql.png",
+                "name": "Gary Sanchez Productions",
+                "origin_country": "US"
+            },
+            {
+                "id": 22213,
+                "logo_path": "/qx9K6bFWJupwde0xQDwOvXkOaL8.png",
+                "name": "TSG Entertainment",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2022-11-17",
+        "revenue": 79628200,
+        "runtime": 107,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Painstakingly prepared. Brilliantly executed.",
+        "title": "The Menu",
+        "video": false,
+        "vote_average": 7.178,
+        "vote_count": 5156
+    }
+}
