@@ -484,7 +484,28 @@ function cast_spell(spell_key, strength)
     if type(_return_table) == 'table' then
         return _return_table
     end
-    return true
+    return {
+
+    }
+end
+
+function cast_random_base_spell(strength)
+    local _base_suits = {'Spades','Hearts','Clubs','Diamonds'}
+    local _suit1 = pseudorandom_element(_base_suits, pseudoseed("random_spell"))
+    local _suit2 = pseudorandom_element(_base_suits, pseudoseed("random_spell"))
+
+    local _spell_key = "spell_kino_" .. _suit1	.. "_" .. _suit2
+    if type(SMODS.Spells[_spell_key]) == "nil" then
+        _spell_key = "spell_kino_" .. _suit2	.. "_" .. _suit1
+    end
+    local _return = {}
+    if strength then
+        _return = cast_spell(_spell_key, strength)
+    else
+        local _strength = math.ceil(pseudorandom("random_spell", 0, 4))
+        _return = cast_spell(_spell_key, _strength)
+    end
+    return _return
 end
 
 function pick_spell(caster, cards_in_hand)

@@ -49,7 +49,7 @@ SMODS.Joker {
                 num_disc = num_disc + 1
             end
             card.ability.extra_value = (card.ability.extra_value or 0) + card.ability.extra.money
-            self:set_cost()
+            card:set_cost()
         end
 
         if context.joker_main and not context.blueprint then

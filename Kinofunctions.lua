@@ -38,6 +38,12 @@ function ease_dollars(mod, x)
     
 end
 
+-- local b_ed = ease_dollars
+-- function ease_dollars(mod, instant)
+--     SMODS:calculate_context({change_cash = true, money_spend = mod})
+--     return b_ed(mod, instant)
+-- end
+
 -- Add a function to randomize suits for jokers that need that (added to the ancient card functionality)
 -- also resets sci-fi cards upgraded
 local rac = reset_ancient_card
@@ -110,6 +116,8 @@ function Card:set_cost(oceans)
         self.cost = 0
     end
 end
+
+
 
 ---- Kino Syngery system ----
 function Card:kino_synergy(card)

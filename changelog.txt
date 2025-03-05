@@ -1,6 +1,19 @@
+V 0.6.2:
+New Jokers:
+- The Dark Crystal
+- My Dinner With Andre
+- Oceans 11 (1960)
+- Harry Potter and the Philosopher's Stone
+- Clerks
+- Wonka
+
+Bug Fix:
+- Wall Street no longer crashes the game
+
 V 0.6.1a:
 
 - Fixed a crash caused by the Diamond Spade combination spell
+
 
 V 0.6.1:
 
