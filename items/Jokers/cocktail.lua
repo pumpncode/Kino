@@ -1,6 +1,7 @@
 SMODS.Joker {
     key = "cocktail",
     order = 195,
+    generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             a_money = 2
@@ -28,8 +29,6 @@ SMODS.Joker {
     pools, k_genre = {"Comedy", "Romance"},
 
     loc_vars = function(self, info_queue, card)
-        local _keystring = "genre_" .. #self.k_genre
-        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
                 card.ability.extra.a_money

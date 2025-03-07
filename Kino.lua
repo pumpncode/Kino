@@ -1,8 +1,9 @@
+Kino = {}
 mod_dir = ''..SMODS.current_mod.path
 
 kino_config = SMODS.current_mod.config
 
-Kino = SMODS.current_mod
+-- Kino = SMODS.current_mod
 Kino.jokers = {}
 
 Kino.optional_features = function()
@@ -120,7 +121,12 @@ SMODS.Atlas {
     path = 'kino_spells.png'
 }
 
-
+local helper, load_error = SMODS.load_file("card_ui.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
 -- Load additional files
 local helper, load_error = SMODS.load_file("Kinofunctions.lua")
 if load_error then
@@ -278,12 +284,7 @@ if load_error then
     helper()
 end
 
-local helper, load_error = SMODS.load_file("card_ui.lua")
-if load_error then
-    sendDebugMessage ("The error is: "..load_error)
-    else
-    helper()
-end
+
 
 kino_genre_init()
 

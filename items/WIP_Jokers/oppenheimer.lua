@@ -15,8 +15,6 @@ SMODS.Joker {
     pools, k_genre = {"Historical", "Drama"},
 
     loc_vars = function(self, info_queue, card)
-        local _keystring = "genre_" .. #self.k_genre
-        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
             }

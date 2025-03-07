@@ -4,26 +4,25 @@
 ---@param card Card
 ---@return table
 Kino.get_genre_text = function(card)
-    local _genres = card and card.k_genre or {}
-    print("Test")
+    local _scale_base = 0.8
+    local _genres = card and card.config.center.k_genre or {}
     if #_genres < 1 then
-        print("no genres?")
         return {
 
         }
     end 
 
     local _full_text = ""
-    local _return_table = {}
+    local _genre_table = {}
     for i, _genre in ipairs(_genres) do
-        _full_text = _full_text + _genre
+        _full_text = _full_text .. _genre
         if i < #_genres then
-            _full_text = _full_text + "|"
+            _full_text = _full_text .. "|"
         end
     end
 
     for i, _genre in ipairs(_genres) do
-        _return_table[#_return_table + 1] = {
+        _genre_table[#_genre_table + 1] = {
             n = G.UIT.O,
             config = {
                 object = DynaText({
@@ -37,23 +36,27 @@ Kino.get_genre_text = function(card)
                     shadow = true,
                     y_offset = 0,
                     spacing = math.max(0, 0.32 * (17 - #_full_text)),
-                    scale = (0.4 - 0.004* #_full_text)
+                    scale = (0.4 - 0.004* #_full_text) * _scale_base
                 })
             }
         }
-        if i < #_genres then
-            _return_table[#_return_table + 1] = {
-                n = G.UIT.O,
-                config = {
-                    text = "|",
-                    colour = G.C.UI.TEXT_LIGHT,
-                    scale = (0.4 -  0.004 * #_full_text)
-                }
-            } 
-        end
     end
+    local separator = {
+        n = G.UIT.T,
+        config = {
+            text = "/",
+            colour = G.C.UI.TEXT_LIGHT,
+            scale = (0.4 - 0.004 * #_full_text) * _scale_base
+        }
+    }
 
-    return _return_table
+    return {
+        _genre_table[1],
+        _genre_table[2] and separator or nil,
+        _genre_table[2],
+        _genre_table[3] and separator or nil,         
+        _genre_table[3],
+    }
 end
 
 ---@param self table
@@ -63,7 +66,6 @@ end
 ---@param specific_vars table
 ---@param full_UI_table table
 Kino.generate_info_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
-    print("GENERATING UI")
     SMODS.Center.generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
 
     full_UI_table.name = {

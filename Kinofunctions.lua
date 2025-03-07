@@ -618,7 +618,9 @@ end
 
 G.C.KINO = {
     ACTION = HEX("0a4a59"),
+    ADVENTURE = HEX("0086a5"), -- No color picked yet
     ANIMATION = HEX("0086a5"), -- No color picked yet
+    BIOPIC = HEX("0086a5"), -- No color picked yet
     COMEDY = HEX("0086a5"), -- No color picked yet
     CHRISTMAS = HEX("0086a5"), -- No color picked yet
     CRIME = HEX("6a4c47"),
@@ -630,6 +632,7 @@ G.C.KINO = {
     HISTORICAL = HEX("0086a5"), -- No color picked yet
     HORROR = HEX("372a2d"),
     MUSICAL = HEX("0086a5"), -- No color picked yet
+    MYSTERY = HEX("0086a5"), -- No color picked yet
     ROMANCE = HEX("c8117d"),
     SCIFI = HEX("1eddd4"),
     SILENT = HEX("0086a5"), -- No color picked yet
@@ -646,7 +649,9 @@ function loc_colour(_c, _default)
         genrecolors()
     end
     G.ARGS.LOC_COLOURS["Action"] = G.C.KINO.ACTION
-    G.ARGS.LOC_COLOURS["Animation"] = G.C.KINO.ANIMATION 
+    G.ARGS.LOC_COLOURS["Adventure"] = G.C.KINO.ADVENTURE
+    G.ARGS.LOC_COLOURS["Animation"] = G.C.KINO.ANIMATION
+    G.ARGS.LOC_COLOURS["Biopic"] = G.C.KINO.BIOPIC
     G.ARGS.LOC_COLOURS["Comedy"] = G.C.KINO.COMEDY
     G.ARGS.LOC_COLOURS["Christmas"] = G.C.KINO.CHRISTMAS
     G.ARGS.LOC_COLOURS["Crime"] = G.C.KINO.CRIME
@@ -658,6 +663,7 @@ function loc_colour(_c, _default)
     G.ARGS.LOC_COLOURS["Historical"] = G.C.KINO.HISTORICAL
     G.ARGS.LOC_COLOURS["Horror"] = G.C.KINO.HORROR
     G.ARGS.LOC_COLOURS["Musical"] = G.C.KINO.MUSICAL
+    G.ARGS.LOC_COLOURS["Mystery"] = G.C.KINO.MYSTERY
     G.ARGS.LOC_COLOURS["Romance"] = G.C.KINO.ROMANCE
     G.ARGS.LOC_COLOURS["Sci-fi"] = G.C.KINO.SCIFI
     G.ARGS.LOC_COLOURS["Silent"] = G.C.KINO.SILENT
