@@ -1,6 +1,7 @@
 SMODS.Joker {
     key = "treasure_planet",
     order = 174,
+    generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             money = 1,
@@ -27,11 +28,9 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Sci-fi", "Adventure", "Animated"},
+    pools, k_genre = {"Sci-fi", "Adventure", "Animation"},
 
     loc_vars = function(self, info_queue, card)
-        local _keystring = "genre_" .. #self.k_genre
-        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
                 card.ability.extra.money
@@ -40,9 +39,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.using_consumeable then
-            print("entered-1")
             if context.consumeable.ability.set == "Planet" then
-                print("entered-2")
                 local _dollars = card.ability.extra.money 
                 if pseudorandom("treasure") < G.GAME.probabilities.normal / card.ability.extra.chance then
                     _dollars = card.ability.extra.big_money

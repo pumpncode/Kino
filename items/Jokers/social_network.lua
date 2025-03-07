@@ -1,6 +1,7 @@
 SMODS.Joker {
     key = "social_network",
     order = 79,
+    generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             a_chips = 5,
@@ -29,8 +30,6 @@ SMODS.Joker {
     pools, k_genre = {"Drama", "Biopic"},
 
     loc_vars = function(self, info_queue, card)
-        local _keystring = "genre_" .. #self.k_genre
-        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
 
         local face_tally = 0
         if G.playing_cards then

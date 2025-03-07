@@ -22,6 +22,10 @@ SMODS.Sticker{
     apply = function(self, card, val)
         -- once the increase val function for kino jokers is implemented
         -- this should increase by x2
+
+        if card.ability.kino_award then return end
+        card.ability[self.key] = val
+        card:set_multiplication_bonus(card)
     end,
     badge_colour = HEX('ffd081'),
     no_collection = true,
@@ -44,7 +48,7 @@ SMODS.Sticker{
     badge_colour = HEX('ffd081'),
     no_collection = true,
 
-    order = 6,
+    order = 7,
 
     pos = { x = 2, y = 0},
     atlas = 'kino_stickers'
@@ -62,7 +66,7 @@ SMODS.Sticker{
     badge_colour = HEX('ffd081'),
     no_collection = true,
 
-    order = 6,
+    order = 8,
 
     pos = { x = 3, y = 0},
     atlas = 'kino_stickers'
@@ -80,7 +84,7 @@ SMODS.Sticker{
     badge_colour = HEX('ffd081'),
     no_collection = true,
 
-    order = 6,
+    order = 9,
 
     pos = { x = 4, y = 0},
     atlas = 'kino_stickers'

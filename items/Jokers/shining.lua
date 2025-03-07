@@ -1,6 +1,7 @@
 SMODS.Joker {
-    key = "the_shining",
+    key = "shining",
     order = 47,
+    generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             mult = 0,
@@ -29,8 +30,6 @@ SMODS.Joker {
     pools, k_genre = {"Horror"},
 
     loc_vars = function(self, info_queue, card)
-        local _keystring = "genre_" .. #self.k_genre
-        info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
                 card.ability.extra.mult,
@@ -43,6 +42,7 @@ SMODS.Joker {
             for i = 1, #context.hand_drawn do
                 if context.hand_drawn[i].base.id == 11 and 
                 context.hand_drawn[i].config.center ~= G.P_CENTERS.m_stone then
+
                     card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult
 
                     if pseudorandom("shining") < (1/10) then

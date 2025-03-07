@@ -15,6 +15,9 @@ SMODS.Spell = SMODS.Center:extend({
     end,
     cast = function(strength)
         local _obj = SMODS.Spells[self.key]
+        G.GAME.current_round.spells_cast = G.GAME.current_round.spells_cast + 1
+        G.GAME.current_round.last_spell_cast.key = self.key
+        G.GAME.current_round.last_spell_cast.strength = strength
         if _obj and _obj.cast and type(_obj.cast) == 'function' then
             obj:cast()
         end
@@ -479,8 +482,19 @@ SMODS.Spell {
 
 --- Spell related funcs
 
-function cast_spell(spell_key, strength)
+function cast_spell(spell_key, strength, repeatable)
+    if repeatable == nil then
+        repeatable = true
+    end
+    if next(find_joker('j_kino_fantasia')) and strength < 4 then
+        strength = strength + 1
+    end
+
     local _return_table = SMODS.Spells[spell_key]:cast(strength)
+
+
+    SMODS.calculate_context({cast_spell = true, strength = strength, spell_key = spell_key, repeatable = repeatable})
+
     if type(_return_table) == 'table' then
         return _return_table
     end

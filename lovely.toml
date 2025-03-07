@@ -22,7 +22,7 @@ target = "card.lua"
 pattern = "if flush_calc then"
 position = "after"
 payload = '''
-if next(find_joker('j_kino_the_thing')) and (self.base.suit == G.GAME.current_round.kino_thing_card.suit) then
+if next(find_joker('j_kino_thing')) and (self.base.suit == G.GAME.current_round.kino_thing_card.suit) then
 	return true
 end
 
@@ -39,7 +39,7 @@ target = "card.lua"
 pattern = "if self.debuff and not bypass_debuff then return end"
 position = "after"
 payload = '''
-if next(find_joker('j_kino_the_thing')) and (self.base.suit == G.GAME.current_round.kino_thing_card.suit) then
+if next(find_joker('j_kino_thing')) and (self.base.suit == G.GAME.current_round.kino_thing_card.suit) then
 	return true
 end
 
@@ -136,7 +136,6 @@ match_indent = true
 payload = '''
 
 for i = 1, #G.GAME.tags do
-    print(text .. " test") 
     G.GAME.tags[i]:apply_to_run({type = 'hand_played', before = true, scoring_name = text})
 end
 '''
@@ -178,7 +177,6 @@ position = 'after'
 match_indent = true
 payload = '''
 if amt > 1 then
-	print(amt)
 	G.GAME.current_round.beaten_run_high = G.GAME.current_round.beaten_run_high + 1
 end
 '''

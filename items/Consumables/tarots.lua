@@ -1,102 +1,112 @@
-SMODS.Consumable {
-    key = "slasher",
-    set = "Tarot",
-    order = 1,
-    pos = {x = 0, y = 0},
-    atlas = "kino_tarot",
-    config = {
-        mod_conv = 'm_kino_horror', 
-        max_highlighted = 1,
-    },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_horror
-        return {
-            vars = {
-                self.config.max_highlighted
+if kino_config.horror_enhancement then
+    SMODS.Consumable {
+        key = "slasher",
+        set = "Tarot",
+        order = 1,
+        pos = {x = 0, y = 0},
+        atlas = "kino_tarot",
+        config = {
+            mod_conv = 'm_kino_horror', 
+            max_highlighted = 1,
+        },
+        loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_horror
+            return {
+                vars = {
+                    self.config.max_highlighted
+                }
             }
-        }
-    end
-}
+        end
+    }
+end
 
-SMODS.Consumable {
-    key = "droid",
-    set = "Tarot",
-    order = 2,
-    pos = {x = 1, y = 0},
-    atlas = "kino_tarot",
-    config = {
-        mod_conv = 'm_kino_sci_fi', 
-        max_highlighted = 1,
-    },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_sci_fi
-        return {
-            vars = {
-                self.config.max_highlighted
+if kino_config.sci_fi_enhancement then
+    SMODS.Consumable {
+        key = "droid",
+        set = "Tarot",
+        order = 2,
+        pos = {x = 1, y = 0},
+        atlas = "kino_tarot",
+        config = {
+            mod_conv = 'm_kino_sci_fi', 
+            max_highlighted = 1,
+        },
+        loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_sci_fi
+            return {
+                vars = {
+                    self.config.max_highlighted
+                }
             }
-        }
-    end
-}
+        end
+    }
+end
 
-SMODS.Consumable {
-    key = "demon",
-    set = "Tarot",
-    order = 3,
-    pos = {x = 2, y = 0},
-    atlas = "kino_tarot",
-    config = {
-        mod_conv = 'm_kino_demonic', 
-        max_highlighted = 1,
-    },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_demonic
-        return {
-            vars = {
-                self.config.max_highlighted
+if kino_config.demonic_enhancement then
+    SMODS.Consumable {
+        key = "demon",
+        set = "Tarot",
+        order = 3,
+        pos = {x = 2, y = 0},
+        atlas = "kino_tarot",
+        config = {
+            mod_conv = 'm_kino_demonic', 
+            max_highlighted = 1,
+        },
+        loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_demonic
+            return {
+                vars = {
+                    self.config.max_highlighted
+                }
             }
-        }
-    end
-}
+        end
+    }
+end
 
-SMODS.Consumable {
-    key = "witch",
-    set = "Tarot",
-    order = 4,
-    pos = {x = 5, y = 0},
-    atlas = "kino_tarot",
-    config = {
-        mod_conv = 'm_kino_fantasy', 
-        max_highlighted = 1,
-    },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_fantasy
-        return {
-            vars = {
-                self.config.max_highlighted
+if kino_config.spellcasting then
+    SMODS.Consumable {
+        key = "witch",
+        set = "Tarot",
+        order = 4,
+        pos = {x = 5, y = 0},
+        atlas = "kino_tarot",
+        config = {
+            mod_conv = 'm_kino_fantasy', 
+            max_highlighted = 1,
+        },
+        loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_fantasy
+            return {
+                vars = {
+                    self.config.max_highlighted
+                }
             }
-        }
-    end
-}
+        end
+    }
+end
 
-SMODS.Consumable {
-    key = "meetcute",
-    set = "Tarot",
-    order = 5,
-    pos = {x = 3, y = 0},
-    atlas = "kino_tarot",
-    config = {
-        mod_conv = 'm_kino_romance', 
-        max_highlighted = 2,
-    },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_romance
-        return {
-            vars = {
-                self.config.max_highlighted
+if kino_config.romance_enhancement then
+    SMODS.Consumable {
+        key = "meetcute",
+        set = "Tarot",
+        order = 5,
+        pos = {x = 3, y = 0},
+        atlas = "kino_tarot",
+        config = {
+            mod_conv = 'm_kino_romance', 
+            max_highlighted = 2,
+        },
+        loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_romance
+            return {
+                vars = {
+                    self.config.max_highlighted
+                }
             }
-        }
-    end
-}
+        end
+    }
+end
 
 -- Select a random joker and give money equal to its ROI
 SMODS.Consumable {
@@ -137,27 +147,35 @@ SMODS.Consumable {
     end
 }
 
--- Select a random joker and give money equal to its ROI
--- SMODS.Consumable {
---     key = "award",
---     set = "Tarot",
---     order = 11,
---     pos = {x = 4, y = 1},
---     atlas = "kino_tarot",
---     config = {
---     },
---     loc_vars = function(self, info_queue, card)
---         return {
---             vars = {
---                 self.config.max_highlighted
---             }
---         }
---     end,
---     can_use = function(self, card)
--- 		return #G.jokers.highlighted == 1
--- 			and G.jokers.highlighted[1].config.center.kino_joker
--- 	end,
--- }
+if kino_config.actor_synergy then
+    SMODS.Consumable {
+        key = "award",
+        set = "Tarot",
+        order = 11,
+        pos = {x = 4, y = 1},
+        atlas = "kino_tarot",
+        config = {
+        },
+        loc_vars = function(self, info_queue, card)
+            return {
+                vars = {
+                    self.config.max_highlighted
+                }
+            }
+        end,
+        can_use = function(self, card)
+            return #G.jokers.highlighted == 1
+                and G.jokers.highlighted[1].config.center.kino_joker
+        end,
+        use = function(self, card, area, copier)
+            if not G.jokers.highlighted[1].ability.kino_award then
+                SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], true)
+            else
+                SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], false)
+            end
+        end
+    }
+end
 
 SMODS.Consumable {
     key = "chef",

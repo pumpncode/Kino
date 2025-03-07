@@ -6,7 +6,9 @@ function kino_genre_init()
 -- Genres are identical to each other, other in key and name
 kino_genres = {
     "Action",
+    "Adventure",
     "Animation",
+    "Biopic",
     "Comedy",
     "Christmas",
     "Crime",
@@ -18,6 +20,7 @@ kino_genres = {
     "Historical",
     "Horror",
     "Musical",
+    "Mystery",
     "Romance",
     "Sci-fi",
     "Silent",

@@ -4,8 +4,6 @@
 -- 3a. make jokers be able to check their cast, and compare.
 -- 3b. start displaying cast members over the corresponding jokers if they're present in at least 3 owned jokers.
 
--- Is genre
-
 -- Genre tooltip
 
 -- Is director
@@ -13,6 +11,17 @@
 -- Is cast
 
 -- Director tooltip
+
+function is_genre(joker, genre)
+    if joker.config.center.k_genre then
+        for i = 1, #joker.config.center.k_genre do
+            if genre == joker.config.center.k_genre[i] then
+                return true
+            end
+        end
+    end
+    return false
+end
 
 -- Get Random hand type (Based on the neutronstarrandomhand function from Cryptid. (Planets.lua - line 830 - 853))
 function get_random_hand()
@@ -37,12 +46,6 @@ function ease_dollars(mod, x)
     end
     
 end
-
--- local b_ed = ease_dollars
--- function ease_dollars(mod, instant)
---     SMODS:calculate_context({change_cash = true, money_spend = mod})
---     return b_ed(mod, instant)
--- end
 
 -- Add a function to randomize suits for jokers that need that (added to the ancient card functionality)
 -- also resets sci-fi cards upgraded
@@ -120,6 +123,72 @@ end
 
 
 ---- Kino Syngery system ----
+
+function check_genre_synergy()
+    -- check jokers, then if 5 of them share a genre, add a joker slot
+    if not G.jokers or not kino_config.genre_synergy then
+        return false
+    end
+
+    local five_of_genres = {}
+
+    if not G.jokers.config.synergyslots then
+        G.jokers.config.synergyslots = 0
+    end
+
+    G.jokers.config.card_limit = G.jokers.config.card_limit - G.jokers.config.synergyslots
+
+    for i, genre in ipairs(kino_genres) do
+        local count = 0
+        for j, joker in ipairs(G.jokers.cards) do
+            if joker and joker.config.center.kino_joker then
+                for k, comp_genre in ipairs(joker.config.center.k_genre) do
+                    if genre == comp_genre then
+                        count = count + 1
+                        break
+                    end
+                end
+            end
+        end
+        
+        if count >= G.GAME.genre_synergy_treshold then
+            five_of_genres[#five_of_genres + 1] = genre
+        end
+    end
+
+    if #five_of_genres > G.jokers.config.synergyslots then
+        -- Genre synergy!
+        for i, genre in ipairs(five_of_genres) do
+            for j, joker in ipairs(G.jokers.cards) do
+                if joker and joker.config.center.kino_joker then
+                    for k, comp_genre in ipairs(joker.config.center.k_genre) do
+                        if genre == comp_genre then
+                            joker:juice_up(0.8, 0.5)
+                            card_eval_status_text(joker, 'extra', nil, nil, nil,
+                            { message = localize('k_genre_synergy'), colour = G.C.LEGENDARY})
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    G.jokers.config.synergyslots = #five_of_genres
+
+    G.jokers.config.card_limit = G.jokers.config.card_limit + G.jokers.config.synergyslots
+end
+
+function check_actor_synergy()
+
+    if not kino_config.actor_synergy or not G.jokers then
+        return false
+    end
+
+    for i = 1, #G.jokers.cards do
+        G.jokers.cards[i]:kino_synergy(G.jokers.cards[i])
+    end
+end
+
 function Card:kino_synergy(card)
     -- Iterate through all other jokers and check the following:
     -- If they share a genre
@@ -130,9 +199,7 @@ function Card:kino_synergy(card)
 
     -- If 5 share an actor, x2 all values
     -- if 3 share an actor, start shaking (and display the actor)
-
-    if not self.config.center.kino_joker then
-
+    if not kino_config.actor_synergy  or not self.config.center.kino_joker then
         return false
     end
 
@@ -148,24 +215,45 @@ function Card:kino_synergy(card)
     local _right = _my_pos + 1
 
     local _actors = self.config.center.kino_joker.cast
+    card.ability.current_synergy_actors = {
+        -- actor_ID = num of matches
+    }
 
     -- Iterate through actor list
-    for _i, actor in pairs(_actors) do
+    for _, actor in pairs(_actors) do
         -- Iterate through other jokers
-        for i = 1, #G.jokers.cards do 
-            if G.jokers.cards[i] ~= card and G.jokers.cards[i].config.center.kino_joker then
-                local _compared_actors = G.jokers.cards[i].config.center.kino_joker.cast
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i] ~= card then
+                if G.jokers.cards[i].config.center.kino_joker then
+                    local _compared_actors = G.jokers.cards[i].config.center.kino_joker.cast
 
-                -- now iterate through the checked jokers and see if there's a match
-                for _j, comp_actor in pairs(_compared_actors) do
-                    if actor == comp_actor then
+                    -- now iterate through the checked jokers and see if there's a match
+                    for _j, comp_actor in pairs(_compared_actors) do
+                        if actor == comp_actor then
+
+                            if not card.ability.current_synergy_actors[actor] then
+                                card.ability.current_synergy_actors[actor] = 1
+                            end
+                            card.ability.current_synergy_actors[actor] = card.ability.current_synergy_actors[actor] + 1
+                        end
                     end
                 end
             end
         end
     end
 
-    if not self.ability.kino_bacon then
+    for actor_id, frequency in pairs(card.ability.current_synergy_actors) do
+        if frequency >= 3 then
+            local _multiplier = card:set_multiplication_bonus(card, actor_id, Kino.actor_synergy[frequency - 2])
+            if _multiplier then
+                card:juice_up(0.8, 0.5)
+                card_eval_status_text(card, 'extra', nil, nil, nil,
+                { message = localize('k_actor_synergy'), colour = G.C.LEGENDARY})
+            end
+        end
+    end
+
+    if self.ability.kino_bacon then
 
         local _found_match = false
 
@@ -202,65 +290,112 @@ function Card:kino_synergy(card)
     end
 end
 
-function check_genre_synergy()
-    -- check jokers, then if 5 of them share a genre, add a joker slot
-    if not G.jokers then
+function Card:set_multiplication_bonus(card, source, num)
+
+    -- Keys that should be exempt:
+    -- goal
+    -- keys that start with "base_"
+    -- chance
+    -- chance_cur
+    -- "stacked_"
+    -- keys ending in "_non"
+    -- non-integers
+    -- "time_"
+    if not kino_config.actor_synergy  or not self.config.center.kino_joker then
         return false
     end
 
-    local five_of_genres = {}
-
-    if not G.jokers.config.synergyslots then
-        G.jokers.config.synergyslots = 0
+    if not card.ability.multipliers then
+        card.ability.base = {}
+        for key, val in pairs(card.ability.extra) do
+            card.ability.base[key] = val
+        end
+        card.ability.multipliers = {}
     end
 
-    G.jokers.config.card_limit = G.jokers.config.card_limit - G.jokers.config.synergyslots
+    local _multipliers = card.ability.multipliers
+    local _source = source
+    local _num = num
 
-    for i, genre in ipairs(kino_genres) do
-        local count = 0
-        for j, joker in ipairs(G.jokers.cards) do
-            if joker and joker.config.center.kino_joker then
-                for k, comp_genre in ipairs(joker.config.center.k_genre) do
-                    if genre == comp_genre then
-                        count = count + 1
-                        break
-                    end
-                end
+    -- Add the source, or replace it if already existing
+    if _source and _num then
+        if card.ability.multipliers[_source] == _num then
+            return false
+        end 
+
+        _multipliers[_source] = _num        
+    end
+
+    -- Check for the award sticker
+    if card.ability.kino_award then
+        _multipliers["kino_award"] = Kino.award_mult
+    end
+    local _cardextra = card and card.ability.extra
+    local _baseextra = card.ability.base
+
+    for name, value in pairs(_cardextra) do
+
+        -- check the values
+
+        if check_variable_validity_for_mult(name) and type(_cardextra[name]) == "number" then
+            _cardextra[name] = _baseextra[name]
+            for source, mult in pairs(_multipliers) do
+                _cardextra[name] = _cardextra[name] * mult
+                return true
             end
         end
-        
-        if count == G.GAME.genre_synergy_treshold then
-            five_of_genres[#five_of_genres + 1] = genre
-        end
     end
-
-    if #five_of_genres > G.jokers.config.synergyslots then
-        -- Genre synergy!
-        for i, genre in ipairs(five_of_genres) do
-            for j, joker in ipairs(G.jokers.cards) do
-                if joker and joker.config.center.kino_joker then
-                    for k, comp_genre in ipairs(joker.config.center.k_genre) do
-                        if genre == comp_genre then
-                            joker:juice_up(0.8, 0.5)
-                            card_eval_status_text(joker, 'extra', nil, nil, nil,
-                            { message = localize('k_genre_synergy'), colour = G.C.LEGENDARY})
-                        end
-                    end
-                end
-            end
-        end
-    end
-
-    G.jokers.config.synergyslots = #five_of_genres
-
-    G.jokers.config.card_limit = G.jokers.config.card_limit + G.jokers.config.synergyslots
 end
+
+function check_variable_validity_for_mult(name)
+
+    if not kino_config.actor_synergy then
+        return false
+    end
+
+    local _non_valid = {
+        "goal",
+        "chance",
+        "chance_cur",
+    }
+
+    local _non_valid_element = {
+        {"base_", 5},
+        {"stacked_", 8},
+        {"time_", 4},
+        {"_non", 4}
+    }
+
+    for i = 1, #_non_valid do
+        if name == _non_valid[i] then
+            return false
+        end
+    end
+
+    for i = 1, #_non_valid_element do
+        if _non_valid_element[i][1][1] == "_" then
+            if string.sub(name, -_non_valid_element[i][2]) == _non_valid_element[i][1] then
+                return false
+            end
+        else
+            if string.sub(name, 1, _non_valid_element[i][2]) == _non_valid_element[i][1] then
+                return false
+            end
+        end
+    end
+
+    return true
+end
+------------------------------
 
 local base_atd = Card.add_to_deck
 function Card:add_to_deck(from_debuff)
     base_atd(self, from_debuff)
 
     check_genre_synergy()
+    check_actor_synergy()
+    
+    
 end
 
 local base_rmd = Card.remove_from_deck
@@ -268,6 +403,7 @@ function Card:remove_from_deck(from_debuff)
     base_rmd(self, from_debuff)
     
     check_genre_synergy()
+    check_actor_synergy()
 end
 
 local base_set_rank = CardArea.set_ranks
@@ -277,6 +413,7 @@ function CardArea:set_ranks()
 
     if self == G.jokers then
         check_genre_synergy()
+        check_actor_synergy()
     end
 end
 
@@ -474,35 +611,67 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
 
     return _card
 end
+--- Award Bonus & actor synergy mechanics ---
 
 ----------------------
 -- COLOURS --
+
+G.C.KINO = {
+    ACTION = HEX("0a4a59"),
+    ADVENTURE = HEX("0086a5"), -- No color picked yet
+    ANIMATION = HEX("0086a5"), -- No color picked yet
+    BIOPIC = HEX("0086a5"), -- No color picked yet
+    COMEDY = HEX("0086a5"), -- No color picked yet
+    CHRISTMAS = HEX("0086a5"), -- No color picked yet
+    CRIME = HEX("6a4c47"),
+    DRAMA = HEX("694c77"),
+    FAMILY = HEX("0086a5"), -- No color picked yet
+    FANTASY = HEX("087ad9"),
+    GANGSTER = HEX("0086a5"), -- No color picked yet
+    HEIST = HEX("0086a5"), -- No color picked yet
+    HISTORICAL = HEX("0086a5"), -- No color picked yet
+    HORROR = HEX("372a2d"),
+    MUSICAL = HEX("0086a5"), -- No color picked yet
+    MYSTERY = HEX("0086a5"), -- No color picked yet
+    ROMANCE = HEX("c8117d"),
+    SCIFI = HEX("1eddd4"),
+    SILENT = HEX("0086a5"), -- No color picked yet
+    SPORTS = HEX("0086a5"), -- No color picked yet
+    SUPERHERO = HEX("0086a5"), -- No color picked yet
+    THRILLER = HEX("0086a5"), -- No color picked yet
+    WAR = HEX("0086a5"), -- No color picked yet
+    WESTERN = HEX("0086a5")
+}
+
 local genrecolors = loc_colour
 function loc_colour(_c, _default)
     if not G.ARGS.LOC_COLOURS then
         genrecolors()
     end
-    G.ARGS.LOC_COLOURS["Action"] = HEX("0a4a59")
-    G.ARGS.LOC_COLOURS["Animation"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Comedy"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Christmas"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Crime"] = HEX("6a4c47") 
-    G.ARGS.LOC_COLOURS["Drama"] = HEX("694c77")
-    G.ARGS.LOC_COLOURS["Family"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Fantasy"] = HEX("087ad9")
-    G.ARGS.LOC_COLOURS["Gangster"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Heist"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Historical"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Horror"] = HEX("372a2d")
-    G.ARGS.LOC_COLOURS["Musical"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Romance"] = HEX("c8117d") 
-    G.ARGS.LOC_COLOURS["Sci-fi"] = HEX("1eddd4")
-    G.ARGS.LOC_COLOURS["Silent"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Sports"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Superhero"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Thriller"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["War"] = HEX("0086a5") -- No color picked yet
-    G.ARGS.LOC_COLOURS["Western"] = HEX("0086a5") -- No color picked yet
+    G.ARGS.LOC_COLOURS["Action"] = G.C.KINO.ACTION
+    G.ARGS.LOC_COLOURS["Adventure"] = G.C.KINO.ADVENTURE
+    G.ARGS.LOC_COLOURS["Animation"] = G.C.KINO.ANIMATION
+    G.ARGS.LOC_COLOURS["Biopic"] = G.C.KINO.BIOPIC
+    G.ARGS.LOC_COLOURS["Comedy"] = G.C.KINO.COMEDY
+    G.ARGS.LOC_COLOURS["Christmas"] = G.C.KINO.CHRISTMAS
+    G.ARGS.LOC_COLOURS["Crime"] = G.C.KINO.CRIME
+    G.ARGS.LOC_COLOURS["Drama"] = G.C.KINO.DRAMA
+    G.ARGS.LOC_COLOURS["Family"] = G.C.KINO.FAMILY
+    G.ARGS.LOC_COLOURS["Fantasy"] = G.C.KINO.FANTASY
+    G.ARGS.LOC_COLOURS["Gangster"] = G.C.KINO.GANGSTER
+    G.ARGS.LOC_COLOURS["Heist"] = G.C.KINO.HEIST
+    G.ARGS.LOC_COLOURS["Historical"] = G.C.KINO.HISTORICAL
+    G.ARGS.LOC_COLOURS["Horror"] = G.C.KINO.HORROR
+    G.ARGS.LOC_COLOURS["Musical"] = G.C.KINO.MUSICAL
+    G.ARGS.LOC_COLOURS["Mystery"] = G.C.KINO.MYSTERY
+    G.ARGS.LOC_COLOURS["Romance"] = G.C.KINO.ROMANCE
+    G.ARGS.LOC_COLOURS["Sci-fi"] = G.C.KINO.SCIFI
+    G.ARGS.LOC_COLOURS["Silent"] = G.C.KINO.SILENT
+    G.ARGS.LOC_COLOURS["Sports"] = G.C.KINO.SPORTS
+    G.ARGS.LOC_COLOURS["Superhero"] = G.C.KINO.SUPERHERO
+    G.ARGS.LOC_COLOURS["Thriller"] = G.C.KINO.THRILLER
+    G.ARGS.LOC_COLOURS["War"] = G.C.KINO.WAR
+    G.ARGS.LOC_COLOURS["Western"] = G.C.KINO.WESTERN
 
     return genrecolors(_c, _default)
 end
@@ -512,3 +681,5 @@ Kino.jump_scare_mult = 3
 Kino.goldleaf_chance = 3
 Kino.choco_chance = 2
 Kino.xl_chance = 1
+Kino.actor_synergy = {1.2, 1.4, 1.6, 1.8, 2}
+Kino.award_mult = 2
