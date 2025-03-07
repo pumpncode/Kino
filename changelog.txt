@@ -1,18 +1,34 @@
 V 0.6.3:
-New Jokers:
-- Fantasia (visual should also update)
-- Children of the Corn (Works)
-- Encanto (description)
-- Cocktail (Description)
-- Coco (description)
-- Shang-Chi (description)
-- The Exorcist (description)
-- The Menu (description)
-- Dungeons & Dragons: Honor Among Thieves (Description)
-- Dungeons & Dragons (2000) (Description)
-- M3gan (Description)
+Bug Fixes:
+- Fixed genre synergy disappearing after buying a 6th joker of the same genre
 
-Actor Synergy system (Must be turned on in the config)
+Visual Update:
+- Genres are no longer a separate text box, but instead a sub-header
+
+New Collection order:
+- Jokers are sorted by rarity first
+
+New Config options:
+- Turn off specific mechanics and their associated cards & jokers
+
+New Jokers:
+- Fantasia
+- Children of the Corn
+- Encanto
+- Cocktail
+- Coco
+- Shang-Chi
+- The Exorcist
+- The Menu
+- Dungeons & Dragons: Honor Among Thieves
+- Dungeons & Dragons (2000)
+- M3gan
+
+Actor Synergy system (Must be turned on in the config):
+- The Award Tarot (With placeholder art) doubles the values of a Movie Joker
+- The more movie jokers you have that share an actor, the stronger it becomes!
+(The synergy system is turned off by default as it is still very buggy. 
+While plenty of jokers are functional, it may result in doing some weird things with your values)
 
 
 V 0.6.2:

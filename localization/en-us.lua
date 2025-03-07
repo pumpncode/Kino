@@ -401,7 +401,7 @@ return {
                     "{C:inactive}(Currently: {C:purple}#1#{C:inactive} Stacks)"
                 }
             },
-            j_kino_dungeons_and_dragons_2 = {
+            j_kino_dungeons_and_dragons_4 = {
                 name = "Dungeons & Dragons: Honour Among Thieves",
                 text = {
                     "When you {C:purple,E:1}Cast a Spell", 
