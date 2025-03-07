@@ -1,3 +1,4 @@
+if kino_config.spellcasting then
 function create_UIBox_spells()
 	local _pool = {}
 	for i, v in pairs(SMODS.Spells) do
@@ -18,15 +19,6 @@ function create_UIBox_spells()
 	})
 end
 
--- local function create_sleeve_button(mod_id)
---     -- creates the sleeve UIBox button in (collection/additions -> other) for given `mod_id`
---     local count = get_sleeve_tally_of(mod_id)
---     return UIBox_button {
---         count = {tally = count.tally, of = count.of},
---         button = 'your_collection_sleeves', label = {localize("k_sleeve")}, minw = 5, id = 'your_collection_sleeves'
---     }
--- end
-
 Kino.custom_collection_tabs = function()
     return {
         UIBox_button({
@@ -45,4 +37,206 @@ G.FUNCS.your_collection_spells = function()
 	G.FUNCS.overlay_menu{
 	  definition = create_UIBox_spells(),
 	}
+end
+end
+----- CONFIG UI -----
+--- CODE ADAPTED FROM POKERMON ---
+local enhancement_types_toggles = {
+	-- Enhancement Types
+	{ref_value = "sci_fi_enhancement", label = "kino_settings_sci_fi_enhancement"},
+	{ref_value = "spellcasting", label = "kino_settings_spellcasting"},
+	{ref_value = "demonic_enhancement", label = "kino_settings_demonic_enhancement"},
+	{ref_value = "horror_enhancement", label = "kino_settings_horror_enhancement"},
+	{ref_value = "romance_enhancement", label = "kino_settings_romance_enhancement"},
+}
+local joker_mechanics_toggles = {
+	-- Joker Mechanics
+	{ref_value = "jumpscare_mechanic", label = "kino_settings_jumpscare_mechanic"},
+	{ref_value = "vampire_jokers", label = "kino_settings_vampire_jokers"},
+	{ref_value = "time_based_jokers", label = "kino_settings_time_based_jokers"},
+}
+local mod_mechanics_toggles = {
+	-- Mod Mechanics
+	{ref_value = "actor_synergy", label = "kino_settings_actor_synergy"},
+	{ref_value = "genre_synergy", label = "kino_settings_genre_synergy"},
+}
+
+local create_menu_toggles = function (parent, toggles)
+	for k, v in ipairs(toggles) do
+		parent.nodes[#parent.nodes + 1] = create_toggle({
+				label = localize(v.label),
+				ref_table = kino_config,
+				ref_value = v.ref_value,
+				callback = function(_set_toggle)
+				NFS.write(mod_dir.."/config.lua", STR_PACK(kino_config))
+				end,
+		})
+		if v.tooltip then
+			parent.nodes[#parent.nodes].config.detailed_tooltip = v.tooltip
+		end
+	end
+end
+
+kinoconfig = function()
+	local enhancement_settings = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
+	create_menu_toggles(enhancement_settings, enhancement_types_toggles)
+	
+	local joker_mechanics_settings = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
+	create_menu_toggles(joker_mechanics_settings, joker_mechanics_toggles)
+	
+	local mod_mechanics_settings = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
+	create_menu_toggles(mod_mechanics_settings, mod_mechanics_toggles)
+
+	local config_nodes =
+	{
+		-- HEADER (ENHANCEMENT TYPES)
+		{
+			n = G.UIT.R,
+			config = {
+				padding = 0,
+				align = "cm"
+			},
+			nodes = {
+				{
+					n = G.UIT.T,
+					config = {
+						text = localize("kino_settings_header_enhancements"),
+						shadow = true,
+						scale = 0.75 * 0.8,
+						colour = HEX("ED533A")
+					}
+				}
+			},
+		},
+		enhancement_settings,
+		-- HEADER (joker_mechanics_settings)
+		{
+			n = G.UIT.R,
+			config = {
+				padding = 0,
+				align = "cm"
+			},
+			nodes = {
+				{
+					n = G.UIT.T,
+					config = {
+						text = localize("kino_settings_header_joker_mechanics"),
+						shadow = true,
+						scale = 0.75 * 0.8,
+						colour = HEX("ED533A")
+					}
+				}
+			},
+		},
+		joker_mechanics_settings,
+		-- HEADER (mod_mechanics_settings)
+		{
+			n = G.UIT.R,
+			config = {
+				padding = 0,
+				align = "cm"
+			},
+			nodes = {
+				{
+					n = G.UIT.T,
+					config = {
+						text = localize("kino_settings_header_mod_mechanics"),
+						shadow = true,
+						scale = 0.75 * 0.8,
+						colour = HEX("ED533A")
+					}
+				}
+			},
+		},
+		mod_mechanics_settings
+	}
+
+	return config_nodes
+end
+
+SMODS.current_mod.config_tab = function()
+	return {
+		n = G.UIT.ROOT, 
+		config = {        
+			align = "cm",
+        	padding = 0.05,
+        	colour = G.C.CLEAR,
+		}, 
+		nodes = kinoconfig()
+	}
+end
+
+----- Additional Modpage UI -----
+
+SMODS.current_mod.extra_tabs = function()
+	local scale = 0.75
+	return {
+		label = localize("kino_credits_header"),
+		tab_definition_function = function()
+			return {
+				n = G.UIT.ROOT,
+				config = {
+				align = "cm",
+				padding = 0.05,
+				colour = G.C.CLEAR,
+				},
+				nodes = {
+					{
+						n = G.UIT.R,
+						config = {
+							padding = 0,
+							align = "cm"
+						},
+						nodes = {
+							{
+								n = G.UIT.T,
+								config = {
+									text = localize("kino_credits_developer"),
+									shadow = true,
+									scale = scale * 0.8,
+									colour = G.C.UI.TEXT_LIGHT
+								}
+							},
+							{
+								n = G.UIT.T,
+								config = {
+									text = "IcyEthics",
+									shadow = true,
+									scale = scale * 0.8,
+									colour = G.C.BLUE
+								}
+							}
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = {
+							padding = 0.2,
+							align = "cm",
+						},
+						nodes = {
+							UIBox_button({
+								minw = 3.85,
+								button = "kino_github",
+								label = {"Github"}
+							}),
+							UIBox_button({
+								minw = 3.85,
+								colour = HEX("9656ce"),
+								button = "kino_discord",
+								label = {"Discord"}
+							})
+						}
+					}
+				}
+			}
+		end
+	}
+end
+
+function G.FUNCS.kino_github(e)
+	love.system.openURL("https://github.com/icyethics/Kino")
+end
+function G.FUNCS.kino_discord(e)
+	love.system.openURL("https://discord.gg/jQQKUurk8K")
 end

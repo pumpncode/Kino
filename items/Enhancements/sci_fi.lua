@@ -32,7 +32,6 @@ SMODS.Enhancement {
             end
 
             for i = 1, times_to_upgrade do
-                print(i .. " == times to upgrade")
                 card.ability.times_upgraded = card.ability.times_upgraded + 1
                 card.ability.mult = card.ability.mult + card.ability.a_mult
                 card.ability.bonus = card.ability.bonus + card.ability.a_chips

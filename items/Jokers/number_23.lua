@@ -1,19 +1,19 @@
 SMODS.Joker {
-    key = "elf",
-    order = 3,
+    key = "number_23",
+    order = 147,
     config = {
         extra = {
-            repetitions = 1
+            mult = 23
         }
     },
-    rarity = 1,
-    atlas = "kino_atlas_1",
-    pos = { x = 2, y = 0 },
-    cost = 5,
+    rarity = 2,
+    atlas = "kino_atlas_5",
+    pos = { x = 2, y = 0},
+    cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 10719,
+        id = 3594,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -25,24 +25,28 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Comedy", "Christmas"},
+    pools, k_genre = {"Thriller", "Mystery"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.repetitions
+                card.ability.extra.mult
             }
         }
     end,
     calculate = function(self, card, context)
-        if context.cardarea == G.play and context.repetition and not context.repetition_only then
-            if context.other_card:get_id() == 2 or context.other_card:get_id() == 3 then
+        -- Gives +23 mult if the combined value of ranks played is 23
+        if context.joker_main then
+            local _tally = 0
+            for i = 1, #context.full_hand do
+                _tally = _tally + context.full_hand[i].base.nominal
+            end
+
+            if _tally == 23 then
                 return {
-                    message = 'Again!',
-                    repetitions = card.ability.extra.repetitions,
-                    card = context.other_card
+                    mult = card.ability.extra.mult
                 }
             end
         end

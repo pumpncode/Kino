@@ -51,7 +51,7 @@ SMODS.Joker {
         end
 
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
-            print("Triggered")
+
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.total
         end
 

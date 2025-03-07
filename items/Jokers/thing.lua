@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "the_thing",
+    key = "thing",
     order = 35,
     config = {
         extra = {

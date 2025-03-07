@@ -54,7 +54,6 @@ SMODS.Joker {
         end
         
         if context.cards_destroyed and not context.blueprint then
-            print("Enter")
             local sci_fi_upgrades = 0
             for i, k in ipairs(context.glass_shattered) do
                 if k.config.center == G.P_CENTERS.m_kino_sci_fi then

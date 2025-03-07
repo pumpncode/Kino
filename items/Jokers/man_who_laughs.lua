@@ -1,19 +1,20 @@
 SMODS.Joker {
-    key = "elf",
-    order = 3,
+    key = "man_who_laughs",
+    order = 130,
     config = {
         extra = {
-            repetitions = 1
+            x_mult = 1,
+            a_xmult = 0.25
         }
     },
-    rarity = 1,
-    atlas = "kino_atlas_1",
-    pos = { x = 2, y = 0 },
+    rarity = 2,
+    atlas = "kino_atlas_4",
+    pos = { x = 3, y = 3},
     cost = 5,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 10719,
+        id = 27517,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -25,26 +26,24 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Comedy", "Christmas"},
+    pools, k_genre = {"Romance", "Horror"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.repetitions
+                card.ability.extra.x_mult,
+                card.ability.extra.a_xmult,
+                ((G.jokers and G.jokers.cards and #G.jokers.cards or 0) - 1) * card.ability.extra.a_xmult + 1
             }
         }
     end,
     calculate = function(self, card, context)
-        if context.cardarea == G.play and context.repetition and not context.repetition_only then
-            if context.other_card:get_id() == 2 or context.other_card:get_id() == 3 then
-                return {
-                    message = 'Again!',
-                    repetitions = card.ability.extra.repetitions,
-                    card = context.other_card
-                }
-            end
+        if context.joker_main then
+            return {
+                x_mult = 1 + ((G.jokers and G.jokers.cards and #G.jokers.cards or 0) - 1) * card.ability.extra.a_xmult
+            }
         end
     end
 }

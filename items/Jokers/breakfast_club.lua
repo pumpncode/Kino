@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "the_breakfast_club",
+    key = "breakfast_club",
     order = 19,
     config = {
         extra = {

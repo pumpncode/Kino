@@ -180,6 +180,7 @@ SMODS.Consumable {
 }
 
 -- Cybertron: upgrade a random hand with X0.1 for each time a sci-fi card was upgraded this round.
+if kino_config.sci_fi_enhancement then
 SMODS.Consumable {
     key = "cybertron",
     set = "Planet",
@@ -215,6 +216,7 @@ SMODS.Consumable {
         )
     end
 }
+end
 
 -- LV426. Upgrade your most played hand and debuff two random cards in your deck.
 SMODS.Consumable {

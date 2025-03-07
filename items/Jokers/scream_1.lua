@@ -42,7 +42,6 @@ SMODS.Joker {
         -- Gain +2 mult for every Horror joker you have at the end of a blind
         -- Lose money equal to this joker's mult when you sell it.
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
-            print("End of Round?")
             for i, v in ipairs(G.jokers.cards) do
                 if is_genre(v, "Horror") then
                     card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult

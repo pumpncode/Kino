@@ -1,19 +1,21 @@
 SMODS.Joker {
-    key = "the_number_23",
-    order = 147,
+    key = "dungeons_and_dragons_1",
+    order = 191,
     config = {
         extra = {
-            mult = 23
+            stacks = 0,
+            a_stacks = 1,
+            a_mult = 5
         }
     },
     rarity = 2,
-    atlas = "kino_atlas_5",
-    pos = { x = 2, y = 0},
-    cost = 4,
+    atlas = "kino_atlas_6",
+    pos = { x = 4, y = 1},
+    cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 3594,
+        id = 11849,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -25,32 +27,29 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Thriller", "Mystery"},
+    pools, k_genre = {"Fantasy"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.mult
+
             }
         }
     end,
     calculate = function(self, card, context)
-        -- Gives +23 mult if the combined value of ranks played is 23
-        if context.joker_main then
-            local _tally = 0
-            for i = 1, #context.full_hand do
-                _tally = _tally + context.full_hand[i].base.nominal
-            end
+        -- Gain stacks when not in the active slot, turn stacks into mult in the active slot
+        if context.cast_spell then
+            card.ability.extra.stacks = card.ability.extra.stacks + context.strength * card.ability.extra.a_stacks
+        end
 
-            print(_tally)
-
-            if _tally == 23 then
-                return {
-                    mult = card.ability.extra.mult
-                }
-            end
+        if context.joker_main and G.jokers.cards[1] == card then
+            local _mult = card.ability.extra.stacks * card.ability.extra.a_mult
+            card.ability.extra.stacks = 0
+            return {
+                mult = _mult
+            }
         end
     end
 }

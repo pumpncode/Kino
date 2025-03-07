@@ -1,19 +1,19 @@
 SMODS.Joker {
-    key = "elf",
-    order = 3,
+    key = "dungeons_and_dragons_4",
+    order = 192,
     config = {
         extra = {
-            repetitions = 1
+            money = 1
         }
     },
     rarity = 1,
-    atlas = "kino_atlas_1",
-    pos = { x = 2, y = 0 },
-    cost = 5,
+    atlas = "kino_atlas_6",
+    pos = { x = 5, y = 1},
+    cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 10719,
+        id = 493529,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -25,26 +25,21 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Comedy", "Christmas"},
+    pools, k_genre = {"Fantasy"},
 
     loc_vars = function(self, info_queue, card)
         local _keystring = "genre_" .. #self.k_genre
         info_queue[#info_queue+1] = {set = 'Other', key = _keystring, vars = self.k_genre}
         return {
             vars = {
-                card.ability.extra.repetitions
+                card.ability.extra.money
             }
         }
     end,
     calculate = function(self, card, context)
-        if context.cardarea == G.play and context.repetition and not context.repetition_only then
-            if context.other_card:get_id() == 2 or context.other_card:get_id() == 3 then
-                return {
-                    message = 'Again!',
-                    repetitions = card.ability.extra.repetitions,
-                    card = context.other_card
-                }
-            end
+        -- When you cast a spell, earn money equal to its spell level
+        if context.cast_spell then
+            ease_dollars(context.strength * card.ability.extra.money)
         end
     end
 }

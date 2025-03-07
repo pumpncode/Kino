@@ -49,7 +49,6 @@ SMODS.Joker {
         end
 
         if context.selling_self and not context.blueprint then
-            print("test")
             -- get most played hand
             local _planet, _hand, _tally = nil, nil, 0
             for k, v in ipairs(G.handlist) do

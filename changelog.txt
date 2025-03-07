@@ -1,3 +1,20 @@
+V 0.6.3:
+New Jokers:
+- Fantasia (visual should also update)
+- Children of the Corn (Works)
+- Encanto (description)
+- Cocktail (Description)
+- Coco (description)
+- Shang-Chi (description)
+- The Exorcist (description)
+- The Menu (description)
+- Dungeons & Dragons: Honor Among Thieves (Description)
+- Dungeons & Dragons (2000) (Description)
+- M3gan (Description)
+
+Actor Synergy system (Must be turned on in the config)
+
+
 V 0.6.2:
 New Jokers:
 - The Dark Crystal
@@ -6,6 +23,7 @@ New Jokers:
 - Harry Potter and the Philosopher's Stone
 - Clerks
 - Wonka
+- Coco
 
 Bug Fix:
 - Wall Street no longer crashes the game

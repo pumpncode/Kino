@@ -1,7 +1,6 @@
 mod_dir = ''..SMODS.current_mod.path
 
--- Kino_config = SMODS.current_mod.config
--- Kino.enabled = copy_table(Kino_config)
+kino_config = SMODS.current_mod.config
 
 Kino = SMODS.current_mod
 Kino.jokers = {}
@@ -130,17 +129,11 @@ if load_error then
     helper()
 end
 
-function is_genre(joker, genre)
-    print("going to test this function now")
-    if joker.config.center.k_genre then
-        print("?:!")
-        for i = 1, #joker.config.center.k_genre do
-            if genre == joker.config.center.k_genre[i] then
-                return true
-            end
-        end
-    end
-    return false
+local helper, load_error = SMODS.load_file("jokers.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
 end
 
 -- Add Kino mod specific game long globals
@@ -160,25 +153,70 @@ Game.init_game_object = function(self)
     ret.genre_synergy_treshold = 5
     
     ret.spells_cast = 0
+    ret.last_spell_cast = {
+        key = "",
+        rank = 1
+    }
     ret.confections_used = 0
     -- generate_cmifc_rank()
     return ret
 end
 
 -- Register the Jokers
+local _usedjokers = {}
+local _options = {
+    {kino_config.vampire_jokers, vampire_objects},
+    {kino_config.sci_fi_enhancement, sci_fi_objects},
+    {kino_config.spellcasting, spellcasting_objects},
+    {kino_config.demonic_enhancement, demonic_objects},
+    {kino_config.horror_enhancement, horror_objects},
+    {kino_config.romance_enhancement, romance_objects},
+    {kino_config.jumpscare_mechanic, jumpscare_objects}
+}
+
+for _i, joker in ipairs(joker_list) do
+    -- for each joker_list
+    local _add = true
+    for i = 1, #_options do
+        -- if option is turned off
+        if not _options[i][1] then
+            for _j, joker_banned in ipairs(_options[i][2].jokers) do
+                if joker == joker_banned then
+                    _add = false
+                end
+            end
+        end
+    end
+
+    if _add then
+        _usedjokers[#_usedjokers + 1] = joker
+    end
+end
+
+-- NEW JOKER LOADING --
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
-for _, file in ipairs(files) do
-    assert(SMODS.load_file("Items/Jokers/" .. file))()
-
-    local string = string.sub(file, 1, #file-4)
-    Kino.jokers[#Kino.jokers + 1] = "j_kino_" .. string
-
+for _, joker in ipairs(_usedjokers) do
+    assert(SMODS.load_file("Items/Jokers/" .. joker .. ".lua"))()
+    Kino.jokers[#Kino.jokers + 1] = "j_kino_" .. joker
 end
 
 -- Register the Enhancements
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Enhancements")
 for _, file in ipairs(files) do
-    assert(SMODS.load_file("Items/Enhancements/" .. file))()
+    local _add = true
+    for i = 1, #_options do
+        -- if option is turned off
+        if not _options[i][1] then
+            for _j, enhancement_banned in ipairs(_options[i][2].enhancements) do
+                if file == (enhancement_banned .. ".lua") then
+                    _add = false   
+                end
+            end
+        end
+    end
+    if _add then
+        assert(SMODS.load_file("Items/Enhancements/" .. file))()
+    end
 end
 
 -- Register the Consumable Types
@@ -211,9 +249,11 @@ for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Stickers/" .. file))()
 end
 
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Spells")
-for _, file in ipairs(files) do
-    assert(SMODS.load_file("Items/Spells/" .. file))()
+if kino_config.spellcasting then
+    local files = NFS.getDirectoryItems(mod_dir .. "Items/Spells")
+    for _, file in ipairs(files) do
+        assert(SMODS.load_file("Items/Spells/" .. file))()
+    end
 end
 
 -- Register the genres
@@ -238,29 +278,36 @@ if load_error then
     helper()
 end
 
+local helper, load_error = SMODS.load_file("card_ui.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
 kino_genre_init()
 
 
 --
-SMODS.Keybind{
-	key = 'start_synergy_check',
-	key_pressed = 'a',
-    held_keys = {'rctrl'}, -- other key(s) that need to be held
+-- SMODS.Keybind{
+-- 	key = 'start_synergy_check',
+-- 	key_pressed = 'a',
+--     held_keys = {'rctrl'}, -- other key(s) that need to be held
 
-    action = function(self)
-        for i = 1, #G.jokers.cards do
-            G.jokers.cards[i]:kino_synergy(G.jokers.cards[i])
-        end
-    end,
-}
+--     action = function(self)
+--         for i = 1, #G.jokers.cards do
+--             G.jokers.cards[i]:kino_synergy(G.jokers.cards[i])
+--         end
+--     end,
+-- }
 
-SMODS.Keybind{
-	key = 'start_genre_check',
-	key_pressed = 's',
-    held_keys = {'rctrl'}, -- other key(s) that need to be held
+-- SMODS.Keybind{
+-- 	key = 'start_genre_check',
+-- 	key_pressed = 's',
+--     held_keys = {'rctrl'}, -- other key(s) that need to be held
 
-    action = function(self)
-        check_genre_synergy()
-    end,
-}
+--     action = function(self)
+--         check_genre_synergy()
+--     end,
+-- }
 
