@@ -5,7 +5,7 @@ SMODS.Enhancement {
     config = {
         a_mult = 1,
         a_chips = 5,
-        mult = 0,
+        perma_mult = 0,
         bonus = 0,
         times_upgraded = 0
     },
@@ -14,7 +14,7 @@ SMODS.Enhancement {
             vars = {
                 card and card.ability.a_mult or self.config.a_mult,
                 card and card.ability.a_chips or self.config.a_chips,
-                card and card.ability.mult or self.config.mult,
+                card and card.ability.perma_mult or self.config.perma_mult,
                 card and card.ability.bonus or self.config.bonus,
                 card and card.ability.times_upgraded or self.config.times_upgraded
             }
@@ -33,7 +33,7 @@ SMODS.Enhancement {
 
             for i = 1, times_to_upgrade do
                 card.ability.times_upgraded = card.ability.times_upgraded + 1
-                card.ability.mult = card.ability.mult + card.ability.a_mult
+                card.ability.perma_mult = card.ability.perma_mult + card.ability.a_mult
                 card.ability.bonus = card.ability.bonus + card.ability.a_chips
                 
                 G.GAME.current_round.sci_fi_upgrades = G.GAME.current_round.sci_fi_upgrades + 1

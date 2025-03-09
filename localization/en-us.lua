@@ -434,8 +434,9 @@ return {
             j_kino_et = {
                 name = "E.T. The Extra-Terrestrial",
                 text = {
-                    "When you play a High Card,",
-                    "create a negative {C:attention}Pluto{}"
+                    "Create {C:attention}#1#{} Negative",
+                    "{C:planet}Planets{} when you defeat",
+                    "a {C:attention}Boss Blind"
                 }
             },
             j_kino_ex_machina = {
@@ -801,6 +802,12 @@ return {
                     "give {X:mult,C:white}X#1#{}"
                 }
             },
+            j_kino_nope = {
+                name = "Nope",
+                text = {
+                    "#1#"
+                }
+            },
             j_kino_nosferatu_1 = {
                 name = "Nosferatu (1922)",
                 text = {
@@ -945,7 +952,8 @@ return {
                 name = "The Princess Bride",
                 text = {
                     "If your hand contains a scoring {C:hearts}Hearts{}",
-                    "draw {C:attention}#1# cards{}"
+                    "draw {C:attention}#1#{} additional",
+                    "cards on your next draw"
                 }
             },
             j_kino_psycho = {
@@ -977,7 +985,7 @@ return {
             j_kino_robocop_1 = {
                 name = "Robocop",
                 text = {
-                    "When a {C:attention}High Card{} is played",
+                    "When your scoring hand is a{C:attention}High Card{}",
                     "turn all scored cards", 
                     "into {C:attention}Sci-fi Cards{}"
                 }
@@ -1157,7 +1165,7 @@ return {
                 name = "Thor",
                 text = {
                     "Retrigger a random",
-                    "card {C:attention}2{} times"
+                    "card {C:attention}#1#{} times"
                 }
             },
             j_kino_three_musketeers_1 = {
@@ -1315,7 +1323,7 @@ return {
                 name = "Romance Card",
                 text = {
                     "If a played hand contains",
-                    "2 scoring {C:attention}Romance Cards{}",
+                    "exactly 2 scoring {C:attention}Romance Cards{}",
                     "The first will give {X:chips,C:white}X#1#{} Chips",
                     "and the second {X:mult,C:white}X#2#{} Mult"
                 }
@@ -1400,7 +1408,9 @@ return {
             c_kino_award = {
                 name = "Award",
                 text = {
-                    "PLACEHOLDER"
+                    "Give an award to a {C:attention}Movie Joker",
+                    "doubling it's stats",
+                    "{C:inactive}(Movie Jokers can only be awarded once)"
                 }
             },
             c_kino_chef = {
@@ -1737,6 +1747,15 @@ return {
                 }
             },
 
+            -- Stickers
+            kino_award = {
+                name = "Awarded",
+                text = {
+                    "Doubles the power",
+                    "of Movie Joker"
+                }
+            },
+
             -- Consumable Types
             undiscovered_confection = {
                 name = 'Not Discovered',
@@ -1873,7 +1892,7 @@ return {
             b_confection_cards = "Confection Cards",
             k_spell = "Spell",
 
-            snack_booster = "Confections",
+            snack_boosters = "Confections",
             horror_booster = "Horror Joker",
             action_booster = "Action Joker",
             sci_fi_booster = "Sci-fi Joker",
@@ -1913,9 +1932,12 @@ return {
             k_exorcist_1 = "The Power of Christ compells you",
             k_menu = "Bon appetit",
             k_m3gan = "Beep. Boop",
+            k_princess_bride_1 = "As... You... Wish...",
+            k_princess_bride_2 = "Inconceivable!",
+            k_princess_bride_3 = "Is this a kissing Joker?",
 
             -- Enhancement Barks
-            k_monter_turn = "ROAR!",
+            k_monster_turn = "ROAR!",
 
             -- Spartacus Barks
             k_spartacus_1 = "I am Spartacus!",

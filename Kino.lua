@@ -121,6 +121,13 @@ SMODS.Atlas {
     path = 'kino_spells.png'
 }
 
+SMODS.Atlas {
+    key = "kino_ui",
+    px = 71,
+    py = 95,
+    path = 'kino_ui_assets.png'
+}
+
 local helper, load_error = SMODS.load_file("card_ui.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
@@ -156,6 +163,7 @@ Game.init_game_object = function(self)
     ret.current_round.kryptons_used = 0
     ret.current_round.beaten_run_high = 0
     ret.current_round.horror_transform = 0
+    ret.current_round.cards_abducted = 0
     ret.genre_synergy_treshold = 5
     
     ret.spells_cast = 0
@@ -284,7 +292,12 @@ if load_error then
     helper()
 end
 
-
+local helper, load_error = SMODS.load_file("src/abduction.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
 
 kino_genre_init()
 

@@ -48,7 +48,7 @@ SMODS.Joker {
 
         if context.after and context.cardarea == G.jokers then
             card.ability.extra.x_mult = card.ability.extra.x_mult - card.ability.extra.a_xmult
-            if card.ability.extra.x_mult < 0 then
+            if card.ability.extra.x_mult < 0.05 then
                 card.ability.extra.x_mult = 0
             end
 

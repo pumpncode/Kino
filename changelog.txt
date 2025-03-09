@@ -1,3 +1,38 @@
+V 0.6.3b:
+Asset changes:
+- The Award tarot no longer has placeholder art
+
+Balance Changes:
+Jokers:
+- Twins: Chips reduced to 25 from 30. Mult reduced to 25 from 30.
+
+Planets:
+- Krypton: base chance reduced from 0.5 in 100 to 1 in 25
+
+
+Bug Fixes:
+- Confection boosters now no longer display 'ERROR'
+- E.T. has its refactored description
+- E.T. no longer creates a whole bunch of planets
+- The Exorcist now properly displays numbers
+- The Awarded sticker now displays a description
+- The Award Tarot now has a description
+- Thor now properly displays its repetition values if changed in any way
+- Benjamin Button shouldn't lower Aces into 2s, but into kings
+- the Ring should display X0 on the 7th hand, instead of a floating point number
+- Princess Bride should now draw cards beyond the hand limit
+- Sci-fi cards now also properly upgrade their mult bonus
+
+Localization Changes:
+- Robocop now specifies that the scoring hand needs to be a High Card, not just Contain one.
+- Romance cards now specify that they need 2 romance cards exactly
+- Princess Bride now has barks
+
+Bugs I am aware of:
+Compatibility issues:
+- Any object that grants money will crash the game when Talisman is installed
+- Some mods will break the BFG joker functionality
+
 V 0.6.3:
 New Jokers:
 - Fantasia (visual should also update)
