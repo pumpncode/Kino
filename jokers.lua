@@ -156,7 +156,7 @@ joker_list = {
 "war_of_the_worlds",
 
 ------ Legendary
-"nope",
+-- "nope",
 
 ------ Uncategorized
 }

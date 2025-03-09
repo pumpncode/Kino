@@ -9,7 +9,6 @@ Jokers:
 Planets:
 - Krypton: base chance reduced from 0.5 in 100 to 1 in 25
 
-
 Bug Fixes:
 - Confection boosters now no longer display 'ERROR'
 - E.T. has its refactored description
