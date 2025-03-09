@@ -141,13 +141,13 @@ SMODS.Consumable {
         extra = {
             chance_cur = 1,
             a_chance = 2,
-            chance_max = 100,
+            chance_max = 25,
         }
     },
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                math.min(G.GAME.probabilities.normal * (2 ^ (G.GAME.current_round.kryptons_used - 1)), card.ability.extra.chance_max),
+                math.min((G.GAME.probabilities.normal + 1 ) * (2 ^ (G.GAME.current_round.kryptons_used - 1)), card.ability.extra.chance_max),
                 card.ability.extra.chance_max,
                 G.GAME.current_round.kryptons_used
             }
@@ -164,7 +164,7 @@ SMODS.Consumable {
 			end
 		end
 
-        if pseudorandom("krypton") < ((G.GAME.probabilities.normal * (2 ^ (G.GAME.current_round.kryptons_used - 1))) / card.ability.extra.chance_max) then
+        if pseudorandom("krypton") < (((G.GAME.probabilities.normal + 1 ) * (2 ^ (G.GAME.current_round.kryptons_used - 1))) / card.ability.extra.chance_max) then
             level_up_hand(card, _hand, nil, (-1 * G.GAME.hands[_hand].level) + 1)
         else
             level_up_hand(card, _hand, nil, G.GAME.hands[_hand].level)

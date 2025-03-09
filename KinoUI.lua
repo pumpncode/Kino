@@ -240,3 +240,4 @@ end
 function G.FUNCS.kino_discord(e)
 	love.system.openURL("https://discord.gg/jQQKUurk8K")
 end
+

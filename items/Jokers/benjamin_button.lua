@@ -39,7 +39,7 @@ SMODS.Joker {
             for i = 1, #context.scoring_hand do
                 local i_card = context.scoring_hand[i]
                 local suit_prefix = string.sub(i_card.base.suit, 1, 1).."_"
-                local rank_suffix = i_card.base.id == 14 and 2 or math.max(2, i_card.base.id-1)
+                local rank_suffix = i_card.base.id == 2 and 14 or math.max(2, i_card.base.id-1)
 
                 if rank_suffix < 10 then rank_suffix = tostring(rank_suffix)
                 elseif rank_suffix == 10 then rank_suffix = 'T'

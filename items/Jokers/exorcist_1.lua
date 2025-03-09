@@ -33,7 +33,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.x_mult,
+                card.ability.extra.a_xmult
             }
         }
     end,

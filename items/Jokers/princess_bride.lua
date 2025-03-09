@@ -4,7 +4,8 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            cards_drawn = 2
+            cards_drawn = 2,
+            will_draw = false
         }
     },
     rarity = 3,
@@ -31,7 +32,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.cards_drawn
+                card.ability.extra.cards_drawn,
+                card.ability.extra.will_draw
             }
         }
     end,
@@ -48,8 +50,29 @@ SMODS.Joker {
             end
 
             if _isHearts then
-                G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
+                -- G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
+                card.ability.extra.will_draw = true
+                card_eval_status_text(card, 'extra', nil, nil, nil,
+                { message = localize('k_princess_bride_1'), colour = G.C.KINO.PINK })
             end
+        end
+
+        if context.hand_drawn and card.ability.extra.will_draw then
+            card.ability.extra.will_draw = false
+            G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, func = function()
+                card:juice_up()
+                if pseudorandom("bride") < (1/5) then
+                    card_eval_status_text(card, 'extra', nil, nil, nil,
+                    { message = localize('k_princess_bride_2'), colour = G.C.MULT })
+                else
+                    card_eval_status_text(card, 'extra', nil, nil, nil,
+                    { message = localize('k_princess_bride_3'), colour = G.C.PINK })
+                end
+
+                G.FUNCS.draw_from_deck_to_hand(card.ability.extra.cards_drawn)
+                delay(0.23)
+            return true end }))
+
         end
 
     end

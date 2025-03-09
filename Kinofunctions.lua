@@ -430,22 +430,6 @@ function Card:get_release(card)
 
     return false
 end
-
-function Card:change_multiplier(card, multiplier)
-    -- List of variables names that should be targeted
-
-    if not card.config.center.kino_joker then
-        return false
-    end
-
-    if not card.config.center.kino_joker.multiplier then
-        card.config.center.kino_joker.multiplier = 1
-    end
-
-    -- if multiplier > 0 then
-        
-    -- end
-end
 -------------------------------
 
 -- level_up_hand hook to allow for interstellar functionality
@@ -640,7 +624,8 @@ G.C.KINO = {
     SUPERHERO = HEX("0086a5"), -- No color picked yet
     THRILLER = HEX("0086a5"), -- No color picked yet
     WAR = HEX("0086a5"), -- No color picked yet
-    WESTERN = HEX("0086a5")
+    WESTERN = HEX("0086a5"),
+    PINK = HEX("f7b7f2")
 }
 
 local genrecolors = loc_colour
