@@ -805,7 +805,12 @@ return {
             j_kino_nope = {
                 name = "Nope",
                 text = {
-                    "#1#"
+                    "When your hand contains {C:attention}5{} cards",
+                    "{C:attention}Abduct{} a random one",
+                    "{C:attention}Release:{} Return debuffed",
+                    "and gain {C:mult}+#3#{} Mult",
+                    "Cards Abducted: #1#",
+                    "{C:inactive}(Currently: {C:mult}+#2#{C:inactive})"
                 }
             },
             j_kino_nosferatu_1 = {

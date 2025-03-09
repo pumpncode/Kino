@@ -29,77 +29,89 @@ end
 Kino.abduct_card = function(card, abducted_card)
     if not card or not card.area then return end
     if not abducted_card or not abducted_card.area then return end
-    card:juice_up()
+    local _ret = SMODS.calculate_context({pre_abduct = true}, {stop_abduction = false})
 
-    -- grab the abducted_card and move it to the abducted zone
-    G.GAME.current_round.cards_abducted = G.GAME.current_round.cards_abducted + 1
-
-    abducted_card.area.config.card_limit = abducted_card.area.config.card_limit - ((abducted_card.edition and abducted_card.edition.negative) and 1 or 0)
-    
-    if not card.ability.extra.cards_abducted then
-        card.ability.extra.cards_abducted = {}
+    if _ret and _ret.stop_abduction then
+        return
     end
 
-    card.ability.extra.cards_abducted[#card.ability.extra.cards_abducted + 1] = card
-    
-    abducted_card.area:remove_card(abducted_card)
+    G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()
+        card:juice_up()
 
-    -- Make sure to remove it from deck
-    if G.playing_cards then
-        for k, v in ipairs(G.playing_cards) do
-            if v == abducted_card then
-                table.remove(G.playing_cards, k)
-                break
+        -- grab the abducted_card and move it to the abducted zone
+        G.GAME.current_round.cards_abducted = G.GAME.current_round.cards_abducted + 1
+
+        abducted_card.area.config.card_limit = abducted_card.area.config.card_limit - ((abducted_card.edition and abducted_card.edition.negative) and 1 or 0)
+        
+        if not card.ability.extra.cards_abducted then
+            card.ability.extra.cards_abducted = {
+                -- Cards should be formatted as such
+                -- {
+                --     -- card = card,
+                --     -- abudcted_from = cardarea,
+                --     -- abducted_when = when,
+                -- }
+            }
+        end
+
+        card.ability.extra.cards_abducted[#card.ability.extra.cards_abducted + 1] = {
+            card = abducted_card,
+            abducted_from = abducted_card.area
+        }
+       
+        -- abducted_card.area:remove_card(abducted_card)
+
+        -- Make sure to remove it from deck
+        if G.playing_cards then
+            for k, v in ipairs(G.playing_cards) do
+                if v == abducted_card then
+                    table.remove(G.playing_cards, k)
+                    break
+                end
+            end
+            for k, v in ipairs(G.playing_cards) do
+                v.playing_card = k
             end
         end
-        for k, v in ipairs(G.playing_cards) do
-            v.playing_card = k
-        end
-    end
-    --
-
-    Kino.abduction:emplace(abducted_card)
+        -- Kino.abduction:emplace(abducted_card)
+    return true end }))
+    SMODS.calculate_context({abduct = true, joker = card, abducted_card = abducted_card})
 end
 
+Card.abduct = function(abductor)
 
---- Abduction UI ---
-AbductionDisplayBox = UIBox:extend()
 
-function AbductionDisplayBox:init(parent, func, args)
-    args = args or {
-        n = G.UIT.ROOT,
-        config = {
-            minh = 0.6,
-            minw = 2,
-            maxw = 2,
-            r = 0.001,
-            padding = 0.1,
-            align = 'cm',
-            colour = adjust_alpha(darken(G.C.BLACK, 0.2), 0.8),
-            shadow = true,
-            func = func,
-            ref_table = parent
-        },
-        nodes = {
-            {
-                n = G.UIT.R,
-                config = { ref_table = parent, align = "cm", func = "joker_display_style_override" },
-                nodes = {
-                    {
-                        n = G.UIT.R,
-                        config = { id = "sprite", ref_table = parent, align = "cm" },
-                    },
-                    {
-                        n = G.UIT.R,
-                        config = { id = "num", ref_table = parent, align = "cm" },
-                    }
-                }
-            },
-        }
-    }
+end
 
-    args.config = args.config or {}
-    args.config.align = args.config.align or "bm"
-    args.config.parent = parent
-    args.config.offset = { x = 0, y = -0.1 }
+Kino.unabduct_cards = function(card)
+    if not card or not card.area then return end
+    if not card.ability.extra.cards_abducted or #card.ability.extra.cards_abducted == 0 then return end
+
+    local _table = card.ability.extra.cards_abducted
+
+    for i, abductee in ipairs(_table) do
+        abductee.card.area:remove_card(abductee.card)
+
+        local _cardarea = G.deck
+        if abductee.abducted_from ~= G.play and
+        abductee.abducted_from ~= G.hand then
+            _cardarea = abductee.abducted_from 
+        end
+
+        _cardarea:emplace(abductee.card)
+        table.remove(_table, i)
+        if _cardarea ~= G.jokers and 
+        _cardarea ~= G.consumeables then
+            table.insert(G.playing_cards, abductee.card)
+        end
+    end
+
+    return _table
+
+end
+
+Kino.abduction_end = function()
+
+    SMODS.calculate_context({abduction_ending = true})
+    
 end

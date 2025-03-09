@@ -4,7 +4,9 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            cards_abducted = {}
+            cards_abducted = {},
+            stacked_mult = 0,
+            a_mult = 5
         }
     },
     rarity = 1,
@@ -31,23 +33,43 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                #card.ability.extra.cards_abducted 
+                card.ability.extra.cards_abducted and #card.ability.extra.cards_abducted or 0,
+                card.ability.extra.stacked_mult,
+                card.ability.extra.a_mult
             }
         }
     end,
     calculate = function(self, card, context)
-        -- Scored cards have a 1/5 chance to get abducted. 
-        -- When a card gets abducted, create a random planet card
-        -- abducted cards still count towards the hand, but do not score
-        -- that hand.
+        -- When your hand contains 5 cards, abduct a random card
+        -- When the abduction ends, return it to the hand debuffed
+        -- and increase mult by 3
 
         if context.joker_main then
-            Kino.abduct_card(card, context.scoring_hand[1])
+            return {
+                mult = card.ability.extra.stacked_mult
+            }
+        end
+
+        if context.after and context.cardarea == G.jokers and #context.full_hand >= 5 then
+            local _abductee = pseudorandom_element(context.full_hand, pseudoseed("nope"))
+            Kino.abduct_card(card, _abductee)
+
+        end
+
+        if context.abduction_ending and not context.blueprint and not context.retrigger then
+            Kino.debug_string = "Changed"
+            for _, _cardinfo in ipairs(card.ability.extra.cards_abducted) do
+                
+                card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult
+                
+                SMODS.debuff_card(_cardinfo.card, true, "nope")
+            end
+
+            card.ability.extra.cards_abducted = Kino.unabduct_cards(card)
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        print("test")
-        AbductionDisplayBox(card)
-        print("Test End")
+        card.children.abduction_display = Kino.create_abduction_ui(card)
+        card.children.abduction_display_2 = Kino.create_abduction_ui_2(card)
     end,
 }

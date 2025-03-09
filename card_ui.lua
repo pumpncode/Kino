@@ -1,102 +1,182 @@
 --- Abduction UI ---
-AbductionDisplayBox = UIBox:extend()
-
-function AbductionDisplayBox:init(parent, func, args)
-    print("INIT INIT INIT")
-    args = args or {
-        n = G.UIT.ROOT,
-        config = {
-            minh = 0.6,
-            minw = 2,
-            maxw = 2,
-            r = 0.001,
-            padding = 0.1,
-            align = 'cm',
-            colour = adjust_alpha(darken(G.C.BLACK, 0.2), 0.8),
-            shadow = true,
-            func = func,
-            ref_table = parent
-        },
-        nodes = {
-            {
-                n = G.UIT.R,
-                config = { ref_table = parent, align = "cm", func = "joker_display_style_override" },
-                nodes = {
-                    ufo_sprite({x = 0, y = 0}, 10)
-                    -- {
-                    --     n = G.UIT.R,
-                    --     config = { id = "sprite", ref_table = parent, align = "cm" },
-                    -- },
-                    -- {
-                    --     n = G.UIT.R,
-                    --     config = { id = "num", ref_table = parent, align = "cm" },
-                    -- }
-                }
+Kino.create_abduction_ui = function(card)
+    return UIBox {
+        definition = {
+            n = G.UIT.ROOT,
+            config = {
+                minh = 0.6,
+                maxh = 1.2,
+                minw = 0.6,
+                maxw = 2,
+                r = 0.001,
+                padding = 0,
+                align = 'cm',
+                colour = G.C.CLEAR,
+                shadow = false,
+                ref_table = card
             },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = {
+                        minh = 1,
+                        maxh = 1,
+                        minw = 1,
+                        maxw = 1,
+                        align = 'tr',
+                        colour = G.C.CLEAR,
+                        hover = true
+                    },
+                    nodes = {
+                        {
+                            n = G.UIT.O,
+                            config = {
+                                w = 1, 
+                                h = 1,
+                                can_collide = false, 
+                                object = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=0, y=0}), 
+                                tooltip = {text = "Abductions"}
+                            },
+                            nodes = {
+                                {
+                                    n = G.UIT.T,
+                                    config = {
+                                        text = "3",
+                                        colour = G.C.WHITE, 
+                                        scale = 0.4, 
+                                        shadow = true
+                                    }  
+                                }
+                            }
+                        }
+                        -- {
+                        --     n = G.UIT.T,
+                        --     config = {
+                        --         text = "2",
+                        --         colour = G.C.WHITE, 
+                        --         scale = 0.4, 
+                        --         shadow = true
+                        --     }  
+                        -- }
+                    }
+                }
+            }
+        },
+        config = {
+            align = "tri",
+            bond = 'Strong',
+            parent = card,
+        },
+        states = {
+            collide = {can = false},
+            drag = { can = true }
         }
     }
-
-    args.config = args.config or {}
-    args.config.align = args.config.align or "bm"
-    args.config.parent = parent
-    args.config.offset = { x = 0, y = -0.1 }
-
-    UIBox.init(self, args)
 end
 
-function ufo_sprite(pos, value)
-    local text_colour = G.C.BLACK
-
-    local t_s = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=pos.x or 0, y=pos.y or 0})
-    t_s.states.drag.can = false
-    t_s.states.hover.can = false
-    t_s.states.collide.can = false
-    return {
-        n=G.UIT.C, 
-        config= {
-            align = "cm", 
-            padding = 0.07,
-            force_focus = true,  
-            focus_args = {type = 'sprite'}, 
-            tooltip = {text = "Abductions"}
-        }, 
-        nodes = {{
-            n= G.UIT.R, 
+Kino.create_abduction_ui_2 = function(card)
+    return UIBox {
+        definition = {
+            n = G.UIT.ROOT,
             config = {
-                align = "cm", 
-                r = 0.1, 
-                padding = 0.04, 
-                emboss = 0.05, 
-                colour = G.C.JOKER_GREY
-            }, 
-            nodes={{
-                n = G.UIT.O, 
-                config = {
-                    w = 0.5, 
-                    h = 0.5,
-                    can_collide = false, 
-                    object = t_s, 
-                    tooltip = {text = "Abductions"}
+                minh = 1.3,
+                maxh = 1.3,
+                minw = 1,
+                maxw = 1,
+                r = 0.001,
+                padding = 0,
+                align = 'cm',
+                colour = G.C.CLEAR,
+                shadow = false,
+                ref_table = card
+            },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = {
+                        align = 'tr',
+                        colour = G.C.CLEAR,
+                        hover = true
+                    },
+                    nodes = {
+                        {
+                            n = G.UIT.T,
+                            config = {
+                                text = "3",
+                                colour = G.C.WHITE, 
+                                scale = 0.3, 
+                                shadow = true
+                            }  
+                        }
+                    }
                 }
-            }}
+            }
         },
-        {
-            n = G.UIT.R, 
-            config = {
-                align = "cm"
-            }, 
-            nodes = {{
-                n = G.UIT.T, 
-                config = {
-                    text = value,
-                    colour = text_colour, 
-                    scale = 0.4, 
-                    shadow = true
-                }
-            },}
-        }}
+        config = {
+            align = "tri",
+            bond = 'Strong',
+            parent = card,
+        },
+        states = {
+            collide = {can = false},
+            drag = { can = true }
+        }
     }
 end
+
+-- function ufo_sprite(pos, value)
+--     local text_colour = G.C.BLACK
+
+--     local t_s = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=pos.x or 0, y=pos.y or 0})
+--     t_s.states.drag.can = false
+--     t_s.states.hover.can = false
+--     t_s.states.collide.can = false
+--     return {
+--         n=G.UIT.C, 
+--         config= {
+--             align = "cm", 
+--             padding = 0.07,
+--             force_focus = true,  
+--             focus_args = {type = 'sprite'}, 
+--             tooltip = {text = "Abductions"}
+--         }, 
+--         nodes = {{
+--             n= G.UIT.R, 
+--             config = {
+--                 align = "cm", 
+--                 r = 0.1, 
+--                 padding = 0.04, 
+--                 emboss = 0.05, 
+--                 colour = G.C.JOKER_GREY
+--             }, 
+--             nodes={{
+--                 n = G.UIT.O, 
+--                 config = {
+--                     w = 0.5, 
+--                     h = 0.5,
+--                     can_collide = false, 
+--                     object = t_s, 
+--                     tooltip = {text = "Abductions"}
+--                 }
+--             }}
+--         },
+--         {
+--             n = G.UIT.R, 
+--             config = {
+--                 align = "cm"
+--             }, 
+--             nodes = {{
+--                 n = G.UIT.T, 
+--                 config = {
+--                     text = value,
+--                     colour = text_colour, 
+--                     scale = 0.4, 
+--                     shadow = true
+--                 }
+--             },}
+--         }}
+--     }
+-- end
 
 --- CODE BASED ON THE card_ui.lua IMPLEMENTATION
 --- FROM JOYOUSSPRING BY 'N

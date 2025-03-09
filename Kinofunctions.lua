@@ -126,7 +126,7 @@ end
 
 function check_genre_synergy()
     -- check jokers, then if 5 of them share a genre, add a joker slot
-    if not G.jokers or not kino_config.genre_synergy then
+    if not G.jokers or not G.jokers.cards or not kino_config.genre_synergy then
         return false
     end
 
@@ -668,3 +668,6 @@ Kino.choco_chance = 2
 Kino.xl_chance = 1
 Kino.actor_synergy = {1.2, 1.4, 1.6, 1.8, 2}
 Kino.award_mult = 2
+
+-- DEBUG GLOBALS --
+Kino.debug_string = "Base"

@@ -253,3 +253,48 @@ payload = '''
 elseif _c.effect == 'Lucky Card' then loc_vars = {G.GAME.probabilities.normal * (cfg.lucky_bonus or 1), cfg.mult, 5, cfg.p_dollars, 15}
 '''
 
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = "G.FUNCS.draw_from_discard_to_deck()"
+position = 'after'
+match_indent = true
+payload = '''
+if G.GAME.blind:get_type() == 'Boss' then
+	Kino.abduction_end()
+end
+'''
+
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = '''
+G.E_MANAGER:add_event(Event({
+	trigger = 'immediate',
+	func = (function()     
+		if G.GAME.modifiers.debuff_played_cards then 
+			for k, v in ipairs(scoring_hand) do v.ability.perma_debuff = true end
+		end
+	return true end)
+	}))
+'''
+
+
+# ABDUCTION INTERGRATION
+# position = 'after'
+# match_indent = true
+# payload = '''
+#     G.E_MANAGER:add_event(Event({
+#         trigger = 'immediate',
+#         func = (function()     
+#             if G.GAME.modifiers.debuff_played_cards then 
+#                 for k, v in ipairs(scoring_hand) do v.ability.perma_debuff = true end
+#             end
+#         return true end)
+#       }))
+# '''
+# SMODS.calculate_context({full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, poker_hands = poker_hands, after = true})
+
+
+# 
+
