@@ -1,3 +1,9 @@
+V 0.6.3b-2:
+Hotfix Patch:
+Bug Fixes:
+- Ocean's 11 (2001) no longer crashes the game when sold while in a booster pack screen
+- Dungeons and Dragons (2000) now properly displays its values
+
 V 0.6.3b:
 Asset changes:
 - The Award tarot no longer has placeholder art

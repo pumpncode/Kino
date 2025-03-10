@@ -1887,6 +1887,7 @@ return {
             -- OTHER --
             kino_credits_header = "Credits",
             kino_credits_developer = "Developed By: ",
+            kino_credits_specialthanks = "Playtesting Feedback: ",
             ---------------------
             k_confection = "Confection",
             b_confection_cards = "Confection Cards",

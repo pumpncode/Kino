@@ -208,6 +208,42 @@ SMODS.current_mod.extra_tabs = function()
 							}
 						}
 					},
+					{	-- Thanks Section
+						n = G.UIT.C,
+						config = {
+							padding = 0,
+							align = "cm"
+						},
+						nodes = {
+							{
+								n = G.UIT.T,
+								config = {
+									text = localize("kino_credits_specialthanks"),
+									shadow = true,
+									scale = scale * 0.8,
+									colour = G.C.UI.TEXT_LIGHT
+								}
+							},
+							{
+								n = G.UIT.C,
+								config = {
+									padding = 0,
+									align = "cm"
+								},
+								nodes = {
+									{
+										n = G.UIT.T,
+										config = {
+											text = "Alphapra",
+											shadow = true,
+											scale = scale * 0.8,
+											colour = G.C.BLUE
+										}
+									}
+								}
+							}
+						}
+					},
 					{
 						n = G.UIT.R,
 						config = {
@@ -225,6 +261,12 @@ SMODS.current_mod.extra_tabs = function()
 								colour = HEX("9656ce"),
 								button = "kino_discord",
 								label = {"Discord"}
+							}),
+							UIBox_button({
+								minw = 3.85,
+								colour = G.C.MONEY,
+								button = "kino_wiki",
+								label = {"Wiki"}
 							})
 						}
 					}
@@ -239,5 +281,8 @@ function G.FUNCS.kino_github(e)
 end
 function G.FUNCS.kino_discord(e)
 	love.system.openURL("https://discord.gg/jQQKUurk8K")
+end
+function G.FUNCS.kino_wiki(e)
+	love.system.openURL("https://balatromods.miraheze.org/wiki/Balatro_Goes_Kino")
 end
 
