@@ -102,7 +102,8 @@ Kino.create_abduction_ui_2 = function(card)
                         {
                             n = G.UIT.T,
                             config = {
-                                text = "3",
+                                ref_table = card.ability.extra,
+                                ref_value = "num_cards_abducted_non",
                                 colour = G.C.WHITE, 
                                 scale = 0.3, 
                                 shadow = true

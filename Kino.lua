@@ -171,7 +171,10 @@ Game.init_game_object = function(self)
         key = "",
         rank = 1
     }
+
     ret.confections_used = 0
+
+    ret.current_round.abduction_waitinglist = {}
     -- generate_cmifc_rank()
     return ret
 end

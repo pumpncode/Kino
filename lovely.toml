@@ -265,25 +265,12 @@ if G.GAME.blind:get_type() == 'Boss' then
 end
 '''
 
+# Abduction functionality
 [[patches]]
 [patches.pattern]
 target = 'functions/state_events.lua'
-pattern = '''
-G.E_MANAGER:add_event(Event({
-	trigger = 'immediate',
-	func = (function()     
-		if G.GAME.modifiers.debuff_played_cards then 
-			for k, v in ipairs(scoring_hand) do v.ability.perma_debuff = true end
-		end
-	return true end)
-	}))
-'''
-
-
-# ABDUCTION INTERGRATION
-# position = 'after'
-# match_indent = true
-# payload = '''
+pattern = "check_for_unlock({type = 'play_all_hearts'})"
+# pattern = '''
 #     G.E_MANAGER:add_event(Event({
 #         trigger = 'immediate',
 #         func = (function()     
@@ -293,8 +280,22 @@ G.E_MANAGER:add_event(Event({
 #         return true end)
 #       }))
 # '''
-# SMODS.calculate_context({full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, poker_hands = poker_hands, after = true})
-
+position = 'after'
+match_indent = true
+payload = '''
+G.FUNCS.draw_from_area_to_abduction()
+'''
 
 # 
-
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = '''
+if (not v.shattered) and (not v.destroyed) then 
+'''
+position = 'at'
+match_indent = true
+payload = '''
+print(v.abducted)
+if (not v.shattered) and (not v.destroyed) and (not v.abducted) then 
+'''

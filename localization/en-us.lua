@@ -274,6 +274,16 @@ return {
                     "{C:inactive}(Current rank: {C:attention}#1#{})"
                 }
             },
+            j_kino_close_encounters = {
+                name = "Close Encounters of the Third Kind",
+                text = {
+                    "If your played hand contains",
+                    "only {C:attention}1{} card, {C:attention}Abduct{} it",
+                    "Gives {C:chips}+#3#{} Chips for {C:attention}every card",
+                    "currently abducted",
+                    "{C:inactive}(Currently: {C:chips}+#4#{C:inactive} Chips)"
+                }
+            },
             j_kino_clown = {
                 name = "Clown",
                 text = {
@@ -809,7 +819,6 @@ return {
                     "{C:attention}Abduct{} a random one",
                     "{C:attention}Release:{} Return debuffed",
                     "and gain {C:mult}+#3#{} Mult",
-                    "Cards Abducted: #1#",
                     "{C:inactive}(Currently: {C:mult}+#2#{C:inactive})"
                 }
             },

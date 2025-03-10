@@ -157,6 +157,9 @@ joker_list = {
 
 ------ Legendary
 "nope",
+"close_encounters",
+"when_harry_met_sally"
+
 
 ------ Uncategorized
 }

@@ -1,3 +1,13 @@
+V 0.7:
+New Mechanic:
+- Abduction! Certain jokers have the ability to abduct other cards. Abducted cards are stored in the joker, and returned to wherever they were abducted from when you start the first blind of a new ante.
+
+New Jokers:
+- Nope
+- Close Encounters of the Third Kind
+- Signs
+
+
 V 0.6.3b:
 Asset changes:
 - The Award tarot no longer has placeholder art
