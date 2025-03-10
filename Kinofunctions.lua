@@ -430,6 +430,27 @@ function Card:get_release(card)
 
     return false
 end
+
+local base_gcb = Card.get_chip_bonus
+function Card:get_chip_bonus()
+    
+    local ret = base_gcb(self)
+
+    local _factor = 1
+
+    for i, joker in ipairs(G.jokers.cards) do
+        print(i)
+        if joker.ability and joker.ability.extra and joker.ability.extra.nominal_mult_factor then
+            _factor = _factor * joker.ability.extra.nominal_mult_factor
+        end
+    end
+
+    if _factor == 1 then
+        _factor = 0
+    end
+
+    return ret + (self.base.nominal * _factor)
+end
 -------------------------------
 
 -- level_up_hand hook to allow for interstellar functionality

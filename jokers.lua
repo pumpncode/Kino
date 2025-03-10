@@ -158,7 +158,12 @@ joker_list = {
 ------ Legendary
 "nope",
 "close_encounters",
-"when_harry_met_sally"
+"junior",
+"edward_scissorhands",
+"guardians_of_the_galaxy_2",
+"jurassic_park_1",
+"catch_me_if_you_can"
+-- "when_harry_met_sally"
 
 
 ------ Uncategorized

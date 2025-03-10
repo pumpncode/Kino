@@ -296,6 +296,5 @@ if (not v.shattered) and (not v.destroyed) then
 position = 'at'
 match_indent = true
 payload = '''
-print(v.abducted)
 if (not v.shattered) and (not v.destroyed) and (not v.abducted) then 
 '''

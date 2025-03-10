@@ -240,6 +240,13 @@ return {
                     "{C:mult}+#1#{} Mult when scored"
                 }
             },
+            j_kino_catch_me_if_you_can = {
+                name = "Catch Me If You Can",
+                text = {
+                    "{C:money}$#1#{} when a",
+                    "{C:attention}Wild Card{} scores"
+                }
+            },
             j_kino_charlie_and_the_chocolate_factory = {
                 name = "Charlie & the Chocolate Factory",
                 text = {
@@ -426,6 +433,14 @@ return {
                     "blind, earn {C:money}$#2#{}"
                 }
             },
+            j_kino_edward_scissorhands = {
+                name = "Edward Scissorhands",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "has only {C:attention}1{} card, {C:attention}Cut",
+                    "it into two, and draw those two hand"
+                }
+            },
             j_kino_elf = {
                 name = "Elf",
                 text = {
@@ -560,6 +575,14 @@ return {
                     "Planets give {C:mult}+#1#{} Mult"
                 }
             },
+            j_kino_guardians_of_the_galaxy_2 = {
+                name = "Guardians of the Galaxy Vol. 2",
+                text = {
+                    "Transform every {C:planet}Planet",
+                    "you have into {C:attention}Ego",
+                    "at the end of the {C:attention}shop",
+                }
+            },
             j_kino_halloween = {
                 name = "Halloween (1978)",
                 text = {
@@ -658,6 +681,21 @@ return {
                     "this gains {C:chips}+#2#{} Chips",
                     "until the end of round",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Mult)"
+                }
+            },
+            j_kino_junior = {
+                name = "Junior",
+                text = {
+                    "Whenever {C:attention}10 {C:attention}Kings{}",
+                    "or {C:attention}Jack{} have scored",
+                    "create a random {C:attention}Polychrome 2"
+                }
+            },
+            j_kino_jurassic_park_1 = {
+                name = "Jurassic Park",
+                text = {
+                    "Cards give {C:chips}#1#{}",
+                    "as much base chips"
                 }
             },
             j_kino_karate_kid_1 = {
@@ -1946,6 +1984,7 @@ return {
             k_exorcist_1 = "The Power of Christ compells you",
             k_menu = "Bon appetit",
             k_m3gan = "Beep. Boop",
+            k_guardians_2 = "Visited",
             k_princess_bride_1 = "As... You... Wish...",
             k_princess_bride_2 = "Inconceivable!",
             k_princess_bride_3 = "Is this a kissing Joker?",

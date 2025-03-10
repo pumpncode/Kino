@@ -1,6 +1,7 @@
 SMODS.Joker {
     key = "close_encounters",
     order = 91,
+    generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             cards_abducted = {},

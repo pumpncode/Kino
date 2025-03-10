@@ -5,8 +5,11 @@ New Mechanic:
 New Jokers:
 - Nope
 - Close Encounters of the Third Kind
-- Signs
+- Junior
 
+
+Bug Fixes:
+- Ghoulies now properly increases the deck size
 
 V 0.6.3b:
 Asset changes:

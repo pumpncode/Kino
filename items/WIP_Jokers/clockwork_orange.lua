@@ -19,7 +19,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- +5 mult when a card loses its enhancement.
-        -- +5 chips when a card is destroyed.
+        -- 
     end
 }
