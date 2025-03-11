@@ -38,7 +38,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            local _mult = card.ability.extra.a_mult * G.GAME.consumeable_usage_total.confection or 0
+            local _mult = card.ability.extra.a_mult * (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.confection or 0)
 
             return {
                 mult = _mult

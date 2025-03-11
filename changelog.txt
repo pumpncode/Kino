@@ -1,3 +1,9 @@
+V 0.6.3b-3:
+Hotfix Patch:
+
+Bug Fix:
+- Wonka no longer crashes the game if no consumeables have been used
+
 V 0.6.3b-2:
 Hotfix Patch:
 Bug Fixes:
