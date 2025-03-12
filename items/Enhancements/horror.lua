@@ -56,6 +56,7 @@ SMODS.Enhancement {
     overrides_base_rank = true,
     no_suit = true,
     always_scores = true,
+    weight = 0,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {

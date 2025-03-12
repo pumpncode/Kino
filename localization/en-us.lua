@@ -623,7 +623,8 @@ return {
             j_kino_guardians_of_the_galaxy_1 = {
                 name = "Guardians of the Galaxy",
                 text = {
-                    "Planets give {C:mult}+#1#{} Mult"
+                    "{C:planet}Planets{} you own",
+                    "give {C:mult}+#1#{} Mult"
                 }
             },
             j_kino_guardians_of_the_galaxy_2 = {
