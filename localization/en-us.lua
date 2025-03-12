@@ -272,6 +272,17 @@ return {
                     "{C:inactive}(Currently: {C:chips}+#1#{C:inactive})"
                 }
             },
+            j_kino_childs_play_1 = {
+                name = "Child's Play",
+                text = {
+                    "Becomes active whenever",
+                    "your scoring hand",
+                    "contains a {C:attention}2",
+                    "When active, you can",
+                    "discard a {C:attention}Monster Card",
+                    "{C:inactive}(Currently: {C:Attention}#1#{C:inactive})"
+                }
+            },
             j_kino_clerks_1 = {
                 name = "Clerks",
                 text = {
@@ -328,6 +339,16 @@ return {
                     "If your played hand is only a {C:attention}Queen{}",
                     "destroy it and upgrade every card",
                     "in your deck with {C:mult}+1{} Mult",
+                }
+            },
+            j_kino_cronos = {
+                name = "Cronos",
+                text = {
+                    "If your hand contains",
+                    "a single card",
+                    "{C:attention}Drain{} half its rank",
+                    "and gain #2# times that many chips",
+                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
                 }
             },
             j_kino_dark_crystal = {
@@ -464,6 +485,14 @@ return {
                     "a {C:attention}Boss Blind"
                 }
             },
+            j_kino_evil_dead_1 = {
+                name = "The Evil Dead (2013)",
+                text = {
+                    "{C:green}#1# in #2#{} Chance to",
+                    "create a {C:tarot}Demon Tarot{}",
+                    "when you {C:attention}Destroy{} a card"
+                }
+            },
             j_kino_ex_machina = {
                 name = "Ex Machina",
                 text = {
@@ -505,6 +534,28 @@ return {
                     "consumeable slots",
                     "with {C:attention}Fries{}",
                     "at the end of the {C:attention}shop"
+                }
+            },
+            j_kino_frankenstein = {
+                name = "Frankenstein",
+                text = {
+                    "{C:attention}#1#",
+                    "If still Experimenting",
+                    "destroy the next hand",
+                    "you play and upgrade this",
+                    "joker with all stats of the",
+                    "destroyed cards",
+                    "{C:inactive}(Currently: {C:chips}+#3#{C:inactive} Chips, {C:mult}+#4#{C:inactive} Mult)",
+                    "{C:inactive}({X:mult,C:white}X#5#{C:inactive}, {X:chips,C:white}X#6#{C:inactive})"
+                }
+            },
+            j_kino_friday_the_13th = {
+                name = "Friday the 13th",
+                text = {
+                    "If your played hand",
+                    "contains no {C:attention}Face{} cards",
+                    "turn a random non-enhanced card",
+                    "in hand into a {C:attention}Horror Card"
                 }
             },
             j_kino_gentlemen_prefer_blondes = {
@@ -636,6 +687,15 @@ return {
 
                 }
             },
+            j_kino_insidious = {
+                name = "Insidious",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create",
+                    "a {C:tarot}Demon{} card when any",
+                    "{C:attention}Booster Pack{} is opened",
+                    "{C:inactive}(Must have room)",
+                }
+            },
             j_kino_interstellar = {
                 name = "Interstellar",
                 text = {
@@ -720,6 +780,15 @@ return {
                     "When you play a {C:attention}Full House{}, randomize",
                     "the {X:mult,C:white} xMult{} between {X:mult,C:white} x #4#{} & {X:mult,C:white} x #5#{}",
                     "and increases the range by {X:mult,C:white}#5#{}"
+                }
+            },
+            j_kino_lady_and_the_tramp = {
+                name = "Lady & the Tramp",
+                text = {
+                    "Gives {C:attention}#1# times{}",
+                    "the difference between the",
+                    "{C:attention}highest{} and {C:attention}lowest{}",
+                    "scoring card in {C:chips}Chips"
                 }
             },
             j_kino_lethal_weapon = {
@@ -868,6 +937,16 @@ return {
                     "removes card {C:attention}Enhancement",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 },
+            },
+            j_kino_nosferatu_2024 = {
+                name = "Nosferatu (2024)",
+                text = {
+                    "This Joker gains {C:mult}+#2#{} Mult",
+                    "per scoring {C:attention}Enhanced card{} played,",
+                    "removes card {C:attention}Enhancement",
+                    "Whenever a {C:hearts}Hearts{} scores",
+                    "it gives {C:mult}+#1#{}"
+                }
             },
             j_kino_number_23 = {
                 name = "The Number 23",
@@ -1079,6 +1158,14 @@ return {
                     "for each other scoring {C:spades}Spades{}",
                 }
             },
+            j_kino_seven_brides_for_seven_brothers = {
+                name = "7 Brides for 7 Brothers",
+                text = {
+                    "{X:mult,C:white}X#1#{} if your deck",
+                    "contains an equal number of",
+                    "{C:attention}Kings{} and {C:attention}Queens"
+                }
+            },
             j_kino_shang_chi = {
                 name = "Shang-Chi and the Legend of the 10 Rings",
                 text = {
@@ -1125,8 +1212,19 @@ return {
             j_kino_smile = {
                 name = "Smile",
                 text = {
-                    "{C:attention}Face Cards{} are",
-                    "{C:attention}Demonic"
+                    "{C:attention}Face Cards{} are not",
+                    "sacrificed by {C:attention}Demonic Cards",
+                    "but do count towards sacrifices"
+                }
+            },
+            j_kino_snow_white_1 = {
+                name = "Snow White & the 7 Dwarves",
+                text = {
+                    "Whenever 7 or more",
+                    "{C:attention}2s{} have scored",
+                    "your next {C:attention}Queen{} gives",
+                    "{X:mult,C:white}X#1#",
+                    "{C:inactive}(Currently: #2#)"
                 }
             },
             j_kino_social_network = {
@@ -1142,6 +1240,19 @@ return {
                 text = {
                     "When you {C:purple,E:1}Cast a Spell",
                     "cast it again at a lower rank"
+                }
+            },
+            j_kino_sound_of_music = {
+                name = "The Sound of Music",
+                text = {
+                    "{C:inactive,E:1}#1#",
+                    "If your hand contains a {C:attention}#2#",
+                    "gain {C:mult}+#6#{} Mult and go up a rank",
+                    "If your hand does not contain",
+                    "a {C:attention}#2#{} reset the Mult",
+                    "If you finish the song, the mult",
+                    "gained becomes permanent",
+                    "{C:inactive}(Currently: temporary {C:mult}+#4#{C:inactive} Mult || {C:mult}+#5#{C:inactive} Mult)"
                 }
             },
             j_kino_spartacus = {
@@ -1286,6 +1397,15 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive})"
                 }
             },
+            j_kino_voyage_dans_le_lune = {
+                name = "Le Voyage Dans a Lune",
+                text={
+                    "{C:green}#1# in #2#{} chance to create",
+                    "a {C:planet}Planet{} card when any",
+                    "{C:attention}Booster Pack{} is opened",
+                    "{C:inactive}(Must have room)",
+                },
+            },
             j_kino_wall_e = {
                 name = "Wall-E",
                 text = {
@@ -1328,11 +1448,27 @@ return {
                     "or {C:mult}+#2#{} Discard(s) for each"
                 }
             },
+            j_kino_west_side_story_1 = {
+                name = "West Side Story (1961)",
+                text = {
+                    "Gives either {C:chips}+#1#{} Chips",
+                    "if your scoring hand has more {C:spades}Spades",
+                    "and {C:clubs}Clubs{} or {C:mult}+#2#{} Mult",
+                    "if it has more {C:hearts}Hearts{} and {C:diamonds}Diamonds"
+                }
+            },
             j_kino_wizard_of_oz = {
                 name = "The Wizard of Oz",
                 text = { 
                     "Scored {C:attention}Wild Cards{}",
                     "give {X:mult,C:white}X#1#{} Mult"
+                }
+            },
+            j_kino_wolf_man_1 = {
+                name = "The Wolf Man",
+                text = {
+                    "When a Horror card {C:attention}Awakens",
+                    "it gives {X:mult,C:white}X#1#{}"
                 }
             },
             j_kino_wonka = {
@@ -1988,6 +2124,10 @@ return {
             k_princess_bride_1 = "As... You... Wish...",
             k_princess_bride_2 = "Inconceivable!",
             k_princess_bride_3 = "Is this a kissing Joker?",
+            k_arrakis = "Lisan al-Gaib!",
+            k_west_side_sharks = "Sharks!",
+            k_west_side_jets = "Jets!",
+            k_west_side_neither = "Officer Kripke! Run!",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",

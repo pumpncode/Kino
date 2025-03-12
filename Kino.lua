@@ -22,6 +22,13 @@ end
 
 -- Read in all the sprites
 SMODS.Atlas {
+    key = "kino_atlas_legendary",
+    px = 71,
+    py = 95,
+    path =  'kino_jokers_legendary.png'
+}
+
+SMODS.Atlas {
     key = "kino_atlas_1",
     px = 71,
     py = 95,

@@ -26,6 +26,7 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Drama", "Crime"},
+    enhancement_gate = "m_wild",
 
     loc_vars = function(self, info_queue, card)
         return {
@@ -40,9 +41,7 @@ SMODS.Joker {
         if context.individual and context.cardarea == G.play and
         SMODS.has_enhancement(context.other_card, "m_wild") then
             return {
-                message = localize("$")..card.ability.extra.money,
                 dollars = card.ability.extra.money,
-                colour = G.C.MONEY
             }
         end
     end

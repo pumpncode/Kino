@@ -68,9 +68,11 @@ end
 
 for i = 1, #scoring_hand do
 	if has_demonic_card and not SMODS.has_enhancement(scoring_hand[i], 'm_kino_demonic') then
-		cards_destroyed[#cards_destroyed + 1] = scoring_hand[i]
-		G.GAME.current_round.sacrifices_made = G.GAME.current_round.sacrifices_made + 1
-		scoring_hand[i].destroyed = true
+		if next(find_joker("j_kino_smile")) and not scoring_hand[i]:is_face() then
+			cards_destroyed[#cards_destroyed + 1] = scoring_hand[i]
+			G.GAME.current_round.sacrifices_made = G.GAME.current_round.sacrifices_made + 1
+			scoring_hand[i].destroyed = true
+		end
 	end
 end
 

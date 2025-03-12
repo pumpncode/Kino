@@ -33,8 +33,14 @@ SMODS.Joker {
     pools, k_genre = {"Horror", "Fantasy"},
 
     loc_vars = function(self, info_queue, card)
+        local _string = "Experimenting"
+        if card.ability.extra.is_used then
+            _string = "Built"
+        end
+
         return {
             vars = {
+                _string,
                 card.ability.extra.is_used,
                 card.ability.extra.chips,
                 card.ability.extra.mult,
@@ -52,7 +58,7 @@ SMODS.Joker {
             card.ability.extra.chips = card.ability.extra.chips + _card.ability.extra.base  + _card.ability.extra.bonus
             card.ability.extra.mult = card.ability.extra.mult + _card.ability.extra.mult + _card.ability.extra.perma_mult
             card.ability.extra.xmult = card.ability.extra.xmult + _card.ability.extra.perma_xmult
-            -- card.ability.extra.chips = card.ability.extra.chips + _card.ability.extra.base  + _card.ability.extra.perma_
+            card.ability.extra.x_chips = card.ability.extra.x_chips + _card.ability.extra.base  + _card.ability.extra.perma_xchips
             return true
         end
 
@@ -64,7 +70,8 @@ SMODS.Joker {
             return {
                 chips = card.ability.extra.chips,
                 mult = card.ability.extra.mult,
-                xmult = card.ability.extra.xmult
+                x_mult = card.ability.extra.x_mult,
+                x_chips = card.ability.extra.x_chips
             }
         end
     end

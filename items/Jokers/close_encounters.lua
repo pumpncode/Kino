@@ -36,7 +36,7 @@ SMODS.Joker {
                 card.ability.extra.cards_abducted and #card.ability.extra.cards_abducted or 0,
                 card.ability.extra.num_cards_abducted_non,
                 card.ability.extra.a_chips,
-                #Kino.abduction.cards * card.ability.extra.a_chips
+                Kino.abduction and (#Kino.abduction.cards * card.ability.extra.a_chips) or 0
             }
         }
     end,

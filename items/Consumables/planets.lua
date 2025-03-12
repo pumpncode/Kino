@@ -117,6 +117,9 @@ SMODS.Consumable {
             _hand = pseudorandom_element(_hands, pseudoseed("arrakis"))
         end
 
+        card_eval_status_text(card, 'extra', nil, nil, nil,
+        { message = localize('k_arrakis'),  colour = G.C.BLACK })
+
         upgrade_hand(card, _hand, 0, 0, card.ability.extra.x_chips, card.ability.extra.x_mult)
         update_hand_text(
 			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
