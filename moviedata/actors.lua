@@ -1378,6 +1378,7 @@ return {
     acting = {
       "941",
       "197",
+      "2675",
     },
     directing = {
       "197",
@@ -1770,6 +1771,7 @@ return {
     acting = {
       "146015",
       "2493",
+      "25468",
     },
     directing = {
     },
@@ -2041,6 +2043,7 @@ return {
     popularity = 75.35,
     acting = {
       "52451",
+      "284052",
     },
     directing = {
     },
@@ -3214,6 +3217,7 @@ return {
     acting = {
       "1366",
       "283995",
+      "447365",
     },
     directing = {
     },
@@ -3673,6 +3677,7 @@ return {
     popularity = 35.569,
     acting = {
       "578",
+      "927",
     },
     directing = {
       "578",
@@ -4329,6 +4334,8 @@ return {
     popularity = 20.725,
     acting = {
       "212778",
+      "568124",
+      "593643",
     },
     directing = {
     },
@@ -4360,6 +4367,7 @@ return {
     acting = {
       "212778",
       "1124",
+      "747188",
     },
     directing = {
     },
@@ -4383,6 +4391,7 @@ return {
     popularity = 27.455,
     acting = {
       "212778",
+      "41513",
     },
     directing = {
     },
@@ -4497,6 +4506,7 @@ return {
     popularity = 24.391,
     acting = {
       "1885",
+      "7520",
     },
     directing = {
     },
@@ -7267,6 +7277,7 @@ return {
     popularity = 13.595,
     acting = {
       "592831",
+      "747188",
     },
     directing = {
     },
@@ -7431,6 +7442,7 @@ return {
     acting = {
       "11013",
       "10673",
+      "2164",
     },
     directing = {
     },
@@ -7603,6 +7615,7 @@ return {
     },
     directing = {
       "14900",
+      "11639",
     },
   },
   ID_7908 = {
@@ -7613,6 +7626,7 @@ return {
       "14900",
     },
     directing = {
+      "11639",
     },
   },
   ID_64181 = {
@@ -7681,6 +7695,7 @@ return {
     popularity = 17.727,
     acting = {
       "14900",
+      "671",
     },
     directing = {
     },
@@ -9540,6 +9555,7 @@ return {
     },
     directing = {
       "771",
+      "671",
     },
   },
   ID_31 = {
@@ -9554,6 +9570,7 @@ return {
       "5255",
       "920",
       "568",
+      "747188",
     },
     directing = {
     },
@@ -10240,6 +10257,7 @@ return {
     acting = {
       "550",
       "1724",
+      "747188",
     },
     directing = {
     },
@@ -10767,6 +10785,7 @@ return {
     popularity = 17.136,
     acting = {
       "210577",
+      "41513",
     },
     directing = {
     },
@@ -11148,6 +11167,7 @@ return {
     popularity = 8.813,
     acting = {
       "20048",
+      "41513",
     },
     directing = {
     },
@@ -11489,6 +11509,7 @@ return {
     popularity = 33.419,
     acting = {
       "20048",
+      "27022",
     },
     directing = {
     },
@@ -11519,6 +11540,7 @@ return {
     popularity = 29.55,
     acting = {
       "318846",
+      "747188",
     },
     directing = {
     },
@@ -11645,6 +11667,7 @@ return {
       "318846",
       "283995",
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -11956,6 +11979,7 @@ return {
     popularity = 78.701,
     acting = {
       "318846",
+      "747188",
     },
     directing = {
     },
@@ -11977,6 +12001,8 @@ return {
     acting = {
       "1091",
       "283995",
+      "2164",
+      "6978",
     },
     directing = {
     },
@@ -11990,6 +12016,7 @@ return {
       "787",
       "762504",
       "11352",
+      "8337",
     },
     directing = {
     },
@@ -12112,11 +12139,15 @@ return {
       "1091",
       "948",
       "9663",
+      "8337",
+      "6978",
     },
     directing = {
       "1091",
       "948",
       "9663",
+      "8337",
+      "6978",
     },
   },
   ID_1109 = {
@@ -12198,6 +12229,7 @@ return {
     acting = {
       "106",
       "9016",
+      "927",
     },
     directing = {
     },
@@ -12494,6 +12526,7 @@ return {
     popularity = 61.611,
     acting = {
       "787",
+      "287947",
     },
     directing = {
     },
@@ -13189,6 +13222,7 @@ return {
     acting = {
       "419430",
       "532639",
+      "787699",
     },
     directing = {
     },
@@ -16304,6 +16338,10 @@ return {
       "75",
       "85",
       "609",
+      "927",
+      "2164",
+      "602",
+      "41513",
     },
     directing = {
     },
@@ -16772,6 +16810,7 @@ return {
     acting = {
       "218",
       "280",
+      "10823",
     },
     directing = {
     },
@@ -17841,6 +17880,7 @@ return {
       "19995",
       "283995",
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -17861,6 +17901,7 @@ return {
     popularity = 25.454,
     acting = {
       "19995",
+      "493529",
     },
     directing = {
     },
@@ -19761,6 +19802,7 @@ return {
     popularity = 7.234,
     acting = {
       "951",
+      "747188",
     },
     directing = {
     },
@@ -21040,6 +21082,7 @@ return {
     popularity = 42.391,
     acting = {
       "1949",
+      "566525",
     },
     directing = {
     },
@@ -21554,6 +21597,8 @@ return {
     acting = {
       "4922",
       "152603",
+      "747188",
+      "284052",
     },
     directing = {
     },
@@ -22992,6 +23037,7 @@ return {
       "283995",
       "1724",
       "118340",
+      "284052",
     },
     directing = {
     },
@@ -23057,6 +23103,7 @@ return {
     popularity = 59.777,
     acting = {
       "2048",
+      "602",
     },
     directing = {
     },
@@ -23067,6 +23114,7 @@ return {
     popularity = 21.032,
     acting = {
       "2048",
+      "568124",
     },
     directing = {
     },
@@ -23309,6 +23357,7 @@ return {
       "10386",
       "283995",
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -23667,6 +23716,7 @@ return {
     acting = {
       "10681",
       "920",
+      "354912",
     },
     directing = {
     },
@@ -24215,6 +24265,7 @@ return {
     acting = {
       "644",
       "186",
+      "566525",
     },
     directing = {
     },
@@ -25001,6 +25052,7 @@ return {
     popularity = 16.788,
     acting = {
       "85",
+      "27022",
     },
     directing = {
     },
@@ -25700,6 +25752,8 @@ return {
     acting = {
       "329",
       "283995",
+      "747188",
+      "602",
     },
     directing = {
     },
@@ -26449,6 +26503,7 @@ return {
     acting = {
       "640",
       "9802",
+      "4923",
     },
     directing = {
     },
@@ -28432,6 +28487,7 @@ return {
     popularity = 18.138,
     acting = {
       "155",
+      "15691",
     },
     directing = {
     },
@@ -29245,6 +29301,7 @@ return {
     popularity = 232.49,
     acting = {
       "157336",
+      "787699",
     },
     directing = {
     },
@@ -30308,6 +30365,7 @@ return {
       "1226578",
       "1250",
       "9802",
+      "27022",
     },
     directing = {
     },
@@ -30799,6 +30857,7 @@ return {
     popularity = 24.66,
     acting = {
       "4232",
+      "747188",
     },
     directing = {
     },
@@ -31404,6 +31463,7 @@ return {
     acting = {
       "348",
       "152603",
+      "671",
     },
     directing = {
     },
@@ -31849,6 +31909,7 @@ return {
     popularity = 14.165,
     acting = {
       "1262",
+      "705861",
     },
     directing = {
     },
@@ -32052,6 +32113,8 @@ return {
       "10201",
       "283995",
       "118340",
+      "493529",
+      "447365",
     },
     directing = {
     },
@@ -32537,6 +32600,7 @@ return {
     popularity = 42.675,
     acting = {
       "426063",
+      "593643",
     },
     directing = {
     },
@@ -32557,6 +32621,7 @@ return {
     popularity = 42.778,
     acting = {
       "426063",
+      "747188",
     },
     directing = {
     },
@@ -33304,6 +33369,7 @@ return {
     directing = {
       "10895",
       "10340",
+      "756",
     },
   },
   ID_11426 = {
@@ -33315,6 +33381,7 @@ return {
     directing = {
       "10895",
       "408",
+      "756",
     },
   },
   ID_11432 = {
@@ -33325,6 +33392,7 @@ return {
     },
     directing = {
       "10895",
+      "756",
     },
   },
   ID_11434 = {
@@ -33337,6 +33405,7 @@ return {
       "10895",
       "10340",
       "408",
+      "756",
     },
   },
   ID_226599 = {
@@ -33347,6 +33416,7 @@ return {
     },
     directing = {
       "10895",
+      "756",
     },
   },
   ID_74565 = {
@@ -33367,6 +33437,7 @@ return {
     },
     directing = {
       "10895",
+      "756",
     },
   },
   ID_2382044 = {
@@ -34192,6 +34263,7 @@ return {
     popularity = 16.283,
     acting = {
       "161",
+      "299",
     },
     directing = {
     },
@@ -34774,6 +34846,7 @@ return {
     popularity = 17.766,
     acting = {
       "152603",
+      "747188",
     },
     directing = {
     },
@@ -34984,6 +35057,7 @@ return {
     popularity = 12.255,
     acting = {
       "4348",
+      "406759",
     },
     directing = {
     },
@@ -35064,6 +35138,7 @@ return {
     popularity = 23.599,
     acting = {
       "4348",
+      "747188",
     },
     directing = {
     },
@@ -36418,6 +36493,7 @@ return {
     popularity = 142.098,
     acting = {
       "450465",
+      "593643",
     },
     directing = {
     },
@@ -36471,6 +36547,7 @@ return {
     },
     directing = {
       "450465",
+      "2675",
     },
   },
   ID_2048372 = {
@@ -37221,6 +37298,7 @@ return {
     popularity = 57.152,
     acting = {
       "10195",
+      "284052",
     },
     directing = {
     },
@@ -37571,6 +37649,7 @@ return {
     popularity = 50.388,
     acting = {
       "1824",
+      "705861",
     },
     directing = {
     },
@@ -38393,6 +38472,7 @@ return {
       "283995",
       "60308",
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -38404,6 +38484,7 @@ return {
     acting = {
       "283995",
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -38415,6 +38496,7 @@ return {
     acting = {
       "283995",
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -38590,6 +38672,8 @@ return {
     acting = {
       "283995",
       "118340",
+      "447365",
+      "287947",
     },
     directing = {
     },
@@ -38662,6 +38746,7 @@ return {
     acting = {
       "283995",
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -38682,6 +38767,7 @@ return {
     popularity = 32.587,
     acting = {
       "283995",
+      "566525",
     },
     directing = {
     },
@@ -38712,10 +38798,12 @@ return {
     popularity = 13.634,
     acting = {
       "118340",
+      "447365",
     },
     directing = {
       "283995",
       "118340",
+      "447365",
     },
   },
   ID_21007 = {
@@ -39320,6 +39408,7 @@ return {
     popularity = 80.552,
     acting = {
       "74",
+      "7520",
     },
     directing = {
     },
@@ -39880,6 +39969,7 @@ return {
     popularity = 15.376,
     acting = {
       "1724",
+      "566525",
     },
     directing = {
     },
@@ -41396,6 +41486,7 @@ return {
     popularity = 10.64,
     acting = {
       "920",
+      "354912",
     },
     directing = {
     },
@@ -41466,6 +41557,7 @@ return {
     popularity = 10.599,
     acting = {
       "920",
+      "2164",
     },
     directing = {
     },
@@ -42248,6 +42340,7 @@ return {
     popularity = 42.877,
     acting = {
       "118340",
+      "447365",
     },
     directing = {
     },
@@ -42700,6 +42793,7 @@ return {
     },
     directing = {
       "408",
+      "756",
     },
   },
   ID_67373 = {
@@ -42748,6 +42842,7 @@ return {
     popularity = 40.758,
     acting = {
       "310307",
+      "447365",
     },
     directing = {
     },
@@ -43078,6 +43173,8 @@ return {
     popularity = 12.029,
     acting = {
       "9016",
+      "566525",
+      "447365",
     },
     directing = {
     },
@@ -44371,6 +44468,973 @@ return {
     },
     directing = {
       "8854",
+    },
+  },
+  ID_11428 = {
+    name = "Paul Satterfield",
+    gender = 2,
+    popularity = 0.025,
+    acting = {
+    },
+    directing = {
+      "756",
+    },
+  },
+  ID_5691 = {
+    name = "Samuel Armstrong",
+    gender = 2,
+    popularity = 0.089,
+    acting = {
+    },
+    directing = {
+      "756",
+    },
+  },
+  ID_11430 = {
+    name = "Jim Handley",
+    gender = 2,
+    popularity = 0.003,
+    acting = {
+    },
+    directing = {
+      "756",
+    },
+  },
+  ID_5690 = {
+    name = "James Algar",
+    gender = 2,
+    popularity = 0.168,
+    acting = {
+    },
+    directing = {
+      "756",
+    },
+  },
+  ID_1094239 = {
+    name = "Ford Beebe Jr.",
+    gender = 2,
+    popularity = 0.034,
+    acting = {
+    },
+    directing = {
+      "756",
+    },
+  },
+  ID_15389 = {
+    name = "Louis Malle",
+    gender = 2,
+    popularity = 0.188,
+    acting = {
+    },
+    directing = {
+      "25468",
+    },
+  },
+  ID_2000 = {
+    name = "Lewis Milestone",
+    gender = 2,
+    popularity = 0.443,
+    acting = {
+    },
+    directing = {
+      "299",
+    },
+  },
+  ID_10980 = {
+    name = "Daniel Radcliffe",
+    gender = 2,
+    popularity = 2.206,
+    acting = {
+      "671",
+    },
+    directing = {
+    },
+  },
+  ID_10989 = {
+    name = "Rupert Grint",
+    gender = 2,
+    popularity = 1.783,
+    acting = {
+      "671",
+    },
+    directing = {
+    },
+  },
+  ID_10990 = {
+    name = "Emma Watson",
+    gender = 1,
+    popularity = 4.508,
+    acting = {
+      "671",
+    },
+    directing = {
+    },
+  },
+  ID_19303 = {
+    name = "Kevin Smith",
+    gender = 2,
+    popularity = 0.952,
+    acting = {
+    },
+    directing = {
+      "2292",
+    },
+  },
+  ID_3291 = {
+    name = "Hugh Grant",
+    gender = 2,
+    popularity = 1.177,
+    acting = {
+      "787699",
+      "493529",
+    },
+    directing = {
+    },
+  },
+  ID_10730 = {
+    name = "Rowan Atkinson",
+    gender = 2,
+    popularity = 1.651,
+    acting = {
+      "787699",
+    },
+    directing = {
+    },
+  },
+  ID_26209 = {
+    name = "Matt Lucas",
+    gender = 2,
+    popularity = 1.075,
+    acting = {
+      "787699",
+    },
+    directing = {
+    },
+  },
+  ID_101666 = {
+    name = "Paul King",
+    gender = 2,
+    popularity = 0.11,
+    acting = {
+    },
+    directing = {
+      "787699",
+    },
+  },
+  ID_66987 = {
+    name = "Fritz Kiersch",
+    gender = 2,
+    popularity = 0.093,
+    acting = {
+    },
+    directing = {
+      "10823",
+    },
+  },
+  ID_783 = {
+    name = "Jonathan Banks",
+    gender = 2,
+    popularity = 1.411,
+    acting = {
+      "927",
+    },
+    directing = {
+    },
+  },
+  ID_114674 = {
+    name = "Glynn Turman",
+    gender = 2,
+    popularity = 1.003,
+    acting = {
+      "927",
+    },
+    directing = {
+    },
+  },
+  ID_4600 = {
+    name = "Joe Dante",
+    gender = 2,
+    popularity = 0.485,
+    acting = {
+    },
+    directing = {
+      "927",
+    },
+  },
+  ID_449 = {
+    name = "Jay Baruchel",
+    gender = 2,
+    popularity = 1.091,
+    acting = {
+      "27022",
+    },
+    directing = {
+    },
+  },
+  ID_20374 = {
+    name = "Teresa Palmer",
+    gender = 1,
+    popularity = 1.102,
+    acting = {
+      "27022",
+    },
+    directing = {
+    },
+  },
+  ID_28782 = {
+    name = "Monica Bellucci",
+    gender = 1,
+    popularity = 2.417,
+    acting = {
+      "27022",
+    },
+    directing = {
+    },
+  },
+  ID_6972 = {
+    name = "Ian McShane",
+    gender = 2,
+    popularity = 1.986,
+    acting = {
+      "27022",
+    },
+    directing = {
+    },
+  },
+  ID_12962 = {
+    name = "Jon Turteltaub",
+    gender = 2,
+    popularity = 0.379,
+    acting = {
+    },
+    directing = {
+      "27022",
+    },
+  },
+  ID_16940 = {
+    name = "Jeremy Irons",
+    gender = 2,
+    popularity = 1.45,
+    acting = {
+      "11849",
+    },
+    directing = {
+    },
+  },
+  ID_61921 = {
+    name = "Courtney Solomon",
+    gender = 2,
+    popularity = 0.079,
+    acting = {
+    },
+    directing = {
+      "11849",
+    },
+  },
+  ID_62064 = {
+    name = "Chris Pine",
+    gender = 2,
+    popularity = 1.337,
+    acting = {
+      "493529",
+    },
+    directing = {
+    },
+  },
+  ID_1236679 = {
+    name = "Jonathan Goldstein",
+    gender = 2,
+    popularity = 0.392,
+    acting = {
+    },
+    directing = {
+      "493529",
+    },
+  },
+  ID_52935 = {
+    name = "John Francis Daley",
+    gender = 2,
+    popularity = 0.863,
+    acting = {
+    },
+    directing = {
+      "493529",
+    },
+  },
+  ID_76595 = {
+    name = "Byron Howard",
+    gender = 2,
+    popularity = 0.383,
+    acting = {
+    },
+    directing = {
+      "568124",
+    },
+  },
+  ID_1318201 = {
+    name = "Jared Bush",
+    gender = 2,
+    popularity = 0.136,
+    acting = {
+    },
+    directing = {
+      "568124",
+    },
+  },
+  ID_258 = {
+    name = "Gael García Bernal",
+    gender = 2,
+    popularity = 1.306,
+    acting = {
+      "354912",
+    },
+    directing = {
+    },
+  },
+  ID_4589 = {
+    name = "Benjamin Bratt",
+    gender = 2,
+    popularity = 1.24,
+    acting = {
+      "354912",
+      "284052",
+    },
+    directing = {
+    },
+  },
+  ID_10402 = {
+    name = "Alanna Ubach",
+    gender = 1,
+    popularity = 1.131,
+    acting = {
+      "354912",
+    },
+    directing = {
+    },
+  },
+  ID_587 = {
+    name = "Edward James Olmos",
+    gender = 2,
+    popularity = 1.111,
+    acting = {
+      "354912",
+    },
+    directing = {
+    },
+  },
+  ID_8 = {
+    name = "Lee Unkrich",
+    gender = 2,
+    popularity = 0.301,
+    acting = {
+    },
+    directing = {
+      "354912",
+    },
+  },
+  ID_11150 = {
+    name = "Gina Gershon",
+    gender = 1,
+    popularity = 1.908,
+    acting = {
+      "7520",
+    },
+    directing = {
+    },
+  },
+  ID_21370 = {
+    name = "Roger Donaldson",
+    gender = 2,
+    popularity = 0.263,
+    acting = {
+    },
+    directing = {
+      "7520",
+    },
+  },
+  ID_1625558 = {
+    name = "Awkwafina",
+    gender = 1,
+    popularity = 1.322,
+    acting = {
+      "566525",
+    },
+    directing = {
+    },
+  },
+  ID_60073 = {
+    name = "Brie Larson",
+    gender = 1,
+    popularity = 1.626,
+    acting = {
+      "566525",
+    },
+    directing = {
+    },
+  },
+  ID_1144604 = {
+    name = "Destin Daniel Cretton",
+    gender = 2,
+    popularity = 0.141,
+    acting = {
+    },
+    directing = {
+      "566525",
+    },
+  },
+  ID_15175 = {
+    name = "William Friedkin",
+    gender = 2,
+    popularity = 0.277,
+    acting = {
+    },
+    directing = {
+      "9552",
+    },
+  },
+  ID_5469 = {
+    name = "Ralph Fiennes",
+    gender = 2,
+    popularity = 2.115,
+    acting = {
+      "593643",
+    },
+    directing = {
+    },
+  },
+  ID_17342 = {
+    name = "Paul Adelstein",
+    gender = 2,
+    popularity = 1.021,
+    acting = {
+      "593643",
+    },
+    directing = {
+    },
+  },
+  ID_57199 = {
+    name = "Mark Mylod",
+    gender = 2,
+    popularity = 0.23,
+    acting = {
+    },
+    directing = {
+      "593643",
+    },
+  },
+  ID_93491 = {
+    name = "Will Poulter",
+    gender = 2,
+    popularity = 1.003,
+    acting = {
+      "447365",
+    },
+    directing = {
+    },
+  },
+  ID_20750 = {
+    name = "Judy Greer",
+    gender = 1,
+    popularity = 1.513,
+    acting = {
+      "447365",
+    },
+    directing = {
+    },
+  },
+  ID_15762 = {
+    name = "Tara Strong",
+    gender = 1,
+    popularity = 1.916,
+    acting = {
+      "447365",
+    },
+    directing = {
+    },
+  },
+  ID_17419 = {
+    name = "Bryan Cranston",
+    gender = 2,
+    popularity = 1.99,
+    acting = {
+      "747188",
+    },
+    directing = {
+    },
+  },
+  ID_3490 = {
+    name = "Adrien Brody",
+    gender = 2,
+    popularity = 2.885,
+    acting = {
+      "747188",
+    },
+    directing = {
+    },
+  },
+  ID_2876 = {
+    name = "Matt Dillon",
+    gender = 2,
+    popularity = 1.159,
+    acting = {
+      "747188",
+    },
+    directing = {
+    },
+  },
+  ID_26473 = {
+    name = "Fisher Stevens",
+    gender = 2,
+    popularity = 1.174,
+    acting = {
+      "747188",
+    },
+    directing = {
+    },
+  },
+  ID_12931 = {
+    name = "Rita Wilson",
+    gender = 1,
+    popularity = 1.193,
+    acting = {
+      "747188",
+    },
+    directing = {
+    },
+  },
+  ID_3455931 = {
+    name = "Truman Hanks",
+    gender = 2,
+    popularity = 2.81,
+    acting = {
+      "747188",
+    },
+    directing = {
+    },
+  },
+  ID_5655 = {
+    name = "Wes Anderson",
+    gender = 2,
+    popularity = 0.74,
+    acting = {
+    },
+    directing = {
+      "747188",
+    },
+  },
+  ID_73421 = {
+    name = "Joaquin Phoenix",
+    gender = 2,
+    popularity = 1.835,
+    acting = {
+      "2675",
+    },
+    directing = {
+    },
+  },
+  ID_28042 = {
+    name = "Rory Culkin",
+    gender = 2,
+    popularity = 1.105,
+    acting = {
+      "2675",
+    },
+    directing = {
+    },
+  },
+  ID_17140 = {
+    name = "Abigail Breslin",
+    gender = 1,
+    popularity = 1.325,
+    acting = {
+      "2675",
+    },
+    directing = {
+    },
+  },
+  ID_41229 = {
+    name = "Meg Foster",
+    gender = 1,
+    popularity = 1.259,
+    acting = {
+      "8337",
+    },
+    directing = {
+    },
+  },
+  ID_52622 = {
+    name = "John F. Goff",
+    gender = 2,
+    popularity = 5.989,
+    acting = {
+      "8337",
+    },
+    directing = {
+    },
+  },
+  ID_39125 = {
+    name = "Will Sasso",
+    gender = 2,
+    popularity = 1.153,
+    acting = {
+      "15691",
+    },
+    directing = {
+    },
+  },
+  ID_61357 = {
+    name = "Geoffrey Sax",
+    gender = 2,
+    popularity = 0.181,
+    acting = {
+    },
+    directing = {
+      "15691",
+    },
+  },
+  ID_13973 = {
+    name = "Christian Nyby",
+    gender = 2,
+    popularity = 0.219,
+    acting = {
+    },
+    directing = {
+      "10785",
+    },
+  },
+  ID_6046 = {
+    name = "Roland Emmerich",
+    gender = 2,
+    popularity = 0.483,
+    acting = {
+    },
+    directing = {
+      "2164",
+      "406759",
+      "602",
+    },
+  },
+  ID_4587 = {
+    name = "Halle Berry",
+    gender = 1,
+    popularity = 3.32,
+    acting = {
+      "406759",
+    },
+    directing = {
+    },
+  },
+  ID_454 = {
+    name = "Michael Peña",
+    gender = 2,
+    popularity = 1.364,
+    acting = {
+      "406759",
+    },
+    directing = {
+    },
+  },
+  ID_8984 = {
+    name = "Bill Pullman",
+    gender = 2,
+    popularity = 1.279,
+    acting = {
+      "602",
+    },
+    directing = {
+    },
+  },
+  ID_1581 = {
+    name = "Mary McDonnell",
+    gender = 1,
+    popularity = 1.037,
+    acting = {
+      "602",
+    },
+    directing = {
+    },
+  },
+  ID_52404 = {
+    name = "Mae Whitman",
+    gender = 1,
+    popularity = 1.948,
+    acting = {
+      "602",
+    },
+    directing = {
+    },
+  },
+  ID_19665 = {
+    name = "John Boorman",
+    gender = 2,
+    popularity = 0.278,
+    acting = {
+    },
+    directing = {
+      "4923",
+    },
+  },
+  ID_1215 = {
+    name = "Raja Gosnell",
+    gender = 2,
+    popularity = 0.256,
+    acting = {
+    },
+    directing = {
+      "41513",
+    },
+  },
+  ID_69899 = {
+    name = "Zachary Levi",
+    gender = 2,
+    popularity = 1.385,
+    acting = {
+      "287947",
+    },
+    directing = {
+    },
+  },
+  ID_2983 = {
+    name = "Mark Strong",
+    gender = 2,
+    popularity = 1.78,
+    acting = {
+      "287947",
+    },
+    directing = {
+    },
+  },
+  ID_22122 = {
+    name = "Meagan Good",
+    gender = 1,
+    popularity = 1.051,
+    acting = {
+      "287947",
+    },
+    directing = {
+    },
+  },
+  ID_60279 = {
+    name = "Fred Tatasciore",
+    gender = 2,
+    popularity = 1.309,
+    acting = {
+      "287947",
+    },
+    directing = {
+    },
+  },
+  ID_1302082 = {
+    name = "David F. Sandberg",
+    gender = 2,
+    popularity = 0.152,
+    acting = {
+    },
+    directing = {
+      "287947",
+    },
+  },
+  ID_71580 = {
+    name = "Benedict Cumberbatch",
+    gender = 2,
+    popularity = 2.315,
+    acting = {
+      "284052",
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_5294 = {
+    name = "Chiwetel Ejiofor",
+    gender = 2,
+    popularity = 1.277,
+    acting = {
+      "284052",
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_53714 = {
+    name = "Rachel McAdams",
+    gender = 1,
+    popularity = 1.189,
+    acting = {
+      "284052",
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_78110 = {
+    name = "Scott Adkins",
+    gender = 2,
+    popularity = 1.973,
+    acting = {
+      "284052",
+    },
+    directing = {
+    },
+  },
+  ID_55499 = {
+    name = "Scott Derrickson",
+    gender = 2,
+    popularity = 0.808,
+    acting = {
+    },
+    directing = {
+      "284052",
+    },
+  },
+  ID_550843 = {
+    name = "Elizabeth Olsen",
+    gender = 1,
+    popularity = 2.483,
+    acting = {
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_39459 = {
+    name = "Hayley Atwell",
+    gender = 1,
+    popularity = 1.627,
+    acting = {
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_17697 = {
+    name = "John Krasinski",
+    gender = 2,
+    popularity = 1.541,
+    acting = {
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_2387 = {
+    name = "Patrick Stewart",
+    gender = 2,
+    popularity = 1.37,
+    acting = {
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_6885 = {
+    name = "Charlize Theron",
+    gender = 1,
+    popularity = 2.206,
+    acting = {
+      "453395",
+    },
+    directing = {
+    },
+  },
+  ID_7623 = {
+    name = "Sam Raimi",
+    gender = 2,
+    popularity = 0.852,
+    acting = {
+    },
+    directing = {
+      "453395",
+    },
+  },
+  ID_20904 = {
+    name = "James Hong",
+    gender = 2,
+    popularity = 1.374,
+    acting = {
+      "6978",
+    },
+    directing = {
+    },
+  },
+  ID_16580 = {
+    name = "George Cheung",
+    gender = 2,
+    popularity = 1.0,
+    acting = {
+      "6978",
+    },
+    directing = {
+    },
+  },
+  ID_542870 = {
+    name = "Olivia Holt",
+    gender = 1,
+    popularity = 1.037,
+    acting = {
+      "1302916",
+    },
+    directing = {
+    },
+  },
+  ID_22123 = {
+    name = "Jordana Brewster",
+    gender = 1,
+    popularity = 1.324,
+    acting = {
+      "1302916",
+    },
+    directing = {
+    },
+  },
+  ID_1448874 = {
+    name = "Josh Ruben",
+    gender = 2,
+    popularity = 0.437,
+    acting = {
+    },
+    directing = {
+      "1302916",
+    },
+  },
+  ID_3087 = {
+    name = "Robert Duvall",
+    gender = 2,
+    popularity = 1.515,
+    acting = {
+      "705861",
+    },
+    directing = {
+    },
+  },
+  ID_1271681 = {
+    name = "Sunny Sandler",
+    gender = 1,
+    popularity = 1.666,
+    acting = {
+      "705861",
+    },
+    directing = {
+    },
+  },
+  ID_550121 = {
+    name = "Jeremiah Zagar",
+    gender = 2,
+    popularity = 0.163,
+    acting = {
+    },
+    directing = {
+      "705861",
+    },
+  },
+  ID_80247 = {
+    name = "Stephen Chiodo",
+    gender = 2,
+    popularity = 0.173,
+    acting = {
+    },
+    directing = {
+      "16296",
     },
   },
 }

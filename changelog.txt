@@ -6,6 +6,28 @@ New Jokers:
 - Nope
 - Close Encounters of the Third Kind
 - Junior
+- Edward Scissorhands-
+- Guardians of the Galaxy Vol. 2
+- Guardians of the Galaxy Vol. 3
+- Jurassic Park
+- Catch Me If You Can
+- Lady and the Tramp
+- Insidious
+- Smile
+- Nosferatu (2024)
+- Child's Play
+- Snow White
+- Cronos
+- Le Voyage Dans La Lune
+- The Sound of Music
+- The Evil Dead (2013)
+- The Wolf Man (1941)
+- West Side Story (1961)
+- Friday the 13th
+- Signs
+- They Live
+- Doctor Who: The Movie
+- Stargate
 
 
 Bug Fixes:

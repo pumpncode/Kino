@@ -97,7 +97,10 @@ Kino.unabduct_cards = function(card)
 
     local _table = card.ability.extra.cards_abducted
 
-    for i, abductee in ipairs(_table) do
+
+    -- for i, abductee in ipairs(_table) do
+    for i = #_table,1,-1 do
+        local abductee = _table[i]
         abductee.card.area:remove_card(abductee.card)
         abductee.card.abducted = false
 
@@ -120,7 +123,6 @@ Kino.unabduct_cards = function(card)
 end
 
 Kino.abduction_end = function()
-
     SMODS.calculate_context({abduction_ending = true})
     
 end
