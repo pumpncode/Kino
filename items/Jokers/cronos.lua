@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 0,
+            stacked_chips = 0,
             a_chips = 5
         }
     },
@@ -33,7 +33,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips,
+                card.ability.extra.stacked_chips,
                 card.ability.extra.a_chips
             }
         }
@@ -55,7 +55,7 @@ SMODS.Joker {
                 }
             end
 
-            card.ability.extra.chips = card.ability.extra.chips + (rank - _halfrank) *card.ability.extra.a_chips
+            card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + (rank - _halfrank) *card.ability.extra.a_chips
 
             local _rank_suffix = tostring(_halfrank)
             G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, func = function()
@@ -69,7 +69,7 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips
+                chips = card.ability.extra.stacked_chips
             }
         end
     end

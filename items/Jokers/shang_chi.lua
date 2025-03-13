@@ -4,8 +4,8 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            cur_spell = 0,
-            inc_spell = 1,
+            cur_spell_non = 0,
+            inc_spell_non = 1,
             reset = 10,
         }
     },
@@ -52,12 +52,12 @@ SMODS.Joker {
         }
 
         if context.joker_main then
-            card.ability.extra.cur_spell = card.ability.extra.cur_spell + card.ability.extra.inc_spell
-            if card.ability.extra.cur_spell > 10 then
-                card.ability.extra.cur_spell = 1
+            card.ability.extra.cur_spell_non = card.ability.extra.cur_spell_non + card.ability.extra.inc_spell_non
+            if card.ability.extra.cur_spell_non > 10 then
+                card.ability.extra.cur_spell_non = 1
             end
 
-            return cast_spell(_spell_list[card.ability.extra.cur_spell], pseudorandom_element({1, 2, 3, 4}, pseudoseed("shangchi")))
+            return cast_spell(_spell_list[card.ability.extra.cur_spell_non], pseudorandom_element({1, 2, 3, 4}, pseudoseed("shangchi")))
         end
     end
 }

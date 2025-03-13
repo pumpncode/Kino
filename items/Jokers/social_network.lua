@@ -46,12 +46,12 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- +5 chips for each face card in your deck
-        card.ability.extra.face_tally = 0
-        for k, v in pairs(G.playing_cards) do
-            if v:is_face() then card.ability.extra.face_tally = card.ability.extra.face_tally+1 end
-        end
 
         if context.joker_main then
+            card.ability.extra.face_tally = 0
+            for k, v in pairs(G.playing_cards) do
+                if v:is_face() then card.ability.extra.face_tally = card.ability.extra.face_tally+1 end
+            end
             return {
                 chips = card.ability.extra.face_tally * card.ability.extra.a_chips
             }

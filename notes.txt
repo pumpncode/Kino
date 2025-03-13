@@ -1,3 +1,53 @@
+Bug Fixes:
+- AI doesn't properly register upgrades
+- AVATAR crashes the game when a planet is used
+- Karate Kid crashes the game
+- Mars Attacks triggers on any consumeable use
+- Oceans 11 crashes in certain circumstances
+- Le Voyage has 0.5 as base chance
+- Nosferatu (2024) can't be targetted by Award
+
+Localization:
+- Get Out
+- D&D doesn't display properly
+- Gone Girl should use (Currently set up)
+- Angel Heart localization text
+- Iron Giant localization
+- Wall-e text is unclear
+
+
+Multiplier:
+- Big Short multiplies chances too
+- Breakfast Club needs rework
+- Clerks threshold also doubles
+- Dickie Roberts Child Star does not double
+- D&D:HaT has no text in dev branch
+- Ed Wood, blind req also multiplies
+- Ex Machina, stacked xmult also doubles
+- Exorcist, stacked xmult also doubles
+- Gentlemen prefer Blondes does not multiply properly
+- I, Robot's base mult also doubles
+- LETHAL WEAPON and its ilk all multiply stacks
+- Us stacks base xmult
+- Creature from the black lagoon does not upgrade
+- Ghost Rider base xmult
+- My dinner with andre base xmult
+- Gone Girl base xmult
+- goodfellas starts at $3
+- Mars Attacks doubles wrong
+- Longlegs doesn't work
+- Krazy House, negative scaling doesn't properly work
+- Only Lovers base Xmult
+- The Omen, sacrifices double too
+- Yes Man, base xmult
+- Dracula, base xmult
+- Iron Giant base xmult
+- 24 Hour Party People's interest threshold also doubles
+- Poltergeist doesn't multiply
+- Shopaholic, money also doubles, base xmult
+- Wall-E should gain double scrap
+
+
 Features to add:
 - Snack Bag (card area to keep confections in)
 - Quests (For Oppenheimer, Zodiac, Bucket List)

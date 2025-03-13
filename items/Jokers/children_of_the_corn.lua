@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 0,
+            stacked_chips = 0,
             a_chips = 5,
             will_trigger = false,
 
@@ -34,7 +34,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips,
+                card.ability.extra.stacked_chips,
                 card.ability.extra.a_chips,
                 card.ability.extra.will_trigger
             }
@@ -50,14 +50,14 @@ SMODS.Joker {
             end
             
             return {
-                chips = card.ability.extra.chips
+                chips = card.ability.extra.stacked_chips
             }
         end
 
         if context.destroy_card and card.ability.extra.will_trigger and context.cardarea == G.hand then
 
             if context.destroy_card:is_face() then
-                card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.a_chips
+                card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
                 return {remove = true}
             end
         end

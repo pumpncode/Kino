@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            x_mult = 1.00,
+            stacked_x_mult = 1.00,
             a_xmult = 0.05
         }
     },
@@ -33,7 +33,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.x_mult,
+                card.ability.extra.stacked_x_mult,
                 card.ability.extra.a_xmult
             }
         }
@@ -41,15 +41,15 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- If a sci-fi card upgrades, gain x0.05
         if context.upgrading_sci_fi_card and not context.blueprint then
-            card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.a_xmult
+            card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.a_xmult
             card_eval_status_text(card, 'extra', nil, nil, nil,
             { message = localize('k_upgrade_ex'), colour = G.C.MULT })
         end
 
         if context.joker_main then
             return {
-                Xmult_mod = card.ability.extra.x_mult,
-                message = localize{type='variable', key = 'a_xmult', vars = {card.ability.extra.x_mult}},
+                x_mult = card.ability.extra.stacked_x_mult,
+                message = localize{type='variable', key = 'a_xmult', vars = {card.ability.extra.stacked_x_mult}},
             }
         end
     end

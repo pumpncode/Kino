@@ -81,8 +81,7 @@ return {
                     "Each scored {C:hearts}Hearts{} ",
                     "gives {C:mult}+#2#{} Mult, then",
                     "doubles the Mult given",
-                    "(Resets after",
-                    "each hand)"
+                    "{C:inactive}(Resets after each hand)"
                 }
             },
             j_kino_anora = {
@@ -338,7 +337,7 @@ return {
                 text = {
                     "If your played hand is only a {C:attention}Queen{}",
                     "destroy it and upgrade every card",
-                    "in your deck with {C:mult}+1{} Mult",
+                    "in your deck with {C:mult}+#1#{} Mult",
                 }
             },
             j_kino_cronos = {
@@ -448,7 +447,7 @@ return {
                     "{C:inactive}(Currently: {C:purple}#1#{C:inactive} Stacks)"
                 }
             },
-            j_kino_dungeons_and_dragons_2 = {
+            j_kino_dungeons_and_dragons_4 = {
                 name = "Dungeons & Dragons: Honour Among Thieves",
                 text = {
                     "When you {C:purple,E:1}Cast a Spell", 
@@ -475,7 +474,8 @@ return {
                 name = "Elf",
                 text = {
                     "Retrigger all scored",
-                    "{C:attention}2{}'s & {C:attention}3{}'s"
+                    "{C:attention}2{}'s & {C:attention}3{}'s",
+                    "an additional {C:attention}#1# time(s){}"
                 }
             },
             j_kino_encanto = {
@@ -579,7 +579,7 @@ return {
                 name = "Get Out",
                 text = {
                     "When you play a single card,",
-                    "turn 3 random cards in hand",
+                    "turn {C:attention}#1# random cards{} in hand",
                     "into exact copies of it",
                     "Then destroy this joker"
                 }
@@ -728,8 +728,8 @@ return {
             j_kino_iron_giant = {
                 name = "The Iron Giant",
                 text = {
-                    "Each {C:attention} Sci-Fi Card{} gives", 
-                    "{X:mult,C:white} X#1# {},",
+                    "Each{C:attention} Sci-Fi Card{} held in hand", 
+                    "gives {X:mult,C:white}X#1#{} Mult,",
                     "increased by {X:mult,C:white} X#2# {}",
                     "for each time it's been upgraded"
                 }
@@ -875,8 +875,10 @@ return {
             j_kino_memento = {
                 name = "Memento",
                 text = {
-                    "Each scored card triggers twice",
-                    "When you make any action, flip all cards in your hand"
+                    "Each scored card triggers",
+                    "{C:attention}#1# additional time(s){}",
+                    "When you take any action", 
+                    "flip all cards in your hand"
                 }
             },
             j_kino_menu = {
@@ -920,7 +922,8 @@ return {
                 name = "Mr. & Mrs. Smith",
                 text = {
                     "When you play a {C:attention}Pair{},",
-                    "retrigger scored cards"
+                    "retrigger scored cards",
+                    "{C:attention}#1# additonal time(s){}"
                 }
             },
             j_kino_muppets_2 = {
@@ -1642,6 +1645,14 @@ return {
             },
             c_kino_award = {
                 name = "Award",
+                text = {
+                    "Give an award to a {C:attention}Movie Joker",
+                    "doubling it's stats",
+                    "{C:inactive}(Movie Jokers can only be awarded once)"
+                }
+            },
+            c_kino_award2 = {
+                name = "Award-DEV VERSION",
                 text = {
                     "Give an award to a {C:attention}Movie Joker",
                     "doubling it's stats",

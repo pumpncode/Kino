@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 0,
+            stacked_chips = 0,
             a_chips = 3
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips,
+                card.ability.extra.stacked_chips,
                 card.ability.extra.a_chips
             }
         }
@@ -43,14 +43,14 @@ SMODS.Joker {
         if context.after and not context.blueprint then
             for i = 1, #G.hand.cards do
                 if SMODS.has_enhancement(G.hand.cards[i], "m_steel") and not G.hand.cards[i].debuff then
-                    card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.a_chips
+                    card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
                 end
             end
         end
 
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips
+                chips = card.ability.extra.stacked_chips
             }
         end
     end

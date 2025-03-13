@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 0,
+            stacked_chips = 0,
             a_chips = 10
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips,
+                card.ability.extra.stacked_chips,
                 card.ability.extra.a_chips
             }
         }
@@ -40,7 +40,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- Gains 10 chips when you discard a spade
         if context.discard and not context.other_card.debuff and context.other_card:is_suit("Spades") then
-            card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.a_chips
+            card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
 
             return {
                 message = localize('k_upgrade_ex'),
@@ -51,13 +51,13 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips,
-                message = localize({ type = 'variable', key = 'a_chips', vars = { card.ability.extra.chips}})
+                chips = card.ability.extra.stacked_chips,
+                message = localize({ type = 'variable', key = 'a_chips', vars = { card.ability.extra.stacked_chips}})
             }
         end
 
         if context.end_of_round and not context.individual and not context.repetition and not context.blueprint then
-            card.ability.extra.chips = 0
+            card.ability.extra.stacked_chips = 0
         end
     end
 }

@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            mult = 0,
+            stacked_mult = 0,
             a_mult = 2,
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.mult,
+                card.ability.extra.stacked_mult,
                 card.ability.extra.a_mult
             }
         }
@@ -43,7 +43,7 @@ SMODS.Joker {
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
             for i, v in ipairs(G.jokers.cards) do
                 if is_genre(v, "Horror") then
-                    card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult
+                    card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult
                     card.ability.extra_value = card.ability.extra_value - card.ability.extra.a_mult
                     card:set_cost()
                 end
@@ -52,7 +52,7 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                mult = card.ability.extra.stacked_mult
             }
         end
     end

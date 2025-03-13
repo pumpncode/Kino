@@ -6,7 +6,7 @@ SMODS.Joker {
         extra = {
             a_mult = 1,
             total = 0,
-            mult = 0
+            stacked_mult = 0
         }
     },
     rarity = 2,
@@ -36,7 +36,7 @@ SMODS.Joker {
             vars = {
                 card.ability.extra.a_mult,
                 card.ability.extra.total,
-                card.ability.extra.mult
+                card.ability.extra.stacked_mult
             }
         }
     end,
@@ -51,12 +51,12 @@ SMODS.Joker {
 
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
 
-            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.total
+            card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.total
         end
 
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                mult = card.ability.extra.stacked_mult
             }
         end
     end

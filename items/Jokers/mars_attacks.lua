@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            additional_levels = 1
+            additional_levels = 2
         }
     },
     rarity = 2,
@@ -39,7 +39,7 @@ SMODS.Joker {
         -- When you select a blind, destroy every planet you have, then upgrade 4 of a kind for each planet destroyed.
         -- If Full House's level would go down to 0, LOSE THE GAME 
         if context.using_consumeable and not context.blueprint then
-            if context.consumeable.center == G.P_CENTERS.c_planet then
+            if context.consumeable.ability.set == "Planet" then
 
                 if G.GAME.hands["Full House"].level == 1 then
                     card:juice_up(0.8, 0.5)
@@ -55,7 +55,7 @@ SMODS.Joker {
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_mars_attacks'), colour = G.C.CHIPS })
 
-                level_up_hand(card, "Four of a Kind", nil, card.ability.extra.additional_levels)
+                level_up_hand(card, "Four of a Kind", nil, card.ability.extra.additional_levels - 1)
                 level_up_hand(card, "Full House", nil, -1)
                 
                      

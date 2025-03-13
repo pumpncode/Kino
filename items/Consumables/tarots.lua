@@ -177,6 +177,39 @@ if kino_config.actor_synergy then
     }
 end
 
+-- if kino_config.actor_synergy then
+--     SMODS.Consumable {
+--         key = "award2",
+--         set = "Tarot",
+--         order = 11,
+--         pos = {x = 4, y = 1},
+--         atlas = "kino_tarot",
+--         config = {
+--         },
+--         loc_vars = function(self, info_queue, card)
+--             return {
+--                 vars = {
+--                     self.config.max_highlighted
+--                 }
+--             }
+--         end,
+--         keep_on_use = function(self, card)
+--             return true
+--         end,
+--         can_use = function(self, card)
+--             return #G.jokers.highlighted == 1
+--                 and G.jokers.highlighted[1].config.center.kino_joker
+--         end,
+--         use = function(self, card, area, copier)
+--             if not G.jokers.highlighted[1].ability.kino_award then
+--                 SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], true)
+--             else
+--                 SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], false)
+--             end
+--         end
+--     }
+-- end
+
 SMODS.Consumable {
     key = "chef",
     set = "Tarot",

@@ -64,7 +64,7 @@ SMODS.Joker {
 
             card_eval_status_text(card, 'extra', nil, nil, nil,
             { message = localize('k_goodfellas_pay'),  colour = G.C.MONEY })
-            local money_lost = -3 + card.ability.extra.a_money *_my_pos
+            local money_lost = (-1 * card.ability.extra.a_money) + card.ability.extra.a_money *_my_pos
             ease_dollars(-money_lost)
 
             return {

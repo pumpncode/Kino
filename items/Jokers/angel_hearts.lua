@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            base_mult = 1,
+            starting_mult = 1,
             mult = 1
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.base_mult,
+                card.ability.extra.starting_mult,
                 card.ability.extra.mult
             }
         }
@@ -49,11 +49,7 @@ SMODS.Joker {
             end
         end
         if context.after and not context.repetition and not context.individual then
-            card.ability.extra.mult = card.ability.extra.base_mult
+            card.ability.extra.mult = card.ability.extra.starting_mult
         end
-
-        -- if context.end_of_round and not context.repetition and not context.individual then
-        --     card.ability.extra.mult = card.ability.extra.base_mult
-        -- end
     end
 }

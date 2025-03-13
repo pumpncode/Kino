@@ -5,8 +5,8 @@ SMODS.Joker {
     config = {
         extra = {
             is_turner = true,
-            evidence = 0,
-            mult = 0
+            evidence_non = 0,
+            stacked_mult = 0
         }
     },
     rarity = 2,
@@ -34,24 +34,24 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.is_turner,
-                card.ability.extra.evidence,
-                card.ability.extra.mult
+                card.ability.extra.evidence_non,
+                card.ability.extra.stacked_mult
             }
         }
     end,
     calculate = function(self, card, context)
         -- Alternates between Turner & Hooch after each hand played.
-        -- Turner: Turner, gather evidence. 1 evidence for each card played.
-        -- Hooch: Each card gives mult equal to evidence.
+        -- Turner: Turner, gather evidence_non. 1 evidence_non for each card played.
+        -- Hooch: Each card gives mult equal to evidence_non.
 
         if context.individual and context.cardarea == G.play then
             -- Turner
             if card.ability.extra.is_turner and not context.blueprint then
-                card.ability.extra.evidence = card.ability.extra.evidence + 1
+                card.ability.extra.evidence_non = card.ability.extra.evidence_non + 1
             -- Hooch
             else
                 return {
-                    mult = card.ability.extra.evidence
+                    mult = card.ability.extra.evidence_non
                 }
             end
             

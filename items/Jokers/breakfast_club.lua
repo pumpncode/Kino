@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            starting_amount = 13,
+            starting_amount_non = 13,
             mult = 0,
             a_mult = 1
         }
@@ -41,23 +41,23 @@ SMODS.Joker {
         end
         return {
             vars = {
-                card.ability.extra.starting_amount,
+                card.ability.extra.starting_amount_non,
                 card.ability.extra.mult,
                 card.ability.extra.a_mult,
-                suit_count * card.ability.extra.a_mult - card.ability.extra.starting_amount,
+                suit_count * card.ability.extra.a_mult - card.ability.extra.starting_amount_non,
             }
         }
     end,
     calculate = function(self, card, context)
         if G.STAGE == G.STAGES.RUN then
-        -- Hearts give +1 for each diamond in your deck above 13
+        -- Clubs give +1 for each Club in your deck above 13
             local suit_count = 0 
             for k, v in pairs(G.playing_cards) do
                 if v.config.card.suit == "Clubs" and v.config.center ~= G.P_CENTERS.m_stone then
                     suit_count = suit_count + 1
                 end
             end
-            card.ability.extra.mult = suit_count - card.ability.extra.starting_amount
+            card.ability.extra.mult = suit_count - card.ability.extra.starting_amount_non
         end
 
         if context.individual and context.cardarea == G.play then

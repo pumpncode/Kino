@@ -7,7 +7,6 @@ SMODS.Joker {
             chance = 10,
             total_chance = 1,
             a_chance = 1,
-            xmult = 3,
             destroy_cards = {}
         }
     },

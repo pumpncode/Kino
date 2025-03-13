@@ -242,9 +242,14 @@ function Card:kino_synergy(card)
         end
     end
 
+    local _count = 0
     for actor_id, frequency in pairs(card.ability.current_synergy_actors) do
-        if frequency >= 3 then
-            local _multiplier = card:set_multiplication_bonus(card, actor_id, Kino.actor_synergy[frequency - 2])
+        if frequency <= 2 then
+            card:set_multiplication_bonus(card, actor_id, Kino.actor_synergy[frequency], true)
+        end
+        if frequency >= 3 and _count <= 2 then
+            _count = _count + 1
+            local _multiplier = card:set_multiplication_bonus(card, actor_id, Kino.actor_synergy[frequency], true)
             if _multiplier then
                 card:juice_up(0.8, 0.5)
                 card_eval_status_text(card, 'extra', nil, nil, nil,
@@ -290,7 +295,7 @@ function Card:kino_synergy(card)
     end
 end
 
-function Card:set_multiplication_bonus(card, source, num)
+function Card:set_multiplication_bonus(card, source, num, is_actor)
 
     -- Keys that should be exempt:
     -- goal
@@ -321,6 +326,12 @@ function Card:set_multiplication_bonus(card, source, num)
     if _source and _num then
         if card.ability.multipliers[_source] == _num then
             return false
+        elseif card.ability.multipliers[_source] ~= nil and _num == 1 then
+            for index, item in ipairs(card.ability.multipliers) do
+                if card.ability.multipliers[_source] == item then
+                    table.remove(card.ability.multipliers, index)
+                end    
+            end
         end 
 
         _multipliers[_source] = _num        
@@ -341,11 +352,25 @@ function Card:set_multiplication_bonus(card, source, num)
             _cardextra[name] = _baseextra[name]
             for source, mult in pairs(_multipliers) do
                 _cardextra[name] = _cardextra[name] * mult
-                return true
+                
             end
         end
     end
+    return true
 end
+
+-- function Card:check_multiplication_validity()
+
+--     if not kino_config.actor_synergy  or not self.config.center.kino_joker
+--     or not self.ability.multipliers or #self.ability.multipliers < 1 then
+--         return false
+--     end
+
+--     for source, num in pairs(self.ability.multipliers) do
+    
+--     end
+
+-- end
 
 function check_variable_validity_for_mult(name)
 
@@ -354,16 +379,20 @@ function check_variable_validity_for_mult(name)
     end
 
     local _non_valid = {
+        "stacks",
         "goal",
         "chance",
         "chance_cur",
+        "reset",
+        "threshold",
     }
 
     local _non_valid_element = {
         {"base_", 5},
         {"stacked_", 8},
         {"time_", 4},
-        {"_non", 4}
+        {"_non", 4},
+        {"rank_", 5}
     }
 
     for i = 1, #_non_valid do
@@ -695,7 +724,7 @@ Kino.jump_scare_mult = 3
 Kino.goldleaf_chance = 3
 Kino.choco_chance = 2
 Kino.xl_chance = 1
-Kino.actor_synergy = {1.2, 1.4, 1.6, 1.8, 2}
+Kino.actor_synergy = {1, 1, 1.2, 1.4, 1.6, 1.8, 2}
 Kino.award_mult = 2
 
 -- DEBUG GLOBALS --

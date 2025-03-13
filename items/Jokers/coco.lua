@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             a_chips = 20,
-            chips = 0
+            stacked_chips = 0
         }
     },
     rarity = 2,
@@ -33,7 +33,7 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.a_chips,
-                card.ability.extra.chips
+                card.ability.extra.stacked_chips
             }
         }
     end,
@@ -41,7 +41,7 @@ SMODS.Joker {
         -- Gain +20 chips when you use a Death
         if context.using_consumeable and not context.blueprint then
             if context.consumeable.ability.set == "Tarot" and context.consumeable.ability.name == "Death" then
-                card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.a_chips
+                card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
                 return {
                     message = localize('k_upgrade_ex'),
                     card = card,
@@ -52,7 +52,7 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips
+                chips = card.ability.extra.stacked_chips
             }
         end
     end

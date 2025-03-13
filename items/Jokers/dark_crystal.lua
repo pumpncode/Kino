@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            charges = 0,
+            charges_non = 0,
             a_charges = 1
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.charges,
+                card.ability.extra.charges_non,
                 card.ability.extra.a_charges
             }
         }
@@ -43,7 +43,7 @@ SMODS.Joker {
 
         if context.after and not context.blueprint then
             if G.GAME.blind.chips > G.GAME.chips then
-                card.ability.extra.charges = card.ability.extra.charges + card.ability.extra.a_charges
+                card.ability.extra.charges_non = card.ability.extra.charges_non + card.ability.extra.a_charges
                 return {
                     message = localize('k_charged'),
                     card = card,
@@ -52,9 +52,9 @@ SMODS.Joker {
             end
         end
 
-        if context.joker_main and card.ability.extra.charges > 0 then
+        if context.joker_main and card.ability.extra.charges_non > 0 then
             if not context.blueprint or context.repetition then
-                card.ability.extra.charges = card.ability.extra.charges - 1
+                card.ability.extra.charges_non = card.ability.extra.charges_non - 1
             end
 
             local _result = cast_random_base_spell(2)

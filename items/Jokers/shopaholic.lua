@@ -4,11 +4,11 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            xmult_mod = 0.25,
-            x_mult = 1,
-            money_spend = 5,
-            cur_spend = 0,
-            money_threshold = 5
+            a_xmult = 0.25,
+            stacked_x_mult = 1,
+            money_spend_non = 5,
+            cur_spend_non = 0,
+            threshold = 5
 
         }
     },
@@ -36,32 +36,32 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.xmult_mod,
-                card.ability.extra.x_mult,
-                card.ability.extra.money_spend,
-                card.ability.extra.cur_spend,
-                card.ability.extra.money_threshold
+                card.ability.extra.a_xmult,
+                card.ability.extra.stacked_x_mult,
+                card.ability.extra.money_spend_non,
+                card.ability.extra.cur_spend_non,
+                card.ability.extra.threshold
             }
         }
     end,
     calculate = function(self, card, context)
         if context.kino_ease_dollars and context.kino_ease_dollars < 0 and not context.blueprint then
             local pos_spend = -1 * context.kino_ease_dollars
-            card.ability.extra.cur_spend = card.ability.extra.cur_spend + pos_spend
+            card.ability.extra.cur_spend_non = card.ability.extra.cur_spend_non + pos_spend
             
             local upgraded = false
             -- Checks if enough money was spend
-            while card.ability.extra.cur_spend >= card.ability.extra.money_threshold do
+            while card.ability.extra.cur_spend_non >= card.ability.extra.threshold do
                 upgraded = true
                 
                 -- upgrades xmult
-                card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.xmult_mod
+                card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.a_xmult
                 
                 -- Lowers the counter
-                card.ability.extra.cur_spend = card.ability.extra.cur_spend - card.ability.extra.money_threshold
+                card.ability.extra.cur_spend_non = card.ability.extra.cur_spend_non - card.ability.extra.threshold
 
                 -- sets the new treshold
-                card.ability.extra.money_threshold = card.ability.extra.money_threshold + card.ability.extra.money_spend 
+                card.ability.extra.threshold = card.ability.extra.threshold + card.ability.extra.money_spend_non 
             end
 
             if upgraded then
@@ -74,8 +74,8 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                x_mult = card.ability.extra.x_mult,
-                message = localize{type='variable', key = 'a_xmult', vars = {card.ability.extra.x_mult}},
+                x_mult = card.ability.extra.stacked_x_mult,
+                message = localize{type='variable', key = 'a_xmult', vars = {card.ability.extra.stacked_x_mult}},
             }
         end
     end

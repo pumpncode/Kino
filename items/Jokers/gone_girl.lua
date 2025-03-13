@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            x_mult = 1,
+            stacked_x_mult = 1,
             a_xmult = 0.25
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.x_mult,
+                card.ability.extra.stacked_x_mult,
                 card.ability.extra.a_xmult
             }
         }
@@ -53,7 +53,7 @@ SMODS.Joker {
                         SMODS.debuff_card(_card, true, card.config.center.key)
                     return true end }))
 
-                    card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.a_xmult
+                    card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.a_xmult
                 end
             end
         end
@@ -63,7 +63,7 @@ SMODS.Joker {
                 card_eval_status_text(context.other_card, 'extra', nil, nil, nil,
                 { message = localize('k_gone_girl_female'), colour = G.C.RED })
                 return {
-                    x_mult = card.ability.extra.x_mult
+                    x_mult = card.ability.extra.stacked_x_mult
                 }
             end
         end

@@ -4,7 +4,8 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 0
+            stacked_chips = 0,
+            a_chips = 1
         }
     },
     rarity = 1,
@@ -31,7 +32,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips
+                card.ability.extra.stacked_chips,
+                card.ability.extra.a_chips
             }
         }
     end,
@@ -47,7 +49,7 @@ SMODS.Joker {
                     end
                 end
 
-                card.ability.extra.chips = card.ability.extra.chips + G.GAME.hands[v].level
+                card.ability.extra.chips = card.ability.extra.chips + (_tally * card.ability.extra.a_chips)
             end
         end
 

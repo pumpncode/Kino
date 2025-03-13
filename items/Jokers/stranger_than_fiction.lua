@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             next_card = nil,
-            chips = 0,
+            stacked_chips = 0,
             a_chips = 10,
             next_card_name = "2 of Hearts"
         }
@@ -34,7 +34,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips,
+                card.ability.extra.stacked_chips,
                 card.ability.extra.a_chips,
                 card.ability.extra.next_card,
                 card.ability.extra.next_card_name
@@ -54,18 +54,18 @@ SMODS.Joker {
                 if context.scoring_hand[i] == card.ability.extra.next_card then
                     _has_card = true
                     -- Page Turn Sound plays.
-                    card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.a_chips
+                    card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
                 end
             end
 
             if not _has_card then
-                card.ability.extra.chips = 0
+                card.ability.extra.stacked_chips = 0
             end
         end
 
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips
+                chips = card.ability.extra.stacked_chips
             }
         end
     end
