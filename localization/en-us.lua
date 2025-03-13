@@ -1359,7 +1359,7 @@ return {
                     "on your first discard",
                     "Earn {C:money}#3#{} for each card",
                     "this joker has Abducted",
-                    "{C:inative}(Currently: {C:money}$#4#{C:inactive})"
+                    "{C:inactive}(Currently: {C:money}$#4#{C:inactive})"
                 }
             },
             j_kino_thing = {
@@ -1986,7 +1986,7 @@ return {
                 text = {
                     "Store the Abducted card",
                     "in this joker",
-                    "At the start of a new {C:attention}Ante",
+                    "Upon defeating a {C:attention}Boss Blind",
                     "abducted cards are {C:attention}released"
                 }
             },
