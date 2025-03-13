@@ -156,7 +156,41 @@ joker_list = {
 "war_of_the_worlds",
 
 ------ Legendary
--- "nope",
+-- "2001_odyssey",
+-- "indiana_jones_1",
+-- "barbie",
+-- "rattatouille",
+
+-- Testing
+"nope", --Tested
+"close_encounters", --Tested
+"junior", -- Tested
+"edward_scissorhands", --Tested
+"guardians_of_the_galaxy_2", --Tested
+"jurassic_park_1", --Tested
+"catch_me_if_you_can", -- Tested
+"lady_and_the_tramp", --Tested
+"insidious", --Tested
+"smile", --Tested
+"nosferatu_2024", --Tested
+"childs_play_1", -- Tested
+"snow_white_1", --Tested
+"cronos", -- Tested
+"voyage_dans_le_lune",
+"sound_of_music", -- Tested
+"evil_dead_1", -- Tested
+"wolf_man_1", -- Tested
+"west_side_story_1", -- Tested
+"friday_the_13th", -- Tested
+"guardians_of_the_galaxy_3", -- Tested
+"signs",
+"they_live",
+"doctor_who",
+"stargate"
+
+-- "frankenstein"
+-- "when_harry_met_sally"
+
 
 ------ Uncategorized
 }
@@ -213,6 +247,7 @@ demonic_objects = {
         "omen",
         "poltergeist",
         "smile",
+        "insidious",
     },
     enhancements = {
         "demonic"
@@ -232,7 +267,7 @@ horror_objects = {
         "nightmare_on_elm_street",
         "sleepy_hollow",
         "us",
-
+        "childs_play_1"
     },
     enhancements = {
         "monster",
@@ -290,7 +325,7 @@ vampire_objects = {
         "nosferatu_1",
         "only_lovers_left_alive",
         "twilight_1",
-        "nosferature_2024"
+        "nosferatu_2024"
     },
     enhancements = {},
     confections = {},

@@ -22,6 +22,13 @@ end
 
 -- Read in all the sprites
 SMODS.Atlas {
+    key = "kino_atlas_legendary",
+    px = 71,
+    py = 95,
+    path =  'kino_jokers_legendary.png'
+}
+
+SMODS.Atlas {
     key = "kino_atlas_1",
     px = 71,
     py = 95,
@@ -123,8 +130,8 @@ SMODS.Atlas {
 
 SMODS.Atlas {
     key = "kino_ui",
-    px = 71,
-    py = 95,
+    px = 40,
+    py = 40,
     path = 'kino_ui_assets.png'
 }
 
@@ -171,7 +178,10 @@ Game.init_game_object = function(self)
         key = "",
         rank = 1
     }
+
     ret.confections_used = 0
+
+    ret.current_round.abduction_waitinglist = {}
     -- generate_cmifc_rank()
     return ret
 end

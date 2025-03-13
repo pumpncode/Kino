@@ -1,21 +1,20 @@
 SMODS.Joker {
-    key = "guardians_of_the_galaxy_1",
-    order = 169,
+    key = "lady_and_the_tramp",
+    order = 170,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            a_mult = 5,
-            special_a_mult = 8
+            a_chips = 10
         }
     },
     rarity = 1,
     atlas = "kino_atlas_5",
-    pos = { x = 0, y = 4},
+    pos = { x = 1, y = 4},
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 118340,
+        id = 10340,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -27,32 +26,36 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Sci-fi", "Superhero"},
+    pools, k_genre = {"Romance", "Animation"},
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.a_mult
-                
+                card.ability.extra.a_chips
             }
         }
     end,
     calculate = function(self, card, context)
-        -- +5 mult for every planet in your possession (hidden effect, +8 if it's ego)
         if context.joker_main then
-            local _mult = 0
-            for i = 1, #G.consumeables.cards do
-                if G.consumeables.cards[i].ability.set == "Planet" then
-                    if G.consumeables.cards[i].key == "c_kino_ego" then
-                        _mult = _mult + card.ability.extra.special_a_mult
-                    else 
-                        _mult = _mult + card.ability.extra.a_mult
+            local _lowest = 14
+            local _highest = 0
+            for _, card in ipairs(context.scoring_hand) do
+                if not card.config.center.replace_base_card then
+                    if _lowest >= card.base.id then
+                        _lowest = card.base.nominal
+                    end
+
+                    if _highest <= card.base.id then
+                        _highest = card.base.nominal
                     end
                 end
             end
 
+            local _dif = _highest - _lowest
+            local _chips = _dif * card.ability.extra.a_chips
+
             return {
-                mult = _mult
+                chips = _chips
             }
         end
     end

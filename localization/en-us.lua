@@ -55,7 +55,7 @@ return {
                 text = {
                     "After a hand is scored, {C:green}#1# in #3#{} chance",
                     "to destroy all other jokers. When a card is",
-                    "scored, it gives {X:mult,C:white}x#4#{} and increases",
+                    "scored, it gives {X:mult,C:white}X#4#{} Mult and increases",
                     "the destroy chance by {C:green}#2#{}"
                 }
             },
@@ -240,6 +240,13 @@ return {
                     "{C:mult}+#1#{} Mult when scored"
                 }
             },
+            j_kino_catch_me_if_you_can = {
+                name = "Catch Me If You Can",
+                text = {
+                    "{C:money}$#1#{} when a",
+                    "{C:attention}Wild Card{} scores"
+                }
+            },
             j_kino_charlie_and_the_chocolate_factory = {
                 name = "Charlie & the Chocolate Factory",
                 text = {
@@ -265,6 +272,17 @@ return {
                     "{C:inactive}(Currently: {C:chips}+#1#{C:inactive})"
                 }
             },
+            j_kino_childs_play_1 = {
+                name = "Child's Play",
+                text = {
+                    "Becomes active whenever",
+                    "your scoring hand",
+                    "contains a {C:attention}2",
+                    "When active, you can",
+                    "discard a {C:attention}Monster Card",
+                    "{C:inactive}(Currently: {C:Attention}#1#{C:inactive})"
+                }
+            },
             j_kino_clerks_1 = {
                 name = "Clerks",
                 text = {
@@ -272,6 +290,16 @@ return {
                     "cards adding up to {C:attention}#2#",
                     "gain {C:mult}+#3#{} Mult",
                     "{C:inactive}(Current rank: {C:attention}#1#{})"
+                }
+            },
+            j_kino_close_encounters = {
+                name = "Close Encounters of the Third Kind",
+                text = {
+                    "If your played hand contains",
+                    "only {C:attention}1{} card, {C:attention}Abduct{} it",
+                    "Gives {C:chips}+#3#{} Chips for {C:attention}every card",
+                    "currently abducted",
+                    "{C:inactive}(Currently: {C:chips}+#4#{C:inactive} Chips)"
                 }
             },
             j_kino_clown = {
@@ -313,6 +341,16 @@ return {
                     "in your deck with {C:mult}+1{} Mult",
                 }
             },
+            j_kino_cronos = {
+                name = "Cronos",
+                text = {
+                    "If your hand contains",
+                    "a single card",
+                    "{C:attention}Drain{} half its rank",
+                    "and gain #2# times that many chips",
+                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
             j_kino_dark_crystal = {
                 name = "The Dark Crystal",
                 text = {
@@ -350,13 +388,22 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{})"
                 }
             },
+            j_kino_doctor_who = {
+                name = "Doctor Who: The Movie",
+                text = {
+                    "If in your {C:attention}Active slot{}",
+                    "abduct a {C:attention}Card{} from {C:attention}Hand",
+                    "{C:attention}Release:{} Return with a random",
+                    "{C:attention}Enhancement{} and {C:attention}Edition"
+                }
+            },
             j_kino_double = {
                 name = "The Double",
                 text = {
                     "Gain {C:mult}+#1#{} Mult",
                     "when you play a {C:attention}#4#",
                     "Upon defeating a {C:attention}Boss Blind",
-                    "reset {C:Mult} and increase",
+                    "reset {C:Mult}Mult{} and increase",
                     "scaling by {C:mult}+#3#",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
@@ -416,6 +463,14 @@ return {
                     "blind, earn {C:money}$#2#{}"
                 }
             },
+            j_kino_edward_scissorhands = {
+                name = "Edward Scissorhands",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "has only {C:attention}1{} card, {C:attention}Cut",
+                    "it into two, and draw those two hand"
+                }
+            },
             j_kino_elf = {
                 name = "Elf",
                 text = {
@@ -437,6 +492,14 @@ return {
                     "Create {C:attention}#1#{} Negative",
                     "{C:planet}Planets{} when you defeat",
                     "a {C:attention}Boss Blind"
+                }
+            },
+            j_kino_evil_dead_1 = {
+                name = "The Evil Dead (2013)",
+                text = {
+                    "{C:green}#1# in #2#{} Chance to",
+                    "create a {C:tarot}Demon Tarot{}",
+                    "when you {C:attention}Destroy{} a card"
                 }
             },
             j_kino_ex_machina = {
@@ -480,6 +543,28 @@ return {
                     "consumeable slots",
                     "with {C:attention}Fries{}",
                     "at the end of the {C:attention}shop"
+                }
+            },
+            j_kino_frankenstein = {
+                name = "Frankenstein",
+                text = {
+                    "{C:attention}#1#",
+                    "If still Experimenting",
+                    "destroy the next hand",
+                    "you play and upgrade this",
+                    "joker with all stats of the",
+                    "destroyed cards",
+                    "{C:inactive}(Currently: {C:chips}+#3#{C:inactive} Chips, {C:mult}+#4#{C:inactive} Mult)",
+                    "{C:inactive}({X:mult,C:white}X#5#{C:inactive}, {X:chips,C:white}X#6#{C:inactive})"
+                }
+            },
+            j_kino_friday_the_13th = {
+                name = "Friday the 13th",
+                text = {
+                    "If your played hand",
+                    "contains no {C:attention}Face{} cards",
+                    "turn a random non-enhanced card",
+                    "in hand into a {C:attention}Horror Card"
                 }
             },
             j_kino_gentlemen_prefer_blondes = {
@@ -547,7 +632,24 @@ return {
             j_kino_guardians_of_the_galaxy_1 = {
                 name = "Guardians of the Galaxy",
                 text = {
-                    "Planets give {C:mult}+#1#{} Mult"
+                    "{C:planet}Planets{} you own",
+                    "give {C:mult}+#1#{} Mult"
+                }
+            },
+            j_kino_guardians_of_the_galaxy_2 = {
+                name = "Guardians of the Galaxy Vol. 2",
+                text = {
+                    "Transform every {C:planet}Planet",
+                    "you have into {C:attention}Ego",
+                    "at the end of the {C:attention}shop",
+                }
+            },
+            j_kino_guardians_of_the_galaxy_3 = {
+                name = "Guardians of the Galaxy Vol. 3",
+                text = {
+                    "Turn every {C:planet}Planet",
+                    "you own {C:attention}Negative",
+                    "at the end of the {C:attention}shop",
                 }
             },
             j_kino_halloween = {
@@ -603,6 +705,15 @@ return {
 
                 }
             },
+            j_kino_insidious = {
+                name = "Insidious",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create",
+                    "a {C:tarot}Demon{} card when any",
+                    "{C:attention}Booster Pack{} is opened",
+                    "{C:inactive}(Must have room)",
+                }
+            },
             j_kino_interstellar = {
                 name = "Interstellar",
                 text = {
@@ -650,6 +761,21 @@ return {
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Mult)"
                 }
             },
+            j_kino_junior = {
+                name = "Junior",
+                text = {
+                    "Whenever {C:attention}10 {C:attention}Kings{}",
+                    "or {C:attention}Jack{} have scored",
+                    "create a random {C:attention}Polychrome 2"
+                }
+            },
+            j_kino_jurassic_park_1 = {
+                name = "Jurassic Park",
+                text = {
+                    "Cards give {C:chips}#1#{}",
+                    "as much base chips"
+                }
+            },
             j_kino_karate_kid_1 = {
                 name = "The Karate Kid",
                 text = {
@@ -668,10 +794,19 @@ return {
             j_kino_krazy_house = {
                 name = "Krazy House",
                 text = {
-                    "{X:mult,C:white} x#1#{}",
+                    "{X:mult,C:white} X#1#{} Mult",
                     "When you play a {C:attention}Full House{}, randomize",
                     "the {X:mult,C:white} xMult{} between {X:mult,C:white} x #4#{} & {X:mult,C:white} x #5#{}",
                     "and increases the range by {X:mult,C:white}#5#{}"
+                }
+            },
+            j_kino_lady_and_the_tramp = {
+                name = "Lady & the Tramp",
+                text = {
+                    "Gives {C:attention}#1# times{}",
+                    "the difference between the",
+                    "{C:attention}highest{} and {C:attention}lowest{}",
+                    "scoring card in {C:chips}Chips"
                 }
             },
             j_kino_lethal_weapon = {
@@ -680,7 +815,7 @@ return {
                     "Gain {C:mult}+#1#{} Mult",
                     "when you play a {C:attention}#4#",
                     "Upon defeating a {C:attention}Boss Blind",
-                    "reset {C:Mult} and increase",
+                    "reset {C:Mult}Mult{} and increase",
                     "scaling by {C:mult}+#3#",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
@@ -766,7 +901,7 @@ return {
                     "Gain {C:mult}+#1#{} Mult",
                     "when you play a {C:attention}#4#",
                     "Upon defeating a {C:attention}Boss Blind",
-                    "reset {C:Mult} and increase",
+                    "reset {C:Mult}Mult{} and increase",
                     "scaling by {C:mult}+#3#",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
@@ -776,9 +911,9 @@ return {
                 text = {
                     "When you play a hand,", 
                     "{C:attention}Debuff{} every {C:attention}Enhanced Card",
-                    "in your hand and gain {X:mult,C:white}#2#{}",
+                    "in your hand and gain {X:mult,C:white}X#2#{} Mult",
                     "the end of round.",
-                    "{C:inactive}(Currently: {X:mult,C:white}#1#{C:attention})"
+                    "{C:inactive}(Currently: {X:mult,C:white}#1#{C:inactive} Mult)"
                 }
             },
             j_kino_mr_and_mrs_smith = {
@@ -805,7 +940,11 @@ return {
             j_kino_nope = {
                 name = "Nope",
                 text = {
-                    "#1#"
+                    "When your hand contains {C:attention}5{} cards",
+                    "{C:attention}Abduct{} a random one",
+                    "{C:attention}Release:{} Return debuffed",
+                    "and gain {C:mult}+#3#{} Mult",
+                    "{C:inactive}(Currently: {C:mult}+#2#{C:inactive})"
                 }
             },
             j_kino_nosferatu_1 = {
@@ -816,6 +955,16 @@ return {
                     "removes card {C:attention}Enhancement",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 },
+            },
+            j_kino_nosferatu_2024 = {
+                name = "Nosferatu (2024)",
+                text = {
+                    "This Joker gains {C:mult}+#2#{} Mult",
+                    "per scoring {C:attention}Enhanced card{} played,",
+                    "removes card {C:attention}Enhancement",
+                    "Whenever a {C:hearts}Hearts{} scores",
+                    "it gives {C:mult}+#1#{}"
+                }
             },
             j_kino_number_23 = {
                 name = "The Number 23",
@@ -870,7 +1019,7 @@ return {
                 name = "24 Hour Party People",
                 text = {
                     "Each Scoring {C:clubs}Clubs{}", 
-                    "gives {C:money}$#1# for each", 
+                    "gives {C:money}$#1#{} for each", 
                     "{C:money}$#2#{} you have",
 
                 }
@@ -879,8 +1028,8 @@ return {
                 name = "The Pink Panther",
                 text = {
                     "Each scored {C:diamonds}Diamonds{}", 
-                    "gives {C:chips}#2#{}",
-                    "for each other scoring {C:diamonds}Diamonds{}"
+                    "gives {C:chips}+#2#{} Chips for",
+                    "each other scoring {C:diamonds}Diamonds{}"
                 }
             },
             j_kino_pinocchio_1940 = {
@@ -985,7 +1134,7 @@ return {
             j_kino_robocop_1 = {
                 name = "Robocop",
                 text = {
-                    "When your scoring hand is a{C:attention}High Card{}",
+                    "When your scoring hand is a {C:attention}High Card{}",
                     "turn all scored cards", 
                     "into {C:attention}Sci-fi Cards{}"
                 }
@@ -1027,6 +1176,14 @@ return {
                     "for each other scoring {C:spades}Spades{}",
                 }
             },
+            j_kino_seven_brides_for_seven_brothers = {
+                name = "7 Brides for 7 Brothers",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult if your deck",
+                    "contains an equal number of",
+                    "{C:attention}Kings{} and {C:attention}Queens"
+                }
+            },
             j_kino_shang_chi = {
                 name = "Shang-Chi and the Legend of the 10 Rings",
                 text = {
@@ -1046,10 +1203,19 @@ return {
             j_kino_shopaholic = {
                 name = "Confessions of a Shopaholic",
                 text = {
-                    "Gains {X:mult,C:white}X#1#{} whenever you",
+                    "Gains {X:mult,C:white}X#1#{} Mult whenever you",
                     "spend {C:money}$#5#{}. Goes up by {C:money}$#3#{}",
                     "every time. {C:inactive} (Spend {C:money}#4#{C:inactive})",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})"
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
+                }
+            },
+            j_kino_signs = {
+                name = "Signs",
+                text = {
+                    "{C:attention}Abduct{} a random unscored card",
+                    "Gives {C:mult}+#3#{} for each card",
+                    "abducted anywhere",
+                    "{C:inactive}(Currently: {C:mult}+#4#{C:inactive} Mult)"
                 }
             },
             j_kino_skyscraper = {
@@ -1073,8 +1239,19 @@ return {
             j_kino_smile = {
                 name = "Smile",
                 text = {
-                    "{C:attention}Face Cards{} are",
-                    "{C:attention}Demonic"
+                    "{C:attention}Face Cards{} are not",
+                    "sacrificed by {C:attention}Demonic Cards",
+                    "but do count towards sacrifices"
+                }
+            },
+            j_kino_snow_white_1 = {
+                name = "Snow White & the 7 Dwarves",
+                text = {
+                    "Whenever 7 or more",
+                    "{C:attention}2s{} have scored",
+                    "your next {C:attention}Queen{} gives",
+                    "{X:mult,C:white}X#1#{} Mult",
+                    "{C:inactive}(Currently: #2#)"
                 }
             },
             j_kino_social_network = {
@@ -1092,6 +1269,19 @@ return {
                     "cast it again at a lower rank"
                 }
             },
+            j_kino_sound_of_music = {
+                name = "The Sound of Music",
+                text = {
+                    "{C:inactive,E:1}#1#",
+                    "If your hand contains a {C:attention}#2#",
+                    "gain {C:mult}+#6#{} Mult and go up a rank",
+                    "If your hand does not contain",
+                    "a {C:attention}#2#{} reset the Mult",
+                    "If you finish the song, the mult",
+                    "gained becomes permanent",
+                    "{C:inactive}(Currently: temporary {C:mult}+#4#{C:inactive} Mult || {C:mult}+#5#{C:inactive} Mult)"
+                }
+            },
             j_kino_spartacus = {
                 name = "Spartacus",
                 text = {
@@ -1106,6 +1296,16 @@ return {
                 text = {
                     "If you play a {C:attention}Straight{},",
                     "create a Hangman"
+                }
+            },
+            j_kino_stargate = {
+                name = "Stargate",
+                text = {
+                    "{C:attention}Abduct{} every {C:attention}Stone ",
+                    "card scored",
+                    "{C:attention}Release:{} return them unstoned",
+                    "and gain {C:chips}+#4#{} for each",
+                    "{C:inactive}(Currently: {C:chips}+#3#{C:inactive} Chips)"
                 }
             },
             j_kino_starman = {
@@ -1152,7 +1352,16 @@ return {
                     "{C:attention}High Card{}, this chance increases by #3#"
                 }
             },
-
+            j_kino_they_live = {
+                name = "They Live",
+                text = {
+                    "{C:attention}Abduct{} every card {C:mult}discarded",
+                    "on your first discard",
+                    "Earn {C:money}#3#{} for each card",
+                    "this joker has Abducted",
+                    "{C:inative}(Currently: {C:money}$#4#{C:inactive})"
+                }
+            },
             j_kino_thing = {
                 name = "The Thing (1982)",
                 text = {
@@ -1174,7 +1383,7 @@ return {
                     "Gain {C:mult}+#1#{} Mult",
                     "when you play a {C:attention}#4#",
                     "Upon defeating a {C:attention}Boss Blind",
-                    "reset {C:Mult} and increase",
+                    "reset {C:Mult}Mult{} and increase",
                     "scaling by {C:mult}+#3#",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
@@ -1229,10 +1438,19 @@ return {
             j_kino_us = {
                 name = "Us",
                 text = {
-                    "Gains {X:mult,C:white}X#2#{} when",
+                    "Gains {X:mult,C:white}X#2#{} Mult when",
                     "a {C:attention}Horror Card Awakens",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive})"
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
+            },
+            j_kino_voyage_dans_le_lune = {
+                name = "Le Voyage Dans a Lune",
+                text={
+                    "{C:green}#1# in #2#{} chance to create",
+                    "a {C:planet}Planet{} card when any",
+                    "{C:attention}Booster Pack{} is opened",
+                    "{C:inactive}(Must have room)",
+                },
             },
             j_kino_wall_e = {
                 name = "Wall-E",
@@ -1264,7 +1482,7 @@ return {
                     "it and gain {C:mult}Mult{} equal to its",
                     "Chips, resets upon",
                     "defeating {C:attention}Boss Blind",
-                    "{C:inactive}(Currently {C:mult} +#1# {C:inactive} Mult)",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 }
             },
             j_kino_war_of_the_worlds = {
@@ -1276,11 +1494,27 @@ return {
                     "or {C:mult}+#2#{} Discard(s) for each"
                 }
             },
+            j_kino_west_side_story_1 = {
+                name = "West Side Story (1961)",
+                text = {
+                    "Gives either {C:chips}+#1#{} Chips",
+                    "if your scoring hand has more {C:spades}Spades",
+                    "and {C:clubs}Clubs{} or {C:mult}+#2#{} Mult",
+                    "if it has more {C:hearts}Hearts{} and {C:diamonds}Diamonds"
+                }
+            },
             j_kino_wizard_of_oz = {
                 name = "The Wizard of Oz",
                 text = { 
                     "Scored {C:attention}Wild Cards{}",
                     "give {X:mult,C:white}X#1#{} Mult"
+                }
+            },
+            j_kino_wolf_man_1 = {
+                name = "The Wolf Man (1941)",
+                text = {
+                    "When a Horror card {C:attention}Awakens",
+                    "it gives {X:mult,C:white}X#1#{} Mult"
                 }
             },
             j_kino_wonka = {
@@ -1297,7 +1531,8 @@ return {
                     "Gains {X:mult,C:white}X#2#{} Mult",
                     "when you play a hand",
                     "Destroys itself if", 
-                    "you {C:attention}discard{}"
+                    "you {C:attention}discard{}",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
             },
         },
@@ -1746,6 +1981,15 @@ return {
                     "from a playing card"
                 }
             },
+            keyword_abduct = {
+                name = "Abduct",
+                text = {
+                    "Store the Abducted card",
+                    "in this joker",
+                    "At the start of a new {C:attention}Ante",
+                    "abducted cards are {C:attention}released"
+                }
+            },
 
             -- Stickers
             kino_award = {
@@ -1933,9 +2177,15 @@ return {
             k_exorcist_1 = "The Power of Christ compells you",
             k_menu = "Bon appetit",
             k_m3gan = "Beep. Boop",
+            k_guardians_2 = "Visited",
+            k_guardians_3 = "Saved!",
             k_princess_bride_1 = "As... You... Wish...",
             k_princess_bride_2 = "Inconceivable!",
             k_princess_bride_3 = "Is this a kissing Joker?",
+            k_arrakis = "Lisan al-Gaib!",
+            k_west_side_sharks = "Sharks!",
+            k_west_side_jets = "Jets!",
+            k_west_side_neither = "Officer Kripke! Run!",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",

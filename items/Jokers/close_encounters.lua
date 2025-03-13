@@ -1,23 +1,22 @@
 SMODS.Joker {
-    key = "nope",
-    order = 45,
+    key = "close_encounters",
+    order = 91,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             cards_abducted = {},
-            stacked_mult = 0,
-            a_mult = 5,
             num_cards_abducted_non = 0,
+            a_chips = 20,
         }
     },
-    rarity = 1,
-    atlas = "kino_atlas_2",
-    pos = { x = 2, y = 1},
+    rarity = 2,
+    atlas = "kino_atlas_3",
+    pos = { x = 0, y = 3},
     cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 601,
+        id = 840,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -29,44 +28,34 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Sci-fi", "Horror"},
+    pools, k_genre = {"Sci-fi"},
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.cards_abducted and #card.ability.extra.cards_abducted or 0,
-                card.ability.extra.stacked_mult,
-                card.ability.extra.a_mult,
-                card.ability.extra.num_cards_abducted_non
+                card.ability.extra.num_cards_abducted_non,
+                card.ability.extra.a_chips,
+                Kino.abduction and (#Kino.abduction.cards * card.ability.extra.a_chips) or 0
             }
         }
     end,
     calculate = function(self, card, context)
-        -- When your hand contains 5 cards, abduct a random card
-        -- When the abduction ends, return it to the hand debuffed
-        -- and increase mult by 3
+        -- If you play a High Card, abduct it
+        -- Gives 20 chips for each card currently abducted
         card.ability.extra.num_cards_abducted_non = #card.ability.extra.cards_abducted
 
         if context.joker_main then
             return {
-                mult = card.ability.extra.stacked_mult
+                chips = #Kino.abduction.cards * card.ability.extra.a_chips
             }
         end
 
-        if context.after and context.cardarea == G.jokers and #context.full_hand >= 5 then
-            local _abductee = pseudorandom_element(context.full_hand, pseudoseed("nope"))
-            Kino.abduct_card(card, _abductee)
-        
+        if context.after and context.cardarea == G.jokers and #context.scoring_hand == 1 then
+            Kino.abduct_card(card, context.scoring_hand[1])
         end
 
         if context.abduction_ending and not context.blueprint and not context.retrigger then
-            for _, _cardinfo in ipairs(card.ability.extra.cards_abducted) do
-                
-                card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult
-                
-                SMODS.debuff_card(_cardinfo.card, true, "nope")
-            end
-
             card.ability.extra.cards_abducted = Kino.unabduct_cards(card)
         end
     end,

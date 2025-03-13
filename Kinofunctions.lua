@@ -126,7 +126,7 @@ end
 
 function check_genre_synergy()
     -- check jokers, then if 5 of them share a genre, add a joker slot
-    if not G.jokers or not kino_config.genre_synergy then
+    if not G.jokers or not G.jokers.cards or not kino_config.genre_synergy then
         return false
     end
 
@@ -430,6 +430,26 @@ function Card:get_release(card)
 
     return false
 end
+
+local base_gcb = Card.get_chip_bonus
+function Card:get_chip_bonus()
+    
+    local ret = base_gcb(self)
+
+    local _factor = 1
+
+    for i, joker in ipairs(G.jokers.cards) do
+        if joker.ability and joker.ability.extra and joker.ability.extra.nominal_mult_factor then
+            _factor = _factor * joker.ability.extra.nominal_mult_factor
+        end
+    end
+
+    if _factor == 1 then
+        _factor = 0
+    end
+
+    return ret + (self.base.nominal * _factor)
+end
 -------------------------------
 
 -- level_up_hand hook to allow for interstellar functionality
@@ -542,15 +562,24 @@ end
 local can_discard = G.FUNCS.can_discard
 G.FUNCS.can_discard = function(e)
     -- checks if _monster_cards exist
-    local _monster = false
+    local _monster = 0
     for k, v in pairs(G.hand.highlighted) do
         if SMODS.has_enhancement(v, "m_kino_monster") then
-            _monster = true
+            _monster = _monster + 1
             break
         end
     end
 
-    if G.GAME.current_round.discards_left <= 0 or #G.hand.highlighted <= 0 or _monster then 
+    local _monster_exemptions = 0
+    for i, _joker in ipairs(G.jokers.cards) do
+        if _joker and _joker.ability and type(_joker.ability.extra) == "table" and
+        _joker.ability.extra.stacked_monster_exemptions then
+            _monster_exemptions = _monster_exemptions + _joker.ability.extra.stacked_monster_exemptions
+        end
+    end
+
+    if G.GAME.current_round.discards_left <= 0 or #G.hand.highlighted <= 0 or 
+    (_monster > 0 and _monster > _monster_exemptions)then 
         e.config.colour = G.C.UI.BACKGROUND_INACTIVE
         e.config.button = nil
     else
@@ -668,3 +697,6 @@ Kino.choco_chance = 2
 Kino.xl_chance = 1
 Kino.actor_synergy = {1.2, 1.4, 1.6, 1.8, 2}
 Kino.award_mult = 2
+
+-- DEBUG GLOBALS --
+Kino.debug_string = "Base"

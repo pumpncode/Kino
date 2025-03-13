@@ -29,6 +29,12 @@ SMODS.Enhancement {
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_monster_turn'), colour = G.C.BLACK })
                 SMODS.calculate_context({monster_awaken = true})
+
+                if next(find_joker("j_kino_wolf_man_1")) then
+                    return {
+                        x_mult = 2
+                    }
+                end
             else 
                 return {
                     x_chips = card.ability.x_chips
@@ -50,6 +56,7 @@ SMODS.Enhancement {
     overrides_base_rank = true,
     no_suit = true,
     always_scores = true,
+    weight = 0,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {

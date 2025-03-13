@@ -5,9 +5,7 @@ SMODS.Enhancement {
     config = {
         chips_mult = 2,
         mult_mult = 2,
-        temp_bonusses = {},
-        match_mult = 0.0,
-        matches = {}
+        temp_bonusses = {}
     },
     loc_vars = function(self, info_queue, card)
         return {
@@ -23,6 +21,7 @@ SMODS.Enhancement {
         if (context.main_scoring and context.cardarea == G.play) and not context.repetition then
             local _romance_count = 0
             local _is_left = false
+            card.ability.current_match = nil
             for i = 1, #context.scoring_hand do 
                 if SMODS.has_enhancement(context.scoring_hand[i], 'm_kino_romance') then
                     if _romance_count == 0 and context.scoring_hand[i] == card then
@@ -44,12 +43,7 @@ SMODS.Enhancement {
                     if type(G.jokers.cards[i].ability.extra) == 'table' and G.jokers.cards[i].ability.extra.romance_bonus then
                         _bonus = _bonus + G.jokers.cards[i].ability.extra.romance_bonus
                     end
-                
                 end
-
-                card.ability.temp_bonusses = {}
-
-                
 
                 if _is_left then
                     SMODS.calculate_context({match_made = true})
