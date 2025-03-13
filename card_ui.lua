@@ -49,15 +49,6 @@ Kino.create_abduction_ui = function(card)
                                 }
                             }
                         }
-                        -- {
-                        --     n = G.UIT.T,
-                        --     config = {
-                        --         text = "2",
-                        --         colour = G.C.WHITE, 
-                        --         scale = 0.4, 
-                        --         shadow = true
-                        --     }  
-                        -- }
                     }
                 }
             }
@@ -124,60 +115,6 @@ Kino.create_abduction_ui_2 = function(card)
         }
     }
 end
-
--- function ufo_sprite(pos, value)
---     local text_colour = G.C.BLACK
-
---     local t_s = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=pos.x or 0, y=pos.y or 0})
---     t_s.states.drag.can = false
---     t_s.states.hover.can = false
---     t_s.states.collide.can = false
---     return {
---         n=G.UIT.C, 
---         config= {
---             align = "cm", 
---             padding = 0.07,
---             force_focus = true,  
---             focus_args = {type = 'sprite'}, 
---             tooltip = {text = "Abductions"}
---         }, 
---         nodes = {{
---             n= G.UIT.R, 
---             config = {
---                 align = "cm", 
---                 r = 0.1, 
---                 padding = 0.04, 
---                 emboss = 0.05, 
---                 colour = G.C.JOKER_GREY
---             }, 
---             nodes={{
---                 n = G.UIT.O, 
---                 config = {
---                     w = 0.5, 
---                     h = 0.5,
---                     can_collide = false, 
---                     object = t_s, 
---                     tooltip = {text = "Abductions"}
---                 }
---             }}
---         },
---         {
---             n = G.UIT.R, 
---             config = {
---                 align = "cm"
---             }, 
---             nodes = {{
---                 n = G.UIT.T, 
---                 config = {
---                     text = value,
---                     colour = text_colour, 
---                     scale = 0.4, 
---                     shadow = true
---                 }
---             },}
---         }}
---     }
--- end
 
 --- CODE BASED ON THE card_ui.lua IMPLEMENTATION
 --- FROM JOYOUSSPRING BY 'N

@@ -1,15 +1,3 @@
-V 0.6.3b-3:
-Hotfix Patch:
-
-Bug Fix:
-- Wonka no longer crashes the game if no consumeables have been used
-
-V 0.6.3b-2:
-Hotfix Patch:
-Bug Fixes:
-- Ocean's 11 (2001) no longer crashes the game when sold while in a booster pack screen
-- Dungeons and Dragons (2000) now properly displays its values
-
 V 0.7:
 New Mechanic:
 - Abduction! Certain jokers have the ability to abduct other cards. Abducted cards are stored in the joker, and returned to wherever they were abducted from when you start the first blind of a new ante.
@@ -40,6 +28,19 @@ New Jokers:
 - They Live
 - Doctor Who: The Movie
 - Stargate
+
+
+V 0.6.3b-3:
+Hotfix Patch:
+
+Bug Fix:
+- Wonka no longer crashes the game if no consumeables have been used
+
+V 0.6.3b-2:
+Hotfix Patch:
+Bug Fixes:
+- Ocean's 11 (2001) no longer crashes the game when sold while in a booster pack screen
+- Dungeons and Dragons (2000) now properly displays its values
 
 
 Bug Fixes:
