@@ -8,9 +8,7 @@ Bug Fixes:
 - Nosferatu (2024) can't be targetted by Award
 
 Localization:
-- Get Out
-- D&D doesn't display properly
-- Gone Girl should use (Currently set up)
+
 - Angel Heart localization text
 - Iron Giant localization
 - Wall-e text is unclear
