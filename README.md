@@ -1,4 +1,4 @@
-# Balatro Goes Kino V0.6.3b-3
+# Balatro Goes Kino V0.7
 
 By Ice/IcyEthics
 
@@ -10,12 +10,12 @@ Requirements:
 Balatro Goes Kino is a mod made to turn a game for poker nerds into a game for poker and movie nerds. It's main content is a large set of jokers inspired by movies, as well as new Enhancements and Tarot cards, with plans for boss blinds, challenges and decks.
 
 ### Current Content
-- **150+ New Jokers**:  From hits like Titanic, E.T. and Iron Man to unnotable and unremarkable flops like The Three Musketeers (2011) and Krazy House. With many more jokers planned.
+- **175+ New Jokers**:  From hits like Titanic, E.T. and Iron Man to unnotable and unremarkable flops like The Three Musketeers (2011) and Krazy House. With many more jokers planned.
 - **5 Enhancement:** A slew of new enhancements inspired by movie genres to help really sell that flavour. Sacrifice cards with Demonic cards, awaken monsters with Horror cards, fall in love with Romance cards, and more!
 - **4 Genre boosters:** New joker boosters, containing only jokers of the given genre.
 - **6 New Planets:** 6 strange new worlds from the silver screen.
 - **New Consumable: Confections!** Popcorn, soda and cookies. Items to nourish your run and give them a little boost.
-- **New Mechanics:** Earn extra joker slots by playing movies of the same genre. Start slinging spells. 
+- **New Mechanics:** Earn extra joker slots by playing movies of the same genre. Start slinging spells. Even alien abduction!
 
 ### Planned Content
 

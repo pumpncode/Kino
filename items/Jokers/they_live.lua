@@ -9,10 +9,10 @@ SMODS.Joker {
             a_dollar = 1
         }
     },
-    rarity = 1,
+    rarity = 3,
     atlas = "kino_atlas_6",
     pos = { x = 3, y = 3},
-    cost = 4,
+    cost = 9,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {

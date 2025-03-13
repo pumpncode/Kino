@@ -14,12 +14,15 @@ joker_list = {
 "bttf",
 "cars_1",
 "casablanca",
+"catch_me_if_you_can",
 "charlie_and_the_chocolate_factory",
 "children_of_the_corn",
+"childs_play_1", 
 "clerks_1",
 "clown",
 "cocktail",
 "commando",
+"cronos",
 "dark_knight",
 "dickie_roberts",
 "double",
@@ -29,9 +32,11 @@ joker_list = {
 "elf",
 "encanto",
 "et",
+"evil_dead_1",
 "ex_machina",
 "exorcist_1",
 "fantasia",
+"friday_the_13th",
 "gentlemen_prefer_blondes",
 "get_out",
 "ghostbusters_1",
@@ -43,12 +48,14 @@ joker_list = {
 "incredible_hulk",
 "karate_kid_1",
 "kindergarten_cop",
+"lady_and_the_tramp",
 "lethal_weapon",
 "m3gan",
 "megalopolis",
 "menu",
 "monster_house",
 "mr_and_mrs_smith",
+"nope",
 "nosferatu_1",
 "panic_room",
 "pink_panther_1",
@@ -75,6 +82,7 @@ joker_list = {
 "twilight_1",
 "twins",
 "us",
+"voyage_dans_le_lune",
 "wonka",
 
 ------ Uncommon
@@ -90,19 +98,25 @@ joker_list = {
 "batman_and_robin",
 "blade_1",
 "chef",
+"close_encounters",
 "coco",
 "creature_from_the_black_lagoon",
 "dark_crystal",
 "dinner_with_andre",
+"doctor_who",
 "dr_strangelove",
 "dungeons_and_dragons_1",
+"edward_scissorhands",
+"guardians_of_the_galaxy_2", 
 "ghost_rider_1",
 "ghoulies",
 "gone_girl",
 "goodfellas",
 "harry_potter_1",
+"insidious",
 "iron_man_1",
 "jaws",
+"junior",
 "krazy_house",
 "longlegs",
 "man_who_laughs",
@@ -111,6 +125,7 @@ joker_list = {
 "moneyball",
 "morbius",
 "nightmare_on_elm_street",
+"nosferatu_2024",
 "number_23",
 "oceans_11_2",
 "omen",
@@ -122,7 +137,12 @@ joker_list = {
 "rock",
 "se7en",
 "shang_chi",
+"signs",
+"smile",
+"snow_white_1",
+"sound_of_music",
 "stand_by_me",
+"stargate",
 "starman",
 "stranger_than_fiction",
 "terror_train",
@@ -130,8 +150,10 @@ joker_list = {
 "treasure_planet",
 "turner_and_hooch",
 "wall_street",
+"west_side_story_1",
 "wicker_man",
 "wizard_of_oz",
+"wolf_man_1",
 "yes_man",
 
 ------ Rare
@@ -141,8 +163,10 @@ joker_list = {
 "dracula_1931",
 "fight_club",
 "founder",
+"guardians_of_the_galaxy_3",
 "interstellar",
 "iron_giant",
+"jurassic_park_1",
 "joe_dirt",
 "memento",
 "muppets_2",
@@ -152,44 +176,11 @@ joker_list = {
 "poltergeist",
 "princess_bride",
 "shopaholic",
+"they_live",
 "wall_e",
 "war_of_the_worlds",
 
 ------ Legendary
--- "2001_odyssey",
--- "indiana_jones_1",
--- "barbie",
--- "rattatouille",
-
--- Testing
-"nope", --Tested
-"close_encounters", --Tested
-"junior", -- Tested
-"edward_scissorhands", --Tested
-"guardians_of_the_galaxy_2", --Tested
-"jurassic_park_1", --Tested
-"catch_me_if_you_can", -- Tested
-"lady_and_the_tramp", --Tested
-"insidious", --Tested
-"smile", --Tested
-"nosferatu_2024", --Tested
-"childs_play_1", -- Tested
-"snow_white_1", --Tested
-"cronos", -- Tested
-"voyage_dans_le_lune",
-"sound_of_music", -- Tested
-"evil_dead_1", -- Tested
-"wolf_man_1", -- Tested
-"west_side_story_1", -- Tested
-"friday_the_13th", -- Tested
-"guardians_of_the_galaxy_3", -- Tested
-"signs",
-"they_live",
-"doctor_who",
-"stargate"
-
--- "frankenstein"
--- "when_harry_met_sally"
 
 
 ------ Uncategorized
@@ -320,6 +311,7 @@ vampire_objects = {
     jokers = {
         "30_days_of_night",
         "blade",
+        "cronos",
         "dracula_1931",
         "morbius",
         "nosferatu_1",
