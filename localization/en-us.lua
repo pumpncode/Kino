@@ -387,6 +387,15 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{})"
                 }
             },
+            j_kino_doctor_strange_1 = {
+                name = "Doctor Strange",
+                text = {
+                    "Every {C:attention}Third{} spell",
+                    "{C:purple,E:1}Cast{} turns into",
+                    "{C:green,E:1}The Eye of Agamotto",
+                    "{C:inactive}(Currently: #1# Spells Cast)"
+                }
+            },
             j_kino_doctor_who = {
                 name = "Doctor Who: The Movie",
                 text = {
@@ -1192,6 +1201,14 @@ return {
                 text = {
                     "{C:purple, E:1}Cast the next Spell",
                     "of the {C:attention}10"
+                }
+            },
+            j_kino_shazam_1 = {
+                name = "Shazam",
+                text = {
+                    "When you {C:purple}Cast a Spell",
+                    "transform a random",
+                    "{c:attention}Non-Face Card{} into a {C:attention}Jack"
                 }
             },
             j_kino_shining = {
@@ -2113,6 +2130,12 @@ return {
                     "by {C:attention}#1#%"
                 }
             },
+            spell_kino_EyeOfAgamoto = {
+                name = "The Eye of Agamotto",
+                text = {
+                    "Gain {C:chips}2 Hands{}"
+                }
+            },
         }
     },
     misc = {
@@ -2196,6 +2219,8 @@ return {
             k_west_side_sharks = "Sharks!",
             k_west_side_jets = "Jets!",
             k_west_side_neither = "Officer Kripke! Run!",
+            k_shazam = "SHAZAM!",
+            k_btlc = "Have ya paid your dues, Jack?",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",

@@ -183,10 +183,13 @@ joker_list = {
 "west_side_story_1", -- Tested
 "friday_the_13th", -- Tested
 "guardians_of_the_galaxy_3", -- Tested
-"signs",
-"they_live",
-"doctor_who",
-"stargate"
+"signs", -- Tested
+"they_live", -- Tested
+"doctor_who", -- Tested
+"stargate", -- Tested
+"smurfs",
+"big_trouble_little_china",
+-- "doctor_strange_1"
 
 -- "frankenstein"
 -- "when_harry_met_sally"

@@ -474,6 +474,31 @@ SMODS.Spell {
     end
 }
 
+SMODS.Spell {
+    key = "EyeOfAgamoto",
+    order = 11,
+    atlas = "kino_spells",
+    pos = {x = 4, y = 1},
+    config = {
+        target = "unique",
+        hands_gained = 2
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            self.config.hands_gained
+        }
+    end,
+    no_collection = true,
+    cast = function(self, strength)
+        G.E_MANAGER:add_event(Event({func = function()
+            ease_hands_played(self.config.hands_gained)
+            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize{type = 'variable', key = 'a_hands', vars = {self.config.hands_gained}}})
+        return true end }))
+        return {
+        }
+    end
+}
+
 
 --- Spell related funcs
 
@@ -481,6 +506,22 @@ function cast_spell(spell_key, strength, repeatable)
     if repeatable == nil then
         repeatable = true
     end
+
+    local _ret = {}
+
+    SMODS.calculate_context({pre_spell_cast = true, strength = strength, spell_key = spell_key, repeatable = repeatable}, _ret)
+
+    if #_ret > 0 then
+        print(#_ret)
+        if _ret.spell_key then
+            print(_ret.spell_key)
+            spell_key = _ret.spell_key
+        end
+        if _ret.strength then
+            strength = _ret.strength
+        end
+    end
+
     if next(find_joker('j_kino_fantasia')) and strength < 4 then
         strength = strength + 1
     end
