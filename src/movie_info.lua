@@ -1,18 +1,3 @@
-
--- Load files
--- local movies, load_error = assert(SMODS.load_file("moviedata/movies.lua"))()
--- if load_error then
---   sendDebugMessage ("The error is: "..load_error)
--- end
-
--- print(movies.ID_653.name)
-
--- local actors, load_error = SMODS.load_file("moviedata/actors.lua")
--- if load_error then
---   sendDebugMessage ("The error is: "..load_error)
--- end
-
-
 -- Load files
 local movies, load_error = assert(SMODS.load_file("moviedata/movies.lua"))()
 if load_error then
@@ -43,4 +28,29 @@ for j, var in pairs(movies) do
           SMODS.Centers[v].kino_joker.cast = var.cast
       end
     end
+end
+
+function is_genre(joker, genre)
+  if joker.config.center.k_genre then
+      for i = 1, #joker.config.center.k_genre do
+          if genre == joker.config.center.k_genre[i] then
+              return true
+          end
+      end
+  end
+  return false
+end
+
+function Card:get_release(card)
+  if card.config.center.kino_joker then
+      local _joker = card.config.center.kino_joker
+
+      local _year = tonumber(string.sub(_joker.release_date, 1, 4))
+      local _month = tonumber(string.sub(_joker.release_date, 6, 7))
+      local _day = tonumber(string.sub(_joker.release_date, 9, 10))
+
+      return {_year, _month, _day}
+  end
+
+  return false
 end
