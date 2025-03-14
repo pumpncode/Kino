@@ -1,3 +1,6 @@
+V 0.7.0b:
+Fixed certain vanilla jokers crashing the game
+
 V 0.7.0a:
 Abduction jokers now show the abduction Tool Tip
 

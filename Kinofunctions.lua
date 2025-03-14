@@ -439,7 +439,8 @@ function Card:get_chip_bonus()
     local _factor = 1
 
     for i, joker in ipairs(G.jokers.cards) do
-        if joker.ability and joker.ability.extra and joker.ability.extra.nominal_mult_factor then
+        if joker.ability and joker.ability.extra and type(joker.ability.extra) == "table" 
+        and joker.ability.extra.nominal_mult_factor then
             _factor = _factor * joker.ability.extra.nominal_mult_factor
         end
     end
