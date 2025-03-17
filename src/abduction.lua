@@ -43,6 +43,29 @@ Kino.abduct_card = function(card, abducted_card)
             abducted_from = abducted_card.area
         }
     else
+        abducted_card.abducted = true
+        card:juice_up()
+        G.GAME.current_round.cards_abducted = G.GAME.current_round.cards_abducted + 1
+        if not card.ability.extra.cards_abducted then
+            card.ability.extra.cards_abducted = {
+                -- Cards should be formatted as such
+                -- {
+                --     -- card = card,
+                --     -- abudcted_from = cardarea,
+                --     -- abducted_when = when,
+                -- }
+            }
+
+            abducted_card.area.config.card_limit = abducted_card.area.config.card_limit - ((abducted_card.edition and abducted_card.edition.negative) and 1 or 0)
+            card.ability.extra.cards_abducted[#card.ability.extra.cards_abducted + 1] = {
+                card = abducted_card,
+                abducted_from = abducted_card.area
+            }
+       
+            abducted_card.area:remove_card(abducted_card)
+            Kino.abduction:emplace(abducted_card)
+        end
+
 
     end
     --     card:juice_up()
@@ -52,16 +75,7 @@ Kino.abduct_card = function(card, abducted_card)
 
     --     abducted_card.area.config.card_limit = abducted_card.area.config.card_limit - ((abducted_card.edition and abducted_card.edition.negative) and 1 or 0)
         
-    --     if not card.ability.extra.cards_abducted then
-    --         card.ability.extra.cards_abducted = {
-    --             -- Cards should be formatted as such
-    --             -- {
-    --             --     -- card = card,
-    --             --     -- abudcted_from = cardarea,
-    --             --     -- abducted_when = when,
-    --             -- }
-    --         }
-    --     end
+
 
     --     card.ability.extra.cards_abducted[#card.ability.extra.cards_abducted + 1] = {
     --         card = abducted_card,

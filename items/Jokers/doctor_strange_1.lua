@@ -30,6 +30,7 @@ SMODS.Joker {
     pools, k_genre = {"Fantasy", "Superhero"},
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_active"}
         return {
             vars = {
                 card.ability.extra.stacks,
@@ -43,8 +44,9 @@ SMODS.Joker {
 
             if card.ability.extra.stacks == card.ability.extra.goal then
                 card.ability.extra.stacks = 0
-                return {
-                    spell_key = "EyeOfAgamoto"
+                G.GAME.current_round.spell_queue[#G.GAME.current_round.spell_queue + 1] = {
+                    spell_key = "spell_kino_EyeOfAgamoto",
+                    strength = 1
                 }
             end
         end

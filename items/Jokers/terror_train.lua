@@ -32,13 +32,12 @@ SMODS.Joker {
     pools, k_genre = {"Horror"},
 
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = {set = 'Other', key = "jump_scare", vars = {tostring(Kino.jump_scare_mult)}}
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_jump_scare", vars = {tostring(Kino.jump_scare_mult)}}
         return {
             vars = {
                 card.ability.extra.chance,
                 G.GAME.probabilities.normal * card.ability.extra.total_chance,
                 card.ability.extra.a_chance,
-                -- card.ability.extra.xmult,
                 Kino.jump_scare_mult
             }
         }

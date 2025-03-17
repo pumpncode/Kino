@@ -1,20 +1,21 @@
 SMODS.Joker {
-    key = "piranha_2",
-    order = 15,
+    key = "terminator_2",
+    order = 61,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            mult = 8
+            affects_sci_fi = true,
+            perma_x_mult = 0.1
         }
     },
-    rarity = 1,
-    atlas = "kino_atlas_1",
-    pos = { x = 2, y = 2},
-    cost = 1,
+    rarity = 3,
+    atlas = "kino_atlas_2",
+    pos = { x = 0, y = 4},
+    cost = 10,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 31646,
+        id = 280,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -26,23 +27,16 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Horror"},
-    is_water = true,
-    
+    pools, k_genre = {"Sci-fi", "Action"},
+
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.mult
+                card.ability.extra.perma_x_mult
             }
         }
     end,
     calculate = function(self, card, context)
-        if context.joker_main then
-            if context.scoring_name == "High Card" then
-                return {
-                    mult = card.ability.extra.mult
-                }
-            end
-        end
+        -- When sci-fi cards upgrade, they gain x.1 mult instead
     end
 }

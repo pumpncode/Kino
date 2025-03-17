@@ -13,6 +13,10 @@
 -- Director tooltip
 
 function is_genre(joker, genre)
+    if G.GAME.modifiers.egg_genre == genre then
+        return true
+    end
+
     if joker.config.center.k_genre then
         for i = 1, #joker.config.center.k_genre do
             if genre == joker.config.center.k_genre[i] then
@@ -21,6 +25,31 @@ function is_genre(joker, genre)
         end
     end
     return false
+end
+
+function display_egg_message()
+    if not G.GAME.egg_message then
+        G.GAME.egg_message = UIBox{
+            definition = 
+            {n=G.UIT.ROOT, config = {align = 'cm', colour = G.C.CLEAR, padding = 0.2}, nodes={
+                {n=G.UIT.R, config = {align = 'cm', maxw = 1}, nodes={
+                    {n=G.UIT.O, config={object = DynaText({scale = 0.7, string = localize('ph_egg'), maxw = 9, colours = {G.C.WHITE},float = true, shadow = true, silent = true, pop_in = 0, pop_in_rate = 6})}},
+                }}
+            }}, 
+            config = {
+                align = 'cm',
+                offset ={x=0,y=-3.1}, 
+                major = G.play,
+            }
+        }
+        G.GAME.egg_message.attention_text = true
+        G.GAME.egg_message.states.collide.can = false
+    end
+
+    if G.GAME.egg_message then
+        G.GAME.egg_message:remove()
+        G.GAME.egg_message = nil
+    end
 end
 
 -- Get Random hand type (Based on the neutronstarrandomhand function from Cryptid. (Planets.lua - line 830 - 853))
@@ -62,16 +91,6 @@ function reset_ancient_card()
     end
     local thing_card = pseudorandom_element(thing_suits, pseudoseed('thing'..G.GAME.round_resets.ante))
     G.GAME.current_round.kino_thing_card.suit = thing_card
-end
-
--- Catch me if you can, select random rank
-function generate_cmifc_rank()
-    if not G.GAME.current_round.kino_cmifc_rank then
-        G.GAME.current_round.kino_cmifc_rank = 2
-    end
-
-    local ranks = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
-    G.GAME.current_round.kino_cmifc_rank = pseudorandom_element(ranks, "cmifc")
 end
 
 -- For everything that needs to be done when the shop is closed.
@@ -141,13 +160,8 @@ function check_genre_synergy()
     for i, genre in ipairs(kino_genres) do
         local count = 0
         for j, joker in ipairs(G.jokers.cards) do
-            if joker and joker.config.center.kino_joker then
-                for k, comp_genre in ipairs(joker.config.center.k_genre) do
-                    if genre == comp_genre then
-                        count = count + 1
-                        break
-                    end
-                end
+            if is_genre(joker, genre) then
+                count = count + 1
             end
         end
         
@@ -160,14 +174,17 @@ function check_genre_synergy()
         -- Genre synergy!
         for i, genre in ipairs(five_of_genres) do
             for j, joker in ipairs(G.jokers.cards) do
-                if joker and joker.config.center.kino_joker then
-                    for k, comp_genre in ipairs(joker.config.center.k_genre) do
-                        if genre == comp_genre then
-                            joker:juice_up(0.8, 0.5)
-                            card_eval_status_text(joker, 'extra', nil, nil, nil,
-                            { message = localize('k_genre_synergy'), colour = G.C.LEGENDARY})
-                        end
+                if joker and is_genre(joker, genre) then
+                    joker:juice_up(0.8, 0.5)
+                    
+                    if G.GAME.modifiers.egg_genre and genre == "Romance" then
+                        card_eval_status_text(joker, 'extra', nil, nil, nil,
+                        { message = localize('k_genre_synergy_egg'), colour = G.ARGS.LOC_COLOURS[genre]})
+                    else
+                        card_eval_status_text(joker, 'extra', nil, nil, nil,
+                        { message = localize('k_genre_synergy'), colour = G.ARGS.LOC_COLOURS[genre]})
                     end
+
                 end
             end
         end
@@ -258,10 +275,11 @@ function Card:kino_synergy(card)
         end
     end
 
-    if self.ability.kino_bacon then
+    if self.ability.kino_bacon or G.GAME.modifiers.bacon_bonus then
 
         local _found_match = false
-
+        local _found_match_right = false
+        local _found_match_left = false
         
         for _i, actor in pairs(_actors) do
             -- test left
@@ -270,6 +288,8 @@ function Card:kino_synergy(card)
                 for _j, _compactor in pairs(_compared_actors) do
                     if actor == _compactor then
                         _found_match = true
+                        _found_match_left = true
+                    
                         break
                     end
                 end
@@ -277,20 +297,37 @@ function Card:kino_synergy(card)
 
             -- test right
             if G.jokers.cards[_right] and G.jokers.cards[_right].config.center.kino_joker then
-                _compared_actors = G.jokers.cards[_right].config.center.kino_joker.cast
+                local _compared_actors = G.jokers.cards[_right].config.center.kino_joker.cast
                 for _j, _compactor in pairs(_compared_actors) do
                     if actor == _compactor then
                         _found_match = true
+                        _found_match_right = true
                         break
                     end
                 end
             end
         end
 
-        if not _found_match then
-            SMODS.debuff_card(card, true, "bacon")
-        else
-            SMODS.debuff_card(card, false, "bacon")
+        if self.ability.kino_bacon then
+            if not _found_match then
+                SMODS.debuff_card(card, true, "bacon")
+            else
+                SMODS.debuff_card(card, false, "bacon")
+            end
+        end
+        
+        if G.GAME.modifiers.bacon_bonus then
+            if not _found_match_right then
+                card:set_multiplication_bonus(card, "bacon_deck_right", 1)
+            else
+                card:set_multiplication_bonus(card, "bacon_deck_right", G.GAME.modifiers.bacon_bonus)
+            end
+
+            if not _found_match_left then
+                card:set_multiplication_bonus(card, "bacon_deck_left", 1)
+            else
+                card:set_multiplication_bonus(card, "bacon_deck_left", G.GAME.modifiers.bacon_bonus)
+            end
         end
     end
 end
@@ -359,19 +396,6 @@ function Card:set_multiplication_bonus(card, source, num, is_actor)
     return true
 end
 
--- function Card:check_multiplication_validity()
-
---     if not kino_config.actor_synergy  or not self.config.center.kino_joker
---     or not self.ability.multipliers or #self.ability.multipliers < 1 then
---         return false
---     end
-
---     for source, num in pairs(self.ability.multipliers) do
-    
---     end
-
--- end
-
 function check_variable_validity_for_mult(name)
 
     if not kino_config.actor_synergy then
@@ -423,22 +447,30 @@ function Card:add_to_deck(from_debuff)
 
     check_genre_synergy()
     check_actor_synergy()
-    
-    
 end
 
 local base_rmd = Card.remove_from_deck
 function Card:remove_from_deck(from_debuff)
     base_rmd(self, from_debuff)
     
-    check_genre_synergy()
-    check_actor_synergy()
+        check_genre_synergy()
+        check_actor_synergy()
 end
 
 local base_set_rank = CardArea.set_ranks
 function CardArea:set_ranks()
     -- Do synergy checks
     base_set_rank(self)
+
+    if self == G.jokers then
+        check_genre_synergy()
+        check_actor_synergy()
+    end
+end
+
+local base_align_cards = CardArea.align_cards
+function CardArea:align_cards()
+    base_align_cards(self)
 
     if self == G.jokers then
         check_genre_synergy()
@@ -630,6 +662,7 @@ end
 local _occ = create_card
 function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
     local _card = _occ(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
+    -- Confection Changes --
     if G.GAME.used_vouchers.v_kino_special_treats and _type == "confection" then
         -- chance for golden 1/10
         -- chance for chocolate 1/10
@@ -651,8 +684,24 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
         end
     end
 
+        -- Joker Changes --
+
+    if G.GAME.modifiers and G.GAME.modifiers.genre_bonus then
+        if _type == 'Joker' or _type == G.GAME.modifiers.genre_bonus then
+            if is_genre(_card, G.GAME.modifiers.genre_bonus) then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        _card:set_multiplication_bonus(_card, 'card_back', 1.5)
+                        return true
+                    end
+                }))
+            end   
+        end
+    end
+
     return _card
 end
+
 --- Award Bonus & actor synergy mechanics ---
 
 ----------------------

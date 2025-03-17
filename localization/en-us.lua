@@ -16,6 +16,16 @@ return {
                     "scoring card into a {C:attention}Romance Card{}"
                 }
             },
+            j_kino_12_monkeys = {
+                name = "Twelve Monkeys",
+                text = {
+                    "When you {C:attention}Select a Blind",
+                    "{C:green}#1# in #2#{} Chance to create",
+                    "a copy a card of the same type",
+                    "as the first one sold last blind",
+                    "{C:inactive}(will create a {C:attention}#3#{})"
+                }
+            },
             j_kino_30_days_of_night = {
                 name = "30 Days of Night",
                 text = {
@@ -75,6 +85,15 @@ return {
                     "when triggered"
                 }
             },
+            j_kino_always = {
+                name = "Always",
+                text = {
+                    "Whenever a card",
+                    "is {C:attention}Destroyed",
+                    "upgrade every {C:attention}Romance Card",
+                    "in your deck"
+                }
+            },
             j_kino_angel_hearts = {
                 name = "Angel Heart",
                 text = {
@@ -97,6 +116,15 @@ return {
                     "create a planet when",
                     "your scoring hand's",
                     "ranks add up to 13"
+                }
+            },
+            j_kino_asteroid_city = {
+                name = "Asteroid City",
+                text = {
+                    "If no joker is currently",
+                    "{C:purple}Abducted{}, abduct the one",
+                    "to the right",
+                    "{C:attention}Release:{} Return {C:attention}Negative"
                 }
             },
             j_kino_avatar = {
@@ -176,6 +204,17 @@ return {
                     "increases by {C:green}#6#{} at the end of every round)"
                 }
             },
+            j_kino_big_trouble_little_china = {
+                name = "Big Trouble in Little China",
+                text = {
+                    "When you {C:purple,E:1}Cast a Spell",
+                    "gain {C:attention}1 Stack{}",
+                    "When you face a {C:attention}Boss Blind",
+                    "lower it by {C:attention}%#3#{} for",
+                    "each stack, then reset the stacks",
+                    "{C:inactive}(Currently: {C:attention}%#4#{C:inactive})"
+                }
+            },
             j_kino_blade_1 = {
                 name = "Blade",
                 text = {
@@ -195,6 +234,15 @@ return {
                     "is a {C:green}#1# in #2#{} chance",
                     "to {C:attention}Destroy all other jokers.{}",
                     "This chance increases by {C:green}#3#{} each {C:green}Reroll"
+                }
+            },
+            j_kino_blank_check = {
+                name = "Blank Check",
+                text = {
+                    "Gain {C:money}$#1#{} upon",
+                    "buying this joker",
+                    "{C:attention}Bust{} when you",
+                    "leave the shop"
                 }
             },
             j_kino_braveheart = {
@@ -237,6 +285,14 @@ return {
                     "Each played {C:spades}Spades{} or {C:clubs}Clubs{}",
                     "gives {C:chips}+#2#{} Chips and",
                     "{C:mult}+#1#{} Mult when scored"
+                }
+            },
+            j_kino_castaway = {
+                name = "Cast Away",
+                text = {
+                    "When you play a {C:attention}High Card{}",
+                    "upgrade it with {C:chips}+#1#{} Chips",
+                    "for every unscored card"
                 }
             },
             j_kino_catch_me_if_you_can = {
@@ -289,6 +345,17 @@ return {
                     "cards adding up to {C:attention}#2#",
                     "gain {C:mult}+#3#{} Mult",
                     "{C:inactive}(Current rank: {C:attention}#1#{})"
+                }
+            },
+            j_kino_clockwork_orange = {
+                name = "Clockwork Orange",
+                text = {
+                    "Gain a {C:attention}Charge{} whenever",
+                    "a card is destroyed",
+                    "Consume charges to give",
+                    "{X:mult,C:white}#2#{} per charge",
+                    "if this joker is in your {C:attention}Active Slot",
+                    "{C:inactive}(Currently: #1# Stacks)"
                 }
             },
             j_kino_close_encounters = {
@@ -394,6 +461,12 @@ return {
                     "{C:purple,E:1}Cast{} turns into",
                     "{C:green,E:1}The Eye of Agamotto",
                     "{C:inactive}(Currently: #1# Spells Cast)"
+                }
+            },
+            j_kino_doctor_strange_2 = {
+                name = "Doctor Strange in the Multiverse of Madness",
+                text = {
+                    "{C:attention}Active:{} Redraw your hand"
                 }
             },
             j_kino_doctor_who = {
@@ -630,6 +703,15 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} & {C:money}$#4#{C:inactive})"
                 }
             },
+            j_kino_gremlins_1 = {
+                name = "Gremlins",
+                text = {
+                    "{C:inactive,E:1}Do not get them wet!{}",
+                    "Unscored cards give {C:chips}+#1#{}",
+                    "for each {C:attention}Monster Card{}",
+                    "held in hand"
+                }
+            },
             j_kino_gone_girl = {
                 name = "Gone Girl",
                 text = {
@@ -681,7 +763,15 @@ return {
                     "the gathered stacks",
                     "{C:inactive}(Currently: #1# stacks)"
                 }
-            },      
+            },
+            j_kino_heart_eyes = {
+                name = "Heart Eyes",
+                text = {
+                    "{C:attention}Romance Cards{} have a",
+                    "{C:green}#1# in #2#{} Chance to",
+                    "{C:attention}Jump Scare{}"
+                }
+            },
             j_kino_home_alone_1 = {
                 name = "Home Alone",
                 text = {
@@ -698,12 +788,34 @@ return {
                     "non-face card"
                 }
             },
+            j_kino_hustle = {
+                name = "Hustle",
+                text = {
+                    "Retrigger {C:attention}first{} played",
+                    "card used in scoring",
+                    "an additional time",
+                    "for each {C:money}$#1#{} you have",
+                    "{C:inactive}(Currently: {C:attention}#3#{C:inactive} Times)"
+                }
+            },
             j_kino_i_robot = {
                 name = "I, Robot",
                 text = {
                     "If a sci-fi card {C:attention}upgrades", 
                     "gain {X:mult,C:white} X#2# {}",
                     "{C:inactive}(Currently: {X:mult,C:white} X#1# {C:inactive})"
+                }
+            },
+            j_kino_inception = {
+                name = "Inception",
+                text = {
+                    "Copies the effect of any",
+                    "joker you own that this",
+                    "joker has spent {C:attention}3 blinds{}",
+                    "to the left of",
+                    "{C:inactive}(Will copy the joker to",
+                    "{C:inactive}the right in #3# turns)",
+                    "{C:inactive}Currently copying #4# joker(s))"
                 }
             },
             j_kino_incredible_hulk = {
@@ -714,6 +826,14 @@ return {
 
                 }
             },
+            j_kino_independence_day_1 = {
+                name = "Independence Day",
+                text = {
+                    "Lowers {C:attention}Boss Blinds",
+                    "by %#1# for every currently",
+                    "{C:attention}Abducted{} card"
+                }
+            },
             j_kino_insidious = {
                 name = "Insidious",
                 text = {
@@ -721,6 +841,14 @@ return {
                     "a {C:tarot}Demon{} card when any",
                     "{C:attention}Booster Pack{} is opened",
                     "{C:inactive}(Must have room)",
+                }
+            },
+            j_kino_insomnia = {
+                name = "Insomnia",
+                text = {
+                    "{C:attention}Hand size{} is doubled",
+                    "but you cannot draw",
+                    "additional cards"
                 }
             },
             j_kino_interstellar = {
@@ -792,12 +920,30 @@ return {
                     "or a {C:attention}2{}, upgrade a random hand"
                 }
             },
+            j_kino_killer_klowns = {
+                name = "Killer Klowns from Outer Space",
+                text = {
+                    "Destroy a random joker",
+                    "and create negative {C:planet}Planets{}",
+                    "equal to its rarity",
+                    "when you leave the shop"
+                }
+            },
             j_kino_kindergarten_cop = {
                 name = "Kindergarten Cop",
                 text = {
                     "{X:mult,C:white}X#1#{} if your",
                     "scoring hand has no cards",
                     "higher than a {C:attention}5"
+                }
+            },
+            j_kino_kraven = {
+                name = "Kraven the Hunter",
+                text = {
+                    "Prey: #3#",
+                    "Gain {X:mult,C:white}X#2#{} Mult when",
+                    "you destroy Kraven's current prey",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
             },
             j_kino_krazy_house = {
@@ -836,6 +982,15 @@ return {
                     "Set your current Chips to {C:chips}0{} and ",
                     "debuff this joker if",
                     "{C:attention}Longleg's Secret Partner{} is scored"
+                }
+            },
+            j_kino_lucky_number_slevin = {
+                name = "Lucky Number Slevin",
+                text = {
+                    "All {C:attention}listed{} odds are",
+                    "increased by {C:green}#1#{} for",
+                    "each {C:attention}7{} held in hand",
+                    "{C:inactive}(Currently: {C:green}#2#{C:inactive})"
                 }
             },
             j_kino_m3gan = {
@@ -915,6 +1070,17 @@ return {
                     "reset {C:Mult}Mult{} and increase",
                     "scaling by {C:mult}+#3#",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+                }
+            },
+            j_kino_moonfall = {
+                name = "Moonfall",
+                text = {
+                    "Give {C:chips}+#3#{} Chips for each",
+                    "{C:clubs}Clubs{} in your deck",
+                    "On your {C:attention}First Hand",
+                    "{C:purple}Abduct{} each scored non-{C:clubs}clubs{} card",
+                    "{C:attention}Release:{} Return as {C:clubs}Clubs",
+                    "{C:inactive}(Currently: {C:chips}+#4#{C:inactive} Chips)"
                 }
             },
             j_kino_morbius = {
@@ -1073,6 +1239,14 @@ return {
                     "your hand, and give all",
                     "scoring cards {C:mult}Bonus Mult{}",
                     "equal to its rank"
+                }
+            },
+            j_kino_polar_express = {
+                name = "Polar Express",
+                text = {
+                    "{C:chips}+#1#~+#2#{} Chips & {C:mult}+#3#~+#4#{} Mult",
+                    "if you have not",
+                    "{C:mult}Discarded{} since your last hand",
                 }
             },
             j_kino_poltergeist = {
@@ -1264,6 +1438,15 @@ return {
                     "but do count towards sacrifices"
                 }
             },
+            j_kino_smurfs_1 = {
+                name = "Smurfs",
+                text = {
+                    "Scoring {C:attention}2s{} and {C:attention}3s{}",
+                    "give {C:chips}+#1#{} Chips for",
+                    "each time you {C:purple}Cast a Spell",
+                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                }
+            },
             j_kino_snow_white_1 = {
                 name = "Snow White & the 7 Dwarves",
                 text = {
@@ -1364,6 +1547,32 @@ return {
                     "{C:inactive}(Currently: {C:mult}+#1#{C:inactive} Mult)"
                 }
             },
+            j_kino_terminator_1 = {
+                name = "The Terminator",
+                text = {
+                    "Whenever a {C:attention}Sci-fi Card{}",
+                    "is destroyed, create a copy",
+                    "in deck and upgrade it"
+                }
+            },
+            j_kino_terminator_2 = {
+                name = "Terminator 2: Judgment Day",
+                text = {
+                    "{C:attention}Sci-fi Cards{} gain",
+                    "{X:mult,C:white}X#1#{} Mult instead of",
+                    "{C:mult}Mult{} when they upgrade"
+                }
+            },
+            j_kino_sugarland_express = {
+                name = "The Sugarland Express",
+                text = {
+                    "{C:attention}Active:{} {C:chips}+#3#{} Chips for",
+                    "each time it's stolen",
+                    "{C:attention}Inactive:{} Steals {C:money}$#1#",
+                    "when you play a hand",
+                    "{C:inactive}(Currently: stolen #2# times)"
+                }
+            },
             j_kino_terror_train = {
                 name = "Terror Train",
                 text = {
@@ -1422,6 +1631,15 @@ return {
                 text = {
                     "Earn {C:money}$#1#{} when",
                     "a {C:attention}Planet{} is used"
+                }
+            },
+            j_kino_true_lies = {
+                name = "True Lies",
+                text = {
+                    "{C:attention}Wild Cards{} retrigger",
+                    "{C:attention}#1#{} additional time(s)",
+                    "for each {C:attention}King{} in your hand",
+                    "{C:inactive}(Currently: #2# King(s))"
                 }
             },
             j_kino_turner_and_hooch = {
@@ -1555,6 +1773,15 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
             },
+            j_kino_zardoz = {
+                name = "Zardoz",
+                text = {
+                    "{C:attention}Stone Cards{} give",
+                    "{X:mult,C:white}X#1#{} Mult",
+                    "increases by {X:mult,C:white}X#2#{} Mult",
+                    "whenever a card is destroyed"
+                }
+            }
         },
         Enhanced = {
             m_kino_sci_fi = {
@@ -1827,6 +2054,90 @@ return {
                 }
             }
         },
+        Back = {
+            b_kino_spooky = {
+                name = "Spooky Deck",
+                text = {
+                    "{C:attention}Horror jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Horror Packs{}",
+                    "and {C:attention}Twice as Frequent"                    
+                }
+            },
+            b_kino_flirty = {
+                name = "Flirty Deck",
+                text = {
+                    "{C:attention}Romance jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Romance Packs{}",
+                    "and {C:attention}Twice as Frequent"                    
+                }
+            },
+            b_kino_dangerous = {
+                name = "Dangerous Deck",
+                text = {
+                    "{C:attention}Action jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Action Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            b_kino_tech = {
+                name = "Tech_Deck",
+                text = {
+                    "{C:attention}Sci-fi jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Sci-fi Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            b_kino_enchanted = {
+                name = "Enchanted Deck",
+                text = {
+                    "{C:attention}Fantasy jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Fantasy Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            b_kino_bacon = {
+                name = "Bacon Deck",
+                text = {
+                    "{C:attention}Movie Jokers{} are",
+                    "{C:attention}50%{} stronger if",
+                    "they share {C:attention}Cast or",
+                    "{C:attention}Director{} with adjacent",
+                    "Jokers"
+                }
+            },
+            b_kino_northernlion = {
+                name = "Egg Deck",
+                text = {
+                    "{C:inactive,E:1}That's a {C:Romance,E:1}Romance!",
+                    "{C:inactive,E:1}they flirt in scene 19!",
+                    "{C:attention}Movie Jokers{} always count",
+                    "as {C:Romance}Romance Jokers{}"
+                }
+            },
+            b_kino_c2n = {
+
+            },
+            b_kino_producer = {
+                name = "Producer Deck",
+                text = {
+                    "Earn no money from",
+                    "blinds or interest",
+                    "After defeating a {C:attention}Boss Blind",
+                    "each {C:attention}Movie Joker{} pays out",
+                    "based on it's {C:attention}Profit Margin"
+                }
+            }
+        },
         Tag = {
             tag_kino_popcorn = {
                 name = "Popcorn Tag",
@@ -1988,7 +2299,18 @@ return {
             },
 
             -- Keywords
-            jump_scare = {
+            gloss_active = {
+                name = "Active",
+                text = {
+                    "Active jokers have different",
+                    "abilities depending on",
+                    "whether they are in the",
+                    "{C:attention}Active Joker Slot{}",
+                    "which is always the left-most",
+                    "joker slot"
+                }
+            },
+            gloss_jump_scare = {
                 name = "Jump Scare",
                 text = {
                     "Give {X:mult,C:white}X#1#{} and",
@@ -2177,6 +2499,7 @@ return {
             comedy_booster = "Comedy Joker",
             romance_booster = "Romance Joker",
 
+            k_genre_synergy_egg = "That's a Romance!",
             k_genre_synergy = "Genre Synergy!",
             k_actor_synergy = "Actor Synergy!",
             k_charged = "Gain Charge",
@@ -2221,6 +2544,17 @@ return {
             k_west_side_neither = "Officer Kripke! Run!",
             k_shazam = "SHAZAM!",
             k_btlc = "Have ya paid your dues, Jack?",
+            k_klowns = "BWEHEHE!",
+            k_independence_day = "Today, we celebrate our Independence Day!",
+            k_polar_express_bad = "You've been a bad gambler",
+            k_polar_express_good = "Ho ho ho!",
+            k_kraven = "There's an animal in each one of us",
+            k_hustle = "Dribble",
+            k_terminator = "I'll be back",
+            k_insomnia = "No rest",
+            k_sugarland = "Stolen",
+            k_drstrange = "By the Eye of Agamoto!",
+            k_gremlins = "Bwehehehe",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
@@ -2232,6 +2566,8 @@ return {
 
             -- Spell barks
             k_spellcast_1 = "",
+
+            ph_egg = "That's a Romance!"
         }
     }
 }

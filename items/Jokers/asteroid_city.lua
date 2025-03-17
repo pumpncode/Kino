@@ -1,23 +1,21 @@
 SMODS.Joker {
-    key = "signs",
-    order = 201,
+    key = "asteroid_city",
+    order = 200,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             cards_abducted = {},
             num_cards_abducted_non = 0,
-            a_mult = 2,
-            valid_targets = {}
         }
     },
-    rarity = 2,
+    rarity = 3,
     atlas = "kino_atlas_6",
-    pos = { x = 2, y = 3},
-    cost = 7,
-    blueprint_compat = true,
-    perishable_compat = true,
+    pos = { x = 1, y = 3},
+    cost = 8,
+    blueprint_compat = false,
+    perishable_compat = false,
     kino_joker = {
-        id = 2675,
+        id = 747188,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -29,46 +27,44 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Sci-fi", "Horror"},
+    pools, k_genre = {"Sci-fi", "Comedy"},
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.cards_abducted and #card.ability.extra.cards_abducted or 0,
                 card.ability.extra.num_cards_abducted_non,
-                card.ability.extra.a_mult,
-                Kino.abduction and (#Kino.abduction.cards * card.ability.extra.a_mult) or 0
             }
         }
     end,
     calculate = function(self, card, context)
-        -- Abduct a random unscored card. Gives +2 Mult for each card abducted
-        card.ability.extra.num_cards_abducted_non = #card.ability.extra.cards_abducted
+        -- Upon entering a blind, abduct the joker to the right
+        -- Return it Negative
+        card.ability.extra.num_cards_abducted_non = card.ability.extra.cards_abducted and #card.ability.extra.cards_abducted or 0
 
-        if context.before then
-            card.ability.extra.valid_targets = {}
-        end
-
-        if context.individual and context.cardarea == "unscored" then
+        if context.setting_blind and card.ability.extra.num_cards_abducted_non == 0 and not card.getting_sliced then
+            -- find position
+            local _mypos = nil
+            for i = 1, #G.jokers.cards do
+                if G.jokers.cards[i] == card then
+                    _mypos = i
+                end
+            end
             
-            card.ability.extra.valid_targets[#card.ability.extra.valid_targets + 1] = context.other_card
-        end
-
-        if context.joker_main then
-            return {
-                mult = #Kino.abduction.cards * card.ability.extra.a_mult
-            }
-        end
-
-        if context.after and context.cardarea == G.jokers and #card.ability.extra.valid_targets > 0 then
-            local _target = pseudorandom_element(card.ability.extra.valid_targets, pseudoseed("signs"))
-            Kino.abduct_card(card, _target)
+            if _mypos and G.jokers.cards[_mypos + 1] and not 
+            G.jokers.cards[_mypos + 1].getting_sliced and not
+            G.jokers.cards[_mypos + 1].ability.eternal and not
+            G.jokers.cards[_mypos + 1].abducted then  
+                Kino.abduct_card(card, G.jokers.cards[_mypos + 1])
+            end
         end
 
         if context.abduction_ending and not context.blueprint and not context.retrigger then
+            for i, _object in ipairs(card.ability.extra.cards_abducted) do
+                _object.card:set_edition("e_negative", true, nil, true)
+            end
             card.ability.extra.cards_abducted = Kino.unabduct_cards(card)
         end
-        
     end,
     add_to_deck = function(self, card, from_debuff)
         card.children.abduction_display = Kino.create_abduction_ui(card)

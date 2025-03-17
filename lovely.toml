@@ -299,3 +299,41 @@ match_indent = true
 payload = '''
 if (not v.shattered) and (not v.destroyed) and (not v.abducted) then 
 '''
+
+
+# 
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = '''
+if G.GAME.blind.name == 'The Serpent' and
+'''
+position = 'before'
+match_indent = true
+payload = '''
+if next(find_joker('j_kino_insomnia')) and
+(G.GAME.current_round.hands_played > 0 or
+G.GAME.current_round.discards_used > 0) then 
+	SMODS.calculate_context({insomnia_awake = true})
+	return
+end
+'''
+
+# Allows booster packs to have adjustable weight
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = '''
+for k, v in ipairs(G.P_CENTER_POOLS['Booster']) do
+	if (not _type or _type == v.kind) and not G.GAME.banned_keys[v.key] then cume = cume + (v.weight or 1 ) end
+end
+'''
+position = 'at'
+match_indent = true
+payload = '''
+for k, v in ipairs(G.P_CENTER_POOLS['Booster']) do
+	local _weight = v.get_weight and v:get_weight() or v.weight
+	if (not _type or _type == v.kind) and not G.GAME.banned_keys[v.key] then cume = cume + (_weight or 1 ) end
+end
+'''
+

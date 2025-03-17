@@ -27,6 +27,7 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Horror", "Romance", "Fantasy"},
+    is_water = true,
 
     loc_vars = function(self, info_queue, card)
         return {
@@ -42,7 +43,7 @@ SMODS.Joker {
         if context.destroying_card and not context.blueprint then 
             if #context.full_hand == 1 and context.full_hand[1]:get_id() == 12 then
                 -- Iterate through every owned card.
-                for i, v in ipairs(G.deck.cards) do
+                for i, v in ipairs(G.playing_cards) do
                     v.ability.perma_mult = v.ability.perma_mult or 0
                     v.ability.perma_mult = v.ability.perma_mult + card.ability.extra.perma_mult
                 end

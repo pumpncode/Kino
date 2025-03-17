@@ -1,20 +1,20 @@
 SMODS.Joker {
-    key = "smurfs_1",
-    order = 209,
+    key = "insomnia",
+    order = 101,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            a_chips = 5
+
         }
     },
-    rarity = 1,
-    atlas = "kino_atlas_6",
+    rarity = 2,
+    atlas = "kino_atlas_3",
     pos = { x = 4, y = 4},
-    cost = 3,
+    cost = 5,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 41513,
+        id = 320,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -26,23 +26,26 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Fantasy", "Family"},
+    pools, k_genre = {"Crime", "Thriller"},
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.a_chips,
-                (G.GAME.current_round.spells_cast or 0) * card.ability.extra.a_chips
+
             }
         }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and 
-        (context.other_card:get_id() == 2 or context.other_card:get_id() == 3) then
-            return {
-                
-                chips = G.GAME.current_round.spells_cast * card.ability.extra.a_chips
-            }
+        -- double your hand size. You do not draw cards
+        if context.setting_blind and not context.getting_sliced then
+            G.hand:change_size(G.hand.config.card_limit)
+            G.GAME.round_resets.temp_handsize = (G.GAME.round_resets.temp_handsize or 0) + G.hand.config.card_limit
+        end
+
+        if context.insomnia_awake then
+            card:juice_up()
+            card_eval_status_text(card, 'extra', nil, nil, nil,
+            { message = localize('k_insomnia'), colour = G.C.BLACK })
         end
     end
 }

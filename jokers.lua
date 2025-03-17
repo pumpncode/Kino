@@ -133,6 +133,7 @@ joker_list = {
 "wicker_man",
 "wizard_of_oz",
 "yes_man",
+"zardoz",
 
 ------ Rare
 "angel_hearts",
@@ -156,10 +157,19 @@ joker_list = {
 "war_of_the_worlds",
 
 ------ Legendary
--- "2001_odyssey",
--- "indiana_jones_1",
--- "barbie",
--- "rattatouille",
+
+
+-- "barbie", 2020s
+-- UNIMPLEMENTED The Avengers 2010s
+-- "rattatouille", 2000s
+-- UNIMPLEMENTED Forrest Gump 1990s
+-- "indiana_jones_1", 1980s
+-- Taxi Driver?? 1970s
+-- "2001_odyssey", 1960s
+-- UNIMPLEMENTED A Streetcar Named Desire 1950s
+-- UNIMPLEMENTED Citizen Kane 1940s
+-- UNIMPLEMENTED Bringing Up Baby 1930s
+-- UNIMPLEMENTED Wings 1920s
 
 -- Testing
 "nope", --Tested
@@ -187,9 +197,34 @@ joker_list = {
 "they_live", -- Tested
 "doctor_who", -- Tested
 "stargate", -- Tested
-"smurfs",
-"big_trouble_little_china",
--- "doctor_strange_1"
+
+
+-- 7.1 Jokers
+"asteroid_city", -- Tested
+"blank_check", -- Tested
+"big_trouble_little_china", -- Tested
+"clockwork_orange", -- Tested
+"heart_eyes", -- Tested
+"hustle", -- Tested
+"independence_day_1",
+"killer_klowns", -- Tested
+"kraven", -- Tested
+"lucky_number_slevin", -- Tested
+"moonfall", -- Tested
+"polar_express", -- Tested
+"shazam_1", -- Tested
+"smurfs_1", -- Tested
+"terminator_1",
+"terminator_2",
+"insomnia", -- Tested
+"true_lies", -- Tested
+"sugarland_express", -- Tested
+"inception",
+"castaway",
+"doctor_strange_1",
+"doctor_strange_2",
+"gremlins_1",
+"12_monkeys" -- Tested
 
 -- "frankenstein"
 -- "when_harry_met_sally"

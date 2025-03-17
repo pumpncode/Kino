@@ -43,7 +43,6 @@ SMODS.Joker {
         if context.before
         and #context.full_hand == 1
         and not context.blueprint and not context.repetition then
-            print("aloha + " .. #context.full_hand)
             local i_card = context.scoring_hand[1]
             local suit_prefix = string.sub(i_card.base.suit, 1, 1).."_"
             local rank = i_card.base.id
