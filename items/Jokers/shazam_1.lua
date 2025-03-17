@@ -7,7 +7,7 @@ SMODS.Joker {
 
         }
     },
-    rarity = 2,
+    rarity = 1,
     atlas = "kino_atlas_6",
     pos = { x = 5, y = 4},
     cost = 6,
