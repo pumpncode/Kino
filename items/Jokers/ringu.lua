@@ -6,7 +6,7 @@ SMODS.Joker {
         extra = {
             x_mult = 4.9,
             a_xmult = 0.7,
-            days_left = 7
+            days_left_non = 7
         }
     },
     rarity = 1,
@@ -54,9 +54,9 @@ SMODS.Joker {
 
             card_eval_status_text(card, 'extra', nil, nil, nil,
             { message = localize('k_ringu_countdown'),  colour = G.C.BLACK })
-            card.ability.extra.days_left = card.ability.extra.days_left - 1
+            card.ability.extra.days_left_non = card.ability.extra.days_left_non - 1
 
-            if card.ability.extra.days_left < 0 and not context.blueprint and not context.repetition then
+            if card.ability.extra.days_left_non < 0 and not context.blueprint and not context.repetition then
 
 
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 1, func = function()

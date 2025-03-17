@@ -40,7 +40,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- When you destroy a card, 1/5 chance to create a demon
         if context.remove_playing_cards then
-            print("Aloha")
             for i = 1, #context.removed do
                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                     if pseudorandom("evil_dead_1") < (G.GAME.probabilities.normal * card.ability.extra.cur_chance) / card.ability.extra.chance then

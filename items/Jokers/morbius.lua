@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            x_mult = 1,
+            stacked_x_mult = 1,
             a_xmult = 0.1,
             reset = 1
 
@@ -35,7 +35,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.x_mult,
+                card.ability.extra.stacked_x_mult,
                 card.ability.extra.a_xmult,
                 card.ability.extra.reset
             }
@@ -53,17 +53,17 @@ SMODS.Joker {
                 end
             end
 
-            card.ability.extra.x_mult = card.ability.extra.x_mult + (card.ability.extra.a_xmult * _count)
+            card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + (card.ability.extra.a_xmult * _count)
         end
 
         if context.joker_main then
             return {
-                x_mult = card.ability.extra.x_mult
+                x_mult = card.ability.extra.stacked_x_mult
             }
         end
 
         if context.end_of_round and not context.repetition and not context.blueprint then
-            card.ability.extra.x_mult = card.ability.extra.reset
+            card.ability.extra.stacked_x_mult = card.ability.extra.reset
         end
     end
 }

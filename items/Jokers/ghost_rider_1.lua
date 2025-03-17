@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            x_mult = 1,
+            stacked_x_mult = 1,
             a_xmult = 0.25
         }
     },
@@ -33,7 +33,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.x_mult,
+                card.ability.extra.stacked_x_mult,
                 card.ability.extra.a_xmult
             }
         }
@@ -55,23 +55,12 @@ SMODS.Joker {
                 _destroyed_card.destroyed = true
                 _destroyed_card.marked_to_destroy_by_ghost_rider = true
 
-                -- G.E_MANAGER:add_event(Event({
-                --     func = function()
-                --         if SMODS.has_enhancement(_destroyed_card, 'm_glass') then
-                --             _destroyed_card:shatter()
-                --         else
-                --             _destroyed_card:start_dissolve()
-                --         end
-                --       return true
-                --     end
-                --   }))
-
-                card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.a_xmult
+                card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.a_xmult
             end
 
-            if card.ability.extra.x_mult > 0 then
+            if card.ability.extra.stacked_x_mult > 0 then
                 return {
-                    x_mult = card.ability.extra.x_mult
+                    x_mult = card.ability.extra.stacked_x_mult
                 }
             end
         end

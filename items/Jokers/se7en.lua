@@ -5,8 +5,8 @@ SMODS.Joker {
     config = {
         extra = {
             mult = 7,
-            sevens_trig = 0,
-            sevens_trig_cap = 49
+            sevens_trig_non = 0,
+            sevens_trig_cap_non = 49
         }
     },
     rarity = 2,
@@ -41,10 +41,10 @@ SMODS.Joker {
         -- 7s give +7 mult
 
         if context.individual and context.other_card:get_id() == 7 and context.cardarea == G.play then
-            card.ability.extra.sevens_trig = card.ability.extra.sevens_trig + 1
+            card.ability.extra.sevens_trig_non = card.ability.extra.sevens_trig_non + 1
 
-            if card.ability.extra.sevens_trig == card.ability.extra.sevens_trig_cap then
-                card.ability.extra.sevens_trig = 0
+            if card.ability.extra.sevens_trig_non == card.ability.extra.sevens_trig_cap_non then
+                card.ability.extra.sevens_trig_non = 0
                 return {
                     x_mult = card.ability.extra.mult
                 }

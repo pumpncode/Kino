@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            mult = 0,
+            stacked_mult = 0,
             a_mult = 1
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.mult,
+                card.ability.extra.stacked_mult,
                 card.ability.extra.a_mult
             }
         }
@@ -41,16 +41,16 @@ SMODS.Joker {
         -- When a card is scored
         -- When you discard a card, -1 mult.
         if context.individual and context.cardarea == G.play then
-            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult
+            card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult
         end
 
         if context.discard and context.cardarea == G.jokers  and not context.blueprint then
-            card.ability.extra.mult = card.ability.extra.mult - (card.ability.extra.a_mult * #context.full_hand)
+            card.ability.extra.stacked_mult = card.ability.extra.stacked_mult - (card.ability.extra.a_mult * #context.full_hand)
         end
 
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                mult = card.ability.extra.stacked_mult
             }
         end
 

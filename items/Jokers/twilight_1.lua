@@ -4,9 +4,9 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            x_mult = 0,
+            stacked_x_mult = 0,
             a_xmult = 0.1,
-            romance_bonus = 0
+            romance_bonus_non = 0
         }
     },
     rarity = 1,
@@ -35,9 +35,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.x_mult,
+                card.ability.extra.stacked_x_mult,
                 card.ability.extra.a_xmult,
-                card.ability.extra.romance_bonus
+                card.ability.extra.romance_bonus_non
             }
         }
     end,
@@ -63,16 +63,16 @@ SMODS.Joker {
             end
 
             if #enhanced > 0 then
-                card.ability.extra.x_mult = card.ability.extra.x_mult + (card.ability.extra.a_xmult * #enhanced)
-                card.ability.extra.romance_bonus = card.ability.extra.x_mult
+                card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + (card.ability.extra.a_xmult * #enhanced)
+                card.ability.extra.romance_bonus_non = card.ability.extra.stacked_x_mult
             end
 
-            SMODS.calculate_context({twilight_rom = true, x_mult = card.ability.extra.x_mult})
+            SMODS.calculate_context({twilight_rom = true, x_mult = card.ability.extra.stacked_x_mult})
 
             if #enhanced > 0 then
                 return {
                     extra = { focus = card,
-                    message = localize({type='variable', key='a_xmult', vars = {card.ability.extra.x_mult}}),
+                    message = localize({type='variable', key='a_xmult', vars = {card.ability.extra.stacked_x_mult}}),
                     colour = G.C.MULT,
                     card = card
                     }

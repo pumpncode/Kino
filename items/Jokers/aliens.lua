@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            cards_debuffing = 2,
+            cards_debuffing_non = 2,
             x_mult = 2
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.cards_debuffing,
+                card.ability.extra.cards_debuffing_non,
                 card.ability.extra.x_mult
             }
         }
@@ -42,7 +42,7 @@ SMODS.Joker {
         if context.joker_main then
             local _cards_debuffed = 0
 
-            while _cards_debuffed < card.ability.extra.cards_debuffing do
+            while _cards_debuffed < card.ability.extra.cards_debuffing_non do
                 local _rand_card = pseudorandom_element(G.deck.cards,  pseudoseed('aliens'))
                 if _rand_card.debuff == false then
                     SMODS.debuff_card(_rand_card, true, card.config.center.key)

@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             is_active = true,
-            x_mult = 1,
+            stacked_x_mult = 1,
             a_xmult = 0.2,
             string = "Feeding"
         }
@@ -36,7 +36,7 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.is_active,
-                card.ability.extra.x_mult,
+                card.ability.extra.stacked_x_mult,
                 card.ability.extra.a_xmult,
                 card.ability.extra.string
             }
@@ -64,7 +64,7 @@ SMODS.Joker {
             end
 
             if #enhanced > 0 then
-                card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.mult_mod * #enhanced
+                card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.mult_mod * #enhanced
                 return {
                     extra = { focus = card,
                     message = localize({type='variable', key='a_xmult', vars = {card.ability.extra.mult}}),
@@ -86,7 +86,7 @@ SMODS.Joker {
         if context.joker_main and not card.ability.extra.is_active then
             return {
                 card = card,
-                x_mult = card.ability.extra.x_mult
+                x_mult = card.ability.extra.stacked_x_mult
             }
         end
     end

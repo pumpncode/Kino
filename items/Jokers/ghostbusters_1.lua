@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 0,
+            stacked_chips = 0,
             a_chips = 10
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips,
+                card.ability.extra.stacked_chips,
                 card.ability.extra.a_chips
             }
         }
@@ -42,13 +42,13 @@ SMODS.Joker {
         -- destroy it, and gain +5 chips.
 
         if context.destroying_card and context.cardarea == G.play and context.destroying_card.debuff and not context.blueprint then
-            card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.a_chips
+            card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
             return { remove = true }
         end
 
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips,
+                chips = card.ability.extra.stacked_chips,
                 card = card
             }
         end

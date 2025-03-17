@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             mult_mod = 2,
-            mult = 0
+            stacked_mult = 0
         }
     },
     rarity = 1,
@@ -33,8 +33,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.mult_mod,
-                card.ability.extra.mult,
+                card.ability.extra.a_mult,
+                card.ability.extra.stacked_mult,
             }
         }
     end,
@@ -59,10 +59,10 @@ SMODS.Joker {
                 end
 
                 if #enhanced > 0 then
-                    card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod * #enhanced
+                    card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult * #enhanced
                     return {
                         extra = { focus = card,
-                        message = localize({type='variable', key='a_mult', vars = {card.ability.extra.mult}}),
+                        message = localize({type='variable', key='a_mult', vars = {card.ability.extra.stacked_mult}}),
                         colour = G.C.MULT,
                         card = card
                         }
@@ -72,7 +72,7 @@ SMODS.Joker {
         end
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                mult = card.ability.extra.stacked_mult
             }
         end
     end

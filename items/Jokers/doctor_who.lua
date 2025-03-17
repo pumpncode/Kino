@@ -48,7 +48,6 @@ SMODS.Joker {
         end
 
         if context.abduction_ending and not context.blueprint and not context.retrigger then
-            print(#card.ability.extra.cards_abducted .. " as abduction ends")
             for i, _object in ipairs(card.ability.extra.cards_abducted) do
                 local _card = _object.card
                 local edition = poll_edition('drwho', nil, true, true)

@@ -5,10 +5,10 @@ SMODS.Joker {
     config = {
         extra = {
             earned = 1,
-            earned_per = 5,
-            double_chance = 20,
-            destroy_chance = 10,
-            destroy_floor = 1,
+            earned_per_non = 5,
+            double_chance_non = 20,
+            destroy_chance_non = 10,
+            destroy_floor_non = 1,
             destroy_increment = 1
         }
     },
@@ -39,10 +39,10 @@ SMODS.Joker {
             
             vars = {
                 card.ability.extra.earned,
-                card.ability.extra.earned_per,
-                card.ability.extra.double_chance,
-                card.ability.extra.destroy_chance,
-                card.ability.extra.destroy_floor,
+                card.ability.extra.earned_per_non,
+                card.ability.extra.double_chance_non,
+                card.ability.extra.destroy_chance_non,
+                card.ability.extra.destroy_floor_non,
                 card.ability.extra.destroy_increment,
                 (G.GAME.probabilities.normal or 1)
             }
@@ -52,16 +52,16 @@ SMODS.Joker {
         local money = 0
 
         -- Check for set money
-        if pseudorandom('big_short') < (G.GAME.probabilities.normal * card.ability.extra.destroy_floor) / card.ability.extra.destroy_chance then
+        if pseudorandom('big_short') < (G.GAME.probabilities.normal * card.ability.extra.destroy_floor_non) / card.ability.extra.destroy_chance_non then
             G.GAME.dollars = 0
         end
 
-        card.ability.extra.destroy_floor = card.ability.extra.destroy_floor + card.ability.extra.destroy_increment
+        card.ability.extra.destroy_floor_non = card.ability.extra.destroy_floor_non + card.ability.extra.destroy_increment
 
-        money = math.floor((G.GAME.dollars + (G.GAME.dollar_buffer or 0))/card.ability.extra.earned_per) * 1
+        money = math.floor((G.GAME.dollars + (G.GAME.dollar_buffer or 0))/card.ability.extra.earned_per_non) * 1
 
         -- Check for the doubling bonus
-        if pseudorandom('big_short') < G.GAME.probabilities.normal / card.ability.extra.double_chance then
+        if pseudorandom('big_short') < G.GAME.probabilities.normal / card.ability.extra.double_chance_non then
             money = G.GAME.dollars
         end
         

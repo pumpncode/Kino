@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            mult = 0,
+            stacked_mult = 0,
             a_mult = 5
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.mult,
+                card.ability.extra.stacked_mult,
                 card.ability.extra.a_mult
             }
         }
@@ -43,14 +43,14 @@ SMODS.Joker {
                 if context.hand_drawn[i].base.id == 11 and 
                 context.hand_drawn[i].config.center ~= G.P_CENTERS.m_stone then
 
-                    card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.a_mult
+                    card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult
 
                     if pseudorandom("shining") < (1/10) then
                         card_eval_status_text(card, 'extra', nil, nil, nil,
                         { message = localize('k_shining'), colour = G.C.MULT })
                     else
                         card_eval_status_text(card, 'extra', nil, nil, nil,
-                        { message = localize({type='variable', key = 'a_mult', vars = {card.ability.extra.mult}}), colour = G.C.MULT })
+                        { message = localize({type='variable', key = 'a_mult', vars = {card.ability.extra.stacked_mult}}), colour = G.C.MULT })
                     end
                     
                 end
@@ -59,13 +59,13 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult,
+                mult = card.ability.extra.stacked_mult,
                 card = card
             }
         end
 
         if context.after and not context.blueprint and not context.repetition then
-            card.ability.extra.mult = 0
+            card.ability.extra.stacked_mult = 0
         end
     end
 }

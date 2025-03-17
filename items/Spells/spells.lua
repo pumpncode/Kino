@@ -19,7 +19,7 @@ SMODS.Spell = SMODS.Center:extend({
         G.GAME.current_round.last_spell_cast.key = self.key
         G.GAME.current_round.last_spell_cast.strength = strength
         if _obj and _obj.cast and type(_obj.cast) == 'function' then
-            obj:cast()
+            _obj:cast()
         end
         return true
     end
@@ -200,7 +200,7 @@ SMODS.Spell {
 
         return {
             focus = _card,
-            message = localize({type='variable', key='k_upgrade_ex', vars = {_card.ability.perma_mult}}),
+            message = localize('k_upgrade_ex'),
             colour = G.C.MULT,
             card = _card
         }
@@ -385,7 +385,7 @@ SMODS.Spell {
 
         return {
             focus = _card,
-            message = localize({type='variable', key='k_upgrade_ex', vars = {_card.ability.perma_bonus}}),
+            message = localize('k_upgrade_ex'),
             colour = G.C.CHIPS,
             card = _card
         }
@@ -479,6 +479,32 @@ SMODS.Spell {
     end
 }
 
+SMODS.Spell {
+    key = "EyeOfAgamoto",
+    order = 11,
+    atlas = "kino_spells",
+    pos = {x = 4, y = 1},
+    config = {
+        target = "unique",
+        hands_gained = 2
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            self.config.hands_gained
+        }
+    end,
+    no_collection = true,
+    cast = function(self, strength)
+        G.E_MANAGER:add_event(Event({func = function()
+            ease_hands_played(self.config.hands_gained)
+        return true end }))
+        return {
+            message = localize('k_drstrange'),
+            colour = G.C.GREEN
+        }
+    end
+}
+
 
 --- Spell related funcs
 
@@ -486,9 +512,23 @@ function cast_spell(spell_key, strength, repeatable)
     if repeatable == nil then
         repeatable = true
     end
+
+    SMODS.calculate_context({pre_spell_cast = true, strength = strength, spell_key = spell_key, repeatable = repeatable})
+
+    if #G.GAME.current_round.spell_queue > 0 then
+        local _nextspell = G.GAME.current_round.spell_queue[1]
+        spell_key = _nextspell.spell_key
+        strength = _nextspell.strength
+        table.remove(G.GAME.current_round.spell_queue, 1)
+    end
+
     if next(find_joker('j_kino_fantasia')) and strength < 4 then
         strength = strength + 1
     end
+
+    G.GAME.current_round.spells_cast = G.GAME.current_round.spells_cast + 1
+    G.GAME.current_round.last_spell_cast.key = spell_key
+    G.GAME.current_round.last_spell_cast.strength = strength
 
     local _return_table = SMODS.Spells[spell_key]:cast(strength)
 

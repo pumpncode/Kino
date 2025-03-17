@@ -7,7 +7,7 @@ SMODS.Joker {
             start_chips = 120,
             cur_chips = 120,
             ticking = true,
-            timing_quick = 60,
+            timing_quick_non = 60,
             time_spent = 0
         }
     },
@@ -66,7 +66,7 @@ SMODS.Joker {
     update = function(self, card, dt)
         if not G.SETTINGS.paused and G.GAME.blind.in_blind then
             card.ability.extra.time_spent = card.ability.extra.time_spent + dt
-            card.ability.extra.cur_chips = math.max(card.ability.extra.start_chips - math.floor(card.ability.extra.start_chips * (card.ability.extra.time_spent / card.ability.extra.timing_quick)), 0)
+            card.ability.extra.cur_chips = math.max(card.ability.extra.start_chips - math.floor(card.ability.extra.start_chips * (card.ability.extra.time_spent / card.ability.extra.timing_quick_non)), 0)
         end
     end
 }

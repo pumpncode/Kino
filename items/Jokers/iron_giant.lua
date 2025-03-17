@@ -4,7 +4,6 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            x_mult = 1.00,
             a_xmult = 0.1
         }
     },
@@ -33,7 +32,6 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.x_mult,
                 card.ability.extra.a_xmult
             }
         }
@@ -53,10 +51,10 @@ SMODS.Joker {
 
             local level = context.other_card.ability.times_upgraded
             if level > 0 then
-                local _x_mult = card.ability.extra.x_mult + (card.ability.extra.a_xmult * level)
+                local _x_mult = 1 + (card.ability.extra.a_xmult * level)
                 return {
                     x_mult = _x_mult,
-                    message = localize{type='variable', key = 'a_xmult', vars = {card.ability.extra.x_mult}}
+                    message = localize{type='variable', key = 'a_xmult', vars = {_x_mult}}
                 }
             end
         end

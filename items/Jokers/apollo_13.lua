@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            goal = 13
+            goal_non = 13
         }
     },
     rarity = 2,
@@ -31,7 +31,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.goal
+                card.ability.extra.goal_non
             }
         }
     end,
@@ -45,7 +45,7 @@ SMODS.Joker {
                 _rank_total = _rank_total + context.scoring_hand[i]:get_id()
             end
 
-            if _rank_total == card.ability.extra.goal and
+            if _rank_total == card.ability.extra.goal_non and
             #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
                 G.E_MANAGER:add_event(Event({
                     func = function() 

@@ -6,7 +6,7 @@ SMODS.Joker {
         extra = {
             money = 1,
             chance = 20,
-            division = 10
+            division_non = 10
         }
     },
     rarity = 2,
@@ -36,7 +36,7 @@ SMODS.Joker {
                 card.ability.extra.money,
                 G.GAME.probabilities.normal,
                 card.ability.extra.chance,
-                card.ability.extra.division
+                card.ability.extra.division_non
             }
         }
     end,
@@ -53,7 +53,7 @@ SMODS.Joker {
 
         if context.joker_main and not context.blueprint then
             if pseudorandom("wall_street") < G.GAME.probabilities.normal / card.ability.extra.chance then
-                card.ability.extra_value = (card.ability.extra_value or 0) / card.ability.extra.division
+                card.ability.extra_value = (card.ability.extra_value or 0) / card.ability.extra.division_non
             end
         end
     end

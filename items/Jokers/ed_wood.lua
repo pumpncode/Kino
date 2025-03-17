@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            blind_piece = 25,
+            blind_piece_non = 25,
             money = 3
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.blind_piece,
+                card.ability.extra.blind_piece_non,
                 card.ability.extra.money
             }
         }
@@ -41,7 +41,7 @@ SMODS.Joker {
         -- when your hand scored less than 1/4th of the blind,
         -- earn $3.
         if context.after and context.cardarea == G.jokers then
-            if (hand_chips * mult) < G.GAME.blind.chips * (card.ability.extra.blind_piece / 100) then
+            if (hand_chips * mult) < G.GAME.blind.chips * (card.ability.extra.blind_piece_non / 100) then
                 G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money
                 G.E_MANAGER:add_event(Event({func = (function() G.GAME.dollar_buffer = 0; return true end)}))
                 return {

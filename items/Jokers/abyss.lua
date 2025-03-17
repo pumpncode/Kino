@@ -28,9 +28,10 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Thriller", "Sci-fi"},
+    is_water = true,
 
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = {set = 'Other', key = "jump_scare", vars = {tostring(Kino.jump_scare_mult)}}
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_jump_scare", vars = {tostring(Kino.jump_scare_mult)}}
         return {
             vars = {
                 G.GAME.probabilities.normal,

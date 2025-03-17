@@ -135,6 +135,13 @@ SMODS.Atlas {
     path = 'kino_ui_assets.png'
 }
 
+SMODS.Atlas {
+    key = "kino_backs",
+    px = 71,
+    py = 95,
+    path = 'kino_backs.png'
+}
+
 local helper, load_error = SMODS.load_file("card_ui.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
@@ -173,16 +180,18 @@ Game.init_game_object = function(self)
     ret.current_round.cards_abducted = 0
     ret.genre_synergy_treshold = 5
     
-    ret.spells_cast = 0
-    ret.last_spell_cast = {
+    ret.current_round.spells_cast = 0
+    ret.current_round.last_spell_cast = {
         key = "",
         rank = 1
+    }
+    ret.current_round.spell_queue = {
+        -- should be {spell_key = KEY, strength = STRENGTH}
     }
 
     ret.confections_used = 0
 
     ret.current_round.abduction_waitinglist = {}
-    -- generate_cmifc_rank()
     return ret
 end
 
@@ -241,6 +250,12 @@ for _, file in ipairs(files) do
     if _add then
         assert(SMODS.load_file("Items/Enhancements/" .. file))()
     end
+end
+
+-- Register the Card Backs
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Backs")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Backs/" .. file))()
 end
 
 -- Register the Consumable Types

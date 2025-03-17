@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            x_mult = 1,
+            stacked_x_mult = 1,
             a_xmult = 0.1
         }
     },
@@ -33,7 +33,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.x_mult,
+                card.ability.extra.stacked_x_mult,
                 card.ability.extra.a_xmult
             }
         }
@@ -42,7 +42,7 @@ SMODS.Joker {
         -- Cleanse demon cards after scoring
         if context.joker_main then
             return {
-                x_mult = card.ability.extra.x_mult
+                x_mult = card.ability.extra.stacked_x_mult
             }
         end
 
@@ -63,7 +63,7 @@ SMODS.Joker {
             end
 
             if #_demonic > 0 then
-                card.ability.extra.x_mult = card.ability.extra.x_mult + (card.ability.extra.a_xmult * #_demonic)
+                card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + (card.ability.extra.a_xmult * #_demonic)
                 return {
                     extra = { focus = card,
                     message = localize({type='variable', key='a_xmult', vars = {card.ability.extra.mult}}),

@@ -52,7 +52,6 @@ SMODS.Joker {
         if context.individual and context.cardarea == "unscored" then
             
             card.ability.extra.valid_targets[#card.ability.extra.valid_targets + 1] = context.other_card
-            print("TESTING: " .. #card.ability.extra.valid_targets)
         end
 
         if context.joker_main then
@@ -62,7 +61,6 @@ SMODS.Joker {
         end
 
         if context.after and context.cardarea == G.jokers and #card.ability.extra.valid_targets > 0 then
-            print("TESTING: " .. #card.ability.extra.valid_targets)
             local _target = pseudorandom_element(card.ability.extra.valid_targets, pseudoseed("signs"))
             Kino.abduct_card(card, _target)
         end

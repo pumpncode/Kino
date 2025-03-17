@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 300,
-            req = 13
+            goal = 13
         }
     },
     rarity = 2,
@@ -33,7 +33,7 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.chips,
-                card.ability.extra.req,
+                card.ability.extra.goal,
                 G.GAME.current_round.sacrifices_made
             }
         }
@@ -41,7 +41,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- +300 chips if you've made more than 13 sacrifices this game. 
 
-        if context.joker_main and G.GAME.current_round.sacrifices_made >= card.ability.extra.req then
+        if context.joker_main and G.GAME.current_round.sacrifices_made >= card.ability.extra.goal then
             return {
                 chips = card.ability.extra.chips
             }

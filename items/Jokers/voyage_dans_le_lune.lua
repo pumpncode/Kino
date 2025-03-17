@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                (G.GAME.probabilities.normal * card.ability.extra.cur_chance ) / card.ability.extra.chance,
+                (G.GAME.probabilities.normal * card.ability.extra.cur_chance ),
                 card.ability.extra.chance
             }
         }
