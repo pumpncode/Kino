@@ -1,3 +1,8 @@
+V 0.7.1a:
+Bug Fixes:
+- Abduction mechanics shouldn't be crashed by destruction effects anymore
+- Avatar no longer crashes the game
+
 V 0.7.1:
 New Jokers:
      Common

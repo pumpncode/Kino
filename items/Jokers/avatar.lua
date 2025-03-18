@@ -49,13 +49,13 @@ SMODS.Joker {
                     end
                 end
 
-                card.ability.extra.chips = card.ability.extra.chips + (_tally * card.ability.extra.a_chips)
+                card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + (_tally * card.ability.extra.a_chips)
             end
         end
 
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips,
+                chips = card.ability.extra.stacked_chips,
                 card = card
             }
         end

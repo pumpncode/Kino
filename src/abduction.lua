@@ -35,6 +35,10 @@ Kino.abduct_card = function(card, abducted_card)
         return
     end
 
+    if abducted_card.shattered or abducted_card.destroyed or abducted_card.abducted then
+        return
+    end
+
     if abducted_card.ability.set ~= 'Joker' then
         abducted_card.abducted = true
         G.GAME.current_round.abduction_waitinglist[#G.GAME.current_round.abduction_waitinglist + 1] = {
@@ -65,44 +69,8 @@ Kino.abduct_card = function(card, abducted_card)
             abducted_card.area:remove_card(abducted_card)
             Kino.abduction:emplace(abducted_card)
         end
-
-
     end
-    --     card:juice_up()
-
-    --     -- grab the abducted_card and move it to the abducted zone
-    --     G.GAME.current_round.cards_abducted = G.GAME.current_round.cards_abducted + 1
-
-    --     abducted_card.area.config.card_limit = abducted_card.area.config.card_limit - ((abducted_card.edition and abducted_card.edition.negative) and 1 or 0)
-        
-
-
-    --     card.ability.extra.cards_abducted[#card.ability.extra.cards_abducted + 1] = {
-    --         card = abducted_card,
-    --         abducted_from = abducted_card.area
-    --     }
-       
-    --     abducted_card.area:remove_card(abducted_card)
-
-    --     -- Make sure to remove it from deck
-    --     if G.playing_cards then
-    --         for k, v in ipairs(G.playing_cards) do
-    --             if v == abducted_card then
-    --                 table.remove(G.playing_cards, k)
-    --                 break
-    --             end
-    --         end
-    --         for k, v in ipairs(G.playing_cards) do
-    --             v.playing_card = k
-    --         end
-    --     end
-    --     Kino.abduction:emplace(abducted_card)
     SMODS.calculate_context({abduct = true, joker = card, abducted_card = abducted_card})
-end
-
-Card.abduct = function(abductor)
-
-
 end
 
 Kino.unabduct_cards = function(card)
