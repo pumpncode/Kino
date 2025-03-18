@@ -8,6 +8,9 @@
 -- If the source of an abduction is sold or destroyed, the abducted items are sold or destroyed with them
 local _o_gsr = Game.start_run
 function Game:start_run(args)
+    _o_gsr(self, args)
+
+    -- Abduction Mechanics
     self.kino_abductionarea = CardArea(
         0,
         0,
@@ -21,8 +24,23 @@ function Game:start_run(args)
     )
     self.kino_abductionarea.states.visible = false
     Kino.abduction = G.kino_abductionarea
-    Kino.abduction_table = {}
-    _o_gsr(self, args)
+
+    -- Confection Mechanics
+    self.kino_snackbag = CardArea(
+        G.consumeables.T.x + 2.25,
+        G.consumeables.T.y + G.consumeables.T.h + 1,
+        self.CARD_W * 2.2,
+        self.CARD_H * 0.95,
+        {
+            card_limit = 4,
+            type = 'joker',
+            highlight_limit = 1,
+            -- card_w = G.CARD_W * 0.7,
+        }
+    )
+    self.kino_snackbag.states.visible = false
+    Kino.snackbag = G.kino_snackbag
+
 end
 
 -- Abduction functions

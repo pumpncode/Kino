@@ -337,3 +337,16 @@ for k, v in ipairs(G.P_CENTER_POOLS['Booster']) do
 end
 '''
 
+# Patch SMODS for snackbag CardArea
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/utils.lua"]'''
+pattern = '''
+-- TARGET: add your own CardAreas for joker evaluation
+'''
+position = "after"
+payload = '''
+table.insert(t, Kino.snackbag)
+'''
+match_indent = true
+times = 1

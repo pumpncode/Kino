@@ -58,3 +58,20 @@ SMODS.Voucher {
         return { vars = {} }
     end
 }
+
+SMODS.Voucher {
+    key = "snackbag",
+    atlas = "kino_vouchers",
+    order = 4,
+    set = "Voucher",
+    pos = { x = 1, y = 0 },
+    config = {},
+    discovered = true,
+    unlocked = true,
+    available = true,
+    requires = { "v_kino_special_treats"},
+    cost = 10,
+    loc_vars = function(self, info_queue)
+        return { vars = {} }
+    end
+}

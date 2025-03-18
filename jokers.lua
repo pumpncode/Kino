@@ -158,14 +158,16 @@ joker_list = {
 
 ------ Legendary
 
-
+"2001_odyssey",
+"ratatouille",
+"citizen_kane",
 -- "barbie", 2020s
 -- UNIMPLEMENTED The Avengers 2010s
--- "rattatouille", 2000s
+-- "ratatouille", 2000s ART
 -- UNIMPLEMENTED Forrest Gump 1990s
 -- "indiana_jones_1", 1980s
 -- Taxi Driver?? 1970s
--- "2001_odyssey", 1960s
+-- "2001_odyssey", 1960s ART
 -- UNIMPLEMENTED A Streetcar Named Desire 1950s
 -- UNIMPLEMENTED Citizen Kane 1940s
 -- UNIMPLEMENTED Bringing Up Baby 1930s
