@@ -261,12 +261,14 @@ function Card:kino_synergy(card)
 
     local _count = 0
     for actor_id, frequency in pairs(card.ability.current_synergy_actors) do
-        if frequency <= 2 then
-            card:set_multiplication_bonus(card, actor_id, Kino.actor_synergy[frequency], true)
+        local _num = ((frequency + G.GAME.current_round.actors_table_offset) <= #Kino.actor_synergy) and frequency + G.GAME.current_round.actors_table_offset or #Kino.actor_synergy
+        local _order = Kino.actor_synergy[_num]
+        if frequency < G.GAME.current_round.actors_check then
+            card:set_multiplication_bonus(card, actor_id, _order, true)
         end
-        if frequency >= 3 and _count <= 2 then
+        if frequency >= G.GAME.current_round.actors_check and _count <= 2 then
             _count = _count + 1
-            local _multiplier = card:set_multiplication_bonus(card, actor_id, Kino.actor_synergy[frequency], true)
+            local _multiplier = card:set_multiplication_bonus(card, actor_id, _order, true)
             if _multiplier then
                 card:juice_up(0.8, 0.5)
                 card_eval_status_text(card, 'extra', nil, nil, nil,
@@ -684,7 +686,12 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
         end
     end
 
-        -- Joker Changes --
+    -- Joker Changes --
+    if G.GAME.used_vouchers.v_kino_awards_bait and _type == 'Joker' then
+        if pseudorandom("snack_boost_golden") < Kino.awardschance/100 then
+            SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], true)
+        end
+    end
 
     if G.GAME.modifiers and G.GAME.modifiers.genre_bonus then
         if _type == 'Joker' or _type == G.GAME.modifiers.genre_bonus then
@@ -773,8 +780,8 @@ Kino.jump_scare_mult = 3
 Kino.goldleaf_chance = 3
 Kino.choco_chance = 2
 Kino.xl_chance = 1
-Kino.actor_synergy = {1, 1, 1.2, 1.4, 1.6, 1.8, 2}
-Kino.award_mult = 2
 
--- DEBUG GLOBALS --
-Kino.debug_string = "Base"
+Kino.awardschance = 1
+
+Kino.actor_synergy = {1, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.25, 2.5, 3}
+Kino.award_mult = 2

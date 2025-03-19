@@ -6,6 +6,8 @@ SMODS.Joker {
         extra = {
             is_turner = true,
             evidence_non = 0,
+            a_evidence = 1,
+            a_mult = 1,
             stacked_mult = 0
         }
     },
@@ -31,10 +33,13 @@ SMODS.Joker {
     pools, k_genre = {"Action", "Family"},
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_active"}
         return {
             vars = {
                 card.ability.extra.is_turner,
                 card.ability.extra.evidence_non,
+                card.ability.extra.a_evidence,
+                card.ability.extra.a_mult,
                 card.ability.extra.stacked_mult
             }
         }
@@ -46,24 +51,16 @@ SMODS.Joker {
 
         if context.individual and context.cardarea == G.play then
             -- Turner
-            if card.ability.extra.is_turner and not context.blueprint then
-                card.ability.extra.evidence_non = card.ability.extra.evidence_non + 1
+            if G.jokers.cards[1] == card and not context.blueprint then
+                card.ability.extra.evidence_non = card.ability.extra.evidence_non + card.ability.extra.a_evidence
+            end
+        end
+
+        if context.joker_main and G.jokers.cards[1] ~= card then
             -- Hooch
-            else
-                return {
-                    mult = card.ability.extra.evidence_non
-                }
-            end
-            
+            return {
+                mult = card.ability.extra.evidence_non * card.ability.extra.a_mult
+            }
         end
-
-        if context.after then
-            if card.ability.extra.is_turner then
-                card.ability.extra.is_turner = false
-            else
-                card.ability.extra.is_turner = true
-            end
-        end
-
     end
 }

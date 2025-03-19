@@ -136,6 +136,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "kino_ui_large",
+    px = 71,
+    py = 95,
+    path = 'kino_ui_assets_cardsized.png'
+}
+
+SMODS.Atlas {
     key = "kino_backs",
     px = 71,
     py = 95,
@@ -178,7 +185,10 @@ Game.init_game_object = function(self)
     ret.current_round.beaten_run_high = 0
     ret.current_round.horror_transform = 0
     ret.current_round.cards_abducted = 0
-    ret.genre_synergy_treshold = 5
+
+    ret.current_round.actors_check = 3
+    ret.current_round.actors_table_offset = 0
+    ret.current_round.genre_synergy_treshold = 5
     
     ret.current_round.spells_cast = 0
     ret.current_round.last_spell_cast = {

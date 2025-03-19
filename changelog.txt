@@ -1,3 +1,77 @@
+V 0.8:
+UI update:
+- Active jokers now show when they're active in their UI
+
+Confection rework:
+- Confections have changed their functionality. Instead of being used up immediately and creating a tag,
+     they now become active, and disappear once eaten their effect's triggered.
+     
+New Vouchers:
+- Cornucopia, the second tier voucher for the Special Treats voucher.
+     After buying it, all confections will go to their own inventory space
+     that stack up to four, with your new Snack Bag taking up a single slot
+- Award Bait, 1st Tier. Movie jokers have a small chance to spawn with an Award.
+- Award Show, 2nd Tier. When you defeat a boss blind, an unawarded movie joker will be rewarded
+- Media collection, 1st Tier. Cast and Genre synergies need 1 less to trigger
+- Criterion Collection, 2nd Tier. Cast and Genre synergies need 1 less joker to trigger
+
+V 0.7.1a:
+Bug Fixes:
+- Abduction mechanics shouldn't be crashed by destruction effects anymore
+- Avatar no longer crashes the game
+
+V 0.7.1:
+New Jokers:
+     Common
+- Clockwork Orange
+- Gremlins
+- Heart Eyes
+- Shazam
+- The Smurfs
+- Sugarland Express
+     Uncommon
+- Big Trouble in Little China
+- Cast Away
+- Independence Day
+- Insomnia
+- Kraven the Hunter
+- Moonfall
+- The Polar Express
+- The Terminator
+- True Lies
+     Rare
+- Asteroid City
+- Blank Check
+- Doctor Strange
+- Doctor Strange in the Multiverse of Madness
+- Hustle
+- Killer Klowns from Outer Space
+- Lucky Number Slevin
+- Terminator 2: Judgement Day
+- Twelve 12_monkeys
+
+Mechanics:
+- The Actor Synergy system is now turned on by default.
+
+Tarot Cards:
+- The Award Tarot is now turned on by default
+
+Decks:
+- Spooky Deck
+- Flirty Deck
+- Dangerous Deck
+- Tech_Deck
+- Enchanted Deck
+- Egg Deck
+- Bacon Deck
+- Producer Deck
+
+V 0.7.0b:
+Fixed certain vanilla jokers crashing the game
+
+V 0.7.0a:
+Abduction jokers now show the abduction Tool Tip
+
 V 0.7:
 New Mechanic:
 - Abduction! Certain jokers have the ability to abduct other cards. Abducted cards are stored in the joker, and returned to wherever they were abducted from when you start the first blind of a new ante.
@@ -30,6 +104,19 @@ New Jokers:
 - Stargate
 
 
+V 0.6.3b-3:
+Hotfix Patch:
+
+Bug Fix:
+- Wonka no longer crashes the game if no consumeables have been used
+
+V 0.6.3b-2:
+Hotfix Patch:
+Bug Fixes:
+- Ocean's 11 (2001) no longer crashes the game when sold while in a booster pack screen
+- Dungeons and Dragons (2000) now properly displays its values
+
+
 Bug Fixes:
 - Ghoulies now properly increases the deck size
 
@@ -43,7 +130,6 @@ Jokers:
 
 Planets:
 - Krypton: base chance reduced from 0.5 in 100 to 1 in 25
-
 
 Bug Fixes:
 - Confection boosters now no longer display 'ERROR'
@@ -69,20 +155,36 @@ Compatibility issues:
 - Some mods will break the BFG joker functionality
 
 V 0.6.3:
-New Jokers:
-- Fantasia (visual should also update)
-- Children of the Corn (Works)
-- Encanto (description)
-- Cocktail (Description)
-- Coco (description)
-- Shang-Chi (description)
-- The Exorcist (description)
-- The Menu (description)
-- Dungeons & Dragons: Honor Among Thieves (Description)
-- Dungeons & Dragons (2000) (Description)
-- M3gan (Description)
+Bug Fixes:
+- Fixed genre synergy disappearing after buying a 6th joker of the same genre
 
-Actor Synergy system (Must be turned on in the config)
+Visual Update:
+- Genres are no longer a separate text box, but instead a sub-header
+
+New Collection order:
+- Jokers are sorted by rarity first
+
+New Config options:
+- Turn off specific mechanics and their associated cards & jokers
+
+New Jokers:
+- Fantasia
+- Children of the Corn
+- Encanto
+- Cocktail
+- Coco
+- Shang-Chi
+- The Exorcist
+- The Menu
+- Dungeons & Dragons: Honor Among Thieves
+- Dungeons & Dragons (2000)
+- M3gan
+
+Actor Synergy system (Must be turned on in the config):
+- The Award Tarot (With placeholder art) doubles the values of a Movie Joker
+- The more movie jokers you have that share an actor, the stronger it becomes!
+(The synergy system is turned off by default as it is still very buggy. 
+While plenty of jokers are functional, it may result in doing some weird things with your values)
 
 
 V 0.6.2:
@@ -98,6 +200,11 @@ New Jokers:
 Bug Fix:
 - Wall Street no longer crashes the game
 
+V 0.6.1a:
+
+- Fixed a crash caused by the Diamond Spade combination spell
+
+
 V 0.6.1:
 
 Confection Update:
@@ -105,6 +212,29 @@ Confection Update:
 - Goldleaf: Gain $1 when used
 - Chocolate: Your confection is stronger
 - Extra Large: Your confections can be used twice
+
+New Tarot:
+- Witch, turn 1 card into a Fantasy card!
+
+New Card Enhancement:
+- Fantasy Cards. These cards cast a Spell depending on the first three cards in your hand!
+
+New Mechanic: Spells
+- Spells, currently only implemented in the Fantasy cards, are additional effects that can be triggered. 
+There are currently 10 spells in the mod.
+
+New Joker:
+- E.T. The Extra Terrestrial
+- Charlie & The Chocolate Factory
+
+V. 0.6b:
+
+Fixed compatibility with SMODS bonuses
+
+V. 0.6a:
+
+Fixed metadata errors for small amount of jokers
+
 
 V. 0.6:
 
@@ -127,9 +257,12 @@ Confection Change:
 - Can now only be used while in a blind
 - Grabbing confections from packs will put them in your consumable slots
 
+Bug Fixes:
+- Dracula (1931) now actually counts as a Vampire joker
 
 
-V. 0.4.1c
+
+V. 0.5
 
 Bug Fixes:
 - Ocean's 11 now works when purchased and sold
@@ -140,7 +273,7 @@ Bug Fixes:
 - Increased the spawn chances of confections in the shop from .75 to 2
 - Cards that rely on counts in the deck now already display the correct info while in packs or the collection
 
-21 New Jokers:
+22 New Jokers:
 - 6 Underground
 - Alien 3
 - The Blair Witch Project
@@ -162,6 +295,7 @@ Bug Fixes:
 - Thor
 - Treasure Planet
 - Us
+- War of the Worlds
 
 2 New Vouchers:
 - Confection Merchant
@@ -173,8 +307,9 @@ To Do:
 - Ocean's 11 triggering automatically
 
 Bugfixes:
-TODO:
-- Chocolate Bar drawing cards before first hand, rather than after
+Blade no longer crashes the game
+Fixed localization issues
+
 
 
 Balance Changes:
@@ -185,15 +320,34 @@ Balance Changes:
      now resets its gathered mult after defeating a boss blind
 - Stripes no longer gains mult from cards drawn on the first hand
 - Batman & Robin now gives +1 Mult per open joker slot
+- Demonic cards now give x1 + x0.25 per non-demonic card scored, instead of a flat X3
+- Wicker Man changed to Uncommon (from Common)
+- Pandora now gives +2 Chips per times played.
 
 
 
-TODO:
+V 0.4:
 
-IMPLEMENTED:
-jokers:
-- Skyscraper Nerf
-- The Double Nerf
-- The Three Musketeers Nerf
-planets:
-- Pandora Nerf
+New Enhancement:
+- Horror Card
+- Monster Card
+
+New Tarot:
+- Slasher
+
+New Jokers:
+- 50 First Dates
+- Aliens
+- Baby Geniuses
+- Ghostbusters
+- Halloween
+- The Incredible Hulk
+- Jaws
+- Nightmare on Elm Street
+- The Number 23
+- Pride & Prejudice
+- The Social Network
+- The Wicker Man
+
+Bug Fixes:
+- The Cookie, Gum and Candy confection no longer make the UI uninteractable

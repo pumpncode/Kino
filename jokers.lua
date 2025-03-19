@@ -14,12 +14,16 @@ joker_list = {
 "bttf",
 "cars_1",
 "casablanca",
+"catch_me_if_you_can",
 "charlie_and_the_chocolate_factory",
 "children_of_the_corn",
+"childs_play_1", 
 "clerks_1",
+"clockwork_orange",
 "clown",
 "cocktail",
 "commando",
+"cronos",
 "dark_knight",
 "dickie_roberts",
 "double",
@@ -29,26 +33,32 @@ joker_list = {
 "elf",
 "encanto",
 "et",
+"evil_dead_1",
 "ex_machina",
 "exorcist_1",
 "fantasia",
+"friday_the_13th",
 "gentlemen_prefer_blondes",
 "get_out",
 "ghostbusters_1",
+"gremlins_1",
 "guardians_of_the_galaxy_1",
 "halloween",
+"heart_eyes",
 "home_alone_1",
 "hook",
 "i_robot",
 "incredible_hulk",
 "karate_kid_1",
 "kindergarten_cop",
+"lady_and_the_tramp",
 "lethal_weapon",
 "m3gan",
 "megalopolis",
 "menu",
 "monster_house",
 "mr_and_mrs_smith",
+"nope",
 "nosferatu_1",
 "panic_room",
 "pink_panther_1",
@@ -61,20 +71,24 @@ joker_list = {
 "rocky_1",
 "scream_1",
 "secretary",
+"shazam_1",
 "shining",
 "skyscraper",
 "sleepy_hollow",
+"smurfs_1",
 "social_network",
 "sorcerers_apprentice",
 "spartacus",
 "steel",
 "stripes",
+"sugarland_express",
 "thor_1",
 "three_musketeers_1",
 "titanic",
 "twilight_1",
 "twins",
 "us",
+"voyage_dans_le_lune",
 "wonka",
 
 ------ Uncommon
@@ -88,63 +102,95 @@ joker_list = {
 "apollo_13",
 "batman_1989",
 "batman_and_robin",
+"big_trouble_little_china",
 "blade_1",
+"castaway",
 "chef",
+"close_encounters",
 "coco",
 "creature_from_the_black_lagoon",
 "dark_crystal",
 "dinner_with_andre",
+"doctor_who",
 "dr_strangelove",
 "dungeons_and_dragons_1",
+"edward_scissorhands",
+"guardians_of_the_galaxy_2", 
 "ghost_rider_1",
 "ghoulies",
 "gone_girl",
 "goodfellas",
 "harry_potter_1",
+"independence_day_1",
+"insidious",
+"insomnia",
 "iron_man_1",
 "jaws",
+"junior",
+"kraven",
 "krazy_house",
 "longlegs",
 "man_who_laughs",
 "mars_attacks",
 "matrix_1",
 "moneyball",
+"moonfall",
 "morbius",
 "nightmare_on_elm_street",
+"nosferatu_2024",
 "number_23",
 "oceans_11_2",
 "omen",
 "only_lovers_left_alive",
 "pinocchio_1940",
+"polar_express", 
 "predator",
 "prestige",
 "robocop_1",
 "rock",
 "se7en",
 "shang_chi",
+"signs",
+"smile",
+"snow_white_1",
+"sound_of_music",
 "stand_by_me",
+"stargate",
 "starman",
 "stranger_than_fiction",
+"terminator_1",
 "terror_train",
 "thing",
 "treasure_planet",
+"true_lies",
 "turner_and_hooch",
 "wall_street",
+"west_side_story_1",
 "wicker_man",
 "wizard_of_oz",
+"wolf_man_1",
 "yes_man",
 "zardoz",
 
 ------ Rare
 "angel_hearts",
+"asteroid_city",
 "beetlejuice_1988",
 "blair_witch",
+"blank_check",
+"doctor_strange_1",
+"doctor_strange_2", 
 "dracula_1931",
 "fight_club",
 "founder",
+"guardians_of_the_galaxy_3",
+"hustle",
 "interstellar",
 "iron_giant",
+"jurassic_park_1",
 "joe_dirt",
+"killer_klowns",
+"lucky_number_slevin",
 "memento",
 "muppets_2",
 "oceans_11",
@@ -153,81 +199,35 @@ joker_list = {
 "poltergeist",
 "princess_bride",
 "shopaholic",
+"terminator_2",
+"they_live",
+"12_monkeys",
 "wall_e",
 "war_of_the_worlds",
 
 ------ Legendary
 
-"2001_odyssey",
-"ratatouille",
 "citizen_kane",
+"2001_odyssey",
+"indiana_jones_1",
+"ratatouille",
+"barbie",
+
 -- "barbie", 2020s
 -- UNIMPLEMENTED The Avengers 2010s
--- "ratatouille", 2000s ART
+-- "rattatouille", 2000s
 -- UNIMPLEMENTED Forrest Gump 1990s
 -- "indiana_jones_1", 1980s
 -- Taxi Driver?? 1970s
--- "2001_odyssey", 1960s ART
+-- "2001_odyssey", 1960s
 -- UNIMPLEMENTED A Streetcar Named Desire 1950s
 -- UNIMPLEMENTED Citizen Kane 1940s
 -- UNIMPLEMENTED Bringing Up Baby 1930s
 -- UNIMPLEMENTED Wings 1920s
 
--- Testing
-"nope", --Tested
-"close_encounters", --Tested
-"junior", -- Tested
-"edward_scissorhands", --Tested
-"guardians_of_the_galaxy_2", --Tested
-"jurassic_park_1", --Tested
-"catch_me_if_you_can", -- Tested
-"lady_and_the_tramp", --Tested
-"insidious", --Tested
-"smile", --Tested
-"nosferatu_2024", --Tested
-"childs_play_1", -- Tested
-"snow_white_1", --Tested
-"cronos", -- Tested
-"voyage_dans_le_lune",
-"sound_of_music", -- Tested
-"evil_dead_1", -- Tested
-"wolf_man_1", -- Tested
-"west_side_story_1", -- Tested
-"friday_the_13th", -- Tested
-"guardians_of_the_galaxy_3", -- Tested
-"signs", -- Tested
-"they_live", -- Tested
-"doctor_who", -- Tested
-"stargate", -- Tested
-
-
 -- 7.1 Jokers
-"asteroid_city", -- Tested
-"blank_check", -- Tested
-"big_trouble_little_china", -- Tested
-"clockwork_orange", -- Tested
-"heart_eyes", -- Tested
-"hustle", -- Tested
-"independence_day_1",
-"killer_klowns", -- Tested
-"kraven", -- Tested
-"lucky_number_slevin", -- Tested
-"moonfall", -- Tested
-"polar_express", -- Tested
-"shazam_1", -- Tested
-"smurfs_1", -- Tested
-"terminator_1",
-"terminator_2",
-"insomnia", -- Tested
-"true_lies", -- Tested
-"sugarland_express", -- Tested
-"inception",
-"castaway",
-"doctor_strange_1",
-"doctor_strange_2",
-"gremlins_1",
-"12_monkeys" -- Tested
 
+-- "inception",
 -- "frankenstein"
 -- "when_harry_met_sally"
 
@@ -360,6 +360,7 @@ vampire_objects = {
     jokers = {
         "30_days_of_night",
         "blade",
+        "cronos",
         "dracula_1931",
         "morbius",
         "nosferatu_1",

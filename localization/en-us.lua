@@ -1645,12 +1645,11 @@ return {
             j_kino_turner_and_hooch = {
                 name = "Turner & Hooch",
                 text = {
-                    "{C:attention}Turner{}: Gather evidence",
-                    "for each card played",
+                    "{C:attention}Inactive{}: Turner gathers",
+                    "{C:attention}+#3# Evidence{} for each card played",
                     "\n",
-                    "{C:attention}Hooch{}: Each card gives {C:mult}Mult{}",
-                    "equal to the evidence collected",
-                    "Switches between Turner and Hooch each Hand",
+                    "{C:attention}Active{}: {C:mult}+#4#{} per",
+                    "Evidence consumed",
                     "{C:inactive}(Evidence: {C:attention}#2#{C:inactive})"
                 }
             },
@@ -2302,12 +2301,10 @@ return {
             gloss_active = {
                 name = "Active",
                 text = {
-                    "Active jokers have different",
-                    "abilities depending on",
-                    "whether they are in the",
-                    "{C:attention}Active Joker Slot{}",
-                    "which is always the left-most",
-                    "joker slot"
+                    "Active jokers have",
+                    "specific abilities",
+                    "if they're in the",
+                    "{C:attention}First joker slot{}"
                 }
             },
             gloss_jump_scare = {

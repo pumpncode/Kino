@@ -125,6 +125,50 @@ Kino.create_abduction_ui_2 = function(card)
     }
 end
 
+Kino.create_active_ui = function(card)
+    return UIBox {
+        definition = {
+            n = G.UIT.ROOT,
+            config = {
+                padding = 0,
+                align = 'cm',
+                colour = G.C.CLEAR,
+                shadow = false,
+                ref_table = card
+            },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = {
+                        align = 'cm',
+                        colour = G.C.CLEAR,
+                        hover = true
+                    },
+                    nodes = {
+                        {
+                            n = G.UIT.O,
+                            config = {
+                                can_collide = false, 
+                                object = Sprite(0,0,G.CARD_W,G.CARD_H, G.ASSET_ATLAS["kino_ui_large"], {x=0, y=0}), 
+                                tooltip = {text = "Active"}
+                            },
+                        }
+                    }
+                }
+            }
+        },
+        config = {
+            align = "cm",
+            bond = 'Strong',
+            parent = card,
+        },
+        states = {
+            collide = {can = false},
+            drag = { can = true }
+        }
+    }
+end
+
 -- function ufo_sprite(pos, value)
 --     local text_colour = G.C.BLACK
 

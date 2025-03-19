@@ -29,6 +29,7 @@ SMODS.Joker {
     pools, k_genre = {"Superhero", "Fantasy"},
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_active"}
         return {
             vars = {
 
@@ -48,5 +49,14 @@ SMODS.Joker {
                 draw_card(G.deck,G.hand, i*100/hand_count,'down', nil, nil, 0.07)
             end
         end
-    end
+    end,
+    update = function(self, card, dt)
+        if card.area and card.area == G.jokers and G.jokers.cards[1] == card then
+            if not card.children.activedisplay then
+                card.children.activedisplay = Kino.create_active_ui(card)
+            end
+        else
+            card.children.activedisplay = nil
+        end
+    end,
 }

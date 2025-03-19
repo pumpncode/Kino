@@ -59,5 +59,15 @@ SMODS.Joker {
                 chips = card.ability.extra.a_chips * card.ability.extra.stacks
             }
         end
-    end
+    end,
+    update = function(self, card, dt)
+        if card.area and card.area == G.jokers and G.jokers.cards[1] == card then
+            if not card.children.activedisplay then
+                card.children.activedisplay = Kino.create_active_ui(card)
+            end
+        else
+            card.children.activedisplay = nil
+        end
+        
+    end,
 }
