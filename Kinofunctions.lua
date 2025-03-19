@@ -165,7 +165,7 @@ function check_genre_synergy()
             end
         end
         
-        if count >= G.GAME.genre_synergy_treshold then
+        if count >= G.GAME.current_round.genre_synergy_treshold then
             five_of_genres[#five_of_genres + 1] = genre
         end
     end
