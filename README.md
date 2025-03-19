@@ -29,6 +29,9 @@ Get ready for jokers to get bonuses when they all share an actor, or the Kevin B
 Increase the chances of associated jokers showing up, and start with a joker of that genre, or by that director.
 
 ### FAQ:
+*I'm here to look at the code and see if I can learn from it for my own mod. What can I take?*
+If the function credits any user that is not 'IcyEthics', you may want to ask that user if you can use their code. But otherwise, you're free to copy, adapt, improve or ruin any code in this repository. Same goes for art assets, unless they're credited to another user that isn't me. I'd love to receive credit, but it's not a necessity. As all the art in this mod is based on or traced from copyrighted materials, do be aware that you're not allowed to monetize the use of it. But I shouldn't have to tell you that technically I don't own Remy the rat from Ratatouille. If you end up using anything, I'd love to know about it, though, so please let me know!
+
 *Is this mod balanced?*
 Not yet, at least. I've not focused on balancing yet at all. Feedback on balancing is encouraged and welcomed!
 
