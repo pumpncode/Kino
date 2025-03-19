@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             stacked_mult = 0,
-            mult_mod = 1,
+            stacked_mult_mod = 1,
             a_mult = 1,
             hand_type = "Pair"
         }

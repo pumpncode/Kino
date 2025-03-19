@@ -549,7 +549,7 @@ return {
                 text = {
                     "If {C:attention}first hand{} of round",
                     "has only {C:attention}1{} card, {C:attention}Cut",
-                    "it into two, and draw those two hand"
+                    "it into two, and draw those to hand"
                 }
             },
             j_kino_elf = {
@@ -1789,7 +1789,7 @@ return {
                 text = {
                     "Gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
                     "whenever this card gets scored",
-                    "{C:inactive}(Upgraded {C:attention}#5#{} times.){}"
+                    "{C:inactive}(Upgraded {C:attention}#6#{} times.){}"
                 }
             },
             m_kino_demonic = {

@@ -1,3 +1,8 @@
+V 0.7.1b:
+Bug Fixes:
+- The Double, The Three Musketeers, Lethal Weapon, Skyscraper and Monster House no longer crash the game
+- Sci-fi cards upgrade properly
+
 V 0.7.1a:
 Bug Fixes:
 - Abduction mechanics shouldn't be crashed by destruction effects anymore
