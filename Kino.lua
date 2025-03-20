@@ -341,6 +341,13 @@ if load_error then
     helper()
 end
 
+local helper, load_error = SMODS.load_file("src/quest.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
 kino_genre_init()
 
 

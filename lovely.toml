@@ -350,3 +350,23 @@ table.insert(t, Kino.snackbag)
 '''
 match_indent = true
 times = 1
+
+## Patch generate_card_ui to allow for main_start and main_end in info_queue
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = '''
+    for _, v in ipairs(info_queue) do
+        generate_card_ui(v, full_UI_table)
+    end
+'''
+position = "at"
+payload = '''
+    for _, v in ipairs(info_queue) do
+        generate_card_ui(v, full_UI_table, nil, nil, nil, nil, v.main_start, v.main_end)
+    end
+'''
+match_indent = true
+times = 1
+
+# generate_card_ui(self.config.center, nil, loc_vars, card_type, badges, hide_desc, main_start, main_end)

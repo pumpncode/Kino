@@ -1780,6 +1780,15 @@ return {
                     "increases by {X:mult,C:white}X#2#{} Mult",
                     "whenever a card is destroyed"
                 }
+            },
+            -- Legendaries
+            j_kino_2001_odyssey = {
+                name = "2001: A Space Odyssey",
+                text = {
+                    "When you use a {C:planet}Planet",
+                    "{C:attention}Upgrade{} every {C:attention}Sci-Fi",
+                    "{C:attention}card{} in your deck"
+                }
             }
         },
         Enhanced = {
@@ -2368,6 +2377,11 @@ return {
                     'learn what it does'
                 }
             },
+
+            -- Quest System
+            kino_questlog = {
+                name = "Quests"
+            }
         },
         Voucher = {
             v_kino_confection_merchant = {
@@ -2578,6 +2592,21 @@ return {
             k_spellcast_1 = "",
 
             ph_egg = "That's a Romance!"
+        },
+        v_dictionary = {
+            -- Quest Types
+            v_kino_quest_hand_type = {
+                "Play a {C:attention}#1#{}#2#"
+            },
+            v_kino_quest_card_type = {
+                "Have a {C:attention}#1#{}",
+                "score#2#"
+            },
+
+            -- Quest Description Units
+            v_kino_questtimer = {
+                " #1# times"
+            }
         }
     }
 }

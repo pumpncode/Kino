@@ -1,65 +1,101 @@
 --- Quest UI ---
-Kino.create_quest_ui = function(card)
-    if not card.ability.extra.quests then 
+Kino.create_quest_ui = function(card, quest_entry)
+    if (not card.ability.extra.quests) 
+    or (not card and not quest_entry) then 
         return {
 
         }
     end
     local _quest_nodes = {}
 
-    -- SET TITLE
-    _quest_nodes[1] = {
-        n = G.UIT.R,
-        config = {
-            n = G.UIT.O,
-            config = {
-                can_collide = false, 
-                object = Sprite(0,0,1,1, G.ASSET_ATLAS["kino_ui"], {x=1, y=0}), 
-                tooltip = {text = "non-passed"}
-            },
-        },
-        nodes = {
-            {
-                n = G.UIT.T,
-                config = {
-                    text = "QUEST-LOG",
-                    colour = G.C.BLACK, 
-                    scale = 1, 
-                    shadow = true
-                }  
-            }
-        }
-    }
+
+    local _iteration_list = quest_entry and quest_entry or card.ability.extra.quests
 
     -- SET QUEST TEXTS
-    for _completed, _quest in pairs(card.ability.extra.quests) do
-        local _sprite = Sprite(0,0,1,1, G.ASSET_ATLAS["kino_ui"], {x=1, y=0})
+    for _completed, _quest in pairs(_iteration_list) do
+        local _box_colour = HEX("67504f")
+        local _outline_colour = HEX("b2a6a6")
+        local _sprite = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=1, y=1})
         local _tooltip = {text = "In-progress"}
-        if _quest[1] == true then
-            _sprite = Sprite(0,0,1,1, G.ASSET_ATLAS["kino_ui"], {x=2, y=0})
-            {text = "Completed"}
+        local _textcolour = G.C.BLACK
+        if _quest.completion == true then
+            _box_colour = HEX("4f6750")
+            _outline_colour = HEX("b4c1b4")
+            _sprite = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=2, y=1})
+            _tooltip = {text = "Completed"}
+            _textcolour = G.C.GREEN
         end
+
+        local _text = _quest.alt_text and _quest.alt_text
+
+        local _spritenode = {
+            n = G.UIT.C,
+            config = {
+                minw = 0.3,
+                minh = 0.3,
+                maxw = 0.3,
+                maxh = 0.3,
+                align = 'cl',
+                can_collide = false, 
+                colour = _box_colour,
+                outline = 0.8,
+                outline_colour = _outline_colour,
+                r = 0.2,
+            },
+            nodes = {
+                {
+                    n = G.UIT.O,
+                    config = {
+                        align = 'cl',
+                        can_collide = false, 
+                        object = _sprite, 
+                        tooltip = _tooltip,
+                        hover = true,
+                        juice = true
+                    }
+                }
+            }
+        }
+
+        local _subnodes = {}
+
+        for _index, _text in ipairs(_quest.alt_text) do
+            local _textnode = {
+                n = G.UIT.R,
+                config = {
+                    align = 'cm',
+                    colour = G.C.CLEAR,
+                },
+                nodes = {
+                    {n = G.UIT.T,
+                    config = {
+                        text = _text,
+                        colour = _textcolour, 
+                        scale = 0.2, 
+                        shadow = false
+                    }}
+                }  
+            }
+
+            _subnodes[#_subnodes + 1] = _textnode
+        end
+
 
         local _node = {
             n = G.UIT.R,
             config = {
-                n = G.UIT.O,
-                config = {
-                    can_collide = false, 
-                    object = _sprite, 
-                    tooltip = _tooltip
-                },
+                align = 'cl',
+                colour = G.C.CLEAR,
             },
             nodes = {
+                _spritenode,
                 {
-                    n = G.UIT.T,
+                    n = G.UIT.C,
                     config = {
-                        ref_table = _quest,
-                        ref_value = "1",
-                        colour = G.C.BLACK, 
-                        scale = 0.7, 
-                        shadow = true
-                    }  
+                        align = 'cm',
+                        colour = G.C.CLEAR,
+                    },
+                    nodes = _subnodes
                 }
             }
         }
