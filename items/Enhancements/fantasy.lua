@@ -6,7 +6,7 @@ SMODS.Enhancement {
 
     },
     loc_vars = function(self, info_queue, card)
-
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_spellcasting"}
         if G.hand and G.hand.cards and #G.hand.cards >= 3 then
             info_queue[#info_queue + 1] = SMODS.Spells[check_spell_key(G.hand.cards)]
         end
@@ -27,7 +27,6 @@ SMODS.Enhancement {
                 { message = localize('k_spell_cast'), colour = G.C.PURPLE })
                 return _result
             end
-            
         end
     end
 }

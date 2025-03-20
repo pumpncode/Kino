@@ -1,3 +1,85 @@
+--- Quest UI ---
+Kino.create_quest_ui = function(card)
+    if not card.ability.extra.quests then 
+        return {
+
+        }
+    end
+    local _quest_nodes = {}
+
+    -- SET TITLE
+    _quest_nodes[1] = {
+        n = G.UIT.R,
+        config = {
+            n = G.UIT.O,
+            config = {
+                can_collide = false, 
+                object = Sprite(0,0,1,1, G.ASSET_ATLAS["kino_ui"], {x=1, y=0}), 
+                tooltip = {text = "non-passed"}
+            },
+        },
+        nodes = {
+            {
+                n = G.UIT.T,
+                config = {
+                    text = "QUEST-LOG",
+                    colour = G.C.BLACK, 
+                    scale = 1, 
+                    shadow = true
+                }  
+            }
+        }
+    }
+
+    -- SET QUEST TEXTS
+    for _completed, _quest in pairs(card.ability.extra.quests) do
+        local _sprite = Sprite(0,0,1,1, G.ASSET_ATLAS["kino_ui"], {x=1, y=0})
+        local _tooltip = {text = "In-progress"}
+        if _quest[1] == true then
+            _sprite = Sprite(0,0,1,1, G.ASSET_ATLAS["kino_ui"], {x=2, y=0})
+            {text = "Completed"}
+        end
+
+        local _node = {
+            n = G.UIT.R,
+            config = {
+                n = G.UIT.O,
+                config = {
+                    can_collide = false, 
+                    object = _sprite, 
+                    tooltip = _tooltip
+                },
+            },
+            nodes = {
+                {
+                    n = G.UIT.T,
+                    config = {
+                        ref_table = _quest,
+                        ref_value = "1",
+                        colour = G.C.BLACK, 
+                        scale = 0.7, 
+                        shadow = true
+                    }  
+                }
+            }
+        }
+
+        _quest_nodes[#_quest_nodes + 1] = _node
+    end
+
+    return {
+        {
+            n = G.UIT.C,
+            config = {
+                align = 'cm',
+                colour = G.C.CLEAR,
+                hover = true
+            },
+            nodes = _quest_nodes
+        }
+    }
+end
+
 --- Abduction UI ---
 Kino.create_abduction_ui = function(card)
     return UIBox {
@@ -304,3 +386,4 @@ Kino.generate_info_ui = function(self, info_queue, card, desc_nodes, specific_va
         }
     }
 end
+

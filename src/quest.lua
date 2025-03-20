@@ -22,3 +22,4 @@ SMODS.Quest = SMODS.Center:extend({
         -- return true if it succeeds
     end
 })
+

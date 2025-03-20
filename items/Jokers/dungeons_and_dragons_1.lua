@@ -32,6 +32,7 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {set = 'Other', key = "gloss_active"}
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_spellcasting"}
         return {
             vars = {
                 card.ability.extra.stacks,

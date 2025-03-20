@@ -2314,6 +2314,16 @@ return {
                     "self-destruct"
                 }
             },
+            gloss_spellcasting = {
+                name = "Spellcasting",
+                text = {
+                    "{C:purple}Spells{} are effects",
+                    "created by certain jokers",
+                    "and the {C:attention}Fantasy enhancement{}",
+                    "Spells can be cast at ",
+                    "4 levels of power"
+                }
+            },
             bust_econ = {
                 name = "Bust",
                 text = {
@@ -2337,6 +2347,7 @@ return {
                     "abducted cards are {C:attention}released"
                 }
             },
+
 
             -- Stickers
             kino_award = {
