@@ -549,7 +549,7 @@ return {
                 text = {
                     "If {C:attention}first hand{} of round",
                     "has only {C:attention}1{} card, {C:attention}Cut",
-                    "it into two, and draw those two hand"
+                    "it into two, and draw those to hand"
                 }
             },
             j_kino_elf = {
@@ -652,7 +652,7 @@ return {
             j_kino_gentlemen_prefer_blondes = {
                 name = "Gentlemen Prefer Blondes",
                 text = {
-                    "Scored {C:diamonds}Diamonds{} {C:mult}+1{} Mult",
+                    "Scored {C:diamonds}Diamonds{} {C:mult}+#1#{} Mult",
                     "for each {C:diamonds}Diamonds{} card in your deck above 13",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
                 }
@@ -1588,7 +1588,7 @@ return {
                     "on your first discard",
                     "Earn {C:money}#3#{} for each card",
                     "this joker has Abducted",
-                    "{C:inative}(Currently: {C:money}$#4#{C:inactive})"
+                    "{C:inactive}(Currently: {C:money}$#4#{C:inactive})"
                 }
             },
             j_kino_thing = {
@@ -1788,7 +1788,7 @@ return {
                 text = {
                     "Gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
                     "whenever this card gets scored",
-                    "{C:inactive}(Upgraded {C:attention}#5#{} times.){}"
+                    "{C:inactive}(Upgraded {C:attention}#6#{} times.){}"
                 }
             },
             m_kino_demonic = {
@@ -2021,7 +2021,7 @@ return {
             c_kino_chocolate_bar = {
                 name = "Chocolate Bar",
                 text = {
-                    "Draw {C:attetnion}#1#{} cards"
+                    "Draw {C:attention}#1#{} cards"
                 }
             },
             c_kino_fries = {
@@ -2333,7 +2333,7 @@ return {
                 text = {
                     "Store the Abducted card",
                     "in this joker",
-                    "At the start of a new {C:attention}Ante",
+                    "Upon defeating a {C:attention}Boss Blind",
                     "abducted cards are {C:attention}released"
                 }
             },
@@ -2484,6 +2484,7 @@ return {
             -- OTHER --
             kino_credits_header = "Credits",
             kino_credits_developer = "Developed By: ",
+            kino_credits_specialthanks = "Playtesting Feedback: ",
             ---------------------
             k_confection = "Confection",
             b_confection_cards = "Confection Cards",

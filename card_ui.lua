@@ -49,15 +49,6 @@ Kino.create_abduction_ui = function(card)
                                 }
                             }
                         }
-                        -- {
-                        --     n = G.UIT.T,
-                        --     config = {
-                        --         text = "2",
-                        --         colour = G.C.WHITE, 
-                        --         scale = 0.4, 
-                        --         shadow = true
-                        --     }  
-                        -- }
                     }
                 }
             }

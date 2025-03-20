@@ -1,11 +1,11 @@
 return {
     ["Show Directors"] = false,
     ["Show Cast [Debug]"] = false,
-    ["actor_synergy"] = false,
+    ["actor_synergy"] = true,
     ["genre_synergy"] = true,
     ["vampire_jokers"] = true,
     ["sci_fi_enhancement"] = true,
-    ["spellcasting"] = false,
+    ["spellcasting"] = true,
     ["demonic_enhancement"] = true,
     ["horror_enhancement"] = true,
     ["romance_enhancement"] = true,

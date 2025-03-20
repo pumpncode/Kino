@@ -39,7 +39,7 @@ SMODS.Joker {
                 card.ability.extra.x_mult,
                 card.ability.extra.xrange,
                 card.ability.extra.xrange_int,
-                1 - card.ability.extra.xrange_int * card.ability.extra.xrange_int,
+                1 - card.ability.extra.xrange * card.ability.extra.xrange_int,
                 1 + card.ability.extra.xrange * card.ability.extra.xrange_int,
                 card.ability.extra.xrange * card.ability.extra.a_xrange,
                 card.ability.extra.a_xrange,
@@ -58,6 +58,7 @@ SMODS.Joker {
                 local _min = -1 * card.ability.extra.xrange_int
                 local _max = card.ability.extra.xrange_int
                 local _rand = pseudorandom("krazy", _min, _max)
+
                 card.ability.extra.x_mult = 1 + (_rand * card.ability.extra.xrange)
             end
 

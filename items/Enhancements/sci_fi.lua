@@ -24,7 +24,7 @@ SMODS.Enhancement {
     end,
     calculate = function(self, card, context, effect)
         if (context.main_scoring and context.cardarea == G.play and not context.repetition) or context.sci_fi_upgrade then
-            if context.sci_fi_upgrade_target ~= nil or context.sci_fi_upgrade_target ~= card then
+            if (context.sci_fi_upgrade_target ~= nil and context.sci_fi_upgrade_target ~= card) then
                 return 
             end 
 

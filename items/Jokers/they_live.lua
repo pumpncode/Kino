@@ -9,10 +9,10 @@ SMODS.Joker {
             a_dollar = 1
         }
     },
-    rarity = 1,
+    rarity = 3,
     atlas = "kino_atlas_6",
     pos = { x = 3, y = 3},
-    cost = 4,
+    cost = 9,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
@@ -31,6 +31,7 @@ SMODS.Joker {
     pools, k_genre = {"Sci-fi", "Action"},
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "keyword_abduct"}
         return {
             vars = {
                 card.ability.extra.cards_abducted and #card.ability.extra.cards_abducted or 0,

@@ -330,7 +330,12 @@ SMODS.Spell {
                     G.consumeables:emplace(_card)
                 end
                 return true end }))
+            
         end
+
+        return {
+            
+        }
     end
 }
 

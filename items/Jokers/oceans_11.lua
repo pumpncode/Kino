@@ -40,14 +40,14 @@ SMODS.Joker {
         
     end,
     add_to_deck = function(self, card, from_debuff)
-		if G.shop_booster then
+        if G.shop_booster and G.shop_booster.cards then
             for i = 1, #G.shop_booster.cards do
                 G.shop_booster.cards[i]:set_cost(true)
             end
         end
 	end,
     remove_from_deck = function(self, card, from_debuff)
-        if G.shop_booster then
+        if G.shop_booster and G.shop_booster.cards then
             for i = 1, #G.shop_booster.cards do
                 G.shop_booster.cards[i]:set_cost()
             end

@@ -502,7 +502,8 @@ function Card:get_chip_bonus()
     local _factor = 1
 
     for i, joker in ipairs(G.jokers.cards) do
-        if joker.ability and joker.ability.extra and joker.ability.extra.nominal_mult_factor then
+        if joker.ability and joker.ability.extra and type(joker.ability.extra) == "table" 
+        and joker.ability.extra.nominal_mult_factor then
             _factor = _factor * joker.ability.extra.nominal_mult_factor
         end
     end
@@ -541,12 +542,12 @@ function upgrade_hand(card, hand, chips, mult, x_chips, x_mult, instant)
     x_chips = x_chips or 0
     x_mult = x_mult or 0
 
-    
     -- upgrades should be put into an array with whether they were a level up.
     -- the level_up_hand function should be modified to upgrade the hand
     -- after the normal level calc is done.
     local _chips = chips + (G.GAME.hands[hand].chips * x_chips)
     local _mult = mult + (G.GAME.hands[hand].mult * x_mult)
+
 
     -- Set mult
     G.GAME.hands[hand].mult_bonus = (G.GAME.hands[hand].mult_bonus or 0) + _mult

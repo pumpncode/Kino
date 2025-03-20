@@ -56,7 +56,7 @@ SMODS.Joker {
             for i = 1, #context.removed do
                 if context.removed[i] == card.ability.extra.target then
                     card:juice_up()
-                    card_eval_status_text(_card, 'extra', nil, nil, nil,
+                    card_eval_status_text(card, 'extra', nil, nil, nil,
                     { message = localize('k_kraven'), colour = G.C.MULT})
                     card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.a_xmult
                     break

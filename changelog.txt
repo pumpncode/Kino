@@ -72,6 +72,68 @@ Fixed certain vanilla jokers crashing the game
 V 0.7.0a:
 Abduction jokers now show the abduction Tool Tip
 
+V 0.7.1b:
+Bug Fixes:
+- The Double, The Three Musketeers, Lethal Weapon, Skyscraper and Monster House no longer crash the game
+- Sci-fi cards upgrade properly
+
+V 0.7.1a:
+Bug Fixes:
+- Abduction mechanics shouldn't be crashed by destruction effects anymore
+- Avatar no longer crashes the game
+
+V 0.7.1:
+New Jokers:
+     Common
+- Clockwork Orange
+- Gremlins
+- Heart Eyes
+- Shazam
+- The Smurfs
+- Sugarland Express
+     Uncommon
+- Big Trouble in Little China
+- Cast Away
+- Independence Day
+- Insomnia
+- Kraven the Hunter
+- Moonfall
+- The Polar Express
+- The Terminator
+- True Lies
+     Rare
+- Asteroid City
+- Blank Check
+- Doctor Strange
+- Doctor Strange in the Multiverse of Madness
+- Hustle
+- Killer Klowns from Outer Space
+- Lucky Number Slevin
+- Terminator 2: Judgement Day
+- Twelve 12_monkeys
+
+Mechanics:
+- The Actor Synergy system is now turned on by default.
+
+Tarot Cards:
+- The Award Tarot is now turned on by default
+
+Decks:
+- Spooky Deck
+- Flirty Deck
+- Dangerous Deck
+- Tech_Deck
+- Enchanted Deck
+- Egg Deck
+- Bacon Deck
+- Producer Deck
+
+V 0.7.0b:
+Fixed certain vanilla jokers crashing the game
+
+V 0.7.0a:
+Abduction jokers now show the abduction Tool Tip
+
 V 0.7:
 New Mechanic:
 - Abduction! Certain jokers have the ability to abduct other cards. Abducted cards are stored in the joker, and returned to wherever they were abducted from when you start the first blind of a new ante.
