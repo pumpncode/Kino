@@ -2488,6 +2488,7 @@ return {
             k_confection = "Confection",
             b_confection_cards = "Confection Cards",
             k_spell = "Spell",
+            k_quest = "Quest",
 
             snack_boosters = "Confections",
             horror_booster = "Horror Joker",
