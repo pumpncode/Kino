@@ -116,6 +116,173 @@ Kino.create_quest_ui = function(card, quest_entry)
     }
 end
 
+Kino.create_legend_ui = function(card, legend_entry, current_rarity)
+    if not legend_entry then 
+        return {
+
+        }
+    end
+
+    current_rarity = current_rarity and 6 - current_rarity or 6
+
+    local _quest_nodes = {}
+
+
+    local _iteration_list = legend_entry and legend_entry or card.ability.extra.legend
+
+    -- SET QUEST TEXTS
+    for _completed, _quest in pairs(_iteration_list) do
+        local _box_colour = HEX("67504f")
+        local _outline_colour = HEX("b2a6a6")
+        local _sprite = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=1, y=1})
+        local _tooltip = {text = "In-progress"}
+        local _textcolour = G.C.BLACK
+        if _quest.completion == true then
+            _box_colour = HEX("4f6750")
+            _outline_colour = HEX("b4c1b4")
+            _sprite = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=2, y=1})
+            _tooltip = {text = "Completed"}
+            _textcolour = G.C.GREEN
+        end
+
+        local _text = _quest.alt_text and _quest.alt_text
+
+        local _spritenode = {
+            n = G.UIT.C,
+            config = {
+                minw = 0.3,
+                minh = 0.3,
+                maxw = 0.3,
+                maxh = 0.3,
+                align = 'cl',
+                can_collide = false, 
+                colour = _box_colour,
+                outline = 0.8,
+                outline_colour = _outline_colour,
+                r = 0.2,
+            },
+            nodes = {
+                {
+                    n = G.UIT.O,
+                    config = {
+                        align = 'cl',
+                        can_collide = false, 
+                        object = _sprite, 
+                        tooltip = _tooltip,
+                        hover = true,
+                        juice = true
+                    }
+                }
+            }
+        }
+
+        local _subnodes = {}
+
+        for _index, _text in ipairs(_quest.alt_text) do
+            local _textnode = {
+                n = G.UIT.R,
+                config = {
+                    align = 'cm',
+                    colour = G.C.CLEAR,
+                },
+                nodes = {
+                    {n = G.UIT.T,
+                    config = {
+                        text = _text,
+                        colour = _textcolour, 
+                        scale = 0.2, 
+                        shadow = false
+                    }}
+                }  
+            }
+
+            _subnodes[#_subnodes + 1] = _textnode
+        end
+
+
+        local _node = {
+            n = G.UIT.R,
+            config = {
+                align = 'cl',
+                colour = G.C.CLEAR,
+            },
+            nodes = {
+                _spritenode,
+                {
+                    n = G.UIT.C,
+                    config = {
+                        align = 'cm',
+                        colour = G.C.CLEAR,
+                    },
+                    nodes = _subnodes
+                }
+            }
+        }
+
+        _quest_nodes[#_quest_nodes + 1] = _node
+    end
+
+
+    local _textstart = localize("k_legend_willnot")
+    local _rarity_node = nil
+
+    if current_rarity <= 3 then
+        _textstart = localize("k_legend_will")
+
+        local _rarity_names = {
+            localize("k_common"),
+            localize("k_uncommon"),
+            localize("k_rare"),
+            localize("k_legendary"),
+        }
+
+        
+        _rarity_node = {
+            n = G.UIT.T,
+            config = {
+                text = _rarity_names[current_rarity],
+                colour = G.C.RARITY[current_rarity], 
+                scale = 0.4, 
+                shadow = false
+            }   
+        }
+    end
+
+    local _final_node = {
+        n = G.UIT.R,
+        config = {
+            align = 'cm',
+            colour = G.C.CLEAR,
+        },
+        nodes = {
+            {
+                n = G.UIT.T,
+                config = {
+                    text = _textstart,
+                    colour = G.C.BLACK, 
+                    scale = 0.3, 
+                    shadow = false
+                }
+            },
+            _rarity_node
+        }  
+    }
+
+    _quest_nodes[#_quest_nodes + 1] = _final_node
+
+    return {
+        {
+            n = G.UIT.C,
+            config = {
+                align = 'cm',
+                colour = G.C.CLEAR,
+                hover = true
+            },
+            nodes = _quest_nodes
+        }
+    }
+end
+
 --- Abduction UI ---
 Kino.create_abduction_ui = function(card)
     return UIBox {

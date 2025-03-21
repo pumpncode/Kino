@@ -374,3 +374,11 @@ vampire_objects = {
     tarots = {},
     vouchers = {},
 }
+
+Kino.legendaries = {
+    -- "citizen_kane",
+    "2001_odyssey",
+    -- "indiana_jones_1",
+    -- "ratatouille",
+    -- "barbie"
+}

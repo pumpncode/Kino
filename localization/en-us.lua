@@ -2381,6 +2381,9 @@ return {
             -- Quest System
             kino_questlog = {
                 name = "Quests"
+            },
+            kino_legendary_unlock = {
+                name = "Unlock Conditions"
             }
         },
         Voucher = {
@@ -2591,7 +2594,18 @@ return {
             -- Spell barks
             k_spellcast_1 = "",
 
-            ph_egg = "That's a Romance!"
+            ph_egg = "That's a Romance!",
+
+            -- Legendary Joker text
+            k_legend_willnot = "Legendary will not appear",
+            k_legend_will = "Will spawn as:",
+
+            -- Legendary Joker Quests
+            -- -- 2001: A Space Odyssey
+            k_odyssey_quest_1 = {
+                "Posses a Movie Joker",
+                "directed by {C:attention}Kubrick{}"
+            }
         },
         v_dictionary = {
             -- Quest Types
@@ -2606,7 +2620,9 @@ return {
             -- Quest Description Units
             v_kino_questtimer = {
                 " #1# times"
-            }
+            },
+
+
         }
     }
 }

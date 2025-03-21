@@ -369,4 +369,60 @@ payload = '''
 match_indent = true
 times = 1
 
-# generate_card_ui(self.config.center, nil, loc_vars, card_type, badges, hide_desc, main_start, main_end)
+        # --if pool is empty
+# Add functionality to add legendary jokers to other pools if relevant
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = '''
+--if pool is empty
+'''
+position = "before"
+payload = '''
+	if _type == "Joker" then
+		for _, _jokerid in ipairs(Kino.legendaries) do
+			local _joker = SMODS.Centers["j_kino_" .. _jokerid]
+			if _joker then
+				local _garb, rarity_test = _joker:legendary_conditions(self, _joker)
+				rarity_test = 6 - rarity_test
+				if rarity_test == 0 then rarity_test = 1 end
+				if type(comp_rarity) == "number" 
+				and rarity_test == comp_rarity then
+					print("adding to pool")
+					_pool[#_pool + 1] = "j_kino_" .. _jokerid
+				end
+			end
+		end
+	end
+'''
+match_indent = true
+times = 1
+
+# 
+# Add functionality to add legendary jokers to other pools if relevant
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = '''
+--create the pool
+'''
+position = "before"
+payload = '''
+	local comp_rarity = nil
+'''
+match_indent = true
+times = 1
+
+# 
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+pattern = '''
+local rarity = _rarity or SMODS.poll_rarity("Joker", 'rarity'..G.GAME.round_resets.ante..(_append or ''))
+'''
+position = "after"
+payload = '''
+	comp_rarity = rarity
+'''
+match_indent = true
+times = 1
