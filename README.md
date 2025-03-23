@@ -7,7 +7,7 @@ Requirements:
 - Steamodded (>=1.0.0~BETA-0303a)
 - Lovely (>=0.7)
 
-Balatro Goes Kino is a mod made to turn a game for poker nerds into a game for poker and movie nerds. It's main content is a large set of jokers inspired by movies, as well as new Enhancements and Tarot cards, with plans for boss blinds, challenges and decks.
+Balatro Goes Kino is a mod made to turn a game for poker nerds into a game for poker and movie nerds. It's main content is a large set of jokers inspired by movies, as well as new Enhancements and Tarot cards, with plans for boss blinds, challenges and decks. Grab the latest release from the Releases tab: https://github.com/icyethics/Kino/releases
 
 ### Current Content
 - **201 New Jokers**:  From hits like Titanic, E.T. and Iron Man to unnotable and unremarkable flops like The Three Musketeers (2011) and Krazy House. With many more jokers planned.
