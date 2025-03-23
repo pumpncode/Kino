@@ -41,7 +41,7 @@ SMODS.Joker {
         -- when your hand scored less than 1/4th of the blind,
         -- earn $3.
         if context.after and context.cardarea == G.jokers then
-            if (hand_chips * mult) < G.GAME.blind.chips * (card.ability.extra.blind_piece_non / 100) then
+            if to_big((hand_chips * mult)) < to_big(G.GAME.blind.chips) * to_big(card.ability.extra.blind_piece_non / 100) then
                 G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money
                 G.E_MANAGER:add_event(Event({func = (function() G.GAME.dollar_buffer = 0; return true end)}))
                 return {

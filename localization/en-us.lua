@@ -23,7 +23,7 @@ return {
                     "{C:green}#1# in #2#{} Chance to create",
                     "a copy a card of the same type",
                     "as the first one sold last blind",
-                    "{C:inactive}(will create a {C:attention}#3#{})"
+                    "{C:inactive}(will create a {C:attention}#3#{C:inactive})"
                 }
             },
             j_kino_30_days_of_night = {
@@ -344,7 +344,7 @@ return {
                     "Whenever you've played",
                     "cards adding up to {C:attention}#2#",
                     "gain {C:mult}+#3#{} Mult",
-                    "{C:inactive}(Current rank: {C:attention}#1#{})"
+                    "{C:inactive}(Current rank: {C:attention}#1#{C:inactive})"
                 }
             },
             j_kino_clockwork_orange = {
@@ -1165,7 +1165,7 @@ return {
                     "When any {C:money}money{} is",
                     "lost, instead lower the",
                     "value of this joker",
-                    "{C:inactive}(Max value of {C:money}$#1#{})"
+                    "{C:inactive}(Max value of {C:money}$#1#{C:inactive})"
                 }
             },
             j_kino_omen = {
@@ -2060,6 +2060,14 @@ return {
                     "Gain {C:mult}+1{}",
                     "discard this round"
                 }
+            },
+            c_kino_snackbag = {
+                name = "Snack Bag",
+                text = {
+                    "A Bag filled",
+                    "with {C:mult}Confections{}",
+                    "{C:inactive}(Currently: {C:attention}#1#{C:inactive} Confections)"
+                }
             }
         },
         Back = {
@@ -2408,6 +2416,33 @@ return {
                 text = {
                     "{C:mult}Confections{} can appear",
                     "with additional treats"
+                }
+            },
+            v_kino_snackbag = {
+                name = "Snack Bag",
+                text = {
+                    "Up to 4 {C:mult}Confections{}",
+                    "can stack into a {C:mult}Snack Bag",
+                    "which takes up only",
+                    "1 Consumable slot"
+                }
+            },
+            v_kino_awardsbait = {
+                name = "Awards Bait",
+                text = {
+                    "{C:attention}Movie Joker{} have a",
+                    "{C:green}1 in 100{} chance",
+                    "to spawn with an {C:yellow}Award"
+                }
+            },
+            v_kino_awardsshow = {
+                name = "Awards Show",
+                text = {
+                    "A random unawarded",
+                    "{C:attention}Movie Joker{} gains",
+                    "an {C:yellow}Award{} when",
+                    "a {C:attention}Boss Blind{} is",
+                    "defeated"
                 }
             }
         },

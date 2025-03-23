@@ -224,6 +224,12 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        
+        if context.using_consumeable and context.consumeable.ability.set == "Planet" then
+            for _, _card in ipairs(G.playing_cards) do
+                if SMODS.has_enhancement(_card, "m_kino_sci_fi") then
+                    _card.config.center:upgrade(_card)
+                end
+            end
+        end
     end
 }

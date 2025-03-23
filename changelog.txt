@@ -1,4 +1,8 @@
-V 0.8:
+V 0.7.2:
+New Jokers:
+Legendaries:
+- 2001: A Space Odyssey
+
 UI update:
 - Active jokers now show when they're active in their UI
 
@@ -12,8 +16,13 @@ New Vouchers:
      that stack up to four, with your new Snack Bag taking up a single slot
 - Award Bait, 1st Tier. Movie jokers have a small chance to spawn with an Award.
 - Award Show, 2nd Tier. When you defeat a boss blind, an unawarded movie joker will be rewarded
-- Media collection, 1st Tier. Cast and Genre synergies need 1 less to trigger
-- Criterion Collection, 2nd Tier. Cast and Genre synergies need 1 less joker to trigger
+
+Balancing Changes:
+- Stranger Than Fiction (10 Chips > 25 Chips)
+
+Bug Fixes:
+Talisman compatibility fixed for certain jokers.
+
 
 V 0.7.1a:
 Bug Fixes:
@@ -48,7 +57,7 @@ New Jokers:
 - Killer Klowns from Outer Space
 - Lucky Number Slevin
 - Terminator 2: Judgement Day
-- Twelve 12_monkeys
+- Twelve monkeys
 
 Mechanics:
 - The Actor Synergy system is now turned on by default.

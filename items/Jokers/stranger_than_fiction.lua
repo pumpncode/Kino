@@ -6,7 +6,7 @@ SMODS.Joker {
         extra = {
             next_card = nil,
             stacked_chips = 0,
-            a_chips = 10,
+            a_chips = 25,
             next_card_name = "2 of Hearts"
         }
     },

@@ -22,6 +22,25 @@ SMODS.Enhancement {
             }
         }
     end,
+    upgrade = function(self, card)
+        card.ability.times_upgraded = card.ability.times_upgraded + 1
+        card.ability.bonus = card.ability.bonus + card.ability.a_chips
+
+        if next(find_joker('j_kino_terminator_2')) then
+            for index, _joker in ipairs(G.jokers.cards) do
+                if _joker.ability.extra.affects_sci_fi then
+                    card.ability.perma_x_mult = card.ability.perma_x_mult + _joker.ability.extra.perma_x_mult
+                end
+            end
+        else
+            card.ability.perma_mult = card.ability.perma_mult + card.ability.a_mult
+        end
+                
+                
+        G.GAME.current_round.sci_fi_upgrades = G.GAME.current_round.sci_fi_upgrades + 1
+        G.GAME.current_round.sci_fi_upgrades_last_round = G.GAME.current_round.sci_fi_upgrades_last_round + 1
+        SMODS.calculate_context({upgrading_sci_fi_card = true})
+    end,
     calculate = function(self, card, context, effect)
         if (context.main_scoring and context.cardarea == G.play and not context.repetition) or context.sci_fi_upgrade then
             if (context.sci_fi_upgrade_target ~= nil and context.sci_fi_upgrade_target ~= card) then
@@ -36,27 +55,11 @@ SMODS.Enhancement {
                 wall_e = true
             end
 
-            for i = 1, times_to_upgrade do
-                card.ability.times_upgraded = card.ability.times_upgraded + 1
-                card.ability.bonus = card.ability.bonus + card.ability.a_chips
-
-                if next(find_joker('j_kino_terminator_2')) then
-                    for index, _joker in ipairs(G.jokers.cards) do
-                        if _joker.ability.extra.affects_sci_fi then
-                            card.ability.perma_x_mult = card.ability.perma_x_mult + _joker.ability.extra.perma_x_mult
-                        end
-                    end
-                else
-                    card.ability.perma_mult = card.ability.perma_mult + card.ability.a_mult
-                end
-                
-                
-                G.GAME.current_round.sci_fi_upgrades = G.GAME.current_round.sci_fi_upgrades + 1
-                G.GAME.current_round.sci_fi_upgrades_last_round = G.GAME.current_round.sci_fi_upgrades_last_round + 1
-                
+            for i = 1, times_to_upgrade do 
+                card.config.center:upgrade(card)
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_upgrade_ex'), colour = G.C.CHIPS })
-                SMODS.calculate_context({upgrading_sci_fi_card = true})
+                
             end
 
             if wall_e then

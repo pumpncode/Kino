@@ -842,6 +842,11 @@ SMODS.Consumable {
     config = {
     },
     loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                #Kino.snackbag.cards
+            }
+        }
     end,
     use = function(self, card, area, copier)
         if Kino.snackbag then

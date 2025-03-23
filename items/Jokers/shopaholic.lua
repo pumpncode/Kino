@@ -45,7 +45,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.kino_ease_dollars and context.kino_ease_dollars < 0 and not context.blueprint then
+        if context.kino_ease_dollars and to_big(context.kino_ease_dollars) < to_big(0) and not context.blueprint then
             local pos_spend = -1 * context.kino_ease_dollars
             card.ability.extra.cur_spend_non = card.ability.extra.cur_spend_non + pos_spend
             

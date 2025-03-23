@@ -688,7 +688,7 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
     end
 
     -- Joker Changes --
-    if G.GAME.used_vouchers.v_kino_awards_bait and _type == 'Joker' then
+    if G.GAME.used_vouchers.v_kino_awardsbait and _type == 'Joker' then
         if pseudorandom("snack_boost_golden") < Kino.awardschance/100 then
             SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], true)
         end
@@ -708,6 +708,10 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
     end
 
     return _card
+end
+
+to_big = to_big or function(x, y)
+    return x
 end
 
 --- Award Bonus & actor synergy mechanics ---

@@ -130,7 +130,7 @@ SMODS.Consumable {
     can_use = function(self, card)
 		return #G.jokers.highlighted == 1
 			and G.jokers.highlighted[1].config.center.kino_joker
-            and (G.GAME.dollars >= G.GAME.bankrupt_at + 10)
+            and (to_big(G.GAME.dollars) >= to_big(G.GAME.bankrupt_at + 10))
 	end,
     use = function(self, card)
         local _movie_info = G.jokers.highlighted[1].config.center.kino_joker

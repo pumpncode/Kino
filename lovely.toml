@@ -388,7 +388,6 @@ payload = '''
 				if rarity_test == 0 then rarity_test = 1 end
 				if type(comp_rarity) == "number" 
 				and rarity_test == comp_rarity then
-					print("adding to pool")
 					_pool[#_pool + 1] = "j_kino_" .. _jokerid
 				end
 			end
@@ -423,6 +422,48 @@ local rarity = _rarity or SMODS.poll_rarity("Joker", 'rarity'..G.GAME.round_rese
 position = "after"
 payload = '''
 	comp_rarity = rarity
+'''
+match_indent = true
+times = 1
+
+
+# Card Areas
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''G.SPLASH_BACK = Sprite(-30, -6, G.ROOM.T.w+60, G.ROOM.T.h+12, G.ASSET_ATLAS["ui_1"], {x = 2, y = 0})'''
+position = "before"
+payload = '''
+    -- Abduction Mechanics
+    self.kino_abductionarea = CardArea(
+        0,
+        0,
+        self.CARD_W * 4.95,
+        self.CARD_H * 0.95,
+        {
+            card_limit = 999,
+            type = "abduction",
+            highlight_limit = 0
+        }
+    )
+    self.kino_abductionarea.states.visible = false
+    Kino.abduction = G.kino_abductionarea
+
+    -- Confection Mechanics
+    self.kino_snackbag = CardArea(
+        G.consumeables.T.x + 2.25,
+        G.consumeables.T.y + G.consumeables.T.h + 1,
+        self.CARD_W * 2.2,
+        self.CARD_H * 0.95,
+        {
+            card_limit = 4,
+            type = 'joker',
+            highlight_limit = 1,
+            -- card_w = G.CARD_W * 0.7,
+        }
+    )
+    self.kino_snackbag.states.visible = false
+    Kino.snackbag = G.kino_snackbag
 '''
 match_indent = true
 times = 1

@@ -4,7 +4,8 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            selected_cards = 3
+            selected_cards = 3,
+            temp_card = nil
         }
     },
     rarity = 1,
@@ -39,6 +40,9 @@ SMODS.Joker {
         -- When you play a high card,
         -- Change 3 random cards in your hand into copies of it
         -- then destroy this joker
+        -- if context.before and #context.full_hand == 1 and not context.blueprint and not context.repetition then
+        --     card.ability.extra.temp_card = context.full_hand[1]
+        -- end
 
         if context.after and #context.full_hand == 1 and not context.blueprint and not context.repetition then
             local _cards = {}
@@ -48,8 +52,9 @@ SMODS.Joker {
             end
 
             for i = 1, #_cards do
+                local _other = context.full_hand[1]
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function()
-                    local new_card = copy_card(context.full_hand[1], _cards[i])
+                    local new_card = copy_card(_other, _cards[i])
                     new_card:juice_up()
                     return true end }))
             end

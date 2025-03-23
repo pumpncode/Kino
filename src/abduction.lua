@@ -6,42 +6,42 @@
 -- regardless of whether there is space
 
 -- If the source of an abduction is sold or destroyed, the abducted items are sold or destroyed with them
-local _o_gsr = Game.start_run
-function Game:start_run(args)
-    _o_gsr(self, args)
+-- local _o_gsr = Game.start_run
+-- function Game:start_run(args)
+--     _o_gsr(self, args)
 
-    -- Abduction Mechanics
-    self.kino_abductionarea = CardArea(
-        0,
-        0,
-        self.CARD_W * 4.95,
-        self.CARD_H * 0.95,
-        {
-            card_limit = 999,
-            type = "abduction",
-            highlight_limit = 0
-        }
-    )
-    self.kino_abductionarea.states.visible = false
-    Kino.abduction = G.kino_abductionarea
+--     -- Abduction Mechanics
+--     self.kino_abductionarea = CardArea(
+--         0,
+--         0,
+--         self.CARD_W * 4.95,
+--         self.CARD_H * 0.95,
+--         {
+--             card_limit = 999,
+--             type = "abduction",
+--             highlight_limit = 0
+--         }
+--     )
+--     self.kino_abductionarea.states.visible = false
+--     Kino.abduction = G.kino_abductionarea
 
-    -- Confection Mechanics
-    self.kino_snackbag = CardArea(
-        G.consumeables.T.x + 2.25,
-        G.consumeables.T.y + G.consumeables.T.h + 1,
-        self.CARD_W * 2.2,
-        self.CARD_H * 0.95,
-        {
-            card_limit = 4,
-            type = 'joker',
-            highlight_limit = 1,
-            -- card_w = G.CARD_W * 0.7,
-        }
-    )
-    self.kino_snackbag.states.visible = false
-    Kino.snackbag = G.kino_snackbag
+--     -- Confection Mechanics
+--     self.kino_snackbag = CardArea(
+--         G.consumeables.T.x + 2.25,
+--         G.consumeables.T.y + G.consumeables.T.h + 1,
+--         self.CARD_W * 2.2,
+--         self.CARD_H * 0.95,
+--         {
+--             card_limit = 4,
+--             type = 'joker',
+--             highlight_limit = 1,
+--             -- card_w = G.CARD_W * 0.7,
+--         }
+--     )
+--     self.kino_snackbag.states.visible = false
+--     Kino.snackbag = G.kino_snackbag
 
-end
+-- end
 
 -- Abduction functions
 Kino.abduct_card = function(card, abducted_card)
@@ -140,7 +140,9 @@ G.FUNCS.draw_from_area_to_abduction = function(e)
                 local _abductee = command.abducted_card
                 local _abducted_from = command.abducted_from
 
-                _abductor:juice_up()
+                if _abductor and _abductor.juice_up then
+                    _abductor:juice_up()
+                end
                 
                 G.GAME.current_round.cards_abducted = G.GAME.current_round.cards_abducted + 1
 
