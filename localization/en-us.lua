@@ -1789,6 +1789,24 @@ return {
                     "{C:attention}Upgrade{} every {C:attention}Sci-Fi",
                     "{C:attention}card{} in your deck"
                 }
+            },
+            j_kino_indiana_jones_1 = {
+                name = "Raiders of the Lost Ark",
+                text = {
+                    "Gain {X:mult,C:white}X#1#{} Mult",
+                    "when a {C:attention}#3#{} scores,",
+                    "card changes every round",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{C:inactive} Mult)"
+                }
+            },
+            j_kino_barbie = {
+                name = "Barbie",
+                text = {
+                    "Each {C:attention}Face Card{}",
+                    "held in hand",
+                    "gives {X:mult,C:white}X1{} + {X:mult,C:white}X#1#{} Mult",
+                    "for each scoring {C:attention}Queen{}"
+                }
             }
         },
         Enhanced = {
@@ -2617,6 +2635,8 @@ return {
             k_sugarland = "Stolen",
             k_drstrange = "By the Eye of Agamoto!",
             k_gremlins = "Bwehehehe",
+            k_raiders = "This belongs in a Museum!",
+            k_odyssey = "Everything is going extremely well",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
@@ -2640,7 +2660,82 @@ return {
             k_odyssey_quest_1 = {
                 "Posses a Movie Joker",
                 "directed by {C:attention}Kubrick{}"
-            }
+            },
+            k_odyssey_quest_2 = {
+                "Possess{C:attention} 2 Sci-Fi Jokers{}"
+            },
+            k_odyssey_quest_3 = {
+                "Posses a Movie Joker",
+                "released in the {C:attention}60s{}"
+            },
+            k_odyssey_quest_4 = {
+                "Have 10 or more",
+                "{C:attention}Sci-fi Cards{} in your deck",
+            },
+            k_odyssey_quest_5 = {
+                "Have used {C:attention}20 or more",
+                "{C:planet}Planet Cards{}"
+            },
+            k_odyssey_quest_6 = {
+                "Have a {C:tarot}Moon{}, {C:planet}Jupiter",
+                "and {C:planet}Earth{} in your inventory"
+            },
+
+            -- -- Raiders of the Lost Ark
+            k_indiana_quest_1 = {
+                "Posses a Movie Joker",
+                "directed by {C:attention}Spielberg{}"
+            },
+            k_indiana_quest_2 = {
+                "Posses{C:attention} 2 Adventure Jokers{}"
+            },
+            k_indiana_quest_3 = {
+                "Posses a Movie Joker",
+                "released in the {C:attention}80s{}"
+            },
+            k_indiana_quest_4 = {
+                "Posses a Movie Joker",
+                "that shares an {C:attention}actor{}"
+            },
+            k_indiana_quest_5 = {
+                "Have {C:attention}60 or more{}",
+                "cards in your deck"
+            },
+            k_indiana_quest_6 = {
+                "Posses a {C:attention}Hieroglyph",
+                "or {C:attention}Petroglyph{} Voucher"
+            },
+
+            -- -- Barbie Quests
+            k_barbie_quest_1 = {
+                "Posses a Movie Joker",
+                "directed by a {C:attention}Woman{}"
+            },
+            k_barbie_quest_2 = {
+                "Posses 2 {C:attention}Comedy{}",
+                "or {C:attention}Adventure{} Jokers"
+            },
+            k_barbie_quest_3 = {
+                "Posses a Movie Joker",
+                "released in the {C:attention}2020s{}"
+            },
+            k_barbie_quest_4 = {
+                "Posses a Movie Joker",
+                "that shares an {C:attention}actor{}"
+            },
+            k_barbie_quest_5 = {
+                "Have more {C:attention}Queens{} than {C:attention}Jacks{}",
+                "and {C:attention}Kings{} in your deck"
+            },
+            k_barbie_quest_6 = {
+                "Have a {C:tarot}The Lovers{}, {C:tarot}The Empress{},",
+                "and {C:planet}Venus{} in your inventory"
+            },
+            
+            
+        },
+        challenge_names = {
+            c_kino_minc = "Monsters Inc."
         },
         v_dictionary = {
             -- Quest Types

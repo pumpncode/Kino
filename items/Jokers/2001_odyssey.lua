@@ -10,16 +10,10 @@ SMODS.Joker {
     atlas = "kino_atlas_legendary",
     pos = { x = 0, y = 0},
     soul_pos = { x = 0, y = 1},
-    cost = 4,
-    blueprint_compat = false,
+    cost = 10,
+    blueprint_compat = true,
     perishable_compat = false,
     eternal_compat = false,
-    kino_legendary = function(card, rarity)
-        -- should check each requirement
-        -- then return the proper rarity if it's correct
-
-        return false
-    end,
     kino_joker = {
         id = 62,
         budget = 0,
@@ -143,71 +137,20 @@ SMODS.Joker {
         -- Legendary questing testing
         if card.area and card.area.config.collection then
             local _quest_results, _quest_count = self:legendary_conditions(self, card)
-            local _legend_quests = {
-                -- Quest 1
-                {trigger = nil,
+            local _legend_quests = {}
+
+            for i = 1, #_quest_results do
+                _legend_quests[i] = {
+                trigger = nil,
                 type = nil,
                 condition = nil,
-                -- alt_text = localize("k_odyssey_quest_1"),
-                alt_text = localize("k_odyssey_quest_1"),
+                alt_text = localize("k_odyssey_quest_" .. i),
                 times = 0,
                 goal = 1, 
-                completion = _quest_results[1]},
-                -- Quest 2
-                {trigger = nil,
-                type = nil,
-                condition = nil,
-                alt_text = {
-                    "Posses {C:attention} 2 Sci-Fi Jokers{}"
-                },
-                times = 0,
-                goal = 10,  
-                completion = _quest_results[2]},
-                -- Quest 3
-                {trigger = nil,
-                type = nil,
-                condition = nil,
-                alt_text = {
-                    "Posses a Movie Joker",
-                    "released in the {C:attention}60s{}"
-                },
-                times = 0,
-                goal = 10,  
-                completion = _quest_results[3]},
-                -- Quest 4
-                {trigger = nil,
-                type = nil,
-                condition = nil,
-                alt_text = {
-                    "Have 10 or more",
-                    "{C:attention}Sci-fi Cards{} in your deck",
-                },
-                times = 0,
-                goal = 10,  
-                completion = _quest_results[4]},
-                -- Quest 5
-                {trigger = nil,
-                type = nil,
-                condition = nil,
-                alt_text = {
-                    "Have used {C:attention}20 or more",
-                    "{C:planet}Planet Cards{}"
-                },
-                times = 0,
-                goal = 10,  
-                completion = _quest_results[5]},
-                -- Quest 6
-                {trigger = nil,
-                type = nil,
-                condition = nil,
-                alt_text = {
-                    "Have a {C:tarot}Moon{}, {C:planet}Jupiter",
-                    "and {C:planet}Earth{} in your inventory"
-                },
-                times = 0,
-                goal = 10,  
-                completion = _quest_results[6]},
-            }
+                completion = _quest_results[i]
+                }
+            end
+
             info_queue[#info_queue + 1] = {
                 set = "Other", 
                 key = "kino_legendary_unlock",
@@ -225,6 +168,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.using_consumeable and context.consumeable.ability.set == "Planet" then
+            card_eval_status_text(joker, 'extra', nil, nil, nil,
+            { message = localize('k_odyssey'), colour = G.C.MONEY})
             for _, _card in ipairs(G.playing_cards) do
                 if SMODS.has_enhancement(_card, "m_kino_sci_fi") then
                     _card.config.center:upgrade(_card)

@@ -305,6 +305,13 @@ if kino_config.spellcasting then
     end
 end
 
+if kino_config.spellcasting then
+    local files = NFS.getDirectoryItems(mod_dir .. "Items/Challenges")
+    for _, file in ipairs(files) do
+        assert(SMODS.load_file("Items/Challenges/" .. file))()
+    end
+end
+
 -- Register the genres
 local helper, load_error = SMODS.load_file("Kinogenres.lua")
 if load_error then

@@ -91,6 +91,31 @@ function reset_ancient_card()
     end
     local thing_card = pseudorandom_element(thing_suits, pseudoseed('thing'..G.GAME.round_resets.ante))
     G.GAME.current_round.kino_thing_card.suit = thing_card
+
+    reset_raiders_card()
+end
+
+ -- Indiana Jones checks
+function reset_raiders_card()
+    if not G.GAME.current_round.kino_indiana_key then
+        G.GAME.current_round.kino_indiana_rank = 2
+        G.GAME.current_round.kino_indiana_suit = "Spades"
+        G.GAME.current_round.kino_indiana_key = "S_2"
+    end
+
+    local valid_raiders_cards = {}
+    for k, v in ipairs(G.playing_cards) do
+        if v.ability.effect ~= 'Stone Card' then
+            valid_raiders_cards[#valid_raiders_cards+1] = v
+        end
+    end
+
+    if valid_raiders_cards[1] then 
+        local idol_card = pseudorandom_element(valid_raiders_cards, pseudoseed('raiders'..G.GAME.round_resets.ante))
+        G.GAME.current_round.kino_indiana_rank = idol_card:get_id()
+        G.GAME.current_round.kino_indiana_suit = idol_card.base.suit
+        G.GAME.current_round.kino_indiana_key = idol_card.config.card_key
+    end
 end
 
 -- For everything that needs to be done when the shop is closed.

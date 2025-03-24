@@ -209,9 +209,9 @@ joker_list = {
 
 -- "citizen_kane",
 "2001_odyssey",
--- "indiana_jones_1",
+"indiana_jones_1",
 -- "ratatouille",
--- "barbie",
+"barbie",
 
 -- "barbie", 2020s
 -- UNIMPLEMENTED The Avengers 2010s

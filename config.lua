@@ -10,5 +10,6 @@ return {
     ["horror_enhancement"] = true,
     ["romance_enhancement"] = true,
     ["jumpscare_mechanic"] = true,
-    ["speed_factor"] = 60
+    ["speed_factor"] = 60,
+    ["movie_jokers_only"] = false
 }
