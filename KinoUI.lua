@@ -59,6 +59,7 @@ local mod_mechanics_toggles = {
 	-- Mod Mechanics
 	{ref_value = "actor_synergy", label = "kino_settings_actor_synergy"},
 	{ref_value = "genre_synergy", label = "kino_settings_genre_synergy"},
+	{ref_value = "movie_jokers_only", label = "kino_settings_movie_jokers_only"},
 }
 
 local create_menu_toggles = function (parent, toggles)
@@ -185,7 +186,7 @@ SMODS.current_mod.extra_tabs = function()
 						n = G.UIT.R,
 						config = {
 							padding = 0,
-							align = "cm"
+							align = "cl"
 						},
 						nodes = {
 							{
@@ -208,11 +209,12 @@ SMODS.current_mod.extra_tabs = function()
 							}
 						}
 					},
-					{	-- Thanks Section
-						n = G.UIT.C,
+					{
+						n = G.UIT.R,
 						config = {
 							padding = 0,
-							align = "cm"
+							align = "cl",
+							scale = scale * 0.6,
 						},
 						nodes = {
 							{
@@ -220,26 +222,73 @@ SMODS.current_mod.extra_tabs = function()
 								config = {
 									text = localize("kino_credits_specialthanks"),
 									shadow = true,
-									scale = scale * 0.8,
+									scale = scale * 0.5,
 									colour = G.C.UI.TEXT_LIGHT
 								}
 							},
 							{
-								n = G.UIT.C,
+								n = G.UIT.T,
 								config = {
-									padding = 0,
-									align = "cm"
-								},
-								nodes = {
-									{
-										n = G.UIT.T,
-										config = {
-											text = "Alphapra",
-											shadow = true,
-											scale = scale * 0.8,
-											colour = G.C.BLUE
-										}
-									}
+									text = "Alphapra",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
+								}
+							}
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = {
+							padding = 0,
+							align = "cl",
+							scale = scale * 0.6,
+						},
+						nodes = {
+							{
+								n = G.UIT.T,
+								config = {
+									text = localize("kino_credits_programminghelp"),
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.UI.TEXT_LIGHT
+								}
+							},
+							{
+								n = G.UIT.T,
+								config = {
+									text = "Dilly_the_Dillster",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
+								}
+							}
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = {
+							padding = 0,
+							align = "cl",
+							scale = scale * 0.6,
+						},
+						nodes = {
+							{
+								n = G.UIT.T,
+								config = {
+									text = localize("kino_credits_wiki"),
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.UI.TEXT_LIGHT
+								}
+							},
+							{
+								n = G.UIT.T,
+								config = {
+									text = "Doctor Flamingo",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
 								}
 							}
 						}
@@ -275,7 +324,9 @@ SMODS.current_mod.extra_tabs = function()
 		end
 	}
 end
-
+-- Alphapra
+-- Dilly the Dillster
+-- Doctor Flamingo
 function G.FUNCS.kino_github(e)
 	love.system.openURL("https://github.com/icyethics/Kino")
 end

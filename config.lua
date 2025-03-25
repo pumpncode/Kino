@@ -11,5 +11,5 @@ return {
     ["romance_enhancement"] = true,
     ["jumpscare_mechanic"] = true,
     ["speed_factor"] = 60,
-    ["movie_jokers_only"] = false
+    ["movie_jokers_only"] = true
 }

@@ -2,7 +2,6 @@ SMODS.Challenge {
     key = "minc",
     rules = {
         custom = {
-            {id = 'kino_minc'} --this just explains the rule
         },
         modifiers = {}
     },
@@ -26,3 +25,260 @@ SMODS.Challenge {
         banned_other = {},
     }
 }
+
+-- Only movie Jokers. Spawn with joker stickers only
+
+SMODS.Challenge {
+    key = "bacon",
+    rules = {
+        custom = {
+            {id = 'movie_jokers_only'},
+            {id = 'kino_bacon'}
+        },
+        modifiers = {}
+    },
+    jokers = {
+    },
+    deck = {
+        type = 'Challenge Deck',
+        
+    },
+    restrictions = {
+        banned_cards = {
+            
+        },
+        banned_other = {},
+    }
+}
+
+--- Cade Yeager Cosplay. Earn no money, but instead earn money per sci-fi card that upgraded this round
+SMODS.Challenge {
+    key = "yeager",
+    rules = {
+        custom = {
+            {id = 'kino_yeag', value = 1},
+            {id = 'no_reward'},
+            {id = 'no_extra_hand_money'}
+        },
+        modifiers = {}
+    },
+    jokers = {
+    },
+    deck = {
+        type = 'Challenge Deck',
+        rand_enhancement = {key = "m_kino_sci_fi", value = 16}
+        
+    },
+    restrictions = {
+        banned_cards = {
+            
+        },
+        banned_other = {},
+    }
+}
+
+-- xenomorph Invasion. Debuff a random card in deck whenever a hand is played
+SMODS.Challenge {
+    key = "xenomorph",
+    rules = {
+        custom = {
+            {id = 'kino_alien', value = 1},
+        },
+        modifiers = {}
+    },
+    jokers = {
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    restrictions = {
+        banned_cards = {
+            
+        },
+        banned_other = {},
+    }
+}
+
+-- Best Song in the world: 10 random Demonic Cards. Cannot win a blind until a sacrifice has been made
+SMODS.Challenge {
+    key = "bestsong",
+    rules = {
+        custom = {
+            {id = 'carryover_discards'},
+            {id = 'kino_bestsong'},
+        },
+        modifiers = {}
+    },
+    jokers = {
+    },
+    deck = {
+        type = 'Challenge Deck',
+        rand_enhancement = {key = "m_kino_demonic", value = 10}
+    },
+    restrictions = {
+        banned_cards = {
+            
+        },
+        banned_other = {},
+    }
+}
+
+-- When Perkeo met Triboulet. Cannot buy rerolls, instead, you earn a free reroll when you make a match
+-- SMODS.Challenge {
+--     key = "harrysally",
+--     rules = {
+--         custom = {
+--             {id = 'kino_harrysally'},
+--         },
+--         modifiers = {}
+--     },
+--     jokers = {
+--     },
+--     deck = {
+--         type = 'Challenge Deck',
+--         rand_enhancement = {key = "m_kino_romance", value = 13}
+--     },
+--     restrictions = {
+--         banned_cards = {
+            
+--         },
+--         banned_other = {},
+--     }
+-- }
+
+-- Debuff movies that share a genre
+SMODS.Challenge {
+    key = "genre_variety",
+    rules = {
+        custom = {
+            {id = 'movie_jokers_only'},
+            {id = 'kino_genre_variety'},
+        },
+        modifiers = {}
+    },
+    jokers = {
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    restrictions = {
+        banned_cards = {
+            
+        },
+        banned_other = {},
+    }
+}
+
+-- Jokers are only active if they share a genre with
+-- the joker in the active slot
+-- SMODS.Challenge {
+--     key = "genre_snob",
+--     rules = {
+--         custom = {
+--             {id = 'movie_jokers_only'},
+--             {id = 'kino_genre_snob'},
+--         },
+--         modifiers = {}
+--     },
+--     jokers = {
+--     },
+--     deck = {
+--         type = 'Challenge Deck',
+--     },
+--     restrictions = {
+--         banned_cards = {
+            
+--         },
+--         banned_other = {},
+--     }
+-- }
+
+-- Jokers spawn in release order
+-- SMODS.Challenge {
+--     key = "chronology",
+--     rules = {
+--         custom = {
+--             {id = 'movie_jokers_only'},
+--             {id = 'kino_chronology'},
+--         },
+--         modifiers = {}
+--     },
+--     jokers = {
+--     },
+--     deck = {
+--         type = 'Challenge Deck',
+--     },
+--     restrictions = {
+--         banned_cards = {
+            
+--         },
+--         banned_other = {},
+--     }
+-- }
+
+-- Jokers spawn in release order
+-- SMODS.Challenge {
+--     key = "blockbuster",
+--     rules = {
+--         custom = {
+--             {id = 'movie_jokers_only'},
+--             {id = 'kino_blockbuster'},
+--         },
+--         modifiers = {}
+--     },
+--     jokers = {
+--     },
+--     deck = {
+--         type = 'Challenge Deck',
+--     },
+--     restrictions = {
+--         banned_cards = {
+            
+--         },
+--         banned_other = {},
+--     }
+-- }
+
+-- Jokers spawn in release order
+-- SMODS.Challenge {
+--     key = "slasher",
+--     rules = {
+--         custom = {
+--             {id = 'kino_slasher'},
+--         },
+--         modifiers = {}
+--     },
+--     jokers = {
+--     },
+--     deck = {
+--         type = 'Challenge Deck',
+--     },
+--     restrictions = {
+--         banned_cards = {
+            
+--         },
+--         banned_other = {},
+--     }
+-- }
+
+-- SMODS.Challenge {
+--     key = "wallstreet",
+--     rules = {
+--         custom = {
+--             {id = 'kino_wallstreet'},
+--         },
+--         modifiers = {}
+--     },
+--     jokers = {
+--     },
+--     deck = {
+--         type = 'Challenge Deck',
+--     },
+--     restrictions = {
+--         banned_cards = {
+            
+--         },
+--         banned_other = {},
+--     }
+-- }
+

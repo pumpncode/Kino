@@ -64,7 +64,7 @@ SMODS.Joker {
                     card_eval_status_text(card, 'extra', nil, nil, nil,
                     { message = localize('k_ringu_death'), colour = G.C.BLACK })
                 return true end }))
-                G.E_MANAGER:add_event(Event({trigger = 'after', delay = 1, func = function()
+                G.E_MANAGER:add_event(Event({trigger = 'after', delay = 4, func = function()
                     G.STATE = G.STATES.GAME_OVER; G.STATE_COMPLETE = false 
                 return true end }))
             end

@@ -42,6 +42,17 @@ SMODS.Joker {
         -- Gives x3 when triggered.
         if context.first_hand_drawn and card.ability.extra.predator_card == nil and not context.blueprint then
            card.ability.extra.predator_card = pseudorandom_element(context.hand_drawn)
+
+           local eval = function(card)
+            local result = false
+            for _, _card in ipairs(G.hand.cards) do
+                if card.ability.extra.predator_card == _card then
+                    print("being_checked")
+                    result = true
+                end
+            end
+            return result end
+           juice_card_until(card, eval, true)
         end
 
         if context.individual and context.other_card == card.ability.extra.predator_card and
@@ -51,7 +62,7 @@ SMODS.Joker {
             }
         end
 
-        if context.end_of_round and not context.blueprint and not card.ability.extra.predator_card == nil then
+        if context.end_of_round and not context.blueprint then
             card.ability.extra.predator_card = nil
         end
     end

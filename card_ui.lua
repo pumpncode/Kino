@@ -136,7 +136,7 @@ Kino.create_legend_ui = function(card, legend_entry, current_rarity)
         local _outline_colour = HEX("b2a6a6")
         local _sprite = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=1, y=1})
         local _tooltip = {text = "In-progress"}
-        local _textcolour = G.C.BLACK
+        local _textcolour = G.C.GREY
         if _quest.completion == true then
             _box_colour = HEX("4f6750")
             _outline_colour = HEX("b4c1b4")

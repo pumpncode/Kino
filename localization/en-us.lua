@@ -2450,7 +2450,7 @@ return {
                 text = {
                     "{C:attention}Movie Joker{} have a",
                     "{C:green}1 in 100{} chance",
-                    "to spawn with an {C:yellow}Award"
+                    "to spawn with an {C:money}Award"
                 }
             },
             v_kino_awardsshow = {
@@ -2458,7 +2458,7 @@ return {
                 text = {
                     "A random unawarded",
                     "{C:attention}Movie Joker{} gains",
-                    "an {C:yellow}Award{} when",
+                    "an {C:money}Award{} when",
                     "a {C:attention}Boss Blind{} is",
                     "defeated"
                 }
@@ -2541,9 +2541,6 @@ return {
     misc = {
         dictionary = {
             ---- UI elements ----
-            -- Genre Names --
-            kino_genre_Action = "Action",
-            kino_genre_Animation = "Animation",
 
             -- Mod Config --
             kino_settings_header_enhancements = "Card Enhancements",
@@ -2562,10 +2559,13 @@ return {
 
             kino_settings_actor_synergy = "Actors?",
             kino_settings_genre_synergy = "Genre?",
+            kino_settings_movie_jokers_only = "Movie Jokers Only?",
             -- OTHER --
             kino_credits_header = "Credits",
             kino_credits_developer = "Developed By: ",
             kino_credits_specialthanks = "Playtesting Feedback: ",
+            kino_credits_programminghelp = "Additional Programming: ",
+            kino_credits_wiki = "Wiki Maintenance Help: ",
             ---------------------
             k_confection = "Confection",
             b_confection_cards = "Confection Cards",
@@ -2707,37 +2707,50 @@ return {
             },
 
             -- -- Barbie Quests
-            k_barbie_quest_1 = {
-                "Posses a Movie Joker",
-                "directed by a {C:attention}Woman{}"
-            },
-            k_barbie_quest_2 = {
-                "Posses 2 {C:attention}Comedy{}",
-                "or {C:attention}Adventure{} Jokers"
-            },
-            k_barbie_quest_3 = {
-                "Posses a Movie Joker",
-                "released in the {C:attention}2020s{}"
-            },
-            k_barbie_quest_4 = {
-                "Posses a Movie Joker",
-                "that shares an {C:attention}actor{}"
-            },
-            k_barbie_quest_5 = {
-                "Have more {C:attention}Queens{} than {C:attention}Jacks{}",
-                "and {C:attention}Kings{} in your deck"
-            },
-            k_barbie_quest_6 = {
-                "Have a {C:tarot}The Lovers{}, {C:tarot}The Empress{},",
-                "and {C:planet}Venus{} in your inventory"
-            },
-            
-            
+            -- k_barbie_quest_1 = {
+            --     "Posses a Movie Joker",
+            --     "directed by a {C:attention}Woman{}"
+            -- },
+            -- k_barbie_quest_2 = {
+            --     "Posses 2 {C:attention}Comedy{}",
+            --     "or {C:attention}Adventure{} Jokers"
+            -- },
+            -- k_barbie_quest_3 = {
+            --     "Posses a Movie Joker",
+            --     "released in the {C:attention}2020s{}"
+            -- },
+            -- k_barbie_quest_4 = {
+            --     "Posses a Movie Joker",
+            --     "that shares an {C:attention}actor{}"
+            -- },
+            -- k_barbie_quest_5 = {
+            --     "Have more {C:attention}Queens{} than {C:attention}Jacks{}",
+            --     "and {C:attention}Kings{} in your deck"
+            -- },
+            -- k_barbie_quest_6 = {
+            --     "Have a {C:tarot}The Lovers{}, {C:tarot}The Empress{},",
+            --     "and {C:planet}Venus{} in your inventory"
+            -- },
         },
         challenge_names = {
-            c_kino_minc = "Monsters Inc."
+            c_kino_minc = "Monsters Inc.",
+            c_kino_bacon = "Six Degrees of Kevin",
+            c_kino_yeager = "Cade Yeager Cosplay",
+            c_kino_xenomorph = "Xenomorph Invasion",
+            c_kino_bestsong = "Best Song in the World",
+            c_kino_harrysally = "When Perkeo met Triboulet",
+            c_kino_genre_variety = "Genre Variety",
+            c_kino_genre_snob = "Genre Snob",
+            c_kino_chronology = "Chronology",
+            c_kino_blockbuster = "Blockbuster Video",
+            c_kino_slasher = "Slasher Movie",
+            c_kino_wallstreet = "The Jimbo of Wallstreet"
+
         },
         v_dictionary = {
+            -- Payout Info
+            kino_sci_fi_payout = "Sci-Fi Cards Upgraded ($#1# each)",
+
             -- Quest Types
             v_kino_quest_hand_type = {
                 "Play a {C:attention}#1#{}#2#"
@@ -2751,8 +2764,52 @@ return {
             v_kino_questtimer = {
                 " #1# times"
             },
+        },
+        v_text = {
+            ch_c_movie_jokers_only = {
+                "Only {C:attention}Movie Jokers{} can spawn"
+            },
+            ch_c_kino_bacon = {
+                "All {C:attention}Movie Jokers{} spawn with a {C:attention}Bacon{} sticker"
+            },
+            ch_c_kino_yeag = {
+                "At the end of the round, you earn {C:money}$#1#{} for each time a {C:attention}Sci-Fi{} card upgraded"
+            },
+            ch_c_kino_alien = {
+                "Whenever you play a hand, one card in deck becomes permanently {C:attention}Debuffed{}"
+            },
+            ch_c_kino_bestsong = {
+                "Gain a {C:red}Discard{} when you {C:attention}Sacrifice{}"
+            },
+            ch_c_kino_harrysally = {
+                "You cannot buy {C:green}Rerolls{}, you instead earn them whenever you {C:attention}Make a Match"
+            },
+            ch_c_kino_genre_variety = {
+                "{C:attention}Movie Jokers{} are debuffed while you own another joker that shares a {C:attention}Genre{}"
+            },
+            ch_c_kino_genre_snob = {
+                "{C:attention}Movie Jokers{} are debuffed if they do not share the genre of the Joker in your {C:attention}Active slot{}"
+            },
+            ch_c_kino_chronology = {
+                "{C:attention}Movie Jokers{} spawn in order of release"
+            },
+            ch_c_kino_blockbuster = {
+                "All {C:attention}Movie Jokers{} are rental, charging more rent depending on how profitable they were"
+            },
+            ch_c_kino_slasher = {
+                "Every Fourth card scored {C:attention}Jump Scares{}"
+            },
+            ch_c_wallstreet = {
+                "Whenever you use any {C:attention}Consumable{}, you {C:money}Bust"
+            },
 
-
+            -- More general rules
+            ch_c_carryover_discards = {
+                "{C:red}Discards{} carry over between rounds"
+            },
+            ch_c_carryover_hands = {
+                "{C:blue}Hands{} carry over between rounds"
+            }
         }
     }
 }

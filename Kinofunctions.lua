@@ -167,6 +167,29 @@ end
 
 
 ---- Kino Syngery system ----
+function check_genre_match(joker)
+    -- Checks to see how many jokers share a genre with the joker that the function uses
+    if not joker.config.center.kino_joker then
+        return 
+    end
+
+    local _jokers_that_share_genre = 0
+    -- iterate through each genre
+    for _, _genre in ipairs(joker.k_genre) do 
+        for __, _joker_comp in ipairs(G.jokers.cards) do
+            if _joker_comp ~= joker and
+            is_genre(_joker_comp, _genre) then
+                _jokers_that_share_genre = _jokers_that_share_genre + 1
+                break
+            end
+        end
+    end
+
+    if G.GAME.modifiers.kino_genre_variety and
+    _jokers_that_share_genre > 0 then
+        SMODS.debuff_card(joker, true, "kino_genre_variety")
+    end
+end
 
 function check_genre_synergy()
     -- check jokers, then if 5 of them share a genre, add a joker slot
@@ -356,6 +379,7 @@ function Card:kino_synergy(card)
                 card:set_multiplication_bonus(card, "bacon_deck_left", G.GAME.modifiers.bacon_bonus)
             end
         end
+
     end
 end
 
@@ -472,6 +496,9 @@ local base_atd = Card.add_to_deck
 function Card:add_to_deck(from_debuff)
     base_atd(self, from_debuff)
 
+    if G.GAME.modifiers.kino_genre_variety then
+        check_genre_match()            
+    end
     check_genre_synergy()
     check_actor_synergy()
 end
@@ -480,8 +507,11 @@ local base_rmd = Card.remove_from_deck
 function Card:remove_from_deck(from_debuff)
     base_rmd(self, from_debuff)
     
-        check_genre_synergy()
-        check_actor_synergy()
+    if G.GAME.modifiers.kino_genre_variety then
+        check_genre_match()            
+    end
+    check_genre_synergy()
+    check_actor_synergy()
 end
 
 local base_set_rank = CardArea.set_ranks
@@ -490,6 +520,9 @@ function CardArea:set_ranks()
     base_set_rank(self)
 
     if self == G.jokers then
+        if G.GAME.modifiers.kino_genre_variety then
+            check_genre_match()            
+        end
         check_genre_synergy()
         check_actor_synergy()
     end
@@ -500,6 +533,9 @@ function CardArea:align_cards()
     base_align_cards(self)
 
     if self == G.jokers then
+        if G.GAME.modifiers.kino_genre_variety then
+            check_genre_match()            
+        end
         check_genre_synergy()
         check_actor_synergy()
     end
@@ -715,8 +751,13 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
     -- Joker Changes --
     if G.GAME.used_vouchers.v_kino_awardsbait and _type == 'Joker' then
         if pseudorandom("snack_boost_golden") < Kino.awardschance/100 then
-            SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], true)
+            SMODS.Stickers['kino_award']:apply(_card, true)
         end
+    end
+
+    if G.GAME.modifiers.kino_bacon and _type == 'Joker' 
+    and _card.kino_joker then
+        SMODS.Stickers['kino_bacon']:apply(_card, true)
     end
 
     if G.GAME.modifiers and G.GAME.modifiers.genre_bonus then

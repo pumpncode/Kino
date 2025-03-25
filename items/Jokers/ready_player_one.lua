@@ -27,6 +27,20 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Sci-fi", "Adventure"},
+    in_pool = function(self)
+        -- Check for the right frequency
+        if G.jokers and G.jokers.cards then
+            for k, v in pairs(G.jokers.cards) do
+                local _joker_date = Card:get_release(v)
+
+                if _joker_date[1] >= 1970 and _joker_date[1] <= 1989 then
+                    return true
+                end
+            end
+        end
+
+        return false
+    end,
 
     loc_vars = function(self, info_queue, card)
         return {

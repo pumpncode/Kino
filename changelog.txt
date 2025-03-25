@@ -1,3 +1,28 @@
+V 0.8:
+New Jokers:
+- Raiders of the Lost Ark
+- Barbie (2024)
+
+Visual Updates:
+- Predator now shakes when you are still holding on to the hidden card
+- Longlegs now shakes when you are holding it's partner in your hand
+
+Spawn Limitations:
+Multiple Jokers have had their spawn conditions updated.
+- Ready Player One will only spawn if you have at least one joker from the 70s or 80s
+
+Suit Count Jokers:
+- The Breakfast Club  will only spawn once you have more Spades in deck than your starting count. 
+- Dickie Roberts will only spawn once you have more Spades in deck than your starting count. 
+- Titanic will only spawn once you have more Hearts in deck than your starting count.
+- Gentlemen Prefer Blondes will only spawn once you have more Hearts in deck than your starting count.
+
+Horror/Monster Card synergy Jokers:
+- Child's Play, Gremlins, Incredible Hulk and the Wolf Man will only spawn if you have Horror or Monster cards in your deck, rather than just Horror cards
+
+Debuffed Card Synergy
+- Alien 3 now only spawns once you have debuffed cards in deck
+
 V 0.7.2:
 New Jokers:
 Legendaries:
