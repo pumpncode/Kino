@@ -618,18 +618,20 @@ position = "after"
 payload = '''
 G.E_MANAGER:add_event(Event({
     trigger = 'immediate',
-    func = (function()     
-        for i = 1, G.GAME.modifiers.kino_alien.value do
-            local _card = nil
-            local _found_target = false
-            while not _found_target do
-                _card = pseudorandom_element(G.deck.cards)
-                if not _card.debuff then
-                    _found_target = true
+    func = (function()
+        if G.GAME.modifiers.kino_alien     
+            for i = 1, G.GAME.modifiers.kino_alien.value do
+                local _card = nil
+                local _found_target = false
+                while not _found_target do
+                    _card = pseudorandom_element(G.deck.cards)
+                    if not _card.debuff then
+                        _found_target = true
+                    end
                 end
+                    
+                SMODS.debuff_card(_card, true, card.config.center.key)
             end
-                
-            SMODS.debuff_card(_card, true, card.config.center.key)
         end
     return true end)
     }))
@@ -655,4 +657,26 @@ if not G.GAME.modifiers.carryover_hands then
 end
 '''
 match_indent = true
+
+
+# Wallstreet 
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+SMODS.calculate_context({using_consumeable = true, consumeable = card, area = card.from_area})
+'''
+position = "after"
+payload = '''
+G.E_MANAGER:add_event(Event({
+    trigger = 'immediate',
+    func = (function()     
+        if G.GAME.modifiers.kino_wallstreet then
+            ease_dollars(-G.GAME.dollars)
+        end
+    return true end)
+    }))
+'''
+match_indent = true
+
 ###################

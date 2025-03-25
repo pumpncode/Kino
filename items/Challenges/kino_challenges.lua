@@ -171,27 +171,27 @@ SMODS.Challenge {
 
 -- Jokers are only active if they share a genre with
 -- the joker in the active slot
--- SMODS.Challenge {
---     key = "genre_snob",
---     rules = {
---         custom = {
---             {id = 'movie_jokers_only'},
---             {id = 'kino_genre_snob'},
---         },
---         modifiers = {}
---     },
---     jokers = {
---     },
---     deck = {
---         type = 'Challenge Deck',
---     },
---     restrictions = {
---         banned_cards = {
+SMODS.Challenge {
+    key = "genre_snob",
+    rules = {
+        custom = {
+            {id = 'movie_jokers_only'},
+            {id = 'kino_genre_snob'},
+        },
+        modifiers = {}
+    },
+    jokers = {
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    restrictions = {
+        banned_cards = {
             
---         },
---         banned_other = {},
---     }
--- }
+        },
+        banned_other = {},
+    }
+}
 
 -- Jokers spawn in release order
 -- SMODS.Challenge {
@@ -216,7 +216,7 @@ SMODS.Challenge {
 --     }
 -- }
 
--- Jokers spawn in release order
+-- Jokers charge rent based on their profit margin
 -- SMODS.Challenge {
 --     key = "blockbuster",
 --     rules = {
@@ -261,24 +261,24 @@ SMODS.Challenge {
 --     }
 -- }
 
--- SMODS.Challenge {
---     key = "wallstreet",
---     rules = {
---         custom = {
---             {id = 'kino_wallstreet'},
---         },
---         modifiers = {}
---     },
---     jokers = {
---     },
---     deck = {
---         type = 'Challenge Deck',
---     },
---     restrictions = {
---         banned_cards = {
+SMODS.Challenge {
+    key = "wallstreet",
+    rules = {
+        custom = {
+            {id = 'kino_wallstreet'},
+        },
+        modifiers = {}
+    },
+    jokers = {
+    },
+    deck = {
+        type = 'Challenge Deck',
+    },
+    restrictions = {
+        banned_cards = {
             
---         },
---         banned_other = {},
---     }
--- }
+        },
+        banned_other = {},
+    }
+}
 

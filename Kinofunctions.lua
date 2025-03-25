@@ -191,6 +191,29 @@ function check_genre_match(joker)
     end
 end
 
+function check_genre_snob()
+    -- active joker ==
+    if not G.jokers or not G.jokers.cards or (#G.jokers.cards < 1) then return end
+    if not G.jokers.cards[1].config.center.kino_joker then return end
+
+    local _active_genres = G.jokers.cards[1].config.center.k_genre
+
+    for i = 2, #G.jokers.cards do
+        local _genre_match = false
+        local _joker = G.jokers.cards[i]
+        for _, _genre in ipairs(_active_genres) do
+            if is_genre(_joker, _genre) then
+                _genre_match = true
+                break
+            end
+        end
+
+        if _genre_match == false then
+            SMODS.debuff_card(_joker, true, "kino_genre_snob")
+        end
+    end
+end
+
 function check_genre_synergy()
     -- check jokers, then if 5 of them share a genre, add a joker slot
     if not G.jokers or not G.jokers.cards or not kino_config.genre_synergy then
