@@ -619,7 +619,7 @@ payload = '''
 G.E_MANAGER:add_event(Event({
     trigger = 'immediate',
     func = (function()
-        if G.GAME.modifiers.kino_alien     
+        if G.GAME.modifiers.kino_alien then  
             for i = 1, G.GAME.modifiers.kino_alien.value do
                 local _card = nil
                 local _found_target = false

@@ -33,7 +33,7 @@ SMODS.Joker {
             for k, v in pairs(G.jokers.cards) do
                 local _joker_date = Card:get_release(v)
 
-                if _joker_date[1] >= 1970 and _joker_date[1] <= 1989 then
+                if _joker_date and (_joker_date[1] >= 1970 and _joker_date[1] <= 1989) then
                     return true
                 end
             end

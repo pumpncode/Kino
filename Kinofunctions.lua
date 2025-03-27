@@ -93,6 +93,7 @@ function reset_ancient_card()
     G.GAME.current_round.kino_thing_card.suit = thing_card
 
     reset_raiders_card()
+    reset_bonnieandclyde()
 end
 
  -- Indiana Jones checks
@@ -116,6 +117,19 @@ function reset_raiders_card()
         G.GAME.current_round.kino_indiana_suit = idol_card.base.suit
         G.GAME.current_round.kino_indiana_key = idol_card.config.card_key
     end
+end
+
+function reset_bonnieandclyde()
+    if not G.GAME.current_round.bonnierank then
+        G.GAME.current_round.bonnierank = 2
+        G.GAME.current_round.clydesuit = "Spades"
+    end
+
+    local _ranks = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+    local _suits = {"Hearts", "Diamonds", "Spades", "Clubs"}
+
+    G.GAME.current_round.bonnierank = pseudorandom_element(_ranks, pseudoseed("bonnie_boss"))
+    G.GAME.current_round.clydesuit = pseudorandom_element(_suits, pseudoseed("clyde_boss"))
 end
 
 -- For everything that needs to be done when the shop is closed.
@@ -340,12 +354,13 @@ function Card:kino_synergy(card)
         if frequency >= G.GAME.current_round.actors_check and _count <= 2 then
             _count = _count + 1
             local _multiplier = card:set_multiplication_bonus(card, actor_id, _order, true)
-            if _multiplier then
-                card:juice_up(0.8, 0.5)
-                card_eval_status_text(card, 'extra', nil, nil, nil,
-                { message = localize('k_actor_synergy'), colour = G.C.LEGENDARY})
-            end
         end
+    end
+
+    if _count > 0 then
+        card_eval_status_text(card, 'extra', nil, nil, nil,
+        { message = localize('k_actor_synergy'), colour = G.C.LEGENDARY})
+        card:juice_up()
     end
 
     if self.ability.kino_bacon or G.GAME.modifiers.bacon_bonus then
@@ -468,6 +483,14 @@ function Card:set_multiplication_bonus(card, source, num, is_actor)
         end
     end
     return true
+end
+
+function Card:get_multiplier_by_source(card, source)
+    if not card.ability.multipliers or not card.ability.multipliers[source] then
+        return false
+    end
+
+    return card.ability.multipliers[source]
 end
 
 function check_variable_validity_for_mult(name)
@@ -745,59 +768,6 @@ function Tag:set_chocolate_bonus(chocolate_bonus)
     return true
 end
 
------------ CONFECTION CHANGES -------------
-local _occ = create_card
-function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-    local _card = _occ(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-    -- Confection Changes --
-    if G.GAME.used_vouchers.v_kino_special_treats and _type == "confection" then
-        -- chance for golden 1/10
-        -- chance for chocolate 1/10
-        -- chance for XL 1/10 
-        if pseudorandom("snack_boost_golden") < Kino.goldleaf_chance/10 then
-            SMODS.Stickers['kino_goldleaf']:apply(_card, true)
-        end
-        if pseudorandom("snack_boost_choco") < Kino.choco_chance/10 then
-            SMODS.Stickers['kino_choco']:apply(_card, true)
-        end
-        if pseudorandom("snack_boost_XL") < Kino.xl_chance/10 then
-            SMODS.Stickers['kino_extra_large']:apply(_card, true)
-        end
-    end
-
-    if next(find_joker("j_kino_charlie_and_the_chocolate_factory")) and _type == "confection" then
-        if not _card.ability.kino_choco then
-            SMODS.Stickers['kino_choco']:apply(_card, true)
-        end
-    end
-
-    -- Joker Changes --
-    if G.GAME.used_vouchers.v_kino_awardsbait and _type == 'Joker' then
-        if pseudorandom("snack_boost_golden") < Kino.awardschance/100 then
-            SMODS.Stickers['kino_award']:apply(_card, true)
-        end
-    end
-
-    if G.GAME.modifiers.kino_bacon and _type == 'Joker' 
-    and _card.kino_joker then
-        SMODS.Stickers['kino_bacon']:apply(_card, true)
-    end
-
-    if G.GAME.modifiers and G.GAME.modifiers.genre_bonus then
-        if _type == 'Joker' or _type == G.GAME.modifiers.genre_bonus then
-            if is_genre(_card, G.GAME.modifiers.genre_bonus) then
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        _card:set_multiplication_bonus(_card, 'card_back', 1.5)
-                        return true
-                    end
-                }))
-            end   
-        end
-    end
-
-    return _card
-end
 
 to_big = to_big or function(x, y)
     return x

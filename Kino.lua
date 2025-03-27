@@ -202,6 +202,10 @@ Game.init_game_object = function(self)
     ret.confections_used = 0
 
     ret.current_round.abduction_waitinglist = {}
+
+    -- Boss Blind info
+    ret.current_round.boss_blind_joker_counter = 0
+    ret.current_round.boss_blind_blofeld_counter = 10000
     return ret
 end
 
@@ -263,6 +267,12 @@ for _, file in ipairs(files) do
 end
 
 -- Register the Card Backs
+local files = NFS.getDirectoryItems(mod_dir .. "Items/Blinds")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Blinds/" .. file))()
+end
+
+-- Register the Blinds
 local files = NFS.getDirectoryItems(mod_dir .. "Items/Backs")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Backs/" .. file))()

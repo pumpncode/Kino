@@ -218,9 +218,9 @@ joker_list = {
 -- "rattatouille", 2000s
 -- UNIMPLEMENTED Forrest Gump 1990s
 -- "indiana_jones_1", 1980s
--- Taxi Driver?? 1970s
+-- The Godfather 1970s 
 -- "2001_odyssey", 1960s
--- UNIMPLEMENTED A Streetcar Named Desire 1950s
+-- UNIMPLEMENTED A Streetcar Named Desire 1950s STRANGERS ON A TRAIN
 -- UNIMPLEMENTED Citizen Kane 1940s
 -- UNIMPLEMENTED Bringing Up Baby 1930s
 -- UNIMPLEMENTED Wings 1920s

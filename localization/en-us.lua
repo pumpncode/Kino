@@ -2172,6 +2172,143 @@ return {
                 }
             }
         },
+        Blind = {
+            bl_kino_hannibal = {
+                name = "Dr. Hannibal Lecter",
+                text = {
+                    "Destroy all cards",
+                    "held in hand",
+                    "when you defeat",
+                    "this blind"
+                }
+            },
+            bl_kino_vader = {
+                name = "Darth Vader",
+                text = {
+                    "{C:attention}Force Choke{} the",
+                    "joker in your Active slot",
+                    "weakening it by {C:attention}33%",
+                    "each round",
+                    "After being {C:attention}Force Choked",
+                    "three times, destroy the joker"
+                }
+            },
+            bl_kino_mama = {
+                name = "Ma-Ma",
+                text = {
+                    "Decrease base mult",
+                    "by {C:mult}#1#{} and",
+                    "chips by {C:chips}#2#{}",
+                    "for each {C:attention}Consumable{}",
+                    "used this run"
+                }
+            },
+            bl_kino_cruella = {
+                name = "Cruella De Vil",
+                text = {
+                    "Decrease base mult",
+                    "by {C:mult}#1# for",
+                    "each card under #2#",
+                    "in your starting deck"
+                }
+            },
+            bl_kino_voldemort = {
+                name = "Voldemort",
+                text = {
+                    "Cast an {C:green}Evil Spell",
+                    "based on the first",
+                    "three cards held",
+                    "in hand"
+                }
+            },
+            bl_kino_gekko = {
+                name = "Gordon Gekko",
+                text = {
+                    "Each card scored",
+                    "has a {C:green}#1# in #2#{}",
+                    "chance to either Double",
+                    "your money, or {C:attention}Bust"
+                }
+            },
+            bl_kino_pazuzu = {
+                name = "Pazuzu",
+                text = {
+                    "Possesses the last",
+                    "hand type you played",
+                    "When you play a Possessed",
+                    "hand type, set its level",
+                    "to 1"
+                }
+            },
+            bl_kino_xenomorph = {
+                name = "Xenomorph Queen",
+                text = {
+                    "Each card has a ",
+                    "{C:green}#1# in #2#{} chance",
+                    "to be debuffed when Scored"
+                }
+            },
+            bl_kino_bonnieandclyde = {
+                name = "Bonnie & Clyde",
+                text = {
+                    "Hands containing a",
+                    "{C:attention}#1#{} or a",
+                    "{V:1}#2#{} will",
+                    "not score"
+                }
+            },
+            bl_kino_dracula = {
+                name = "Count Dracula",
+                text = {
+                    "Debuff each {C:attention}Enhanced",
+                    "card played after scoring"
+                }
+            },
+            bl_kino_wickedwitch = {
+                name = "The Wicked Witch of the West",
+                text = {
+                    "Fill each empty",
+                    "Joker slot with an",
+                    "unsellable {C:attention}Flying Monkey",
+                    "which disappears after",
+                    "{C:attention}#1#{} hands played"
+                }
+            },
+            bl_kino_frankbooth = {
+                name = "Frank Booth",
+                text = {
+                    "After your first hand",
+                    "destroy your third Joker",
+                    "after you play a hand"
+                }
+            },
+            bl_kino_joker = {
+                name = "The Joker",
+                text = {
+                    "A random Joker",
+                    "becomes {C:attention}Joker",
+                    "every second hand",
+                    "played"
+                }
+            },
+            bl_kino_hansgruber = {
+                name = "Hans Gruber",
+                text = {
+                    "Steals half your",
+                    "money after you",
+                    "play a hand"
+                }
+            },
+            bl_kino_blofeld = {
+                name = "Ernst Stavro Blofeld",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            }
+        },
         Tag = {
             tag_kino_popcorn = {
                 name = "Popcorn Tag",
@@ -2655,82 +2792,94 @@ return {
             k_legend_willnot = "Legendary will not appear",
             k_legend_will = "Will spawn as:",
 
+            -- BOSS BLIND BARKS
+            k_blind_vader_1 = "I have you now!",
+            k_blind_vader_2 = "Don't make me destroy you",
+            k_blind_gekko_1 = "Greed. Is. Good!",
+            k_blind_gekko_2 = "You win a few, you lose a few",
+            k_blind_pazuzu_1 = "Have you come to save God's servant?",
+            k_blind_pazuzu_2 = "What an excellent day for an exorcism",
+            k_blind_dracula_1 = "I don't drink... Wine",
+            k_blind_joker_1 = "Ha Ha Ha Ha",
+            k_blind_joker_2 = "HAHAHAHAHA",
+            k_blind_joker_final = "Why So Serious?",
+
             -- Legendary Joker Quests
             -- -- 2001: A Space Odyssey
             k_odyssey_quest_1 = {
                 "Posses a Movie Joker",
-                "directed by {C:attention}Kubrick{}"
+                "directed by Kubrick"
             },
             k_odyssey_quest_2 = {
-                "Possess{C:attention} 2 Sci-Fi Jokers{}"
+                "Possess 2 Sci-Fi Jokers"
             },
             k_odyssey_quest_3 = {
                 "Posses a Movie Joker",
-                "released in the {C:attention}60s{}"
+                "released in the 60s"
             },
             k_odyssey_quest_4 = {
                 "Have 10 or more",
-                "{C:attention}Sci-fi Cards{} in your deck",
+                "Sci-fi Cards in your deck",
             },
             k_odyssey_quest_5 = {
-                "Have used {C:attention}20 or more",
-                "{C:planet}Planet Cards{}"
+                "Have used 20 or more",
+                "Planet Cards"
             },
             k_odyssey_quest_6 = {
-                "Have a {C:tarot}Moon{}, {C:planet}Jupiter",
-                "and {C:planet}Earth{} in your inventory"
+                "Have a Moon, Jupiter",
+                "and Earth in your inventory"
             },
 
             -- -- Raiders of the Lost Ark
             k_indiana_quest_1 = {
                 "Posses a Movie Joker",
-                "directed by {C:attention}Spielberg{}"
+                "directed by Spielberg"
             },
             k_indiana_quest_2 = {
-                "Posses{C:attention} 2 Adventure Jokers{}"
+                "Posses 2 Adventure Jokers"
             },
             k_indiana_quest_3 = {
                 "Posses a Movie Joker",
-                "released in the {C:attention}80s{}"
+                "released in the 80s"
             },
             k_indiana_quest_4 = {
                 "Posses a Movie Joker",
-                "that shares an {C:attention}actor{}"
+                "that shares an actor"
             },
             k_indiana_quest_5 = {
-                "Have {C:attention}60 or more{}",
+                "Have 60 or more",
                 "cards in your deck"
             },
             k_indiana_quest_6 = {
-                "Posses a {C:attention}Hieroglyph",
-                "or {C:attention}Petroglyph{} Voucher"
+                "Posses a Hieroglyph",
+                "or Petroglyph Voucher"
             },
 
-            -- -- Barbie Quests
-            -- k_barbie_quest_1 = {
-            --     "Posses a Movie Joker",
-            --     "directed by a {C:attention}Woman{}"
-            -- },
-            -- k_barbie_quest_2 = {
-            --     "Posses 2 {C:attention}Comedy{}",
-            --     "or {C:attention}Adventure{} Jokers"
-            -- },
-            -- k_barbie_quest_3 = {
-            --     "Posses a Movie Joker",
-            --     "released in the {C:attention}2020s{}"
-            -- },
-            -- k_barbie_quest_4 = {
-            --     "Posses a Movie Joker",
-            --     "that shares an {C:attention}actor{}"
-            -- },
-            -- k_barbie_quest_5 = {
-            --     "Have more {C:attention}Queens{} than {C:attention}Jacks{}",
-            --     "and {C:attention}Kings{} in your deck"
-            -- },
-            -- k_barbie_quest_6 = {
-            --     "Have a {C:tarot}The Lovers{}, {C:tarot}The Empress{},",
-            --     "and {C:planet}Venus{} in your inventory"
-            -- },
+            -- Barbie Quests
+            k_barbie_quest_1 = {
+                "Posses a Movie Joker",
+                "directed by a Woman"
+            },
+            k_barbie_quest_2 = {
+                "Posses 2 Comedy",
+                "or Adventure Jokers"
+            },
+            k_barbie_quest_3 = {
+                "Posses a Movie Joker",
+                "released in the 2020s"
+            },
+            k_barbie_quest_4 = {
+                "Posses a Movie Joker",
+                "that shares an actor"
+            },
+            k_barbie_quest_5 = {
+                "Have more Queens than Jacks",
+                "and Kings in your deck"
+            },
+            k_barbie_quest_6 = {
+                "Have a The Lovers, The Empress,",
+                "and Venus in your inventory"
+            },
         },
         challenge_names = {
             c_kino_minc = "Monsters Inc.",
