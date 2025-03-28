@@ -27,6 +27,56 @@ function is_genre(joker, genre)
     return false
 end
 
+function has_cast(joker, actor)
+    local _center = nil
+    if joker.kino_joker then
+        _center = joker.kino_joker
+    else
+        if joker.config.center and joker.config.center.kino_joker then
+            _center = joker.config.center.kino_joker
+        else
+            _center = joker.kino_joker
+            return false
+        end 
+    end
+
+
+    for _, _castmember in ipairs(_center.cast) do
+        if actor == _castmember then
+            return true
+        end
+    end
+
+    return false
+end
+
+function create_cast_list()
+    local _castlist = {}
+    local _hash = {}
+
+    for _, _joker in ipairs(G.jokers.cards) do
+        if _joker.config.center.kino_joker then
+            for _, _castmember in ipairs(_joker.config.center.kino_joker.cast) do
+                if not _hash[_castmember] then
+                    _castlist[#_castlist + 1] = _castmember
+                    _hash[_castmember] = true
+                end
+            end
+        end
+    end
+
+    return _castlist
+end
+
+function has_cast_from_table(joker, actor_table)
+    for _, _castmember in ipairs(actor_table) do
+        if has_cast(joker, _castmember) then
+            return true
+        end
+    end
+    return false
+end
+
 function display_egg_message()
     if not G.GAME.egg_message then
         G.GAME.egg_message = UIBox{

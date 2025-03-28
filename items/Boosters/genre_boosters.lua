@@ -24,7 +24,7 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("Action", G.pack_cards, nil, nil, true, true, nil, nil)
+        return create_card("Action", G.pack_cards, nil, nil, true, true, nil, "buf")
     end
 }
 
@@ -54,7 +54,7 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("Comedy", G.pack_cards, nil, nil, true, true, nil, nil)
+        return create_card("Comedy", G.pack_cards, nil, nil, true, true, nil, "buf")
     end
 }
 
@@ -85,7 +85,7 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("Horror", G.pack_cards, nil, nil, true, true, nil, nil)
+        return create_card("Horror", G.pack_cards, nil, nil, true, true, nil, "buf")
     end
 }
 
@@ -115,7 +115,7 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("Romance", G.pack_cards, nil, nil, true, true, nil, nil)
+        return create_card("Romance", G.pack_cards, nil, nil, true, true, nil, "buf")
     end
 }
 
@@ -145,6 +145,73 @@ SMODS.Booster {
     unlocked = true,
     discovered = true,
     create_card = function(self, card)
-        return create_card("Sci-fi", G.pack_cards, nil, nil, true, true, nil, nil)
+        return create_card("Sci-fi", G.pack_cards, nil, nil, true, true, nil, "buf")
+    end
+}
+
+SMODS.Booster {
+    key = "fantasy_booster",
+    kind = "Joker",
+    atlas = "kino_boosters",
+    group_key = "fantasy_booster",
+    pos = {x = 0, y = 5},
+    config = {
+        extra = 3,
+        choose = 1,
+        genre = "Fantasy"
+    },
+    cost = 4,
+    order = 1,
+    weight = 1,
+    get_weight = function(self, weight, object_type)
+        if G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus == self.config.genre then
+            return self.weight * 10
+
+        elseif G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus ~= self.config.genre then
+            return 0
+        end
+        return self.weight
+    end,
+    unlocked = true,
+    discovered = true,
+    create_card = function(self, card)
+        return create_card("Fantasy", G.pack_cards, nil, nil, true, true, nil, "buf")
+    end
+}
+
+SMODS.Booster {
+    key = "actor_booster",
+    kind = "Joker",
+    atlas = "kino_boosters",
+    group_key = "actor_booster",
+    pos = {x = 0, y = 6},
+    config = {
+        extra = 3,
+        choose = 1,
+    },
+    cost = 4,
+    order = 1,
+    weight = 1,
+    unlocked = true,
+    discovered = true,
+    in_pool = function(self, args)
+        if not G.jokers or not G.jokers.cards then
+            return false
+        end
+        
+        local _count = 0
+        for _, _joker in ipairs(G.jokers.cards) do
+            if _joker.config.center.kino_joker then
+                _count = _count + 1
+            end
+        end
+
+        if _count >= 2 then
+            return true
+        end
+        return false
+    end,
+    create_card = function(self, card)
+        return create_card({"actor"}, G.pack_cards, nil, nil, true, true, nil, "buf")
     end
 }

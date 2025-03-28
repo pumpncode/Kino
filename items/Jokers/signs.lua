@@ -32,6 +32,7 @@ SMODS.Joker {
     pools, k_genre = {"Sci-fi", "Horror"},
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "keyword_abduct"}
         return {
             vars = {
                 card.ability.extra.cards_abducted and #card.ability.extra.cards_abducted or 0,

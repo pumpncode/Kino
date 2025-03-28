@@ -47,7 +47,6 @@ SMODS.Joker {
             local result = false
             for _, _card in ipairs(G.hand.cards) do
                 if card.ability.extra.predator_card == _card then
-                    print("being_checked")
                     result = true
                 end
             end

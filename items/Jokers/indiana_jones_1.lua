@@ -169,7 +169,7 @@ SMODS.Joker {
         end
 
         if context.joker_main then
-            card_eval_status_text(joker, 'extra', nil, nil, nil,
+            card_eval_status_text(card, 'extra', nil, nil, nil,
             { message = localize('k_raiders'), colour = G.C.MONEY})
             return {
                 x_mult = card.ability.extra.stacked_xmult

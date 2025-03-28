@@ -404,47 +404,47 @@ SMODS.Blind{
 }
 
 -- TEST AGAIN
--- Hand may not contain specific rank or suit
-SMODS.Blind{
-    key = "bonnieandclyde",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('f2c0e5'),
-    atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
-    pos = { x = 0, y = 8},
-    debuff = {
-    },
-    loc_vars = function(self)
-        return {
-            vars = {
-                G.GAME.current_round.bonnierank,
-                G.GAME.current_round.clydesuit
-            }
-        }
-    end,
-    collection_loc_vars = function(self)
-        return {
-            vars = {
-                2,
-                "Spades"
-            }
-        }
-    end,
-    in_pool = function(self)
-        return true
-    end,
-	debuff_hand = function(self, cards, hand, handname, check)
-        for _, _card in ipairs(hand) do
-            if _card:get_id() == G.GAME.current_round.bonnierank or 
-            _card:is_suit(G.GAME.current_round.clydesuit) then
-                return true
-            end
-        end
+-- -- Hand may not contain specific rank or suit
+-- SMODS.Blind{
+--     key = "bonnieandclyde",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('f2c0e5'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 1, max = 10},
+--     pos = { x = 0, y = 8},
+--     debuff = {
+--     },
+--     loc_vars = function(self)
+--         return {
+--             vars = {
+--                 G.GAME.current_round.bonnierank,
+--                 G.GAME.current_round.clydesuit
+--             }
+--         }
+--     end,
+--     collection_loc_vars = function(self)
+--         return {
+--             vars = {
+--                 2,
+--                 "Spades"
+--             }
+--         }
+--     end,
+--     in_pool = function(self)
+--         return true
+--     end,
+-- 	debuff_hand = function(self, cards, hand, handname, check)
+--         for _, _card in ipairs(hand) do
+--             if _card:get_id() == G.GAME.current_round.bonnierank or 
+--             _card:is_suit(G.GAME.current_round.clydesuit) then
+--                 return true
+--             end
+--         end
 
-        return false
-    end
-}
+--         return false
+--     end
+-- }
 
 -- WORKS
 -- Debuff cards
@@ -664,35 +664,35 @@ SMODS.Blind{
     end,
 }
 
-SMODS.Blind{
-    key = "blofeld",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('c0c0bc'),
-    atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
-    pos = { x = 0, y = 14},
-    debuff = {
-        h_size_le = G.GAME and G.GAME.current_round.boss_blind_blofeld_counter or 100000
-    },
-    loc_vars = function(self)
+-- SMODS.Blind{
+--     key = "blofeld",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('c0c0bc'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 1, max = 10},
+--     pos = { x = 0, y = 14},
+--     debuff = {
+--         h_size_le = G.GAME and G.GAME.current_round.boss_blind_blofeld_counter or 100000
+--     },
+--     loc_vars = function(self)
 
-    end,
-    collection_loc_vars = function(self)
+--     end,
+--     collection_loc_vars = function(self)
 
-    end,
-    defeat = function(self)
-        G.GAME.current_round.boss_blind_blofeld_counter = 10000
-    end,
-    disable = function(self)
-        G.GAME.current_round.boss_blind_blofeld_counter = 10000
-    end,
-    in_pool = function(self)
-        return true
-    end,
-    calculate = function(self, blind, context)
-        if context.after then
-            G.GAME.current_round.boss_blind_blofeld_counter = #context.full_hand
-        end
-    end
-}
+--     end,
+--     defeat = function(self)
+--         G.GAME.current_round.boss_blind_blofeld_counter = 10000
+--     end,
+--     disable = function(self)
+--         G.GAME.current_round.boss_blind_blofeld_counter = 10000
+--     end,
+--     in_pool = function(self)
+--         return true
+--     end,
+--     calculate = function(self, blind, context)
+--         if context.after then
+--             G.GAME.current_round.boss_blind_blofeld_counter = #context.full_hand
+--         end
+--     end
+-- }

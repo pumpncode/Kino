@@ -69,7 +69,7 @@ local create_menu_toggles = function (parent, toggles)
 				ref_table = kino_config,
 				ref_value = v.ref_value,
 				callback = function(_set_toggle)
-				NFS.write(mod_dir.."/config.lua", STR_PACK(kino_config))
+				NFS.write(Kino.mod_dir.."/config.lua", STR_PACK(kino_config))
 				end,
 		})
 		if v.tooltip then

@@ -7,8 +7,9 @@ SMODS.Joker {
             start_chips = 120,
             cur_chips = 120,
             ticking = true,
-            timing_quick_non = 60,
-            time_spent = 0
+            timing_quick_non = kino_config.speed_factor,
+            time_spent = 0,
+            timer_num_non = 120
         }
     },
     rarity = 1,
@@ -32,6 +33,7 @@ SMODS.Joker {
     },
     pools, k_genre = {"Sports", "Animation"},
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_quick", vars = {kino_config.speed_factor}}
         return {
             vars = {
                 card.ability.extra.start_chips,
@@ -63,10 +65,20 @@ SMODS.Joker {
             card.ability.extra.time_spent = 0
         end
     end,
+    add_to_deck =  function(self, card, from_debuff)
+        -- card.children.timer_display = Kino.create_timer_ui(card)
+        -- card.children.timer_display_2 = Kino.create_timer_ui_2(card)
+    end,
     update = function(self, card, dt)
         if not G.SETTINGS.paused and G.GAME.blind.in_blind then
             card.ability.extra.time_spent = card.ability.extra.time_spent + dt
             card.ability.extra.cur_chips = math.max(card.ability.extra.start_chips - math.floor(card.ability.extra.start_chips * (card.ability.extra.time_spent / card.ability.extra.timing_quick_non)), 0)
+            card.ability.extra.timer_num_non = card.ability.extra.cur_chips
         end
+
+        -- if card.area and card.area == G.jokers then
+        --     card.children.timer_display = Kino.create_timer_ui(card)
+        --     card.children.timer_display_2 = Kino.create_timer_ui_2(card)
+        -- end
     end
 }

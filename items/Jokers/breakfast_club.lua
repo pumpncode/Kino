@@ -29,7 +29,7 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Comedy", "Drama", "Romance"},
-    in_pool = function(self)
+    in_pool = function(self, args)
         -- Check for the right frequency
         local suit_count = 0 
         if G.playing_cards then

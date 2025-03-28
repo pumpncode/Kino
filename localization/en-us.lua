@@ -478,6 +478,14 @@ return {
                     "{C:attention}Enhancement{} and {C:attention}Edition"
                 }
             },
+            j_kino_double_dragon = {
+                name = "Double Dragon",
+                text = {
+                    "Gives {C:chips}+#1#{} Chips",
+                    "for each Pair",
+                    "held in hand"
+                }
+            },
             j_kino_double = {
                 name = "The Double",
                 text = {
@@ -953,6 +961,14 @@ return {
                     "When you play a {C:attention}Full House{}, randomize",
                     "the {X:mult,C:white} xMult{} between {X:mult,C:white} x #4#{} & {X:mult,C:white} x #5#{}",
                     "and increases the range by {X:mult,C:white}#5#{}"
+                }
+            },
+            j_kino_kung_fu_panda_1 = {
+                name = "Kung-Fu Panda",
+                text = {
+                    "{C:chips}+#1#{} Chips if",
+                    "your hand contains",
+                    "a {C:spades}Spades{}"
                 }
             },
             j_kino_lady_and_the_tramp = {
@@ -2388,6 +2404,9 @@ return {
                 }
             }
         },
+        Quest = {
+
+        },
         Other =  {
             -- Booster packs
             p_kino_horror_booster = {
@@ -2425,6 +2444,20 @@ return {
                     "up to {C:attention}#2# Romance Jokers{}",  
                 }
             },
+            p_kino_fantasy_booster = {
+                name = "Fantasy Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Fantasy Jokers{}",  
+                }
+            },
+            p_kino_actor_booster = {
+                name = "Actor Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Fantasy Jokers{}",  
+                }
+            },
             p_kino_snack_booster_normal = {
                 name = "Snack Pack",
                 text = {
@@ -2446,6 +2479,7 @@ return {
                     "up to {C:attention}#2# Confections{}",
                 }
             },
+            
             -- Genres
             genre_1 = {
                 name = "Genre",
@@ -2494,6 +2528,14 @@ return {
                     "and the {C:attention}Fantasy enhancement{}",
                     "Spells can be cast at ",
                     "4 levels of power"
+                }
+            },
+            gloss_quick = {
+                name = "Quick",
+                text = {
+                    "Power of the effect",
+                    "lowers to 0 over a ",
+                    "period of #1# seconds"
                 }
             },
             bust_econ = {
@@ -2715,6 +2757,7 @@ return {
             sci_fi_booster = "Sci-fi Joker",
             comedy_booster = "Comedy Joker",
             romance_booster = "Romance Joker",
+            fantasy_booster = "Fantasy Joker",
 
             k_genre_synergy_egg = "That's a Romance!",
             k_genre_synergy = "Genre Synergy!",
