@@ -332,7 +332,7 @@ end
 
 function check_actor_synergy()
 
-    if not kino_config.actor_synergy or not G.jokers then
+    if not kino_config.actor_synergy or not G.jokers or not G.jokers.cards then
         return false
     end
 
