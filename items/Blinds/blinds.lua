@@ -58,7 +58,7 @@ SMODS.Blind{
     mult = 2,
     boss_colour = G.C.BLACK,
     atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
+    boss = {min = 2, max = 10},
     pos = { x = 0, y = 1},
     debuff = {
         vader_damage = 0.33
@@ -124,7 +124,7 @@ SMODS.Blind{
     mult = 2,
     boss_colour = HEX('642b2b'),
     atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
+    boss = {min = 3, max = 10},
     pos = { x = 0, y = 2},
     debuff = {
         chips_debuff = 10,
@@ -164,7 +164,7 @@ SMODS.Blind{
     mult = 2,
     boss_colour = HEX('dcdcdc'),
     atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
+    boss = {min = 3, max = 10},
     pos = { x = 0, y = 3},
     debuff = {
         card_count = 101,
@@ -302,7 +302,7 @@ SMODS.Blind{
     mult = 2,
     boss_colour = HEX('47361b'),
     atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
+    boss = {min = 2, max = 10},
     pos = { x = 0, y = 6},
     debuff = {
         hand_target = ""
@@ -454,7 +454,7 @@ SMODS.Blind{
     mult = 2,
     boss_colour = HEX('5f5f5f'),
     atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
+    boss = {min = 2, max = 10},
     pos = { x = 0, y = 9},
     debuff = {
     },
@@ -574,7 +574,7 @@ SMODS.Blind{
     mult = 2,
     boss_colour = HEX('62319d'),
     atlas = 'kino_blinds', 
-    boss = {min = 1, max = 11},
+    boss = {min = 2, max = 11},
     pos = { x = 0, y = 12},
     debuff = {
 

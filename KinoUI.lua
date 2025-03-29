@@ -90,66 +90,97 @@ kinoconfig = function()
 
 	local config_nodes =
 	{
-		-- HEADER (ENHANCEMENT TYPES)
 		{
 			n = G.UIT.R,
 			config = {
 				padding = 0,
-				align = "cm"
+				align = "tm"
 			},
 			nodes = {
+				-- Column Left
 				{
-					n = G.UIT.T,
+					n = G.UIT.C,
 					config = {
-						text = localize("kino_settings_header_enhancements"),
-						shadow = true,
-						scale = 0.75 * 0.8,
-						colour = HEX("ED533A")
+						padding = 0,
+						align = "tm"
+					},
+					nodes = {
+						-- HEADER (ENHANCEMENT TYPES)
+						{
+							n = G.UIT.R,
+							config = {
+								padding = 0,
+								align = "cm"
+							},
+							nodes = {
+								{
+									n = G.UIT.T,
+									config = {
+										text = localize("kino_settings_header_enhancements"),
+										shadow = true,
+										scale = 0.75 * 0.8,
+										colour = HEX("ED533A")
+									}
+								}
+							},
+						},
+						enhancement_settings,
+					}
+				},
+
+				-- Column Right
+				{
+					n = G.UIT.C,
+					config = {
+						padding = 0,
+						align = "tm"
+					},
+					nodes = {
+						-- HEADER (mod_mechanics_settings)
+						{
+							n = G.UIT.R,
+							config = {
+								padding = 0,
+								align = "cm"
+							},
+							nodes = {
+								{
+									n = G.UIT.T,
+									config = {
+										text = localize("kino_settings_header_mod_mechanics"),
+										shadow = true,
+										scale = 0.75 * 0.8,
+										colour = HEX("ED533A")
+									}
+								}
+							},
+						},
+						mod_mechanics_settings,
+						
+						-- HEADER (joker_mechanics_settings)
+						{
+							n = G.UIT.R,
+							config = {
+								padding = 0,
+								align = "cm"
+							},
+							nodes = {
+								{
+									n = G.UIT.T,
+									config = {
+										text = localize("kino_settings_header_joker_mechanics"),
+										shadow = true,
+										scale = 0.75 * 0.8,
+										colour = HEX("ED533A")
+									}
+								}
+							},
+						},
+						joker_mechanics_settings,
 					}
 				}
 			},
 		},
-		enhancement_settings,
-		-- HEADER (joker_mechanics_settings)
-		{
-			n = G.UIT.R,
-			config = {
-				padding = 0,
-				align = "cm"
-			},
-			nodes = {
-				{
-					n = G.UIT.T,
-					config = {
-						text = localize("kino_settings_header_joker_mechanics"),
-						shadow = true,
-						scale = 0.75 * 0.8,
-						colour = HEX("ED533A")
-					}
-				}
-			},
-		},
-		joker_mechanics_settings,
-		-- HEADER (mod_mechanics_settings)
-		{
-			n = G.UIT.R,
-			config = {
-				padding = 0,
-				align = "cm"
-			},
-			nodes = {
-				{
-					n = G.UIT.T,
-					config = {
-						text = localize("kino_settings_header_mod_mechanics"),
-						shadow = true,
-						scale = 0.75 * 0.8,
-						colour = HEX("ED533A")
-					}
-				}
-			},
-		},
-		mod_mechanics_settings
 	}
 
 	return config_nodes

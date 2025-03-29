@@ -1,20 +1,20 @@
 SMODS.Joker {
-    key = "double_dragon",
-    order = 243,
+    key = "tree_of_life",
+    order = 239,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 50
+            chips = 20
         }
     },
     rarity = 1,
     atlas = "kino_atlas_7",
-    pos = { x = 2, y = 5},
+    pos = { x = 4, y = 4},
     cost = 5,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 2436,
+        id = 8967,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -26,7 +26,7 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Action"},
+    pools, k_genre = {"Drama"},
 
     loc_vars = function(self, info_queue, card)
         return {
@@ -37,26 +37,19 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            local _ranks = {}
+            local _hash = {}
+            local _count = 0
             for _, _card in ipairs(G.hand.cards) do
-                local _rank1 = _card:get_id()
+                local _id = _card.overrides_base_rank and 0 or _card:get_id()
 
-                if not _ranks[_rank1] then
-                    _ranks[_rank1] = 0
-                end
-                _ranks[_rank1] = _ranks[_rank1] + 1
-
-            end
-
-            local _chips = 0
-            for _rank, _count in pairs(_ranks) do
-                if _count >= 2 then
-                    _chips = _chips + card.ability.extra.chips
+                if _hash[_id] then
+                    _hash[_id] = true
+                    _count = _count + 1
                 end
             end
 
             return {
-                chips = _chips
+                chips = card.ability.extra.chips * _count
             }
         end
     end

@@ -155,6 +155,13 @@ SMODS.Atlas {
     path = 'kino_backs.png'
 }
 
+SMODS.Atlas {
+    key = "kino_sleeves",
+    px = 73,
+    py = 95,
+    path = 'kino_sleeves.png'
+}
+
 local helper, load_error = SMODS.load_file("card_ui.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
@@ -275,16 +282,22 @@ for _, file in ipairs(files) do
     end
 end
 
--- Register the Card Backs
+-- Register the Card Blinds
 local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Blinds")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Blinds/" .. file))()
 end
 
--- Register the Blinds
+-- Register the Backs
 local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Backs")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Backs/" .. file))()
+end
+
+-- Register the Sleeves
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Sleeve")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Sleeve/" .. file))()
 end
 
 -- Register the Consumable Types

@@ -1,7 +1,49 @@
 V 0.8:
-New Jokers:
+10 New Jokers:
 - Raiders of the Lost Ark
 - Barbie (2024)
+- As Above So Below
+- Baby Driver
+- Contagion
+- Double Dragon
+- Grown Ups
+- Hard Eight
+- Kung Fu Panda
+- The Tree of Life
+
+8 New Challenges:
+- Monster Inc.
+- Six Degrees of Kevin Bacon
+- Cade Yeager Cosplay
+- Xenomorph Invasion
+- The Best Song in the World
+- Genre Variety
+- Genre Snob
+- The Jimbo of Wallstreet
+
+
+11 New Boss Blinds:
+- Hannibal Lecter
+- Darth Vader
+- Ma-Ma
+- Cruella De Vil
+- Gordon Gekko
+- Pazuzu
+- Xenomorph Queen
+- Dracula
+- Frank Booth
+- The Joker
+- Hans Gruber
+
+2 New Vouchers:
+- Media Collection
+- Criterion Collection
+
+
+Deck Sleeve compatibility:
+- Each available Deck now has an equivalent sleeve
+
+
 
 Visual Updates:
 - Predator now shakes when you are still holding on to the hidden card

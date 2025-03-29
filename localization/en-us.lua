@@ -118,6 +118,15 @@ return {
                     "ranks add up to 13"
                 }
             },
+            j_kino_as_above = {
+                name = "As Above, So Below",
+                text = {
+                    "{C:chips}+#2#{} Chips for",
+                    "each card Discarded",
+                    "this round",
+                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
             j_kino_asteroid_city = {
                 name = "Asteroid City",
                 text = {
@@ -134,6 +143,16 @@ return {
                     "of your most played hand type",
                     "when you use a {C:attention}Planet{}",
                     "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
+            j_kino_baby_driver = {
+                name = "Baby Driver",
+                text = {
+                    "If a scoring card",
+                    "is adjacent to a card",
+                    "that is one rank",
+                    "lower or higher, it",
+                    "gives Mult equal to {C:attention}1X{} its rank"
                 }
             },
             j_kino_baby_geniuses = {
@@ -397,6 +416,16 @@ return {
                 text = {
                     "Each {C:attention}Wild Card{} in hand",
                     "gives {C:mult}+#1#{} Mult"
+                }
+            },
+            j_kino_contagion = {
+                name = "Contagion",
+                text = {
+                    "When a card scores",
+                    "upgrade it equal",
+                    "to the upgrades",
+                    "on the first scoring",
+                    "card"
                 }
             },
             j_kino_creature_from_the_black_lagoon = {
@@ -720,6 +749,16 @@ return {
                     "held in hand"
                 }
             },
+            j_kino_grown_ups_1 = {
+                name = "Grown Ups",
+                text = {
+                    "Each scoring card",
+                    "gives Chips equal",
+                    "to the chips of",
+                    "the highest scoring",
+                    "card"
+                }
+            },
             j_kino_gone_girl = {
                 name = "Gone Girl",
                 text = {
@@ -759,7 +798,18 @@ return {
                     "awoken",
                     "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
                 }
-            },      
+            },
+            j_kino_hard_eight = {
+                name = "Hard Eight",
+                text = {
+                    "{C:money}$#1#{} for each",
+                    "{C:attetion}8{} held in hand",
+                    "{C:attention}8s{} held",
+                    "in hand have a",
+                    "{C:green}#2# in #3#{} chance",
+                    "to be destroyed"
+                }
+            },   
             j_kino_harry_potter_1 = {
                 name = "Harry Potter and the Philosopher's Stone",
                 text = {
@@ -1647,6 +1697,14 @@ return {
                 text = {
                     "Earn {C:money}$#1#{} when",
                     "a {C:attention}Planet{} is used"
+                }
+            },
+            j_kino_tree_of_life = {
+                name = "The Tree of Life",
+                text = {
+                    "{C:chips}+#1#{} Chips for",
+                    "each {C:attention}Unique Rank{}",
+                    "held in hand"
                 }
             },
             j_kino_true_lies = {
@@ -2641,6 +2699,24 @@ return {
                     "a {C:attention}Boss Blind{} is",
                     "defeated"
                 }
+            },
+            v_kino_media_collection = {
+                name = "Media Collection",
+                text = {
+                    "{C:attention}Actor and Genre{}",
+                    "synergy need {C:attention}1",
+                    "less joker to",
+                    "synergize"
+                }
+            },
+            v_kino_criterion_collection = {
+                name = "Criterion Collection",
+                text = {
+                    "{C:attention}Actor and Genre{}",
+                    "synergy need {C:attention}1",
+                    "less joker to",
+                    "synergize"
+                }
             }
         },
         Spell = {
@@ -2715,6 +2791,91 @@ return {
                     "Gain {C:chips}2 Hands{}"
                 }
             },
+        },
+        Sleeve = {
+            sleeve_kino_spooky = {
+                name = "Spooky Sleeve",
+                text = {
+                    "{C:attention}Horror jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Horror Packs{}",
+                    "and {C:attention}Twice as Frequent"                    
+                }
+            },
+            sleeve_kino_flirty = {
+                name = "Flirty Sleeve",
+                text = {
+                    "{C:attention}Romance jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Romance Packs{}",
+                    "and {C:attention}Twice as Frequent"                    
+                }
+            },
+            sleeve_kino_dangerous = {
+                name = "Dangerous Sleeve",
+                text = {
+                    "{C:attention}Action jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Action Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            sleeve_kino_tech = {
+                name = "Tech_Sl33ve",
+                text = {
+                    "{C:attention}Sci-fi jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Sci-fi Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            sleeve_kino_enchanted = {
+                name = "Enchanted Sleeve",
+                text = {
+                    "{C:attention}Fantasy jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Fantasy Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            sleeve_kino_bacon = {
+                name = "Bacon Sleeve",
+                text = {
+                    "{C:attention}Movie Jokers{} are",
+                    "{C:attention}50%{} stronger if",
+                    "they share {C:attention}Cast or",
+                    "{C:attention}Director{} with adjacent",
+                    "Jokers"
+                }
+            },
+            sleeve_kino_northernlion = {
+                name = "Egg Sleeve",
+                text = {
+                    "{C:inactive,E:1}That's a {C:Romance,E:1}Romance!",
+                    "{C:inactive,E:1}they flirt in scene 19!",
+                    "{C:attention}Movie Jokers{} always count",
+                    "as {C:Romance}Romance Jokers{}"
+                }
+            },
+            sleeve_kino_c2n = {
+
+            },
+            sleeve_kino_producer = {
+                name = "Producer Sleeve",
+                text = {
+                    "Earn no money from",
+                    "blinds or interest",
+                    "After defeating a {C:attention}Boss Blind",
+                    "each {C:attention}Movie Joker{} pays out",
+                    "based on it's {C:attention}Profit Margin"
+                }
+            }
+
         }
     },
     misc = {
@@ -2817,6 +2978,7 @@ return {
             k_gremlins = "Bwehehehe",
             k_raiders = "This belongs in a Museum!",
             k_odyssey = "Everything is going extremely well",
+            k_contagion = "Achoo",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",

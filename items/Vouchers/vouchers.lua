@@ -127,55 +127,55 @@ SMODS.Voucher {
 }
 
 
--- SMODS.Voucher {
---     key = "media_collection",
---     atlas = "kino_vouchers",
---     order = 7,
---     set = "Voucher",
---     pos = { x = 3, y = 0 },
---     config = {},
---     discovered = true,
---     unlocked = true,
---     available = true,
---     cost = 10,
---     loc_vars = function(self, info_queue)
---         return { vars = {} }
---     end,
---     redeem = function(self)
---         G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] - 1
---         G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] - 1
---         G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] + 1
---     end,
---     unredeem = function(self)
---         G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] + 1
---         G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] + 1 
---         G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] - 1
---     end
--- }
+SMODS.Voucher {
+    key = "media_collection",
+    atlas = "kino_vouchers",
+    order = 7,
+    set = "Voucher",
+    pos = { x = 3, y = 0 },
+    config = {},
+    discovered = true,
+    unlocked = true,
+    available = true,
+    cost = 10,
+    loc_vars = function(self, info_queue)
+        return { vars = {} }
+    end,
+    redeem = function(self)
+        G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] - 1
+        G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] - 1
+        G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] + 1
+    end,
+    unredeem = function(self)
+        G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] + 1
+        G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] + 1 
+        G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] - 1
+    end
+}
 
--- SMODS.Voucher {
---     key = "criterion_collection",
---     atlas = "kino_vouchers",
---     order = 8,
---     set = "Voucher",
---     pos = { x = 3, y = 1 },
---     config = {},
---     discovered = true,
---     unlocked = true,
---     available = true,
---     requires = { "v_kino_media_collection"},
---     cost = 10,
---     loc_vars = function(self, info_queue)
---         return { vars = {} }
---     end,
---     redeem = function(self)
---         G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] - 1
---         G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] - 1
---         G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] + 1
---     end,
---     unredeem = function(self)
---         G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] + 1
---         G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] + 1 
---         G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] - 1
---     end
--- }
+SMODS.Voucher {
+    key = "criterion_collection",
+    atlas = "kino_vouchers",
+    order = 8,
+    set = "Voucher",
+    pos = { x = 3, y = 1 },
+    config = {},
+    discovered = true,
+    unlocked = true,
+    available = true,
+    requires = { "v_kino_media_collection"},
+    cost = 10,
+    loc_vars = function(self, info_queue)
+        return { vars = {} }
+    end,
+    redeem = function(self)
+        G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] - 1
+        G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] - 1
+        G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] + 1
+    end,
+    unredeem = function(self)
+        G.GAME.current_round["genre_synergy_treshold"] = G.GAME.current_round["genre_synergy_treshold"] + 1
+        G.GAME.current_round["actors_check"] = G.GAME.current_round["actors_check"] + 1 
+        G.GAME.current_round["actors_table_offset"] = G.GAME.current_round["actors_table_offset"] - 1
+    end
+}
