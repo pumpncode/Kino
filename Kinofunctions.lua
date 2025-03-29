@@ -12,6 +12,18 @@
 
 -- Director tooltip
 
+function genre_match(_listA, _listB)
+    for _, _genre in ipairs(_listA) do
+        for _, _genreComp in ipairs(_listB) do
+            if _genre == _genreComp then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
 function is_genre(joker, genre)
     if G.GAME.modifiers.egg_genre == genre then
         return true
