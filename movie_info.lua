@@ -44,3 +44,6 @@ for j, var in pairs(movies) do
       end
     end
 end
+
+Kino.moviemetadata = movies
+Kino.peoplemetadata = actors

@@ -3,7 +3,9 @@ joker_list = {
 "ai_artificial",
 "alien_3",
 "aliens",
+"as_above",
 "avatar",
+"baby_driver",
 "baby_geniuses",
 "batman_begins",
 "benjamin_button",
@@ -26,6 +28,7 @@ joker_list = {
 "cronos",
 "dark_knight",
 "dickie_roberts",
+"double_dragon",
 "double",
 "duel",
 "dungeons_and_dragons_4",
@@ -42,6 +45,7 @@ joker_list = {
 "get_out",
 "ghostbusters_1",
 "gremlins_1",
+"grown_ups_1",
 "guardians_of_the_galaxy_1",
 "halloween",
 "heart_eyes",
@@ -51,6 +55,7 @@ joker_list = {
 "incredible_hulk",
 "karate_kid_1",
 "kindergarten_cop",
+"kung_fu_panda_1",
 "lady_and_the_tramp",
 "lethal_weapon",
 "m3gan",
@@ -108,6 +113,7 @@ joker_list = {
 "chef",
 "close_encounters",
 "coco",
+"contagion",
 "creature_from_the_black_lagoon",
 "dark_crystal",
 "dinner_with_andre",
@@ -120,6 +126,7 @@ joker_list = {
 "ghoulies",
 "gone_girl",
 "goodfellas",
+"hard_eight",
 "harry_potter_1",
 "independence_day_1",
 "insidious",
@@ -162,6 +169,7 @@ joker_list = {
 "terror_train",
 "thing",
 "treasure_planet",
+"tree_of_life",
 "true_lies",
 "turner_and_hooch",
 "wall_street",
@@ -209,18 +217,18 @@ joker_list = {
 
 -- "citizen_kane",
 "2001_odyssey",
--- "indiana_jones_1",
+"indiana_jones_1",
 -- "ratatouille",
--- "barbie",
+"barbie",
 
 -- "barbie", 2020s
 -- UNIMPLEMENTED The Avengers 2010s
 -- "rattatouille", 2000s
 -- UNIMPLEMENTED Forrest Gump 1990s
 -- "indiana_jones_1", 1980s
--- Taxi Driver?? 1970s
+-- The Godfather 1970s 
 -- "2001_odyssey", 1960s
--- UNIMPLEMENTED A Streetcar Named Desire 1950s
+-- UNIMPLEMENTED A Streetcar Named Desire 1950s STRANGERS ON A TRAIN
 -- UNIMPLEMENTED Citizen Kane 1940s
 -- UNIMPLEMENTED Bringing Up Baby 1930s
 -- UNIMPLEMENTED Wings 1920s

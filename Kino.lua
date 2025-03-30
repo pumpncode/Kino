@@ -1,5 +1,5 @@
 Kino = {}
-mod_dir = ''..SMODS.current_mod.path
+Kino.mod_dir = ''..SMODS.current_mod.path
 
 kino_config = SMODS.current_mod.config
 
@@ -63,6 +63,12 @@ SMODS.Atlas {
     px = 71,
     py = 95,
     path =  'kino_jokers_6.png'
+}
+SMODS.Atlas {
+    key = "kino_atlas_7",
+    px = 71,
+    py = 95,
+    path =  'kino_jokers_7.png'
 }
 
 SMODS.Atlas {
@@ -149,6 +155,13 @@ SMODS.Atlas {
     path = 'kino_backs.png'
 }
 
+SMODS.Atlas {
+    key = "kino_sleeves",
+    px = 73,
+    py = 95,
+    path = 'kino_sleeves.png'
+}
+
 local helper, load_error = SMODS.load_file("card_ui.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
@@ -176,6 +189,8 @@ end
 local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
+    ret.modifiers.genre_bonus = {}
+
     ret.current_round.scrap_total = 0
     ret.current_round.matches_made = 0
     ret.current_round.sci_fi_upgrades = 0
@@ -202,6 +217,13 @@ Game.init_game_object = function(self)
     ret.confections_used = 0
 
     ret.current_round.abduction_waitinglist = {}
+
+    -- Joker Pool information
+    ret.current_round.joker_queue = {}
+
+    -- Boss Blind info
+    ret.current_round.boss_blind_joker_counter = 0
+    ret.current_round.boss_blind_blofeld_counter = 10000
     return ret
 end
 
@@ -237,14 +259,14 @@ for _i, joker in ipairs(joker_list) do
 end
 
 -- NEW JOKER LOADING --
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Jokers")
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Jokers")
 for _, joker in ipairs(_usedjokers) do
     assert(SMODS.load_file("Items/Jokers/" .. joker .. ".lua"))()
     Kino.jokers[#Kino.jokers + 1] = "j_kino_" .. joker
 end
 
 -- Register the Enhancements
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Enhancements")
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Enhancements")
 for _, file in ipairs(files) do
     local _add = true
     for i = 1, #_options do
@@ -262,46 +284,65 @@ for _, file in ipairs(files) do
     end
 end
 
--- Register the Card Backs
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Backs")
+-- Register the Card Blinds
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Blinds")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Blinds/" .. file))()
+end
+
+-- Register the Backs
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Backs")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Backs/" .. file))()
 end
 
+-- Register the Sleeves
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Sleeve")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Sleeve/" .. file))()
+end
+
 -- Register the Consumable Types
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumable_types")
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Consumable_types")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Consumable_types/" .. file))()
 end
 
 
 -- Register the Consumables
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Consumables")
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Consumables")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Consumables/" .. file))()
 end
 
 -- Register the Boosters
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Boosters")
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Boosters")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Boosters/" .. file))()
 end
 
 -- Register the Boosters
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Vouchers")
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Vouchers")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Vouchers/" .. file))()
 end
 
-local files = NFS.getDirectoryItems(mod_dir .. "Items/Stickers")
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Stickers")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Stickers/" .. file))()
 end
 
 if kino_config.spellcasting then
-    local files = NFS.getDirectoryItems(mod_dir .. "Items/Spells")
+    local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Spells")
     for _, file in ipairs(files) do
         assert(SMODS.load_file("Items/Spells/" .. file))()
+    end
+end
+
+if kino_config.spellcasting then
+    local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Challenges")
+    for _, file in ipairs(files) do
+        assert(SMODS.load_file("Items/Challenges/" .. file))()
     end
 end
 
@@ -342,6 +383,13 @@ if load_error then
 end
 
 local helper, load_error = SMODS.load_file("src/quest.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
+local helper, load_error = SMODS.load_file("src/create_card.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
     else

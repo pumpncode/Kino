@@ -42,8 +42,8 @@ SMODS.Joker {
             local _card = context.other_card 
             local _count = #context.full_hand - #context.scoring_hand 
 
-            _card.ability.bonus = _card.ability.bonus or 0
-            _card.ability.bonus = _card.ability.bonus + (card.ability.extra.bonus * _count)
+            _card.ability.perma_bonus = _card.ability.perma_bonus or 0
+            _card.ability.perma_bonus = _card.ability.perma_bonus + (card.ability.extra.bonus * _count)
         end
 
         if context.individual and context.cardarea == "unscored" and context.scoring_name == "High Card" then

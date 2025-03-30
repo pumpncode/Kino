@@ -59,6 +59,11 @@ local mod_mechanics_toggles = {
 	-- Mod Mechanics
 	{ref_value = "actor_synergy", label = "kino_settings_actor_synergy"},
 	{ref_value = "genre_synergy", label = "kino_settings_genre_synergy"},
+	{ref_value = "movie_jokers_only", label = "kino_settings_movie_jokers_only"},
+}
+
+local mod_mechanics_sliders = {
+	{ref_value = "speed_factor", label = "kino_settings_speed_factor"}
 }
 
 local create_menu_toggles = function (parent, toggles)
@@ -68,8 +73,27 @@ local create_menu_toggles = function (parent, toggles)
 				ref_table = kino_config,
 				ref_value = v.ref_value,
 				callback = function(_set_toggle)
-				NFS.write(mod_dir.."/config.lua", STR_PACK(kino_config))
+				NFS.write(Kino.mod_dir.."/config.lua", STR_PACK(kino_config))
 				end,
+		})
+		if v.tooltip then
+			parent.nodes[#parent.nodes].config.detailed_tooltip = v.tooltip
+		end
+	end
+end
+
+local create_menu_sliders = function(parent, sliders)
+	for k, v in ipairs(sliders) do
+		parent.nodes[#parent.nodes + 1] = create_slider({
+			label = localize(v.label),
+			label_scale = 0.4,
+			text_scale = 0.3,
+			w = 4,
+			h = 0.4,
+			ref_table = kino_config,
+			ref_value = v.ref_value,
+			min = 10,
+			max = 300,
 		})
 		if v.tooltip then
 			parent.nodes[#parent.nodes].config.detailed_tooltip = v.tooltip
@@ -87,68 +111,102 @@ kinoconfig = function()
 	local mod_mechanics_settings = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
 	create_menu_toggles(mod_mechanics_settings, mod_mechanics_toggles)
 
+	local mod_mechanics_settings_2 = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
+	create_menu_sliders(mod_mechanics_settings_2, mod_mechanics_sliders)
+
 	local config_nodes =
 	{
-		-- HEADER (ENHANCEMENT TYPES)
 		{
 			n = G.UIT.R,
 			config = {
 				padding = 0,
-				align = "cm"
+				align = "tm"
 			},
 			nodes = {
+				-- Column Left
 				{
-					n = G.UIT.T,
+					n = G.UIT.C,
 					config = {
-						text = localize("kino_settings_header_enhancements"),
-						shadow = true,
-						scale = 0.75 * 0.8,
-						colour = HEX("ED533A")
+						padding = 0,
+						align = "tm"
+					},
+					nodes = {
+						-- HEADER (ENHANCEMENT TYPES)
+						{
+							n = G.UIT.R,
+							config = {
+								padding = 0,
+								align = "cm"
+							},
+							nodes = {
+								{
+									n = G.UIT.T,
+									config = {
+										text = localize("kino_settings_header_enhancements"),
+										shadow = true,
+										scale = 0.75 * 0.8,
+										colour = HEX("ED533A")
+									}
+								}
+							},
+						},
+						enhancement_settings,
+					}
+				},
+
+				-- Column Right
+				{
+					n = G.UIT.C,
+					config = {
+						padding = 0,
+						align = "tm"
+					},
+					nodes = {
+						-- HEADER (mod_mechanics_settings)
+						{
+							n = G.UIT.R,
+							config = {
+								padding = 0,
+								align = "cm"
+							},
+							nodes = {
+								{
+									n = G.UIT.T,
+									config = {
+										text = localize("kino_settings_header_mod_mechanics"),
+										shadow = true,
+										scale = 0.75 * 0.8,
+										colour = HEX("ED533A")
+									}
+								}
+							},
+						},
+						mod_mechanics_settings,
+						
+						-- HEADER (joker_mechanics_settings)
+						{
+							n = G.UIT.R,
+							config = {
+								padding = 0,
+								align = "cm"
+							},
+							nodes = {
+								{
+									n = G.UIT.T,
+									config = {
+										text = localize("kino_settings_header_joker_mechanics"),
+										shadow = true,
+										scale = 0.75 * 0.8,
+										colour = HEX("ED533A")
+									}
+								}
+							},
+						},
+						joker_mechanics_settings
 					}
 				}
 			},
 		},
-		enhancement_settings,
-		-- HEADER (joker_mechanics_settings)
-		{
-			n = G.UIT.R,
-			config = {
-				padding = 0,
-				align = "cm"
-			},
-			nodes = {
-				{
-					n = G.UIT.T,
-					config = {
-						text = localize("kino_settings_header_joker_mechanics"),
-						shadow = true,
-						scale = 0.75 * 0.8,
-						colour = HEX("ED533A")
-					}
-				}
-			},
-		},
-		joker_mechanics_settings,
-		-- HEADER (mod_mechanics_settings)
-		{
-			n = G.UIT.R,
-			config = {
-				padding = 0,
-				align = "cm"
-			},
-			nodes = {
-				{
-					n = G.UIT.T,
-					config = {
-						text = localize("kino_settings_header_mod_mechanics"),
-						shadow = true,
-						scale = 0.75 * 0.8,
-						colour = HEX("ED533A")
-					}
-				}
-			},
-		},
-		mod_mechanics_settings
 	}
 
 	return config_nodes
@@ -185,7 +243,7 @@ SMODS.current_mod.extra_tabs = function()
 						n = G.UIT.R,
 						config = {
 							padding = 0,
-							align = "cm"
+							align = "cl"
 						},
 						nodes = {
 							{
@@ -208,11 +266,12 @@ SMODS.current_mod.extra_tabs = function()
 							}
 						}
 					},
-					{	-- Thanks Section
-						n = G.UIT.C,
+					{
+						n = G.UIT.R,
 						config = {
 							padding = 0,
-							align = "cm"
+							align = "cl",
+							scale = scale * 0.6,
 						},
 						nodes = {
 							{
@@ -220,26 +279,73 @@ SMODS.current_mod.extra_tabs = function()
 								config = {
 									text = localize("kino_credits_specialthanks"),
 									shadow = true,
-									scale = scale * 0.8,
+									scale = scale * 0.5,
 									colour = G.C.UI.TEXT_LIGHT
 								}
 							},
 							{
-								n = G.UIT.C,
+								n = G.UIT.T,
 								config = {
-									padding = 0,
-									align = "cm"
-								},
-								nodes = {
-									{
-										n = G.UIT.T,
-										config = {
-											text = "Alphapra",
-											shadow = true,
-											scale = scale * 0.8,
-											colour = G.C.BLUE
-										}
-									}
+									text = "Alphapra",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
+								}
+							}
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = {
+							padding = 0,
+							align = "cl",
+							scale = scale * 0.6,
+						},
+						nodes = {
+							{
+								n = G.UIT.T,
+								config = {
+									text = localize("kino_credits_programminghelp"),
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.UI.TEXT_LIGHT
+								}
+							},
+							{
+								n = G.UIT.T,
+								config = {
+									text = "Dilly_the_Dillster",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
+								}
+							}
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = {
+							padding = 0,
+							align = "cl",
+							scale = scale * 0.6,
+						},
+						nodes = {
+							{
+								n = G.UIT.T,
+								config = {
+									text = localize("kino_credits_wiki"),
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.UI.TEXT_LIGHT
+								}
+							},
+							{
+								n = G.UIT.T,
+								config = {
+									text = "Doctor Flamingo",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
 								}
 							}
 						}
@@ -275,7 +381,9 @@ SMODS.current_mod.extra_tabs = function()
 		end
 	}
 end
-
+-- Alphapra
+-- Dilly the Dillster
+-- Doctor Flamingo
 function G.FUNCS.kino_github(e)
 	love.system.openURL("https://github.com/icyethics/Kino")
 end

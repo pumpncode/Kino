@@ -29,7 +29,19 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Comedy"},
+    in_pool = function(self, args)
+        -- Check for the right frequency
+        local suit_count = 0 
+        if G.playing_cards then
+            for k, v in pairs(G.playing_cards) do
+                if v.config.card.suit == "Spades" and v.config.center ~= G.P_CENTERS.m_stone then
+                    suit_count = suit_count + 1
+                end
+            end
+        end
 
+        return suit_count >= 1 and true or false
+    end,
     loc_vars = function(self, info_queue, card)
         local suit_count = 0 
         if G.playing_cards then
@@ -49,8 +61,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if G.STAGE == G.STAGES.RUN then
-        -- Spades give +1 for each spade in your deck above 13
+
+        if context.individual and context.cardarea == G.play then
             local suit_count = 0 
             for k, v in pairs(G.playing_cards) do
                 if v.config.card.suit == "Spades" and v.config.center ~= G.P_CENTERS.m_stone then
@@ -58,9 +70,7 @@ SMODS.Joker {
                 end
             end
             card.ability.extra.mult = suit_count - card.ability.extra.starting_amount
-        end
 
-        if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit("Spades") then
                 return {
                     mult = card.ability.extra.mult,

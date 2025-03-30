@@ -136,7 +136,7 @@ Kino.create_legend_ui = function(card, legend_entry, current_rarity)
         local _outline_colour = HEX("b2a6a6")
         local _sprite = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=1, y=1})
         local _tooltip = {text = "In-progress"}
-        local _textcolour = G.C.BLACK
+        local _textcolour = G.C.GREY
         if _quest.completion == true then
             _box_colour = HEX("4f6750")
             _outline_colour = HEX("b4c1b4")
@@ -445,6 +445,115 @@ Kino.create_active_ui = function(card)
     }
 end
 
+-- TIMERS UI
+Kino.create_timer_ui = function(card)
+    return UIBox {
+        definition = {
+            n = G.UIT.ROOT,
+            config = {
+                minh = 0.6,
+                maxh = 1.2,
+                minw = 0.6,
+                maxw = 2,
+                r = 0.001,
+                padding = 0,
+                align = 'cm',
+                colour = G.C.CLEAR,
+                shadow = false,
+                ref_table = card
+            },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = {
+                        minh = 1,
+                        maxh = 1,
+                        minw = 1,
+                        maxw = 1,
+                        align = 'tr',
+                        colour = G.C.CLEAR,
+                        hover = true
+                    },
+                    nodes = {
+                        {
+                            n = G.UIT.O,
+                            config = {
+                                w = 1, 
+                                h = 1,
+                                can_collide = false, 
+                                object = Sprite(0,0,0.5,0.5, G.ASSET_ATLAS["kino_ui"], {x=3, y=0}), 
+                                tooltip = {text = "Timer"}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        config = {
+            align = "tri",
+            bond = 'Strong',
+            parent = card,
+        },
+        states = {
+            collide = {can = false},
+            drag = { can = true }
+        }
+    }
+end
+
+Kino.create_timer_ui_2 = function(card)
+    return UIBox {
+        definition = {
+            n = G.UIT.ROOT,
+            config = {
+                instance_type= 'ALERT',
+                minh = 1.3,
+                maxh = 1.3,
+                minw = 1,
+                maxw = 1,
+                r = 0.001,
+                padding = 0,
+                align = 'cm',
+                colour = G.C.CLEAR,
+                shadow = false,
+                ref_table = card
+            },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = {
+                        offset = {x=0,y=-1},
+                        align = 'tr',
+                        colour = G.C.CLEAR,
+                        hover = true
+                    },
+                    nodes = {
+                        {
+                            n = G.UIT.T,
+                            config = {
+                                ref_table = card.ability.extra,
+                                ref_value = "timer_num_non",
+                                colour = G.C.WHITE, 
+                                scale = 0.3, 
+                                shadow = true
+                            }  
+                        }
+                    }
+                }
+            }
+        },
+        config = {
+            align = "tri",
+            bond = 'Strong',
+            parent = card,
+        },
+        states = {
+            collide = {can = false},
+            drag = { can = true }
+        }
+    }
+end
+
 -- function ufo_sprite(pos, value)
 --     local text_colour = G.C.BLACK
 
@@ -568,6 +677,18 @@ end
 ---@param full_UI_table table
 Kino.generate_info_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
     SMODS.Center.generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
+
+    if card.ability.multipliers then
+        local _multiplier = 1
+        for _source, _mult in pairs(card.ability.multipliers) do
+            _multiplier = _multiplier * _mult
+        end
+
+        if _multiplier > 1 then
+            info_queue[#info_queue+1] = {set = 'Other', key = "synergy_mult", vars = {_multiplier}}
+        end
+    end
+    
 
     full_UI_table.name = {
         {

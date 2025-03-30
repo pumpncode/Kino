@@ -42,8 +42,8 @@ SMODS.Joker {
             for i = 1, #context.removed do
                 for i, v in ipairs(G.playing_cards) do
                     if v.config.center == G.P_CENTERS.m_kino_romance then
-                        v.ability.bonus = v.ability.bonus or 0
-                        v.ability.bonus = v.ability.bonus + card.ability.extra.bonus
+                        v.ability.perma_bonus = v.ability.perma_bonus or 0
+                        v.ability.perma_bonus = v.ability.perma_bonus + card.ability.extra.bonus
                     end
                 end
             end

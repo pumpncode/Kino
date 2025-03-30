@@ -43,6 +43,19 @@ SMODS.Joker {
             card.ability.extra.hidden_card = pseudorandom_element(G.deck.cards)
         end
 
+        if context.hand_drawn then
+            local eval = function(card)
+                local result = false
+                for _, _card in ipairs(G.hand.cards) do
+                    if card.ability.extra.hidden_card == _card then
+                        print("being_checked")
+                        result = true
+                    end
+                end
+                return result end
+            juice_card_until(card, eval, true)
+        end
+
         if context.joker_main and not card.ability.extra.hidden_card == nil then
             -- Check if the card is the hidden card.
             local _turned_on = true

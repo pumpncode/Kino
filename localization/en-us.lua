@@ -118,6 +118,15 @@ return {
                     "ranks add up to 13"
                 }
             },
+            j_kino_as_above = {
+                name = "As Above, So Below",
+                text = {
+                    "{C:chips}+#2#{} Chips for",
+                    "each card Discarded",
+                    "this round",
+                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
             j_kino_asteroid_city = {
                 name = "Asteroid City",
                 text = {
@@ -134,6 +143,16 @@ return {
                     "of your most played hand type",
                     "when you use a {C:attention}Planet{}",
                     "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
+            j_kino_baby_driver = {
+                name = "Baby Driver",
+                text = {
+                    "If a scoring card",
+                    "is adjacent to a card",
+                    "that is one rank",
+                    "lower or higher, it",
+                    "gives Mult equal to {C:attention}1X{} its rank"
                 }
             },
             j_kino_baby_geniuses = {
@@ -399,6 +418,16 @@ return {
                     "gives {C:mult}+#1#{} Mult"
                 }
             },
+            j_kino_contagion = {
+                name = "Contagion",
+                text = {
+                    "When a card scores",
+                    "upgrade it equal",
+                    "to the upgrades",
+                    "on the first scoring",
+                    "card"
+                }
+            },
             j_kino_creature_from_the_black_lagoon = {
                 name = "The Creature from the Black Lagoon",
                 text = {
@@ -476,6 +505,14 @@ return {
                     "abduct a {C:attention}Card{} from {C:attention}Hand",
                     "{C:attention}Release:{} Return with a random",
                     "{C:attention}Enhancement{} and {C:attention}Edition"
+                }
+            },
+            j_kino_double_dragon = {
+                name = "Double Dragon",
+                text = {
+                    "Gives {C:chips}+#1#{} Chips",
+                    "for each Pair",
+                    "held in hand"
                 }
             },
             j_kino_double = {
@@ -712,6 +749,16 @@ return {
                     "held in hand"
                 }
             },
+            j_kino_grown_ups_1 = {
+                name = "Grown Ups",
+                text = {
+                    "Each scoring card",
+                    "gives Chips equal",
+                    "to the chips of",
+                    "the highest scoring",
+                    "card"
+                }
+            },
             j_kino_gone_girl = {
                 name = "Gone Girl",
                 text = {
@@ -751,7 +798,18 @@ return {
                     "awoken",
                     "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
                 }
-            },      
+            },
+            j_kino_hard_eight = {
+                name = "Hard Eight",
+                text = {
+                    "{C:money}$#1#{} for each",
+                    "{C:attetion}8{} held in hand",
+                    "{C:attention}8s{} held",
+                    "in hand have a",
+                    "{C:green}#2# in #3#{} chance",
+                    "to be destroyed"
+                }
+            },   
             j_kino_harry_potter_1 = {
                 name = "Harry Potter and the Philosopher's Stone",
                 text = {
@@ -953,6 +1011,14 @@ return {
                     "When you play a {C:attention}Full House{}, randomize",
                     "the {X:mult,C:white} xMult{} between {X:mult,C:white} x #4#{} & {X:mult,C:white} x #5#{}",
                     "and increases the range by {X:mult,C:white}#5#{}"
+                }
+            },
+            j_kino_kung_fu_panda_1 = {
+                name = "Kung-Fu Panda",
+                text = {
+                    "{C:chips}+#1#{} Chips if",
+                    "your hand contains",
+                    "a {C:spades}Spades{}"
                 }
             },
             j_kino_lady_and_the_tramp = {
@@ -1633,6 +1699,14 @@ return {
                     "a {C:attention}Planet{} is used"
                 }
             },
+            j_kino_tree_of_life = {
+                name = "The Tree of Life",
+                text = {
+                    "{C:chips}+#1#{} Chips for",
+                    "each {C:attention}Unique Rank{}",
+                    "held in hand"
+                }
+            },
             j_kino_true_lies = {
                 name = "True Lies",
                 text = {
@@ -1788,6 +1862,24 @@ return {
                     "When you use a {C:planet}Planet",
                     "{C:attention}Upgrade{} every {C:attention}Sci-Fi",
                     "{C:attention}card{} in your deck"
+                }
+            },
+            j_kino_indiana_jones_1 = {
+                name = "Raiders of the Lost Ark",
+                text = {
+                    "Gain {X:mult,C:white}X#1#{} Mult",
+                    "when a {C:attention}#3#{} scores,",
+                    "card changes every round",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{C:inactive} Mult)"
+                }
+            },
+            j_kino_barbie = {
+                name = "Barbie",
+                text = {
+                    "Each {C:attention}Face Card{}",
+                    "held in hand",
+                    "gives {X:mult,C:white}X1{} + {X:mult,C:white}X#1#{} Mult",
+                    "for each scoring {C:attention}Queen{}"
                 }
             }
         },
@@ -2154,6 +2246,143 @@ return {
                 }
             }
         },
+        Blind = {
+            bl_kino_hannibal = {
+                name = "Dr. Hannibal Lecter",
+                text = {
+                    "Destroy all cards",
+                    "held in hand",
+                    "when you defeat",
+                    "this blind"
+                }
+            },
+            bl_kino_vader = {
+                name = "Darth Vader",
+                text = {
+                    "{C:attention}Force Choke{} the",
+                    "joker in your Active slot",
+                    "weakening it by {C:attention}33%",
+                    "each round",
+                    "After being {C:attention}Force Choked",
+                    "three times, destroy the joker"
+                }
+            },
+            bl_kino_mama = {
+                name = "Ma-Ma",
+                text = {
+                    "Decrease base mult",
+                    "by {C:mult}#1#{} and",
+                    "chips by {C:chips}#2#{}",
+                    "for each {C:attention}Consumable{}",
+                    "used this run"
+                }
+            },
+            bl_kino_cruella = {
+                name = "Cruella De Vil",
+                text = {
+                    "Decrease base mult",
+                    "by {C:mult}#1# for",
+                    "each card under #2#",
+                    "in your starting deck"
+                }
+            },
+            bl_kino_voldemort = {
+                name = "Voldemort",
+                text = {
+                    "Cast an {C:green}Evil Spell",
+                    "based on the first",
+                    "three cards held",
+                    "in hand"
+                }
+            },
+            bl_kino_gekko = {
+                name = "Gordon Gekko",
+                text = {
+                    "Each card scored",
+                    "has a {C:green}#1# in #2#{}",
+                    "chance to either Double",
+                    "your money, or {C:attention}Bust"
+                }
+            },
+            bl_kino_pazuzu = {
+                name = "Pazuzu",
+                text = {
+                    "Possesses the last",
+                    "hand type you played",
+                    "When you play a Possessed",
+                    "hand type, set its level",
+                    "to 1"
+                }
+            },
+            bl_kino_xenomorph = {
+                name = "Xenomorph Queen",
+                text = {
+                    "Each card has a ",
+                    "{C:green}#1# in #2#{} chance",
+                    "to be debuffed when Scored"
+                }
+            },
+            bl_kino_bonnieandclyde = {
+                name = "Bonnie & Clyde",
+                text = {
+                    "Hands containing a",
+                    "{C:attention}#1#{} or a",
+                    "{V:1}#2#{} will",
+                    "not score"
+                }
+            },
+            bl_kino_dracula = {
+                name = "Count Dracula",
+                text = {
+                    "Debuff each {C:attention}Enhanced",
+                    "card played after scoring"
+                }
+            },
+            bl_kino_wickedwitch = {
+                name = "The Wicked Witch of the West",
+                text = {
+                    "Fill each empty",
+                    "Joker slot with an",
+                    "unsellable {C:attention}Flying Monkey",
+                    "which disappears after",
+                    "{C:attention}#1#{} hands played"
+                }
+            },
+            bl_kino_frankbooth = {
+                name = "Frank Booth",
+                text = {
+                    "After your first hand",
+                    "destroy your third Joker",
+                    "after you play a hand"
+                }
+            },
+            bl_kino_joker = {
+                name = "The Joker",
+                text = {
+                    "A random Joker",
+                    "becomes {C:attention}Joker",
+                    "every second hand",
+                    "played"
+                }
+            },
+            bl_kino_hansgruber = {
+                name = "Hans Gruber",
+                text = {
+                    "Steals half your",
+                    "money after you",
+                    "play a hand"
+                }
+            },
+            bl_kino_blofeld = {
+                name = "Ernst Stavro Blofeld",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            }
+        },
         Tag = {
             tag_kino_popcorn = {
                 name = "Popcorn Tag",
@@ -2233,6 +2462,9 @@ return {
                 }
             }
         },
+        Quest = {
+
+        },
         Other =  {
             -- Booster packs
             p_kino_horror_booster = {
@@ -2270,6 +2502,20 @@ return {
                     "up to {C:attention}#2# Romance Jokers{}",  
                 }
             },
+            p_kino_fantasy_booster = {
+                name = "Fantasy Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Fantasy Jokers{}",  
+                }
+            },
+            p_kino_actor_booster = {
+                name = "Actor Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of",
+                    "up to {C:attention}#2# Fantasy Jokers{}",  
+                }
+            },
             p_kino_snack_booster_normal = {
                 name = "Snack Pack",
                 text = {
@@ -2291,6 +2537,7 @@ return {
                     "up to {C:attention}#2# Confections{}",
                 }
             },
+            
             -- Genres
             genre_1 = {
                 name = "Genre",
@@ -2311,6 +2558,15 @@ return {
                     "{X:#1#,C:white}#1#", 
                     "{X:#2#,C:white}#2#",
                     "{X:#3#,C:white}#3#"
+                }
+            },
+
+            -- Synergy System
+            synergy_mult = {
+                name = "Synergy Bonus",
+                text = {
+                    "Increased Power",
+                    "by {C:attention}X#1#"
                 }
             },
 
@@ -2339,6 +2595,14 @@ return {
                     "and the {C:attention}Fantasy enhancement{}",
                     "Spells can be cast at ",
                     "4 levels of power"
+                }
+            },
+            gloss_quick = {
+                name = "Quick",
+                text = {
+                    "Power of the effect",
+                    "lowers to 0 over a ",
+                    "period of #1# seconds"
                 }
             },
             bust_econ = {
@@ -2432,7 +2696,7 @@ return {
                 text = {
                     "{C:attention}Movie Joker{} have a",
                     "{C:green}1 in 100{} chance",
-                    "to spawn with an {C:yellow}Award"
+                    "to spawn with an {C:money}Award"
                 }
             },
             v_kino_awardsshow = {
@@ -2440,9 +2704,27 @@ return {
                 text = {
                     "A random unawarded",
                     "{C:attention}Movie Joker{} gains",
-                    "an {C:yellow}Award{} when",
+                    "an {C:money}Award{} when",
                     "a {C:attention}Boss Blind{} is",
                     "defeated"
+                }
+            },
+            v_kino_media_collection = {
+                name = "Media Collection",
+                text = {
+                    "{C:attention}Actor and Genre{}",
+                    "synergy need {C:attention}1",
+                    "less joker to",
+                    "synergize"
+                }
+            },
+            v_kino_criterion_collection = {
+                name = "Criterion Collection",
+                text = {
+                    "{C:attention}Actor and Genre{}",
+                    "synergy need {C:attention}1",
+                    "less joker to",
+                    "synergize"
                 }
             }
         },
@@ -2518,14 +2800,96 @@ return {
                     "Gain {C:chips}2 Hands{}"
                 }
             },
+        },
+        Sleeve = {
+            sleeve_kino_spooky = {
+                name = "Spooky Sleeve",
+                text = {
+                    "{C:attention}Horror jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Horror Packs{}",
+                    "and {C:attention}Twice as Frequent"                    
+                }
+            },
+            sleeve_kino_flirty = {
+                name = "Flirty Sleeve",
+                text = {
+                    "{C:attention}Romance jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Romance Packs{}",
+                    "and {C:attention}Twice as Frequent"                    
+                }
+            },
+            sleeve_kino_dangerous = {
+                name = "Dangerous Sleeve",
+                text = {
+                    "{C:attention}Action jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Action Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            sleeve_kino_tech = {
+                name = "Tech_Sl33ve",
+                text = {
+                    "{C:attention}Sci-fi jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Sci-fi Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            sleeve_kino_enchanted = {
+                name = "Enchanted Sleeve",
+                text = {
+                    "{C:attention}Fantasy jokers{} are",
+                    "{C:attention}50%{} stronger and",
+                    "all {C:attention}Genre Packs{} are",
+                    "always {C:attention}Fantasy Packs{}",
+                    "and {C:attention}Twice as Frequent"
+                }
+            },
+            sleeve_kino_bacon = {
+                name = "Bacon Sleeve",
+                text = {
+                    "{C:attention}Movie Jokers{} are",
+                    "{C:attention}50%{} stronger if",
+                    "they share {C:attention}Cast or",
+                    "{C:attention}Director{} with adjacent",
+                    "Jokers"
+                }
+            },
+            sleeve_kino_northernlion = {
+                name = "Egg Sleeve",
+                text = {
+                    "{C:inactive,E:1}That's a {C:Romance,E:1}Romance!",
+                    "{C:inactive,E:1}they flirt in scene 19!",
+                    "{C:attention}Movie Jokers{} always count",
+                    "as {C:Romance}Romance Jokers{}"
+                }
+            },
+            sleeve_kino_c2n = {
+
+            },
+            sleeve_kino_producer = {
+                name = "Producer Sleeve",
+                text = {
+                    "Earn no money from",
+                    "blinds or interest",
+                    "After defeating a {C:attention}Boss Blind",
+                    "each {C:attention}Movie Joker{} pays out",
+                    "based on it's {C:attention}Profit Margin"
+                }
+            }
+
         }
     },
     misc = {
         dictionary = {
             ---- UI elements ----
-            -- Genre Names --
-            kino_genre_Action = "Action",
-            kino_genre_Animation = "Animation",
 
             -- Mod Config --
             kino_settings_header_enhancements = "Card Enhancements",
@@ -2540,14 +2904,18 @@ return {
 
             kino_settings_jumpscare_mechanic = "Jumpscare Jokers?",
             kino_settings_vampire_jokers = "Vampiric Jokers?",
-            kino_settings_time_based_jokers = "Timing Jokers?", 
+            kino_settings_time_based_jokers = "Timing Jokers?",
+            kino_settings_speed_factor = "Quick Timer", 
 
             kino_settings_actor_synergy = "Actors?",
             kino_settings_genre_synergy = "Genre?",
+            kino_settings_movie_jokers_only = "Movie Jokers Only?",
             -- OTHER --
             kino_credits_header = "Credits",
             kino_credits_developer = "Developed By: ",
             kino_credits_specialthanks = "Playtesting Feedback: ",
+            kino_credits_programminghelp = "Additional Programming: ",
+            kino_credits_wiki = "Wiki Maintenance Help: ",
             ---------------------
             k_confection = "Confection",
             b_confection_cards = "Confection Cards",
@@ -2560,6 +2928,7 @@ return {
             sci_fi_booster = "Sci-fi Joker",
             comedy_booster = "Comedy Joker",
             romance_booster = "Romance Joker",
+            fantasy_booster = "Fantasy Joker",
 
             k_genre_synergy_egg = "That's a Romance!",
             k_genre_synergy = "Genre Synergy!",
@@ -2617,6 +2986,9 @@ return {
             k_sugarland = "Stolen",
             k_drstrange = "By the Eye of Agamoto!",
             k_gremlins = "Bwehehehe",
+            k_raiders = "This belongs in a Museum!",
+            k_odyssey = "Everything is going extremely well",
+            k_contagion = "Achoo",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
@@ -2635,14 +3007,116 @@ return {
             k_legend_willnot = "Legendary will not appear",
             k_legend_will = "Will spawn as:",
 
+            -- BOSS BLIND BARKS
+            k_blind_vader_1 = "I have you now!",
+            k_blind_vader_2 = "Don't make me destroy you",
+            k_blind_gekko_1 = "Greed. Is. Good!",
+            k_blind_gekko_2 = "You win a few, you lose a few",
+            k_blind_pazuzu_1 = "Have you come to save God's servant?",
+            k_blind_pazuzu_2 = "What an excellent day for an exorcism",
+            k_blind_dracula_1 = "I don't drink... Wine",
+            k_blind_joker_1 = "Ha Ha Ha Ha",
+            k_blind_joker_2 = "HAHAHAHAHA",
+            k_blind_joker_final = "Why So Serious?",
+
             -- Legendary Joker Quests
             -- -- 2001: A Space Odyssey
             k_odyssey_quest_1 = {
                 "Posses a Movie Joker",
-                "directed by {C:attention}Kubrick{}"
-            }
+                "directed by Kubrick"
+            },
+            k_odyssey_quest_2 = {
+                "Possess 2 Sci-Fi Jokers"
+            },
+            k_odyssey_quest_3 = {
+                "Posses a Movie Joker",
+                "released in the 60s"
+            },
+            k_odyssey_quest_4 = {
+                "Have 10 or more",
+                "Sci-fi Cards in your deck",
+            },
+            k_odyssey_quest_5 = {
+                "Have used 20 or more",
+                "Planet Cards"
+            },
+            k_odyssey_quest_6 = {
+                "Have a Moon, Jupiter",
+                "and Earth in your inventory"
+            },
+
+            -- -- Raiders of the Lost Ark
+            k_indiana_quest_1 = {
+                "Posses a Movie Joker",
+                "directed by Spielberg"
+            },
+            k_indiana_quest_2 = {
+                "Posses 2 Adventure Jokers"
+            },
+            k_indiana_quest_3 = {
+                "Posses a Movie Joker",
+                "released in the 80s"
+            },
+            k_indiana_quest_4 = {
+                "Posses a Movie Joker",
+                "that shares an actor"
+            },
+            k_indiana_quest_5 = {
+                "Have 60 or more",
+                "cards in your deck"
+            },
+            k_indiana_quest_6 = {
+                "Posses a Hieroglyph",
+                "or Petroglyph Voucher"
+            },
+
+            -- Barbie Quests
+            k_barbie_quest_1 = {
+                "Posses a Movie Joker",
+                "directed by a Woman"
+            },
+            k_barbie_quest_2 = {
+                "Posses 2 Comedy",
+                "or Adventure Jokers"
+            },
+            k_barbie_quest_3 = {
+                "Posses a Movie Joker",
+                "released in the 2020s"
+            },
+            k_barbie_quest_4 = {
+                "Posses a Movie Joker",
+                "that shares an actor"
+            },
+            k_barbie_quest_5 = {
+                "Have more Queens than Jacks",
+                "and Kings in your deck"
+            },
+            k_barbie_quest_6 = {
+                "Have a The Lovers, The Empress,",
+                "and Venus in your inventory"
+            },
+        },
+        challenge_names = {
+            c_kino_minc = "Monsters Inc.",
+            c_kino_bacon = "Six Degrees of Kevin",
+            c_kino_yeager = "Cade Yeager Cosplay",
+            c_kino_xenomorph = "Xenomorph Invasion",
+            c_kino_bestsong = "Best Song in the World",
+            c_kino_harrysally = "When Perkeo met Triboulet",
+            c_kino_genre_variety = "Genre Variety",
+            c_kino_genre_snob = "Genre Snob",
+            c_kino_chronology = "Chronology",
+            c_kino_blockbuster = "Blockbuster Video",
+            c_kino_slasher = "Slasher Movie",
+            c_kino_wallstreet = "The Jimbo of Wallstreet"
+
         },
         v_dictionary = {
+
+            
+            -- Payout Info
+            kino_sci_fi_payout = "Sci-Fi Cards Upgraded ($#1# each)",
+
             -- Quest Types
             v_kino_quest_hand_type = {
                 "Play a {C:attention}#1#{}#2#"
@@ -2656,8 +3130,55 @@ return {
             v_kino_questtimer = {
                 " #1# times"
             },
+        },
+        v_text = {
+            ch_c_movie_jokers_only = {
+                "Only {C:attention}Movie Jokers{} can spawn"
+            },
+            ch_c_kino_bacon = {
+                "All {C:attention}Movie Jokers{} spawn with a {C:attention}Bacon{} sticker"
+            },
+            ch_c_kino_yeag = {
+                "At the end of the round, you earn {C:money}$#1#{} for each time a {C:attention}Sci-Fi{} card upgraded"
+            },
+            ch_c_kino_alien = {
+                "Whenever you play a hand, one card in deck becomes permanently {C:attention}Debuffed{}"
+            },
+            ch_c_kino_bestsong = {
+                "Gain a {C:red}Discard{} when you {C:attention}Sacrifice{}"
+            },
+            ch_c_kino_harrysally = {
+                "You cannot buy {C:green}Rerolls{}, you instead earn them whenever you {C:attention}Make a Match"
+            },
+            ch_c_kino_genre_variety = {
+                "{C:attention}Movie Jokers{} are debuffed while you own another joker that shares a {C:attention}Genre{}"
+            },
+            ch_c_kino_genre_snob = {
+                "{C:attention}Movie Jokers{} are debuffed if they do not share the genre of the Joker in your {C:attention}Active slot{}"
+            },
+            ch_c_kino_chronology = {
+                "{C:attention}Movie Jokers{} spawn in order of release"
+            },
+            ch_c_kino_blockbuster = {
+                "All {C:attention}Movie Jokers{} are rental, charging more rent depending on how profitable they were"
+            },
+            ch_c_kino_slasher = {
+                "Every Fourth card scored {C:attention}Jump Scares{}"
+            },
+            ch_c_wallstreet = {
+                "Whenever you use any {C:attention}Consumable{}, you {C:money}Bust"
+            },
 
-
+            -- More general rules
+            ch_c_carryover_discards = {
+                "{C:red}Discards{} carry over between rounds"
+            },
+            ch_c_carryover_hands = {
+                "{C:blue}Hands{} carry over between rounds"
+            }
+        },
+        labels = {
+            kino_award = "Awarded"
         }
     }
 }

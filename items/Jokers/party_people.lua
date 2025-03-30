@@ -41,9 +41,9 @@ SMODS.Joker {
         -- Gives money equal to interest when scoring a club card.
         if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit("Clubs") then
-                local money = math.floor((G.GAME.dollars + (G.GAME.dollar_buffer or 0)) / to_big(card.ability.extra.threshold))
+                local money = math.floor((G.GAME.dollars + (G.GAME.dollar_buffer or 0)) / card.ability.extra.threshold)
                 return {
-                    dollars = money,
+                    dollars = to_number(money),
                     card = context.other_card
                 }
             end
