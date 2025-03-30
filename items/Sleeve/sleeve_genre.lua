@@ -7,7 +7,7 @@ if CardSleeves then
             genre_bonus = "Horror"
         },
         apply = function(self, sleeve)
-            G.GAME.modifiers.genre_bonus = "Horror"
+            G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Horror"
         end
     }
 
@@ -19,7 +19,7 @@ if CardSleeves then
             genre_bonus = "Romance"
         },
         apply = function(self, sleeve)
-            G.GAME.modifiers.genre_bonus = "Romance"
+            G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Romance"
         end
     }
 
@@ -31,7 +31,7 @@ if CardSleeves then
             genre_bonus = "Action"
         },
         apply = function(self, sleeve)
-            G.GAME.modifiers.genre_bonus = "Action"
+            G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Action"
         end
     }
 
@@ -43,7 +43,7 @@ if CardSleeves then
             genre_bonus = "Sci-fi"
         },
         apply = function(self, sleeve)
-            G.GAME.modifiers.genre_bonus = "Sci-fi"
+            G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Sci-fi"
         end
     }
 
@@ -55,7 +55,7 @@ if CardSleeves then
             genre_bonus = "Fantasy"
         },
         apply = function(self, sleeve)
-            G.GAME.modifiers.genre_bonus = "Fantasy"
+            G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Fantasy"
         end
     }
 end

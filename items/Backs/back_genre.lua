@@ -7,7 +7,7 @@ SMODS.Back {
         genre_bonus = "Horror"
     },
     apply = function()
-        G.GAME.modifiers.genre_bonus = "Horror"
+        G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Horror"
     end
 }
 
@@ -20,7 +20,7 @@ SMODS.Back {
         genre_bonus = "Romance"
     },
     apply = function()
-        G.GAME.modifiers.genre_bonus = "Romance"
+        G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Romance"
     end
 }
 
@@ -33,7 +33,7 @@ SMODS.Back {
         genre_bonus = "Action"
     },
     apply = function()
-        G.GAME.modifiers.genre_bonus = "Action"
+        G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Action"
     end
 }
 
@@ -46,7 +46,7 @@ SMODS.Back {
         genre_bonus = "Sci-fi"
     },
     apply = function()
-        G.GAME.modifiers.genre_bonus = "Sci-fi"
+        G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Sci-fi"
     end
 }
 
@@ -59,7 +59,7 @@ SMODS.Back {
         genre_bonus = "Fantasy"
     },
     apply = function()
-        G.GAME.modifiers.genre_bonus = "Fantasy"
+        G.GAME.modifiers.genre_bonus[#G.GAME.modifiers.genre_bonus + 1] = "Fantasy"
     end
 }
 

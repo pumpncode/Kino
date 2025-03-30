@@ -62,6 +62,10 @@ local mod_mechanics_toggles = {
 	{ref_value = "movie_jokers_only", label = "kino_settings_movie_jokers_only"},
 }
 
+local mod_mechanics_sliders = {
+	{ref_value = "speed_factor", label = "kino_settings_speed_factor"}
+}
+
 local create_menu_toggles = function (parent, toggles)
 	for k, v in ipairs(toggles) do
 		parent.nodes[#parent.nodes + 1] = create_toggle({
@@ -78,6 +82,25 @@ local create_menu_toggles = function (parent, toggles)
 	end
 end
 
+local create_menu_sliders = function(parent, sliders)
+	for k, v in ipairs(sliders) do
+		parent.nodes[#parent.nodes + 1] = create_slider({
+			label = localize(v.label),
+			label_scale = 0.4,
+			text_scale = 0.3,
+			w = 4,
+			h = 0.4,
+			ref_table = kino_config,
+			ref_value = v.ref_value,
+			min = 10,
+			max = 300,
+		})
+		if v.tooltip then
+			parent.nodes[#parent.nodes].config.detailed_tooltip = v.tooltip
+		end
+	end
+end
+
 kinoconfig = function()
 	local enhancement_settings = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
 	create_menu_toggles(enhancement_settings, enhancement_types_toggles)
@@ -87,6 +110,9 @@ kinoconfig = function()
 	
 	local mod_mechanics_settings = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
 	create_menu_toggles(mod_mechanics_settings, mod_mechanics_toggles)
+
+	local mod_mechanics_settings_2 = {n = G.UIT.R, config = {align = "tm", padding = 0.05, scale = 0.75, colour = G.C.CLEAR,}, nodes = {}}
+	create_menu_sliders(mod_mechanics_settings_2, mod_mechanics_sliders)
 
 	local config_nodes =
 	{
@@ -176,7 +202,7 @@ kinoconfig = function()
 								}
 							},
 						},
-						joker_mechanics_settings,
+						joker_mechanics_settings
 					}
 				}
 			},

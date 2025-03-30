@@ -13,6 +13,10 @@
 -- Director tooltip
 
 function genre_match(_listA, _listB)
+    if type(_listB) ~= "table" then
+        _listB = {_listB}
+    end
+
     for _, _genre in ipairs(_listA) do
         for _, _genreComp in ipairs(_listB) do
             if _genre == _genreComp then
@@ -320,20 +324,23 @@ function check_genre_synergy()
     if #five_of_genres > G.jokers.config.synergyslots then
         -- Genre synergy!
         for i, genre in ipairs(five_of_genres) do
-            for j, joker in ipairs(G.jokers.cards) do
-                if joker and is_genre(joker, genre) then
-                    joker:juice_up(0.8, 0.5)
-                    
-                    if G.GAME.modifiers.egg_genre and genre == "Romance" then
-                        card_eval_status_text(joker, 'extra', nil, nil, nil,
-                        { message = localize('k_genre_synergy_egg'), colour = G.ARGS.LOC_COLOURS[genre]})
-                    else
-                        card_eval_status_text(joker, 'extra', nil, nil, nil,
-                        { message = localize('k_genre_synergy'), colour = G.ARGS.LOC_COLOURS[genre]})
-                    end
-
-                end
+            local _text = localize('k_genre_synergy')
+            if G.GAME.modifiers.egg_genre and genre == "Romance" then
+                _text = localize('k_genre_synergy_egg')
             end
+
+            G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                attention_text({
+                    text = _text,
+                    scale = 1.3, 
+                    hold = 1.4,
+                    major = G.play,
+                    align = 'tm',
+                    offset = {x = 0, y = -1},
+                    silent = true
+                })
+                play_sound('tarot2', 1, 0.4)
+            return true end }))
         end
     end
 
@@ -349,7 +356,12 @@ function check_actor_synergy()
     end
 
     for i = 1, #G.jokers.cards do
-        G.jokers.cards[i]:kino_synergy(G.jokers.cards[i])
+        local _retcount = G.jokers.cards[i]:kino_synergy(G.jokers.cards[i])
+        if _retcount > 0 then
+            card_eval_status_text(G.jokers.cards[i], 'extra', nil, nil, nil,
+            { message = localize('k_actor_synergy'), colour = G.C.LEGENDARY})
+            G.jokers.cards[i]:juice_up()
+        end
     end
 end
 
@@ -419,10 +431,13 @@ function Card:kino_synergy(card)
         end
     end
 
+    local _return_count = 0
     if _count > 0 then
-        card_eval_status_text(card, 'extra', nil, nil, nil,
-        { message = localize('k_actor_synergy'), colour = G.C.LEGENDARY})
-        card:juice_up()
+        if _count > (card.ability.last_actor_count or 0) then
+            _return_count = _count
+        end
+
+        card.ability.last_actor_count = _count
     end
 
     if self.ability.kino_bacon or G.GAME.modifiers.bacon_bonus then
@@ -481,6 +496,8 @@ function Card:kino_synergy(card)
         end
 
     end
+
+    return _return_count
 end
 
 function Card:set_multiplication_bonus(card, source, num, is_actor)
@@ -597,6 +614,14 @@ function check_variable_validity_for_mult(name)
     end
 
     return true
+end
+
+function Kino.synergycheck()
+    if G.GAME.modifiers.kino_genre_variety then
+        check_genre_match()            
+    end
+    check_genre_synergy()
+    check_actor_synergy()
 end
 ------------------------------
 

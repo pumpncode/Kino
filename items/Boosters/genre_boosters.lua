@@ -13,10 +13,10 @@ SMODS.Booster {
     order = 1,
     weight = 1,
     get_weight = function(self, weight, object_type)
-        if G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus == self.config.genre then
+        if G.GAME.modifiers.genre_bonus and genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return self.weight * 10
 
-        elseif G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus ~= self.config.genre then
+        elseif G.GAME.modifiers.genre_bonus and not genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return 0
         end
         return self.weight
@@ -43,10 +43,10 @@ SMODS.Booster {
     order = 1,
     weight = 1,
     get_weight = function(self, weight, object_type)
-        if G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus == self.config.genre then
+        if G.GAME.modifiers.genre_bonus and genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return self.weight * 10
 
-        elseif G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus ~= self.config.genre then
+        elseif G.GAME.modifiers.genre_bonus and not genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return 0
         end
         return self.weight
@@ -104,10 +104,10 @@ SMODS.Booster {
     order = 1,
     weight = 1,
     get_weight = function(self, weight, object_type)
-        if G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus == self.config.genre then
+        if G.GAME.modifiers.genre_bonus and genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return self.weight * 10
 
-        elseif G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus ~= self.config.genre then
+        elseif G.GAME.modifiers.genre_bonus and not genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return 0
         end
         return self.weight
@@ -134,10 +134,10 @@ SMODS.Booster {
     order = 1,
     weight = 1,
     get_weight = function(self, weight, object_type)
-        if G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus == self.config.genre then
+        if G.GAME.modifiers.genre_bonus and genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return self.weight * 10
 
-        elseif G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus ~= self.config.genre then
+        elseif G.GAME.modifiers.genre_bonus and not genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return 0
         end
         return self.weight
@@ -164,10 +164,10 @@ SMODS.Booster {
     order = 1,
     weight = 1,
     get_weight = function(self, weight, object_type)
-        if G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus == self.config.genre then
+        if G.GAME.modifiers.genre_bonus and genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return self.weight * 10
 
-        elseif G.GAME.modifiers.genre_bonus and G.GAME.modifiers.genre_bonus ~= self.config.genre then
+        elseif G.GAME.modifiers.genre_bonus and not genre_match(G.GAME.modifiers.genre_bonus, self.config.genre) then
             return 0
         end
         return self.weight

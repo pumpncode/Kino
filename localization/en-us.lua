@@ -2561,6 +2561,15 @@ return {
                 }
             },
 
+            -- Synergy System
+            synergy_mult = {
+                name = "Synergy Bonus",
+                text = {
+                    "Increased Power",
+                    "by {C:attention}X#1#"
+                }
+            },
+
             -- Keywords
             gloss_active = {
                 name = "Active",
@@ -2895,7 +2904,8 @@ return {
 
             kino_settings_jumpscare_mechanic = "Jumpscare Jokers?",
             kino_settings_vampire_jokers = "Vampiric Jokers?",
-            kino_settings_time_based_jokers = "Timing Jokers?", 
+            kino_settings_time_based_jokers = "Timing Jokers?",
+            kino_settings_speed_factor = "Quick Timer", 
 
             kino_settings_actor_synergy = "Actors?",
             kino_settings_genre_synergy = "Genre?",
@@ -3102,6 +3112,8 @@ return {
 
         },
         v_dictionary = {
+
+            
             -- Payout Info
             kino_sci_fi_payout = "Sci-Fi Cards Upgraded ($#1# each)",
 
@@ -3164,6 +3176,9 @@ return {
             ch_c_carryover_hands = {
                 "{C:blue}Hands{} carry over between rounds"
             }
+        },
+        labels = {
+            kino_award = "Awarded"
         }
     }
 }

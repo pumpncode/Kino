@@ -189,6 +189,8 @@ end
 local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
+    ret.modifiers.genre_bonus = {}
+
     ret.current_round.scrap_total = 0
     ret.current_round.matches_made = 0
     ret.current_round.sci_fi_upgrades = 0

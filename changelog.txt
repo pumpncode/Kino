@@ -21,7 +21,6 @@ V 0.8:
 - Genre Snob
 - The Jimbo of Wallstreet
 
-
 11 New Boss Blinds:
 - Hannibal Lecter
 - Darth Vader
@@ -39,15 +38,23 @@ V 0.8:
 - Media Collection
 - Criterion Collection
 
+2 New Booster Packs:
+- The Fantasy Pack will of course contain jokers of the fantasy genre
+- The Actor Pack will only spawn if you own at least two movie jokers, and will only contain jokers that share actors with jokers you currently own!
 
 Deck Sleeve compatibility:
 - Each available Deck now has an equivalent sleeve
 
-
+Bug Fixes:
+- Awarded stickers no longer read ERROR on the badge
 
 Visual Updates:
 - Predator now shakes when you are still holding on to the hidden card
 - Longlegs now shakes when you are holding it's partner in your hand
+- Movie Jokers now show the multiplier they have through synergy
+- Synergy indicators now pop up only once, regardless of how many actors they are synergizing with
+- Genre synergy is now a general pop up, not a per joker pop up
+
 
 Spawn Limitations:
 Multiple Jokers have had their spawn conditions updated.
