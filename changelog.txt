@@ -1,3 +1,7 @@
+V 0.8a:
+Hot fix:
+Non-movie jokers no longer crash the game
+
 V 0.8:
 10 New Jokers:
 - Raiders of the Lost Ark
