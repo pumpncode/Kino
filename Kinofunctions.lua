@@ -376,7 +376,7 @@ function Card:kino_synergy(card)
     -- If 5 share an actor, x2 all values
     -- if 3 share an actor, start shaking (and display the actor)
     if not kino_config.actor_synergy  or not self.config.center.kino_joker then
-        return false
+        return 0
     end
 
     local _my_pos = nil
