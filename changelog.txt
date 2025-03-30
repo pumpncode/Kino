@@ -47,6 +47,7 @@ Deck Sleeve compatibility:
 
 Bug Fixes:
 - Awarded stickers no longer read ERROR on the badge
+- 24 Hour Party People no longer crashes the game when Talisman is being used
 
 Visual Updates:
 - Predator now shakes when you are still holding on to the hidden card
