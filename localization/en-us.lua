@@ -1889,7 +1889,7 @@ return {
                 text = {
                     "Gains {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
                     "whenever this card gets scored",
-                    "{C:inactive}(Upgraded {C:attention}#6#{} times.){}"
+                    "{C:inactive}(Upgraded {C:attention}#6#{C:inactive} times)"
                 }
             },
             m_kino_demonic = {
@@ -2475,7 +2475,7 @@ return {
                 },
             },
             p_kino_action_booster = {
-                name = "Horror Pack",
+                name = "Action Pack",
                 text = {
                     "Choose {C:attention}#1#{} of",
                     "up to {C:attention}#2# Action Jokers{}",
@@ -2513,7 +2513,10 @@ return {
                 name = "Actor Pack",
                 text = {
                     "Choose {C:attention}#1#{} of",
-                    "up to {C:attention}#2# Fantasy Jokers{}",  
+                    "up to {C:attention}#2# Movie Jokers{}",
+                    "that will share cast with",
+                    "your current jokers"
+
                 }
             },
             p_kino_snack_booster_normal = {
@@ -2921,6 +2924,7 @@ return {
             b_confection_cards = "Confection Cards",
             k_spell = "Spell",
             k_quest = "Quest",
+            
 
             snack_boosters = "Confections",
             horror_booster = "Horror Joker",
@@ -2992,6 +2996,9 @@ return {
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
+
+            -- Confection Barks
+            k_eaten = "Eaten",
 
             -- Spartacus Barks
             k_spartacus_1 = "I am Spartacus!",

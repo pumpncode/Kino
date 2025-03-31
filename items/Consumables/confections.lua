@@ -568,7 +568,7 @@ SMODS.Consumable {
     calculate = function(self, card, context)
 
         if context.individual and context.scoring_hand[1] and card.active then
-            local _chips = card.ability.kino_choco and (card.ability.extra.bonus_chips + card.ability.choco_bonus) or card.ability.extra.chips
+            local _chips = card.ability.kino_choco and (card.ability.extra.bonus_chips + card.ability.choco_bonus) or card.ability.extra.bonus_chips
             context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
             context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + _chips 
             Kino.confection_trigger(card)
@@ -814,6 +814,7 @@ Kino.confection_trigger = function(card)
         { message = localize('k_extra_large'), colour = G.C.MULT})
         card.active = false
     else
+        card.active = false
         G.E_MANAGER:add_event(Event({
             func = (function()
                 card:start_dissolve()

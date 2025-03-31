@@ -652,7 +652,7 @@ SMODS.Blind{
 
     end,
     in_pool = function(self)
-        if G.GAME.dollars > to_big(25) then
+        if to_big(G.GAME.dollars) > to_big(25) then
             return true
         end
         return false

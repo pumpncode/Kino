@@ -1,3 +1,13 @@
+V 0.8b:
+Hot Fix:
+- 2001: A Space Odyssey no longer crashes the game
+- Cards that grant chip upgrades no longer crash the game
+- Sci-fi cards' localization works
+- Confection's now no longer show ERROR when eaten
+- Fries's message no longer triggers for each card in hand
+- Fixed the Talisman incompatibility issue with the Hans Gruber blind
+- Batman jokers no longer have their empty slot count affected by multipliers
+
 V 0.8a:
 Hot fix:
 Non-movie jokers no longer crash the game

@@ -168,7 +168,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.using_consumeable and context.consumeable.ability.set == "Planet" then
-            card_eval_status_text(joker, 'extra', nil, nil, nil,
+            card_eval_status_text(card, 'extra', nil, nil, nil,
             { message = localize('k_odyssey'), colour = G.C.MONEY})
             for _, _card in ipairs(G.playing_cards) do
                 if SMODS.has_enhancement(_card, "m_kino_sci_fi") then

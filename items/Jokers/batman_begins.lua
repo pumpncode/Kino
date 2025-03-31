@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             money = 2,
-            total = 0
+            total_non = 0
         }
     },
     rarity = 1,
@@ -34,21 +34,21 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.money,
-                card.ability.extra.total
+                card.ability.extra.total_non
             }
         }
     end,
     calculate = function(self, card, context)
         -- At the end of the round, gain $1 for each open joker slot (Batman jokers are excluded)
         if G.STAGE == G.STAGES.RUN then
-            card.ability.extra.total = (G.jokers.config.card_limit - #G.jokers.cards) * card.ability.extra.money
+            card.ability.extra.total_non = (G.jokers.config.card_limit - #G.jokers.cards) * card.ability.extra.money
             for i = 1, #G.jokers.cards do
-                if G.jokers.cards[i].config.center.j_is_batman then card.ability.extra.total = card.ability.extra.total * card.ability.extra.money end
+                if G.jokers.cards[i].config.center.j_is_batman then card.ability.extra.total_non = card.ability.extra.total_non * card.ability.extra.money end
             end
         end
     end,
     calc_dollar_bonus = function(self, card)
 
-        return card.ability.extra.total
+        return card.ability.extra.total_non
     end
 }
