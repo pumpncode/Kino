@@ -486,8 +486,8 @@ pattern = "if v.yes_pool_flag and not G.GAME.pool_flags[v.yes_pool_flag] then ad
 position = "after"
 payload = '''
 if v.set == 'Joker' and not v.kino_joker and 
-(kino_config and kino_config.movie_jokers_only) or
-G.GAME.modifiers.movie_jokers_only then add = nil end
+((kino_config and kino_config.movie_jokers_only) or
+G.GAME.modifiers.movie_jokers_only) then add = nil end
 '''
 match_indent = true
 
