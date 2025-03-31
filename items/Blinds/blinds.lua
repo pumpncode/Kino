@@ -396,7 +396,9 @@ SMODS.Blind{
         if context.individual and context.cardarea == G.play then
             if pseudorandom("alien_blind") < (G.GAME.probabilities.normal / blind.debuff.chance) then
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function()
-                    SMODS.debuff_card(context.other_card, true, "xenomorph_blind")
+                    if context.other_card then
+                        SMODS.debuff_card(context.other_card, true, "xenomorph_blind")
+                    end
                 return true end }))
             end
         end
