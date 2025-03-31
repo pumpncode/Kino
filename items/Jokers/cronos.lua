@@ -46,7 +46,7 @@ SMODS.Joker {
             local i_card = context.scoring_hand[1]
             local suit_prefix = string.sub(i_card.base.suit, 1, 1).."_"
             local rank = i_card.base.id
-            local _halfrank = rank / 2
+            local _halfrank = math.max(math.floor(rank / 2), 2)
 
             if i_card.base.id == 2 then
                 return {
