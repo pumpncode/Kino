@@ -25,9 +25,9 @@ SMODS.Enhancement {
             if pseudorandom("m_horror") < G.GAME.probabilities.normal / card.ability.chance then
                 -- Change into monster card
                 G.GAME.current_round.horror_transform = G.GAME.current_round.horror_transform + 1
-                card:set_ability(G.P_CENTERS.m_kino_monster, nil, true)
                 card_eval_status_text(card, 'extra', nil, nil, nil,
                 { message = localize('k_monster_turn'), colour = G.C.BLACK })
+                card:set_ability(G.P_CENTERS.m_kino_monster, nil, true)
                 SMODS.calculate_context({monster_awaken = true})
 
                 if next(find_joker("j_kino_wolf_man_1")) then

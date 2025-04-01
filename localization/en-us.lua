@@ -556,7 +556,7 @@ return {
                 }
             },
             j_kino_dungeons_and_dragons_1 = {
-                name = "Dungeons & Dragons {2000}",
+                name = "Dungeons & Dragons",
                 text = {
                     "When you {C:purple,E:1}Cast a Spell",
                     "this gains #2# {C:purple}Charge",

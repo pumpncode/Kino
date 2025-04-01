@@ -150,7 +150,7 @@ SMODS.Blind{
         return true
     end,
     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
-        local _consumeables_used = G.GAME.consumeable_usage_total.all
+        local _consumeables_used = G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.all or 0
         -- return mult, chips, true
         return (math.max(0, mult - (_consumeables_used * self.debuff.mult_debuff))), math.max(0, (hand_chips - (_consumeables_used * self.debuff.chips_debuff))), true
     end
@@ -581,6 +581,9 @@ SMODS.Blind{
     debuff = {
 
     },
+    set_blind = function(self)
+        G.GAME.current_round.boss_blind_joker_counter = 0
+    end,
     loc_vars = function(self)
 
     end,
@@ -592,7 +595,8 @@ SMODS.Blind{
     end,
     calculate = function(self, blind, context)
         if context.final_scoring_step then
-            if G.GAME.current_round.boss_blind_joker_counter < 1 then
+            G.GAME.current_round.boss_blind_joker_counter = G.GAME.current_round.boss_blind_joker_counter + 1
+            if G.GAME.current_round.boss_blind_joker_counter < 2 then
                 local _num = G.GAME.current_round.boss_blind_joker_counter
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
                     attention_text({
@@ -605,9 +609,7 @@ SMODS.Blind{
                         silent = true
                     })
                     blind:wiggle()
-                return true end }))
-
-                G.GAME.current_round.boss_blind_joker_counter = G.GAME.current_round.boss_blind_joker_counter + 1
+                return true end })) 
             end
 
             if G.GAME.current_round.boss_blind_joker_counter >= 2 then
@@ -625,7 +627,11 @@ SMODS.Blind{
                         silent = true
                     })
                     blind:wiggle()
+                    _card:flip()
+                    _card:juice_up()
                     _card:set_ability("j_joker")
+                    _card:flip()
+
                 return true end }))
             end
         end

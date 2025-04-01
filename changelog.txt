@@ -1,3 +1,12 @@
+V 0.8d:
+Bug Fixes:
+- Jokers that interact with spells won't spawn anymore if you have no means of casting a spell
+- the Ma-Ma blind no longer crashes the game if you haven't used a consumable
+- The Joker blind now displays text properly
+- Commando only spawns in you have wild cards
+- Steel only spawns in you have steel cards
+
+
 V 0.8c:
 Bug Fixes:
 - Cronos no longer sets ranks to half-ranks on the back end
