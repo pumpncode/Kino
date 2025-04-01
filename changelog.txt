@@ -1,3 +1,20 @@
+V 0.8c:
+Bug Fixes:
+- Cronos no longer sets ranks to half-ranks on the back end
+
+- Xenomorph blind no longer crashes the game
+
+- Demonic enhancements no longer fail to destroy cards
+
+- Fixed the following challenges:
+- The movie only rule no longer causes only jimbo to spawn
+- Cade Yeager Cosplay now properly pays out
+- Xenomorph Invasion now properly debuffs
+- Best Song in the World now properly transfers discards
+- Genre variety now works
+- Genre snob now works
+- The Jimbo of wall street now properly busts
+
 V 0.8b:
 Hot Fix:
 - 2001: A Space Odyssey no longer crashes the game

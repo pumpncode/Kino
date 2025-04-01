@@ -3172,7 +3172,7 @@ return {
             ch_c_kino_slasher = {
                 "Every Fourth card scored {C:attention}Jump Scares{}"
             },
-            ch_c_wallstreet = {
+            ch_c_kino_wallstreet = {
                 "Whenever you use any {C:attention}Consumable{}, you {C:money}Bust"
             },
 

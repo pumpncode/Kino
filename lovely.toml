@@ -69,8 +69,10 @@ end
 
 for i = 1, #scoring_hand do
 	if has_demonic_card and not SMODS.has_enhancement(scoring_hand[i], 'm_kino_demonic') then
-		if next(find_joker("j_kino_smile")) and not scoring_hand[i]:is_face() then
-			cards_destroyed[#cards_destroyed + 1] = scoring_hand[i]
+		if next(find_joker("j_kino_smile")) and scoring_hand[i]:is_face() then
+
+        else
+            cards_destroyed[#cards_destroyed + 1] = scoring_hand[i]
 			G.GAME.current_round.sacrifices_made = G.GAME.current_round.sacrifices_made + 1
 			scoring_hand[i].destroyed = true
             _sacrifices_this_hand = _sacrifices_this_hand + 1
@@ -83,7 +85,7 @@ if has_demonic_card and G.GAME.modifiers.kino_bestsong then
     G.E_MANAGER:add_event(Event({
         trigger = 'after',
         func = (function()     
-            ease_discards(_sacrifices_this_hand)
+            ease_discard(_sacrifices_this_hand)
         return true end)
     }))
 end
@@ -125,7 +127,7 @@ G.GAME.hands[hand].chips = G.GAME.hands[hand].chips + (G.GAME.hands[hand].chips_
 # 
 [[patches]]
 [patches.pattern]
-target = 'functions/buttons_callback.lua'
+target = 'functions/buttons_callbacks.lua'
 pattern = '''
     if G.shop then 
       for i = 1, #G.jokers.cards do
@@ -574,9 +576,9 @@ end
 position = "before"
 payload = '''
 if G.GAME.modifiers.kino_yeag and G.GAME.current_round.sci_fi_upgrades_last_round > 0 then
-    add_round_eval_row({dollars = G.GAME.current_round.sci_fi_upgrades_last_round*(G.GAME.modifiers.kino_yeag.value), disp = G.GAME.current_round.sci_fi_upgrades_last_round, bonus = true, name='kino_sci_fi_payout', pitch = pitch})
+    add_round_eval_row({dollars = G.GAME.current_round.sci_fi_upgrades_last_round*(G.GAME.modifiers.kino_yeag), disp = G.GAME.current_round.sci_fi_upgrades_last_round, bonus = true, name='kino_sci_fi_payout', pitch = pitch})
     pitch = pitch + 0.06
-    dollars = dollars +  G.GAME.current_round.discards_left*(G.GAME.modifiers.money_per_discard)
+    dollars = dollars +  G.GAME.current_round.sci_fi_upgrades_last_round*(G.GAME.modifiers.kino_yeag)
 end
 '''
 match_indent = true
@@ -595,7 +597,7 @@ position = "after"
 payload = '''
 elseif config.name == 'kino_sci_fi_payout' then
     table.insert(left_text, {n=G.UIT.T, config={text = num_dollars, scale = 0.8*scale, colour = G.C.MONEY, shadow = true, juice = true}})
-    table.insert(left_text,{n=G.UIT.O, config={object = DynaText({string = {" "..localize{type = 'variable', key = 'kino_sci_fi_payout', vars = {G.GAME.modifiers.kino_yeag.value}}}, colours = {G.C.UI.TEXT_LIGHT}, shadow = true, pop_in = 0, scale = 0.4*scale, silent = true})}})
+    table.insert(left_text,{n=G.UIT.O, config={object = DynaText({string = {" "..localize{type = 'variable', key = 'kino_sci_fi_payout', vars = {G.GAME.modifiers.kino_yeag}}}, colours = {G.C.UI.TEXT_LIGHT}, shadow = true, pop_in = 0, scale = 0.4*scale, silent = true})}})
 end
 '''
 match_indent = true
@@ -620,7 +622,7 @@ G.E_MANAGER:add_event(Event({
     trigger = 'immediate',
     func = (function()
         if G.GAME.modifiers.kino_alien then  
-            for i = 1, G.GAME.modifiers.kino_alien.value do
+            for i = 1, G.GAME.modifiers.kino_alien do
                 local _card = nil
                 local _found_target = false
                 while not _found_target do
@@ -630,7 +632,7 @@ G.E_MANAGER:add_event(Event({
                     end
                 end
                     
-                SMODS.debuff_card(_card, true, card.config.center.key)
+                SMODS.debuff_card(_card, true, "challenge_alien")
             end
         end
     return true end)
@@ -659,10 +661,29 @@ end
 match_indent = true
 
 
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = '''
+G.GAME.current_round.discards_left = math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards)
+G.GAME.current_round.hands_left = (math.max(1, G.GAME.round_resets.hands + G.GAME.round_bonus.next_hands))
+'''
+position = "at"
+payload = '''
+if not G.GAME.modifiers.carryover_discards then
+    G.GAME.current_round.discards_left = math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards)
+end
+if not G.GAME.modifiers.carryover_hands then
+    G.GAME.current_round.hands_left = (math.max(1, G.GAME.round_resets.hands + G.GAME.round_bonus.next_hands))
+end
+'''
+match_indent = true
+
+
 # Wallstreet 
 [[patches]]
 [patches.pattern]
-target = "functions/state_events.lua"
+target = "functions/button_callbacks.lua"
 pattern = '''
 SMODS.calculate_context({using_consumeable = true, consumeable = card, area = card.from_area})
 '''

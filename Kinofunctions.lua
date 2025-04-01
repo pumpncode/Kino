@@ -245,29 +245,29 @@ function Card:set_cost(oceans)
 end
 
 
-
 ---- Kino Syngery system ----
 function check_genre_match(joker)
     -- Checks to see how many jokers share a genre with the joker that the function uses
-    if not joker.config.center.kino_joker then
+    if not joker or not joker.config.center.kino_joker then
         return 
     end
 
     local _jokers_that_share_genre = 0
     -- iterate through each genre
-    for _, _genre in ipairs(joker.k_genre) do 
+    for _, _genre in ipairs(joker.config.center.k_genre) do
         for __, _joker_comp in ipairs(G.jokers.cards) do
-            if _joker_comp ~= joker and
-            is_genre(_joker_comp, _genre) then
-                _jokers_that_share_genre = _jokers_that_share_genre + 1
-                break
+            if _joker_comp ~= joker then
+                if is_genre(_joker_comp, _genre) then
+                    _jokers_that_share_genre = _jokers_that_share_genre + 1
+                    break
+                end
             end
         end
-    end
-
-    if G.GAME.modifiers.kino_genre_variety and
-    _jokers_that_share_genre > 0 then
-        SMODS.debuff_card(joker, true, "kino_genre_variety")
+        if _jokers_that_share_genre > 0 and not joker.debuff then
+            SMODS.debuff_card(joker, true, "kino_genre_variety_" .. _genre)
+        elseif _jokers_that_share_genre == 0 and joker.debuff then
+            SMODS.debuff_card(joker, false, "kino_genre_variety_" .. _genre)
+        end
     end
 end
 
@@ -278,7 +278,7 @@ function check_genre_snob()
 
     local _active_genres = G.jokers.cards[1].config.center.k_genre
 
-    for i = 2, #G.jokers.cards do
+    for i = 1, #G.jokers.cards do
         local _genre_match = false
         local _joker = G.jokers.cards[i]
         for _, _genre in ipairs(_active_genres) do
@@ -288,8 +288,10 @@ function check_genre_snob()
             end
         end
 
-        if _genre_match == false then
+        if i > 1 and _genre_match == false and not _joker.debuff then
             SMODS.debuff_card(_joker, true, "kino_genre_snob")
+        elseif i == 1 and (_genre_match == true and _joker.debuff) then
+            SMODS.debuff_card(_joker, false, "kino_genre_snob")
         end
     end
 end
@@ -311,6 +313,13 @@ function check_genre_synergy()
     for i, genre in ipairs(kino_genres) do
         local count = 0
         for j, joker in ipairs(G.jokers.cards) do
+            if G.GAME.modifiers.kino_genre_variety then
+                check_genre_match(joker)            
+            end
+            if G.GAME.modifiers.kino_genre_snob then
+                check_genre_snob()
+            end
+
             if is_genre(joker, genre) then
                 count = count + 1
             end
@@ -617,9 +626,9 @@ function check_variable_validity_for_mult(name)
 end
 
 function Kino.synergycheck()
-    if G.GAME.modifiers.kino_genre_variety then
-        check_genre_match()            
-    end
+    -- if G.GAME.modifiers.kino_genre_variety then
+    --     check_genre_match()            
+    -- end
     check_genre_synergy()
     check_actor_synergy()
 end
@@ -629,22 +638,26 @@ local base_atd = Card.add_to_deck
 function Card:add_to_deck(from_debuff)
     base_atd(self, from_debuff)
 
-    if G.GAME.modifiers.kino_genre_variety then
-        check_genre_match()            
+    -- if G.GAME.modifiers.kino_genre_variety then
+    --     check_genre_match()            
+    -- end
+    if not from_debuff then
+        check_genre_synergy()
+        check_actor_synergy()
     end
-    check_genre_synergy()
-    check_actor_synergy()
 end
 
 local base_rmd = Card.remove_from_deck
 function Card:remove_from_deck(from_debuff)
     base_rmd(self, from_debuff)
     
-    if G.GAME.modifiers.kino_genre_variety then
-        check_genre_match()            
+    -- if G.GAME.modifiers.kino_genre_variety then
+    --     check_genre_match()            
+    -- end
+    if not from_debuff then
+        check_genre_synergy()
+        check_actor_synergy()
     end
-    check_genre_synergy()
-    check_actor_synergy()
 end
 
 local base_set_rank = CardArea.set_ranks
@@ -653,9 +666,9 @@ function CardArea:set_ranks()
     base_set_rank(self)
 
     if self == G.jokers then
-        if G.GAME.modifiers.kino_genre_variety then
-            check_genre_match()            
-        end
+        -- if G.GAME.modifiers.kino_genre_variety then
+        --     check_genre_match()            
+        -- end
         check_genre_synergy()
         check_actor_synergy()
     end
@@ -666,9 +679,9 @@ function CardArea:align_cards()
     base_align_cards(self)
 
     if self == G.jokers then
-        if G.GAME.modifiers.kino_genre_variety then
-            check_genre_match()            
-        end
+        -- if G.GAME.modifiers.kino_genre_variety then
+        --     check_genre_match()            
+        -- end
         check_genre_synergy()
         check_actor_synergy()
     end
