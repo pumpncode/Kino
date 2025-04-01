@@ -5,8 +5,8 @@ SMODS.Enhancement {
     config = {
         a_mult = 1,
         a_chips = 5,
-        perma_mult = 0,
-        perma_x_mult = 0,
+        mult = 0,
+        x_mult = 0,
         bonus = 0,
         times_upgraded = 0
     },
@@ -15,8 +15,8 @@ SMODS.Enhancement {
             vars = {
                 card and card.ability.a_mult or self.config.a_mult,
                 card and card.ability.a_chips or self.config.a_chips,
-                card and card.ability.perma_mult or self.config.perma_mult,
-                card and card.ability.perma_x_mult or self.config.perma_x_mult,
+                card and card.ability.mult or self.config.mult,
+                card and card.ability.x_mult or self.config.x_mult,
                 card and card.ability.bonus or self.config.bonus,
                 card and card.ability.times_upgraded or self.config.times_upgraded
             }
@@ -29,11 +29,11 @@ SMODS.Enhancement {
         if next(find_joker('j_kino_terminator_2')) then
             for index, _joker in ipairs(G.jokers.cards) do
                 if _joker.ability.extra.affects_sci_fi then
-                    card.ability.perma_x_mult = card.ability.perma_x_mult + _joker.ability.extra.perma_x_mult
+                    card.ability.x_mult = card.ability.x_mult + _joker.ability.extra.x_mult
                 end
             end
         else
-            card.ability.perma_mult = card.ability.perma_mult + card.ability.a_mult
+            card.ability.mult = card.ability.mult + card.ability.a_mult
         end
                 
                 

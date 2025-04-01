@@ -27,6 +27,31 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Fantasy", "Family"},
+    in_pool = function(self, args)
+        -- Check for the right frequency
+        local enhancement_gate = false
+        if G.playing_cards then
+            for k, v in pairs(G.playing_cards) do
+                if SMODS.has_enhancement(v, "m_kino_fantasy") then
+                    enhancement_gate = true
+                    break
+                end
+            end
+
+            for k, v in ipairs(G.jokers.cards) do
+                if v.config.center.kino_spellcaster then
+                    enhancement_gate = true
+                    break
+                end
+            end
+        end
+
+        if (G.GAME.current_round.spells_cast or 0) > 1 then
+            enhancement_gate = true
+        end
+
+        return enhancement_gate
+    end,
 
     loc_vars = function(self, info_queue, card)
         return {

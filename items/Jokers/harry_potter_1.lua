@@ -29,6 +29,7 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Fantasy", "Family"},
+    kino_spellcaster = true,
 
     loc_vars = function(self, info_queue, card)
         return {

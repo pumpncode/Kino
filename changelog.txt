@@ -1,3 +1,43 @@
+V 0.8d:
+Bug Fixes:
+- Jokers that interact with spells won't spawn anymore if you have no means of casting a spell
+- the Ma-Ma blind no longer crashes the game if you haven't used a consumable
+- The Joker blind now displays text properly
+- Commando only spawns in you have wild cards
+- Steel only spawns in you have steel cards
+
+
+V 0.8c:
+Bug Fixes:
+- Cronos no longer sets ranks to half-ranks on the back end
+
+- Xenomorph blind no longer crashes the game
+
+- Demonic enhancements no longer fail to destroy cards
+
+- Fixed the following challenges:
+- The movie only rule no longer causes only jimbo to spawn
+- Cade Yeager Cosplay now properly pays out
+- Xenomorph Invasion now properly debuffs
+- Best Song in the World now properly transfers discards
+- Genre variety now works
+- Genre snob now works
+- The Jimbo of wall street now properly busts
+
+V 0.8b:
+Hot Fix:
+- 2001: A Space Odyssey no longer crashes the game
+- Cards that grant chip upgrades no longer crash the game
+- Sci-fi cards' localization works
+- Confection's now no longer show ERROR when eaten
+- Fries's message no longer triggers for each card in hand
+- Fixed the Talisman incompatibility issue with the Hans Gruber blind
+- Batman jokers no longer have their empty slot count affected by multipliers
+
+V 0.8a:
+Hot fix:
+Non-movie jokers no longer crash the game
+
 V 0.8:
 10 New Jokers:
 - Raiders of the Lost Ark
@@ -47,6 +87,7 @@ Deck Sleeve compatibility:
 
 Bug Fixes:
 - Awarded stickers no longer read ERROR on the badge
+- 24 Hour Party People no longer crashes the game when Talisman is being used
 
 Visual Updates:
 - Predator now shakes when you are still holding on to the hidden card
