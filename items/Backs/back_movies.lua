@@ -23,6 +23,7 @@ SMODS.Back {
     end
 }
 
+-- Jokers that spawn in the shop always share actors with your current jokers, if possible
 -- SMODS.Back {
 --     name = "Cine2Nerdle Deck",
 --     key = "c2n",
