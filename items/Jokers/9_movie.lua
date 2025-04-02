@@ -1,20 +1,22 @@
 SMODS.Joker {
-    key = "easy_a",
-    order = 253,
+    key = "9_movie",
+    order = 260,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 50
+            chips = 9,
+            chips_non = 0,
+            count_non = 0
         }
     },
     rarity = 1,
     atlas = "kino_atlas_8",
-    pos = { x = 0, y = 0},
-    cost = 3,
+    pos = { x = 1, y = 1},
+    cost = 4,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 37735,
+        id = 12244,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -26,27 +28,22 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Comedy"},
+    pools, k_genre = {"Animation", "Fantasy", "Adventure"},
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips
+
             }
         }
     end,
     calculate = function(self, card, context)
-        -- Gives +50 chips for each Ace held in hand
-        if context.joker_main then
-            local _count = 0
-            for _, _card in ipairs(G.hand.cards) do
-                if _card:is_id() == 14 then
-                    _count = _count + 1
-                end
-            end
-
+        if context.individual and context.other_card:is_id() == 9 then
+            card.ability.extra.count_non = card.ability.extra.count_non + 1
+            card.ability.extra.chips_non = card.ability.extra.chips_non + (card.ability.extra.chips * card.ability.extra.count_non)
+            
             return {
-                chips = _count * card.ability.extra.chips
+                chips = card.ability.extra.chips_non
             }
         end
     end

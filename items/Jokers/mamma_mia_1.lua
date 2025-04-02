@@ -1,20 +1,21 @@
 SMODS.Joker {
-    key = "easy_a",
-    order = 253,
+    key = "mamma_mia_1",
+    order = 264,
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            chips = 50
+            limit_non = 3,
+            mult = 20
         }
     },
     rarity = 1,
     atlas = "kino_atlas_8",
-    pos = { x = 0, y = 0},
-    cost = 3,
+    pos = { x = 5, y = 1},
+    cost = 7,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
-        id = 37735,
+        id = 11631,
         budget = 0,
         box_office = 0,
         release_date = "1900-01-01",
@@ -26,28 +27,30 @@ SMODS.Joker {
         directors = {},
         cast = {},
     },
-    pools, k_genre = {"Comedy"},
+    pools, k_genre = {"Musical", "Romance"},
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips
+
             }
         }
     end,
     calculate = function(self, card, context)
-        -- Gives +50 chips for each Ace held in hand
+        -- Gain +20 mult if your scored hand contains at least 3 Hearts
         if context.joker_main then
             local _count = 0
-            for _, _card in ipairs(G.hand.cards) do
-                if _card:is_id() == 14 then
+            for _, _pcard in ipairs(context.scoring_hand) do
+                if _pcard:is_suit("Hearts") then
                     _count = _count + 1
                 end
             end
 
-            return {
-                chips = _count * card.ability.extra.chips
-            }
+            if _count >= 3 then
+                return {
+                    mult = card.ability.extra.mult
+                }
+            end
         end
     end
 }

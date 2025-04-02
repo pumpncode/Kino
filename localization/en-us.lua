@@ -2993,6 +2993,7 @@ return {
             k_raiders = "This belongs in a Museum!",
             k_odyssey = "Everything is going extremely well",
             k_contagion = "Achoo",
+            k_lalaland = "For the Fools who dream",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",

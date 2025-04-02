@@ -1,5 +1,11 @@
 V 0.8.1:
-
+New Jokers:
+- Easy A
+- 9
+- Up
+- Iron Lady
+- Mamma Mia!
+- la la land
 
 V 0.8e:
 Bug Fixes:

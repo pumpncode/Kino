@@ -62882,7 +62882,7 @@ return {
     },
   },
   ID_2559012 = {
-    name = "Anthony "Ace" Thomas",
+    name = "Anthony Ace Thomas",
     gender = 2,
     popularity = 0.405,
     acting = {
