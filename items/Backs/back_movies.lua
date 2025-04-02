@@ -62,7 +62,14 @@ SMODS.Back {
                 
                 if _joker.config.center.kino_joker then
                     local _movie_info = _joker.config.center.kino_joker 
-                    _percentage = _percentage + (_movie_info.box_office / _movie_info.budget)
+
+                    local budget = _movie_info.budget
+                    local boxoffice = _movie_info.box_office
+
+                    if budget == 0 then budget = 1 end
+                    if boxoffice == 0 then boxoffice = 1.1 end
+
+                    _percentage = _percentage + (_movie_info.box_office / budget)
                     if _percentage > 10 then
                         _percentage = 10
                     end

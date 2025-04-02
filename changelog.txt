@@ -1,3 +1,15 @@
+V 0.8e:
+Bug Fixes:
+- Barbie now has correct metadata
+- Barbie now only triggers on scoring queens
+- Insomnia now doesn't stop cards from being drawn outside of blinds
+- Hustle is now compatible with talisman
+- Producer tarot now has a safeguard against cards with incorrect budgets
+- Producer now refunds investment if used on a broken movie joker
+- Producer Deck should no longer give infinite money if a broken movie joker is owned
+- Ghostbusters now only spawns if you have debuffed cards in deck
+- ratatouille confection removed from the collection
+
 V 0.8d:
 Bug Fixes:
 - Jokers that interact with spells won't spawn anymore if you have no means of casting a spell

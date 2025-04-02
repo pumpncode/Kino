@@ -137,12 +137,14 @@ SMODS.Consumable {
         ease_dollars(-1 * self.config.cost)
 
         -- calc profit
-        if _movie_info.budget == 0 then
-            print(G.jokers.highlighted[i].config.center.key .. " has no registered budget and should be fixed")
+        if _movie_info.budget <= 100 then
+            print(G.jokers.highlighted[1].config.center.key .. " has no registered budget and should be fixed")
+            ease_dollars(self.config.cost)
+            return
         end
+
+
         local reward = math.floor(self.config.cost * (_movie_info.box_office / _movie_info.budget))
-
-
         ease_dollars((reward <= self.config.limit) and reward or self.config.limit)
     end
 }
