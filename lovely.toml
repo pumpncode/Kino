@@ -323,7 +323,8 @@ if G.GAME.blind.name == 'The Serpent' and
 position = 'before'
 match_indent = true
 payload = '''
-if next(find_joker('j_kino_insomnia')) and
+if G.GAME.blind.in_blind and 
+next(find_joker('j_kino_insomnia')) and
 (G.GAME.current_round.hands_played > 0 or
 G.GAME.current_round.discards_used > 0) then 
 	SMODS.calculate_context({insomnia_awake = true})

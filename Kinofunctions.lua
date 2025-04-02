@@ -873,6 +873,10 @@ to_big = to_big or function(x, y)
     return x
 end
 
+to_number = to_number or function(x, y)
+    return x
+end
+
 --- Award Bonus & actor synergy mechanics ---
 
 ----------------------
