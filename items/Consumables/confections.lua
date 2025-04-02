@@ -722,7 +722,7 @@ SMODS.Consumable {
     key = "gum",
     set = "confection",
     order = 10,
-    pos = {x = 3, y = 1},
+    pos = {x = 4, y = 1},
     atlas = "kino_confections",
     config = {
         choco_bonus = 1,
