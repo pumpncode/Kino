@@ -1,3 +1,13 @@
+V 0.8f:
+Bug Fixes:
+- Stripes no longer decreases its mult incorrectly when discarding multiple cards
+- Wall Street no longer crashes the game
+- Talisman no longer crashes due to Sugarland Express
+- Cruella De Vil boss blind has been temporarily disabled
+- The Prestige now only spawns if you have a lucky card
+- The Producer deck now no longer triggers after every blind, but only boss blinds
+- The Producer deck no longer loses money if you do not own any movie jokers
+
 V 0.8e:
 Bug Fixes:
 - Barbie now has correct metadata

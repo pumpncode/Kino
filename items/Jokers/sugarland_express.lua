@@ -44,7 +44,7 @@ SMODS.Joker {
         -- While ACTIVE, steals $3 each hand
         -- Gives +50 chips for each time it's stolen
         if context.before and context.cardarea == G.jokers and G.jokers.cards[1] ~= card then
-            if G.GAME.dollars >= G.GAME.bankrupt_at + 3 then
+            if to_big(G.GAME.dollars) >= to_big(G.GAME.bankrupt_at + 3) then
                 ease_dollars(-1 * card.ability.extra.money_stolen_non)
                 card.ability.extra.stacks = card.ability.extra.stacks + 1
                 card:juice_up()
