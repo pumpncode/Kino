@@ -4,6 +4,15 @@ Bug Fixes:
 - Spells are protected against indexing error
 - Oceans 11 works again
 
+Localization Fixes and Changse:
+- 30 Days of Night's localization fixed
+- Iron Giant localization fixed
+- Dungeons & Dragons description changed to reflect the active effect
+- Alien's description now correctly reflects its effect
+- Jurassic Park description fit
+- Shang Chi now shows the next spell it will cast
+- Harry Potter now has the spellcasting tooltip
+
 V 0.8f:
 Bug Fixes:
 - Stripes no longer decreases its mult incorrectly when discarding multiple cards

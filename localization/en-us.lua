@@ -32,9 +32,9 @@ return {
                     "{C:mult,E:1}#4#{}",
                     "If Feeding: Drain the enhancement",
                     "from scoring cards",
-                    "If Fed: Give {X:white,C:mult}X#3#{} Mult",
+                    "If Fed: Give {X:mult,C:white}X#3#{} Mult",
                     "for each enhancement drained",
-                    "{C:inactive}(Currently: {X:white,C:mult}X#2#{C:inactive} Mult)"
+                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{C:inactive} Mult)"
                 }
             },
             j_kino_50_first_dates = {
@@ -66,7 +66,8 @@ return {
                     "After a hand is scored, {C:green}#1# in #3#{} chance",
                     "to destroy all other jokers. When a card is",
                     "scored, it gives {X:mult,C:white}X#4#{} Mult and increases",
-                    "the destroy chance by {C:green}#2#{}"
+                    "the destroy chance by {C:green}#2#{}",
+                    "Resets when you sell a Joker"
                 }
             },
             j_kino_alien_3 = {
@@ -560,9 +561,10 @@ return {
                 text = {
                     "When you {C:purple,E:1}Cast a Spell",
                     "this gains #2# {C:purple}Charge",
-                    "If this is in your first",
-                    "joker slot, gain {C:mult}+#3#{} Mult",
-                    "for each {C:purple}Charge{} consumed",
+                    "per spell level",
+                    "{C:attention}Active:{} {C:mult}+#3#{} Mult",
+                    "for each {C:purple}Charge{}, then",
+                    "consume all charges",
                     "{C:inactive}(Currently: {C:purple}#1#{C:inactive} Stacks)"
                 }
             },
@@ -650,7 +652,7 @@ return {
             j_kino_fight_club = {
                 name = "Fight Club",
                 text = {
-                    "{X:mult,C:white} X#1#,",
+                    "{X:mult,C:white} X#1#",
                     "{C:attention}Destroy{} a random",
                     "scoring card",
                 }
@@ -924,8 +926,8 @@ return {
                 name = "The Iron Giant",
                 text = {
                     "Each{C:attention} Sci-Fi Card{} held in hand", 
-                    "gives {X:mult,C:white}X#1#{} Mult,",
-                    "increased by {X:mult,C:white} X#2# {}",
+                    "gives {X:mult,C:white}X1{} Mult,",
+                    "increased by {X:mult,C:white} X#1# {}",
                     "for each time it's been upgraded"
                 }
             },
@@ -967,7 +969,7 @@ return {
             j_kino_jurassic_park_1 = {
                 name = "Jurassic Park",
                 text = {
-                    "Cards give {C:chips}#1#{}",
+                    "Cards give {C:chips}#1#x{}",
                     "as much base chips"
                 }
             },
@@ -2037,7 +2039,7 @@ return {
                 name = "Arrakis",
                 text = {
                     "Upgrade your least played",
-                    "hand with {X:white,C:chips}X2{} and {X:white,C:mult}X2{}"
+                    "hand with {X:chips,C:white}X2{} and {X:mult,C:white}X2{}"
                 }
             },
             c_kino_krypton = {
@@ -2056,10 +2058,10 @@ return {
                 name = "Cybertron",
                 text = {
                     "Upgrade a random hand",
-                    "with {X:white,C:mult}X#1#{} for",
+                    "with {X:mult,C:white}X#1#{} for",
                     "each time a Sci-fi card was upgraded",
                     "last round",
-                    "{C:inactive}(Currently: {X:white,C:mult}X#2#{C:inactive})"
+                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{C:inactive})"
                 }
             },
             c_kino_lv426 = {
