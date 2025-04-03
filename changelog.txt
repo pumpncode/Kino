@@ -1,3 +1,9 @@
+V 0.8g:
+Bug Fixes:
+- Lucky Number Slevin no longer crashes the game
+- Spells are protected against indexing error
+- Oceans 11 works again
+
 V 0.8f:
 Bug Fixes:
 - Stripes no longer decreases its mult incorrectly when discarding multiple cards

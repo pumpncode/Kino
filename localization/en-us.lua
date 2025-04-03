@@ -34,7 +34,7 @@ return {
                     "from scoring cards",
                     "If Fed: Give {X:white,C:mult}X#3#{} Mult",
                     "for each enhancement drained",
-                    "{C:Inactive}(Currently: {X:white,C:mult}X#2#{C:inactive} Mult)"
+                    "{C:inactive}(Currently: {X:white,C:mult}X#2#{C:inactive} Mult)"
                 }
             },
             j_kino_50_first_dates = {
