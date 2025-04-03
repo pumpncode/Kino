@@ -2233,6 +2233,13 @@ return {
                 }
             },
             b_kino_c2n = {
+                name = "Cine2Nerdle Deck",
+                text = {
+                    "If you own a {C:attention}Movie Joker",
+                    "then all jokers that spawn",
+                    "will share cast with your",
+                    "current jokers"
+                }
 
             },
             b_kino_producer = {
