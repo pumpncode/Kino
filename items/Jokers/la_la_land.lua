@@ -47,7 +47,7 @@ SMODS.Joker {
             
             return {
                 card = context.full_hand[1],
-                message = localize("kino_lalaland")
+                message = localize("k_lalaland")
             }
         end
     end

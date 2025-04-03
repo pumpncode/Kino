@@ -4,8 +4,8 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            cur_chance = 1,
-            chance = 4
+            count_non = 0,
+            count_threshold = 3,
         }
     },
     rarity = 2,
@@ -37,10 +37,32 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- 1/4 chance to give an edition to a random scoring card each hand
-        if context.joker_main then
-            if pseudorandom("cruella") < (G.GAME.probabilities.chance * card.ability.extra.cur_chance) / card.ability.extra.chance then
-                -- give card an edition
+        -- Whenever you've destroyed 3 cards, give a random card in deck an edition
+        if context.remove_playing_cards then
+            if not context.blueprint then
+                card.ability.extra.count_non = card.ability.extra.count_non + 1
+            end
+
+            if card.ability.extra.count_non >= 3 then
+                local _viable_cards = {}
+
+                for _, _pcard in ipairs(G.deck.cards) do
+                    if not _pcard.edition then
+                        _viable_cards[#_viable_cards + 1] = _pcard
+                    end
+                end
+
+                G.E_MANAGER:add_event(Event({
+                    func = function() 
+                        local _card = pseudorandom_element(_viable_cards, pseudoseed("cruella"))
+                        local new_enhancement = SMODS.poll_enhancement({guaranteed = true, key = 'drwho'})
+                        _card:set_ability(G.P_CENTERS[new_enhancement])
+                    end}))  
+                    
+                return {
+                    card = card,
+                    message = localize("k_cruella")
+                }
             end
         end
     end

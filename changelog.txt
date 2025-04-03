@@ -6,6 +6,10 @@ New Jokers:
 - Iron Lady
 - Mamma Mia!
 - la la land
+- Cruella
+- Men in Black
+- Hellboy
+- Popeye
 
 V 0.8e:
 Bug Fixes:

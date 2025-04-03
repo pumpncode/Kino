@@ -2994,6 +2994,8 @@ return {
             k_odyssey = "Everything is going extremely well",
             k_contagion = "Achoo",
             k_lalaland = "For the Fools who dream",
+            k_cruella = "That card will make a great coat",
+            k_hellboy = "Hell held back",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
