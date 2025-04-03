@@ -7,6 +7,8 @@ Bug Fixes:
 - The Prestige now only spawns if you have a lucky card
 - The Producer deck now no longer triggers after every blind, but only boss blinds
 - The Producer deck no longer loses money if you do not own any movie jokers
+- Gum has the correct card art
+- Hotdog no longer crashes the game when it has the Chocolate effect
 
 V 0.8e:
 Bug Fixes:
