@@ -237,11 +237,13 @@ end
 
 -- Booster:Set_cost hook for oceans_11	
 local b_sc = Card.set_cost
-function Card:set_cost(oceans)
+function Card:set_cost()
+    -- print("entered: " .. (oceans or ""))
     b_sc(self)
-    if oceans or (self.ability and self.ability.set == "Booster" and next(find_joker('j_kino_oceans_11')) )then
+    if (self.ability and self.ability.set == "Booster" and G.GAME.kino_oceans_11) then
         self.cost = 0
     end
+    
 end
 
 

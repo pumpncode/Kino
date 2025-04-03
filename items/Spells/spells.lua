@@ -513,6 +513,13 @@ function cast_spell(spell_key, strength, repeatable)
         repeatable = true
     end
 
+    if not SMODS.Spells then
+        print("Mod error: no spells to index")
+        return {
+
+        }
+    end
+
     SMODS.calculate_context({pre_spell_cast = true, strength = strength, spell_key = spell_key, repeatable = repeatable})
 
     if #G.GAME.current_round.spell_queue > 0 then

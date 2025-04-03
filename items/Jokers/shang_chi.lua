@@ -33,6 +33,24 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {set = 'Other', key = "gloss_spellcasting"}
+        local _spell_list = {
+            "spell_kino_Hearts_Hearts",
+            "spell_kino_Hearts_Diamonds",
+            "spell_kino_Hearts_Clubs",
+            "spell_kino_Hearts_Spades",
+            "spell_kino_Diamonds_Diamonds",
+            "spell_kino_Diamonds_Clubs",
+            "spell_kino_Diamonds_Spades",
+            "spell_kino_Clubs_Spades",
+            "spell_kino_Clubs_Clubs",
+            "spell_kino_Spades_Spades"
+        }
+        local _val = card.ability.extra.cur_spell_non + 1
+        if _val > 10 then
+            _val = 1
+        end
+        info_queue[#info_queue + 1] = SMODS.Spells[_spell_list[_val]]
+
         return {
             vars = {
 
