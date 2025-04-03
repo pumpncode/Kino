@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             count_non = 0,
-            count_threshold = 3,
+            threshold = 3,
         }
     },
     rarity = 2,
@@ -32,7 +32,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.count_non,
+                card.ability.extra.threshold
             }
         }
     end,
@@ -43,7 +44,7 @@ SMODS.Joker {
                 card.ability.extra.count_non = card.ability.extra.count_non + 1
             end
 
-            if card.ability.extra.count_non >= 3 then
+            if card.ability.extra.count_non >= card.ability.extra.threshold then
                 local _viable_cards = {}
 
                 for _, _pcard in ipairs(G.deck.cards) do

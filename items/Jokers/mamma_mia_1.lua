@@ -11,7 +11,7 @@ SMODS.Joker {
     rarity = 1,
     atlas = "kino_atlas_8",
     pos = { x = 5, y = 1},
-    cost = 7,
+    cost = 5,
     blueprint_compat = true,
     perishable_compat = true,
     kino_joker = {
@@ -32,7 +32,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.limit_non,
+                card.ability.extra.mult
             }
         }
     end,
@@ -46,7 +47,7 @@ SMODS.Joker {
                 end
             end
 
-            if _count >= 3 then
+            if _count >= card.ability.extra.limit_non then
                 return {
                     mult = card.ability.extra.mult
                 }

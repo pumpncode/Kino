@@ -40,7 +40,7 @@ SMODS.Joker {
         if context.joker_main then
             local _count = 0
             for _, _card in ipairs(G.hand.cards) do
-                if _card:is_id() == 14 then
+                if _card:get_id() == 14 then
                     _count = _count + 1
                 end
             end

@@ -28,11 +28,13 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Superhero", "Fantasy"},
+    enhancement_gate = "m_kino_demonic",
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.stacked_chips,
+                card.ability.extra.a_chips
             }
         }
     end,

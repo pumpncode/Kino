@@ -7,6 +7,16 @@ return {
                     "{C:attention}6{}'s give {C:mult}+#1#{} Mult"
                 }
             },
+            j_kino_9_movie = {
+                name = "9",
+                text = {
+                    "each scoring {C:attention}9{} gives",
+                    "{C:chips}+#1#{} Chips for each",
+                    "time this Ante",
+                    "a {C:attention}9{} was scored",
+                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                }
+            },
             j_kino_10_things_i_hate_about_you = {
                 name = "10 Things I Hate About You",
                 text = {
@@ -447,6 +457,15 @@ return {
                     "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
                 }
             },
+            j_kino_cruella = {
+                name = "Cruella",
+                text = {
+                    "Whenever you've destroyed",
+                    "{C:attention}#2#{} cards, give",
+                    "a random card in deck",
+                    "an {C:attention}Edition"
+                }
+            },
             j_kino_dark_crystal = {
                 name = "The Dark Crystal",
                 text = {
@@ -573,6 +592,13 @@ return {
                 text = {
                     "When you {C:purple,E:1}Cast a Spell", 
                     "earn {C:money}$#1#{} per Spell Level"
+                }
+            },
+            j_kino_easy_a = {
+                name = "Easy A",
+                text = {
+                    "{C:chips}+#1#{} Chips for each",
+                    "{C:attention}Ace{} held in hand"
                 }
             },
             j_kino_ed_wood = {
@@ -832,6 +858,16 @@ return {
                     "{C:attention}Jump Scare{}"
                 }
             },
+            j_kino_hellboy_1 = {
+                name = "Hellboy",
+                text = {
+                    "{C:attention}Demonic Cards{} do not ",
+                    "trigger sacrifices",
+                    "Gain {C:chips}+#2#{} Chips when",
+                    "a {C:attention}Demonic Card{} scores",
+                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
             j_kino_home_alone_1 = {
                 name = "Home Alone",
                 text = {
@@ -931,6 +967,14 @@ return {
                     "for each time it's been upgraded"
                 }
             },
+            j_kino_iron_lady = {
+                name = "The Iron Lady",
+                text = {
+                    "{X:mult,C:white}X#1#{} if your",
+                    "scoring hand contains",
+                    "a {C:attention}Queen"
+                }
+            },
             j_kino_iron_man_1 = {
                 name = "Iron Man",
                 text = {
@@ -1023,6 +1067,15 @@ return {
                     "a {C:spades}Spades{}"
                 }
             },
+            j_kino_la_la_land = {
+                name = "La La Land",
+                text = {
+                    "If your played hand contains",
+                    "only 1 card, upgrade every",
+                    "card in hand with {C:chips}Chips",
+                    "equal to the played card's rank"
+                }
+            },
             j_kino_lady_and_the_tramp = {
                 name = "Lady & the Tramp",
                 text = {
@@ -1070,6 +1123,14 @@ return {
                     "in your hand"
                 }
             },
+            j_kino_mamma_mia = {
+                name = "Mamma Mia!",
+                text = {
+                    "{C:mult}+#2#{} Mult if your",
+                    "scoring hand contains",
+                    "at least #1# {C:hearts}Hearts{}"
+                }
+            },
             j_kino_man_who_laughs = {
                 name= "The Man Who Laughs",
                 text = {
@@ -1111,6 +1172,14 @@ return {
                     "{C:attention}#1# additional time(s){}",
                     "When you take any action", 
                     "flip all cards in your hand"
+                }
+            },
+            j_kino_men_in_black_1 = {
+                name = "Men in Black",
+                text = {
+                    "Gains {X:mult,C:white}X#2#{} when",
+                    "a card is abducted",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
             },
             j_kino_menu = {
@@ -1322,6 +1391,14 @@ return {
                 text = {
                     "Each {C:attention}Demonic{} card held ",
                     "in hand gives {X:mult,C:white}X1.5{} Mult"
+                }
+            },
+            j_kino_popeye = {
+                name = "Popeye",
+                text = {
+                    "Doubles the power",
+                    "of the Joker to",
+                    "the right"
                 }
             },
             j_kino_predator = {
@@ -1746,6 +1823,13 @@ return {
                     "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
                     "if played hand contains",
                     "exactly {C:attention}2 Cards"
+                }
+            },
+            j_kino_up = {
+                name = "Up",
+                text = {
+                    "Retrigger your heighest",
+                    "scoring card {C:attention}#1# times{}"
                 }
             },
             j_kino_us = {
