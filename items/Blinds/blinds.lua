@@ -157,44 +157,44 @@ SMODS.Blind{
 }
 
 -- WORKS
---- base -1 mult for each card under 101 
-SMODS.Blind{
-    key = "cruella",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('dcdcdc'),
-    atlas = 'kino_blinds', 
-    boss = {min = 3, max = 10},
-    pos = { x = 0, y = 3},
-    debuff = {
-        card_count = 101,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
-        return {
-            vars = {
-                1,
-                101
-            }
-        }
-    end,
-    collection_loc_vars = function(self)
-        return {
-            vars = {
-                1,
-                101
-            }
-        }
-    end,
-    in_pool = function(self)
-        return true
-    end,
-    modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
-        local _card_count = self.debuff.card_count - #G.playing_cards
-        -- return mult, chips, true
-        return (math.max(0, mult - (_card_count * self.debuff.mult_debuff))), hand_chips, true
-    end
-}
+-- --- base -1 mult for each card under 101 
+-- SMODS.Blind{
+--     key = "cruella",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('dcdcdc'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 3, max = 10},
+--     pos = { x = 0, y = 3},
+--     debuff = {
+--         card_count = 101,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
+--         return {
+--             vars = {
+--                 1,
+--                 101
+--             }
+--         }
+--     end,
+--     collection_loc_vars = function(self)
+--         return {
+--             vars = {
+--                 1,
+--                 101
+--             }
+--         }
+--     end,
+--     in_pool = function(self)
+--         return true
+--     end,
+--     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
+--         local _card_count = self.debuff.card_count - #G.playing_cards
+--         -- return mult, chips, true
+--         return (math.max(0, mult - (_card_count * self.debuff.mult_debuff))), hand_chips, true
+--     end
+-- }
 
 -- SMODS.Blind{
 --     key = "voldemort",

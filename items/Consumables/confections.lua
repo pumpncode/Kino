@@ -629,7 +629,7 @@ SMODS.Consumable {
     calculate = function(self, card, context)
 
         if context.before and card.active then
-            local _level = card.ability.kino_choco and (card.ability.extra.level + card.ability.choco_mult) or card.ability.extra.level
+            local _level = card.ability.kino_choco and (card.ability.extra.level + card.ability.choco_bonus) or card.ability.extra.level
             level_up_hand(card, context.scoring_name, nil, _level)
             Kino.confection_trigger(card)
         end

@@ -41,12 +41,8 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        -- When you discard a card, increase the sell value of this card by 1. When you play a card, 1/20 chance to divide the sell value of this card by 10
+        -- When you discard a card, increase the sell value of this card by 1. When you play a hand, 1/20 chance to divide the sell value of this card by 10
         if context.discard and not context.blueprint then
-            local num_disc = 0
-            for i in context.full_hand do
-                num_disc = num_disc + 1
-            end
             card.ability.extra_value = (card.ability.extra_value or 0) + card.ability.extra.money
             card:set_cost()
         end

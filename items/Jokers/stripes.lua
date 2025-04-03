@@ -45,7 +45,7 @@ SMODS.Joker {
         end
 
         if context.discard and context.cardarea == G.jokers  and not context.blueprint then
-            card.ability.extra.stacked_mult = card.ability.extra.stacked_mult - (card.ability.extra.a_mult * #context.full_hand)
+            card.ability.extra.stacked_mult = card.ability.extra.stacked_mult - card.ability.extra.a_mult
         end
 
         if context.joker_main then
