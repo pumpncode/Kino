@@ -6,7 +6,7 @@ SMODS.Enhancement {
         a_mult = 1,
         a_chips = 5,
         mult = 0,
-        x_mult = 0,
+        x_mult = 1,
         bonus = 0,
         times_upgraded = 0
     },
@@ -28,8 +28,9 @@ SMODS.Enhancement {
 
         if next(find_joker('j_kino_terminator_2')) then
             for index, _joker in ipairs(G.jokers.cards) do
-                if _joker.ability.extra.affects_sci_fi then
-                    card.ability.x_mult = card.ability.x_mult + _joker.ability.extra.x_mult
+                if type(_joker.ability.extra) == "table" and
+                _joker.ability.extra.affects_sci_fi then
+                    card.ability.x_mult = card.ability.x_mult + _joker.ability.extra.perma_x_mult
                 end
             end
         else

@@ -1123,7 +1123,7 @@ return {
                     "in your hand"
                 }
             },
-            j_kino_mamma_mia = {
+            j_kino_mamma_mia_1 = {
                 name = "Mamma Mia!",
                 text = {
                     "{C:mult}+#2#{} Mult if your",

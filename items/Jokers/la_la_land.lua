@@ -7,7 +7,7 @@ SMODS.Joker {
 
         }
     },
-    rarity = 1,
+    rarity = 2,
     atlas = "kino_atlas_8",
     pos = { x = 1, y = 0},
     cost = 4,
@@ -38,11 +38,11 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- if your hand contains only 1 card, upgrade each card in hand with chips equal to its rank
         if context.after and #context.full_hand == 1 then
-            local _value = context.full_hand[1].base.nominal
+            local _value = context.full_hand[1].base.id
 
             for _, _pcard in ipairs(G.hand.cards) do
                 _pcard.ability.perma_bonus = _pcard.ability.perma_bonus or 0
-                _pcard.ability.perma_bonus = _pcard.ability.perma_bonus + card.ability.extra._value 
+                _pcard.ability.perma_bonus = _pcard.ability.perma_bonus + _value 
             end
             
             return {

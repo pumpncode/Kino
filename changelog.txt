@@ -1,15 +1,24 @@
 V 0.8.1:
 New Jokers:
-- Easy A
-- 9
-- Up
-- Iron Lady
-- Mamma Mia!
-- la la land
+- Easy A (Works)
+- 9 (Works)
+- Up (Works)
+- Iron Lady (Works)
+- Mamma Mia! (Works)
+- la la land (Works)
 - Cruella
-- Men in Black
-- Hellboy
-- Popeye
+- Men in Black (Works)
+- Hellboy (Works)
+- Popeye (Works)
+
+New Decks:
+- Cine2Nerdle Deck
+
+Bug Fixes:
+- Asteroid City works
+- Genre Boosters spawn in every runs again
+- Stargate no longer crashes the game
+- Terminator 2 now functions properly
 
 V 0.8g:
 Bug Fixes:

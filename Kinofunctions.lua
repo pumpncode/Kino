@@ -886,29 +886,29 @@ end
 
 G.C.KINO = {
     ACTION = HEX("0a4a59"),
-    ADVENTURE = HEX("0086a5"), -- No color picked yet
-    ANIMATION = HEX("0086a5"), -- No color picked yet
-    BIOPIC = HEX("0086a5"), -- No color picked yet
-    COMEDY = HEX("0086a5"), -- No color picked yet
-    CHRISTMAS = HEX("0086a5"), -- No color picked yet
+    ADVENTURE = HEX("aa5d23"),
+    ANIMATION = HEX("c1d07a"),
+    BIOPIC = HEX("6461f7"), 
+    COMEDY = HEX("420690"),
+    CHRISTMAS = HEX("cc1d49"),
     CRIME = HEX("6a4c47"),
     DRAMA = HEX("694c77"),
-    FAMILY = HEX("0086a5"), -- No color picked yet
+    FAMILY = HEX("fbf0f3"),
     FANTASY = HEX("087ad9"),
-    GANGSTER = HEX("0086a5"), -- No color picked yet
-    HEIST = HEX("0086a5"), -- No color picked yet
-    HISTORICAL = HEX("0086a5"), -- No color picked yet
+    GANGSTER = HEX("592d2d"),
+    HEIST = HEX("46b35f"), 
+    HISTORICAL = HEX("733c13"), 
     HORROR = HEX("372a2d"),
-    MUSICAL = HEX("0086a5"), -- No color picked yet
-    MYSTERY = HEX("0086a5"), -- No color picked yet
+    MUSICAL = HEX("ae327f"), 
+    MYSTERY = HEX("7d17dd"),
     ROMANCE = HEX("c8117d"),
     SCIFI = HEX("1eddd4"),
-    SILENT = HEX("0086a5"), -- No color picked yet
-    SPORTS = HEX("0086a5"), -- No color picked yet
-    SUPERHERO = HEX("0086a5"), -- No color picked yet
-    THRILLER = HEX("0086a5"), -- No color picked yet
-    WAR = HEX("0086a5"), -- No color picked yet
-    WESTERN = HEX("0086a5"),
+    SILENT = HEX("888888"),
+    SPORTS = HEX("cc9c37"), 
+    SUPERHERO = HEX("4c71ee"),
+    THRILLER = HEX("078084"),
+    WAR = HEX("305e2c"),
+    WESTERN = HEX("735b48"),
     PINK = HEX("f7b7f2")
 }
 

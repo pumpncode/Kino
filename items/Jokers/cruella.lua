@@ -41,25 +41,29 @@ SMODS.Joker {
         -- Whenever you've destroyed 3 cards, give a random card in deck an edition
         if context.remove_playing_cards then
             if not context.blueprint then
-                card.ability.extra.count_non = card.ability.extra.count_non + 1
+                card.ability.extra.count_non = card.ability.extra.count_non + #context.removed
             end
 
             if card.ability.extra.count_non >= card.ability.extra.threshold then
-                local _viable_cards = {}
+                while card.ability.extra.count_non >= card.ability.extra.threshold do
+                    local _viable_cards = {}
 
-                for _, _pcard in ipairs(G.deck.cards) do
-                    if not _pcard.edition then
-                        _viable_cards[#_viable_cards + 1] = _pcard
+                    for _, _pcard in ipairs(G.deck.cards) do
+                        if not _pcard.edition then
+                            _viable_cards[#_viable_cards + 1] = _pcard
+                        end
                     end
-                end
 
-                G.E_MANAGER:add_event(Event({
-                    func = function() 
-                        local _card = pseudorandom_element(_viable_cards, pseudoseed("cruella"))
-                        local new_enhancement = SMODS.poll_enhancement({guaranteed = true, key = 'drwho'})
-                        _card:set_ability(G.P_CENTERS[new_enhancement])
-                    end}))  
-                    
+                    card.ability.extra.count_non = card.ability.extra.count_non - card.ability.extra.threshold
+
+                    G.E_MANAGER:add_event(Event({
+                        func = function() 
+                            local _card = pseudorandom_element(_viable_cards, pseudoseed("cruella"))
+                            local _edition = poll_edition('cruella', nil, true, true)
+                            _card:set_edition(_edition, true)
+                            return true
+                        end}))  
+                end
                 return {
                     card = card,
                     message = localize("k_cruella")

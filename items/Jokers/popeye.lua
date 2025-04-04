@@ -40,17 +40,26 @@ SMODS.Joker {
         -- The joker to the right is 2x as strong
     end,
     update = function(self, card, dt)
-        local _mypos =  nil
-        for _, _joker in ipairs(G.jokers.cards) do
-            if _joker == card then
-                _mypos = _
-                if G.jokers.cards[_ + 1] and
-                G.jokers.cards[_mypos + 1] ~= card.ability.extra.right_joker then
-                    card.ability.extra.right_joker:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", 1)
-                    card.ability.extra.right_joker = G.jokers.cards[_ + 1]
-                    card.ability.extra.right_joker:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", card.ability.extra.powerboost)
+        if G.jokers then
+            local _mypos =  nil
+            for _, _joker in ipairs(G.jokers.cards) do
+                if _joker == card then
+                    _mypos = _
+                    if not G.jokers.cards[_ + 1] and
+                    card.ability.extra.right_joker then
+                        card:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", 1)
+                        card.ability.extra.right_joker = nil
+                    end
+                    if G.jokers.cards[_ + 1] and
+                    G.jokers.cards[_mypos + 1] ~= card.ability.extra.right_joker then
+                        if card.ability.extra.right_joker then
+                            card:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", 1)
+                        end
+                        card.ability.extra.right_joker = G.jokers.cards[_ + 1]
+                        card:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", card.ability.extra.powerboost)
+                    end
+                    break
                 end
-                break
             end
         end
     end

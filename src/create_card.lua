@@ -84,9 +84,9 @@ function get_current_pool(_type, _rarity, _legendary, _append)
     G.ARGS.TEMP_POOL = EMPTY(G.ARGS.TEMP_POOL)
     local _pool, _starting_pool, _pool_key, _pool_size = G.ARGS.TEMP_POOL, nil, '', 0
     if type(_type) == 'table' or
-    (G.GAME.modifiers.kino_back_c2n and G.jokers and #G.jokers.cards > 0) then
+    (G.GAME.modifiers.kino_back_c2n and G.jokers and #G.jokers.cards > 0 and 
+    (_append == "sho" or _append == "buf")) then
         local _castlist = create_cast_list()
-        print(#_castlist)
 
         local rarity = _rarity or pseudorandom('rarity'..G.GAME.round_resets.ante..(_append or '')) 
         rarity = (_legendary and 4) or (rarity > 0.95 and 3) or (rarity > 0.7 and 2) or 1
@@ -123,8 +123,7 @@ function get_current_pool(_type, _rarity, _legendary, _append)
                 _pool[#_pool + 1] = 'UNAVAILABLE'
             end
         end
-        print(_pool_size)
-        if _pool_size <= 3 then
+        if _pool_size <= 6 then
             _pool, _pool_key = _gcp(_type, _rarity, _legendary, _append)
         end
         _pool_key = _pool_key..(not _legendary and G.GAME.round_resets.ante or '')

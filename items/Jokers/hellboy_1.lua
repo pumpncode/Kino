@@ -46,7 +46,7 @@ SMODS.Joker {
             }
         end
 
-        if context.individual and SMODS.has_enhancement(context.other_card, "m_kino_demonic") then
+        if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, "m_kino_demonic") then
             card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
             return {
                 message = localize("k_hellboy")
