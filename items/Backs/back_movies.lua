@@ -23,18 +23,18 @@ SMODS.Back {
     end
 }
 
--- SMODS.Back {
---     name = "Cine2Nerdle Deck",
---     key = "c2n",
---     atlas = "kino_backs",
---     pos = {x = 2, y = 1},
---     config = {
---         egg_genre = "Romance"
---     },
---     apply = function()
---         G.GAME.modifiers.egg_genre = "Romance"
---     end
--- }
+-- Jokers that spawn in the shop always share actors with your current jokers, if possible
+SMODS.Back {
+    name = "Cine2Nerdle Deck",
+    key = "c2n",
+    atlas = "kino_backs",
+    pos = {x = 2, y = 1},
+    config = {
+    },
+    apply = function()
+        G.GAME.modifiers.kino_back_c2n = true
+    end
+}
 
 SMODS.Back {
     name = "Producer Deck",
@@ -88,6 +88,36 @@ SMODS.Back {
                 local reward = 10 * _percentage
 
                 ease_dollars(reward - 10)
+            end
+        end
+    end
+}
+
+SMODS.Back {
+    name = "Blank Deck with Griffin & David",
+    key = "blankcheck",
+    atlas = "kino_backs",
+    pos = {x = 4, y = 1},
+    config = {
+    },
+    apply = function()
+    end,
+    calculate = function(self, card, context)
+        if context.buying_card and context.card.config.center.kino_joker then
+            -- iterate through every joker
+            local _directors = context.card.config.center.kino_joker.directors
+            local _hash = {}
+            -- G.P_CENTER_POOLS.Joker
+            for _, _director in ipairs(_directors) do
+                for _, _joker in ipairs(G.P_CENTER_POOLS.Joker) do
+                    if _joker.config.center.kino_joker then
+                        for _, _compdir in ipairs(_joker.config.center.kino_joker.directors) do
+                            if _director == _compdir and not _hash[_joker.config.center.key] then
+                                _hash[_joker.config.center.key] = true
+                            end
+                        end
+                    end
+                end
             end
         end
     end

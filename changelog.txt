@@ -7,6 +7,28 @@ Bug Fixes:
 - Clockwork Orange localization fix
 
 
+V 0.8.1:
+New Jokers:
+- Easy A (Works)
+- 9 (Works)
+- Up (Works)
+- Iron Lady (Works)
+- Mamma Mia! (Works)
+- la la land (Works)
+- Cruella
+- Men in Black (Works)
+- Hellboy (Works)
+- Popeye (Works)
+
+New Decks:
+- Cine2Nerdle Deck
+
+Bug Fixes:
+- Asteroid City works
+- Genre Boosters spawn in every runs again
+- Stargate no longer crashes the game
+- Terminator 2 now functions properly
+
 V 0.8g:
 Bug Fixes:
 - Lucky Number Slevin no longer crashes the game

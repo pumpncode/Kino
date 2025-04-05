@@ -22,17 +22,16 @@ if CardSleeves then
         end
     }
 
-    -- CardSleeves.Sleeve {
-    --     key = "c2n",
-    --     atlas = "kino_sleeves",
-    --     pos = { x = 2, y = 1 },
-    --     config = {
-    --         egg_genre = "Romance"
-    --     },
-    --     apply = function(self, sleeve)
-    --         G.GAME.modifiers.egg_genre = "Romance"
-    --     end
-    -- }
+    CardSleeves.Sleeve {
+        key = "c2n",
+        atlas = "kino_sleeves",
+        pos = { x = 2, y = 1 },
+        config = {
+        },
+        apply = function()
+            G.GAME.modifiers.kino_back_c2n = true
+        end
+    }
 
     CardSleeves.Sleeve {
         key = "producer",

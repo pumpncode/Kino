@@ -51,7 +51,7 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
             if _card.config.center.k_genre and genre_match(G.GAME.modifiers.genre_bonus, _card.config.center.k_genre) then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        _card:set_multiplication_bonus(_card, 'card_back', 1.5)
+                        _card:set_multiplication_bonus(_card, 'card_back_' .. G.GAME.modifiers.genre_bonus, 1.5)
                         return true
                     end
                 }))
@@ -85,7 +85,9 @@ local _gcp = get_current_pool
 function get_current_pool(_type, _rarity, _legendary, _append)
     G.ARGS.TEMP_POOL = EMPTY(G.ARGS.TEMP_POOL)
     local _pool, _starting_pool, _pool_key, _pool_size = G.ARGS.TEMP_POOL, nil, '', 0
-    if type(_type) == 'table' then
+    if type(_type) == 'table' or
+    (G.GAME.modifiers.kino_back_c2n and G.jokers and #G.jokers.cards > 0 and 
+    (_append == "sho" or _append == "buf")) then
         local _castlist = create_cast_list()
 
         local rarity = _rarity or pseudorandom('rarity'..G.GAME.round_resets.ante..(_append or '')) 
@@ -123,7 +125,9 @@ function get_current_pool(_type, _rarity, _legendary, _append)
                 _pool[#_pool + 1] = 'UNAVAILABLE'
             end
         end
-
+        if _pool_size <= 6 then
+            _pool, _pool_key = _gcp(_type, _rarity, _legendary, _append)
+        end
         _pool_key = _pool_key..(not _legendary and G.GAME.round_resets.ante or '')
         --
     else

@@ -59,7 +59,7 @@ SMODS.Joker {
         end
 
         if context.abduction_ending and not context.blueprint and not context.retrigger then
-            for i, _object in card.ability.extra.cards_abducted do
+            for i, _object in ipairs(card.ability.extra.cards_abducted) do
                 local _card = _object.card
                 _card:set_ability(G.P_CENTERS.c_base)
                 card.ability.extra.stacked_chips = card.ability.extra.stacked_chips + card.ability.extra.a_chips
