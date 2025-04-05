@@ -1,3 +1,12 @@
+V 0.8h:
+Bug Fixes:
+- Awards should no longer spawn on all jokers, but only movie jokers
+- M3gan only spawns when you have a sci-fi card in deck
+- STILL NEED TO FIX: Peanuts
+
+- Clockwork Orange localization fix
+
+
 V 0.8g:
 Bug Fixes:
 - Lucky Number Slevin no longer crashes the game

@@ -34,8 +34,10 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
 
     -- Joker Changes --
     if G.GAME.used_vouchers.v_kino_awardsbait and _type == 'Joker' then
-        if pseudorandom("snack_boost_golden") < Kino.awardschance/100 then
-            SMODS.Stickers['kino_award']:apply(_card, true)
+        if _card.kino_joker then 
+            if pseudorandom("snack_boost_golden") < Kino.awardschance/100 then
+                SMODS.Stickers['kino_award']:apply(_card, true)
+            end
         end
     end
 

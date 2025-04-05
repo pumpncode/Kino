@@ -373,7 +373,7 @@ return {
                     "Gain a {C:attention}Charge{} whenever",
                     "a card is destroyed",
                     "Consume charges to give",
-                    "{X:mult,C:white}#2#{} per charge",
+                    "{X:mult,C:white}X1{} + {X:mult,C:white}#2#X{} per charge",
                     "if this joker is in your {C:attention}Active Slot",
                     "{C:inactive}(Currently: #1# Stacks)"
                 }
