@@ -209,6 +209,7 @@ SMODS.Consumable {
     config = {
         choco_bonus = 1,
         extra = {
+            times_used = 0,
             extra = 1
         }
     },
@@ -252,7 +253,7 @@ SMODS.Consumable {
 
     end,
     calculate = function(self, card, context)
-        if context.enter_shop and card.active then
+        if context.kino_enter_shop and card.active then
             local _interest = card.ability.kino_choco and (card.ability.extra.extra + card.ability.choco_mult) or card.ability.extra.extra
             G.GAME.interest_amount = G.GAME.interest_amount - _interest
             Kino.confection_trigger(card)

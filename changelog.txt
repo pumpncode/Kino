@@ -1,10 +1,3 @@
-V 0.8h:
-
-- STILL NEED TO FIX: Peanuts
-
-
-
-
 V 0.8.1:
 New Jokers:
 - Easy A
@@ -28,6 +21,7 @@ Bug Fixes:
 - Terminator 2 now functions properly
 - Awards should no longer spawn on all jokers, but only movie jokers
 - M3gan only spawns when you have a sci-fi card in deck
+- The Bag of Peanuts confection now works properly
 
 Localization Fixes:
 - Clockwork Orange localization fix
