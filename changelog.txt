@@ -6,6 +6,7 @@ Bug Fix:
 - Added more general protections to objects to test whether they actually have a card to have an effect on
 - power boosts should no longer create issues on reload
 - Stargate now uses the correct art
+- Mars Attacks no longer triggers on every planet
 
 Localization Fixes:
 - Popeye now shows the percentage power increase
