@@ -1,3 +1,47 @@
+V 0.8.1a:
+Bug Fix:
+- Abduction jokers should no longer crash the game on run load
+- Peanuts now properly function in the snackbag
+- Card ui shouldn't crash the game if accidentally called by another mod
+- Added more general protections to objects to test whether they actually have a card to have an effect on
+- power boosts should no longer create issues on reload
+- Stargate now uses the correct art
+
+Localization Fixes:
+- Popeye now shows the percentage power increase
+- A Clockwork Orange now has the correct title
+- A Nightmare on Elm Street now has the correct title
+- Fixed proper formatting for the following jokers:
+     - The Bfg
+     - Braveheart
+     - Children of the Corn
+     - A Clockwork Orange
+     - Ex Machina
+     - The Exorcist
+     - Ghostbusters
+     - Gremlins
+     - I, Robot
+     - The Iron Lady
+     - Kindergarten Cop
+     - Megalopolis
+     - Nope
+     - Ring
+     - Wonka
+     - Coco
+     - My Dinner With André
+     - Goodfellas
+     - Gone Girl
+     - A Nightmare on Elm Street
+     - Nosferatu (2024)
+     - Only Lovers Left Alive
+     - Predator
+     - Stargate
+     - Turner & Hooch
+     - Beetlejuice
+     - Fight Club
+
+Removed the incorrectly available Blank Deck With Griffin and David
+
 V 0.8.1:
 New Jokers:
 - Easy A

@@ -12,7 +12,7 @@ SMODS.Joker {
     },
     rarity = 2,
     atlas = "kino_atlas_6",
-    pos = { x = 1, y = 4},
+    pos = { x = 0, y = 4},
     cost = 6,
     blueprint_compat = true,
     perishable_compat = true,
@@ -45,7 +45,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- abduct stone cards. return them unstoned and get +25 chips for each one
-        card.ability.extra.num_cards_abducted_non = #card.ability.extra.cards_abducted
+        card.ability.extra.num_cards_abducted_non = #card.ability.extra.cards_abducted or 0
 
         if context.joker_main then
             return {

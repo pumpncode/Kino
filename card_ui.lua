@@ -678,6 +678,9 @@ end
 Kino.generate_info_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
     SMODS.Center.generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
 
+    if not card then return end
+
+
     if card.ability.multipliers then
         local _multiplier = 1
         for _source, _mult in pairs(card.ability.multipliers) do

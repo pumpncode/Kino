@@ -721,6 +721,9 @@ if G.jokers ~= nil then
     for _, v in ipairs(G.consumeables.cards) do
         v:calculate_joker({kino_enter_shop = true})
     end
+        for _, v in ipairs(Kino.snackbag.cards) do
+        v:calculate_joker({kino_enter_shop = true})
+    end
 end
 
 '''

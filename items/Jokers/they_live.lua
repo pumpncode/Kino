@@ -43,7 +43,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- Abduct every card on your first discard. Give $1 per abducted card at the end of the round
-        card.ability.extra.num_cards_abducted_non = #card.ability.extra.cards_abducted
+        card.ability.extra.num_cards_abducted_non = #card.ability.extra.cards_abducted or 0
 
         if context.discard and context.cardarea == G.jokers and G.GAME.current_round.discards_used <= 0 then
             Kino.abduct_card(card, context.other_card)

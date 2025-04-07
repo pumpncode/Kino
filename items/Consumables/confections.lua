@@ -326,7 +326,7 @@ SMODS.Consumable {
                 end 
             end
 
-            if _is_viable and 
+            if _is_viable and context.card and
             context.card.config.center ~= G.P_CENTERS.m_stone then
                 
                 if card.ability.kino_goldleaf then

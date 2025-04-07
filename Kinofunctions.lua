@@ -522,7 +522,9 @@ function Card:set_multiplication_bonus(card, source, num, is_actor)
     -- keys ending in "_non"
     -- non-integers
     -- "time_"
-    if not kino_config.actor_synergy  or not self.config.center.kino_joker then
+    if not card.config or
+    not card.config.center.kino_joker or
+    (not kino_config.actor_synergy and is_actor) then
         return false
     end
 

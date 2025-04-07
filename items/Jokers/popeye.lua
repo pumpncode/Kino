@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            powerboost = 2,
+            powerboost = 1,
             right_joker = nil
         }
     },
@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.powerboost
+                card.ability.extra.powerboost * 100
             }
         }
     end,
@@ -56,7 +56,7 @@ SMODS.Joker {
                             card:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", 1)
                         end
                         card.ability.extra.right_joker = G.jokers.cards[_ + 1]
-                        card:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", card.ability.extra.powerboost)
+                        card:set_multiplication_bonus(card.ability.extra.right_joker, "popeye", 1 + card.ability.extra.powerboost)
                     end
                     break
                 end
