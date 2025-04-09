@@ -128,6 +128,7 @@ joker_list = {
 "dr_strangelove",
 "dungeons_and_dragons_1",
 "edward_scissorhands",
+"fargo",
 "guardians_of_the_galaxy_2", 
 "ghost_rider_1",
 "ghoulies",

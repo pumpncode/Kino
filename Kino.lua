@@ -206,11 +206,13 @@ Game.init_game_object = function(self)
     ret.current_round.beaten_run_high = 0
     ret.current_round.horror_transform = 0
     ret.current_round.cards_abducted = 0
+    ret.money_stolen = 0
 
     ret.current_round.actors_check = 3
     ret.current_round.actors_table_offset = 0
     ret.current_round.genre_synergy_treshold = 5
     
+    -- Fantasy cards
     ret.current_round.spells_cast = 0
     ret.current_round.last_spell_cast = {
         key = "",
@@ -219,6 +221,8 @@ Game.init_game_object = function(self)
     ret.current_round.spell_queue = {
         -- should be {spell_key = KEY, strength = STRENGTH}
     }
+
+    -- 
 
     ret.confections_used = 0
 

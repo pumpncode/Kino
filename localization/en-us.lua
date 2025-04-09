@@ -675,6 +675,15 @@ return {
                     "one rank higher"
                 }
             },
+            j_kino_fargo = {
+                name = "Fargo",
+                text = {
+                    "If {C:attention}first discard{} of round",
+                    "has only {C:attention}1{} card, destroy",
+                    "it and add {C:money}$#1#{} to your",
+                    "{C:money}Stolen Money"
+                }
+            },
             j_kino_fight_club = {
                 name = "Fight Club",
                 text = {
@@ -1970,6 +1979,26 @@ return {
             }
         },
         Enhanced = {
+            m_kino_action = {
+                name = "Action Card",
+                text = {
+                    "Retrigger this card",
+                    "once for each",
+                    "Bullet in your Magazine",
+                    "{C:attention}While in Hand:{} Counts",
+                    "as 1 Bullet"
+                }
+            },
+            m_kino_crime = {
+                name = "Crime Card",
+                text = {
+                    "{C:attention}Steal{} {C:money}$#1#{}",
+                    "Each Type of Hand has",
+                    "{C:chips}+#2#{} Chips for",
+                    "each dollar stolen",
+                    "{C:inactive}(Currently: {C:money}$#3#{C:inactive} Stolen)"
+                }
+            },
             m_kino_sci_fi = {
                 name = "Sci-Fi Card",
                 text = {
@@ -2015,6 +2044,18 @@ return {
                     "after scoring"
                 }
             },
+            m_kino_mystery = {
+                name = "Mystery Card",
+                text = {
+                    "Gives {X:mult,C:white}X2.5{} Mult",
+                    "and is always {C:attention}Face Down",
+                    "Reveal one piece of info",
+                    "about this card and decrease",
+                    "the Mult by {X:cmult,C:white}X0.5{}",
+                    "for each turn in hand",
+                    "{C:attention}#4#{} {C:attention}#5# of #6#{}"
+                }
+            },
             m_kino_fantasy = {
                 name = "Fantasy Card",
                 text = {
@@ -2026,14 +2067,6 @@ return {
             }
         },
         Tarot = {
-            c_kino_droid = {
-                name = "Droid",
-                text = {
-                    "Upgrade #1# cards into",
-                    "{C:attention}Sci-fi Cards{}"
-                }
-            },
-
             c_kino_slasher = {
                 name = "Slasher",
                 text = {
@@ -2041,19 +2074,18 @@ return {
                     "{C:attention}Horror cards{}"
                 }
             },
-
+            c_kino_droid = {
+                name = "Droid",
+                text = {
+                    "Upgrade #1# cards into",
+                    "{C:attention}Sci-fi Cards{}"
+                }
+            },
             c_kino_demon = {
                 name = "Demon",
                 text = {
                     "Upgrade #1# card into",
                     "a {C:attention}Demonic Card{}"
-                }
-            },
-            c_kino_witch = {
-                name = "Witch",
-                text = {
-                    "Upgrade #1# card into",
-                    "a {C:attention}Fantasy Card{}"
                 }
             },
             c_kino_meetcute = {
@@ -2063,6 +2095,35 @@ return {
                     "{C:attention}Romance Cards{}"
                 }
             },
+            c_kino_detective = {
+                name = "Detective",
+                text = {
+                    "Upgrade #1# cards into",
+                    "{C:attention}Mystery Cards{}"
+                }
+            },
+            c_kino_witch = {
+                name = "Witch",
+                text = {
+                    "Upgrade #1# card into",
+                    "a {C:attention}Fantasy Card{}"
+                }
+            },
+            c_kino_gangster = {
+                name = "Gangster",
+                text = {
+                    "Upgrade #1# cards into",
+                    "{C:attention}Crime Cards{}"
+                }
+            },
+            c_kino_soldier = {
+                name = "Soldier",
+                text = {
+                    "Upgrade #1# cards into",
+                    "{C:attention}Action Cards{}"
+                }
+            },
+
             c_kino_producer = {
                 name = "Producer",
                 text = {
@@ -2336,6 +2397,18 @@ return {
                     "After defeating a {C:attention}Boss Blind",
                     "each {C:attention}Movie Joker{} pays out",
                     "based on it's {C:attention}Profit Margin"
+                }
+            },
+            b_kino_blankcheck = {
+                name = "Blank Deck with Griffin & David",
+                text = {
+                    "When you buy a {C:attention}Movie Joker",
+                    "the next jokers that spawn",
+                    "in the shop or buffoon packs",
+                    "will be the other {C:attention}Movie Jokers",
+                    "from the same {C:attention}Director{}",
+                    "in order of release date"
+
                 }
             }
         },
@@ -2667,6 +2740,17 @@ return {
             },
 
             -- Keywords
+            gloss_steal = {
+                name = "Steal",
+                text = {
+                    "Lose some money and",
+                    "add it to your current",
+                    "{C:money}Stolen Money{}",
+                    "Every played hand gains",
+                    "{C:chips}+#1#{} Base Chips",
+                    "{C:inactive}(Currently: {C:money}$#2# {C:inactive} stolen)"
+                }
+            },
             gloss_active = {
                 name = "Active",
                 text = {
@@ -3092,6 +3176,8 @@ return {
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
+            k_crime_card = "Stolen",
+            k_action_card = "Bang!",
 
             -- Confection Barks
             k_eaten = "Eaten",

@@ -703,4 +703,45 @@ G.E_MANAGER:add_event(Event({
 '''
 match_indent = true
 
+<<<<<<< Updated upstream
 ###################
+=======
+###################
+
+# New Contexts
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+pattern = 'for i = 1, G.GAME.shop.joker_max - #G.shop_jokers.cards do'
+position = 'before'
+match_indent = true
+payload = '''
+
+if G.jokers ~= nil then
+    for _, v in ipairs(G.jokers.cards) do
+        v:calculate_joker({kino_enter_shop = true})
+    end
+    for _, v in ipairs(G.consumeables.cards) do
+        v:calculate_joker({kino_enter_shop = true})
+    end
+        for _, v in ipairs(Kino.snackbag.cards) do
+        v:calculate_joker({kino_enter_shop = true})
+    end
+end
+
+'''
+
+### Crime card, stolen money
+# 
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = 'local modded = false'
+position = 'before'
+match_indent = true
+payload = '''
+
+hand_chips = hand_chips + ((Kino.crime_chips or 0) * (G.GAME.money_stolen or 0))
+
+'''
+>>>>>>> Stashed changes

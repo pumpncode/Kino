@@ -955,3 +955,6 @@ Kino.awardschance = 1
 
 Kino.actor_synergy = {1, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.25, 2.5, 3}
 Kino.award_mult = 2
+
+Kino.crime_chips = 5
+Kino.bullet_magazine_max = 6

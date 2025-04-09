@@ -64,11 +64,53 @@ if kino_config.demonic_enhancement then
     }
 end
 
+if kino_config.romance_enhancement then
+    SMODS.Consumable {
+        key = "meetcute",
+        set = "Tarot",
+        order = 4,
+        pos = {x = 3, y = 0},
+        atlas = "kino_tarot",
+        config = {
+            mod_conv = 'm_kino_romance', 
+            max_highlighted = 2,
+        },
+        loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_romance
+            return {
+                vars = {
+                    self.config.max_highlighted
+                }
+            }
+        end
+    }
+end
+
+SMODS.Consumable {
+    key = "detective",
+    set = "Tarot",
+    order = 5,
+    pos = {x = 4, y = 0},
+    atlas = "kino_tarot",
+    config = {
+        mod_conv = 'm_kino_mystery', 
+        max_highlighted = 2,
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_mystery
+        return {
+            vars = {
+                self.config.max_highlighted
+            }
+        }
+    end
+}
+
 if kino_config.spellcasting then
     SMODS.Consumable {
         key = "witch",
         set = "Tarot",
-        order = 4,
+        order = 6,
         pos = {x = 5, y = 0},
         atlas = "kino_tarot",
         config = {
@@ -86,27 +128,46 @@ if kino_config.spellcasting then
     }
 end
 
-if kino_config.romance_enhancement then
-    SMODS.Consumable {
-        key = "meetcute",
-        set = "Tarot",
-        order = 5,
-        pos = {x = 3, y = 0},
-        atlas = "kino_tarot",
-        config = {
-            mod_conv = 'm_kino_romance', 
-            max_highlighted = 2,
-        },
-        loc_vars = function(self, info_queue, card)
-            info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_romance
-            return {
-                vars = {
-                    self.config.max_highlighted
-                }
+SMODS.Consumable {
+    key = "gangster",
+    set = "Tarot",
+    order = 7,
+    pos = {x = 0, y = 1},
+    atlas = "kino_tarot",
+    config = {
+        mod_conv = 'm_kino_crime', 
+        max_highlighted = 2,
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_crime
+        return {
+            vars = {
+                self.config.max_highlighted
             }
-        end
-    }
-end
+        }
+    end
+}
+
+SMODS.Consumable {
+    key = "soldier",
+    set = "Tarot",
+    order = 8,
+    pos = {x = 1, y = 1},
+    atlas = "kino_tarot",
+    config = {
+        mod_conv = 'm_kino_action', 
+        max_highlighted = 2,
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_action
+        return {
+            vars = {
+                self.config.max_highlighted
+            }
+        }
+    end
+}
+
 
 -- Select a random joker and give money equal to its ROI
 SMODS.Consumable {
