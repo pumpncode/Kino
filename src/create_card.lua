@@ -51,7 +51,7 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
             if _card.config.center.k_genre and genre_match(G.GAME.modifiers.genre_bonus, _card.config.center.k_genre) then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        _card:set_multiplication_bonus(_card, 'card_back_' .. G.GAME.modifiers.genre_bonus, 1.5)
+                        _card:set_multiplication_bonus(_card, 'card_back_' .. _card.config.center.k_genre, 1.5)
                         return true
                     end
                 }))
@@ -126,6 +126,7 @@ function get_current_pool(_type, _rarity, _legendary, _append)
             end
         end
         if _pool_size <= 6 then
+            _type = 'Joker'
             _pool, _pool_key = _gcp(_type, _rarity, _legendary, _append)
         end
         _pool_key = _pool_key..(not _legendary and G.GAME.round_resets.ante or '')
