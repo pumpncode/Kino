@@ -51,7 +51,7 @@ SMODS.Joker {
             
             local upgraded = false
             -- Checks if enough money was spend
-            while card.ability.extra.cur_spend_non >= card.ability.extra.threshold do
+            while to_big(card.ability.extra.cur_spend_non) >= to_big(card.ability.extra.threshold) do
                 upgraded = true
                 
                 -- upgrades xmult

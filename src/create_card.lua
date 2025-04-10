@@ -48,10 +48,11 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
 
     if G.GAME.modifiers and G.GAME.modifiers.genre_bonus then
         if _type == 'Joker' or genre_match(G.GAME.modifiers.genre_bonus, _type) then
-            if _card.config.center.k_genre and genre_match(G.GAME.modifiers.genre_bonus, _card.config.center.k_genre) then
+            local _mod_num = genre_match(G.GAME.modifiers.genre_bonus, _card.config.center.k_genre)
+            if _card.config.center.k_genre and _mod_num then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        _card:set_multiplication_bonus(_card, 'card_back_' .. _card.config.center.k_genre, 1.5)
+                        _card:set_multiplication_bonus(_card, 'card_back_' .. tostring(_mod_num), 1.5)
                         return true
                     end
                 }))

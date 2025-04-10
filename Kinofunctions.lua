@@ -17,10 +17,10 @@ function genre_match(_listA, _listB)
         _listB = {_listB}
     end
 
-    for _, _genre in ipairs(_listA) do
+    for _index, _genre in ipairs(_listA) do
         for _, _genreComp in ipairs(_listB) do
             if _genre == _genreComp then
-                return true
+                return _index
             end
         end
     end

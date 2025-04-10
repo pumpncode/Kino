@@ -75,7 +75,12 @@ SMODS.Blind{
         
     end,
     in_pool = function(self)
-        return true
+        if ((kino_config and kino_config.movie_jokers_only) or
+        G.GAME.modifiers.movie_jokers_only) then
+            return true
+        end
+        return false
+        
     end,
     disable = function(self)
 

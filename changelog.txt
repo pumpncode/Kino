@@ -1,3 +1,10 @@
+V 0.8.1b:
+Bug Fix:
+- Fixed the genre bonuses received from decks when no genre sleeve is used
+- Fixed a crash if the current movie jokers have less than 6 possible matches
+- Fixed Talisman related issues for Confessions of a Shopaholic
+- Darth Vader blind can only spawn while you're playing with only Movie Jokers
+
 V 0.8.1a:
 Bug Fix:
 - Abduction jokers should no longer crash the game on run load
