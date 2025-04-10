@@ -1,5 +1,13 @@
-<<<<<<< Updated upstream
-=======
+V 0.9:
+New Jokers:
+- The Martian
+- Teenage Mutant Ninja Turtles
+- John Wicker
+- Con Air
+- Taken
+- fargo
+- Modern Times
+
 V 0.8.1a:
 Bug Fix:
 - Abduction jokers should no longer crash the game on run load
@@ -45,7 +53,6 @@ Localization Fixes:
      - Fight Club
 
 
->>>>>>> Stashed changes
 V 0.8.1:
 New Jokers:
 - Easy A (Works)
