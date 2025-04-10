@@ -703,9 +703,6 @@ G.E_MANAGER:add_event(Event({
 '''
 match_indent = true
 
-<<<<<<< Updated upstream
-###################
-=======
 ###################
 
 # New Contexts
@@ -744,4 +741,3 @@ payload = '''
 hand_chips = hand_chips + ((Kino.crime_chips or 0) * (G.GAME.money_stolen or 0))
 
 '''
->>>>>>> Stashed changes
