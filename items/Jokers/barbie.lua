@@ -180,7 +180,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and
-        context.other_card:is_face() then
+        context.other_card:is_face() and not context.end_of_round then
             local _queen_count = 0
             for _, _card in ipairs(context.scoring_hand) do
                 if _card:get_id() == 13 then

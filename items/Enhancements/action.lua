@@ -41,8 +41,8 @@ function Kino:count_bullets()
 
     for _, _joker in ipairs(G.jokers.cards) do
         if _joker.config.center.kino_joker then
-            if _joker.ability.extra and _joker.ability.extra.bullet_count then
-                _bullet_count = _bullet_count + _joker.ability.extra.bullet_count
+            if _joker.ability.extra and (_joker.ability.extra.bullet_count or _joker.ability.extra.bullet_count_non) then
+                _bullet_count = _bullet_count + (_joker.ability.extra.bullet_count or _joker.ability.extra.bullet_count_non)
             end
         end
     end

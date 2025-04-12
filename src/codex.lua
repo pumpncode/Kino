@@ -85,3 +85,45 @@ function Kino.create_codex(loc_limits, type, length, codexseed)
 
     return _ret_codex
 end
+
+function Kino.codex_ui(codex_solve)
+    local _key_nodes = {}
+    local _base_colour = G.C.GREY
+    local _base_text = "??"
+
+    for _, _unit in ipairs(codex_solve) do
+        _key_nodes[#_key_nodes + 1] = {
+            n = G.UIT.C,
+            config = {                        
+                minh = 1,
+                maxh = 1,
+                minw = 1,
+                maxw = 1,
+                colour = _base_colour,
+                align = 'cm'
+            },
+            nodes = {
+                {
+                    n = G.UIT.T,
+                    config = {
+                        text = _base_text,
+                        colour = G.C.WHITE, 
+                        scale = 0.3, 
+                        shadow = false
+                    }
+                }
+            }
+        }
+    end
+
+    return {
+        {
+            n = G.UIT.R,
+            config = {
+                align = 'cm',
+                colour = G.C.CLEAR,
+            },
+            nodes = _key_nodes
+        }
+    }
+end

@@ -596,6 +596,7 @@ function check_variable_validity_for_mult(name)
         "chance_cur",
         "reset",
         "threshold",
+        "time_spent"
     }
 
     local _non_valid_element = {

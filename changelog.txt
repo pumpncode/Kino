@@ -1,12 +1,52 @@
 V 0.9:
 New Jokers:
+-- Action synergy:
+- John Wick
+- Die Hard
+- Hot Fuzz
+- Pain & Gain
+
+-- Crime Synergy:
+- Con Air
+- Fargo
+- Fast & Furious 5
+- Tower Heist
+
+-- Generic:
 - The Martian
 - Teenage Mutant Ninja Turtles
-- John Wicker
-- Con Air
 - Taken
-- fargo
 - Modern Times
+- Death Race
+- Her
+- Minecraft
+- Tales from the Crypt: Demon Knight
+- Snowpiercer
+- Freaky Friday
+- My Neighbor Totoro
+- Bloodshot
+- Sunshine
+- Dune 1984
+- Paul
+
+(WIP:
+- Pirates of the Caribbean - UNFINISHED
+- Frighteners - UNFINISHED
+
+-- Codex Synergy:
+- Zodiac
+
+)
+
+
+New Tarot:
+- Detective
+- Gangster
+- Soldier
+
+Bug Fixes:
+- Stargate
+- Monster & Horror related jokers now correctly spawn
 
 V 0.8.1a:
 Bug Fix:

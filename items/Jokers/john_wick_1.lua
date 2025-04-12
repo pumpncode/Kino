@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            bullet_count = 0,
+            bullet_count_non = 0,
             bullet_increase = 1,
         }
     },

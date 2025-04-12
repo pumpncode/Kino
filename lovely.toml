@@ -58,6 +58,7 @@ target = "functions/state_events.lua"
 pattern = "local cards_destroyed = {}"
 position = "after"
 payload = '''
+
 if not next(find_joker("j_kino_hellboy_1")) then
     local has_demonic_card = false
     local _sacrifices_this_hand = 0

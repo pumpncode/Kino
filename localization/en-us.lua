@@ -3173,6 +3173,9 @@ return {
             k_lalaland = "For the Fools who dream",
             k_cruella = "That card will make a great coat",
             k_hellboy = "Hell held back",
+            k_minecraft_1 = "Flint & Steel!",
+            k_minecraft_2 = "Chicken Jockey!",
+            kino_fast_and_furious_5 = 'Heisted', 
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
