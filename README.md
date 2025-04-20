@@ -29,4 +29,4 @@ Not yet, at least. I've not focused on balancing yet at all. Feedback on balanci
 None! Not intentionally, at least. You can definitely play it with other mods, and feel free to report compatibility related crashes, but be aware that the mod has not yet focused on compatibility with other mods.
 
 *I found a bug, what do I do?*
-Please let me know by opening a discussion here, or posting in the Balatro Goes Kino thread on the official Balatro discord. Or, if you want to follow and give feedback on the mod more actively, join the mod's discord: https://discord.gg/VDgzh3nW
+Please let me know by opening a discussion here, or posting in the Balatro Goes Kino thread on the official Balatro discord. Or, if you want to follow and give feedback on the mod more actively, join the mod's discord: https://discord.gg/jQQKUurk8K
