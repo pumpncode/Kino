@@ -38,7 +38,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         -- retrigger the first playing card once for each scoring Crime card
-        if context.cardarea == G.play and context.repetition then
+        if context.cardarea == G.play and context.repetition and context.other_card == context.scoring_hand[1] then
             local _reps = 0
             for _, _pcard in ipairs(context.scoring_hand) do
                 if SMODS.has_enhancement(_pcard, "m_kino_crime") then

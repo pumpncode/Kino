@@ -86,25 +86,25 @@ if kino_config.romance_enhancement then
     }
 end
 
-SMODS.Consumable {
-    key = "detective",
-    set = "Tarot",
-    order = 5,
-    pos = {x = 4, y = 0},
-    atlas = "kino_tarot",
-    config = {
-        mod_conv = 'm_kino_mystery', 
-        max_highlighted = 2,
-    },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_mystery
-        return {
-            vars = {
-                self.config.max_highlighted
-            }
-        }
-    end
-}
+-- SMODS.Consumable {
+--     key = "detective",
+--     set = "Tarot",
+--     order = 5,
+--     pos = {x = 4, y = 0},
+--     atlas = "kino_tarot",
+--     config = {
+--         mod_conv = 'm_kino_mystery', 
+--         max_highlighted = 2,
+--     },
+--     loc_vars = function(self, info_queue, card)
+--         info_queue[#info_queue + 1] = G.P_CENTERS.m_kino_mystery
+--         return {
+--             vars = {
+--                 self.config.max_highlighted
+--             }
+--         }
+--     end
+-- }
 
 if kino_config.spellcasting then
     SMODS.Consumable {
@@ -210,35 +210,35 @@ SMODS.Consumable {
     end
 }
 
-if kino_config.actor_synergy then
-    SMODS.Consumable {
-        key = "award",
-        set = "Tarot",
-        order = 11,
-        pos = {x = 4, y = 1},
-        atlas = "kino_tarot",
-        config = {
-        },
-        loc_vars = function(self, info_queue, card)
-            return {
-                vars = {
-                    self.config.max_highlighted
-                }
-            }
-        end,
-        can_use = function(self, card)
-            return #G.jokers.highlighted == 1
-                and G.jokers.highlighted[1].config.center.kino_joker
-        end,
-        use = function(self, card, area, copier)
-            if not G.jokers.highlighted[1].ability.kino_award then
-                SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], true)
-            else
-                SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], false)
-            end
-        end
-    }
-end
+-- if kino_config.actor_synergy then
+--     SMODS.Consumable {
+--         key = "award",
+--         set = "Tarot",
+--         order = 11,
+--         pos = {x = 4, y = 1},
+--         atlas = "kino_tarot",
+--         config = {
+--         },
+--         loc_vars = function(self, info_queue, card)
+--             return {
+--                 vars = {
+--                     self.config.max_highlighted
+--                 }
+--             }
+--         end,
+--         can_use = function(self, card)
+--             return #G.jokers.highlighted == 1
+--                 and G.jokers.highlighted[1].config.center.kino_joker
+--         end,
+--         use = function(self, card, area, copier)
+--             if not G.jokers.highlighted[1].ability.kino_award then
+--                 SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], true)
+--             else
+--                 SMODS.Stickers['kino_award']:apply(G.jokers.highlighted[1], false)
+--             end
+--         end
+--     }
+-- end
 
 -- if kino_config.actor_synergy then
 --     SMODS.Consumable {

@@ -731,14 +731,14 @@ end
 
 ### Crime card, stolen money
 # 
-[[patches]]
-[patches.pattern]
-target = "functions/state_events.lua"
-pattern = 'local modded = false'
-position = 'before'
-match_indent = true
-payload = '''
+# [[patches]]
+# [patches.pattern]
+# target = "functions/state_events.lua"
+# pattern = 'local modded = false'
+# position = 'before'
+# match_indent = true
+# payload = '''
 
-hand_chips = hand_chips + ((Kino.crime_chips or 0) * (G.GAME.money_stolen or 0))
+# hand_chips = hand_chips + ((Kino.crime_chips or 0) * (G.GAME.money_stolen or 0))
 
-'''
+# '''

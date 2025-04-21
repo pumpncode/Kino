@@ -136,10 +136,11 @@ local base_ease_dollars = ease_dollars
 function ease_dollars(mod, x)
     base_ease_dollars(mod, x)
 
-    for i = 1, #G.jokers.cards do 
-        local effects = G.jokers.cards[i]:calculate_joker({kino_ease_dollars = mod})
-    end
-    
+    SMODS.calculate_context({kino_ease_dollars = mod})
+
+    -- for i = 1, #G.jokers.cards do 
+    --     local effects = G.jokers.cards[i]:calculate_joker({kino_ease_dollars = mod})
+    -- end
 end
 
 -- Add a function to randomize suits for jokers that need that (added to the ancient card functionality)
@@ -160,6 +161,7 @@ function reset_ancient_card()
 
     reset_raiders_card()
     reset_bonnieandclyde()
+    Kino.reset_source_code()
 end
 
  -- Indiana Jones checks
@@ -196,6 +198,17 @@ function reset_bonnieandclyde()
 
     G.GAME.current_round.bonnierank = pseudorandom_element(_ranks, pseudoseed("bonnie_boss"))
     G.GAME.current_round.clydesuit = pseudorandom_element(_suits, pseudoseed("clyde_boss"))
+end
+
+function Kino.reset_source_code()
+    if not G.GAME.current_round.kino_source_code then
+        G.GAME.current_round.kino_source_code = "Hearts"
+    end
+    
+    local _suit = pseudorandom_element(SMODS.Suits, pseudoseed("kino_source_code"))
+
+    G.GAME.current_round.kino_source_code = _suit.key
+
 end
 
 -- For everything that needs to be done when the shop is closed.
@@ -871,7 +884,29 @@ function Tag:set_chocolate_bonus(chocolate_bonus)
     return true
 end
 
+----------------------
 
+------------ Helpers ------------
+function Kino.rank_to_string(rank)
+
+    local _string = "nil"
+
+    if  2 <= rank and rank <= 10 then
+        _string = tostring(rank)
+    elseif rank == 11 then
+        _string = "J"
+    elseif rank == 12 then
+        _string = "Q"
+    elseif rank == 13 then
+        _string = "K"
+    elseif rank == 14 then
+        _string = "A"
+    end
+
+    return _string
+end
+
+----------------------
 to_big = to_big or function(x, y)
     return x
 end
@@ -880,7 +915,6 @@ to_number = to_number or function(x, y)
     return x
 end
 
---- Award Bonus & actor synergy mechanics ---
 
 ----------------------
 -- COLOURS --

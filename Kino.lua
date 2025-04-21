@@ -76,6 +76,18 @@ SMODS.Atlas {
     py = 95,
     path =  'kino_jokers_8.png'
 }
+SMODS.Atlas {
+    key = "kino_atlas_9",
+    px = 71,
+    py = 95,
+    path =  'kino_jokers_9.png'
+}
+-- SMODS.Atlas {
+--     key = "kino_atlas_10",
+--     px = 71,
+--     py = 95,
+--     path =  'kino_jokers_10.png'
+-- }
 
 SMODS.Atlas {
     key = 'modicon',
@@ -331,10 +343,16 @@ for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Boosters/" .. file))()
 end
 
--- Register the Boosters
+-- Register the Vouchers
 local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Vouchers")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Vouchers/" .. file))()
+end
+
+-- Register the Seals
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Seals")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Seals/" .. file))()
 end
 
 local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Stickers")
@@ -379,6 +397,13 @@ if load_error then
 end
 
 local helper, load_error = SMODS.load_file("src/abduction.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
+local helper, load_error = SMODS.load_file("src/codex.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
     else

@@ -27,6 +27,7 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Crime"},
+    enhancement_gate = "m_kino_crime",
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {set = 'Other', key = "gloss_steal", vars = {Kino.crime_chips, tostring(G.GAME.money_stolen)}}

@@ -1,40 +1,82 @@
+JOKERS FOR TESTING
+- Martian
+- Terminator
+- Taken
+- Modern Times
+- Death Race
+
 V 0.9:
 New Jokers:
 -- Action synergy:
+
 - John Wick
 - Die Hard
 - Hot Fuzz
 - Pain & Gain
+- Source Code
 
 -- Crime Synergy:
+
 - Con Air
 - Fargo
 - Fast & Furious 5
 - Tower Heist
+- Oceans 12
+
+- A Fish Called Wanda
+- Limitless
+- Scarface (1932)
+- Scarface (1983)
+- Dick Tracy
+
+-- Codex Synergy:
+
+- Oppenheimer
+- Zodiac
+- Young Frankenstein
+- Arrival
 
 -- Generic:
+
 - The Martian
 - Teenage Mutant Ninja Turtles
 - Taken
 - Modern Times
 - Death Race
+
 - Her
 - Minecraft
 - Tales from the Crypt: Demon Knight
 - Snowpiercer
 - Freaky Friday
+
 - My Neighbor Totoro
 - Bloodshot
 - Sunshine
 - Dune 1984
 - Paul
 
+- Gravity
+- Nightcrawler
+- Black Swan
+- Your Highness
+- Star Wars Episode IV
+
+- Star Wars Episode I
+- Star Wars Episode VII
+- Sausage Party
+- V for Vendatta
+- Big Daddy
+
+- Peggy Sue Got Married
+- Pitch Black
+- Da 5 Bloods
+- The Shawshank Redemption
+- Metropolis
+
 (WIP:
 - Pirates of the Caribbean - UNFINISHED
 - Frighteners - UNFINISHED
-
--- Codex Synergy:
-- Zodiac
 
 )
 
@@ -44,9 +86,49 @@ New Tarot:
 - Gangster
 - Soldier
 
+New Spectral Cards:
+- Award (The award tarot is no longer available)
+- Homerun
+- Gathering
+- Artifact
+- Ambrosia
+
+New Seals:
+- Sports Seal
+- Family Seal
+- Artifact Seal
+- Cheese Seal
+
+New Blinds:
+- Loki
+- Nurse Ratched
+- Rico Dynamite
+- Mr. Chow
+- Deckard Shaw
+- An Entity
+- Lord Humungus
+- Amadeus
+- Sallie Tomato
+- Agent Smith
+- Anton Chigurh
+
+Showdown Blinds:
+- Thanos
+- Immortan Joe
+- Emperor Palpatine
+- Dr. Evil
+
 Bug Fixes:
 - Stargate
 - Monster & Horror related jokers now correctly spawn
+- Barbie no longer crashes the game
+- Baby Driver now only triggers for cards played and scored
+
+Enhancement Gates Added:
+Set up more jokers to properly check for spawning conditions
+
+- NEED TO FIX: 
+     10 Things I hate About You
 
 V 0.8.1a:
 Bug Fix:

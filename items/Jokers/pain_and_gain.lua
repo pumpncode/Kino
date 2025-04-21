@@ -9,7 +9,7 @@ SMODS.Joker {
         }
     },
     rarity = 3,
-    atlas = "kino_atlas_6",
+    atlas = "kino_atlas_7",
     pos = { x = 1, y = 1},
     cost = 8,
     blueprint_compat = true,

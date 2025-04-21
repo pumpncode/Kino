@@ -30,12 +30,15 @@ SMODS.Joker {
         cast = {},
     },
     pools, k_genre = {"Crime", "Action"},
+    enhancement_gate = "m_kino_crime",
 
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_quick", vars = {kino_config.speed_factor}}
         return {
             vars = {
-
+                card.ability.extra.money_stolen,
+                card.ability.extra.money_stolen * (1 - (card.ability.extra.time_spent / kino_config.speed_factor))
             }
         }
     end,
@@ -59,7 +62,7 @@ SMODS.Joker {
             card.ability.extra.time_spent = 0
 
             return {
-                message = localize('kino_fast_and_furious_5')
+                message = localize('k_kino_fast_and_furious_5')
             }
         end
         

@@ -3,14 +3,15 @@ SMODS.Enhancement {
     atlas = "kino_enhancements",
     pos = { x = 3, y = 1},
     config = {
-        steal_val = 1
+        steal_val = 1,
+        a_chips = 5
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {set = 'Other', key = "gloss_steal", vars = {Kino.crime_chips, tostring(G.GAME.money_stolen)}}
         return {
             vars = {
                 card.ability.steal_val,
-                Kino.crime_chips,
+                card.ability.a_chips,
                 G.GAME.money_stolen
             }
         }
@@ -25,6 +26,12 @@ SMODS.Enhancement {
 
                 }
             end
+        end
+
+        if (context.main_scoring and context.cardarea == G.hand and not context.end_of_round ) then
+            return {
+                chips = G.GAME.money_stolen * card.ability.a_chips
+            }
         end
     end
 }

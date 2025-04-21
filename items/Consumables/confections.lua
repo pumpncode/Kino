@@ -806,6 +806,7 @@ Kino.confection_trigger = function(card)
     end
 
     card.ability.extra.times_used = card.ability.extra.times_used + 1
+    SMODS.calculate_context({confection_used = true, other_confection = card, times_used = card.ability.extra.times_used})
 
     if card.ability.kino_extra_large and
     card.ability.extra.times_used < 2 then

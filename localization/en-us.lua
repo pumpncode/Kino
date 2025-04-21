@@ -429,6 +429,14 @@ return {
                     "gives {C:mult}+#1#{} Mult"
                 }
             },
+            j_kino_con_air = {
+                name = "Con Air",
+                text = {
+                    "Retrigger the first scoring",
+                    "card {C:attention}#1# Times{} for each",
+                    "scoring {C:attention}Crime Card"
+                }
+            },
             j_kino_contagion = {
                 name = "Contagion",
                 text = {
@@ -487,12 +495,30 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
             },
+            j_kino_dick_tracy = {
+                name = "Dick Tracy",
+                text = {
+                    "When a {C:attention}Crime Card{} is destroyed",
+                    "this gains {C:mult}Mult{} equal to",
+                    "{C:attention}#2#X{} the current {C:money}Money Stolen",
+                    "{C:inactive}(Currently: {C:mult}#1#{} Mult &",
+                    "{C:inactive}{C:money}$#3#{C:inactive} stolen)"
+                }
+            },
             j_kino_dickie_roberts = {
                 name = "Dickie Roberts: Child Star",
                 text = {
                     "Scored {C:spades}Spades{} give {C:mult}+#3#{} Mult",
                     "for each {C:spades}Spades{} card in your deck above 13",
                     "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
+                }
+            },
+            j_kino_die_hard_1 = {
+                name = "Die Hard",
+                text = {
+                    "{C:money}$#1#{} for each",
+                    "played {C:attention}Action Card{}",
+                    "this hand"
                 }
             },
             j_kino_dinner_with_andre = {
@@ -684,6 +710,14 @@ return {
                     "{C:money}Stolen Money"
                 }
             },
+            j_kino_fast_and_furious_5 = {
+                name = "Fast Five",
+                text = {
+                    "Add {C:money}$#1#{} to your",
+                    "{C:money}Stolen Money{} if you're",
+                    "{C:chips}Quick"
+                }
+            },
             j_kino_fight_club = {
                 name = "Fight Club",
                 text = {
@@ -692,6 +726,14 @@ return {
                     "scoring card",
                 }
             },   
+            j_kino_fish_called_wanda = {
+                name = "A Fish Called Wanda",
+                text = {
+                    "{C:mult}#1#{} Mult for each",
+                    "{C:money}$1{} stolen",
+                    "{C:inactive}(Currently: {C:mult}#3#{C:inactive} Mult)"
+                }
+            },
             j_kino_founder = {
                 name = "The Founder",
                 text = {
@@ -893,6 +935,15 @@ return {
                     "non-face card"
                 }
             },
+            j_kino_hot_fuzz = {
+                name = "Hot Fuzz",
+                text = {
+                    "When you play a {C:attention}Pair{}",
+                    "gain {C:attention}#2# Bullet{}",
+                    "resets when you play a {C:attention} High Card",
+                    "{C:inactive}(Currently: {C:attention}#1# Bullets{C:inactive})"
+                }
+            },
             j_kino_hustle = {
                 name = "Hustle",
                 text = {
@@ -1011,6 +1062,14 @@ return {
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Mult)"
                 }
             },
+            j_kino_john_wick_1 = {
+                name = "John Wick",
+                text = {
+                    "{C:attention}#2# Bullets{} for",
+                    "each card destroyed this {C:attention}Ante",
+                    "{C:inactive}(Currently: {C:attention}#1# Bullets{C:inactive})"
+                }
+            },
             j_kino_junior = {
                 name = "Junior",
                 text = {
@@ -1105,6 +1164,16 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
             },
+            j_kino_limitless = {
+                name = "Limitless",
+                text = {
+                    "When you defeat a {C:attention}Blind",
+                    "increase your {C:money}Stolen Money",
+                    "by {C:attention}#1#%{}",
+                    "{C:inactive}(Currently: {C:money}$#2#{C:inactive} Money Stolen",
+                    "{C:inactive}will increase by {C:money}$#3#"
+                }
+            },
             j_kino_longlegs = {
                 name = "Longlegs",
                 text = {
@@ -1156,6 +1225,13 @@ return {
                     "an additional {C:attention}#1#{} levels",
                     "and decrease the level of {C:attention}Full House{}",
                     "{C:inactive,E:1}Destroying Earth has consequences.{}"
+                }
+            },
+            j_kino_martian = {
+                name = "The Martian",
+                text = {
+                    "When you use {C:planet}Mars",
+                    "create a {C:attention}Confection"
                 }
             },
             j_kino_matrix_1 = {
@@ -1314,6 +1390,13 @@ return {
                     "{C:inactive}(Max value of {C:money}$#1#{C:inactive})"
                 }
             },
+            j_kino_oceans_12 = {
+                name = "Ocean's 12",
+                text = {
+                    "Add {C:money}$#1#{} to Money Stolen",
+                    "when you {C:green}Reroll"
+                }
+            },
             j_kino_omen = {
                 name = "The Omen",
                 text = {
@@ -1330,6 +1413,21 @@ return {
                     "destroy them and gain {X:mult,C:white}X#2#{}",
                     "per card destroyed",
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive})"
+                }
+            },
+            j_kino_oppenheimer = {
+                name = "Oppenheimer",
+                text = {
+                    "Whenever you solve",
+                    "the {C:attention}Codex{}",
+                    "create a {C:spectral}Spectral Card{}"
+                }
+            },
+            j_kino_pain_and_gain = {
+                name = "Pain & Gain",
+                text = {
+                    "Retrigger a random card",
+                    "for each Bullet you have"
                 }
             },
             j_kino_panic_room = {
@@ -1493,6 +1591,30 @@ return {
                     "the played hand"
                 }
             },
+            j_kino_sausage_party = {
+                name = "Sausage Party",
+                text = {
+                    "{C:green}#1# in #2#{} Chance to upgrade",
+                    "a random hand",
+                    "whenever a {C:attention}Confection{} triggers",
+                    
+                }
+            },
+            j_kino_scarface_1 = {
+                name = "Scarface (1932)",
+                text = {
+                    "When you sell a {C:attention}Consumable",
+                    "{C:money}Steal Money{} equal to its value"
+                }
+            },
+            j_kino_scarface_2 = {
+                name = "Scarface (1983)",
+                text = {
+                    "When a {C:attention}Consumable{}",
+                    "is used, turn a random card",
+                    "in your deck into a {C:attention}Crime Card"
+                }
+            },
             j_kino_scream_1 = {
                 name = "Scream",
                 text = {
@@ -1639,6 +1761,14 @@ return {
                     "{C:inactive}(Currently: temporary {C:mult}+#4#{C:inactive} Mult || {C:mult}+#5#{C:inactive} Mult)"
                 }
             },
+            j_kino_source_code = {
+                name = "Source Code",
+                text = {
+                    "Every {V:1}#1#{} gives",
+                    "{C:mult}#2#{} Mult for each Bullet",
+                    "suit changes every round"
+                }
+            },
             j_kino_spartacus = {
                 name = "Spartacus",
                 text = {
@@ -1778,6 +1908,14 @@ return {
                     "for each {C:hearts}Hearts{}",
                     "in your deck above 13",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+                }
+            },
+            j_kino_tower_heist = {
+                name = "Tower Heist",
+                text = {
+                    "{C:attention}Stone Cards{} give",
+                    "{C:chips}#1#{} Chips per {C:money}$1{} Stolen",
+                    "{C:inactive}(Currently: {C:chips}#2#{C:inactive} Chips)"
                 }
             },
             j_kino_treasure_planet = {
@@ -1993,9 +2131,9 @@ return {
                 name = "Crime Card",
                 text = {
                     "{C:attention}Steal{} {C:money}$#1#{}",
-                    "Each Type of Hand has",
-                    "{C:chips}+#2#{} Chips for",
-                    "each dollar stolen",
+                    "when this card scores",
+                    "{C:chips}+#2#{} Chips while held",
+                    "in hand for each dollar stolen",
                     "{C:inactive}(Currently: {C:money}$#3#{C:inactive} Stolen)"
                 }
             },
@@ -2047,13 +2185,13 @@ return {
             m_kino_mystery = {
                 name = "Mystery Card",
                 text = {
-                    "Gives {X:mult,C:white}X2.5{} Mult",
+                    "Gives {X:mult,C:white}X#1#{} Mult",
                     "and is always {C:attention}Face Down",
                     "Reveal one piece of info",
                     "about this card and decrease",
-                    "the Mult by {X:cmult,C:white}X0.5{}",
+                    "the Mult by {X:cmult,C:white}X#2#{}",
                     "for each turn in hand",
-                    "{C:attention}#4#{} {C:attention}#5# of #6#{}"
+                    "{C:attention}#3#{} {C:attention}#4# of #5#{}"
                 }
             },
             m_kino_fantasy = {
@@ -2134,14 +2272,6 @@ return {
                     "{C:inactive}(Max of {C:money}$#1#{C:inactive})"
                 }
             },
-            c_kino_award = {
-                name = "Award",
-                text = {
-                    "Give an award to a {C:attention}Movie Joker",
-                    "doubling it's stats",
-                    "{C:inactive}(Movie Jokers can only be awarded once)"
-                }
-            },
             c_kino_award2 = {
                 name = "Award-DEV VERSION",
                 text = {
@@ -2160,6 +2290,56 @@ return {
             }
 
 
+        },
+        Spectral = {
+            c_kino_award = {
+                name = "Award",
+                text = {
+                    "Give an award to a {C:attention}Movie Joker",
+                    "doubling it's stats",
+                    "{C:inactive}(Movie Jokers can only be awarded once)"
+                }
+            },
+            c_kino_homerun = {
+                name = "Homerun",
+                text = {
+                    "Add a {C:red}Sports Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                }
+            },
+            c_kino_gathering = {
+                name = "Gathering",
+                text = {
+                    "Add a {C:red}Family Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                }
+            },
+            c_kino_artifact = {
+                name = "Artifact",
+                text = {
+                    "Add a {C:red}Adventure Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                }
+            },
+            c_kino_fright = {
+                name = "Fright",
+                text = {
+                    "Add a {C:red}Thriller Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                }
+            },
+            c_kino_ambrosia = {
+                name = "Ambrosia",
+                text = {
+                    "Add a {C:red}Cheese Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                }
+            },
         },
         Planet = {
             c_kino_ego = {
@@ -2547,6 +2727,133 @@ return {
                     "last played hand",
                     "it doesn't score"
                 }
+            },
+            bl_kino_loki = {
+                name = "Loki",
+                text = {
+                    "A random suit is",
+                    "debuffed each hand"
+                }
+            },
+            bl_kino_ratched = {
+                name = "Nurse Ratched",
+                text = {
+                    "Played hands only score",
+                    "if you hold {C:attention}3{} different",
+                    "suits in hand"
+                }
+            },
+            bl_kino_rico_dynamite = {
+                name = "Rico Dynamite",
+                text = {
+                    "Played poker hand loses 2 levels",
+                    "and two random poker hands",
+                    "gain 1 level"
+                }
+            },
+            bl_kino_mr_chow = {
+                name = "Mr. Chow",
+                text = {
+                    "Downgrade each {C:attention}Scored",
+                    "card with {C:money}$-1{}"
+                }
+            },
+            bl_kino_deckard_shaw = {
+                name = "Deckard Shaw",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            },
+            bl_kino_entity = {
+                name = "An Entity",
+                text = {
+                    "Cards have a {C:green}#1# in #2#{}", 
+                    "chance to become a",
+                    "random rank and suit"
+                }
+            },
+            bl_kino_humungus = {
+                name = "Lord Humungus",
+                text = {
+                    "When a card is scored",
+                    "lower the rank of",
+                    "each held card by 1"
+                }
+            },
+            bl_kino_amadeus = {
+                name = "Wolfgang Amadeus Mozart",
+                text = {
+                    "Lower base mult",
+                    "by the combined levels",
+                    "of all hands besides",
+                    "the played hand"
+                }
+            },
+            bl_kino_sallie_tomato = {
+                name = "Sallie Tomato",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            },
+            bl_kino_agent_smith = {
+                name = "Agent Smith",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            },
+            bl_kino_anton_chigurh = {
+                name = "Anton Chigurh",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            },
+            bl_kino_thanos = {
+                name = "Thanos",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            },
+            bl_kino_immortan_joe = {
+                name = "Immortan Joe",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            },
+            bl_kino_palpatine = {
+                name = "Emperor Palapatine",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
+            },
+            bl_kino_dr_evil = {
+                name = "Dr. Evil",
+                text = {
+                    "If your played hand",
+                    "is larger than your",
+                    "last played hand",
+                    "it doesn't score"
+                }
             }
         },
         Tag = {
@@ -2830,6 +3137,57 @@ return {
                 }
             },
 
+            -- Seals
+            kino_sports_seal={
+                name="Sports Seal",
+                text={
+                    "When this card is played",
+                    "and scored increase the",
+                    "rank of the card",
+                    "to the right if lower",
+                    "than this card"
+                },
+            },
+            kino_family_seal={
+                name="Family Seal",
+                text={
+                    "When this card is played",
+                    "and scored upgrade every",
+                    "other scoring card with",
+                    "{C:chips}+3{} Chips for",
+                    "each unique scoring Suit"
+                },
+            },
+            kino_adventure_seal = {
+                name = "Adventure Seal",
+                text = {
+                    "Gains value for each",
+                    "card scored together",
+                    "with this card",
+                    "Earn money equal",
+                    "to the value when this card",
+                    "is destroyed",
+                    "{C:inactive}(Currently: {C:money}$#1#{C:inactive} Value)"
+                }
+            },
+            kino_thriller_seal = {
+                name = "Thriller Seal",
+                text = {
+                    "Each card scored",
+                    "after this scores",
+                    "has a {C:green}#1# in #2#{}",
+                    "chance to Jumpscare"
+                }
+            },
+            kino_cheese_seal = {
+                name = "Cheese Seal",
+                text = {
+                    "Create a {C:attention}Confection",
+                    "when a played hand contains",
+                    "a scoring Cheese Seal"
+                }
+            },
+
             -- Quest System
             kino_questlog = {
                 name = "Quests"
@@ -3102,6 +3460,7 @@ return {
             k_spell = "Spell",
             k_quest = "Quest",
             
+            
 
             snack_boosters = "Confections",
             horror_booster = "Horror Joker",
@@ -3119,6 +3478,9 @@ return {
             k_spell_cast = "MAGIC!",
             k_romance_match_ex = "Hey there ;)",
             k_summoned_ex = "Summoned",
+            kino_codex = "Solved",
+
+            
             k_longlegs_ex = "Captured",
             k_ghost_rider_1 = "Vengeance!",
             k_blade_ex = "Vampire Killed",
@@ -3175,7 +3537,9 @@ return {
             k_hellboy = "Hell held back",
             k_minecraft_1 = "Flint & Steel!",
             k_minecraft_2 = "Chicken Jockey!",
-            kino_fast_and_furious_5 = 'Heisted', 
+            k_kino_fast_and_furious_5 = 'Heisted',
+            k_kino_star_wars_i = "Now this is pod racing", 
+            k_kino_k_kino_big_daddy = "Big. Daddy.",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
@@ -3184,6 +3548,12 @@ return {
 
             -- Confection Barks
             k_eaten = "Eaten",
+
+            -- Seals
+            k_kino_sportsseal_1 = "Coached",
+            k_kino_sportsseal_2 = "Coaching",
+            k_kino_adventureseal_1 = "Gained Notariety",
+            k_kino_adventureseal_2 = "Treasure!",
 
             -- Spartacus Barks
             k_spartacus_1 = "I am Spartacus!",
@@ -3210,6 +3580,8 @@ return {
             k_blind_joker_1 = "Ha Ha Ha Ha",
             k_blind_joker_2 = "HAHAHAHAHA",
             k_blind_joker_final = "Why So Serious?",
+            k_blind_loki = "Changed the Target Suit",
+            k_blind_rico_dyn = "You're doing it wrong",
 
             -- Legendary Joker Quests
             -- -- 2001: A Space Odyssey
