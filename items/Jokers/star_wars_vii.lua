@@ -31,7 +31,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.factor,
+                (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.planet or 0) * card.ability.extra.factor
             }
         }
     end,
@@ -39,7 +40,7 @@ SMODS.Joker {
         -- scoring cards give chips equal to the number of planets used
         if context.individual and context.cardarea == G.play then
             return {
-                chips = G.GAME.consumeable_usage_total.planet * card.ability.extra.factor
+                chips = (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.planet or 0) * card.ability.extra.factor
             }
         end
     end

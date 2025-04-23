@@ -129,6 +129,15 @@ return {
                     "ranks add up to 13"
                 }
             },
+            j_kino_arrival = {
+                name = "Arrival",
+                text = {
+                    "Whenever you solve",
+                    "the {C:attention}Codex{}",
+                    "lower {C:attention}ante{} by #1#",
+                    "and destroy this joker"
+                }
+            },
             j_kino_as_above = {
                 name = "As Above, So Below",
                 text = {
@@ -224,6 +233,13 @@ return {
                     "{C:inactive}(Best Hand: {C:chips,E:1}+#2#{C:inactive})"
                 }
             },
+            j_kino_big_daddy = {
+                name = "Big Daddy",
+                text = {
+                    "When a {C:attention}King{} is scored",
+                    "turn all non-face cards into {C:attention}2's{}"
+                }
+            },
             j_kino_big_short = {
                 name = "The Big Short",
                 text = {
@@ -243,6 +259,15 @@ return {
                     "lower it by {C:attention}%#3#{} for",
                     "each stack, then reset the stacks",
                     "{C:inactive}(Currently: {C:attention}%#4#{C:inactive})"
+                }
+            },
+            j_kino_black_swan = {
+                name = "Black Swan",
+                text = {
+                    "When a {C:attention}Queen{} scores",
+                    "{C:green}#1# in #2#{} chance to destroy",
+                    "it and create a copy of it",
+                    "upgraded with {C:mult}+#3#{}"
                 }
             },
             j_kino_blade_1 = {
@@ -273,6 +298,14 @@ return {
                     "buying this joker",
                     "{C:attention}Bust{} when you",
                     "leave the shop"
+                }
+            },
+            j_kino_bloodshot = {
+                name = "Bloodshot",
+                text = {
+                    "{C:attention}Active:{} If you have any {C:mult}Red Seals",
+                    "in your deck, remove it from the card",
+                    "and put it on the first scoring card"
                 }
             },
             j_kino_braveheart = {
@@ -474,6 +507,15 @@ return {
                     "an {C:attention}Edition"
                 }
             },
+            j_kino_da_5_bloods = {
+                name = "Da 5 Bloods",
+                text = {
+                    "The first time you destroy",
+                    "a card of a given rank",
+                    "put a {C:money}Gold Seal{} on a",
+                    "card with the same rank",
+                }
+            },
             j_kino_dark_crystal = {
                 name = "The Dark Crystal",
                 text = {
@@ -493,6 +535,24 @@ return {
                     "{X:mult,C:white}X#2#{} Mult per ",
                     "Joker destroyed",
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
+                }
+            },
+            j_kino_death_race = {
+                name = "Death Race",
+                text = {
+                    "Create a {C:tarot}Death{} tarot",
+                    "when you defeat a blind {C:chips}Quick",
+                    "(Time Left: #1# seconds)"
+                }
+            },
+            j_kino_demon_knight = {
+                name = "Tales from the Crypt: Demon Knight",
+                text = {
+                    "Whenever a {C:attention}Demonic Card{}",
+                    "is destroyed",
+                    "upgrade every card of that",
+                    "suit in your deck with",
+                    "{C:mult}+#1#{} Mult"
                 }
             },
             j_kino_dick_tracy = {
@@ -599,6 +659,13 @@ return {
                     "{C:chips}+#1#{} Chips if your scoring hand",
                     "contains a {C:attention}Straight{}",
                     "{C:green}#2# in #3#{} chance to not trigger"
+                }
+            },
+            j_kino_dune_1984 = {
+                name = "Dune (1984)",
+                text = {
+                    "When you play your least played",
+                    "Poker Hand upgrade it #1# Times"
                 }
             },
             j_kino_dungeons_and_dragons_1 = {
@@ -756,6 +823,16 @@ return {
                     "{C:inactive}({X:mult,C:white}X#5#{C:inactive}, {X:chips,C:white}X#6#{C:inactive})"
                 }
             },
+            j_kino_freaky_friday_3 = {
+                name = "Freaky Friday",
+                text = {
+                    "{C:attention}Active:{} When this joker has",
+                    "no edition, and a playing card with an edition",
+                    "triggers, this gains its edition",
+                    "if this joker does have an edition",
+                    "remove it and put it on the playing card"
+                }
+            },
             j_kino_friday_the_13th = {
                 name = "Friday the 13th",
                 text = {
@@ -817,6 +894,14 @@ return {
                     "Joker on the {C:attention}Left",
                     "of this one",
                     "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} & {C:money}$#4#{C:inactive})"
+                }
+            },
+            j_kino_gravity = {
+                name = "Gravity",
+                text = {
+                    "When you select a blind",
+                    "while you posses a {C:planet}Planet{}",
+                    "upgrade a random hand {C:attention}#1# Times{}"
                 }
             },
             j_kino_gremlins_1 = {
@@ -917,6 +1002,14 @@ return {
                     "Gain {C:chips}+#2#{} Chips when",
                     "a {C:attention}Demonic Card{} scores",
                     "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
+            j_kino_her = {
+                name = "Her",
+                text = {
+                    "When you {C:attention}Make a Match{}",
+                    "every {C:attention}Sci-fi card{} held in hand",
+                    "is upgraded"
                 }
             },
             j_kino_home_alone_1 = {
@@ -1231,7 +1324,7 @@ return {
                 name = "The Martian",
                 text = {
                     "When you use {C:planet}Mars",
-                    "create a {C:attention}Confection"
+                    "create #1# {C:attention}Confections"
                 }
             },
             j_kino_matrix_1 = {
@@ -1272,6 +1365,31 @@ return {
                 text = {
                     "Create a {C:attention}Confection",
                     "when you sell a Joker"
+                }
+            },
+            j_kino_metropolis = {
+                name = "Metropolis",
+                text = {
+                    "{C:attention}Sci-fi Cards{} upgrade",
+                    "#1# additional time for each",
+                    "Silent movie joker"
+                }
+            },
+            j_kino_minecraft = {
+                name = "A Minecraft Movie",
+                text = {
+                    "Scoring {C:attention}Stone Cards",
+                    "turn into either {C:attention}Steel",
+                    "or {C:attention}Gold Cards"
+                }
+            },
+            j_kino_modern_times = {
+                name = "Modern Times",
+                text = {
+                    "scored cards have a {C:green}#2# in #3#{} chance",
+                    "to retrigger {C:attention}#1#{} times",
+                    "and a {C:green}#2# in #4#{} chance to",
+                    "be destroyed"
                 }
             },
             j_kino_moneyball = {
@@ -1328,6 +1446,23 @@ return {
                 text = {
                     "{C:diamonds}Diamonds{} give between {C:mult}#1#{} and",
                     "{C:mult}+#2#{} Mult when scored"
+                }
+            },
+            j_kino_my_neighbor_totoro = {
+                name = "My Neighbor Totoro",
+                text = {
+                    "{C:chips}+#1#{} Chips every",
+                    "#3# hands",
+                    "{C:inactive}(#2# hands remaining){}"
+                }
+            },
+            j_kino_nightcrawler = {
+                name = "Nightcrawler",
+                text = {
+                    "When a {C:attention}Face Card{} is destroyed",
+                    "this gains {X:mult,C:white}X#1#{} mult",
+                    "for {C:attention}#2# Rounds{}",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} Mult)"
                 }
             },
             j_kino_nightmare_on_elm_street = {
@@ -1446,6 +1581,20 @@ return {
 
                 }
             },
+            j_kino_paul = {
+                name = "Paul",
+                text = {
+                    "{C:attention}Sci-Fi Jokers{} you own",
+                    "are {C:attention}#1#%{} stronger"
+                }
+            },
+            j_kino_peggy_sue_got_married = {
+                name = "Peggy Sue Got Married",
+                text = {
+                    "Cards with an edition",
+                    "give {C:chips}+#1#{} Chips"
+                }
+            },
             j_kino_pink_panther_1 = {
                 name = "The Pink Panther",
                 text = {
@@ -1473,6 +1622,17 @@ return {
                 name = "Piranha 2: The Spawning",
                 text = {
                     "{C:mult}+#1#{} Mult when you play a {C:attention}High Card{}"
+                }
+            },
+            j_kino_pitch_black = {
+                name = "Pitch Black",
+                text = {
+                    "{C:mult}+#1#{} Mult on your final hand",
+                    "and increase by {C:mult}+#2#{} Mult",
+                    "whenever a card scores in a",
+                    "non-final hand",
+                    "resets each round"
+                    
                 }
             },
             j_kino_point_break = {
@@ -1653,6 +1813,14 @@ return {
                     "of the {C:attention}10"
                 }
             },
+            j_kino_shawshank_redemption = {
+                name = "The Shawshank Redemption",
+                text = {
+                    "When you discard a card",
+                    "upgrade every card in hand",
+                    "with {C:chips}+#1#{} Chips"
+                }
+            },
             j_kino_shazam_1 = {
                 name = "Shazam",
                 text = {
@@ -1733,6 +1901,15 @@ return {
                     "{C:inactive}(Currently: #2#)"
                 }
             },
+            j_kino_snowpiercer = {
+                name = "Snowpiercer",
+                text = {
+                    "Destroy all {C:attention}Consumables",
+                    "when you select a blind",
+                    "and gain {C:mult}+#2#{} Mult",
+                    "{C:inactive}(Currently: {C:mult}+#1#{C:inactive} Mult)"
+                }
+            },
             j_kino_social_network = {
                 name = "The Social Network",
                 text = {
@@ -1785,6 +1962,32 @@ return {
                     "create a Hangman"
                 }
             },
+            j_kino_star_wars_i = {
+                name = "Star Wars Episode I: The Phantom Menace",
+                text = {
+                    "When you use a {C:planet}Planet",
+                    "upgrade {C:attention}#1#{} cards in your deck",
+                    "with {C:chips}+#2#{} Chips"
+                }
+            },
+            j_kino_star_wars_iv = {
+                name = "Star Wars",
+                text = {
+                    "After you've scored",
+                    "cards with a total value",
+                    "{C:attention}#2#{}, upgrade",
+                    "a random hand {C:attention}#3#{} Times",
+                    "{C:inactive}(Currently: {C:attention}#1#{C:inactive} value scored)"
+                }
+            },
+            j_kino_star_wars_vii = {
+                name = "Star Wars Episode VII: The Force Awakens",
+                text = {
+                    "Scoring cards give {C:chips}+#1#{} Chips",
+                    "for each {C:planet}Planet{} used",
+                    "{C:inactive}(Currently: {C:chips}+#2#{C:inactive} Chips)"
+                }
+            },
             j_kino_stargate = {
                 name = "Stargate",
                 text = {
@@ -1831,6 +2034,14 @@ return {
                     "{C:inactive}(Currently: {C:mult}+#1#{C:inactive} Mult)"
                 }
             },
+            j_kino_taken_1 = {
+                name = "Taken",
+                text = {
+                    "Gives {C:mult}+#1#{} Mult",
+                    "if a {C:attention}Queen{} is held",
+                    "in hand"
+                }
+            },
             j_kino_terminator_1 = {
                 name = "The Terminator",
                 text = {
@@ -1855,6 +2066,13 @@ return {
                     "{C:attention}Inactive:{} Steals {C:money}$#1#",
                     "when you play a hand",
                     "{C:inactive}(Currently: stolen #2# times)"
+                }
+            },
+            j_kino_sunshine = {
+                name = "Sunshine",
+                text = {
+                    "{C:mult}+#1#{} Mult for each",
+                    "{C:hearts}Hearts{} held in hand"
                 }
             },
             j_kino_terror_train = {
@@ -1908,6 +2126,14 @@ return {
                     "for each {C:hearts}Hearts{}",
                     "in your deck above 13",
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+                }
+            },
+            j_kino_tmnt_1 = {
+                name = "Teenage Mutant Ninja Turtles (1990)",
+                text = {
+                    "Retrigger the first",
+                    "scoring card of",
+                    "each suit {C:attention}#1# times{}"
                 }
             },
             j_kino_tower_heist = {
@@ -1986,6 +2212,16 @@ return {
                     "a {C:attention}Horror Card Awakens",
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
+            },
+            j_kino_v_for_vendetta = {
+                name = "V for Vendetta",
+                text = {
+                    "Scored cards give {C:mult}+#2#{} Mult for",
+                    "each {C:attention}5{} scored",
+                    "Resets when a Face card is scored",
+                    "{C:inactive}(Currently: {C:mult}+#1#{C:inactive} Mult)"
+                }
+
             },
             j_kino_voyage_dans_le_lune = {
                 name = "Le Voyage Dans a Lune",
@@ -2079,6 +2315,24 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive} Mult)"
                 }
             },
+            j_kino_young_frankenstein = {
+                name = "Young Frankenstein",
+                text = {
+                    "Whenever you solve",
+                    "the {C:attention}Codex{}",
+                    "upgrade every scoring card",
+                    "with {C:mult}+#1#{} Mult"
+                }
+            },
+            j_kino_your_highness = {
+                name = "Your Highness",
+                text = {
+                    "After obtaining #3# consumables",
+                    "the next consumable obtained",
+                    "will become negative",
+                    "{C:inactive}(Will trigger after #4# cards)"
+                }
+            },
             j_kino_zardoz = {
                 name = "Zardoz",
                 text = {
@@ -2086,6 +2340,17 @@ return {
                     "{X:mult,C:white}X#1#{} Mult",
                     "increases by {X:mult,C:white}X#2#{} Mult",
                     "whenever a card is destroyed"
+                }
+            },
+            j_kino_zodiac = {
+                name = "Zodiac",
+                text = {
+                    "Whenever you solve",
+                    "the {C:attention}Codex{}",
+                    "gain a Stack",
+                    "Lower the next boss blind",
+                    "by {C:attention}#1#%{} per stack used",
+                    "{C:inactive}(Currently: {C:attention}#2#{C:inactive} Stacks)"
                 }
             },
             -- Legendaries
@@ -2171,6 +2436,15 @@ return {
                     "stays in hand",
                     "{C:green}#2# in #3#{} chance to",
                     "wake up instead"
+                }
+            },
+            m_kino_flying_monkey = {
+                name = "Flying Monkey",
+                text = {
+                    "Minion of the Wicked Witch",
+                    "{X:chips,C:white}X#1#{} Chips",
+                    "{X:mult,C:white}X#2#{} Mult",
+                    "Self-destruct after #3# hands"
                 }
             },
             m_kino_monster = {
@@ -2685,13 +2959,11 @@ return {
                 }
             },
             bl_kino_wickedwitch = {
-                name = "The Wicked Witch of the West",
+                name = "The Wicked Witch",
                 text = {
-                    "Fill each empty",
-                    "Joker slot with an",
-                    "unsellable {C:attention}Flying Monkey",
-                    "which disappears after",
-                    "{C:attention}#1#{} hands played"
+                    "Whenever you discard",
+                    "add 2 Flying Monkeys",
+                    "to your deck"
                 }
             },
             bl_kino_frankbooth = {
@@ -3047,6 +3319,15 @@ return {
             },
 
             -- Keywords
+            gloss_least_played = {
+                name = "Least Played",
+                text = {
+                    "A Poker Hand must have",
+                    "been played to be",
+                    "considered your",
+                    "least played hand"
+                }
+            },
             gloss_steal = {
                 name = "Steal",
                 text = {
@@ -3540,6 +3821,7 @@ return {
             k_kino_fast_and_furious_5 = 'Heisted',
             k_kino_star_wars_i = "Now this is pod racing", 
             k_kino_k_kino_big_daddy = "Big. Daddy.",
+            k_kino_tmnt_1 = "Cowabunga!",
 
             -- Enhancement Barks
             k_monster_turn = "ROAR!",
@@ -3742,7 +4024,13 @@ return {
             }
         },
         labels = {
-            kino_award = "Awarded"
+            kino_award = "Awarded",
+            kino_family_seal = "Family Seal",
+            kino_cheese_seal = "Cheese Seal",
+            kino_adventure_seal = "Adventure Seal",
+            kino_thriller_seal = "Thriller Seal",
+            kino_sports_seal = "Sports Seal"
+
         }
     }
 }

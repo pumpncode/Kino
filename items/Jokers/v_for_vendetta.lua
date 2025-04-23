@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "v_for_vendatta",
+    key = "v_for_vendetta",
     order = 343,
     generate_ui = Kino.generate_info_ui,
     config = {
@@ -32,7 +32,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.stacked_mult,
+                card.ability.extra.a_mult
             }
         }
     end,

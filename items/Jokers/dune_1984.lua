@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-
+            levels = 2
         }
     },
     rarity = 2,
@@ -31,31 +31,20 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.levels
             }
         }
     end,
     calculate = function(self, card, context)
         -- When you play your least played hand, upgrade it twice
         if context.before then
-            local _tally = nil
-            local _hands = {}
-            for k, v in ipairs(G.handlist) do
-                if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played < _tally) then
-                    _hands = {}
-                    _hands[#_hands] = v
-                    
-                    _tally = G.GAME.hands[v].played
-                end
-                if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played == _tally) then
-                    _hands[#_hands] = v
-                end
-            end
+            local _hands = get_least_played_hand()
 
             for _, _hand in ipairs(_hands) do
+                print(_hand)
                 if _hand == context.scoring_name then
                     return {
-                        level_up = 2
+                        level_up = card.ability.extra.levels
                     }
                 end
             end

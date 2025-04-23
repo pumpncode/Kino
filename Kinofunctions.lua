@@ -131,6 +131,42 @@ function get_random_hand()
     return rand_hand
 end
 
+-- Only accounts for played hands
+function get_least_played_hand()
+    local _tally = nil
+    local _hands = {}
+    for k, v in ipairs(G.handlist) do
+        print(G.GAME.hands[v].played)
+        print(_tally)
+
+        if G.GAME.hands[v].visible then
+            print("testing, yes visible")
+        end
+        if (_tally == nil or G.GAME.hands[v].played < _tally) then
+            print("testing, no tally")
+        end
+        if G.GAME.hands[v].played ~= 0 then
+            print("testing, played ~= 0")
+        end
+        
+
+
+        if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played < _tally) and G.GAME.hands[v].played ~= 0 then
+            print("found new low")
+            _hands = {}
+            _hands[#_hands + 1] = v
+            
+            _tally = G.GAME.hands[v].played
+        end
+        if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played == _tally) and not G.GAME.hands[v].played == 0 then
+            print("adding new hand")
+            _hands[#_hands + 1] = v
+        end
+    end
+
+    return _hands
+end
+
 -- Add a function to trigger jokers when money is spend in the shop (Based on cryptid, exotic.lua, l. 1407-1413)
 local base_ease_dollars = ease_dollars
 function ease_dollars(mod, x)
@@ -535,7 +571,7 @@ function Card:set_multiplication_bonus(card, source, num, is_actor)
     -- keys ending in "_non"
     -- non-integers
     -- "time_"
-    if not kino_config.actor_synergy  or not self.config.center.kino_joker then
+    if not card or not kino_config.actor_synergy or not card.config.center.kino_joker then
         return false
     end
 
@@ -609,7 +645,8 @@ function check_variable_validity_for_mult(name)
         "chance_cur",
         "reset",
         "threshold",
-        "time_spent"
+        "time_spent",
+        "codex_length"
     }
 
     local _non_valid_element = {

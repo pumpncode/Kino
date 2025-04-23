@@ -5,7 +5,8 @@ SMODS.Joker {
     config = {
         extra = {
             stacks = 0,
-            a_stack = 1,
+            a_stacks = 1,
+            threshold = 4,
             active = false
         }
     },
@@ -33,23 +34,26 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.stacks,
+                card.ability.extra.a_stacks,
+                card.ability.extra.threshold - 1,
+                card.ability.extra.threshold - card.ability.extra.stacks
             }
         }
     end,
     calculate = function(self, card, context)
-        -- Every fourth consumable you buy becomes negative
-        if context.buying_card then
+        -- Every fourth consumable you obtain becomes negative
+        if context.card_added then
             if context.card.set ~= "Voucher" and context.card.set ~=  "Joker" and context.card.set ~= "Booster" then
                 if card.ability.extra.active then
                     context.card:set_edition({negative = true}, true)
                     card.ability.extra.active = false
-                    card.ability.extra.stacks = card.ability.extra.stacks - 4
+                    card.ability.extra.stacks = card.ability.extra.stacks - card.ability.extra.threshold
                 end
                 
                 card.ability.extra.stacks = card.ability.extra.stacks + card.ability.extra.a_stacks
 
-                if card.ability.extra.stacks >= 4 then
+                if card.ability.extra.stacks >= card.ability.extra.threshold then
                     card.ability.extra.active = true
 
                     local eval = function(card)

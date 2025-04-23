@@ -43,6 +43,7 @@ SMODS.Joker {
     end,
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_active"}
         return {
             vars = {
 
@@ -54,12 +55,12 @@ SMODS.Joker {
         -- 
         if context.individual and context.cardarea == G.play and G.jokers.cards[1] == card 
         and not context.blueprint and not context.repetition then
-            if card.edition == nil and not context.other_card.edition == nil then
-                card:set_edition(context.other_card.edition.type)
-                context.other_card:set_edition()
-            elseif not card.edition == nil and  context.other_card.edition == nil then
-                card:set_edition()
-                context.other_card:set_edition(card.edition.type)
+            if card.edition == nil and context.other_card.edition ~= nil then
+                card:set_edition(context.other_card.edition or {}, nil, true)
+                context.other_card:set_edition(nil, true)
+            elseif card.edition ~= nil and  context.other_card.edition == nil then
+                context.other_card:set_edition(card.edition or {}, nil, true)
+                card:set_edition(nil, true)
             end
         end
     end,

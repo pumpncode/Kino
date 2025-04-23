@@ -44,23 +44,22 @@ SMODS.Joker {
             -- Check for suits already encountered
             local _is_viable = true
             for i = 1, #card.ability.extra.suits do
-                if context.card.config.card.suit == card.ability.extra.suits[i] then
+                if context.other_card.config.card.suit == card.ability.extra.suits[i] then
                     _is_viable = false
                     break
                 end 
             end
 
             if _is_viable and 
-            context.card.config.center ~= G.P_CENTERS.m_stone then
+            context.other_card.config.center ~= G.P_CENTERS.m_stone then
                 
-                card.ability.extra.suits[#card.ability.extra.suits + 1] = context.card.config.card.suit
+                card.ability.extra.suits[#card.ability.extra.suits + 1] = context.other_card.config.card.suit
 
                 local _repetitions = card.ability.extra.repetition 
 
                 return {
-                    card = context.card,
                     repetitions = _repetitions,
-                    message = localize('k_again_ex')
+                    message = localize('k_kino_tmnt_1')
                 }
             end
         end

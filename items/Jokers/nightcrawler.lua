@@ -33,7 +33,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.x_mult,
+                card.ability.extra.duration,
+                1 + (#card.ability.extra.counters_non * card.ability.extra.x_mult)
             }
         }
     end,
@@ -57,23 +59,21 @@ SMODS.Joker {
         end
 
         if context.joker_main then
-            local _xmult = 1
-            for _, _value in ipairs(card.ability.extra.counters_non) do
-                _xmult = _xmult + _value
-            end
 
             return {
-                x_mult = _xmult
+                x_mult = 1 + (#card.ability.extra.counters_non * card.ability.extra.x_mult)
             }
         end
 
         if context.end_of_round and context.cardarea == G.jokers and not context.retrigger_joker and not context.blueprint then
             local _newtable = {}
             for _, _value in ipairs(card.ability.extra.counters_non) do
+                print(_value)
                 if _value - 1 > 0 then
                     _newtable[#_newtable + 1] = _value -1
                 end
             end
+            card.ability.extra.counters_non = _newtable
         end
     end
 }

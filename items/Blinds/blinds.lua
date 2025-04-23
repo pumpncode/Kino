@@ -494,8 +494,7 @@ SMODS.Blind{
     boss = {min = 1, max = 10},
     pos = { x = 0, y = 10},
     debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
+        
     },
     loc_vars = function(self)
 
@@ -503,11 +502,19 @@ SMODS.Blind{
     collection_loc_vars = function(self)
 
     end,
-
-    modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
-        local _consumeables_used = G.GAME.consumeable_usage_total.all
-        -- return mult, chips, true
-        return (mult - (_consumeables_used * self.debuff.mult_debuff)), (hand_chips - (_consumeables_used * self.debuff.chips_debuff)), true
+    calculate = function(self, blind, context)
+        if context.pre_discard then
+            G.E_MANAGER:add_event(Event({
+                func = function() 
+                    for i = 1, 2 do
+                        local _pool = {G.P_CARDS.H_2, G.P_CARDS.C_2, G.P_CARDS.D_2, G.P_CARDS.S_2}
+                        local _card = create_playing_card({
+                            front = pseudorandom_element(_pool, pseudoseed('ghoulies')), 
+                            center = G.P_CENTERS.m_kino_flying_monkey}, G.deck, nil, nil, {G.C.SECONDARY_SET.Enhanced})
+                    end
+                    return true
+                end}))
+        end
     end
 }
 

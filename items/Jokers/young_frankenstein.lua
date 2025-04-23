@@ -8,7 +8,8 @@ SMODS.Joker {
             codex_solve = Kino.dummy_codex,
             codex_type = 'rank',
             codex_length = 5,
-            solved = false
+            solved = false,
+            mult = 20
         }
     },
     rarity = 2,
@@ -35,7 +36,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.mult
             },
             main_end = Kino.codex_ui(card.ability.extra.codex_solve)
         }

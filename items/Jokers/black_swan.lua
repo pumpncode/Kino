@@ -4,11 +4,13 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            perma_mult = 5
+            perma_mult = 5,
+            cur_chance = 1,
+            chance = 3
         }
     },
     rarity = 2,
-    atlas = "kino_atlas_8",
+    atlas = "kino_atlas_9",
     pos = { x = 3, y = 3},
     cost = 7,
     blueprint_compat = true,
@@ -31,14 +33,16 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                G.GAME.probabilities.normal * card.ability.extra.cur_chance,
+                card.ability.extra.chance,
+                card.ability.extra.perma_mult
             }
         }
     end,
     calculate = function(self, card, context)
         -- When a Queen scores, 1/3 chance to destroy it and create a random new Queen upgraded with +5 mult
         if context.destroying_card then
-            if context.destroying_card:get_id() == 13 then
+            if context.destroying_card:get_id() == 12 then
                 if pseudorandom("kino_black_swan") < (G.GAME.probabilities.normal * card.ability.extra.cur_chance) / card.ability.extra.chance then
                     local _newcard = copy_card(context.destroying_card)
                     _newcard.ability.perma_mult = _newcard.ability.perma_mult or 0

@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             stacks = 0,
-            threshold = 100,
+            threshold = 77,
             factor = 1
         }
     },
@@ -33,7 +33,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.stacks,
+                card.ability.extra.threshold,
+                card.ability.extra.factor
             }
         }
     end,

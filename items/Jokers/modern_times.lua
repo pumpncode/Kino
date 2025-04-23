@@ -34,7 +34,10 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.repetition, 
+                card.ability.extra.cur_chance * G.GAME.probabilities.normal,
+                card.ability.extra.chance,
+                card.ability.extra.destroy_chance_non
             }
         }
     end,
@@ -44,7 +47,6 @@ SMODS.Joker {
         if context.cardarea == G.play and context.repetition then
             if pseudorandom("modern_times_retrigger") < (G.GAME.probabilities.normal * card.ability.extra.cur_chance) / card.ability.extra.chance then
                 return {
-                    card = context.card,
                     repetitions = card.ability.extra.repetition,
                     message = localize('k_again_ex')
                 }

@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            mult = 10
+            mult = 30
         }
     },
     rarity = 1,

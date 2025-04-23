@@ -32,14 +32,15 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.num_cards,
+                card.ability.extra.chips
             }
         }
     end,
     calculate = function(self, card, context)
         -- whenever you use a planet, upgrade 3 random cards in your deck with +10 chips
         if context.using_consumeable and context.consumeable.ability.set == "Planet" then
-            for i = 1, #card.ability.extra.num_cards do
+            for i = 1, card.ability.extra.num_cards do
                 local _pcard = pseudorandom_element(G.playing_cards, pseudoseed("star_wars_i"))
                 _pcard.ability.perma_bonus = _pcard.ability.perma_bonus or 0
                 _pcard.ability.perma_bonus = _pcard.ability.perma_bonus + card.ability.extra.chips

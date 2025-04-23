@@ -33,7 +33,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                math.max(kino_config.speed_factor - card.ability.extra.time_spent, 0)
             }
         }
     end,
@@ -48,7 +48,7 @@ SMODS.Joker {
             card.ability.extra.ticking = true    
         end
 
-        if context.end_of_round and not context.repetition and not context.blueprint then
+        if context.end_of_round and context.cardarea == G.jokers and not context.repetition and not context.blueprint then
             if card.ability.extra.timing_quick_non > card.ability.extra.time_spent then
                 G.E_MANAGER:add_event(Event({
                     func = function() 
@@ -60,10 +60,11 @@ SMODS.Joker {
                     end}))
                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_duplicated_ex')})
             end
+            card.ability.extra.time_spent = 0
         end
     end,
     update = function(self, card, dt)
-        if not G.SETTINGS.paused and G.GAME.blind.in_blind then
+        if card.ability.extra.ticking and not G.SETTINGS.paused and G.GAME.blind.in_blind then
             card.ability.extra.time_spent = card.ability.extra.time_spent + dt
         end
     end

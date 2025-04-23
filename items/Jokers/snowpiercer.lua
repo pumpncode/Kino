@@ -32,13 +32,14 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.stacked_mult,
+                card.ability.extra.a_mult
             }
         }
     end,
     calculate = function(self, card, context)
         -- When you select a blind, destroy all consumables you have, and gain +4 mult per consumable
-        if context.setting_blind and context.repetition and not context.blueprint then
+        if context.setting_blind and not context.retrigger and not context.blueprint then
             for _, _con in ipairs(G.consumeables.cards) do
                 card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult
                 G.E_MANAGER:add_event(Event({func = function()

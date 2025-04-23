@@ -100,22 +100,8 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
 
-        local _hand, _tally = nil, nil
-        local _hands = {}
-		for k, v in ipairs(G.handlist) do
-			if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played < _tally) then
-				_hand = v
-                _hands = {}
-				_tally = G.GAME.hands[v].played
-			end
-            if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played == _tally) then
-				_hands[#_hands] = v
-			end
-		end
-
-        if #_hands >= 2 then
-            _hand = pseudorandom_element(_hands, pseudoseed("arrakis"))
-        end
+        local _hands = get_least_played_hand()
+        local _hand =  pseudorandom_element(_hands, pseudoseed("arrakis"))
 
         card_eval_status_text(card, 'extra', nil, nil, nil,
         { message = localize('k_arrakis'),  colour = G.C.BLACK })

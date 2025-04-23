@@ -5,6 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             kino_sci_fi_upgrade_inc = 1,
+            factor = 1,
             main_eval = false
         }
     },
@@ -32,7 +33,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.factor,
+                card.ability.extra.kino_sci_fi_upgrade_inc
             }
         }
     end,
@@ -52,7 +54,7 @@ SMODS.Joker {
         local _num = 0
         for _, _joker in ipairs(G.jokers.cards) do
             if is_genre(_joker, "Silent") then
-                _num = _num + 1
+                _num = _num + card.ability.extra.factor
             end
         end
 

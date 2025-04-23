@@ -10,7 +10,7 @@ SMODS.Joker {
             codex_length = 5,
             solved = false,
             stacks = 0,
-            lower_by = 90
+            lower_by = 10
         }
     },
     rarity = 2,
@@ -37,7 +37,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.lower_by,
+                card.ability.extra.stacks
             },
             main_end = Kino.codex_ui(card.ability.extra.codex_solve)
         }
@@ -66,7 +67,7 @@ SMODS.Joker {
         -- lower the blind
         if context.setting_blind and G.GAME.blind.boss and card.ability.extra.stacks > 0 then
             card.ability.extra.stacks = card.ability.extra.stacks - 1
-            G.GAME.blind.chips = math.max((G.GAME.blind.chips * ((100 - card.ability.extra.lower_by) / 100)), 0)
+            G.GAME.blind.chips = math.max((G.GAME.blind.chips * ((card.ability.extra.lower_by) / 100)), 0)
             G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
         end
         

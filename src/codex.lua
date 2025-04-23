@@ -57,6 +57,50 @@ function Kino.check_codex(card, codex, checking_cards, solved_codex)
     return _solved_codex, _result
 end
 
+---check if the given sequence of cards matches the codex
+---@param card Card
+---@param codex table
+---@param checking_cards table
+---@return table?
+function Kino.check_codex_optional(card, codex, checking_cards, solved_codex)
+    local _solved_codex = solved_codex
+    local _played_hand = checking_cards
+    local _result = true
+
+    for i = 1, #_played_hand do
+        local _card = checking_cards[i]
+        local _suitmatch = false
+        local _rankmatch = false
+
+        if _solved_codex[i].suit ~= nil then
+            _suitmatch = true
+        elseif codex[i].suit ~= nil and _card and _card:is_suit(codex[i].suit) then
+            _solved_codex[i].suit = codex[i].suit
+            _suitmatch = true
+        elseif codex[i].suit == nil then
+            _suitmatch = true
+        else
+            _solved_codex[i].suit = nil
+        end
+
+        if _solved_codex[i].rank ~= nil then
+            _rankmatch = true
+        elseif codex[i].rank ~= nil and _solved_codex[i].rank == nil and _card and _card:get_id() == codex[i].rank then
+
+            _solved_codex[i].rank = codex[i].rank
+            _rankmatch = true
+        elseif codex[i].rank == nil then
+            _rankmatch = true
+        else
+            _solved_codex[i].rank = nil
+        end
+
+        if not _suitmatch or not _rankmatch then
+            _result = false
+        end
+    end
+end
+
 ---creates a codex sequence of rank and suits
 ---@param loc_limits table
 ---@param type string

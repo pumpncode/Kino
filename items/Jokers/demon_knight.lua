@@ -32,7 +32,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.mult
             }
         }
     end,
@@ -40,9 +40,11 @@ SMODS.Joker {
         -- Whenever you destroy a demonic card, upgrade every card of that suit with +6 mult
         if context.remove_playing_cards then
             for _, _pcard in ipairs(context.removed) do
-                if SMODS:has_enhancement(_pcard, 'm_kino_demonic') then
+
+                if _pcard.config.center == G.P_CENTERS.m_kino_demonic then
+                -- if SMODS:has_enhancement(_pcard, 'm_kino_demonic') then
                     for i, v in ipairs(G.playing_cards) do
-                        if v:is_suit(_pcard.base.id) then
+                        if v:is_suit(_pcard.base.suit) then
                             v.ability.perma_mult = v.ability.perma_mult or 0
                             v.ability.perma_mult = v.ability.perma_mult + card.ability.extra.mult
                         end

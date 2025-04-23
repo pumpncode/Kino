@@ -43,6 +43,7 @@ SMODS.Joker {
     end,
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {set = 'Other', key = "gloss_active"}
         return {
             vars = {
 
@@ -58,6 +59,8 @@ SMODS.Joker {
         and not context.blueprint and not context.repetition then
             local _found_target = false
             for _, _pcard in ipairs(G.deck.cards) do
+                print(_)
+                print(_pcard:get_seal())
                 if _pcard:get_seal() == 'Red' then
                     _pcard:set_seal()
                     _found_target = true
@@ -69,5 +72,15 @@ SMODS.Joker {
                 context.scoring_hand[1]:set_seal("Red")
             end
         end
-    end
+    end,
+    update = function(self, card, dt)
+        if card.area and card.area == G.jokers and G.jokers.cards[1] == card then
+            if not card.children.activedisplay then
+                card.children.activedisplay = Kino.create_active_ui(card)
+            end
+        else
+            card.children.activedisplay = nil
+        end
+        
+    end,
 }

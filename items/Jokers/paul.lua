@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            powerboost = 1.5
+            powerboost = 0.5
         }
     },
     rarity = 3,
@@ -31,19 +31,27 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.powerboost * 100
             }
         }
     end,
     calculate = function(self, card, context)
         -- Sci-fi jokers are 50% stronger
-    end,
-    update = function(self, card, dt)
-        if G.jokers then
-            local _mypos =  nil
+        if context.card_added then
+            print("test")
+            -- and context.card.set == "Joker" 
             for _, _joker in ipairs(G.jokers.cards) do
                 if _joker.config.center.key ~= 'j_kino_paul' and is_genre(_joker, "Sci-fi") then
-                    card:set_multiplication_bonus(card.ability.extra.right_joker, "paul", card.ability.extra.powerboost)
+                    _joker:set_multiplication_bonus(_joker, "paul", 1 + card.ability.extra.powerboost)
+                end
+            end
+        end 
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        if G.jokers then
+            for _, _joker in ipairs(G.jokers.cards) do
+                if _joker.config.center.key ~= 'j_kino_paul' and is_genre(_joker, "Sci-fi") then
+                    _joker:set_multiplication_bonus(_joker, "paul", 1 + card.ability.extra.powerboost)
                 end
             end
         end
@@ -53,7 +61,7 @@ SMODS.Joker {
             local _mypos =  nil
             for _, _joker in ipairs(G.jokers.cards) do
                 if _joker.config.center.key ~= 'j_kino_paul' and is_genre(_joker, "Sci-fi") then
-                    card:set_multiplication_bonus(card.ability.extra.right_joker, "paul", 1)
+                    _joker:set_multiplication_bonus(_joker, "paul", 1)
                 end
             end
         end

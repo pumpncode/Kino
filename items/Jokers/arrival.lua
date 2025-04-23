@@ -36,7 +36,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-
+                card.ability.extra.decrease
             },
             main_end = Kino.codex_ui(card.ability.extra.codex_solve)
         }

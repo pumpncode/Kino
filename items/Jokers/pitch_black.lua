@@ -38,14 +38,24 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.individual and G.GAME.current_round.hands_left > 0 then
+        if context.individual and G.GAME.current_round.hands_left > 0 and context.cardarea == G.play then
                 card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.a_mult
         end
 
-        if context.joker_main then
+        if context.joker_main and G.GAME.current_round.hands_left == 0 then
             return {
                 mult = card.ability.extra.stacked_mult
             }
+        end
+
+        if context.after and G.GAME.current_round.hands_left == 0 then
+            if card.ability.extra.stacked_mult ~= 0 then
+                card.ability.extra.stacked_mult = 0
+                return {
+                    message = localize('k_reset'),
+                    colour = G.C.MULT
+                }
+            end
         end
     end
 }
