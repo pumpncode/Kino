@@ -729,16 +729,48 @@ end
 
 '''
 
-### Crime card, stolen money
-# 
-# [[patches]]
-# [patches.pattern]
-# target = "functions/state_events.lua"
-# pattern = 'local modded = false'
-# position = 'before'
-# match_indent = true
-# payload = '''
+### Destroying card count
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+-- TARGET: effects when cards are removed
+'''
+position = "after"
+payload = '''
 
-# hand_chips = hand_chips + ((Kino.crime_chips or 0) * (G.GAME.money_stolen or 0))
+G.GAME.cards_destroyed = G.GAME.cards_destroyed + (#cards_destroyed or 0)
 
-# '''
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+-- TARGET: effects after cards destroyed in discard
+'''
+position = "after"
+payload = '''
+
+G.GAME.cards_destroyed = G.GAME.cards_destroyed + (#destroyed_cards or 0)
+
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+SMODS.calculate_context({ remove_playing_cards = true, removed = destroyed_cards })
+'''
+position = "after"
+payload = '''
+
+G.GAME.cards_destroyed = G.GAME.cards_destroyed + (#destroyed_cards or 0)
+
+'''
+match_indent = true
+times = 1

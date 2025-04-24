@@ -219,6 +219,7 @@ Game.init_game_object = function(self)
     ret.current_round.horror_transform = 0
     ret.current_round.cards_abducted = 0
     ret.money_stolen = 0
+    ret.cards_destroyed = 0
 
     ret.current_round.actors_check = 3
     ret.current_round.actors_table_offset = 0

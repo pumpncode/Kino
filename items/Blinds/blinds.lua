@@ -148,7 +148,7 @@ SMODS.Blind{
 }
 
 -- WORKS
---- base -1 mult for each card under 101 
+--- -1 mult for every card destroyed
 SMODS.Blind{
     key = "cruella",
     dollars = 5,
@@ -158,56 +158,52 @@ SMODS.Blind{
     boss = {min = 3, max = 10},
     pos = { x = 0, y = 3},
     debuff = {
-        card_count = 101,
-        mult_debuff = 1,
+        mult_debuff = 1
     },
     loc_vars = function(self)
         return {
             vars = {
                 1,
-                101
             }
         }
     end,
     collection_loc_vars = function(self)
         return {
             vars = {
-                1,
-                101
+                1
             }
         }
     end,
     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
-        local _card_count = self.debuff.card_count - #G.playing_cards
         -- return mult, chips, true
-        return (math.max(0, mult - (_card_count * self.debuff.mult_debuff))), hand_chips, true
+        return (math.max(0, mult - ((G.GAME.cards_destroyed or 0) * self.debuff.mult_debuff))), hand_chips, true
     end
 }
 
-SMODS.Blind{
-    key = "voldemort",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('a74ce8'),
-    atlas = 'kino_blinds', 
-    boss = {min = 1, max = 10},
-    pos = { x = 0, y = 4},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
+-- SMODS.Blind{
+--     key = "voldemort",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('a74ce8'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 1, max = 10},
+--     pos = { x = 0, y = 4},
+--     debuff = {
+--         chips_debuff = 10,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
 
-    end,
-    collection_loc_vars = function(self)
+--     end,
+--     collection_loc_vars = function(self)
 
-    end,
-    modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
-        local _consumeables_used = G.GAME.consumeable_usage_total.all
-        -- return mult, chips, true
-        return (mult - (_consumeables_used * self.debuff.mult_debuff)), (hand_chips - (_consumeables_used * self.debuff.chips_debuff)), true
-    end
-}
+--     end,
+--     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
+--         local _consumeables_used = G.GAME.consumeable_usage_total.all
+--         -- return mult, chips, true
+--         return (mult - (_consumeables_used * self.debuff.mult_debuff)), (hand_chips - (_consumeables_used * self.debuff.chips_debuff)), true
+--     end
+-- }
 
 -- WORKS
 --- each scoring card has a 1/10 chance to double your gold, or make you bust
@@ -411,15 +407,7 @@ SMODS.Blind{
     end,
 
 	debuff_hand = function(self, cards, hand, handname, check)
-        for _, _card in ipairs(hand) do
-            print("testing blind")
-            if _card:get_id() == G.GAME.current_round.bonnierank then
-                print("id match")
-            end
-
-            if _card:is_suit(G.GAME.current_round.clydesuit) then
-                print("suit match")
-            end
+        for _, _card in ipairs(cards) do
             if _card:get_id() == G.GAME.current_round.bonnierank or 
             _card:is_suit(G.GAME.current_round.clydesuit) then
                 return true
@@ -485,6 +473,7 @@ SMODS.Blind{
     end
 }
 
+-- Works
 SMODS.Blind{
     key = "wickedwitch",
     dollars = 5,
@@ -539,7 +528,7 @@ SMODS.Blind{
     end,
 
     press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
+        if G.GAME.current_round.hands_played > 0 then
             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
                 if not G.jokers.cards[3].getting_sliced then
                     G.E_MANAGER:add_event(Event({func = function()
@@ -653,6 +642,7 @@ SMODS.Blind{
     end,
 }
 
+-- WORKS
 SMODS.Blind{
     key = "blofeld",
     dollars = 5,
@@ -676,17 +666,25 @@ SMODS.Blind{
     disable = function(self)
         G.GAME.current_round.boss_blind_blofeld_counter = 10000
     end,
-
     calculate = function(self, blind, context)
         if context.after then
             G.GAME.current_round.boss_blind_blofeld_counter = #context.full_hand
         end
+    end,
+    debuff_hand = function(self, cards, hand, handname, check)
+        if (G.GAME.current_round.boss_blind_blofeld_counter or 100000) < #cards then
+            return true
+        end
+
+        return false
+
+        
     end
 }
 
 -- UPDATE 0.9 Blinds
 
--- MIGHT WORK
+-- WORKS
 SMODS.Blind{
     key = "loki",
     dollars = 5,
@@ -716,9 +714,11 @@ SMODS.Blind{
     calculate = function(self, blind, context)
         if context.after then
             local _suit = pseudorandom_element(SMODS.Suits, pseudoseed("kino_source_code"))
-            blind.debuff.suit = _suit.key
+            
 
             G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                blind.debuff.suit = _suit.key
+                print(_suit.key)
                 attention_text({
                     text = localize('k_blind_loki'),
                     scale = 1.3, 
@@ -729,12 +729,17 @@ SMODS.Blind{
                     silent = true
                 })
                 blind:wiggle()
+                for _, _pcard in ipairs(G.playing_cards) do
+                    SMODS.recalc_debuff(_pcard)
+                end
             return true end }))
+
+            
         end
     end
 }
 
--- NO FUNCTIONALITY
+-- WORKS
 SMODS.Blind{
     key = "ratched",
     dollars = 5,
@@ -765,13 +770,22 @@ SMODS.Blind{
         local _suitcount = 0
         for suitname, suitdetails in pairs(SMODS.Suits) do
             for _, _pcard in ipairs(G.hand.cards) do
-                if _pcard:is_suit(suitname) then
+                local _highlighted = false
+                for __, _cardmatch in ipairs(G.hand.highlighted) do
+                    if _cardmatch == _pcard then
+                        _highlighted = true
+                        break
+                    end
+                end
+
+                if _pcard:is_suit(suitname) and _highlighted == false then
                     _suitcount = _suitcount + 1
+                    break
                 end
             end
         end
 
-        if _suitcount >= self.debuff.cardcount then
+        if _suitcount < self.debuff.cardcount then
             return true
         else
             return false
@@ -804,11 +818,16 @@ SMODS.Blind{
     end,
     calculate = function(self, blind, context)
         if context.before then
-            if G.GAME.hands[context.scoring_name].level > 1 then
+            if G.GAME.hands[context.scoring_name].level > to_big(1) then
                 local _targethand = context.scoring_name
+                local _decrease = blind.debuff.level_down
+                if G.GAME.hands[context.scoring_name].level == 2 then
+                    _decrease = 1
+                end
 
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
-                    level_up_hand(blind, _targethand, nil, -1)
+                    
+                    level_up_hand(blind, _targethand, nil, -1 * _decrease)
 
                     for i = 1, 2 do
                         local _randomhand = get_random_hand()
@@ -852,48 +871,50 @@ SMODS.Blind{
     end,
 
     calculate = function(self, blind, context)
-        for _, _pcard in ipairs(context.scoring_hand) do
-            _pcard.ability.perma_p_dollars = _pcard.ability.perma_p_dollars or 0
-            _pcard.ability.perma_p_dollars = _pcard.ability.perma_p_dollars - 1
+        if context.after then
+            for _, _pcard in ipairs(context.scoring_hand) do
+                _pcard.ability.perma_p_dollars = _pcard.ability.perma_p_dollars or 0
+                _pcard.ability.perma_p_dollars = _pcard.ability.perma_p_dollars - 1
+            end
         end
     end
 }
 
 -- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "deckard_shaw",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('3d5a82'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 19},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
+-- SMODS.Blind{
+--     key = "deckard_shaw",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('3d5a82'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 19},
+--     debuff = {
+--         chips_debuff = 10,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
 
-    end,
-    collection_loc_vars = function(self)
+--     end,
+--     collection_loc_vars = function(self)
 
-    end,
+--     end,
 
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
+--     press_play = function(self)
+--         if G.GAME.current_round.hands_played > 1 then
+--             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
+--                 if not G.jokers.cards[3].getting_sliced then
+--                     G.E_MANAGER:add_event(Event({func = function()
+--                         G.jokers.cards[3]:juice_up(0.8, 0.8)
+--                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
+--                     return true end }))
+--                 end
+--             end
+--         end
+--     end,
+-- }
 
--- NO FUNCTIONALITY
+-- WORKS
 SMODS.Blind{
     key = "entity",
     dollars = 5,
@@ -906,11 +927,19 @@ SMODS.Blind{
         chance = 3
     },
     loc_vars = function(self)
-
+        return {
+            vars = {
+                G.GAME.probabilities.normal, 
+                self.debuff.chance
+            }
+        }
     end,
     collection_loc_vars = function(self)
         return {
-
+            vars = {
+                G.GAME.probabilities.normal, 
+                self.debuff.chance
+            }
         }
     end,
 
@@ -921,10 +950,11 @@ SMODS.Blind{
                 G.E_MANAGER:add_event(Event({func = function()
                     local _suit = pseudorandom_element(SMODS.Suits, pseudoseed("kino_source_code"))
                     local _rank = pseudorandom_element(SMODS.Ranks, pseudoseed("kino_source_code"))
-
+                    print(_suit.key)
+                    print(_rank.key)
                     blind:wiggle()
                     _pcard:flip()
-                    SMODS.change_base(_pcard, _suit.key, _rank)
+                    SMODS.change_base(_pcard, _suit.key, _rank.key)
                     _pcard:flip()
                     blind:wiggle()
 
@@ -935,7 +965,7 @@ SMODS.Blind{
     end
 }
 
--- NO FUNCTIONALITY
+-- WORKS
 SMODS.Blind{
     key = "humungus",
     dollars = 5,
@@ -970,7 +1000,7 @@ SMODS.Blind{
     end
 }
 
--- NO FUNCTIONALITY
+-- WORKS
 SMODS.Blind{
     key = "amadeus",
     dollars = 5,
@@ -1000,245 +1030,244 @@ SMODS.Blind{
         end
 
         -- return mult, chips, true
-        return (math.max(0, mult - _multchange)), hand_chips, true
+        return (math.max(1, mult - _multchange)), hand_chips, true
     end
 }
 
 -- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "sallie_tomato",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('8f6623'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 23},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
-
-    end,
-    collection_loc_vars = function(self)
-
-    end,
-
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
-
--- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "agent_smith",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('3f5634'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 24},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
-
-    end,
-    collection_loc_vars = function(self)
-
-    end,
-
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
-
+-- SMODS.Blind{
+--     key = "sallie_tomato",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('8f6623'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 23},
+--     debuff = {
+--         money_earned = 3
+--     },
+--     loc_vars = function(self)
+--         return {
+--             vars = {
+--                 self.debuff.money_earned,
+--                 self.debuff.money_earned * 2
+--             }
+--         }
+--     end,
+--     collection_loc_vars = function(self)
+--         return {
+--             vars = {
+--                 self.debuff.money_earned,
+--                 self.debuff.money_earned * 2
+--             }
+--         }
+--     end,
+--     calculate = function(self, blind, context)
+--         if context.first_hand_drawn then
+            
+--         end
+--     end
+-- }
 
 -- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "anton_chigurh",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('228691'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 25},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
+-- SMODS.Blind{
+--     key = "agent_smith",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('3f5634'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 24},
+--     debuff = {
+--         chips_debuff = 10,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
 
-    end,
-    collection_loc_vars = function(self)
+--     end,
+--     collection_loc_vars = function(self)
 
-    end,
+--     end,
 
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
+--     press_play = function(self)
+--         if G.GAME.current_round.hands_played > 1 then
+--             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
+--                 if not G.jokers.cards[3].getting_sliced then
+--                     G.E_MANAGER:add_event(Event({func = function()
+--                         G.jokers.cards[3]:juice_up(0.8, 0.8)
+--                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
+--                     return true end }))
+--                 end
+--             end
+--         end
+--     end,
+-- }
 
--- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "thanos",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('3f5634'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 26},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
-
-    end,
-    collection_loc_vars = function(self)
-
-    end,
-
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
 
 -- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "immortan_joe",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('3f5634'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 27},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
+-- SMODS.Blind{
+--     key = "anton_chigurh",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('228691'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 25},
+--     debuff = {
+--         chips_debuff = 10,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
 
-    end,
-    collection_loc_vars = function(self)
+--     end,
+--     collection_loc_vars = function(self)
 
-    end,
+--     end,
 
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
-
--- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "palpatine",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('3f5634'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 28},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
-
-    end,
-    collection_loc_vars = function(self)
-
-    end,
-
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
+--     press_play = function(self)
+--         if G.GAME.current_round.hands_played > 1 then
+--             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
+--                 if not G.jokers.cards[3].getting_sliced then
+--                     G.E_MANAGER:add_event(Event({func = function()
+--                         G.jokers.cards[3]:juice_up(0.8, 0.8)
+--                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
+--                     return true end }))
+--                 end
+--             end
+--         end
+--     end,
+-- }
 
 -- NO FUNCTIONALITY
-SMODS.Blind{
-    key = "dr_evil",
-    dollars = 5,
-    mult = 2,
-    boss_colour = HEX('3f5634'),
-    atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
-    pos = { x = 0, y = 29},
-    debuff = {
-        chips_debuff = 10,
-        mult_debuff = 1,
-    },
-    loc_vars = function(self)
+-- SMODS.Blind{
+--     key = "thanos",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('3f5634'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 26},
+--     debuff = {
+--         suit_1 = 'Hearts',
+--         suit_2 = 'Spades'
+--     },
+--     loc_vars = function(self)
 
-    end,
-    collection_loc_vars = function(self)
+--     end,
+--     collection_loc_vars = function(self)
 
-    end,
+--     end,
+--     set_blind = function(self)
+--         -- separate all cards into two buckets
 
-    press_play = function(self)
-        if G.GAME.current_round.hands_played > 1 then
-            if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
-                if not G.jokers.cards[3].getting_sliced then
-                    G.E_MANAGER:add_event(Event({func = function()
-                        G.jokers.cards[3]:juice_up(0.8, 0.8)
-                        G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
-                    return true end }))
-                end
-            end
-        end
-    end,
-}
+--     end,
+--     press_play = function(self)
+       
+
+--     end,
+--     calculate = function(self, blind, context)
+
+--     end
+-- }
+
+-- NO FUNCTIONALITY
+-- SMODS.Blind{
+--     key = "immortan_joe",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('3f5634'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 27},
+--     debuff = {
+--         chips_debuff = 10,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
+
+--     end,
+--     collection_loc_vars = function(self)
+
+--     end,
+
+--     press_play = function(self)
+--         if G.GAME.current_round.hands_played > 1 then
+--             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
+--                 if not G.jokers.cards[3].getting_sliced then
+--                     G.E_MANAGER:add_event(Event({func = function()
+--                         G.jokers.cards[3]:juice_up(0.8, 0.8)
+--                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
+--                     return true end }))
+--                 end
+--             end
+--         end
+--     end,
+-- }
+
+-- NO FUNCTIONALITY
+-- SMODS.Blind{
+--     key = "palpatine",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('3f5634'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 28},
+--     debuff = {
+--         chips_debuff = 10,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
+
+--     end,
+--     collection_loc_vars = function(self)
+
+--     end,
+
+--     press_play = function(self)
+--         if G.GAME.current_round.hands_played > 1 then
+--             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
+--                 if not G.jokers.cards[3].getting_sliced then
+--                     G.E_MANAGER:add_event(Event({func = function()
+--                         G.jokers.cards[3]:juice_up(0.8, 0.8)
+--                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
+--                     return true end }))
+--                 end
+--             end
+--         end
+--     end,
+-- }
+
+-- NO FUNCTIONALITY
+-- SMODS.Blind{
+--     key = "dr_evil",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('3f5634'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 29},
+--     debuff = {
+--         chips_debuff = 10,
+--         mult_debuff = 1,
+--     },
+--     loc_vars = function(self)
+
+--     end,
+--     collection_loc_vars = function(self)
+
+--     end,
+
+--     press_play = function(self)
+--         if G.GAME.current_round.hands_played > 1 then
+--             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
+--                 if not G.jokers.cards[3].getting_sliced then
+--                     G.E_MANAGER:add_event(Event({func = function()
+--                         G.jokers.cards[3]:juice_up(0.8, 0.8)
+--                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
+--                     return true end }))
+--                 end
+--             end
+--         end
+--     end,
+-- }

@@ -2902,8 +2902,8 @@ return {
                 text = {
                     "Decrease base mult",
                     "by {C:mult}#1# for",
-                    "each card under #2#",
-                    "in your starting deck"
+                    "each card destroyed",
+                    "this run"
                 }
             },
             bl_kino_voldemort = {
@@ -3027,7 +3027,7 @@ return {
                 name = "Mr. Chow",
                 text = {
                     "Downgrade each {C:attention}Scored",
-                    "card with {C:money}$-1{}"
+                    "card with {C:money}-$1{}"
                 }
             },
             bl_kino_deckard_shaw = {
@@ -3056,7 +3056,7 @@ return {
                 }
             },
             bl_kino_amadeus = {
-                name = "Wolfgang Amadeus Mozart",
+                name = "W. Amadeus Mozart",
                 text = {
                     "Lower base mult",
                     "by the combined levels",
@@ -3067,10 +3067,9 @@ return {
             bl_kino_sallie_tomato = {
                 name = "Sallie Tomato",
                 text = {
-                    "If your played hand",
-                    "is larger than your",
-                    "last played hand",
-                    "it doesn't score"
+                    "Each hand a target card",
+                    "is selected. Play it to earn",
+                    "$#1#, or lose $#2# if you do not"
                 }
             },
             bl_kino_agent_smith = {
@@ -3094,10 +3093,8 @@ return {
             bl_kino_thanos = {
                 name = "Thanos",
                 text = {
-                    "If your played hand",
-                    "is larger than your",
-                    "last played hand",
-                    "it doesn't score"
+                    "Half your cards are debuffed",
+                    "and alternate each hand"
                 }
             },
             bl_kino_immortan_joe = {

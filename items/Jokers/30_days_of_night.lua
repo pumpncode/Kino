@@ -64,7 +64,7 @@ SMODS.Joker {
             end
 
             if #enhanced > 0 then
-                card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.mult_mod * #enhanced
+                card.ability.extra.stacked_x_mult = card.ability.extra.stacked_x_mult + card.ability.extra.a_xmult * #enhanced
                 return {
                     extra = { focus = card,
                     message = localize({type='variable', key='a_xmult', vars = {card.ability.extra.mult}}),

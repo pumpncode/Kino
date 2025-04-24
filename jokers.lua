@@ -300,9 +300,9 @@ joker_list = {
 
 
 ------ Uncategorized
-"zodiac",
-"young_frankenstein",
-"arrival",
+-- "zodiac",
+-- "young_frankenstein",
+-- "arrival",
 
 }
 

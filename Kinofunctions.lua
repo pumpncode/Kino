@@ -943,6 +943,24 @@ function Kino.rank_to_string(rank)
     return _string
 end
 
+function Kino.rank_to_value(rank)
+    local _string = "nil"
+
+    if  2 <= rank and rank <= 10 then
+        _string = tostring(rank)
+    elseif rank == 11 then
+        _string = "Jack"
+    elseif rank == 12 then
+        _string = "Queen"
+    elseif rank == 13 then
+        _string = "King"
+    elseif rank == 14 then
+        _string = "Ace"
+    end
+
+    return _string
+end
+
 ----------------------
 to_big = to_big or function(x, y)
     return x
