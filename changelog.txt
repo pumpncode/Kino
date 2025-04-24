@@ -1,8 +1,3 @@
-JOKERS FOR TESTING
-- Oppenheimer
-- Zodiac
-- Young Frankenstein
-- Arrival
 
 V 0.9:
 New Jokers:
@@ -31,9 +26,6 @@ New Jokers:
 -- Codex Synergy:
 
 - Oppenheimer
-- Zodiac
-- Young Frankenstein
-- Arrival
 
 -- Generic:
 
@@ -73,15 +65,8 @@ New Jokers:
 - The Shawshank Redemption
 - Metropolis
 
-(WIP:
-- Pirates of the Caribbean - UNFINISHED
-- Frighteners - UNFINISHED
-
-)
-
 
 New Tarot:
-- Detective
 - Gangster
 - Soldier
 
@@ -103,31 +88,27 @@ New Blinds:
 - Nurse Ratched
 - Rico Dynamite
 - Mr. Chow
-- Deckard Shaw
 - An Entity
 - Lord Humungus
 - Amadeus
-- Sallie Tomato
-- Agent Smith
-- Anton Chigurh
-
-Showdown Blinds:
-- Thanos
-- Immortan Joe
-- Emperor Palpatine
-- Dr. Evil
+- Cruella De Vil
+- Bonnie & Clyde
+- Blofeld
 
 Bug Fixes:
 - Stargate
 - Monster & Horror related jokers now correctly spawn
 - Barbie no longer crashes the game
 - Baby Driver now only triggers for cards played and scored
+- Shopaholic should now be compatible with talisman
+- 30 Days of Night no longer crashes the game
+- 10 Things I hate About You
 
 Enhancement Gates Added:
 Set up more jokers to properly check for spawning conditions
 
 - NEED TO FIX: 
-     10 Things I hate About You
+     
 
 V 0.8.1a:
 Bug Fix:

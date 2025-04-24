@@ -10,7 +10,7 @@ return {
             j_kino_9_movie = {
                 name = "9",
                 text = {
-                    "each scoring {C:attention}9{} gives",
+                    "Each scoring {C:attention}9{} gives",
                     "{C:chips}+#1#{} Chips for each",
                     "time this Ante",
                     "a {C:attention}9{} was scored",
@@ -586,7 +586,7 @@ return {
                 text = {
                     "Gains {X:mult,C:white}X#2#{} when",
                     "a {C:attention}Confection{} is used",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{})"
+                    "{C:inactive}(Currently: {X:mult,C:white}X#1#{C:inactive})"
                 }
             },
             j_kino_doctor_strange_1 = {
@@ -1305,9 +1305,9 @@ return {
             j_kino_man_who_laughs = {
                 name= "The Man Who Laughs",
                 text = {
-                    "{X:mult,C:white}X#2#{} Mult for each",
+                    "{X:mult,C:white}X#1#{} Mult for each",
                     "other joker card you have",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} Mult)"
+                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{C:inactive} Mult)"
                 }
             },
             j_kino_mars_attacks = {
@@ -3747,6 +3747,7 @@ return {
             comedy_booster = "Comedy Joker",
             romance_booster = "Romance Joker",
             fantasy_booster = "Fantasy Joker",
+            actor_booster = "Joker",
 
             k_genre_synergy_egg = "That's a Romance!",
             k_genre_synergy = "Genre Synergy!",
