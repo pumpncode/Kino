@@ -3688,7 +3688,13 @@ return {
                 }
             },
             sleeve_kino_c2n = {
-
+                name = "Cine2Nerdle Sleeve",
+                text = {
+                    "If you own a {C:attention}Movie Joker",
+                    "then all jokers that spawn",
+                    "will share cast with your",
+                    "current jokers"
+                }
             },
             sleeve_kino_producer = {
                 name = "Producer Sleeve",
