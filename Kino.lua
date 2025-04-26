@@ -207,6 +207,12 @@ end
 local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
+
+    if G.playing_cards then
+        print(#G.playing_cards)
+    end
+    
+
     ret.modifiers.genre_bonus = {}
 
     ret.current_round.scrap_total = 0
