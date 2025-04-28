@@ -927,6 +927,10 @@ end
 ----------------------
 
 ------------ Helpers ------------
+function Kino.debugfunc(inc)
+    print(G.GAME.last_played_hand[inc])
+end
+
 function Kino.rank_to_string(rank)
 
     local _string = "nil"
