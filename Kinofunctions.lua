@@ -13,6 +13,9 @@
 -- Director tooltip
 
 function genre_match(_listA, _listB)
+    if type(_listA) ~= "table" then
+        _listA = {_listA}
+    end
     if type(_listB) ~= "table" then
         _listB = {_listB}
     end
