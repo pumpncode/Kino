@@ -207,11 +207,6 @@ end
 local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
-
-    -- for _, _pcard in ipairs(G.playing_cards) do
-    
-    -- end
-
     ret.modifiers.genre_bonus = {}
 
     ret.current_round.scrap_total = 0
