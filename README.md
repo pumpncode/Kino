@@ -1,10 +1,10 @@
-# Balatro Goes Kino V0.9-PRERELEASE
+# Balatro Goes Kino V.0.9-PRERELEASE-b
 
 By Ice/IcyEthics
 
 Requirements:
 
-- Steamodded (>=1.0.0~BETA-0422a)
+- Steamodded (>=1.0.0~BETA-0427a)
 - Lovely (>=0.7)
 
 Balatro Goes Kino is a mod made to turn a game for poker nerds into a game for poker and movie nerds. It's main content is a large set of jokers inspired by movies, as well as new Enhancements and Tarot cards, with plans for boss blinds, challenges and decks. Grab the latest release from the Releases tab: https://github.com/icyethics/Kino/releases
