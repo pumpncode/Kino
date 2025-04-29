@@ -1034,109 +1034,132 @@ SMODS.Blind{
     end
 }
 
--- NO FUNCTIONALITY
--- SMODS.Blind{
---     key = "sallie_tomato",
---     dollars = 5,
---     mult = 2,
---     boss_colour = HEX('8f6623'),
---     atlas = 'kino_blinds', 
---     boss = {min = 4, max = 10},
---     pos = { x = 0, y = 23},
---     debuff = {
---         money_earned = 3
---     },
---     loc_vars = function(self)
---         return {
---             vars = {
---                 self.debuff.money_earned,
---                 self.debuff.money_earned * 2
---             }
---         }
---     end,
---     collection_loc_vars = function(self)
---         return {
---             vars = {
---                 self.debuff.money_earned,
---                 self.debuff.money_earned * 2
---             }
---         }
---     end,
---     calculate = function(self, blind, context)
---         if context.first_hand_drawn then
-            
---         end
---     end
--- }
+-- discarding costs $5
+SMODS.Blind{
+    key = "sallie_tomato",
+    dollars = 5,
+    mult = 2,
+    boss_colour = HEX('8f6623'),
+    atlas = 'kino_blinds', 
+    boss = {min = 4, max = 10},
+    pos = { x = 0, y = 23},
+    debuff = {
+        money_earned = 5
+    },
+    loc_vars = function(self)
+        return {
+            vars = {
+                self.debuff.money_earned
+            }
+        }
+    end,
+    collection_loc_vars = function(self)
+        return {
+            vars = {
+                self.debuff.money_earned
+            }
+        }
+    end,
+    calculate = function(self, blind, context)
+        if context.pre_discard then
+            ease_dollars(-1 * blind.debuff.money_earned)
+        end
+    end
+}
+
+-- Cards only score if you've discarded a card with the same rank
+SMODS.Blind{
+    key = "agent_smith",
+    dollars = 5,
+    mult = 2,
+    boss_colour = HEX('3f5634'),
+    atlas = 'kino_blinds', 
+    boss = {min = 3, max = 10},
+    pos = { x = 0, y = 24},
+    debuff = {
+        chips_debuff = 10,
+        mult_debuff = 1,
+    },
+    loc_vars = function(self)
+
+    end,
+    collection_loc_vars = function(self)
+
+    end,
+    set_blind = function(self)
+        -- separate all cards into two buckets
+        G.GAME.current_round.boss_blind_agent_smith_rank_discards = {}
+    end,
+    calculate = function(self, blind, context)
+        if context.discard then
+            G.GAME.current_round.boss_blind_agent_smith_rank_discards[tostring(context.other_card:get_id())] = true
+
+            G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                attention_text({
+                    text = localize('k_blind_smith'),
+                    scale = 1.3, 
+                    hold = 1.4,
+                    major = G.play,
+                    align = 'tm',
+                    offset = {x = 0, y = -1},
+                    silent = true
+                })
+                blind:wiggle()
+                for _, _pcard in ipairs(G.playing_cards) do
+                    SMODS.recalc_debuff(_pcard)
+                end
+            return true end }))
+        end
+    end,
+    recalc_debuff = function(self, card, from_blind)
+        if card and type(card) == "table" and card.area and card.area ~= G.jokers and card.config.center ~= G.P_CENTERS.m_stone then
+            for _id, _bool in pairs(G.GAME.current_round.boss_blind_agent_smith_rank_discards) do
+                if _id == tostring(card:get_id()) then
+                    
+                    return false
+                end
+            end
+            card:set_debuff(true)
+            return true
+        end
+    end
+}
+
 
 -- NO FUNCTIONALITY
--- SMODS.Blind{
---     key = "agent_smith",
---     dollars = 5,
---     mult = 2,
---     boss_colour = HEX('3f5634'),
---     atlas = 'kino_blinds', 
---     boss = {min = 4, max = 10},
---     pos = { x = 0, y = 24},
---     debuff = {
---         chips_debuff = 10,
---         mult_debuff = 1,
---     },
---     loc_vars = function(self)
-
---     end,
---     collection_loc_vars = function(self)
-
---     end,
-
---     press_play = function(self)
---         if G.GAME.current_round.hands_played > 1 then
---             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
---                 if not G.jokers.cards[3].getting_sliced then
---                     G.E_MANAGER:add_event(Event({func = function()
---                         G.jokers.cards[3]:juice_up(0.8, 0.8)
---                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
---                     return true end }))
---                 end
---             end
---         end
---     end,
--- }
-
-
--- NO FUNCTIONALITY
--- SMODS.Blind{
---     key = "anton_chigurh",
---     dollars = 5,
---     mult = 2,
---     boss_colour = HEX('228691'),
---     atlas = 'kino_blinds', 
---     boss = {min = 4, max = 10},
---     pos = { x = 0, y = 25},
---     debuff = {
---         chips_debuff = 10,
---         mult_debuff = 1,
---     },
---     loc_vars = function(self)
-
---     end,
---     collection_loc_vars = function(self)
-
---     end,
-
---     press_play = function(self)
---         if G.GAME.current_round.hands_played > 1 then
---             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
---                 if not G.jokers.cards[3].getting_sliced then
---                     G.E_MANAGER:add_event(Event({func = function()
---                         G.jokers.cards[3]:juice_up(0.8, 0.8)
---                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
---                     return true end }))
---                 end
---             end
---         end
---     end,
--- }
+SMODS.Blind{
+    key = "anton_chigurh",
+    dollars = 5,
+    mult = 2,
+    boss_colour = HEX('228691'),
+    atlas = 'kino_blinds', 
+    boss = {min = 3, max = 10},
+    pos = { x = 0, y = 25},
+    debuff = {
+        chance = 2
+    },
+    loc_vars = function(self)
+        return {
+            vars = {
+                self.debuff.chance
+            }
+        }
+    end,
+    collection_loc_vars = function(self)
+        return {
+            vars = {
+                self.debuff.chance
+            }
+        }
+    end,
+    calculate = function(self, blind, context)
+        if context.pre_discard then
+            if pseudorandom("anton_chigurh") < (G.GAME.probabilities.normal / blind.debuff.chance) then
+                ease_hands_played(-1)
+            end
+        end
+    end
+}
 
 -- NO FUNCTIONALITY
 -- SMODS.Blind{

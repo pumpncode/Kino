@@ -207,7 +207,10 @@ end
 local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
+    
+
     ret.modifiers.genre_bonus = {}
+    ret.last_played_hand = Kino.dummy_codex
 
     ret.current_round.scrap_total = 0
     ret.current_round.matches_made = 0
@@ -247,6 +250,7 @@ Game.init_game_object = function(self)
     -- Boss Blind info
     ret.current_round.boss_blind_joker_counter = 0
     ret.current_round.boss_blind_blofeld_counter = 10000
+    ret.current_round.boss_blind_agent_smith_rank_discards = {}
     return ret
 end
 
