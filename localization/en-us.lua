@@ -3067,27 +3067,23 @@ return {
             bl_kino_sallie_tomato = {
                 name = "Sallie Tomato",
                 text = {
-                    "Each hand a target card",
-                    "is selected. Play it to earn",
-                    "$#1#, or lose $#2# if you do not"
+                    "Discarding costs -$#1#"
                 }
             },
             bl_kino_agent_smith = {
                 name = "Agent Smith",
                 text = {
-                    "If your played hand",
-                    "is larger than your",
-                    "last played hand",
-                    "it doesn't score"
+                    "Cards are debuffed",
+                    "unless a card of the same",
+                    "rank is discarded"
                 }
             },
             bl_kino_anton_chigurh = {
                 name = "Anton Chigurh",
                 text = {
-                    "If your played hand",
-                    "is larger than your",
-                    "last played hand",
-                    "it doesn't score"
+                    "When you discard",
+                    "#1# in #2# chance to lose",
+                    "a hand"
                 }
             },
             bl_kino_thanos = {

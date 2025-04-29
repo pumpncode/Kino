@@ -207,10 +207,6 @@ end
 local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
-
-    if G.playing_cards then
-        print(#G.playing_cards)
-    end
     
 
     ret.modifiers.genre_bonus = {}
@@ -254,6 +250,7 @@ Game.init_game_object = function(self)
     -- Boss Blind info
     ret.current_round.boss_blind_joker_counter = 0
     ret.current_round.boss_blind_blofeld_counter = 10000
+    ret.current_round.boss_blind_agent_smith_rank_discards = {}
     return ret
 end
 
