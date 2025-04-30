@@ -58,7 +58,7 @@ SMODS.Blind{
     boss = {min = 2, max = 10},
     pos = { x = 0, y = 1},
     debuff = {
-        vader_damage = 0.33
+        vader_damage = 0.3333
     },
     loc_vars = function(self)
         
@@ -67,45 +67,79 @@ SMODS.Blind{
 
     end,
     set_blind = function(self)
+        G.GAME.current_round.boss_blind_indicator = true
+        if G.jokers.cards and G.jokers.cards[1] then
+            local _startingvalue = 1
+            G.jokers.cards[1].ability.vader_triggers = 1
+            if G.jokers.cards[1].ability.output_powerchange and G.jokers.cards[1].ability.output_powerchange.kinoblind_vader then
+                _startingvalue = G.jokers.cards[1].ability.output_powerchange.kinoblind_vader
+            end
+            Kino.setpowerchange(G.jokers.cards[1], "kinoblind_vader", _startingvalue - self.debuff.vader_damage)
+        end
     end,
     drawn_to_hand = function(self)
         
     end,
     disable = function(self)
-
+        G.GAME.current_round.boss_blind_indicator = false
     end,
     defeat = function(self)
-        
+        G.GAME.current_round.boss_blind_indicator = false
+        for _, _joker in ipairs(G.jokers.cards) do
+            Kino.setpowerchange(_joker, "kinoblind_vader", 1)
+            G.jokers.cards[1].ability.vader_triggers = nil
+        end
     end,
     press_play = function(self)
         
     end,
     calculate = function(self, blind, context)
-        if context.final_scoring_step then
-            if G.jokers.cards and G.jokers.cards[1] then
-                local _target = G.jokers.cards[1]
-                local _is_affected =  _target:get_multiplier_by_source(_target, "vader_blind")
-                if _is_affected then
-                    if _is_affected <= 0.25 then
-                        -- Destroy the joker
-                        _target.getting_sliced = true
-                        blind:wiggle()
-                        G.E_MANAGER:add_event(Event({func = function()
-                            card_eval_status_text(_target, 'extra', nil, nil, nil,
-                            { message = localize('k_blind_vader_1'), colour = G.C.BLACK})
-                            _target:start_dissolve({G.C.RED}, nil, 1.6)
-                        return true end }))
-                    end
-                else 
-                    _is_affected = 1
-                end
+        -- Old Vader
+        -- if context.final_scoring_step then
+        --     if G.jokers.cards and G.jokers.cards[1] then
+        --         local _target = G.jokers.cards[1]
+        --         local _is_affected =  _target:get_multiplier_by_source(_target, "vader_blind")
+        --         if _is_affected then
+        --             if _is_affected <= 0.25 then
+        --                 -- Destroy the joker
+        --                 _target.getting_sliced = true
+        --                 blind:wiggle()
+        --                 G.E_MANAGER:add_event(Event({func = function()
+        --                     card_eval_status_text(_target, 'extra', nil, nil, nil,
+        --                     { message = localize('k_blind_vader_1'), colour = G.C.BLACK})
+        --                     _target:start_dissolve({G.C.RED}, nil, 1.6)
+        --                 return true end }))
+        --             end
+        --         else 
+        --             _is_affected = 1
+        --         end
+        --         G.E_MANAGER:add_event(Event({func = function()
+        --             blind:wiggle()
+        --             card_eval_status_text(_target, 'extra', nil, nil, nil,
+        --             { message = localize('k_blind_vader_2'), colour = G.C.BLACK})
+        --             _target:set_multiplication_bonus(_target, "vader_blind", _is_affected - self.debuff.vader_damage)
+        --             return true end }))
+        --     end
+        -- end
+
+        if context.after then
+            G.jokers.cards[1].ability.vader_triggers = G.jokers.cards[1].ability.vader_triggers and G.jokers.cards[1].ability.vader_triggers +1 or 1
+
+            if G.jokers.cards[1].ability.vader_triggers > 3 then
+                G.jokers.cards[1].getting_sliced = true
+                
                 G.E_MANAGER:add_event(Event({func = function()
                     blind:wiggle()
-                    card_eval_status_text(_target, 'extra', nil, nil, nil,
-                    { message = localize('k_blind_vader_2'), colour = G.C.BLACK})
-                    _target:set_multiplication_bonus(_target, "vader_blind", _is_affected - self.debuff.vader_damage)
-                    return true end }))
+                    card_eval_status_text(G.jokers.cards[1], 'extra', nil, nil, nil,
+                    { message = localize('k_blind_vader_1'), colour = G.C.BLACK})
+                    G.jokers.cards[1]:start_dissolve({G.C.RED}, nil, 1.6)
+                return true end }))
             end
+            local _startingvalue = 1
+            if G.jokers.cards[1].ability.output_powerchange and G.jokers.cards[1].ability.output_powerchange.kinoblind_vader then
+                _startingvalue = G.jokers.cards[1].ability.output_powerchange.kinoblind_vader
+            end
+            Kino.setpowerchange(G.jokers.cards[1], "kinoblind_vader", _startingvalue - self.debuff.vader_damage)
         end
     end
 }
@@ -965,37 +999,105 @@ SMODS.Blind{
     end
 }
 
--- WORKS
+-- Lower ranks of cards in hand when 
+-- SMODS.Blind{
+--     key = "humungus",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('8f6623'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10},
+--     pos = { x = 0, y = 21},
+--     debuff = {
+--     },
+--     loc_vars = function(self)
+
+--     end,
+--     collection_loc_vars = function(self)
+
+--     end,
+
+--     calculate = function(self, blind, context)
+--         if context.individual and context.cardarea == G.play then
+--             for _, _pcard in ipairs(G.hand.cards) do
+--                 G.E_MANAGER:add_event(Event({func = function()
+
+--                     blind:wiggle()
+--                     _pcard:flip()
+--                     SMODS.modify_rank(_pcard, -1)
+--                     _pcard:flip()
+--                     blind:wiggle()
+
+--                 return true end }))
+--             end
+--         end
+--     end
+-- }
+
+-- When you discard or play, discard the top 3 cards from your deck
 SMODS.Blind{
     key = "humungus",
     dollars = 5,
     mult = 2,
     boss_colour = HEX('8f6623'),
     atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
+    boss = {min = 2, max = 10},
     pos = { x = 0, y = 21},
     debuff = {
+        to_discard = 3
     },
     loc_vars = function(self)
-
+        return {
+            vars = {
+                self.debuff.to_discard
+            }
+        }
     end,
     collection_loc_vars = function(self)
+        return {
+            vars = {
+                self.debuff.to_discard
+            }
+        }
+    end,
+    press_play = function(self)
+        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+            attention_text({
+                text = localize('k_kino_blind_humungus_1'),
+                scale = 1.3, 
+                hold = 1.4,
+                major = G.play,
+                align = 'tm',
+                offset = {x = 0, y = -1},
+                silent = true
+            })
+            play_sound('tarot2', 1, 0.4)
+            blind:wiggle()
+            for i = 1, self.debuff.to_discard do
+                draw_card(G.deck,G.discard, 1*100/3,'down', false, v)
+            end
+        return true end }))
+
 
     end,
-
     calculate = function(self, blind, context)
-        if context.individual and context.cardarea == G.play then
-            for _, _pcard in ipairs(G.hand.cards) do
-                G.E_MANAGER:add_event(Event({func = function()
-
-                    blind:wiggle()
-                    _pcard:flip()
-                    SMODS.modify_rank(_pcard, -1)
-                    _pcard:flip()
-                    blind:wiggle()
-
-                return true end }))
-            end
+        if context.pre_discard then
+            G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                attention_text({
+                    text = localize('k_kino_blind_humungus_1'),
+                    scale = 1.3, 
+                    hold = 1.4,
+                    major = G.play,
+                    align = 'tm',
+                    offset = {x = 0, y = -1},
+                    silent = true
+                })
+                play_sound('tarot2', 1, 0.4)
+                blind:wiggle()
+                for i = 1, self.debuff.to_discard do
+                    draw_card(G.deck,G.discard, 1*100/3,'down', false, v)
+                end
+            return true end }))
         end
     end
 }
@@ -1039,9 +1141,9 @@ SMODS.Blind{
     key = "sallie_tomato",
     dollars = 5,
     mult = 2,
-    boss_colour = HEX('8f6623'),
+    boss_colour = HEX('f74a4a'),
     atlas = 'kino_blinds', 
-    boss = {min = 4, max = 10},
+    boss = {min = 2, max = 10},
     pos = { x = 0, y = 23},
     debuff = {
         money_earned = 5
@@ -1162,70 +1264,138 @@ SMODS.Blind{
 }
 
 -- NO FUNCTIONALITY
--- SMODS.Blind{
---     key = "thanos",
---     dollars = 5,
---     mult = 2,
---     boss_colour = HEX('3f5634'),
---     atlas = 'kino_blinds', 
---     boss = {min = 4, max = 10},
---     pos = { x = 0, y = 26},
---     debuff = {
---         suit_1 = 'Hearts',
---         suit_2 = 'Spades'
---     },
---     loc_vars = function(self)
+SMODS.Blind{
+    key = "thanos",
+    dollars = 5,
+    mult = 2,
+    boss_colour = HEX('3f5634'),
+    atlas = 'kino_blinds', 
+    boss = {min = 4, max = 10, showdown = true},
+    pos = { x = 0, y = 26},
+    debuff = {
 
---     end,
---     collection_loc_vars = function(self)
+    },
+    loc_vars = function(self)
 
---     end,
---     set_blind = function(self)
---         -- separate all cards into two buckets
+    end,
+    collection_loc_vars = function(self)
 
---     end,
---     press_play = function(self)
+    end,
+    set_blind = function(self)
+        -- separate all cards into two buckets
+        local _tempCards = {}
+
+        for _, _pcard in ipairs(G.playing_cards) do
+            _tempCards[_] = _pcard
+            _pcard.ability.thanos_pool = false
+        end
+
+        for i = 1, #_tempCards / 2 do
+            local chosen, index = pseudorandom_element(_tempCards, pseudoseed("kinoblind_thanos"))
+            chosen.ability.thanos_pool = true
+            table.remove(_tempCards, index)
+        end
+
+    end,
+    press_play = function(self)
        
 
---     end,
---     calculate = function(self, blind, context)
+    end,
+    calculate = function(self, blind, context)
+        if context.after then
+            G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                attention_text({
+                    text = localize('k_kino_blind_thanos'),
+                    scale = 1.3, 
+                    hold = 1.4,
+                    major = G.play,
+                    align = 'tm',
+                    offset = {x = 0, y = -1},
+                    silent = true
+                })
+                blind:wiggle()
+                for _, _pcard in ipairs(G.playing_cards) do
+                    SMODS.recalc_debuff(_pcard)
+                end
+            return true end }))
+        end
+    end,
+    recalc_debuff = function(self, card, from_blind)
+        if card and type(card) == "table" and card.area and card.area ~= G.jokers then
+            local _bool = false
+            if G.GAME.current_round.hands_played % 2 == 0 then
+                _bool = true
+            end
 
---     end
--- }
+            if card.ability.thanos_pool == true then
+                card:set_debuff(_bool)
+                return _bool
+            else
+                card:set_debuff(not _bool)
+                return not _bool
+            end
+        end
+    end
+}
 
--- NO FUNCTIONALITY
--- SMODS.Blind{
---     key = "immortan_joe",
---     dollars = 5,
---     mult = 2,
---     boss_colour = HEX('3f5634'),
---     atlas = 'kino_blinds', 
---     boss = {min = 4, max = 10},
---     pos = { x = 0, y = 27},
---     debuff = {
---         chips_debuff = 10,
---         mult_debuff = 1,
---     },
---     loc_vars = function(self)
+-- When you play or discard, discard that many cards from top of deck
+SMODS.Blind{
+    key = "immortan_joe",
+    dollars = 5,
+    mult = 2,
+    boss_colour = HEX('3f5634'),
+    atlas = 'kino_blinds', 
+    boss = {min = 4, max = 10, showdown = true},
+    pos = { x = 0, y = 27},
+    debuff = {
+    },
+    loc_vars = function(self)
 
---     end,
---     collection_loc_vars = function(self)
+    end,
+    collection_loc_vars = function(self)
 
---     end,
+    end,
+    press_play = function(self)
+        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+            attention_text({
+                text = localize('k_kino_blind_immortan_1'),
+                scale = 1.3, 
+                hold = 1.4,
+                major = G.play,
+                align = 'tm',
+                offset = {x = 0, y = -1},
+                silent = true
+            })
+            play_sound('tarot2', 1, 0.4)
+            blind:wiggle()
+            for i = 1, #G.play.cards do
+                draw_card(G.deck,G.discard, 1*100/3,'down', false, v)
+            end
+        return true end }))
 
---     press_play = function(self)
---         if G.GAME.current_round.hands_played > 1 then
---             if G.jokers.cards and #G.jokers.cards > 2 and G.jokers.cards[3] then
---                 if not G.jokers.cards[3].getting_sliced then
---                     G.E_MANAGER:add_event(Event({func = function()
---                         G.jokers.cards[3]:juice_up(0.8, 0.8)
---                         G.jokers.cards[3]:start_dissolve({G.C.RED}, nil, 1.6)
---                     return true end }))
---                 end
---             end
---         end
---     end,
--- }
+
+    end,
+    calculate = function(self, blind, context)
+        if context.pre_discard then
+            G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                attention_text({
+                    text = localize('k_kino_blind_immortan_1'),
+                    scale = 1.3, 
+                    hold = 1.4,
+                    major = G.play,
+                    align = 'tm',
+                    offset = {x = 0, y = -1},
+                    silent = true
+                })
+                play_sound('tarot2', 1, 0.4)
+                blind:wiggle()
+                for i = 1, #context.full_hand do
+                    draw_card(G.deck,G.discard, 1*100/3,'down', false, v)
+                end
+            return true end }))
+        end
+    end
+}
 
 -- NO FUNCTIONALITY
 -- SMODS.Blind{

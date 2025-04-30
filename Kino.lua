@@ -251,6 +251,7 @@ Game.init_game_object = function(self)
     ret.current_round.boss_blind_joker_counter = 0
     ret.current_round.boss_blind_blofeld_counter = 10000
     ret.current_round.boss_blind_agent_smith_rank_discards = {}
+    ret.current_round.boss_blind_thanos_cards = {}
     return ret
 end
 
@@ -423,6 +424,13 @@ if load_error then
 end
 
 local helper, load_error = SMODS.load_file("src/quest.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
+local helper, load_error = SMODS.load_file("src/powerchanges.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
     else

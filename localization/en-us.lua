@@ -3050,9 +3050,8 @@ return {
             bl_kino_humungus = {
                 name = "Lord Humungus",
                 text = {
-                    "When a card is scored",
-                    "lower the rank of",
-                    "each held card by 1"
+                    "Discard #1# cards from top",
+                    "of deck when you Play or Discard"
                 }
             },
             bl_kino_amadeus = {
@@ -3096,10 +3095,8 @@ return {
             bl_kino_immortan_joe = {
                 name = "Immortan Joe",
                 text = {
-                    "If your played hand",
-                    "is larger than your",
-                    "last played hand",
-                    "it doesn't score"
+                    "Discard a card from top",
+                    "of deck for each card Played or Discarded"
                 }
             },
             bl_kino_palpatine = {
@@ -3313,6 +3310,17 @@ return {
                     "by {C:attention}X#1#"
                 }
             },
+
+            -- Power Dampening
+            output_powerchange = {
+                name = "Power Dampening",
+                text = {
+                    "Final scoring bonuses",
+                    "by this joker are",
+                    "lowered by X#1#"
+                }
+            },
+
 
             -- Keywords
             gloss_least_played = {
@@ -3867,6 +3875,10 @@ return {
             k_blind_joker_final = "Why So Serious?",
             k_blind_loki = "Changed the Target Suit",
             k_blind_rico_dyn = "You're doing it wrong",
+            k_kino_blind_humungus_1 = "We Kill! We Kill! We Kill!",
+            k_blind_smith = "No, Jimbo. Your men are already dead",
+            k_kino_blind_immortan_1 = "I am your redeemer",
+            k_kino_blind_thanos = "Perfectly Balanced",
 
             -- Legendary Joker Quests
             -- -- 2001: A Space Odyssey
