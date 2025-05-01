@@ -896,7 +896,6 @@ return {
                     "{C:inactive}(Currently: {X:mult,C:white}X#3#{C:inactive} Mult & {C:money}$#4#{C:inactive})"
                 }
             },
-            },
             j_kino_gravity = {
                 name = "Gravity",
                 text = {
@@ -3723,9 +3722,8 @@ return {
                     "each {C:attention}Movie Joker{} pays out",
                     "based on it's {C:attention}Profit Margin"
                 }
-            }
-
-        }
+            },
+        },
     },
     misc = {
         dictionary = {
