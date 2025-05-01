@@ -261,3 +261,68 @@ SMODS.Consumable {
         )
     end
 }
+
+-- Death Star: level up every hand once and destroy a joker
+SMODS.Consumable {
+    key = "death_star",
+    set = "Planet",
+    order = 7,
+    pos = {x = 0, y = 5},
+    atlas = "kino_tarot",
+    can_use = function(self, card)
+        local _eligible_targets = {}
+
+        for _, _joker in ipairs(G.jokers.cards) do
+            if _joker:can_calculate() then
+                _eligible_targets[#_eligible_targets + 1] = _joker
+            end
+        end
+
+        if #_eligible_targets > 0 then return true end
+		return false
+	end,
+    config = {
+        extra = {
+            
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+
+            }
+        }
+    end,
+    use = function(self, card, area, copier)
+
+        -- Find most played hand
+        local _eligible_targets = {}
+
+        for _, _joker in ipairs(G.jokers.cards) do
+            if _joker:can_calculate() then
+                _eligible_targets[#_eligible_targets + 1] = _joker
+            end
+        end
+
+        -- destroy random joker
+        local _target = pseudorandom_element(G.jokers.cards, pseudoseed("kino_death_star"))
+        _target:start_dissolve()
+
+        for k, v in ipairs(G.handlist) do
+			if G.GAME.hands[v] then
+				level_up_hand(card, v, true, 1)
+			end
+		end
+
+        
+        update_hand_text(
+			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
+			{ mult = 0, chips = 0, handname = "All Hands", level = "+1" }
+        )
+        delay(0.5)
+        update_hand_text(
+			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
+			{ mult = 0, chips = 0, handname = "", level = "" }
+        )
+    end
+}

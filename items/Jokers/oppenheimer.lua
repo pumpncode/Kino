@@ -6,6 +6,7 @@ SMODS.Joker {
         extra = {
             codex = {},
             codex_solve = Kino.dummy_codex,
+            codex_lastplayed = Kino.dummy_codex,
             codex_type = 'rank',
             codex_length = 5,
             solved = false
@@ -33,11 +34,28 @@ SMODS.Joker {
     pools, k_genre = {"Biopic", "Drama", "Historical"},
 
     loc_vars = function(self, info_queue, card)
+        local _mainreturncodex = Kino.codex_ui(card.ability.extra.codex_solve)
+        card.ability.extra.codex_lastplayed = Kino.assess_played_hand(card, card.ability.extra.codex)
+        local _lastplayedhand = Kino.codex_ui(card.ability.extra.codex_lastplayed, true)
+        local _codexreturn = {
+        {
+                n = G.UIT.C,
+                config = {
+                    align = 'cm',
+                    colour = G.C.CLEAR,
+                    padding = 0.1
+                },
+                nodes = {
+                    _mainreturncodex,
+                    _lastplayedhand
+                }
+            }
+        }
         return {
             vars = {
 
             },
-            main_end = Kino.codex_ui(card.ability.extra.codex_solve)
+            main_end = _codexreturn
         }
     end,
     calculate = function(self, card, context)

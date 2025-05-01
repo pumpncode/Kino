@@ -270,6 +270,7 @@ SMODS.Blind{
     end,
     calculate = function(self, blind, context)
         if context.individual and context.cardarea == G.play then
+            -- earn 5
             if pseudorandom("gekko_blind_double") < (G.GAME.probabilities.normal / self.debuff.chance) then
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
                     attention_text({
@@ -281,7 +282,7 @@ SMODS.Blind{
                         offset = {x = 0, y = -1},
                         silent = true
                     })
-                    ease_dollars(G.GAME.dollars)
+                    ease_dollars(5)
                     play_sound('tarot2', 1, 0.4)
                     blind:wiggle()
                 return true end }))
@@ -297,7 +298,7 @@ SMODS.Blind{
                         offset = {x = 0, y = -1},
                         silent = true
                     })
-                    ease_dollars(-G.GAME.dollars)
+                    ease_dollars(-10)
                     play_sound('tarot2', 1, 0.4)
                     blind:wiggle()
                 return true end }))
@@ -1243,6 +1244,7 @@ SMODS.Blind{
     loc_vars = function(self)
         return {
             vars = {
+                G.GAME.probabilities.normal,
                 self.debuff.chance
             }
         }
@@ -1250,6 +1252,7 @@ SMODS.Blind{
     collection_loc_vars = function(self)
         return {
             vars = {
+                G.GAME.probabilities.normal,
                 self.debuff.chance
             }
         }

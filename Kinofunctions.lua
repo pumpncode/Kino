@@ -438,6 +438,7 @@ function Card:kino_synergy(card)
 
     -- If 5 share an actor, x2 all values
     -- if 3 share an actor, start shaking (and display the actor)
+
     if not kino_config.actor_synergy  or not self.config.center.kino_joker then
         return 0
     end
@@ -933,6 +934,9 @@ end
 
 function Kino.rank_to_string(rank)
 
+    if rank == nil then
+        return "nil-err"
+    end
     local _string = "nil"
 
     if  2 <= rank and rank <= 10 then

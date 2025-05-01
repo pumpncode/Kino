@@ -38877,7 +38877,6 @@ return {
     popularity = 0.3143,
     acting = {
       "2292",
-      "2292",
     },
     directing = {
     },

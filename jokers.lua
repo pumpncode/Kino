@@ -254,7 +254,7 @@ joker_list = {
 "metropolis",
 "muppets_2",
 "oceans_11",
-'oppenheimer',
+-- 'oppenheimer',
 "pain_and_gain",
 "party_people",
 "paul",

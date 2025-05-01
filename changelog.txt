@@ -1,70 +1,54 @@
 
 V 0.9:
 New Jokers:
--- Action synergy:
-
 - John Wick
 - Die Hard
 - Hot Fuzz
 - Pain & Gain
 - Source Code
-
--- Crime Synergy:
-
 - Con Air
 - Fargo
 - Fast & Furious 5
 - Tower Heist
 - Oceans 12
-
 - A Fish Called Wanda
 - Limitless
 - Scarface (1932)
 - Scarface (1983)
 - Dick Tracy
-
--- Codex Synergy:
-
-- Oppenheimer
-
--- Generic:
-
 - The Martian
 - Teenage Mutant Ninja Turtles
 - Taken
 - Modern Times
 - Death Race
-
 - Her
 - Minecraft
 - Tales from the Crypt: Demon Knight
 - Snowpiercer
 - Freaky Friday
-
 - My Neighbor Totoro
 - Bloodshot
 - Sunshine
 - Dune 1984
 - Paul
-
 - Gravity
 - Nightcrawler
 - Black Swan
 - Your Highness
 - Star Wars Episode IV
-
 - Star Wars Episode I
 - Star Wars Episode VII
 - Sausage Party
 - V for Vendatta
 - Big Daddy
-
 - Peggy Sue Got Married
 - Pitch Black
 - Da 5 Bloods
 - The Shawshank Redemption
 - Metropolis
 
+New Planet:
+- Death Star
 
 New Tarot:
 - Gangster
@@ -94,8 +78,11 @@ New Blinds:
 - Cruella De Vil
 - Bonnie & Clyde
 - Blofeld
+- Thanos
+- Immortan Joe
 
 Bug Fixes:
+- Gentlemen Prefer Blondes works properly
 - Stargate
 - Monster & Horror related jokers now correctly spawn
 - Barbie no longer crashes the game
@@ -107,7 +94,7 @@ Bug Fixes:
 Enhancement Gates Added:
 Set up more jokers to properly check for spawning conditions
 
-- NEED TO FIX: 
+
      
 
 V 0.8.1a:

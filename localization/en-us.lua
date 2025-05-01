@@ -847,7 +847,7 @@ return {
                 text = {
                     "Scored {C:diamonds}Diamonds{} {C:mult}+#1#{} Mult",
                     "for each {C:diamonds}Diamonds{} card in your deck above 13",
-                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+                    "{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
                 }
             },
             j_kino_get_out = {
@@ -2670,7 +2670,15 @@ return {
                     "played hand and debuff",
                     "two random cards in deck"
                 }
-            }
+            },
+            c_kino_death_star= {
+                name = "Death Star",
+                text = {
+                    "Destroy a random",
+                    "joker to {C:attention}Level Up",
+                    "every hand"
+                }
+            },
         },
         confection = {
             c_kino_popcorn = {
@@ -2920,8 +2928,8 @@ return {
                 text = {
                     "Each card scored",
                     "has a {C:green}#1# in #2#{}",
-                    "chance to either Double",
-                    "your money, or {C:attention}Bust"
+                    "chance to either earn $5",
+                    "or lose $10"
                 }
             },
             bl_kino_pazuzu = {

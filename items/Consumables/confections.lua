@@ -221,7 +221,8 @@ SMODS.Consumable {
     config = {
         choco_bonus = 1,
         extra = {
-            extra = 1
+            extra = 1,
+            times_used = 0
         }
     },
     loc_vars = function(self, info_queue, card)
@@ -268,7 +269,14 @@ SMODS.Consumable {
 
     end,
     calculate = function(self, card, context)
-        if context.enter_shop and card.active then
+        if context.kino_enter_shop then
+            print("test")
+            if card.active then
+                print("test")
+            end
+        end
+
+        if context.kino_enter_shop and card.active then
             local _interest = card.ability.kino_choco and (card.ability.extra.extra + card.ability.choco_mult) or card.ability.extra.extra
             G.GAME.interest_amount = G.GAME.interest_amount - _interest
             Kino.confection_trigger(card)
@@ -346,12 +354,12 @@ SMODS.Consumable {
             end
 
             if _is_viable and 
-            context.card.config.center ~= G.P_CENTERS.m_stone then
+            context.other_card.config.center ~= G.P_CENTERS.m_stone then
                 
                 if card.ability.kino_goldleaf then
                     ease_dollars(1)
                 end
-                card.ability.extra.suits[#card.ability.extra.suits + 1] = context.card.config.card.suit
+                card.ability.extra.suits[#card.ability.extra.suits + 1] = context.other_card.config.card.suit
 
                 local _repetitions = card.ability.kino_choco and (card.ability.extra.repetition + card.ability.choco_bonus) or card.ability.extra.repetition 
 

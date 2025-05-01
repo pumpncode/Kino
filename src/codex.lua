@@ -62,43 +62,45 @@ end
 ---@param codex table
 ---@param checking_cards table
 ---@return table?
-function Kino.check_codex_optional(card, codex, checking_cards, solved_codex)
-    local _solved_codex = solved_codex
+function Kino.assess_played_hand(card, codex)
+    local _solved_codex = Kino.dummy_codex
     local _played_hand = G.GAME.last_played_hand
     local _result = true
 
+    if _played_hand == nil then
+        return _solved_codex
+    end
+
     for i = 1, #_played_hand do
-        local _card = checking_cards[i]
-        local _suitmatch = false
+
+        if _played_hand[i] == nil then
+            break
+        end
+        local _card = _played_hand[i]
         local _rankmatch = false
 
-        if _solved_codex[i].suit ~= nil then
-            _suitmatch = true
-        elseif codex[i].suit ~= nil and _card and _card:is_suit(codex[i].suit) then
-            _solved_codex[i].suit = codex[i].suit
-            _suitmatch = true
-        elseif codex[i].suit == nil then
-            _suitmatch = true
-        else
-            _solved_codex[i].suit = nil
+        _solved_codex[i].rank = _card.rank
+        -- 0 is no match
+        _solved_codex[i].rank_correctness = 0
+
+        for j = 1, #codex do
+            if _card.rank == codex[j].rank then
+                -- 0 if right rank but wrong spot
+                _solved_codex[i].rank_correctness = 1
+
+                -- 2 if right rank and right spot
+                if i == j then
+                    _solved_codex[i].rank_correctness = 2
+                    break
+                end
+            end
         end
 
-        if _solved_codex[i].rank ~= nil then
-            _rankmatch = true
-        elseif codex[i].rank ~= nil and _solved_codex[i].rank == nil and _card and _card:get_id() == codex[i].rank then
+        
 
-            _solved_codex[i].rank = codex[i].rank
-            _rankmatch = true
-        elseif codex[i].rank == nil then
-            _rankmatch = true
-        else
-            _solved_codex[i].rank = nil
-        end
-
-        if not _suitmatch or not _rankmatch then
-            _result = false
-        end
     end
+
+    return _solved_codex
 end
 
 ---creates a codex sequence of rank and suits
@@ -139,7 +141,7 @@ function Kino.create_codex(loc_limits, type, length, codexseed)
     return _ret_codex, _solved_codex
 end
 
-function Kino.codex_ui(codex_solve)
+function Kino.codex_ui(codex_solve, reveal_all)
     local _key_nodes = {}
 
 
@@ -153,11 +155,19 @@ function Kino.codex_ui(codex_solve)
         local _base_colour = G.C.GREY
         local _base_text = "??"
 
-        if _unit.rank ~= nil then
+        if reveal_all or _unit.rank ~= nil  then
             _base_text = Kino.rank_to_string(_unit.rank)
         end
         if _unit.suit ~= nil then
             _base_colour = G.C.SUITS[_unit.suit]
+        end
+        -- rank correctness
+        if _unit.rank_correctness == 0 then
+            _base_colour = G.C.GREY
+        elseif _unit.rank_correctness == 1 then
+            _base_colour = G.C.MONEY
+        elseif _unit.rank_correctness == 2 then
+            _base_colour = G.C.GREEN
         end
     
         
@@ -188,15 +198,13 @@ function Kino.codex_ui(codex_solve)
     end
 
     return {
-        {
-            n = G.UIT.R,
-            config = {
-                align = 'cm',
-                colour = G.C.CLEAR,
-                padding = 0.1
-            },
-            nodes = _key_nodes
-        }
+        n = G.UIT.R,
+        config = {
+            align = 'cm',
+            colour = G.C.CLEAR,
+            padding = 0.1
+        },
+        nodes = _key_nodes
     }
 end
 
@@ -208,4 +216,3 @@ Kino.dummy_codex = {
     {suit = nil, rank = nil}
 }
         -- card.ability.extra.codex, card.ability.extra.codex_solve = Kino.create_codex(nil, card.ability.extra.codex_type, card.ability.extra.codex_length, 'oppie')
-   
