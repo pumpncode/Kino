@@ -23,7 +23,7 @@
         "original_language": "en",
         "original_title": "Hard Eight",
         "overview": "A stranger mentors a young Reno gambler who weds a hooker and befriends a vulgar casino regular.",
-        "popularity": 1.5052,
+        "popularity": 3.3702,
         "poster_path": "/1l5UaoP25Ak8PWCKIULQz70yF03.jpg",
         "production_companies": [
             {
@@ -71,8 +71,8 @@
         "tagline": "If you stay in the game long enough, you'll see everything, win everything, and lose everything.",
         "title": "Hard Eight",
         "video": false,
-        "vote_average": 6.9,
-        "vote_count": 867
+        "vote_average": 6.877,
+        "vote_count": 872
     },
     "Doctor Zhivago2": {
         "adult": false,
@@ -103,7 +103,7 @@
         "original_language": "en",
         "original_title": "Doctor Zhivago",
         "overview": "The life of a Russian physician and poet who, although married to another, falls in love with a political activist's wife and experiences hardship during World War I and then the October Revolution.",
-        "popularity": 2.4977,
+        "popularity": 5.7479,
         "poster_path": "/r0Iv2BiCFYDnzc6uU1q3AJ56igT.jpg",
         "production_companies": [
             {
@@ -158,8 +158,8 @@
         "tagline": "Turbulent were the times and fiery was the love story of Zhivago, his wife and the passionate, tender Lara.",
         "title": "Doctor Zhivago",
         "video": false,
-        "vote_average": 7.5,
-        "vote_count": 1176
+        "vote_average": 7.6,
+        "vote_count": 1180
     },
     "Contagion3": {
         "adult": false,
@@ -190,7 +190,7 @@
         "original_language": "en",
         "original_title": "Contagion",
         "overview": "As an epidemic of a lethal airborne virus - that kills within days - rapidly grows, the worldwide medical community races to find a cure and control the panic that spreads faster than the virus itself.",
-        "popularity": 4.3533,
+        "popularity": 8.9681,
         "poster_path": "/qL0IooP0bjXy0KXl9KEyPo22ll0.jpg",
         "production_companies": [
             {
@@ -259,7 +259,7 @@
         "title": "Contagion",
         "video": false,
         "vote_average": 6.643,
-        "vote_count": 6168
+        "vote_count": 6188
     },
     "House of Gucci4": {
         "adult": false,
@@ -289,7 +289,7 @@
         "original_language": "en",
         "original_title": "House of Gucci",
         "overview": "When Patrizia Reggiani, an outsider from humble beginnings, marries into the Gucci family, her unbridled ambition begins to unravel the family legacy and triggers a reckless spiral of betrayal, decadence, revenge, and ultimately\u2026 murder.",
-        "popularity": 2.9449,
+        "popularity": 6.2513,
         "poster_path": "/oJCQjD2byiVF1EG408F9dBn9ndU.jpg",
         "production_companies": [
             {
@@ -331,14 +331,14 @@
                 "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
             },
             {
-                "english_name": "English",
-                "iso_639_1": "en",
-                "name": "English"
-            },
-            {
                 "english_name": "French",
                 "iso_639_1": "fr",
                 "name": "Fran\u00e7ais"
+            },
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
             },
             {
                 "english_name": "Italian",
@@ -349,14 +349,19 @@
                 "english_name": "Japanese",
                 "iso_639_1": "ja",
                 "name": "\u65e5\u672c\u8a9e"
+            },
+            {
+                "english_name": "Portuguese",
+                "iso_639_1": "pt",
+                "name": "Portugu\u00eas"
             }
         ],
         "status": "Released",
         "tagline": "A legacy worth killing for.",
         "title": "House of Gucci",
         "video": false,
-        "vote_average": 6.6,
-        "vote_count": 3181
+        "vote_average": 6.589,
+        "vote_count": 3194
     },
     "Arrival5": {
         "adult": false,
@@ -386,7 +391,7 @@
         "original_language": "en",
         "original_title": "Arrival",
         "overview": "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
-        "popularity": 10.8872,
+        "popularity": 19.6428,
         "poster_path": "/x2FJsf1ElAgr63Y3PNPtJrcmpoe.jpg",
         "production_companies": [
             {
@@ -438,8 +443,8 @@
         "tagline": "Why are they here?",
         "title": "Arrival",
         "video": false,
-        "vote_average": 7.611,
-        "vote_count": 18106
+        "vote_average": 7.6,
+        "vote_count": 18174
     },
     "Gravity6": {
         "adult": false,
@@ -470,7 +475,7 @@
         "original_language": "en",
         "original_title": "Gravity",
         "overview": "Dr. Ryan Stone, a brilliant medical engineer on her first Shuttle mission, with veteran astronaut Matt Kowalsky in command of his last flight before retiring. But on a seemingly routine spacewalk, disaster strikes. The Shuttle is destroyed, leaving Stone and Kowalsky completely alone-tethered to nothing but each other and spiraling out into the blackness of space. The deafening silence tells them they have lost any link to Earth and any chance for rescue. As fear turns to panic, every gulp of air eats away at what little oxygen is left. But the only way home may be to go further out into the terrifying expanse of space.",
-        "popularity": 6.5701,
+        "popularity": 14.1823,
         "poster_path": "/kZ2nZw8D681aphje8NJi8EfbL1U.jpg",
         "production_companies": [
             {
@@ -516,8 +521,8 @@
         "tagline": "Don't let go.",
         "title": "Gravity",
         "video": false,
-        "vote_average": 7.164,
-        "vote_count": 15507
+        "vote_average": 7.2,
+        "vote_count": 15554
     },
     "Da 5 Bloods7": {
         "adult": false,
@@ -543,7 +548,7 @@
         "original_language": "en",
         "original_title": "Da 5 Bloods",
         "overview": "Four African-American Vietnam veterans return to Vietnam. They are in search of the remains of their fallen squad leader and the promise of buried treasure. These heroes battle forces of humanity and nature while confronted by the lasting ravages of the immorality of the Vietnam War.",
-        "popularity": 1.4048,
+        "popularity": 3.5024,
         "poster_path": "/yx4cp1ljJMDSFeEex0Zjv45b55E.jpg",
         "production_companies": [
             {
@@ -594,8 +599,8 @@
         "tagline": "A War Never Ends",
         "title": "Da 5 Bloods",
         "video": false,
-        "vote_average": 6.471,
-        "vote_count": 1088
+        "vote_average": 6.469,
+        "vote_count": 1092
     },
     "Pain & Gain8": {
         "adult": false,
@@ -633,7 +638,7 @@
         "original_language": "en",
         "original_title": "Pain & Gain",
         "overview": "Daniel Lugo, manager of the Sun Gym in 1990s Miami, decides that there is only one way to achieve his version of the American dream: extortion. To achieve his goal, he recruits musclemen Paul and Adrian as accomplices. After several failed attempts, they abduct rich businessman Victor Kershaw and convince him to sign over all his assets to them. But when Kershaw makes it out alive, authorities are reluctant to believe his story.",
-        "popularity": 5.1212,
+        "popularity": 9.066,
         "poster_path": "/txagTxnwbpSOvSf6JdIIvUPsJHN.jpg",
         "production_companies": [
             {
@@ -675,8 +680,8 @@
         "tagline": "Their American dream is bigger than yours.",
         "title": "Pain & Gain",
         "video": false,
-        "vote_average": 6.275,
-        "vote_count": 4528
+        "vote_average": 6.274,
+        "vote_count": 4548
     },
     "Fargo9": {
         "adult": false,
@@ -706,7 +711,7 @@
         "original_language": "en",
         "original_title": "Fargo",
         "overview": "Jerry, a small-town Minnesota car salesman is bursting at the seams with debt... but he's got a plan. He's going to hire two thugs to kidnap his wife in a scheme to collect a hefty ransom from his wealthy father-in-law. It's going to be a snap and nobody's going to get hurt... until people start dying. Enter Police Chief Marge, a coffee-drinking, parka-wearing - and extremely pregnant - investigator who'll stop at nothing to get her man. And if you think her small-time investigative skills will give the crooks a run for their ransom... you betcha!",
-        "popularity": 7.3302,
+        "popularity": 11.2951,
         "poster_path": "/rUjUCT6GvFS475sKJVfHWZUdnv5.jpg",
         "production_companies": [
             {
@@ -747,7 +752,7 @@
         "title": "Fargo",
         "video": false,
         "vote_average": 7.857,
-        "vote_count": 8279
+        "vote_count": 8331
     },
     "Metropolis10": {
         "adult": false,
@@ -773,7 +778,7 @@
         "original_language": "de",
         "original_title": "Metropolis",
         "overview": "In a futuristic city sharply divided between the rich and the poor, the son of the city's mastermind meets a prophet who predicts the coming of a savior to mediate their differences.",
-        "popularity": 4.2175,
+        "popularity": 5.9893,
         "poster_path": "/vZIJxGnjcswPCAa52jhbl01FQkV.jpg",
         "production_companies": [
             {
@@ -791,7 +796,7 @@
         ],
         "release_date": "1927-02-06",
         "revenue": 1350322,
-        "runtime": 148,
+        "runtime": 153,
         "spoken_languages": [
             {
                 "english_name": "No Language",
@@ -803,8 +808,8 @@
         "tagline": "There can be no understanding between the hands and the brain unless the heart acts as mediator.",
         "title": "Metropolis",
         "video": false,
-        "vote_average": 8.1,
-        "vote_count": 2826
+        "vote_average": 8.108,
+        "vote_count": 2840
     },
     "My Blueberry Nights11": {
         "adult": false,
@@ -831,7 +836,7 @@
         "original_language": "cn",
         "original_title": "\u85cd\u8393\u4e4b\u591c",
         "overview": "Elizabeth has just been through a particularly nasty breakup, and now she's ready to leave her friends and memories behind as she chases her dreams across the country. In order to support herself on her journey, Elizabeth picks up a series of waitress jobs along the way. As Elizabeth crosses paths with a series of lost souls whose yearnings are even greater than her own, their emotional turmoil ultimately helps her gain a greater understanding of her own problems...",
-        "popularity": 1.814,
+        "popularity": 2.1942,
         "poster_path": "/w9w3m2IB9QRZXxi6R51ZamKv3HS.jpg",
         "production_companies": [
             {
@@ -887,8 +892,8 @@
         "tagline": "How do you say goodbye to someone you can't imagine living without?",
         "title": "My Blueberry Nights",
         "video": false,
-        "vote_average": 6.4,
-        "vote_count": 773
+        "vote_average": 6.413,
+        "vote_count": 783
     },
     "Hit Man12": {
         "adult": false,
@@ -918,7 +923,7 @@
         "original_language": "en",
         "original_title": "Hit Man",
         "overview": "A mild-mannered professor moonlighting as a fake hit man in police stings ignites a chain reaction of trouble when he falls for a potential client.",
-        "popularity": 5.7743,
+        "popularity": 13.1792,
         "poster_path": "/oil3EZwKFp3CWxZnfGfGglesvm9.jpg",
         "production_companies": [
             {
@@ -984,8 +989,8 @@
         "tagline": "He's not a killer, but he can pretend.",
         "title": "Hit Man",
         "video": false,
-        "vote_average": 6.822,
-        "vote_count": 1232
+        "vote_average": 6.817,
+        "vote_count": 1278
     },
     "Popeye13": {
         "adult": false,
@@ -1019,7 +1024,7 @@
         "original_language": "en",
         "original_title": "Popeye",
         "overview": "Popeye is a super-strong, spinach-scarfing sailor man who's searching for his father. During a storm that wrecks his ship, Popeye washes ashore and winds up rooming at the Oyl household, where he meets Olive. Before he can win her heart, he must first contend with Olive's fianc\u00e9, Bluto.",
-        "popularity": 1.7465,
+        "popularity": 2.6523,
         "poster_path": "/hCCp4pESgYY6uTFARYf4UYV1BdU.jpg",
         "production_companies": [
             {
@@ -1068,7 +1073,7 @@
         "title": "Popeye",
         "video": false,
         "vote_average": 5.5,
-        "vote_count": 637
+        "vote_count": 640
     },
     "The Fly14": {
         "adult": false,
@@ -1099,7 +1104,7 @@
         "original_language": "en",
         "original_title": "The Fly",
         "overview": "When Seth Brundle makes a huge scientific and technological breakthrough in teleportation, he decides to test it on himself. Unbeknownst to him, a common housefly manages to get inside the device and the two become one.",
-        "popularity": 4.7511,
+        "popularity": 10.9,
         "poster_path": "/8gZWMhJHRvaXdXsNhERtqNHYpH3.jpg",
         "production_companies": [
             {
@@ -1139,8 +1144,8 @@
         "tagline": "Be afraid. Be very afraid.",
         "title": "The Fly",
         "video": false,
-        "vote_average": 7.415,
-        "vote_count": 4541
+        "vote_average": 7.418,
+        "vote_count": 4567
     },
     "Modern Times15": {
         "adult": false,
@@ -1170,7 +1175,7 @@
         "original_language": "en",
         "original_title": "Modern Times",
         "overview": "A bumbling tramp desires to build a home with a young woman, yet is thwarted time and time again by his lack of experience and habit of being in the wrong place at the wrong time..",
-        "popularity": 2.6383,
+        "popularity": 3.2772,
         "poster_path": "/7uoiKOEjxBBW0AgDGQWrlfGQ90w.jpg",
         "production_companies": [
             {
@@ -1200,8 +1205,8 @@
         "tagline": "He stands alone as the greatest entertainer of modern times! No one on earth can make you laugh as heartily or touch your heart as deeply...the whole world laughs, cries and thrills to his priceless genius!",
         "title": "Modern Times",
         "video": false,
-        "vote_average": 8.282,
-        "vote_count": 3760
+        "vote_average": 8.3,
+        "vote_count": 3779
     },
     "Snowpiercer16": {
         "adult": false,
@@ -1231,7 +1236,7 @@
         "original_language": "ko",
         "original_title": "Snowpiercer",
         "overview": "In a future where a failed global-warming experiment kills off most life on the planet, a class system evolves aboard the Snowpiercer; a train that travels around the globe via a perpetual-motion engine.",
-        "popularity": 26.9677,
+        "popularity": 26.4475,
         "poster_path": "/nzccOvhrLGI0nvAknCEAk8bchD9.jpg",
         "production_companies": [
             {
@@ -1294,8 +1299,8 @@
         "tagline": "Fight your way to the front.",
         "title": "Snowpiercer",
         "video": false,
-        "vote_average": 6.902,
-        "vote_count": 9717
+        "vote_average": 6.905,
+        "vote_count": 9777
     },
     "Under the Cherry Moon17": {
         "adult": false,
@@ -1325,7 +1330,7 @@
         "original_language": "en",
         "original_title": "Under the Cherry Moon",
         "overview": "Two friends from Miami are in the French Riviera enjoying life by scamming money off of rich women. One day, they read about a young woman set to inherit $50 million from her father. At first, Tricky has Christopher Tracy talked into romancing her for her money, but in getting to know her, Christopher falls in love with her. This love comes between the brothers, and Tricky tells about the plan.",
-        "popularity": 0.6011,
+        "popularity": 2.3505,
         "poster_path": "/82EvqDBW6CCQLt0hRyOQ7UI3ua3.jpg",
         "production_companies": [
             {
@@ -1365,7 +1370,7 @@
     },
     "Young Frankenstein18": {
         "adult": false,
-        "backdrop_path": "/zTpdmnUvOUEJEDU3ujPVVDjEgLG.jpg",
+        "backdrop_path": "/rsI82F7DadIQcrZyPbuwmkhN5ty.jpg",
         "belongs_to_collection": null,
         "budget": 2800000,
         "genres": [
@@ -1383,7 +1388,7 @@
         "original_language": "en",
         "original_title": "Young Frankenstein",
         "overview": "A young neurosurgeon inherits the castle of his grandfather, the famous Dr. Victor von Frankenstein. In the castle he finds a funny hunchback, a pretty lab assistant and the elderly housekeeper. Young Frankenstein believes that the work of his grandfather was delusional, but when he discovers the book where the mad doctor described his reanimation experiment, he suddenly changes his mind.",
-        "popularity": 2.5688,
+        "popularity": 6.1826,
         "poster_path": "/tQJAWbIjvvqVKLLbIZHtwGw2HTf.jpg",
         "production_companies": [
             {
@@ -1436,8 +1441,8 @@
         "tagline": "The scariest comedy of all time!",
         "title": "Young Frankenstein",
         "video": false,
-        "vote_average": 7.9,
-        "vote_count": 3176
+        "vote_average": 7.87,
+        "vote_count": 3187
     },
     "Safe19": {
         "adult": false,
@@ -1459,7 +1464,7 @@
         "original_language": "en",
         "original_title": "Safe",
         "overview": "Carol White, a Los Angeles housewife in the late 1980s, comes down with a debilitating illness with no clear diagnosis.",
-        "popularity": 1.1859,
+        "popularity": 3.7878,
         "poster_path": "/2O71QsBkbqdLqQdx2yuNpJ4pFPq.jpg",
         "production_companies": [
             {
@@ -1528,8 +1533,8 @@
         "tagline": "In the 21st century nobody will be\u2026 Safe.",
         "title": "Safe",
         "video": false,
-        "vote_average": 7.0,
-        "vote_count": 306
+        "vote_average": 6.987,
+        "vote_count": 310
     },
     "The Truman Show20": {
         "adult": false,
@@ -1555,7 +1560,7 @@
         "original_language": "en",
         "original_title": "The Truman Show",
         "overview": "Every second of every day, from the moment he was born, for the last thirty years, Truman Burbank has been the unwitting star of the longest running, most popular documentary-soap opera in history. The picture-perfect town of Seahaven that he calls home is actually a gigantic soundstage. Truman's friends and family - everyone he meets, in fact - are actors. He lives every moment under the unblinking gaze of thousands of hidden TV cameras.",
-        "popularity": 15.1142,
+        "popularity": 26.3452,
         "poster_path": "/vuza0WqY239yBXOadKlGwJsZJFE.jpg",
         "production_companies": [
             {
@@ -1596,8 +1601,8 @@
         "tagline": "On the air. Unaware.",
         "title": "The Truman Show",
         "video": false,
-        "vote_average": 8.145,
-        "vote_count": 18722
+        "vote_average": 8.1,
+        "vote_count": 18806
     },
     "Moulin Rouge!21": {
         "adult": false,
@@ -1627,8 +1632,8 @@
         "original_language": "en",
         "original_title": "Moulin Rouge!",
         "overview": "A celebration of love and creative inspiration takes place in the infamous, gaudy and glamorous Parisian nightclub, at the cusp of the 20th century. A young poet, who is plunged into the heady world of Moulin Rouge, begins a passionate affair with the club's most notorious and beautiful star.",
-        "popularity": 4.7912,
-        "poster_path": "/viSoNC4CA8VTcY1xUYIbdEyPLuG.jpg",
+        "popularity": 9.3901,
+        "poster_path": "/2kjM5CUZRIU5yOANUowrbJcRL9L.jpg",
         "production_companies": [
             {
                 "id": 25,
@@ -1677,8 +1682,8 @@
         "tagline": "No laws. No limits. One rule. Never fall in love.",
         "title": "Moulin Rouge!",
         "video": false,
-        "vote_average": 7.5,
-        "vote_count": 4579
+        "vote_average": 7.546,
+        "vote_count": 4589
     },
     "Lost in Translation22": {
         "adult": false,
@@ -1708,8 +1713,8 @@
         "original_language": "en",
         "original_title": "Lost in Translation",
         "overview": "Two lost souls visiting Tokyo -- the young, neglected wife of a photographer and a washed-up movie star shooting a TV commercial -- find an odd solace and pensive freedom to be real in each other's company, away from their lives in America.",
-        "popularity": 7.5685,
-        "poster_path": "/wkSzJs7oMf8MIr9CQVICsvRfwA7.jpg",
+        "popularity": 10.9273,
+        "poster_path": "/4k4Yz08WGfbu8ITIjaG99XTeco8.jpg",
         "production_companies": [
             {
                 "id": 70,
@@ -1753,8 +1758,8 @@
         "tagline": "Everyone wants to be found.",
         "title": "Lost in Translation",
         "video": false,
-        "vote_average": 7.384,
-        "vote_count": 7479
+        "vote_average": 7.4,
+        "vote_count": 7516
     },
     "Her23": {
         "adult": false,
@@ -1784,7 +1789,7 @@
         "original_language": "en",
         "original_title": "Her",
         "overview": "In the not so distant future, Theodore, a lonely writer, purchases a newly developed operating system designed to meet the user's every need. To Theodore's surprise, a romantic relationship develops between him and his operating system. This unconventional love story blends science fiction and romance in a sweet tale that explores the nature of love and the ways that technology isolates and connects us all.",
-        "popularity": 8.1992,
+        "popularity": 19.4524,
         "poster_path": "/eCOtqtfvn7mxGl6nfmq4b1exJRc.jpg",
         "production_companies": [
             {
@@ -1814,8 +1819,8 @@
         "tagline": "A Spike Jonze love story.",
         "title": "Her",
         "video": false,
-        "vote_average": 7.8,
-        "vote_count": 14463
+        "vote_average": 7.85,
+        "vote_count": 14509
     },
     "Hellboy24": {
         "adult": false,
@@ -1846,7 +1851,7 @@
         "original_language": "en",
         "original_title": "Hellboy",
         "overview": "In the final days of World War II, the Nazis attempt to use black magic to aid their dying cause. The Allies raid the camp where the ceremony is taking place, but not before they summon a baby demon who is rescued by Allied forces and dubbed \"Hellboy\". Sixty years later, Hellboy serves the cause of good rather than evil as an agent in the Bureau of Paranormal Research & Defense, along with Abe Sapien - a merman with psychic powers, and Liz Sherman - a woman with pyrokinesis, protecting America against dark forces.",
-        "popularity": 4.9956,
+        "popularity": 6.5095,
         "poster_path": "/21hS8mD8uxBVvf8xVYR30LbbmPO.jpg",
         "production_companies": [
             {
@@ -1915,8 +1920,8 @@
         "tagline": "From the dark side to our side.",
         "title": "Hellboy",
         "video": false,
-        "vote_average": 6.7,
-        "vote_count": 6973
+        "vote_average": 6.667,
+        "vote_count": 6993
     },
     "Tales from the Crypt: Demon Knight25": {
         "adult": false,
@@ -1951,7 +1956,7 @@
         "original_language": "en",
         "original_title": "Tales from the Crypt: Demon Knight",
         "overview": "Ex-soldier Frank Brayker is the guardian of an ancient key that can unlock tremendous evil; the sinister Collector is a demon who wants the key so he can initiate the apocalypse. On the run from wicked mercenaries for almost 90 years, Brayker finally stops in at a boarding house in New Mexico where \u2014 with the help of its residents \u2014 he plans to face off against the Collector and his band of ghouls, preventing them from ever seizing the key.",
-        "popularity": 1.7766,
+        "popularity": 3.8762,
         "poster_path": "/1TekTWa1htkb554KDplTXskQupo.jpg",
         "production_companies": [
             {
@@ -1987,8 +1992,8 @@
         "tagline": "Ready for your deadtime story?",
         "title": "Tales from the Crypt: Demon Knight",
         "video": false,
-        "vote_average": 6.9,
-        "vote_count": 497
+        "vote_average": 6.854,
+        "vote_count": 498
     },
     "Baby Driver26": {
         "adult": false,
@@ -2019,7 +2024,7 @@
         "original_language": "en",
         "original_title": "Baby Driver",
         "overview": "After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.",
-        "popularity": 8.1784,
+        "popularity": 12.3182,
         "poster_path": "/rmnQ9jKW72bHu8uKlMjPIb2VLMI.jpg",
         "production_companies": [
             {
@@ -2065,8 +2070,8 @@
         "tagline": "All you need is one killer track.",
         "title": "Baby Driver",
         "video": false,
-        "vote_average": 7.4,
-        "vote_count": 15949
+        "vote_average": 7.447,
+        "vote_count": 16004
     },
     "Peggy Sue Got Married27": {
         "adult": false,
@@ -2096,8 +2101,8 @@
         "original_language": "en",
         "original_title": "Peggy Sue Got Married",
         "overview": "Peggy Sue faints at a high school reunion. When she wakes up she finds herself in her own past, just before she finished school.",
-        "popularity": 1.8118,
-        "poster_path": "/tfuQcvQmURiMqB2VPwytU3cPpEm.jpg",
+        "popularity": 1.6555,
+        "poster_path": "/iXXazXe6OtesOCDslyuccULgJlG.jpg",
         "production_companies": [
             {
                 "id": 70,
@@ -2145,7 +2150,7 @@
         "title": "Peggy Sue Got Married",
         "video": false,
         "vote_average": 6.1,
-        "vote_count": 588
+        "vote_count": 591
     },
     "The Trial28": {
         "adult": false,
@@ -2175,7 +2180,7 @@
         "original_language": "en",
         "original_title": "Le Proc\u00e8s",
         "overview": "Josef K wakes up in the morning and finds the police in his room. They tell him that he is on trial but nobody tells him what he is accused of. In order to find out about the reason for this accusation and to protest his innocence, he tries to look behind the fa\u00e7ade of the judicial system. But since this remains fruitless, there seems to be no chance for him to escape from this nightmare.",
-        "popularity": 0.99,
+        "popularity": 4.2629,
         "poster_path": "/2o1oe54a4doiwB4uJq9Kx1RHal0.jpg",
         "production_companies": [
             {
@@ -2225,8 +2230,8 @@
         "tagline": "The Most Remarkable Motion Picture Ever Made!",
         "title": "The Trial",
         "video": false,
-        "vote_average": 7.4,
-        "vote_count": 503
+        "vote_average": 7.425,
+        "vote_count": 507
     },
     "The Tree of Life29": {
         "adult": false,
@@ -2252,7 +2257,7 @@
         "original_language": "en",
         "original_title": "The Tree of Life",
         "overview": "The impressionistic story of a Texas family in the 1950s. The film follows the life journey of the eldest son, Jack, through the innocence of childhood to his disillusioned adult years as he tries to reconcile a complicated relationship with his father. Jack finds himself a lost soul in the modern world, seeking answers to the origins and meaning of life while questioning the existence of faith.",
-        "popularity": 2.5564,
+        "popularity": 8.5363,
         "poster_path": "/l8cwuB5WJSoj4uMAsnzuHBOMaSJ.jpg",
         "production_companies": [
             {
@@ -2282,12 +2287,12 @@
         "tagline": "Nothing stands still.",
         "title": "The Tree of Life",
         "video": false,
-        "vote_average": 6.737,
-        "vote_count": 3121
+        "vote_average": 6.743,
+        "vote_count": 3136
     },
     "The Frighteners30": {
         "adult": false,
-        "backdrop_path": "/naGsxof4OVpWQJn1qd9sTwUvYPI.jpg",
+        "backdrop_path": "/2aGtsMLVOiBiAUwQmCqYgau5AJF.jpg",
         "belongs_to_collection": null,
         "budget": 30000000,
         "genres": [
@@ -2310,7 +2315,7 @@
         "original_language": "en",
         "original_title": "The Frighteners",
         "overview": "Once an architect, Frank Bannister now passes himself off as an exorcist of evil spirits. To bolster his facade, he claims his \"special\" gift is the result of a car accident that killed his wife. But what he does not count on is more people dying in the small town where he lives. As he tries to piece together the supernatural mystery of these killings, he falls in love with the wife of one of the victims and deals with a crazy FBI agent.",
-        "popularity": 2.1255,
+        "popularity": 2.8782,
         "poster_path": "/2ZwWDOoU1yy9qyhLEatcgI94ESy.jpg",
         "production_companies": [
             {
@@ -2351,7 +2356,7 @@
         "title": "The Frighteners",
         "video": false,
         "vote_average": 6.9,
-        "vote_count": 1569
+        "vote_count": 1571
     },
     "Men in Black31": {
         "adult": false,
@@ -2390,7 +2395,7 @@
         "original_language": "en",
         "original_title": "Men in Black",
         "overview": "After a police chase with an otherworldly being, a New York City cop is recruited as an agent in a top-secret organization established to monitor and police alien activity on Earth: the Men in Black. Agent K and new recruit Agent J find themselves in the middle of a deadly plot by an intergalactic terrorist who has arrived on Earth to assassinate two ambassadors from opposing galaxies.",
-        "popularity": 9.5851,
+        "popularity": 16.5464,
         "poster_path": "/uLOmOF5IzWoyrgIF5MfUnh5pa1X.jpg",
         "production_companies": [
             {
@@ -2437,8 +2442,8 @@
         "tagline": "Protecting the Earth from the scum of the universe.",
         "title": "Men in Black",
         "video": false,
-        "vote_average": 7.203,
-        "vote_count": 13975
+        "vote_average": 7.205,
+        "vote_count": 14020
     },
     "Pirates of the Caribbean: The Curse of the Black Pearl32": {
         "adult": false,
@@ -2473,7 +2478,7 @@
         "original_language": "en",
         "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
         "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship\u2014The Black Pearl\u2014so that he can rescue the woman he loves.",
-        "popularity": 17.744,
+        "popularity": 27.3019,
         "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
         "production_companies": [
             {
@@ -2509,12 +2514,12 @@
         "tagline": "Prepare to be blown out of the water.",
         "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
         "video": false,
-        "vote_average": 7.8,
-        "vote_count": 20990
+        "vote_average": 7.809,
+        "vote_count": 21066
     },
     "Double Dragon33": {
         "adult": false,
-        "backdrop_path": "/jImxUgVbgrfH8T8XOa3CgzTkw57.jpg",
+        "backdrop_path": "/gJXt3gMz4EF39mdyhvy5EsXdiPk.jpg",
         "belongs_to_collection": null,
         "budget": 3500000,
         "genres": [
@@ -2550,7 +2555,7 @@
         "original_language": "en",
         "original_title": "Double Dragon",
         "overview": "Two brothers have half of a powerful ancient Chinese talisman. An evil gang leader has the other half, and determines to get the brothers' half and have a complete medallion so he can gain absolute power.",
-        "popularity": 1.3215,
+        "popularity": 1.6637,
         "poster_path": "/9ZTYSD8ZesYMKqLRbmVfZUW1FiE.jpg",
         "production_companies": [
             {
@@ -2597,8 +2602,8 @@
         "tagline": "Power. Justice. Darkness. Light.",
         "title": "Double Dragon",
         "video": false,
-        "vote_average": 4.4,
-        "vote_count": 346
+        "vote_average": 4.451,
+        "vote_count": 347
     },
     "Kung Fu Panda34": {
         "adult": false,
@@ -2641,7 +2646,7 @@
         "original_language": "en",
         "original_title": "Kung Fu Panda",
         "overview": "When the Valley of Peace is threatened, lazy Po the panda discovers his destiny as the \"chosen one\" and trains to become a kung fu hero, but transforming the unsleek slacker into a brave warrior won't be easy. It's up to Master Shifu and the Furious Five -- Tigress, Crane, Mantis, Viper and Monkey -- to give it a try.",
-        "popularity": 12.3599,
+        "popularity": 17.3947,
         "poster_path": "/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg",
         "production_companies": [
             {
@@ -2671,8 +2676,8 @@
         "tagline": "Prepare for awesomeness.",
         "title": "Kung Fu Panda",
         "video": false,
-        "vote_average": 7.296,
-        "vote_count": 11828
+        "vote_average": 7.297,
+        "vote_count": 11871
     },
     "As Above, So Below35": {
         "adult": false,
@@ -2698,7 +2703,7 @@
         "original_language": "en",
         "original_title": "As Above, So Below",
         "overview": "When a team of explorers ventures into the uncharted maze of bones that lies beneath the streets of Paris, they embark on a journey into madness and terror.",
-        "popularity": 5.1073,
+        "popularity": 8.2719,
         "poster_path": "/oJZSajKLJkoTOzSZQN2ZwRnPwHZ.jpg",
         "production_companies": [
             {
@@ -2740,8 +2745,8 @@
         "tagline": "The only way out is down.",
         "title": "As Above, So Below",
         "video": false,
-        "vote_average": 6.7,
-        "vote_count": 3547
+        "vote_average": 6.712,
+        "vote_count": 3559
     },
     "Grown Ups36": {
         "adult": false,
@@ -2749,7 +2754,7 @@
         "belongs_to_collection": {
             "id": 180546,
             "name": "Grown Ups Collection",
-            "poster_path": "/8m9PIgdP6Nj18P3thsyI70qs76s.jpg",
+            "poster_path": "/d01vbn7o3JwjgCvvmGSVGoYoPBn.jpg",
             "backdrop_path": "/ahlmYgIHI6oye76bgoUtC01mcrC.jpg"
         },
         "budget": 80000000,
@@ -2768,7 +2773,7 @@
         "original_language": "en",
         "original_title": "Grown Ups",
         "overview": "After their high school basketball coach passes away, five good friends and former teammates reunite for a Fourth of July holiday weekend.",
-        "popularity": 13.2704,
+        "popularity": 22.1939,
         "poster_path": "/ys0LscDFAuZxfUcpH5moiPeFfXs.jpg",
         "production_companies": [
             {
@@ -2810,7 +2815,7 @@
         "tagline": "Boys will be boys. . . some longer than others.",
         "title": "Grown Ups",
         "video": false,
-        "vote_average": 6.389,
-        "vote_count": 6240
+        "vote_average": 6.391,
+        "vote_count": 6266
     }
 }

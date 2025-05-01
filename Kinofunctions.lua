@@ -13,6 +13,9 @@
 -- Director tooltip
 
 function genre_match(_listA, _listB)
+    if type(_listA) ~= "table" then
+        _listA = {_listA}
+    end
     if type(_listB) ~= "table" then
         _listB = {_listB}
     end
@@ -131,15 +134,52 @@ function get_random_hand()
     return rand_hand
 end
 
+-- Only accounts for played hands
+function get_least_played_hand()
+    local _tally = nil
+    local _hands = {}
+    for k, v in ipairs(G.handlist) do
+        print(G.GAME.hands[v].played)
+        print(_tally)
+
+        if G.GAME.hands[v].visible then
+            print("testing, yes visible")
+        end
+        if (_tally == nil or G.GAME.hands[v].played < _tally) then
+            print("testing, no tally")
+        end
+        if G.GAME.hands[v].played ~= 0 then
+            print("testing, played ~= 0")
+        end
+        
+
+
+        if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played < _tally) and G.GAME.hands[v].played ~= 0 then
+            print("found new low")
+            _hands = {}
+            _hands[#_hands + 1] = v
+            
+            _tally = G.GAME.hands[v].played
+        end
+        if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played == _tally) and not G.GAME.hands[v].played == 0 then
+            print("adding new hand")
+            _hands[#_hands + 1] = v
+        end
+    end
+
+    return _hands
+end
+
 -- Add a function to trigger jokers when money is spend in the shop (Based on cryptid, exotic.lua, l. 1407-1413)
 local base_ease_dollars = ease_dollars
 function ease_dollars(mod, x)
     base_ease_dollars(mod, x)
 
-    for i = 1, #G.jokers.cards do 
-        local effects = G.jokers.cards[i]:calculate_joker({kino_ease_dollars = mod})
-    end
-    
+    SMODS.calculate_context({kino_ease_dollars = mod})
+
+    -- for i = 1, #G.jokers.cards do 
+    --     local effects = G.jokers.cards[i]:calculate_joker({kino_ease_dollars = mod})
+    -- end
 end
 
 -- Add a function to randomize suits for jokers that need that (added to the ancient card functionality)
@@ -160,6 +200,7 @@ function reset_ancient_card()
 
     reset_raiders_card()
     reset_bonnieandclyde()
+    Kino.reset_source_code()
 end
 
  -- Indiana Jones checks
@@ -196,6 +237,17 @@ function reset_bonnieandclyde()
 
     G.GAME.current_round.bonnierank = pseudorandom_element(_ranks, pseudoseed("bonnie_boss"))
     G.GAME.current_round.clydesuit = pseudorandom_element(_suits, pseudoseed("clyde_boss"))
+end
+
+function Kino.reset_source_code()
+    if not G.GAME.current_round.kino_source_code then
+        G.GAME.current_round.kino_source_code = "Hearts"
+    end
+    
+    local _suit = pseudorandom_element(SMODS.Suits, pseudoseed("kino_source_code"))
+
+    G.GAME.current_round.kino_source_code = _suit.key
+
 end
 
 -- For everything that needs to be done when the shop is closed.
@@ -386,6 +438,7 @@ function Card:kino_synergy(card)
 
     -- If 5 share an actor, x2 all values
     -- if 3 share an actor, start shaking (and display the actor)
+
     if not kino_config.actor_synergy  or not self.config.center.kino_joker then
         return 0
     end
@@ -522,9 +575,7 @@ function Card:set_multiplication_bonus(card, source, num, is_actor)
     -- keys ending in "_non"
     -- non-integers
     -- "time_"
-    if not card.config or
-    not card.config.center.kino_joker or
-    (not kino_config.actor_synergy and is_actor) then
+    if not card or not kino_config.actor_synergy or not card.config.center.kino_joker then
         return false
     end
 
@@ -598,6 +649,8 @@ function check_variable_validity_for_mult(name)
         "chance_cur",
         "reset",
         "threshold",
+        "time_spent",
+        "codex_length"
     }
 
     local _non_valid_element = {
@@ -872,7 +925,54 @@ function Tag:set_chocolate_bonus(chocolate_bonus)
     return true
 end
 
+----------------------
 
+------------ Helpers ------------
+function Kino.debugfunc(inc)
+    print(G.GAME.last_played_hand[inc])
+end
+
+function Kino.rank_to_string(rank)
+
+    if rank == nil then
+        return "nil-err"
+    end
+    local _string = "nil"
+
+    if  2 <= rank and rank <= 10 then
+        _string = tostring(rank)
+    elseif rank == 11 then
+        _string = "J"
+    elseif rank == 12 then
+        _string = "Q"
+    elseif rank == 13 then
+        _string = "K"
+    elseif rank == 14 then
+        _string = "A"
+    end
+
+    return _string
+end
+
+function Kino.rank_to_value(rank)
+    local _string = "nil"
+
+    if  2 <= rank and rank <= 10 then
+        _string = tostring(rank)
+    elseif rank == 11 then
+        _string = "Jack"
+    elseif rank == 12 then
+        _string = "Queen"
+    elseif rank == 13 then
+        _string = "King"
+    elseif rank == 14 then
+        _string = "Ace"
+    end
+
+    return _string
+end
+
+----------------------
 to_big = to_big or function(x, y)
     return x
 end
@@ -881,7 +981,6 @@ to_number = to_number or function(x, y)
     return x
 end
 
---- Award Bonus & actor synergy mechanics ---
 
 ----------------------
 -- COLOURS --
@@ -957,3 +1056,6 @@ Kino.awardschance = 1
 
 Kino.actor_synergy = {1, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.25, 2.5, 3}
 Kino.award_mult = 2
+
+Kino.crime_chips = 5
+Kino.bullet_magazine_max = 6

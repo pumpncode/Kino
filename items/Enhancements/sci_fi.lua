@@ -56,6 +56,14 @@ SMODS.Enhancement {
                 wall_e = true
             end
 
+            -- grab additional upgrades from jokers
+            for _, _joker in ipairs(G.jokers.cards) do
+                if type(_joker.ability.extra) == "table" and
+                _joker.ability.extra.kino_sci_fi_upgrade_inc then
+                    times_to_upgrade = times_to_upgrade + _joker.ability.extra.kino_sci_fi_upgrade_inc
+                end
+            end
+
             for i = 1, times_to_upgrade do 
                 card.config.center:upgrade(card)
                 card_eval_status_text(card, 'extra', nil, nil, nil,

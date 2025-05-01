@@ -1,9 +1,101 @@
-V 0.8.1b:
-Bug Fix:
-- Fixed the genre bonuses received from decks when no genre sleeve is used
-- Fixed a crash if the current movie jokers have less than 6 possible matches
-- Fixed Talisman related issues for Confessions of a Shopaholic
-- Darth Vader blind can only spawn while you're playing with only Movie Jokers
+
+V 0.9:
+New Jokers:
+- John Wick
+- Die Hard
+- Hot Fuzz
+- Pain & Gain
+- Source Code
+- Con Air
+- Fargo
+- Fast & Furious 5
+- Tower Heist
+- Oceans 12
+- A Fish Called Wanda
+- Limitless
+- Scarface (1932)
+- Scarface (1983)
+- Dick Tracy
+- The Martian
+- Teenage Mutant Ninja Turtles
+- Taken
+- Modern Times
+- Death Race
+- Her
+- Minecraft
+- Tales from the Crypt: Demon Knight
+- Snowpiercer
+- Freaky Friday
+- My Neighbor Totoro
+- Bloodshot
+- Sunshine
+- Dune 1984
+- Paul
+- Gravity
+- Nightcrawler
+- Black Swan
+- Your Highness
+- Star Wars Episode IV
+- Star Wars Episode I
+- Star Wars Episode VII
+- Sausage Party
+- V for Vendatta
+- Big Daddy
+- Peggy Sue Got Married
+- Pitch Black
+- Da 5 Bloods
+- The Shawshank Redemption
+- Metropolis
+
+New Planet:
+- Death Star
+
+New Tarot:
+- Gangster
+- Soldier
+
+New Spectral Cards:
+- Award (The award tarot is no longer available)
+- Homerun
+- Gathering
+- Artifact
+- Ambrosia
+
+New Seals:
+- Sports Seal
+- Family Seal
+- Artifact Seal
+- Cheese Seal
+
+New Blinds:
+- Loki
+- Nurse Ratched
+- Rico Dynamite
+- Mr. Chow
+- An Entity
+- Lord Humungus
+- Amadeus
+- Cruella De Vil
+- Bonnie & Clyde
+- Blofeld
+- Thanos
+- Immortan Joe
+
+Bug Fixes:
+- Gentlemen Prefer Blondes works properly
+- Stargate
+- Monster & Horror related jokers now correctly spawn
+- Barbie no longer crashes the game
+- Baby Driver now only triggers for cards played and scored
+- Shopaholic should now be compatible with talisman
+- 30 Days of Night no longer crashes the game
+- 10 Things I hate About You
+
+Enhancement Gates Added:
+Set up more jokers to properly check for spawning conditions
+
+
+     
 
 V 0.8.1a:
 Bug Fix:
@@ -14,6 +106,7 @@ Bug Fix:
 - power boosts should no longer create issues on reload
 - Stargate now uses the correct art
 - Mars Attacks no longer triggers on every planet
+- Removed the incorrectly available Blank Deck With Griffin and David
 
 Localization Fixes:
 - Popeye now shows the percentage power increase
@@ -48,7 +141,6 @@ Localization Fixes:
      - Beetlejuice
      - Fight Club
 
-Removed the incorrectly available Blank Deck With Griffin and David
 
 V 0.8.1:
 New Jokers:

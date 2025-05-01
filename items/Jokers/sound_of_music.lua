@@ -1,6 +1,7 @@
 SMODS.Joker {
     key = "sound_of_music",
     order = 41,
+    generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
             flavour_texts = {
@@ -94,7 +95,7 @@ SMODS.Joker {
                 if card.ability.extra.current_step_non >= 7 and not context.repetition then
                     card.ability.extra.stacked_mult = card.ability.extra.stacked_mult + card.ability.extra.stacked_temp_mult
                     card.ability.extra.stacked_temp_mult = 0
-                    card.ability.extra.current_step_non = 0
+                    card.ability.extra.current_step_non = 1
                     card_eval_status_text(card, 'extra', nil, nil, nil,
                     { message = localize('k_upgrade_ex'), colour = G.C.MULT })
                 end

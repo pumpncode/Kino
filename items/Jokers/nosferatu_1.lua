@@ -4,7 +4,7 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            mult_mod = 2,
+            a_mult = 4,
             stacked_mult = 0
         }
     },
@@ -33,7 +33,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.mult_mod,
+                card.ability.extra.a_mult,
                 card.ability.extra.stacked_mult,
             }
         }

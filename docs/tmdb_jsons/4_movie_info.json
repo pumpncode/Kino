@@ -23,7 +23,7 @@
         "original_language": "en",
         "original_title": "Terror Train",
         "overview": "A masked killer targets six college kids responsible for a prank gone wrong three years earlier and who are currently throwing a large New Year's Eve costume party aboard a moving train.",
-        "popularity": 7.532,
+        "popularity": 2.8881,
         "poster_path": "/jeDVKkeCk9U75a0TZ4mezylXy3j.jpg",
         "production_companies": [
             {
@@ -71,8 +71,8 @@
         "tagline": "The boys and girls of Sigma Phi. Some will live. Some will die.",
         "title": "Terror Train",
         "video": false,
-        "vote_average": 5.7,
-        "vote_count": 276
+        "vote_average": 5.735,
+        "vote_count": 282
     },
     "Ghoulies2": {
         "adult": false,
@@ -107,7 +107,7 @@
         "original_language": "en",
         "original_title": "Ghoulies",
         "overview": "A young man and his girlfriend move into the man's old mansion home, where he becomes possessed by a need to control ancient demons.",
-        "popularity": 11.759,
+        "popularity": 2.3971,
         "poster_path": "/yV8z6deULhH4oJAUj2YdhITPwfc.jpg",
         "production_companies": [
             {
@@ -138,7 +138,7 @@
         "title": "Ghoulies",
         "video": false,
         "vote_average": 4.9,
-        "vote_count": 267
+        "vote_count": 268
     },
     "The Wicker Man3": {
         "adult": false,
@@ -168,7 +168,7 @@
         "original_language": "en",
         "original_title": "The Wicker Man",
         "overview": "A sheriff investigating the disappearance of a young girl from a small island discovers there's a larger mystery to solve among the island's secretive, neo-pagan community.",
-        "popularity": 16.926,
+        "popularity": 4.4092,
         "poster_path": "/xsHrmfgDcEk5fGhSiieKvrDuofq.jpg",
         "production_companies": [
             {
@@ -246,8 +246,8 @@
         "tagline": "Some sacrifices must be made",
         "title": "The Wicker Man",
         "video": false,
-        "vote_average": 4.3,
-        "vote_count": 1324
+        "vote_average": 4.312,
+        "vote_count": 1330
     },
     "Longlegs4": {
         "adult": false,
@@ -277,7 +277,7 @@
         "original_language": "en",
         "original_title": "Longlegs",
         "overview": "FBI Agent Lee Harker is a gifted new recruit assigned to the unsolved case of an elusive serial killer. As the case takes complex turns, unearthing evidence of the occult, Harker discovers a personal connection to the merciless killer and must race against time to stop him before he claims the lives of another innocent family.",
-        "popularity": 124.282,
+        "popularity": 13.4579,
         "poster_path": "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg",
         "production_companies": [
             {
@@ -335,8 +335,8 @@
         "tagline": "Say your prayers.",
         "title": "Longlegs",
         "video": false,
-        "vote_average": 6.583,
-        "vote_count": 1857
+        "vote_average": 6.559,
+        "vote_count": 1976
     },
     "Scream5": {
         "adult": false,
@@ -345,7 +345,7 @@
             "id": 2602,
             "name": "Scream Collection",
             "poster_path": "/p3EjClFy20jjT0u06dzBs4lvvhi.jpg",
-            "backdrop_path": "/oUcscMECv8DOBsAPCh3KnDZqAC4.jpg"
+            "backdrop_path": "/fG6GzZAwtsW3v2mhB4EyQLMRjUV.jpg"
         },
         "budget": 14000000,
         "genres": [
@@ -371,7 +371,7 @@
         "original_language": "en",
         "original_title": "Scream",
         "overview": "A year after the murder of her mother, a teenage girl is terrorized by a masked killer who targets her and her friends by using scary movies as part of a deadly game.",
-        "popularity": 60.522,
+        "popularity": 13.5115,
         "poster_path": "/lr9ZIrmuwVmZhpZuTCW8D9g0ZJe.jpg",
         "production_companies": [
             {
@@ -407,8 +407,8 @@
         "tagline": "Someone has taken their love of scary movies one step too far. Solving this mystery is going to be murder.",
         "title": "Scream",
         "video": false,
-        "vote_average": 7.4,
-        "vote_count": 7181
+        "vote_average": 7.412,
+        "vote_count": 7257
     },
     "Poltergeist6": {
         "adult": false,
@@ -435,7 +435,7 @@
         "original_language": "en",
         "original_title": "Poltergeist",
         "overview": "Upon realizing that something truly evil haunts his home, Steve Freeling calls in a team of parapsychologists to help before it's too late.",
-        "popularity": 24.569,
+        "popularity": 7.8895,
         "poster_path": "/4eMN3GANH5GG4kXdHkrTZEUuQ9M.jpg",
         "production_companies": [
             {
@@ -478,7 +478,7 @@
         "title": "Poltergeist",
         "video": false,
         "vote_average": 7.149,
-        "vote_count": 3058
+        "vote_count": 3079
     },
     "The Omen7": {
         "adult": false,
@@ -510,7 +510,7 @@
         "original_language": "en",
         "original_title": "The Omen",
         "overview": "Immediately after their miscarriage, the US diplomat Robert Thorn adopts the newborn Damien without the knowledge of his wife. Yet what he doesn\u2019t know is that their new son is the son of the devil.",
-        "popularity": 29.061,
+        "popularity": 7.0623,
         "poster_path": "/mDcjjEu1fMNmsXi4l4D8IftlTix.jpg",
         "production_companies": [
             {
@@ -566,8 +566,8 @@
         "tagline": "You Have Been Warned",
         "title": "The Omen",
         "video": false,
-        "vote_average": 7.4,
-        "vote_count": 2163
+        "vote_average": 7.407,
+        "vote_count": 2190
     },
     "Krazy House8": {
         "adult": false,
@@ -590,10 +590,10 @@
         "origin_country": [
             "NL"
         ],
-        "original_language": "nl",
+        "original_language": "en",
         "original_title": "Krazy House",
         "overview": "When Russian workers in Bernie\u2019s house turn out to be wanted criminals, Bernie has to man up and save his \u201990s sitcom family.",
-        "popularity": 7.838,
+        "popularity": 1.9688,
         "poster_path": "/36gDjx56RDhjIpynKkrseJCJJDi.jpg",
         "production_companies": [
             {
@@ -624,7 +624,7 @@
         "title": "Krazy House",
         "video": false,
         "vote_average": 4.7,
-        "vote_count": 32
+        "vote_count": 34
     },
     "Alien9": {
         "adult": false,
@@ -655,7 +655,7 @@
         "original_language": "en",
         "original_title": "Alien",
         "overview": "During its return to the earth, commercial spaceship Nostromo intercepts a distress signal from a distant planet. When a three-member team of the crew discovers a chamber containing thousands of eggs on the planet, a creature inside one of the eggs attacks an explorer. The entire crew is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.",
-        "popularity": 107.458,
+        "popularity": 24.498,
         "poster_path": "/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg",
         "production_companies": [
             {
@@ -696,8 +696,8 @@
         "tagline": "In space, no one can hear you scream.",
         "title": "Alien",
         "video": false,
-        "vote_average": 8.2,
-        "vote_count": 15080
+        "vote_average": 8.163,
+        "vote_count": 15208
     },
     "Smile10": {
         "adult": false,
@@ -728,7 +728,7 @@
         "original_language": "en",
         "original_title": "Smile",
         "overview": "After witnessing a bizarre, traumatic incident involving a patient, Dr. Rose Cotter starts experiencing frightening occurrences that she can't explain.",
-        "popularity": 79.871,
+        "popularity": 24.2866,
         "poster_path": "/aPqcQwu4VGEewPhagWNncDbJ9Xp.jpg",
         "production_companies": [
             {
@@ -764,12 +764,12 @@
         "tagline": "Once you see it, it's too late.",
         "title": "Smile",
         "video": false,
-        "vote_average": 6.7,
-        "vote_count": 3472
+        "vote_average": 6.665,
+        "vote_count": 3532
     },
     "Insidious11": {
         "adult": false,
-        "backdrop_path": "/bylGn5OC2h3BWfGLYFtIcxlYxLy.jpg",
+        "backdrop_path": "/yZP6GyrgzdpjH1AxPHlb8ACLkiA.jpg",
         "belongs_to_collection": {
             "id": 228446,
             "name": "Insidious Collection",
@@ -796,7 +796,7 @@
         "original_language": "en",
         "original_title": "Insidious",
         "overview": "A family discovers that dark spirits have invaded their home after their son inexplicably falls into an endless sleep. When they reach out to a professional for help, they learn things are a lot more personal than they thought.",
-        "popularity": 52.249,
+        "popularity": 16.6835,
         "poster_path": "/1egpmVXuXed58TH2UOnX1nATTrf.jpg",
         "production_companies": [
             {
@@ -842,8 +842,8 @@
         "tagline": "It's not the House that's Haunted.",
         "title": "Insidious",
         "video": false,
-        "vote_average": 6.939,
-        "vote_count": 6859
+        "vote_average": 6.94,
+        "vote_count": 6906
     },
     "Ghost Rider12": {
         "adult": false,
@@ -878,7 +878,7 @@
         "original_language": "en",
         "original_title": "Ghost Rider",
         "overview": "In order to save his dying father, young stunt cyclist Johnny Blaze sells his soul to Mephistopheles and sadly parts from the pure-hearted Roxanne Simpson, the love of his life. Years later, Johnny's path crosses again with Roxanne, now a go-getting reporter, and also with Mephistopheles, who offers to release Johnny's soul if Johnny becomes the fabled, fiery 'Ghost Rider'.",
-        "popularity": 42.21,
+        "popularity": 9.7058,
         "poster_path": "/d9Oan9XJJ6gRJa64Ifsgp1sXbC4.jpg",
         "production_companies": [
             {
@@ -932,8 +932,8 @@
         "tagline": "Long ago he made a deal to save someone he loved.",
         "title": "Ghost Rider",
         "video": false,
-        "vote_average": 5.6,
-        "vote_count": 6013
+        "vote_average": 5.574,
+        "vote_count": 6053
     },
     "Stranger Than Fiction13": {
         "adult": false,
@@ -967,7 +967,7 @@
         "original_language": "en",
         "original_title": "Stranger Than Fiction",
         "overview": "Harold Crick is a lonely IRS agent whose mundane existence is transformed when he hears a mysterious voice narrating his life.",
-        "popularity": 19.16,
+        "popularity": 2.7855,
         "poster_path": "/nCzcepubwShvZ4vbCsygQNgF2Z1.jpg",
         "production_companies": [
             {
@@ -1013,8 +1013,8 @@
         "tagline": "Harold Crick isn't ready to go. Period.",
         "title": "Stranger Than Fiction",
         "video": false,
-        "vote_average": 7.28,
-        "vote_count": 2318
+        "vote_average": 7.279,
+        "vote_count": 2338
     },
     "Yes Man14": {
         "adult": false,
@@ -1040,7 +1040,7 @@
         "original_language": "en",
         "original_title": "Yes Man",
         "overview": "Carl Allen, a guy whose life is going nowhere, signs up for a self-help program based on one simple covenant: say yes to everything\u2026and anything.",
-        "popularity": 43.401,
+        "popularity": 9.2301,
         "poster_path": "/16zVbgFLTUaUTG1wQHuGjfWNuDM.jpg",
         "production_companies": [
             {
@@ -1102,8 +1102,8 @@
         "tagline": "One word can change everything.",
         "title": "Yes Man",
         "video": false,
-        "vote_average": 6.7,
-        "vote_count": 6897
+        "vote_average": 6.678,
+        "vote_count": 6947
     },
     "Dracula15": {
         "adult": false,
@@ -1130,7 +1130,7 @@
         "original_language": "en",
         "original_title": "Dracula",
         "overview": "British estate agent Renfield travels to Transylvania to meet the mysterious Count Dracula, who is interested in leasing a castle in London. After Dracula enslaves Renfield and drives him to insanity, the pair sail to London together and Dracula, a secret vampire, begins preying on London socialites.",
-        "popularity": 26.833,
+        "popularity": 2.9273,
         "poster_path": "/ueVSPt7vAba0XScHWTDWS5tNxYX.jpg",
         "production_companies": [
             {
@@ -1170,22 +1170,22 @@
         "tagline": "The story of the strangest passion the world has ever known!",
         "title": "Dracula",
         "video": false,
-        "vote_average": 7.2,
-        "vote_count": 1235
+        "vote_average": 7.151,
+        "vote_count": 1247
     },
     "Nosferatu16": {
         "adult": false,
-        "backdrop_path": "/h7r6LZ32dgLwtwSW3CxoWIYD9pr.jpg",
+        "backdrop_path": "/fYnEbgoNCxW9kL0IgOgtJb9JTBU.jpg",
         "belongs_to_collection": null,
         "budget": 50000000,
         "genres": [
             {
-                "id": 14,
-                "name": "Fantasy"
-            },
-            {
                 "id": 27,
                 "name": "Horror"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
             }
         ],
         "homepage": "https://www.focusfeatures.com/nosferatu",
@@ -1197,7 +1197,7 @@
         "original_language": "en",
         "original_title": "Nosferatu",
         "overview": "A gothic tale of obsession between a haunted young woman and the terrifying vampire infatuated with her, causing untold horror in its wake.",
-        "popularity": 496.505,
+        "popularity": 37.5985,
         "poster_path": "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg",
         "production_companies": [
             {
@@ -1232,19 +1232,9 @@
             }
         ],
         "release_date": "2024-12-25",
-        "revenue": 177225075,
+        "revenue": 180928503,
         "runtime": 133,
         "spoken_languages": [
-            {
-                "english_name": "Spanish",
-                "iso_639_1": "es",
-                "name": "Espa\u00f1ol"
-            },
-            {
-                "english_name": "Russian",
-                "iso_639_1": "ru",
-                "name": "P\u0443\u0441\u0441\u043a\u0438\u0439"
-            },
             {
                 "english_name": "English",
                 "iso_639_1": "en",
@@ -1259,14 +1249,24 @@
                 "english_name": "Romanian",
                 "iso_639_1": "ro",
                 "name": "Rom\u00e2n\u0103"
+            },
+            {
+                "english_name": "Russian",
+                "iso_639_1": "ru",
+                "name": "P\u0443\u0441\u0441\u043a\u0438\u0439"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
             }
         ],
         "status": "Released",
         "tagline": "Succumb to the darkness.",
         "title": "Nosferatu",
         "video": false,
-        "vote_average": 6.683,
-        "vote_count": 2264
+        "vote_average": 6.705,
+        "vote_count": 2552
     },
     "30 Days of Night17": {
         "adult": false,
@@ -1297,7 +1297,7 @@
         "original_language": "en",
         "original_title": "30 Days of Night",
         "overview": "This is the story of an isolated Alaskan town that is plunged into darkness for a month each year when the sun sinks below the horizon. As the last rays of light fade, the town is attacked by a bloodthirsty gang of vampires bent on an uninterrupted orgy of destruction. Only the small town's husband-and-wife Sheriff team stand between the survivors and certain destruction.",
-        "popularity": 24.594,
+        "popularity": 8.8207,
         "poster_path": "/7LwSrvFA0gz1KAlcrGcinoQPene.jpg",
         "production_companies": [
             {
@@ -1342,7 +1342,7 @@
             }
         ],
         "release_date": "2007-10-17",
-        "revenue": 75505973,
+        "revenue": 80276156,
         "runtime": 113,
         "spoken_languages": [
             {
@@ -1355,8 +1355,8 @@
         "tagline": "They're Coming!",
         "title": "30 Days of Night",
         "video": false,
-        "vote_average": 6.4,
-        "vote_count": 2815
+        "vote_average": 6.427,
+        "vote_count": 2839
     },
     "Blade18": {
         "adult": false,
@@ -1387,7 +1387,7 @@
         "original_language": "en",
         "original_title": "Blade",
         "overview": "The Daywalker known as \"Blade\" - a half-vampire, half-mortal man - becomes the protector of humanity against an underground army of vampires.",
-        "popularity": 41.848,
+        "popularity": 10.852,
         "poster_path": "/oWT70TvbsmQaqyphCZpsnQR7R32.jpg",
         "production_companies": [
             {
@@ -1434,8 +1434,8 @@
         "tagline": "Against an army of Immortals, one warrior must draw first blood.",
         "title": "Blade",
         "video": false,
-        "vote_average": 6.8,
-        "vote_count": 6121
+        "vote_average": 6.807,
+        "vote_count": 6174
     },
     "Pinocchio19": {
         "adult": false,
@@ -1465,7 +1465,7 @@
         "original_language": "en",
         "original_title": "Pinocchio",
         "overview": "A little wooden puppet yearns to become a real boy.",
-        "popularity": 48.162,
+        "popularity": 9.279,
         "poster_path": "/bnZJrLRnoQHpzEJdka1KYfsAF3N.jpg",
         "production_companies": [
             {
@@ -1495,8 +1495,8 @@
         "tagline": "When you wish upon a star, your dreams come true.",
         "title": "Pinocchio",
         "video": false,
-        "vote_average": 7.1,
-        "vote_count": 5897
+        "vote_average": 7.102,
+        "vote_count": 5935
     },
     "Pinocchio20": {
         "adult": false,
@@ -1526,7 +1526,7 @@
         "original_language": "en",
         "original_title": "Pinocchio",
         "overview": "A wooden puppet embarks on a thrilling adventure to become a real boy.",
-        "popularity": 29.565,
+        "popularity": 6.3697,
         "poster_path": "/g8sclIV4gj1TZqUpnL82hKOTK3B.jpg",
         "production_companies": [
             {
@@ -1568,8 +1568,8 @@
         "tagline": "The timeless classic.",
         "title": "Pinocchio",
         "video": false,
-        "vote_average": 6.3,
-        "vote_count": 1613
+        "vote_average": 6.322,
+        "vote_count": 1630
     },
     "Cast Away21": {
         "adult": false,
@@ -1595,7 +1595,7 @@
         "original_language": "en",
         "original_title": "Cast Away",
         "overview": "Chuck Nolan, a top international manager for FedEx, and Kelly, a Ph.D. student, are in love and heading towards marriage. Then Chuck's plane to Malaysia crashes at sea during a terrible storm. He's the only survivor, and finds himself marooned on a desolate island. With no way to escape, Chuck must find ways to survive in his new home.",
-        "popularity": 39.695,
+        "popularity": 14.6329,
         "poster_path": "/7lLJgKnAicAcR5UEuo8xhSMj18w.jpg",
         "production_companies": [
             {
@@ -1648,8 +1648,8 @@
         "tagline": "At the edge of the world, his journey begins.",
         "title": "Cast Away",
         "video": false,
-        "vote_average": 7.66,
-        "vote_count": 11526
+        "vote_average": 7.658,
+        "vote_count": 11619
     },
     "The Man Who Laughs22": {
         "adult": false,
@@ -1679,7 +1679,7 @@
         "original_language": "en",
         "original_title": "The Man Who Laughs",
         "overview": "Gwynplaine, son of Lord Clancharlie, has a permanent smile carved on his face by the King, in revenge for Gwynplaine's father's treachery. Gwynplaine is adopted by a travelling showman and becomes a popular idol. He falls in love with the blind Dea. The king dies, and his evil jester tries to destroy or corrupt Gwynplaine.",
-        "popularity": 10.815,
+        "popularity": 2.1536,
         "poster_path": "/iQXBMr4NzQst4X0rDU6MII6ZUOM.jpg",
         "production_companies": [
             {
@@ -1710,7 +1710,7 @@
         "title": "The Man Who Laughs",
         "video": false,
         "vote_average": 7.3,
-        "vote_count": 201
+        "vote_count": 204
     },
     "The Wizard of Oz23": {
         "adult": false,
@@ -1745,7 +1745,7 @@
         "original_language": "en",
         "original_title": "The Wizard of Oz",
         "overview": "Young Dorothy finds herself in a magical world where she makes friends with a lion, a scarecrow and a tin man as they make their way along the yellow brick road to talk with the Wizard and ask for the things they miss most in their lives. The Wicked Witch of the West is the only thing that could stop them.",
-        "popularity": 60.389,
+        "popularity": 14.8092,
         "poster_path": "/pfAZFD7I2hxW9HCChTuAzsdE6UX.jpg",
         "production_companies": [
             {
@@ -1772,11 +1772,11 @@
             }
         ],
         "status": "Released",
-        "tagline": "Gaiety! Glory! Glamour!",
+        "tagline": "We're off to see the Wizard, the wonderful Wizard of Oz!",
         "title": "The Wizard of Oz",
         "video": false,
-        "vote_average": 7.6,
-        "vote_count": 5689
+        "vote_average": 7.591,
+        "vote_count": 5722
     },
     "Ocean's Eleven24": {
         "adult": false,
@@ -1807,7 +1807,7 @@
         "original_language": "en",
         "original_title": "Ocean's Eleven",
         "overview": "Less than 24 hours into his parole, charismatic thief Danny Ocean is already rolling out his next plan: In one night, Danny's hand-picked crew of specialists will attempt to steal more than $150 million from three Las Vegas casinos. But to score the cash, Danny risks his chances of reconciling with ex-wife, Tess.",
-        "popularity": 46.955,
+        "popularity": 15.5131,
         "poster_path": "/hQQCdZrsHtZyR6NbKH2YyCqd2fR.jpg",
         "production_companies": [
             {
@@ -1852,22 +1852,27 @@
         "runtime": 116,
         "spoken_languages": [
             {
-                "english_name": "Italian",
-                "iso_639_1": "it",
-                "name": "Italiano"
+                "english_name": "Mandarin",
+                "iso_639_1": "zh",
+                "name": "\u666e\u901a\u8bdd"
             },
             {
                 "english_name": "English",
                 "iso_639_1": "en",
                 "name": "English"
+            },
+            {
+                "english_name": "Italian",
+                "iso_639_1": "it",
+                "name": "Italiano"
             }
         ],
         "status": "Released",
         "tagline": "Are you in or out?",
         "title": "Ocean's Eleven",
         "video": false,
-        "vote_average": 7.444,
-        "vote_count": 11738
+        "vote_average": 7.445,
+        "vote_count": 11825
     },
     "The Polar Express25": {
         "adult": false,
@@ -1906,7 +1911,7 @@
         "original_language": "en",
         "original_title": "The Polar Express",
         "overview": "When a doubting young boy takes an extraordinary train ride to the North Pole, he embarks on a journey of self-discovery that shows him that the wonder of life never fades for those who believe.",
-        "popularity": 38.935,
+        "popularity": 9.6843,
         "poster_path": "/e2UJ2Y67txlNVGSRU04emZ3GDQw.jpg",
         "production_companies": [
             {
@@ -1960,12 +1965,12 @@
         "tagline": "This holiday season... believe.",
         "title": "The Polar Express",
         "video": false,
-        "vote_average": 6.721,
-        "vote_count": 6436
+        "vote_average": 6.719,
+        "vote_count": 6476
     },
     "Anora26": {
         "adult": false,
-        "backdrop_path": "/kEYWal656zP5Q2Tohm91aw6orlT.jpg",
+        "backdrop_path": "/4YN6AfYIKyfZ1aB0cYEWROv76nU.jpg",
         "belongs_to_collection": null,
         "budget": 6000000,
         "genres": [
@@ -1991,8 +1996,8 @@
         "original_language": "en",
         "original_title": "Anora",
         "overview": "A young sex worker from Brooklyn gets her chance at a Cinderella story when she meets and impulsively marries the son of an oligarch. Once the news reaches Russia, her fairytale is threatened as his parents set out to get the marriage annulled.",
-        "popularity": 726.2,
-        "poster_path": "/3bXdP1k2pzpmVD8GWXkC8VhmUKP.jpg",
+        "popularity": 51.1196,
+        "poster_path": "/7MrgIUeq0DD2iF7GR6wqJfYZNeC.jpg",
         "production_companies": [
             {
                 "id": 88152,
@@ -2014,7 +2019,7 @@
             }
         ],
         "release_date": "2024-10-14",
-        "revenue": 38475235,
+        "revenue": 56286295,
         "runtime": 139,
         "spoken_languages": [
             {
@@ -2037,8 +2042,8 @@
         "tagline": "Love is a hustle.",
         "title": "Anora",
         "video": false,
-        "vote_average": 7.1,
-        "vote_count": 1239
+        "vote_average": 7.054,
+        "vote_count": 2053
     },
     "Only Lovers Left Alive27": {
         "adult": false,
@@ -2064,7 +2069,7 @@
         "original_language": "en",
         "original_title": "Only Lovers Left Alive",
         "overview": "A depressed musician reunites with his lover in the desolate streets of Detroit. Though their romance has endured several centuries, it is tested by the arrival of her capricious and unpredictable younger sister.",
-        "popularity": 17.265,
+        "popularity": 3.4102,
         "poster_path": "/6xY2MhYjFPb4xU3KlBJcFAJmMsF.jpg",
         "production_companies": [
             {
@@ -2092,16 +2097,34 @@
                 "origin_country": "GR"
             },
             {
+                "id": 2395,
+                "logo_path": "/pZz4qs03FtP6UGtZ3hjQ6qimcwi.png",
+                "name": "HanWay Films",
+                "origin_country": "GB"
+            },
+            {
                 "id": 5125,
                 "logo_path": "/t3oWTsVukmEzrZzvfr37XRBibo5.png",
                 "name": "Le Pacte",
                 "origin_country": "FR"
             },
             {
-                "id": 2395,
-                "logo_path": "/pZz4qs03FtP6UGtZ3hjQ6qimcwi.png",
-                "name": "HanWay Films",
-                "origin_country": "GB"
+                "id": 986,
+                "logo_path": "/qDV8nLH9pjElZSnPmg29mzzNlTo.png",
+                "name": "ARD Degeto",
+                "origin_country": "DE"
+            },
+            {
+                "id": 19245,
+                "logo_path": "/7RhKMuyqFDMq8LpiFCxTgZ8H4pT.png",
+                "name": "Lago Film",
+                "origin_country": "DE"
+            },
+            {
+                "id": 45,
+                "logo_path": "/tUkNOAjyTt9D56DUeQfmmAFvwYQ.png",
+                "name": "Road Movies",
+                "origin_country": "DE"
             }
         ],
         "production_countries": [
@@ -2114,12 +2137,12 @@
                 "name": "Germany"
             },
             {
-                "iso_3166_1": "FR",
-                "name": "France"
-            },
-            {
                 "iso_3166_1": "GR",
                 "name": "Greece"
+            },
+            {
+                "iso_3166_1": "FR",
+                "name": "France"
             }
         ],
         "release_date": "2013-12-12",
@@ -2151,8 +2174,8 @@
         "tagline": "",
         "title": "Only Lovers Left Alive",
         "video": false,
-        "vote_average": 7.2,
-        "vote_count": 2229
+        "vote_average": 7.22,
+        "vote_count": 2245
     },
     "10 Things I Hate About You28": {
         "adult": false,
@@ -2182,7 +2205,7 @@
         "original_language": "en",
         "original_title": "10 Things I Hate About You",
         "overview": "On the first day at his new school, Cameron instantly falls for Bianca, the gorgeous girl of his dreams. The only problem is that Bianca is forbidden to date until her ill-tempered, completely un-dateable older sister Kat goes out, too. In an attempt to solve his problem, Cameron singles out the only guy who could possibly be a match for Kat: a mysterious bad boy with a nasty reputation of his own.",
-        "popularity": 62.838,
+        "popularity": 21.9792,
         "poster_path": "/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
         "production_companies": [
             {
@@ -2223,12 +2246,12 @@
         "tagline": "How do I loathe thee? Let me count the ways.",
         "title": "10 Things I Hate About You",
         "video": false,
-        "vote_average": 7.6,
-        "vote_count": 8248
+        "vote_average": 7.593,
+        "vote_count": 8323
     },
     "Pride & Prejudice29": {
         "adult": false,
-        "backdrop_path": "/pgEWI7yGYF0mM5Uf1YxSOHsBkJR.jpg",
+        "backdrop_path": "/x4OYcZVHggyZHOrvkCo2HH9kLkF.jpg",
         "belongs_to_collection": null,
         "budget": 28000000,
         "genres": [
@@ -2250,7 +2273,7 @@
         "original_language": "en",
         "original_title": "Pride & Prejudice",
         "overview": "A story of love and life among the landed English gentry during the Georgian era. Mr. Bennet is a gentleman living in Hertfordshire with his overbearing wife and five daughters, but if he dies their house will be inherited by a distant cousin whom they have never met, so the family's future happiness and security is dependent on the daughters making good marriages.",
-        "popularity": 60.048,
+        "popularity": 30.5975,
         "poster_path": "/sGjIvtVvTlWnia2zfJfHz81pZ9Q.jpg",
         "production_companies": [
             {
@@ -2284,13 +2307,17 @@
                 "name": "United Kingdom"
             },
             {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            },
+            {
                 "iso_3166_1": "FR",
                 "name": "France"
             }
         ],
         "release_date": "2005-09-16",
-        "revenue": 121600000,
-        "runtime": 129,
+        "revenue": 124503070,
+        "runtime": 127,
         "spoken_languages": [
             {
                 "english_name": "English",
@@ -2299,11 +2326,11 @@
             }
         ],
         "status": "Released",
-        "tagline": "A romance ahead of its time.",
+        "tagline": "Sometimes the last person on earth you want to be with is the one person you can't be without.",
         "title": "Pride & Prejudice",
         "video": false,
-        "vote_average": 8.068,
-        "vote_count": 8133
+        "vote_average": 8.1,
+        "vote_count": 8205
     },
     "Twilight30": {
         "adult": false,
@@ -2338,7 +2365,7 @@
         "original_language": "en",
         "original_title": "Twilight",
         "overview": "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire. Despite Edward's repeated cautions, Bella can't stay away from him, a fatal move that endangers her own life.",
-        "popularity": 117.095,
+        "popularity": 30.3114,
         "poster_path": "/3Gkb6jm6962ADUPaCBqzz9CTbn9.jpg",
         "production_companies": [
             {
@@ -2403,7 +2430,7 @@
         "title": "Twilight",
         "video": false,
         "vote_average": 6.288,
-        "vote_count": 13688
+        "vote_count": 13757
     },
     "Baby Geniuses31": {
         "adult": false,
@@ -2438,7 +2465,7 @@
         "original_language": "en",
         "original_title": "Baby Geniuses",
         "overview": "BabyCo is the world's leading manufacturer in baby products. However, what the public doesn't know, is that Drs Kinder and Heep, two of its most brilliant scientists, are tirelessly working in complete secrecy to crack the indecipherable code to 'baby talk': a highly sophisticated language, and the key to the secrets of the universe. Before long, problems arise when mischievous Sly, the smartest of the toddlers, escapes confinement, bent on uniting all babies to free those trapped in the laboratory. Now, Kinder and Heep must find Sly before it is too late.",
-        "popularity": 10.151,
+        "popularity": 3.82,
         "poster_path": "/7zvPhjHkz5YEMUMPyvANCR96RJA.jpg",
         "production_companies": [
             {
@@ -2480,8 +2507,8 @@
         "tagline": "Think innocent. Think helpless. Think again. Naps are history.",
         "title": "Baby Geniuses",
         "video": false,
-        "vote_average": 4.1,
-        "vote_count": 382
+        "vote_average": 4.124,
+        "vote_count": 384
     },
     "The Boss Baby32": {
         "adult": false,
@@ -2516,7 +2543,7 @@
         "original_language": "en",
         "original_title": "The Boss Baby",
         "overview": "A story about how a new baby's arrival impacts a family, told from the point of view of a delightfully unreliable narrator, a wildly imaginative 7 year old named Tim.",
-        "popularity": 14.148,
+        "popularity": 5.062,
         "poster_path": "/unPB1iyEeTBcKiLg8W083rlViFH.jpg",
         "production_companies": [
             {
@@ -2546,8 +2573,8 @@
         "tagline": "Born leader",
         "title": "The Boss Baby",
         "video": false,
-        "vote_average": 6.445,
-        "vote_count": 7130
+        "vote_average": 6.454,
+        "vote_count": 7180
     },
     "Lucky Number Slevin33": {
         "adult": false,
@@ -2581,7 +2608,7 @@
         "original_language": "en",
         "original_title": "Lucky Number Slevin",
         "overview": "Slevin is mistakenly put in the middle of a personal war between the city\u2019s biggest criminal bosses. Under constant watch, Slevin must try not to get killed by an infamous assassin and come up with an idea of how to get out of his current dilemma.",
-        "popularity": 35.874,
+        "popularity": 5.595,
         "poster_path": "/x21s3p5wPww534nYj1cWakTcqz4.jpg",
         "production_companies": [
             {
@@ -2672,7 +2699,7 @@
         "title": "Lucky Number Slevin",
         "video": false,
         "vote_average": 7.481,
-        "vote_count": 4125
+        "vote_count": 4157
     },
     "Black Panther34": {
         "adult": false,
@@ -2707,7 +2734,7 @@
         "original_language": "en",
         "original_title": "Black Panther",
         "overview": "King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without. Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantle to join with ex-girlfriend Nakia, the queen-mother, his princess-kid sister, members of the Dora Milaje (the Wakandan 'special forces') and an American secret agent, to prevent Wakanda from being dragged into a world war.",
-        "popularity": 95.547,
+        "popularity": 27.3326,
         "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
         "production_companies": [
             {
@@ -2752,8 +2779,8 @@
         "tagline": "Long live the king.",
         "title": "Black Panther",
         "video": false,
-        "vote_average": 7.375,
-        "vote_count": 22403
+        "vote_average": 7.373,
+        "vote_count": 22506
     },
     "Blank Check35": {
         "adult": false,
@@ -2779,7 +2806,7 @@
         "original_language": "en",
         "original_title": "Blank Check",
         "overview": "Bullied by his siblings and nagged by his parents, 11-year-old Preston is fed up with his family -- especially their frugality. But he gets his chance to teach them a lesson when a money-laundering criminal nearly bulldozes Preston with his car and gives the boy a blank check as compensation. Preston makes the check out for $1 million and goes on a spending spree he'll never forget. Maybe now, his family will take him seriously!",
-        "popularity": 18.053,
+        "popularity": 2.6487,
         "poster_path": "/qhsH1BGqeCDHoogt5ebxOgERJGb.jpg",
         "production_companies": [
             {
@@ -2810,7 +2837,7 @@
         "title": "Blank Check",
         "video": false,
         "vote_average": 5.9,
-        "vote_count": 504
+        "vote_count": 505
     },
     "Glass36": {
         "adult": false,
@@ -2840,7 +2867,7 @@
         "original_language": "en",
         "original_title": "Glass",
         "overview": "In a series of escalating encounters, former security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities. Meanwhile, the shadowy presence of Elijah Price emerges as an orchestrator who holds secrets critical to both men.",
-        "popularity": 39.123,
+        "popularity": 12.0746,
         "poster_path": "/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg",
         "production_companies": [
             {
@@ -2887,7 +2914,7 @@
         "tagline": "You Cannot Contain What You Are",
         "title": "Glass",
         "video": false,
-        "vote_average": 6.664,
-        "vote_count": 8584
+        "vote_average": 6.7,
+        "vote_count": 8628
     }
 }
