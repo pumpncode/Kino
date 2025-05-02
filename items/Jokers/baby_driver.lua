@@ -36,7 +36,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.individual then
+        if context.individual and context.cardarea == G.play then
             -- get card position
             local _mypos = 0
             local _triggers = 0

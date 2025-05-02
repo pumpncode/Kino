@@ -40,7 +40,7 @@ SMODS.Joker {
             end
         end
 
-        return suit_count >= 1 and true or false
+        return suit_count >= 14 and true or false
     end,
 
     loc_vars = function(self, info_queue, card)
@@ -55,10 +55,10 @@ SMODS.Joker {
         end
         return {
             vars = {
-                card.ability.extra.starting_amount,
+                13,
                 card.ability.extra.mult,
                 card.ability.extra.a_mult,
-                suit_count * card.ability.extra.a_mult - card.ability.extra.starting_amount,
+                (13 - suit_count) * card.ability.extra.a_mult,
             }
         }
     end,
@@ -70,11 +70,11 @@ SMODS.Joker {
                     suit_count = suit_count + 1
                 end
             end
-            card.ability.extra.mult = suit_count - card.ability.extra.starting_amount
+            card.ability.extra.mult = suit_count - 13
             
             if context.other_card:is_suit("Diamonds") then
                 return {
-                    mult = card.ability.extra.mod,
+                    mult = card.ability.extra.mult,
                     card = context.other_card
                 }
             end

@@ -52,7 +52,7 @@ SMODS.Joker {
             end
 
             if _count == 1 then
-                _card = pseudorandom_element(_non_romance_cards)
+                local _card = pseudorandom_element(_non_romance_cards)
                 _card:set_ability(G.P_CENTERS.m_kino_romance, nil, true)
 
             card_eval_status_text(_card, 'extra', nil, nil, nil,

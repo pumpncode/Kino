@@ -4,8 +4,8 @@ SMODS.Joker {
     generate_ui = Kino.generate_info_ui,
     config = {
         extra = {
-            stacks_non = 0,
-            max_stacks_non = 37,
+            stacks = 0,
+            threshold = 37,
             mult = 18
         }
     },
@@ -33,8 +33,8 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.stacks_non,
-                card.ability.extra.max_stacks_non,
+                card.ability.extra.stacks,
+                card.ability.extra.threshold,
                 card.ability.extra.mult
             }
         }
@@ -42,12 +42,12 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if not context.blueprint then
-                card.ability.extra.stacks_non = card.ability.extra.stacks_non + context.other_card:get_id()
+                card.ability.extra.stacks = card.ability.extra.stacks + context.other_card:get_id()
             end
 
-            if card.ability.extra.stacks_non >= card.ability.extra.max_stacks_non then
+            if card.ability.extra.stacks >= card.ability.extra.threshold then
 
-                card.ability.extra.stacks_non = 0 
+                card.ability.extra.stacks = 0 
 
                 return {
                     mult = card.ability.extra.mult

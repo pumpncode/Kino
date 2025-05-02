@@ -72,7 +72,7 @@ SMODS.Joker {
                             _card:set_edition(context.destroying_card.edition.key, true, nil, true)
                             
                         end
-                        _card:set_seal(context.destroying_card.seal, True)
+                        _card:set_seal(context.destroying_card.seal, true)
                         G.GAME.blind:debuff_card(_card)
                         G.hand:sort()
                         return true

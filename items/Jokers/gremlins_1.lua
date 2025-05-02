@@ -32,7 +32,7 @@ SMODS.Joker {
         local enhancement_gate = false
         if G.playing_cards then
             for k, v in pairs(G.playing_cards) do
-                if SMODS.has_enhancement(v, "m_kino_horror") and 
+                if SMODS.has_enhancement(v, "m_kino_horror") or
                 SMODS.has_enhancement(v, "m_kino_monster") then
                     enhancement_gate = true
                     break

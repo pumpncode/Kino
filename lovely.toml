@@ -58,6 +58,7 @@ target = "functions/state_events.lua"
 pattern = "local cards_destroyed = {}"
 position = "after"
 payload = '''
+
 if not next(find_joker("j_kino_hellboy_1")) then
     local has_demonic_card = false
     local _sacrifices_this_hand = 0
@@ -727,3 +728,71 @@ if G.jokers ~= nil then
 end
 
 '''
+
+### Destroying card count
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+-- TARGET: effects when cards are removed
+'''
+position = "after"
+payload = '''
+
+G.GAME.cards_destroyed = G.GAME.cards_destroyed + (#cards_destroyed or 0)
+
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+-- TARGET: effects after cards destroyed in discard
+'''
+position = "after"
+payload = '''
+
+G.GAME.cards_destroyed = G.GAME.cards_destroyed + (#destroyed_cards or 0)
+
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+SMODS.calculate_context({ remove_playing_cards = true, removed = destroyed_cards })
+'''
+position = "after"
+payload = '''
+
+G.GAME.cards_destroyed = G.GAME.cards_destroyed + (#destroyed_cards or 0)
+
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+scoring_hand = final_scoring_hand
+'''
+position = "after"
+payload = '''
+
+G.GAME.last_played_hand = Kino.dummy_codex
+
+for _, _pcard in ipairs(scoring_hand) do
+    G.GAME.last_played_hand[_] = _pcard
+end
+
+
+'''
+match_indent = true
+times = 1
+# 

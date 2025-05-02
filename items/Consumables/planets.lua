@@ -100,22 +100,8 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
 
-        local _hand, _tally = nil, nil
-        local _hands = {}
-		for k, v in ipairs(G.handlist) do
-			if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played < _tally) then
-				_hand = v
-                _hands = {}
-				_tally = G.GAME.hands[v].played
-			end
-            if G.GAME.hands[v].visible and (_tally == nil or G.GAME.hands[v].played == _tally) then
-				_hands[#_hands] = v
-			end
-		end
-
-        if #_hands >= 2 then
-            _hand = pseudorandom_element(_hands, pseudoseed("arrakis"))
-        end
+        local _hands = get_least_played_hand()
+        local _hand =  pseudorandom_element(_hands, pseudoseed("arrakis"))
 
         card_eval_status_text(card, 'extra', nil, nil, nil,
         { message = localize('k_arrakis'),  colour = G.C.BLACK })
@@ -269,6 +255,71 @@ SMODS.Consumable {
         end
 
         level_up_hand(card, _hand, nil, 1)
+        update_hand_text(
+			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
+			{ mult = 0, chips = 0, handname = "", level = "" }
+        )
+    end
+}
+
+-- Death Star: level up every hand once and destroy a joker
+SMODS.Consumable {
+    key = "death_star",
+    set = "Planet",
+    order = 7,
+    pos = {x = 0, y = 5},
+    atlas = "kino_tarot",
+    can_use = function(self, card)
+        local _eligible_targets = {}
+
+        for _, _joker in ipairs(G.jokers.cards) do
+            if _joker:can_calculate() then
+                _eligible_targets[#_eligible_targets + 1] = _joker
+            end
+        end
+
+        if #_eligible_targets > 0 then return true end
+		return false
+	end,
+    config = {
+        extra = {
+            
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+
+            }
+        }
+    end,
+    use = function(self, card, area, copier)
+
+        -- Find most played hand
+        local _eligible_targets = {}
+
+        for _, _joker in ipairs(G.jokers.cards) do
+            if _joker:can_calculate() then
+                _eligible_targets[#_eligible_targets + 1] = _joker
+            end
+        end
+
+        -- destroy random joker
+        local _target = pseudorandom_element(G.jokers.cards, pseudoseed("kino_death_star"))
+        _target:start_dissolve()
+
+        for k, v in ipairs(G.handlist) do
+			if G.GAME.hands[v] then
+				level_up_hand(card, v, true, 1)
+			end
+		end
+
+        
+        update_hand_text(
+			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
+			{ mult = 0, chips = 0, handname = "All Hands", level = "+1" }
+        )
+        delay(0.5)
         update_hand_text(
 			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
 			{ mult = 0, chips = 0, handname = "", level = "" }

@@ -76,6 +76,18 @@ SMODS.Atlas {
     py = 95,
     path =  'kino_jokers_8.png'
 }
+SMODS.Atlas {
+    key = "kino_atlas_9",
+    px = 71,
+    py = 95,
+    path =  'kino_jokers_9.png'
+}
+-- SMODS.Atlas {
+--     key = "kino_atlas_10",
+--     px = 71,
+--     py = 95,
+--     path =  'kino_jokers_10.png'
+-- }
 
 SMODS.Atlas {
     key = 'modicon',
@@ -195,7 +207,10 @@ end
 local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
+    
+
     ret.modifiers.genre_bonus = {}
+    ret.last_played_hand = nil
 
     ret.current_round.scrap_total = 0
     ret.current_round.matches_made = 0
@@ -206,11 +221,14 @@ Game.init_game_object = function(self)
     ret.current_round.beaten_run_high = 0
     ret.current_round.horror_transform = 0
     ret.current_round.cards_abducted = 0
+    ret.money_stolen = 0
+    ret.cards_destroyed = 0
 
     ret.current_round.actors_check = 3
     ret.current_round.actors_table_offset = 0
     ret.current_round.genre_synergy_treshold = 5
     
+    -- Fantasy cards
     ret.current_round.spells_cast = 0
     ret.current_round.last_spell_cast = {
         key = "",
@@ -219,6 +237,8 @@ Game.init_game_object = function(self)
     ret.current_round.spell_queue = {
         -- should be {spell_key = KEY, strength = STRENGTH}
     }
+
+    -- 
 
     ret.confections_used = 0
 
@@ -230,6 +250,8 @@ Game.init_game_object = function(self)
     -- Boss Blind info
     ret.current_round.boss_blind_joker_counter = 0
     ret.current_round.boss_blind_blofeld_counter = 10000
+    ret.current_round.boss_blind_agent_smith_rank_discards = {}
+    ret.current_round.boss_blind_thanos_cards = {}
     return ret
 end
 
@@ -327,10 +349,16 @@ for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Boosters/" .. file))()
 end
 
--- Register the Boosters
+-- Register the Vouchers
 local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Vouchers")
 for _, file in ipairs(files) do
     assert(SMODS.load_file("Items/Vouchers/" .. file))()
+end
+
+-- Register the Seals
+local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Seals")
+for _, file in ipairs(files) do
+    assert(SMODS.load_file("Items/Seals/" .. file))()
 end
 
 local files = NFS.getDirectoryItems(Kino.mod_dir .. "Items/Stickers")
@@ -381,6 +409,13 @@ if load_error then
     helper()
 end
 
+local helper, load_error = SMODS.load_file("src/codex.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
 local helper, load_error = SMODS.load_file("src/snack_bag.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
@@ -389,6 +424,13 @@ if load_error then
 end
 
 local helper, load_error = SMODS.load_file("src/quest.lua")
+if load_error then
+    sendDebugMessage ("The error is: "..load_error)
+    else
+    helper()
+end
+
+local helper, load_error = SMODS.load_file("src/powerchanges.lua")
 if load_error then
     sendDebugMessage ("The error is: "..load_error)
     else
