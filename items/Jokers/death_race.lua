@@ -64,7 +64,7 @@ SMODS.Joker {
         end
     end,
     update = function(self, card, dt)
-        if card.ability.extra.ticking and not G.SETTINGS.paused and G.GAME.blind.in_blind then
+        if card.ability.extra.ticking and not G.SETTINGS.paused and G.GAME.blind and  G.GAME.blind.in_blind then
             card.ability.extra.time_spent = card.ability.extra.time_spent + dt
         end
     end
