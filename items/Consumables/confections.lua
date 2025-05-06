@@ -340,7 +340,7 @@ SMODS.Consumable {
             -- Check for suits already encountered
             local _is_viable = true
             for i = 1, #card.ability.extra.suits do
-                if context.card.config.card.suit == card.ability.extra.suits[i] then
+                if context.other_card.config.card.suit == card.ability.extra.suits[i] then
                     _is_viable = false
                     break
                 end 
@@ -600,7 +600,7 @@ SMODS.Consumable {
     end,
     calculate = function(self, card, context)
 
-        if context.individual and context.scoring_hand[1] and card.active then
+        if context.individual and context.scoring_hand and context.scoring_hand[1] and card.active then
             local _chips = card.ability.kino_choco and (card.ability.extra.bonus_chips + card.ability.choco_bonus) or card.ability.extra.bonus_chips
             context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
             context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + _chips 

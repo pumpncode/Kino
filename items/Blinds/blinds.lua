@@ -40,9 +40,17 @@ SMODS.Blind{
     press_play = function(self)
     end,
     calculate = function(self, blind, context)
+
+        if context.individual and context.cardarea == G.play then
+            return {
+                chips = 50
+            }
+        end
+
         if context.destroy_card and context.cardarea == G.hand and
         to_big((hand_chips * mult)) + to_big(G.GAME.chips) >= to_big(G.GAME.blind.chips) then
-            return true
+            print("return {remove = true}")
+            return {remove = true}
         end
     end
 }
@@ -94,33 +102,6 @@ SMODS.Blind{
         
     end,
     calculate = function(self, blind, context)
-        -- Old Vader
-        -- if context.final_scoring_step then
-        --     if G.jokers.cards and G.jokers.cards[1] then
-        --         local _target = G.jokers.cards[1]
-        --         local _is_affected =  _target:get_multiplier_by_source(_target, "vader_blind")
-        --         if _is_affected then
-        --             if _is_affected <= 0.25 then
-        --                 -- Destroy the joker
-        --                 _target.getting_sliced = true
-        --                 blind:wiggle()
-        --                 G.E_MANAGER:add_event(Event({func = function()
-        --                     card_eval_status_text(_target, 'extra', nil, nil, nil,
-        --                     { message = localize('k_blind_vader_1'), colour = G.C.BLACK})
-        --                     _target:start_dissolve({G.C.RED}, nil, 1.6)
-        --                 return true end }))
-        --             end
-        --         else 
-        --             _is_affected = 1
-        --         end
-        --         G.E_MANAGER:add_event(Event({func = function()
-        --             blind:wiggle()
-        --             card_eval_status_text(_target, 'extra', nil, nil, nil,
-        --             { message = localize('k_blind_vader_2'), colour = G.C.BLACK})
-        --             _target:set_multiplication_bonus(_target, "vader_blind", _is_affected - self.debuff.vader_damage)
-        --             return true end }))
-        --     end
-        -- end
 
         if context.after then
             G.jokers.cards[1].ability.vader_triggers = G.jokers.cards[1].ability.vader_triggers and G.jokers.cards[1].ability.vader_triggers +1 or 1
@@ -1073,7 +1054,6 @@ SMODS.Blind{
                 silent = true
             })
             play_sound('tarot2', 1, 0.4)
-            blind:wiggle()
             for i = 1, self.debuff.to_discard do
                 draw_card(G.deck,G.discard, 1*100/3,'down', false, v)
             end
@@ -1274,7 +1254,7 @@ SMODS.Blind{
     boss_colour = HEX('3f5634'),
     atlas = 'kino_blinds', 
     boss = {min = 4, max = 10, showdown = true},
-    pos = { x = 0, y = 26},
+    pos = { x = 0, y = 30},
     debuff = {
 
     },
@@ -1370,7 +1350,6 @@ SMODS.Blind{
                 silent = true
             })
             play_sound('tarot2', 1, 0.4)
-            blind:wiggle()
             for i = 1, #G.play.cards do
                 draw_card(G.deck,G.discard, 1*100/3,'down', false, v)
             end
@@ -1400,7 +1379,7 @@ SMODS.Blind{
     end
 }
 
--- NO FUNCTIONALITY
+-- -- NO FUNCTIONALITY
 -- SMODS.Blind{
 --     key = "palpatine",
 --     dollars = 5,
@@ -1408,7 +1387,7 @@ SMODS.Blind{
 --     boss_colour = HEX('3f5634'),
 --     atlas = 'kino_blinds', 
 --     boss = {min = 4, max = 10},
---     pos = { x = 0, y = 28},
+--     pos = { x = 0, y = 31},
 --     debuff = {
 --         chips_debuff = 10,
 --         mult_debuff = 1,
@@ -1432,6 +1411,75 @@ SMODS.Blind{
 --             end
 --         end
 --     end,
+-- }
+
+-- SMODS.Blind{
+--     key = "palpatine",
+--     dollars = 5,
+--     mult = 2,
+--     boss_colour = HEX('3f5634'),
+--     atlas = 'kino_blinds', 
+--     boss = {min = 4, max = 10, showdown = true},
+--     pos = { x = 0, y = 31},
+--     debuff = {
+--         palp_damage = 0.2,
+--         triggers = 5
+--     },
+--     loc_vars = function(self)
+        
+--     end,
+--     collection_loc_vars = function(self)
+
+--     end,
+--     set_blind = function(self)
+--         -- G.GAME.current_round.boss_blind_indicator = true
+--         -- if G.jokers.cards and G.jokers.cards[1] then
+--         --     local _startingvalue = 1
+--         --     G.jokers.cards[1].ability.vader_triggers = 1
+--         --     if G.jokers.cards[1].ability.output_powerchange and G.jokers.cards[1].ability.output_powerchange.kinoblind_palpatine then
+--         --         _startingvalue = G.jokers.cards[1].ability.output_powerchange.kinoblind_palpatine
+--         --     end
+--         --     Kino.setpowerchange(G.jokers.cards[1], "kinoblind_palpatine", _startingvalue - self.debuff.palp_damage)
+--         -- end
+--     end,
+--     drawn_to_hand = function(self)
+        
+--     end,
+--     disable = function(self)
+--         G.GAME.current_round.boss_blind_indicator = false
+--     end,
+--     defeat = function(self)
+--         G.GAME.current_round.boss_blind_indicator = false
+--         for _, _joker in ipairs(G.jokers.cards) do
+--             Kino.setpowerchange(_joker, "kinoblind_palpatine", 1)
+--             G.jokers.cards[1].ability.vader_triggers = nil
+--         end
+--     end,
+--     press_play = function(self)
+        
+--     end,
+--     calculate = function(self, blind, context)
+
+--         if context.after then
+--             G.jokers.cards[1].ability.vader_triggers = G.jokers.cards[1].ability.vader_triggers and G.jokers.cards[1].ability.vader_triggers +1 or 1
+
+--             if G.jokers.cards[1].ability.vader_triggers > 3 then
+--                 G.jokers.cards[1].getting_sliced = true
+                
+--                 G.E_MANAGER:add_event(Event({func = function()
+--                     blind:wiggle()
+--                     card_eval_status_text(G.jokers.cards[1], 'extra', nil, nil, nil,
+--                     { message = localize('k_blind_vader_1'), colour = G.C.BLACK})
+--                     G.jokers.cards[1]:start_dissolve({G.C.RED}, nil, 1.6)
+--                 return true end }))
+--             end
+--             local _startingvalue = 1
+--             if G.jokers.cards[1].ability.output_powerchange and G.jokers.cards[1].ability.output_powerchange.kinoblind_vader then
+--                 _startingvalue = G.jokers.cards[1].ability.output_powerchange.kinoblind_vader
+--             end
+--             Kino.setpowerchange(G.jokers.cards[1], "kinoblind_vader", _startingvalue - self.debuff.vader_damage)
+--         end
+--     end
 -- }
 
 -- NO FUNCTIONALITY

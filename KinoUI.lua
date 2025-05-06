@@ -320,6 +320,26 @@ SMODS.current_mod.extra_tabs = function()
 									colour = G.C.BLUE
 								}
 							}
+							,
+							{
+								n = G.UIT.T,
+								config = {
+									text = ", Arson",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
+								}
+							}
+							,
+							{
+								n = G.UIT.T,
+								config = {
+									text = ", strmnn",
+									shadow = true,
+									scale = scale * 0.5,
+									colour = G.C.BLUE
+								}
+							}
 						}
 					},
 					{
