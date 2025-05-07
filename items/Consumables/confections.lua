@@ -891,7 +891,7 @@ SMODS.Consumable {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                #Kino.snackbag.cards
+                Kino.snackbag and #Kino.snackbag.cards or 0
             }
         }
     end,

@@ -1,4 +1,8 @@
 
+V 0.9.0b:
+Bug Fixes:
+- Hovering over the Snackbag in the collection no longer crashes the game
+
 V 0.9.0a:
 Bug Fixes:
 - Lord Humungus and Immortan Joe no longer crash the game

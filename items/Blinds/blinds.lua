@@ -456,34 +456,36 @@ SMODS.Blind{
     calculate = function(self, blind, context)
         if context.after then
             local enhanced = {}
-            for k, v in ipairs(context.scoring_hand) do
-                if v.config.center ~= G.P_CENTERS.c_base and not v.debuff and not v.vampired then
-                    enhanced[#enhanced+1] = v
-                    v.vampired = true
-                    v:set_ability(G.P_CENTERS.c_base, nil, true)
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            v:juice_up()
-                            v.vampired = nil
-                            return true
-                        end
-                    }))
+            if context.scoring_hand then
+                for k, v in ipairs(context.scoring_hand) do
+                    if v.config.center ~= G.P_CENTERS.c_base and not v.debuff and not v.vampired then
+                        enhanced[#enhanced+1] = v
+                        v.vampired = true
+                        v:set_ability(G.P_CENTERS.c_base, nil, true)
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                v:juice_up()
+                                v.vampired = nil
+                                return true
+                            end
+                        }))
+                    end
                 end
-            end
 
-            if #enhanced > 1 then
-                G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
-                    attention_text({
-                        text = localize('k_blind_dracula_1'),
-                        scale = 1.3, 
-                        hold = 1.4,
-                        major = G.play,
-                        align = 'tm',
-                        offset = {x = 0, y = -1},
-                        silent = true
-                    })
-                    blind:wiggle()
-                return true end }))
+                if #enhanced > 1 then
+                    G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                        attention_text({
+                            text = localize('k_blind_dracula_1'),
+                            scale = 1.3, 
+                            hold = 1.4,
+                            major = G.play,
+                            align = 'tm',
+                            offset = {x = 0, y = -1},
+                            silent = true
+                        })
+                        blind:wiggle()
+                    return true end }))
+                end
             end
         end
     end
