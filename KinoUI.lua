@@ -324,7 +324,7 @@ SMODS.current_mod.extra_tabs = function()
 							{
 								n = G.UIT.T,
 								config = {
-									text = ", Arson",
+									text = ", HarmoniousJoker",
 									shadow = true,
 									scale = scale * 0.5,
 									colour = G.C.BLUE
